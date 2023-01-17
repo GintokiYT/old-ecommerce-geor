@@ -12,6 +12,7 @@ import { ThemeDetection } from '@awesome-cordova-plugins/theme-detection/ngx';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 import { OpenNativeSettings } from '@awesome-cordova-plugins/open-native-settings/ngx';
 import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
+import { AppTranslations } from 'src/shared/translate';
 
 function appInitializerFactory(injector: Injector) {
   return () => {
@@ -76,7 +77,8 @@ const setupConfig = (doc: Document, configuration: AppConfigurationService) => {
   if (win && typeof (window as any) !== 'undefined') {
     const config: IAppCoreConfig = {
       translations: {
-        core: CoreTranslations
+        core: CoreTranslations,
+        app: AppTranslations
       },
       google: {
         webClientId: undefined,
@@ -114,7 +116,7 @@ const getApplicationConfig = (appRootUrl: string, callback: () => void) => {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot({ mode: 'md' }),
+    IonicModule.forRoot({ mode: 'ios' }),
     CoreModule.forRoot(),
     HttpClientModule,
     AppRoutingModule

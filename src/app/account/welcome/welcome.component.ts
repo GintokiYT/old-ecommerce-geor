@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
     templateUrl: 'welcome.component.html',
@@ -6,8 +8,31 @@ import { Component, OnInit } from '@angular/core';
         'welcome.component.scss'
     ]
 })
-export class WelcomeComponent implements OnInit {
-    constructor() { }
+export class WelcomeComponent extends ViewComponent implements OnInit {
 
-    ngOnInit() { }
+    private themeService: AppThemeService;
+
+    text: string = this.localization.localize('test', 'app');
+
+    constructor(_injector: Injector) {
+        super(_injector);
+        this.themeService = _injector.get(AppThemeService);
+    }
+
+    ngOnInit() {
+
+    }
+
+    changeTheme() {
+        this.themeService.changeMode(this.themeService.mode == 'dark' ? 'light' : 'dark');
+    }
+
+    changeLanguage() {
+        this.localization.changeLanguage(this.localization.currentLanguage == 'en_US' ? 'es_ES' : 'en_US');
+        this.text = this.localization.localize('test', 'app');
+    }
+
+    openLoginModal() {
+        this.navigation.root('/account/login', 'forward');
+    }
 }
