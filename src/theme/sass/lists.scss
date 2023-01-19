@@ -1,0 +1,23 @@
+ion-item {
+  font-size: 16px;
+  // --padding-start: 0;
+  // --padding-end: 0;
+  // --inner-padding-end: 0;
+  &::part(native) {
+    padding-inline-end: var(--ion-padding);
+  }
+}
+
+@include theme-light {
+  ion-list {
+    --ion-item-background: #{$white};
+    --ion-item-color: #9e9e9e;
+    --ion-item-border-color: #eeeeee;
+  }
+  ion-item {
+    &.item-has-focus {
+      --ion-color-primary: #9e9e9e;
+      --border-width: 0;
+    }
+  }
+}
