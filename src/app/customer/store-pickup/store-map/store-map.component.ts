@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Location} from '@angular/common'
 @Component({
   selector: 'app-store-map',
   templateUrl: './store-map.component.html',
@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreMapComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {}
+
+  goBack(){
+    this.location.back();
+  }
+
 
 }

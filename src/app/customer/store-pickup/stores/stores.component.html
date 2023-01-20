@@ -1,8 +1,8 @@
-<app-header title="Mi pedido"></app-header>
+<app-header title="Tiendas"></app-header>
 <div class="content">
   <div class="alert">
     <ion-item lines="none">
-      <img id="time" src="/assets/icons/time-circle.svg" slot="start">
+      <img id="time" src="/assets/icons/time-circle.svg" >
       <ion-label>
         El producto estará disponible en el lugar seleccionado<br>
         durante 5 días hábiles de 8:00am a 6:00pm.
@@ -11,20 +11,20 @@
   </div>
 
   <div class="checkbox">
-    <ion-item lines="none" routerLink="/store-map">
+    <ion-item lines="none" routerLink="/customer/store-map">
       <ion-checkbox slot="end" mode="ios"></ion-checkbox>
       <ion-label class="ion-text-wrp">
-        <p class="district">Induacril Miraflores</p>
-        <p class="address">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
-        <p class="to-get">Como llegar </p>
+        <p class="fz-small">Induacril Miraflores</p>
+        <p class="fz-note ">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
+        <p class="to-get ">Como llegar </p>
       </ion-label>
     </ion-item>
-
+  
     <ion-item lines="none">
       <ion-checkbox slot="end" mode="ios"></ion-checkbox>
       <ion-label class="ion-text-wrp">
-        <p class="district">Induacril Chorrillos</p>
-        <p class="address">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
+        <p class="fz-small">Induacril Chorrillos</p>
+        <p class="fz-note ">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
         <p class="to-get">Como llegar</p>
       </ion-label>
     </ion-item>
@@ -32,15 +32,15 @@
     <ion-item lines="none">
       <ion-checkbox slot="end" mode="ios"></ion-checkbox>
       <ion-label class="ion-text-wrp">
-        <p class="district">Induacril Miraflores</p>
-        <p class="address">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
+        <p class="fz-small">Induacril Miraflores</p>
+        <p class="fz-note">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
         <p class="to-get">Como llegar</p>
       </ion-label>
     </ion-item>
   </div>
 
-
-  <ion-footer>
-    <ion-button expand="block">Usar tienda</ion-button>
-  </ion-footer>
+  <div >
+    <ion-button color="primary" shape="round" expand="block"
+      >Usar tienda</ion-button>
+  </div>
 </div>

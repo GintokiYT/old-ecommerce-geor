@@ -5,19 +5,20 @@
     .alert{
         background: #E3EAFD;
         border-radius: 4px;
+        padding: 16px 0px 16px 12px;
+        margin-bottom: 0px;
         ion-item{
-            --padding-start: 12px;
+            --padding-start: 0px;
+            --background: #E3EAFD;
             #time{
-                margin-right: 9px;
+                margin-right: 8px;
             }
             ion-label{
                 font-family: 'Roboto';
                 font-style: normal;
-                font-weight: 400;
                 font-size: 12px;
-                line-height: 15px;
-                margin-top: 16px;
-                margin-bottom: 16px;
+                margin: 0px !important;
+                
             }
         }
        
@@ -26,39 +27,35 @@
         margin-top: 32px;
         margin-bottom: 296px;
         ion-item {
-            --padding-start: 0;
-            --padding-end: 0;
-            
-            .district{
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 22px;
+            --padding-start: 0px;
+
+            ion-label{
+                margin:0px
+            }
+
+            .fz-small{
                 color: #000000;
             }
-            .address{
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 15px;
+            .fz-note{
                 color: rgba(0, 0, 0, 0.6);
+                margin-top: 4px !important;
+                margin-bottom: 0px !important;
             }
             .to-get{
                 font-family: 'Roboto';
                 font-style: normal;
-                font-weight: 400;
                 font-size: 12px;
                 line-height: 15px;
                 color: #023AFF;
-                margin: 10px 0;
+                margin: 10px 0 24px 0 !important;
             }
+            
         }
     }
 
     ion-button{
-        --background: #023AFF;
+        --background: #023AFF !important;
         --border-radius: 50px;
+        
     }
 }
