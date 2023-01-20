@@ -1,0 +1,39 @@
+<div class="contenedor-detalles-entrega">
+
+  <p>Detalles entrega</p>
+
+  <div class="contenedor-opciones">
+
+    <div class="opcion selected"
+      id="location"
+      (click)="onSelect('location')"
+      >
+      <img src="/assets/icons/icon-location.svg" width="15px" height="18px"/>
+      <p>Envío a<br />domicilio</p>
+
+    </div>
+
+    <div class="opcion notSelected"
+      id="truck"
+      (click)="onSelect('truck')"
+      >
+      <img src="/assets/icons/icon-truck.svg" width="20.68px" height="19.37px" />
+      <p>Agencia de<br />carga</p>
+
+    </div>
+
+    <div class="opcion notSelected"
+      id="home"
+      (click)="onSelect('home')"
+      >
+      <img src="/assets/icons/icon-home-gray.svg" width="19.17px" height="20px" />
+      <p>Recojo en<br />tienda</p>
+
+    </div>
+
+
+    
+
+  </div>
+
+</div>

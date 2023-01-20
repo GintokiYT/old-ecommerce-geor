@@ -1,0 +1,207 @@
+
+.main{
+    max-width: 100%;
+    padding-right: 24px;
+    padding-left: 24px;
+    display: flex;
+    padding-top: 32px;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/** DEJAR PEDIDO **/
+.dejar-pedido{
+
+    .lugar-pedido{
+        display: block;
+        text-align: left;
+        font-size: 16px;
+        color: #00000061;
+        padding-bottom: 32px;
+    }
+
+    .contenedor-info-pedido{
+        display: flex;
+        flex-direction: column;
+        gap: 24px
+    }
+
+    .info-pedido{
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .info-pedido:nth-child(1) img{
+        filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(4%) hue-rotate(320deg) brightness(96%) contrast(104%);;
+    }
+    
+    .info-pedido:nth-child(3) ion-label{
+        color: #00000061;
+    }
+
+    .info-pedido-destinatario{
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .info-pedido-destinatario ion-label:nth-child(2){
+        color: #00000061;
+        font-size: 14px;
+    }
+
+    .lugar-pedido,.info-pedido{
+        cursor: pointer;
+    }
+
+}
+
+/** METODOS DE PAGO**/
+.contenedor-metodos-pago{
+
+    > ion-label{
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .metodos{
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 24px;
+    }
+
+    .metodos .d-flex{
+        gap: 8.75px;
+        align-items: center;
+    }
+
+    .metodos .d-flex img{
+        filter: var(--ion-color-induacril-filter);
+    }
+}
+
+/** CUPÓN **/
+.contenedor-cupon{
+    width: 242px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 12px 0px; 
+    background-color: #FAFAFA;
+    border-radius: 20px;
+    margin-top: 32px;
+    cursor: pointer;
+
+    ion-label{
+        white-space: nowrap;
+    }
+}
+
+/** Datos de facturación **/
+.contenedor-datos-facturacion{
+
+    >ion-label{
+        font-weight: bold;
+    }
+
+    .datos{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+        color: #00000061;
+    }
+
+    
+}
+
+
+//MEDIA QUERIES PARA INDUACRIL
+@media(max-width:320px){
+
+    .main{
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 16px;
+        gap: 40px;
+
+        ion-label{
+            font-size: 14px !important;
+        }
+    }
+
+    .dejar-pedido{
+    
+        .lugar-pedido{
+            padding-bottom: 20px;
+        }
+
+        .info-pedido:nth-child(1){
+            img{
+                width: 17.23px;
+                height: 16.14px;
+            }
+        }
+
+        .info-pedido:nth-child(2){
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .info-pedido:nth-child(3){
+            img{
+                width: 15.42px;
+                height: 15.42px;
+            }
+        }
+
+        .info-pedido-destinatario ion-label:nth-child(2){
+            color: #BDBDBD;
+            font-size: 10px !important;
+        }
+
+        .contenedor-info-pedido{
+            gap: 16px
+        }
+    }
+
+    .contenedor-metodos-pago{
+
+        .metodos{
+            margin-top: 14px;
+        }
+
+        .metodos .d-flex img{
+            height: 15.42px !important;
+        }
+
+    }
+
+    .contenedor-cupon{
+        width: 145px;
+        padding-right: 24px;
+        padding-left: 24px;
+        margin-top: 16px;
+
+        ion-label{
+            font-size: 12px !important;
+        }
+
+        img{
+            height: 8px;
+            width: 10px;
+        }
+    }
+
+    .contenedor-datos-facturacion{
+        .datos{
+            margin-top: 8px;
+        }
+    }
+}

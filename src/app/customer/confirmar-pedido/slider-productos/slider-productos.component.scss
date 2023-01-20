@@ -1,0 +1,29 @@
+.mt-4{
+  margin-top: 0px !important;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.swiper-slide {
+  width: 68.57px;
+  height: 90px;
+}
+
+
+img{
+  display: none;
+}
+
+@media(max-width:320px){
+  ion-label{
+    font-size: 14px;
+  }
+
+  img{
+    display: inherit;
+  }
+
+}
+
