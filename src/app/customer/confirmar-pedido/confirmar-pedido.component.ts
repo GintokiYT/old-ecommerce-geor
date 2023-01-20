@@ -17,12 +17,12 @@ export class ConfirmarPedidoComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.message.confirm("Al otorgar acceso, podrás ver tus contactos"
-    //   , "¿Induacril quiere acceder a tus contactos?"
-    //   , (confirmation) => {
-    //     console.log(confirmation)
-    //   },"permitir", "No permitir"
-    //   )
+    this.message.confirm("Al otorgar acceso, podrás ver tus contactos"
+      , "¿Induacril quiere acceder a tus contactos?"
+      , (confirmation) => {
+        console.log(confirmation)
+      },"permitir", "No permitir"
+      )
   }
 
 
