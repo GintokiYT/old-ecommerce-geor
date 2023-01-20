@@ -1,3 +1,4 @@
+import { AppNavigationService } from '@geor360/ecore';
 import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
@@ -5,7 +6,6 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
 import CountryInterface from 'src/app/interfaces/CountryInterface';
 import { RouteCollection } from 'src/shared/route-collection';
 
@@ -18,7 +18,10 @@ export class SelectCountryComponent implements OnInit {
   public selectCountryForm!: FormGroup;
   public isEmptyForm: boolean = true;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private navigator: AppNavigationService
+  ) {}
 
   ngOnInit() {
     this.countries = [
@@ -42,6 +45,6 @@ export class SelectCountryComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate([RouteCollection.account.welcome.wheAreYou]);
+    this.navigator.forward(RouteCollection.account.welcome.wheAreYou);
   }
 }

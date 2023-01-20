@@ -1,3 +1,4 @@
+import { ChangeAddressComponent } from './welcome/change-address/change-address.component';
 import { MyLocationComponent } from './welcome/my-location/my-location.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,6 +26,7 @@ import { WheAreYouComponent } from './welcome/whe-are-you/whe-are-you.component'
     SelectCountryComponent,
     WheAreYouComponent,
     MyLocationComponent,
+    ChangeAddressComponent,
   ],
 })
 export class AccountModule {}

@@ -1,6 +1,8 @@
+import { RouteCollection } from 'src/shared/route-collection';
 import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
 import {
   AppDialogService,
+  AppNavigationService,
   GeolocationService,
   GoogleMapService,
 } from '@geor360/ecore';
@@ -22,7 +24,10 @@ export class MyLocationComponent implements OnInit, OnDestroy {
 
   map: google.maps.Map;
 
-  constructor(_injector: Injector) {
+  constructor(
+    _injector: Injector,
+    private navigator: AppNavigationService
+  ) {
     this.dialog = _injector.get(AppDialogService);
     this.geolocation = _injector.get(GeolocationService);
     this.googleMap = _injector.get(GoogleMapService);
@@ -77,6 +82,14 @@ export class MyLocationComponent implements OnInit, OnDestroy {
     this.hasPermissionSubscription?.unsubscribe();
     this.hasErrorSubscription?.unsubscribe();
     this.hasPositionSubscription?.unsubscribe();
+  }
+
+  onToChangeAddress() {
+    this.navigator.forward(RouteCollection.account.welcome.changeAddress);
+  }
+
+  onBack() {
+    this.navigator.back(RouteCollection.account.welcome.wheAreYou);
   }
 
   confirm() {

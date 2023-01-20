@@ -1,10 +1,21 @@
 <ion-content>
   <div class="google-map" id="google-map-id"></div>
+  <div class="ion-padding">
+    <ion-fab slot="fixed" vertical="top" horizontal="left">
+      <ion-fab-button size="small" color="light" (click)="onBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>
 <ion-footer class="pt-2">
   <ion-list>
     <ion-item>
-      <ion-input value="Pacto andino 8799"></ion-input>
+      <ion-input
+        value="Pacto andino 8799"
+        readonly
+        (click)="onToChangeAddress()"
+      ></ion-input>
     </ion-item>
   </ion-list>
   <div class="ion-padding">

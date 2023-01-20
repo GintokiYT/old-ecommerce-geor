@@ -1,5 +1,5 @@
+import { AppNavigationService } from '@geor360/ecore';
 import { RouteCollection } from 'src/shared/route-collection';
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './whe-are-you.component.html',
 })
 export class WheAreYouComponent {
-  constructor(private router: Router) {}
+  constructor(private navigator: AppNavigationService) {}
 
   onSubmit() {
-    this.router.navigate([RouteCollection.account.welcome.myLocation]);
+    this.navigator.forward(RouteCollection.account.welcome.myLocation);
   }
 }

@@ -1,3 +1,4 @@
+import { ChangeAddressComponent } from './welcome/change-address/change-address.component';
 import { WheAreYouComponent } from './welcome/whe-are-you/whe-are-you.component';
 import { SelectCountryComponent } from './welcome/select-country/select-country.component';
 import { RouteCollection } from '../../shared/route-collection';
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: RouteCollection.account.welcome.myLocation,
         component: MyLocationComponent,
+      },
+      {
+        path: RouteCollection.account.welcome.changeAddress,
+        component: ChangeAddressComponent,
       },
       { path: 'login', component: LoginComponent },
       {
