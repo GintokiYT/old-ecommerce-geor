@@ -11,6 +11,10 @@ ion-fab-button::part(native) {
     --border-radius: 32px;
     margin-top:662px;
     margin-right: 24px;
+    width: 114px;
+    height: 36px;
+    right: 24px;
+    bottom: 146px;
     #update{
       font-family: 'Roboto';
       font-style: normal;
@@ -22,22 +26,14 @@ ion-fab-button::part(native) {
   
   #local-address{
     padding: 24px 24px 48px 24px ;
-    .district{
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 22px;
+    
+    .fz-small{
       color: #000000;
       margin: 0px;
     }
-    .address{
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 15px;
+    .fz-note{
       color: rgba(0, 0, 0, 0.6);
       margin: 4px 0px 0px 0px; 
     }
+    
   }

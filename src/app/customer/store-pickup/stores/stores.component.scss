@@ -1,15 +1,16 @@
-
 .content{
     padding-left: 24px;
     padding-right: 24px;
     .alert{
         background: #E3EAFD;
         border-radius: 4px;
-        padding: 16px 0px 16px 12px;
+        padding: 0px 12px 0px 12px; 
         margin-bottom: 0px;
         ion-item{
             --padding-start: 0px;
+            --inner-padding-end: 0px;
             --background: #E3EAFD;
+            
             #time{
                 margin-right: 8px;
             }
@@ -17,20 +18,26 @@
                 font-family: 'Roboto';
                 font-style: normal;
                 font-size: 12px;
-                margin: 0px !important;
-                
+                margin: 16px 0 16px 0 ;
+                color: #00000099;
+
             }
         }
-       
+
+        ion-item::part(native){ 
+            padding: 0px;
+        }
     }
     .checkbox{
+        margin-inline: 0px;
         margin-top: 32px;
         margin-bottom: 296px;
         ion-item {
             --padding-start: 0px;
+            --inner-padding-end: 0px; 
 
             ion-label{
-                margin:0px
+                margin:0px;
             }
 
             .fz-small{
@@ -50,6 +57,16 @@
                 margin: 10px 0 24px 0 !important;
             }
             
+        }
+
+        ion-checkbox{
+            --size: 20px;
+            margin-right: 0px;
+            margin-bottom: 37px;
+        }        
+
+        ion-item::part(native){ 
+            padding: 0px;
         }
     }
 
