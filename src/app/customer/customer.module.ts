@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { CustomerRoutingModule } from './customer.routing.module';
 
+// Componentes (paginas)
+import { MainInboxComponent } from './inbox/main-inbox/main-inbox.component';
+import { InternalInboxComponent } from './inbox/internal-inbox/internal-inbox.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -13,7 +17,9 @@ import { CustomerRoutingModule } from './customer.routing.module';
     CustomerRoutingModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    MainInboxComponent,
+    InternalInboxComponent
   ]
 })
 export class CustomerModule {}

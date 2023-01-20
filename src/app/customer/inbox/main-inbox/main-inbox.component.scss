@@ -1,0 +1,174 @@
+*,*::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+// Header
+.inbox-header {
+  ion-title {
+    width: 100%;
+    max-width: calc(100% - 64px);
+    margin: 32px auto 24px auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 16px;
+    color: #000;
+  }
+}
+
+.inbox-ion-toolbar {
+  --min-height: unset;
+}
+
+// Content
+.inbox-ion-list {
+  width: 100%;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inbox-ion-item {
+  display: flex;
+  gap: 12px;
+}
+
+.ion-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.ion-detail {
+  width: calc(100% - 48px - 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ion-detail .ion-detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  height: 24px;
+
+  .ion-detail__header--title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+  }
+
+  .ion-detail__header--info {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.38);;
+  }
+}
+
+.ion-detail .ion-detail__content {
+  display: flex;
+  align-items: center;
+  height: 16px;
+
+  .ion-detail__content--description {
+    font-size: 12px;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.ion-detail .ion-detail__footer {
+  display: flex;
+  align-items: center;
+  height: 16px;
+
+  .ion-detail__footer--description {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+
+    .user-tag {
+      color: rgba(0, 55, 255, 1);
+    }
+  }
+}
+
+// Footer
+.inbox-ion-footer {
+  border-top: 1px solid rgba(245, 245, 245, 1);
+  padding: 8px 16px 16px 16px;
+  background: #fff;
+  --min-height: unset;
+
+  .inbox-footer__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inbox-footer__content--item {
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .inbox-footer__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inbox-footer__image svg {
+    font-size: 24px;
+  }
+
+  .inbox-footer__name p {
+    font-size: 10px;
+    font-weight: 400px;
+    color: #000;
+  }
+}
+
+.inbox-footer__content .active {
+
+  .icon-home * {
+    fill:rgba(0, 55, 255, 1);
+  }
+
+  .icon-search * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .icon-chat * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .icon-buy * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .icon-profile * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .inbox-footer__name p {
+    color:rgba(0, 55, 255, 1);
+  }
+}

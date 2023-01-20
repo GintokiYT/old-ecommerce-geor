@@ -1,0 +1,127 @@
+*,*::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+// Header
+.chat-header {
+  padding: 24px 16px 4px 16px;
+}
+
+.chat-ion-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+}
+
+.button-header {
+  width: auto;
+  height: auto;
+  background: transparent;
+
+  svg {
+    font-size: 24px;
+  }
+}
+
+.content-title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .content-title__image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .content-title__name {
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+// Content
+.content-messages {
+  width: 100%;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+}
+
+.message-business {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-user {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// Contenedor con imagen (Solo empresas)
+.content-message-logo {
+  display: flex;
+  gap: 8px;
+
+  .logo {
+    width: 24px;
+    height: 24px;
+    margin-top: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.container-message {
+  max-width: 210px;
+  font-size: 14px;
+
+  .message-business {
+    background: rgba(250, 250, 250, 1);
+    padding: 10px;
+    border-radius: 0px 10px 10px 10px;
+    line-height: 22px;
+  }
+
+  .message-user {
+    background: rgba(2, 58, 255, 1);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px 10px 0px 10px;
+    line-height: 22px;
+  }
+
+  .time-business {
+    display: block;
+    text-align: left;
+    margin-top: 4px;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 12px;
+  }
+
+  .time-user {
+    display: block;
+    text-align: right;
+    margin-top: 4px;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 12px;
+  }
+}
