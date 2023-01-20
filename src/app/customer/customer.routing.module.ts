@@ -9,9 +9,9 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'store-pickup', component:StorePickupComponent },
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' },
-      { path: 'store-pickup', component:StorePickupComponent },
     ]
   }
 ];

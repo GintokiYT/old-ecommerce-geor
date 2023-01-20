@@ -1,0 +1,64 @@
+
+.content{
+    padding-left: 24px;
+    padding-right: 24px;
+    .alert{
+        background: #E3EAFD;
+        border-radius: 4px;
+        ion-item{
+            --padding-start: 12px;
+            #time{
+                margin-right: 9px;
+            }
+            ion-label{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+        }
+       
+    }
+    .checkbox{
+        margin-top: 32px;
+        margin-bottom: 296px;
+        ion-item {
+            --padding-start: 0;
+            --padding-end: 0;
+            
+            .district{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 22px;
+                color: #000000;
+            }
+            .address{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                color: rgba(0, 0, 0, 0.6);
+            }
+            .to-get{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                color: #023AFF;
+                margin: 10px 0;
+            }
+        }
+    }
+
+    ion-button{
+        --background: #023AFF;
+        --border-radius: 50px;
+    }
+}

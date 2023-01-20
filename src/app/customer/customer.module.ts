@@ -7,6 +7,7 @@ import { CustomerRoutingModule } from './customer.routing.module';
 import { StorePickupComponent } from './store-pickup/store-pickup.component';
 import { StoreMapComponent } from './store-pickup/store-map/store-map.component';
 import { StoresComponent } from './store-pickup/stores/stores.component';
+import { HeaderComponent } from './store-pickup/header/header.component';
 
 
 @NgModule({
@@ -15,13 +16,13 @@ import { StoresComponent } from './store-pickup/stores/stores.component';
     FormsModule,
     IonicModule,
     CustomerRoutingModule,
-    
   ],
   declarations: [
     HomeComponent,
     StorePickupComponent,
     StoreMapComponent,
     StoresComponent,
+    HeaderComponent
   ],
   exports:[
     StorePickupComponent,
