@@ -1,0 +1,150 @@
+button{
+    background-color: transparent;
+    margin: 0px 24px 0px 24px;
+}
+
+ion-toolbar{
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+    --min-height: 0px;
+    --padding-top: 56px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-bottom: 40px
+}
+
+@media(max-width:320px){
+    ion-toolbar{
+        --padding-top: 32px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 24px
+}}
+
+ion-title{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+ion-content {
+    // Eliminar scroll de la
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+
+label {
+    justify-content: center;
+    font-size: 16px;
+}
+
+ion-button {
+    --ion-color-primary: #023AFF;
+    font-weight: bold;
+    text-align: center;
+   
+
+}
+ 
+
+//cuadros de fechas
+.contenedor-detalles-entrega{
+
+    max-width: 100%;
+    padding-right: 24px;
+    padding-left: 24px;
+
+    >p{
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 24px;
+    }
+
+    .contenedor-opciones{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .contenedor-opciones p{
+        margin: 0;
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+        line-height: 18px;
+        width: 83.33px;
+        color: var(--parraphColor);
+    }
+
+    .opcion{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 11px;
+        border: 1px solid;
+        border-color: var(--borderColor);
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .opcion img{
+        filter: var(--filter);
+    }
+    
+}
+
+/* MEDIA QUERIES PARA INDUACRIL */
+@media(max-width:320px){
+    .contenedor-detalles-entrega{
+        
+        padding-right: 16px;
+        padding-left: 16px;
+
+        >p{
+            font-size: 14px;
+        }
+
+        .contenedor-opciones p{
+            width: 65.33px;
+            white-space: nowrap;
+        }
+
+    }
+}
+
+
+.notSelected{
+    --borderColor: #F5F5F5;
+    --parraphColor: #2c2b2c61;
+    --filter: unset;
+}
+
+@media(max-width:320px){
+    .notSelected{
+        --parraphColor: #2c2b2c61;
+    }
+}
+
+.selected{
+    --borderColor: #023AFF;
+    --parraphColor: #023AFF;
+    --filter: var(--ion-color-induacril-filter);
+}
+
+
+ion-item {
+    margin: 0px 24px 0px 24px;
+}
+
+
+
+
+footer {
+    --ion-color-primary: #023AFF;
+   margin: 0px 24px 24px 24px;
+}

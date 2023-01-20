@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <button (click)="goBack()" slot="start">
+      <img src="/assets/icons/icon-close.svg" />
+    </button>
+    <ion-title>¿Cuando recibir?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+  
+      <img src="/assets/icons/icon-stoke-izquierda.svg" slot="start"/>
+
+    <label>Nov 2022</label>
+  
+      <img src="/assets/icons/icon-stroke-derecha.svg" slot="end" />
+    
+  </ion-item>
+  <br>
+  <div class="contenedor-detalles-entrega">
+    <div class="contenedor-opciones">
+      <div class="opcion selected">
+        <p>Dom 27/11</p>
+      </div>
+      <div class="opcion notSelected">
+        <p>Lun 28/11</p>
+      </div>
+      <div class="opcion notSelected">
+        <p>Mar 29/11</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <ion-item>
+    <ion-checkbox slot="end"></ion-checkbox>
+    <ion-label>
+      <h3>8:00am - 1:00pm</h3>
+      <p>Costo de envío</p>
+      <h3>S/ 60.00</h3>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox slot="end"></ion-checkbox>
+    <ion-label>
+      <h3>2:00pm - 6:00pm</h3>
+      <p>Costo de envío</p>
+      <h3>S/ 50.00</h3>
+    </ion-label>
+  </ion-item>
+</ion-content>
+
+<footer>
+  <ion-button expand="block" shape="round">Guardar</ion-button>
+</footer>

@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <button (click)="goBack()" slot="start">
+      <img src="/assets/icons/icon-arrow-izquierda.svg" />
+    </button>
+    <ion-title>¿Quien recibirá la compra?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input placeholder="Nombre"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-input placeholder="Apellidos"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-input placeholder="Cargo"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-input placeholder="Documentación"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-input placeholder="Correo electronico"></ion-input>
+  </ion-item>
+  <ion-item>
+    <img src="/assets/icons/icon-PE.svg" />
+    <ion-input></ion-input>
+  </ion-item>
+
+</ion-content>
+<ion-button [disabled]="true" expand="block" shape="round">Confirmar</ion-button>
