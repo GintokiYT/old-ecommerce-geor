@@ -250,3 +250,13 @@ body.light {
 body.dark {
   background: #000000;
 }
+
+.ion-color-Ecommerce{
+  --ion-color-base: var(--ion-color-ecommerce) !important;
+  --ion-color-filter: var(--ion-color-ecommerce-filter) !important;
+}
+
+.ion-color-induacril{
+  --ion-color-base: var(--ion-color-induacril) !important;
+  --ion-color-filter: var(--ion-color-induacril-filter) !important;
+}

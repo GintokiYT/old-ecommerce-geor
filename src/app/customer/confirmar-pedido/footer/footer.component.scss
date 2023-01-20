@@ -1,12 +1,17 @@
+
+
 ion-footer{
     max-width: 100%;
-    padding-right: 24px;
-    padding-left: 24px;
 }
+
 
 ion-toolbar{
     --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
-    --border-color: white
+    --border-color: white;
+    --padding-top: 8px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-bottom: 32px
 }
 
 .contenedor-footer{
@@ -31,6 +36,12 @@ ion-toolbar{
             font-size: 14px;
             padding: 9x 16px;
         }
+    }
+
+    ion-toolbar{
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 16px;
     }
 }
 
