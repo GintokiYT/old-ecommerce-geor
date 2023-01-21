@@ -1,28 +1,29 @@
-button{
-    background-color: transparent;
+button {
+  background-color: transparent;
 }
 
-ion-toolbar{
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
-    --min-height: 0px;
-    --padding-top: 56px;
-    --padding-start: 24px;
-    --padding-end: 24px;
-    --padding-bottom: 40px
+ion-toolbar {
+  --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+  --min-height: 0px;
+  --padding-top: 56px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --padding-bottom: 40px
 }
 
-@media(max-width:320px){
-    ion-toolbar{
-        --padding-top: 32px;
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 24px
-}}
+@media(max-width:320px) {
+  ion-toolbar {
+    --padding-top: 32px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-bottom: 24px
+  }
+}
 
-ion-title{
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
+ion-title {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
 }
 
 ion-label {
@@ -30,24 +31,45 @@ ion-label {
 }
 
 ion-content {
-    // Eliminar scroll de la
-    --overflow: hidden;
-    overflow: auto;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-   margin: 0px 24px 0px 24px;
+  // Eliminar scroll de la
+  --overflow: hidden;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 
-  ion-button {
-    --ion-color-primary: #023AFF;
-    margin: 0px 24px 48px 24px;
-    &.ion-color-primary {
-      &.button-disabled {
-        &::part(native) {
-          background-color: #E3EAFD!important;
-          color: #95A8C5;
-        }
-      }
-    }
+  margin: 0px 24px 0px 24px;
+}
+
+ion-button {
+  // --ion-color-primary: #023AFF;
+  // &.ion-color-primary {
+  //   &.button-disabled {
+  //     &::part(native) {
+  //       background-color: #E3EAFD!important;
+  //       color: #95A8C5;
+  //     }
+  //   }
+  // }
+}
+
+
+ion-item::part(native) {
+  padding-inline-end: 24px
+}
+
+.l-telefono {
+  color: #00000061;
+}
+
+ion-footer {
+
+  ion-toolbar {
+    --border-width: 0px !important;
+    --padding-top: 0px !important;
+    --padding-start: 24px !important;
+    --padding-end: 24px !important;
+    --padding-bottom: 48px !important;
+  }
 }

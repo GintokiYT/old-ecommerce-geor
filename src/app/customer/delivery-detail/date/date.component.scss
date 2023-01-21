@@ -1,3 +1,4 @@
+
 button{
     background-color: transparent;
 }
@@ -135,7 +136,17 @@ ion-button {
     --filter: var(--ion-color-induacril-filter);
 }
 
-footer {
-    --ion-color-primary: #023AFF;
-   margin: 0px 24px 24px 24px;
-}
+ion-footer{
+
+    ion-toolbar{
+      --border-width: 0px;
+      --padding-top: 0px;
+      --padding-start: 24px;
+      --padding-end: 24px;
+      --padding-bottom: 48px
+    }
+  }
+
+  ion-item::part(native) {
+    padding-inline-end: 24px
+  }

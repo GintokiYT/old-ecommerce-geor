@@ -1,7 +1,8 @@
+
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <button (click)="goBack()" slot="start">
-      <img src="/assets/icons/icon-close.svg" />
+      <img src="/assets/icons/icon-close.svg" width="12px" />
     </button>
     <ion-title>¿Cuando recibir?</ion-title>
   </ion-toolbar>
@@ -9,24 +10,36 @@
 
 <ion-content>
   <ion-item lines="none">
-  
-      <img src="/assets/icons/icon-stoke-izquierda.svg" slot="start"/>
+
+    <img src="/assets/icons/icon-stoke-izquierda.svg" slot="start" />
 
     <label>Nov 2022</label>
-  
-      <img src="/assets/icons/icon-stroke-derecha.svg" slot="end" />
-    
+
+    <img src="/assets/icons/icon-stroke-derecha.svg" slot="end" />
+
   </ion-item>
   <br>
   <div class="contenedor-detalles-entrega">
     <div class="contenedor-opciones">
-      <div class="opcion selected">
+      <div 
+        id="27"
+        class="opcion selected"
+        (click)="onSelect('27')"
+        >
         <p>Dom 27/11</p>
       </div>
-      <div class="opcion notSelected">
+      <div 
+        id="28"
+        class="opcion notSelected"
+        (click)="onSelect('28')"
+        >
         <p>Lun 28/11</p>
       </div>
-      <div class="opcion notSelected">
+      <div 
+        id="29"
+        class="opcion notSelected"
+        (click)="onSelect('29')"
+        >
         <p>Mar 29/11</p>
       </div>
     </div>
@@ -48,8 +61,11 @@
       <h3>S/ 50.00</h3>
     </ion-label>
   </ion-item>
+
 </ion-content>
 
-<footer>
-  <ion-button expand="block" shape="round">Guardar</ion-button>
-</footer>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="primary" expand="block" shape="round">Confirmar</ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -29,13 +29,19 @@
   </ion-item>
   <br>
   <ion-item>
-    <ion-label position="stacked" color="light">Telefono</ion-label>
-    <ion-input placeholder=""> 
-      <img src="/assets/icons/icon-PE.svg"/>+551
+    <ion-label class="l-telefono"  position="stacked">Telefono</ion-label>
+    <ion-input placeholder="">
+      <img src="/assets/icons/icon-PE.svg" />+551
     </ion-input>
   </ion-item>
-  
+
 
 
 </ion-content>
-<ion-button [disabled]="true" expand="block" shape="round">Confirmar</ion-button>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button color="primary" expand="block" shape="round">Confirmar</ion-button>  
+  </ion-toolbar>
+</ion-footer>
