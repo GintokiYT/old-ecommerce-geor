@@ -1,0 +1,26 @@
+ion-input {
+  --color: #{$black} !important;
+}
+.custon-ion-search {
+  .searchbar-input-container {
+    height: 40px;
+  }
+  .searchbar-input {
+    padding-inline-start: 12px !important;
+    &.sc-ion-searchbar-ios {
+      border-radius: 18px !important;
+    }
+  }
+}
+.searchbar-search-icon {
+  display: none;
+  z-index: -1;
+}
+@include theme-light {
+  .custon-ion-search {
+    .searchbar-input {
+      color: $black !important;
+      background-color: $gray-100 !important;
+    }
+  }
+}

@@ -12,7 +12,7 @@ import { ThemeDetection } from '@awesome-cordova-plugins/theme-detection/ngx';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 import { OpenNativeSettings } from '@awesome-cordova-plugins/open-native-settings/ngx';
 import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
-import { AppTranslations } from 'src/shared/translate';
+import { AppTranslations } from '@app/shared';
 
 function appInitializerFactory(injector: Injector) {
   return () => {
