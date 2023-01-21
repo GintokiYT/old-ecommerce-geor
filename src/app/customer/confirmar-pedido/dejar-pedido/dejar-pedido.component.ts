@@ -22,6 +22,17 @@ export class DejarPedidoComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
-
+  goTo(){
+    this.message.confirm("Al otorgar acceso, podrás ver tus contactos"
+      , "¿Induacril quiere acceder a tus contactos?"
+      , (confirmation) => {
+        if(confirmation){
+          this.navigation.forward("/customer/contact")
+        }else{
+          this.navigation.forward("/customer/buy")
+        }
+      },"permitir", "No permitir"
+      )
+  }
 
 }
