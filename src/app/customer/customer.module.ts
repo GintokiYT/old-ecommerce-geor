@@ -5,15 +5,23 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { CustomerRoutingModule } from './customer.routing.module';
 
+import { InboxModule } from './inbox/inbox.module';
+
+// Componentes (paginas)
+// import { MainInboxComponent } from './inbox/main-inbox/main-inbox.component';
+// import { InternalInboxComponent } from './inbox/internal-inbox/internal-inbox.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    InboxModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
   ]
 })
 export class CustomerModule {}

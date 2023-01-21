@@ -37,7 +37,7 @@ function appInitializerFactory(injector: Injector) {
           setupConfig(document, configurationService);
           themeService.init().then(() => {
             resolve(true);
-            
+
             //sessionProxie.getCurrentLoginInformations().subscribe({
             //  next: (response) => {
             //    appSession.save(response.user, response.application);
@@ -113,7 +113,7 @@ const getApplicationConfig = (appRootUrl: string, callback: () => void) => {
 @NgModule({
   declarations: [
     AppComponent
-  ],
+   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot({ mode: 'ios' }),
