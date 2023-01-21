@@ -1,0 +1,13 @@
+<div class="carousel__wrapper mt-4">
+    <div class="d-flex justify-content-between">
+        <ion-label><b>Estas comprando</b></ion-label>
+        <img height="21px" width="6px" src="/assets/icons/icon-arrow-right.svg" />
+    </div>
+    <ion-slides [options]="productSlidesOptions">
+        <ion-slide *ngFor="let product of productsForYou">
+            <div class="text-left">
+                <ion-img [src]="product.image" [alt]="product.image"></ion-img>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</div>

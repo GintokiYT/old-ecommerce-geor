@@ -74,7 +74,18 @@
 //   --ion-color-light-contrast-rgb: 0, 0, 0;
 //   --ion-color-light-shade: #8b8b8b;
 //   --ion-color-light-tint: #a8a8a8;
+
+:root{
+  /** Estándar Ecommerce **/
+  --ion-color-ecommerce: #023AFF;
+  --ion-color-ecommerce-filter: brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
+
+  /** Induacril **/
+  --ion-color-induacril: #AA376A;
+  --ion-color-induacril-filter: brightness(0) saturate(100%) invert(30%) sepia(29%) saturate(2851%) hue-rotate(297deg) brightness(86%) contrast(87%);
 // }
+}
+  
 
 /** Dark Colors **/
 // body.dark {
@@ -259,3 +270,14 @@ body {
 @include theme-dark {
   --ion-background-color: #{$bg-dark};
 }
+
+.ion-color-Ecommerce{
+  --ion-color-base: var(--ion-color-ecommerce) !important;
+  --ion-color-filter: var(--ion-color-ecommerce-filter) !important;
+}
+
+.ion-color-induacril{
+  --ion-color-base: var(--ion-color-induacril) !important;
+  --ion-color-filter: var(--ion-color-induacril-filter) !important;
+}
+
