@@ -7,6 +7,7 @@ import { ConfirmarPedidoModule } from './confirmar-pedido/confirmar-pedido.modul
 import { HomeComponent } from './home/home.component';
 import { StorePickupModule } from './store-pickup/store-pickup.module';
 import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
     CustomerRoutingModule,
     ConfirmarPedidoModule,
     StorePickupModule,
-    DeliveryDetailModule
+    DeliveryDetailModule,
   ],
   declarations:[
     HomeComponent

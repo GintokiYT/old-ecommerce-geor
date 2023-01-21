@@ -7,6 +7,7 @@ import { DateComponent } from './date/date.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { DirectionComponent } from './direction/direction.component';
 import { IonicModule } from '@ionic/angular';
+import { CustomerRoutingModule } from '../customer.routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { IonicModule } from '@ionic/angular';
                 DeliveryComponent,DirectionComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    CustomerRoutingModule
   ],
   exports:[
     AlertComponent,BuyComponent,ContactComponent,DateComponent,
