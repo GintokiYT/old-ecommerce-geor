@@ -1,0 +1,42 @@
+
+button{
+    background-color: transparent;
+}
+
+ion-toolbar{
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+    --min-height: 0px;
+    --padding-top: 56px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-bottom: 40px
+}
+
+@media(max-width:320px){
+    ion-toolbar{
+        --padding-top: 32px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 24px
+}}
+
+ion-title{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+ion-content {
+    // Eliminar scroll de la
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+
+ion-button {
+    --ion-color-primary: #023AFF;
+   margin: 475px 24px 48px 24px;
+}
