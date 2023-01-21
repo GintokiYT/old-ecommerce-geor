@@ -4,7 +4,7 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "dev": "ionic serve -o port=3000 --lab",
+    "dev": "ionic serve port=3000 --external --lab",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

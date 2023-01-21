@@ -50,6 +50,7 @@ export class MainInboxComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.setItem('mode', 'light');
   }
 
   onActive(id: string) {
