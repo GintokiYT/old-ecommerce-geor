@@ -6,6 +6,7 @@ import { DateComponent } from './delivery-detail/date/date.component';
 import { ContactComponent } from './delivery-detail/contact/contact.component';
 import { BuyComponent } from './delivery-detail/buy/buy.component';
 import { DeliveryComponent } from './delivery-detail/delivery/delivery.component';
+import { AlertComponent } from './delivery-detail/alert/alert.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: 'contact', component:ContactComponent},
       { path: 'buy', component:BuyComponent},
       { path: 'delivery', component:DeliveryComponent},
+      { path: 'alert', component:AlertComponent},
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' }
     ]

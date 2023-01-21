@@ -1,6 +1,5 @@
 button{
     background-color: transparent;
-    margin: 0px 0px 0px 24px;
 }
 
 ion-toolbar{
@@ -26,6 +25,10 @@ ion-title{
     text-align: center;
 }
 
+ion-label {
+  font-size: 15px;
+}
+
 ion-content {
     // Eliminar scroll de la
     --overflow: hidden;
@@ -33,8 +36,7 @@ ion-content {
     &::-webkit-scrollbar {
       display: none;
     }
-    --padding-start: 24px;
-    --padding-end: 24px;
+   margin: 0px 24px 0px 24px;
   }
 
   ion-button {

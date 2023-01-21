@@ -1,7 +1,6 @@
 button{
     background-color: transparent;
-    margin: 0px 24px 0px 24px;
-}
+    }
 
 ion-toolbar{
     --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
@@ -38,10 +37,6 @@ ion-content {
 ion-button {
     --ion-color-primary: #023AFF;
    margin: 475px 24px 48px 24px;
-}
-
-ion-item {
-    margin: 0px 24px 0px 24px;
 }
 
 ion-fab {

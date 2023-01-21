@@ -9,6 +9,7 @@ import { DateComponent } from './delivery-detail/date/date.component';
 import { ContactComponent } from './delivery-detail/contact/contact.component';
 import { BuyComponent } from './delivery-detail/buy/buy.component';
 import { DeliveryComponent } from './delivery-detail/delivery/delivery.component';
+import { AlertComponent } from './delivery-detail/alert/alert.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { DeliveryComponent } from './delivery-detail/delivery/delivery.component
     DateComponent,
     ContactComponent,
     BuyComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    AlertComponent
   ]
 })
 export class CustomerModule {}
