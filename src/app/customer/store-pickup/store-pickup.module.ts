@@ -5,6 +5,8 @@ import { StoreMapComponent } from './store-map/store-map.component';
 import { StoresComponent } from './stores/stores.component';
 import { IonicModule } from '@ionic/angular';
 import { StorePickupComponent } from './store-pickup.component';
+import { CustomerRoutingModule } from '../customer.routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,7 +14,8 @@ import { StorePickupComponent } from './store-pickup.component';
   declarations: [HeaderComponent,StoreMapComponent,StoresComponent,StorePickupComponent],
   imports: [
     IonicModule,
-    CommonModule
+    CommonModule,
+    CustomerRoutingModule,
   ],
   exports:[
     HeaderComponent,StoreMapComponent,StoresComponent,StorePickupComponent
