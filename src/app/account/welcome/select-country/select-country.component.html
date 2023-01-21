@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <img
+      src="assets/images/bienvenida.svg"
+      alt="Placeholder"
+      class="img-fluid"
+      width="300"
+    />
+  </div>
+</ion-content>
+<ion-footer>
+  <form (submit)="onSubmit()" [formGroup]="selectCountryForm">
+    <div class="ion-padding">
+      <h5 class="text-big fw-bold">¡Bienvenido!</h5>
+      <p class="text-secondary mb-0">Elige el país donde quieres comprar</p>
+    </div>
+    <ion-radio-group formControlName="country_id" class="d-block">
+      <ion-item *ngFor="let country of countries; index as i" lines="none">
+        <ion-label>
+          <div class="d-flex ion-align-items-center">
+            <img src="{{ country.flag }}" width="24" class="img-fluid me-3" />
+            <span class="ml-3">{{ country.name }}</span>
+          </div>
+        </ion-label>
+        <ion-radio slot="end" color="medium" [value]="country.id"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <div class="ion-padding">
+      <ion-button
+        expand="block"
+        color="primary"
+        shape="round"
+        type="submit"
+        [disabled]="isEmptyForm"
+        >Confirmar</ion-button
+      >
+    </div>
+  </form>
+</ion-footer>

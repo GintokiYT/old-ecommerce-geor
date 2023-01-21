@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <div id="container" class="mt-5">
+    <img
+      src="assets/images/mi-posicion.svg"
+      alt="Donde te encuentras"
+      class="img-fluid"
+      width="170"
+    />
+  </div>
+</ion-content>
+<ion-footer class="ion-padding">
+  <p class="text-black fw-semibold mb-3">Cuentanos dónde te encuentras</p>
+  <p class="text-secondary mb-3">
+    Esto nos ayudará a ofrecerte productos disponibles para tu ubicación
+  </p>
+  <ion-button expand="block" color="primary" shape="round" (click)="onSubmit()"
+    >Confirmar</ion-button
+  >
+</ion-footer>
