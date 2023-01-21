@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CustomerRoutingModule } from './customer.routing.module';
-
 import { ConfirmarPedidoModule } from './confirmar-pedido/confirmar-pedido.module';
 import { HomeComponent } from './home/home.component';
 import { StorePickupModule } from './store-pickup/store-pickup.module';
+import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { StorePickupModule } from './store-pickup/store-pickup.module';
     IonicModule,
     CustomerRoutingModule,
     ConfirmarPedidoModule,
-    StorePickupModule
+    StorePickupModule,
+    DeliveryDetailModule
   ],
   declarations:[
     HomeComponent
