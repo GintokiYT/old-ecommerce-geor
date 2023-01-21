@@ -38,6 +38,7 @@
 
             ion-label{
                 margin:0px;
+                margin-bottom: 24px !important;
             }
 
             .fz-small{
@@ -54,8 +55,10 @@
                 font-size: 12px;
                 line-height: 15px;
                 color: #023AFF;
-                margin: 10px 0 24px 0 !important;
+                text-decoration: none;
+                padding-top: 10px !important;
             }
+            
             
         }
 

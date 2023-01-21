@@ -1,6 +1,4 @@
 <app-header title="Tiendas"></app-header>
-<ion-content>
-
 <div class="content">
   <div class="alert">
     <ion-item lines="none" >
@@ -13,12 +11,12 @@
   </div>
 
   <div class="checkbox">
-    <ion-item lines="none" detail="false" routerLink="/customer/store-map">
+    <ion-item lines="none" detail="false" >
       <ion-checkbox slot="end" mode="ios"></ion-checkbox>
       <ion-label class="ion-text-wrp">
         <p class="fz-small">Induacril Miraflores</p>
-        <p class="fz-note ">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
-        <p class="to-get ">Como llegar </p>
+        <p class="fz-note">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
+        <a class="to-get" href="/customer/store-map"> Como llegar</a>
       </ion-label>
     </ion-item>
   
@@ -27,7 +25,7 @@
       <ion-label class="ion-text-wrp">
         <p class="fz-small">Induacril Chorrillos</p>
         <p class="fz-note ">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
-        <p class="to-get">Como llegar</p>
+        <a class="to-get" href="/customer/store-map"> Como llegar</a>
       </ion-label>
     </ion-item>
 
@@ -36,15 +34,13 @@
       <ion-label class="ion-text-wrp">
         <p class="fz-small">Induacril Miraflores</p>
         <p class="fz-note">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
-        <p class="to-get">Como llegar</p>
+        <a class="to-get" href="/customer/store-map"> Como llegar</a>
       </ion-label>
     </ion-item>
   </div>
-
+   
   <div >
     <ion-button color="primary" shape="round" expand="block"
       >Usar tienda</ion-button>
   </div>
 </div>
-
-</ion-content>
