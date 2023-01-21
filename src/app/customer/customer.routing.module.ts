@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { StorePickupComponent } from './store-pickup/store-pickup.component';
+import { StoreMapComponent } from './store-pickup/store-map/store-map.component';
+import { StoresComponent } from './store-pickup/stores/stores.component';
+
 import { ConfirmarPedidoComponent } from './confirmar-pedido/confirmar-pedido.component';
 
 const routes: Routes = [
@@ -8,9 +12,12 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'store-pickup', component:StorePickupComponent },
+      { path: 'store-map', component:StoreMapComponent },
+      { path: 'stores', component:StoresComponent },
       { path: 'confirmar-pedido', component: ConfirmarPedidoComponent },
       { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: '**', redirectTo: 'home' }
+      { path: '**', redirectTo: 'home' },
     ]
   }
 ];
