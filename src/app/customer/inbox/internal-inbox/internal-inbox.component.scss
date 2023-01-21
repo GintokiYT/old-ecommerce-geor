@@ -11,6 +11,10 @@ img {
 // Header
 .chat-header {
   padding: 24px 16px 4px 16px;
+
+  @media (min-width: 390px) {
+    padding: 24px 24px 4px 24px;
+  }
 }
 
 .chat-ion-toolbar {
@@ -56,12 +60,14 @@ img {
 .content-messages {
   width: 100%;
   max-width: calc(100% - 32px);
-  margin: 0 auto;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin: 24px auto 0 auto;
   display: flex;
   flex-direction: column;
   gap: 29px;
+
+  @media (min-width: 390px) {
+    max-width: calc(100% - 48px);
+  }
 }
 
 .message-business {
@@ -80,9 +86,9 @@ img {
   gap: 8px;
 
   .logo {
-    width: 24px;
-    height: 24px;
-    margin-top: 10px;
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
 
     img {
       width: 100%;
@@ -113,6 +119,7 @@ img {
     display: block;
     text-align: left;
     margin-top: 4px;
+    margin-left: 10px;
     color: rgba(0, 0, 0, 0.38);
     font-size: 12px;
   }
@@ -121,7 +128,46 @@ img {
     display: block;
     text-align: right;
     margin-top: 4px;
+    margin-right: 10px;
     color: rgba(0, 0, 0, 0.38);
     font-size: 12px;
+  }
+}
+
+// Footer
+.ion-footer {
+  border-top: 1px solid #F5F5F5;
+}
+
+.input-message {
+  padding: 16px 16px 24px 16px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.content-footer__items {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 16px 24px 16px;
+}
+
+.content-footer__items-icons {
+  display: flex;
+  gap: 32px;
+
+  svg {
+    font-size: 24px;
+  }
+}
+
+.content-footer__items-icon-send {
+  display: none;
+  svg {
+    font-size: 24px;
   }
 }

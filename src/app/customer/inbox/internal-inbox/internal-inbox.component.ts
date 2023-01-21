@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AppThemeService, ViewComponent } from '@geor360/ecore';
 
 interface Message {
   id: string;
@@ -16,7 +17,28 @@ interface Message {
   templateUrl: './internal-inbox.component.html',
   styleUrls: ['./internal-inbox.component.scss']
 })
-export class InternalInboxComponent implements OnInit {
+export class InternalInboxComponent extends ViewComponent implements OnInit {
+
+  @ViewChild('messageInput') messageInput: ElementRef;
+  @ViewChild('contentInput') contentInput: ElementRef;
+
+  @ViewChildren('elementRef') elementRefs: QueryList<ElementRef>;
+
+
+  ngAfterViewInit() {
+    this.messageInput.nativeElement.addEventListener('focus', () => {
+      this.contentInput.nativeElement.style.display = "flex"
+    });
+    this.messageInput.nativeElement.addEventListener('blur', () => {
+      if(this.contentMessage.message.content.length === 0) {
+        this.contentInput.nativeElement.style.display = "none"
+      }
+    });
+
+    this.elementRefs.changes.subscribe(()=>{
+      this.elementRefs.last.nativeElement.scrollIntoView({behavior: 'smooth'});
+    });
+  }
 
   messages: Message [] = [
     {
@@ -133,9 +155,85 @@ export class InternalInboxComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  contentMessage: Message = {
+    id: '',
+    time: '',
+    author: '',
+    image: '',
+    message: {
+      type: 'text',
+      content: ''
+    }
+  }
+
+  private themeService: AppThemeService;
+
+  constructor(_injector: Injector) {
+    super(_injector);
+    this.themeService = _injector.get(AppThemeService);
+  }
 
   ngOnInit() {
   }
 
+  backMainInbox() {
+    this.navigation.root('/customer/main-inbox', 'back');
+  }
+
+  enviarMessage() {
+
+    let tiempoActual = '';
+
+    let currentTime: any = new Date();
+    let hours: any = currentTime.getHours();
+    let minutes: any = currentTime.getMinutes();
+
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    if(hours > 12) {
+      tiempoActual = `${hours - 12}:${minutes} pm`;
+    } else {
+      tiempoActual = `${hours}:${minutes} am`;
+    }
+
+    let uuid = self.crypto.randomUUID();
+
+    let messageActual = this.contentMessage.message.content;
+
+    if(this.contentMessage.message.content.length > 0){
+      console.log('Mensaje enviado')
+
+      this.contentMessage = {
+        id: uuid,
+        time: tiempoActual,
+        author: 'user',
+        image: '',
+        message: {
+          type: 'text',
+          content: messageActual
+        }
+      }
+
+      this.messages.push(this.contentMessage);
+
+      this.contentInput.nativeElement.style.display = "none";
+
+      this.contentMessage = {
+        id: '',
+        time: '',
+        author: '',
+        image: '',
+        message: {
+          type: 'text',
+          content: ''
+        }
+      }
+    }
+  }
+
+  openTelf() {
+    this.navigation.root('/customer/telefono', 'forward');
+  }
 }

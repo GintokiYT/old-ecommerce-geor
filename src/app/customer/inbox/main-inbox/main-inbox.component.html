@@ -9,7 +9,7 @@
     <div
       class="inbox-ion-item"
       *ngFor="let email of emails"
-      [routerLink]="'/internal-chat/'+ email.id "
+      (click)="openInternalBox(email.id)"
     >
       <div class="ion-image">
         <img [src]="email.image" alt="Avatar">
