@@ -17,6 +17,11 @@ import { TelefonoComponent } from './telefono/telefono.component';
     MainInboxComponent,
     InternalInboxComponent,
     TelefonoComponent
+  ],
+  exports:[
+    MainInboxComponent,
+    InternalInboxComponent,
+    TelefonoComponent
   ]
 })
 export class InboxModule {}
