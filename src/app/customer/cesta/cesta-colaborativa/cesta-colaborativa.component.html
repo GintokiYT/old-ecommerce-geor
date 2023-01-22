@@ -7,7 +7,11 @@
         <ion-item-sliding>
           <ion-item lines="none">
             <ion-label class="box-select">
-              <ion-checkbox class="checkbox" value="{{chk01}}" slot="start"></ion-checkbox>
+              <ion-checkbox
+                class="checkbox"
+                value="{{ chk01 }}"
+                slot="start"
+              ></ion-checkbox>
               <div class="box d-flex flex-column">
                 <div class="box-name d-flex flex-row">
                   <div>
@@ -16,8 +20,8 @@
                       alt=""
                     />
                   </div>
-                  <p class="text-information">
-                    <span class="number">S/9,780.00</span> <br />
+                  <p class="text-information fz-medium">
+                    <span class="number fz-small">S/9,780.00</span> <br />
                     Plancha de bicarbonato <br />
                     pulveriza zado lorem ipsum <br />
                     lorem iprsum
@@ -32,7 +36,7 @@
                       alt="icono"
                     />
                     <p class="number-signo">
-                      -<span class="number-2">10,503</span>+
+                      -<span class="number-2 fz-small">10,503</span>+
                     </p>
                   </div>
                 </div>
@@ -54,7 +58,6 @@
     </div>
   </div>
   <app-modal-cesta></app-modal-cesta>
-
 </ion-content>
 
 <ion-footer class="ion-no-border">
@@ -69,11 +72,11 @@
           <p>S/ 45,789.00</p>
         </div>
       </div>
-      <ion-button expand="block" shape="round"> Ir a pagar </ion-button>
+      <ion-button expand="block" color="primary" shape="round"
+        >Ir a pagar</ion-button
+      >
     </div>
-
     <!-- <app-footer></app-footer> -->
   </ion-toolbar>
   <app-footer-cesta></app-footer-cesta>
 </ion-footer>
-

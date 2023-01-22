@@ -25,35 +25,29 @@ ion-checkbox::part(container) {
   display: flex;
   flex-direction: row;
   gap: 26px;
-
-
 }
+
 .hydrated {
   margin: 0px !important;
 }
 
-.text-second {
-  font-size: 16px;
-  /*  Trabajar asi */
-  color: rgba(var(--ion-color-dark-rgb), 0.6);
-}
 .box {
   gap: 48px;
 }
-.description p {
-  color: rgba(var(--ion-color-dark-rgb), 0.6);
 
+.description p {
+  /*  Trabajar asi */
+  color: rgba(var(--ion-color-dark-rgb), 0.6);
 }
+
 .number {
   line-height: 22px;
   color: rgba(0, 0, 0, 1);
-  font-size: 14px;
 }
 
 .text-information {
   color: rgba(0, 0, 0, 0.6);
   line-height: 24px;
-  font-size: 16px;
 }
 .img-delete {
   padding: 33.67px 13.13px;
@@ -88,7 +82,6 @@ ion-button {
 .number-2 {
   line-height: 22px;
   color: rgba(0, 0, 0, 1);
-  font-size: 14px;
   margin-left: 8px;
   margin-right: 8px;
 }
@@ -99,18 +92,18 @@ ion-button {
   background-color: aqua !important;
   margin-bottom: 40px !important;
 }
-.div.item-native{
+.div.item-native {
   padding-left: 0px !important;
 }
 
-.Contenido{
-padding-right: 14px;
-padding-left: 4px;
-padding-bottom:40px;
-/* background-color: #023aff; */
+.Contenido {
+  padding-right: 0px;
+  padding-left: 4px;
+  padding-bottom: 40px;
+  /* background-color: #023aff; */
 }
 
-ion-toolbar{
+ion-toolbar {
   --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
   padding-left: 24px;
   padding-right: 24px;
