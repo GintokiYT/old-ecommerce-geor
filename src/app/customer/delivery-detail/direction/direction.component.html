@@ -1,0 +1,66 @@
+<ion-content>
+
+  <ion-header class="ion-no-border">
+
+    <ion-toolbar>
+      <button (click)="goBack()" slot="start">
+        <img src="/assets/icons/icon-close.svg" width="12px"/>
+      </button>
+      <ion-title>Mis direcciones</ion-title>
+      <button slot="end">
+        <img src="/assets/icons/icon-delete.svg" />
+      </button>
+    </ion-toolbar>
+
+  </ion-header>
+
+  <ion-item lines="none" style="margin-top: 0px;">
+    <div class="elementos">
+      <ion-checkbox 
+          slot="start"
+          [(ngModel)]="data[0].selected" 
+          (ngModelChange)="checkBoxSelect(data[0].direction)"
+      >
+      </ion-checkbox>
+      <ion-label class="ion-text-wrap">
+        <h3 style="margin-bottom: 12px;"> Jr. Samaritanos 879 Miraflores, Lima,<br /> Lima, Perú</h3>
+        <p>Editar</p>
+      </ion-label>
+    </div>
+  </ion-item>
+
+  <ion-item lines="none">
+    <div class="elementos">
+      <ion-checkbox 
+          slot="start"
+          [(ngModel)]="data[1].selected" 
+          (ngModelChange)="checkBoxSelect(data[1].direction)"
+      >
+    </ion-checkbox>
+      <ion-label class="ion-text-wrap">
+        <h3 style="margin-bottom: 12px;">Jr. Enrique Segobiano 879 Miraflores,<br /> Lima, Lima, Perú</h3>
+        <p>Editar</p>
+      </ion-label>
+    </div>
+  </ion-item>
+
+  <ion-item lines="none">
+    <img src="/assets/icons/icon-plus.svg" slot="start" />
+    <ion-label color="primary">Nueva dirección</ion-label>
+  </ion-item>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button 
+      color="primary" 
+      expand="block" 
+      shape="round"
+      (click)="establecerDireccion()"
+      >
+      Confirmar
+    </ion-button>  
+  </ion-toolbar>
+</ion-footer>

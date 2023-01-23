@@ -1,39 +1,39 @@
 <!-- ENVIO A DOMICILIO -->
 <div class="dejar-pedido" *ngIf="envioADomicilio">
-  <ion-label class="lugar-pedido">
-      {{pedido}}
-  </ion-label>
-  <div class="contenedor-info-pedido">
-      <div class="info-pedido">
-          <img src="/assets/icons/icon-truck.svg" />
-          <ion-label>Llega el 26 dic, 8:00am - 9:00am</ion-label>
-      </div>
-      <div class="info-pedido">
-          <img src="/assets/images/gerardo.png" height="32px" />
-          <div class="info-pedido-destinatario">
-              <ion-label>Wilfredo</ion-label>
-              <ion-label>Recibirá el pedido</ion-label>
-          </div>
-      </div>
-      <div class="info-pedido">
-          <img src="/assets/icons/icon-danger.svg" />
-          <ion-label>Requisitos para la entrega</ion-label>
-      </div>
-  </div>
+    <ion-label (click)="goTo('/customer/direction')" class="lugar-pedido">
+        {{cpService.miPedido.detallesEntregaADomicilio.direction}}
+    </ion-label>
+    <div class="contenedor-info-pedido">
+        <div class="info-pedido">
+            <img src="/assets/icons/icon-truck.svg" />
+            <ion-label (click)="goTo('/customer/date')">Llega el 26 dic, 8:00am - 9:00am</ion-label>
+        </div>
+        <div class="info-pedido" (click)="goTo('/customer/contact','/customer/buy')">
+            <img src="/assets/images/gerardo.png" height="32px" />
+            <div class="info-pedido-destinatario">
+                <ion-label>Wilfredo</ion-label>
+                <ion-label>Recibirá el pedido</ion-label>
+            </div>
+        </div>
+        <div class="info-pedido" (click)="goTo('/customer/delivery')">
+            <img src="/assets/icons/icon-danger.svg" />
+            <ion-label>Requisitos para la entrega</ion-label>
+        </div>
+    </div>
 </div>
 
 
 <!-- RECOJO EN TIENDA -->
 <div class="dejar-pedido" *ngIf="recojoTienda">
-    <ion-label class="lugar-pedido">
-        ¿Donde recojeras tu pedido?
+    <ion-label (click)="goTo('/customer/stores')" class="lugar-pedido">
+        {{cpService.miPedido.detallesEntregaATienda.direction}}
     </ion-label>
     <div class="contenedor-info-pedido">
         <div class="info-pedido" style="display: none;">
             <img src="/assets/icons/icon-truck.svg" />
             <ion-label>Llega el 26 dic, 8:00am - 9:00am</ion-label>
         </div>
-        <div class="info-pedido">
+        <div class="info-pedido" (click)="goTo('/customer/contact','/customer/buy')">
             <img src="/assets/images/gerardo.png" height="32px" />
             <div class="info-pedido-destinatario">
                 <ion-label>Wilfredo</ion-label>
@@ -46,4 +46,3 @@
         </div>
     </div>
 </div>
-

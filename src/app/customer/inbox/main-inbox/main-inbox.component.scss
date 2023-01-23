@@ -1,0 +1,125 @@
+*,*::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+// Content
+.inbox-ion-list {
+  width: 100%;
+  max-width: calc(100% - 32px);
+  margin: 24px auto 74px auto;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 390px) {
+    max-width: calc(100% - 48px);
+    gap: 32px;
+  }
+}
+
+.inbox-ion-item {
+  display: flex;
+  gap: 12px;
+}
+
+.ion-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ion-detail {
+  width: calc(100% - 48px - 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @media (min-width: 390px) {
+    gap: 8px;
+  }
+}
+
+.ion-detail .ion-detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  height: 24px;
+
+  .ion-detail__header--title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ion-color-basic);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+  }
+
+  .ion-detail__header--info {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--ion-color-disabled);
+  }
+}
+
+.ion-detail .ion-detail__content {
+  display: flex;
+  align-items: center;
+  height: 16px;
+
+  .ion-detail__content--description {
+    font-size: 12px;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--ion-color-secondary);
+
+    @media(min-width: 390px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.ion-detail .ion-detail__footer {
+  display: flex;
+  align-items: center;
+  height: 16px;
+
+  .ion-detail__footer--description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--ion-color-secondary);
+
+    .user-tag {
+      color: var(--ion-color-induacril);
+    }
+
+    @media(min-width: 390px) {
+      font-size: 14px;
+    }
+  }
+}
+
+// Remover el scroll del ion-content
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto! important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

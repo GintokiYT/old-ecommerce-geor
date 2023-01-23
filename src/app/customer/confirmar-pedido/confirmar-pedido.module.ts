@@ -8,6 +8,8 @@ import { SliderProductosComponent } from './slider-productos/slider-productos.co
 import { IonicModule } from '@ionic/angular';
 import { ConfirmarPedidoComponent } from './confirmar-pedido.component';
 import { ResumenPedidoComponent } from './resumen-pedido/resumen-pedido.component';
+import { CustomerRoutingModule } from '../customer.routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,7 +18,7 @@ import { ResumenPedidoComponent } from './resumen-pedido/resumen-pedido.componen
                 HeaderComponent,SliderProductosComponent,ConfirmarPedidoComponent,
               ResumenPedidoComponent],
   imports: [
-    CommonModule,IonicModule
+    CommonModule,IonicModule, CustomerRoutingModule, RouterModule
   ],
   exports:[
     DejarPedidoComponent,DetallesEntregaComponent,FooterComponent,

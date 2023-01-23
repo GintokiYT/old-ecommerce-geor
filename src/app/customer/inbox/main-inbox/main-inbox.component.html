@@ -1,0 +1,32 @@
+<app-header-main></app-header-main>
+
+<ion-content>
+  <ion-list class="inbox-ion-list">
+    <div
+      class="inbox-ion-item"
+      *ngFor="let email of emails"
+      (click)="openInternalBox(email.id)"
+    >
+      <div class="ion-image">
+        <img [src]="email.image" alt="Avatar">
+      </div>
+      <div class="ion-detail">
+        <div class="ion-detail__header">
+          <h3 class="ion-detail__header--title">{{ email.title }}</h3>
+          <span class="ion-detail__header--info">{{ email.time }}</span>
+        </div>
+        <div class="ion-detail__content">
+          <p class="ion-detail__content--description">{{ email.description }}</p>
+        </div>
+        <div class="ion-detail__footer" *ngIf="email.sender">
+          <p class="ion-detail__footer--description">
+            De <span class="user-tag ion-color-induacril">{{ email.sender }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+
+</ion-content>
+
+<app-footer-main></app-footer-main>
