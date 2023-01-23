@@ -27,11 +27,10 @@
                     lorem iprsum
                   </p>
                 </div>
-
                 <div class="description fz-note d-flex flex-column">
                   <p>Mostaza, 120x150 cm, 25 mm</p>
                   <div class="d-flex flex-row justify-content-between">
-                    <img
+                    <img (click)="eliminar()"
                       src="/assets/collaborative-basquet/Delete 02.svg"
                       alt="icono"
                     />
@@ -56,7 +55,10 @@
         </ion-item-sliding>
       </ion-list>
     </div>
+
   </div>
+  <app-producto></app-producto>
+
   <app-modal-cesta></app-modal-cesta>
 </ion-content>
 
@@ -72,10 +74,10 @@
           <p>S/ 45,789.00</p>
         </div>
       </div>
-      <ion-button expand="block" color="primary" shape="round"
-        >Ir a pagar</ion-button
-      >
+      <ion-button expand="block" color="primary" shape="round"> Ir a pagar</ion-button >
+
     </div>
+
     <!-- <app-footer></app-footer> -->
   </ion-toolbar>
   <app-footer-cesta></app-footer-cesta>

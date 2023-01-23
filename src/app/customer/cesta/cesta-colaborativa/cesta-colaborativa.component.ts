@@ -23,6 +23,10 @@ export class CestaColaborativaComponent extends ViewComponent implements OnInit 
     this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
     },'Cancelar','Eliminar')
   }
+  eliminar(){
+    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
+    },'Cancelar','Eliminar')
+  }
 
   seleccionar(){
     if(this.chkmain){

@@ -10,6 +10,7 @@ import { HeaderMiCestaComponent } from './mi-cesta/header-mi-cesta/header-mi-ces
 import { MiCestaComponent } from './mi-cesta/mi-cesta.component';
 import { ModalMiCestaComponent } from './mi-cesta/modal-mi-cesta/modal-mi-cesta.component';
 import { IonicModule } from '@ionic/angular';
+import { ProductoComponent } from './cesta-colaborativa/producto/producto.component';
 
 
 
@@ -23,7 +24,9 @@ import { IonicModule } from '@ionic/angular';
     MiCestaComponent,
     HeaderMiCestaComponent,
     ModalMiCestaComponent,
-    FooterCestaComponent
+    FooterCestaComponent,
+    ProductoComponent
+
   ],
   imports: [
     CommonModule,
@@ -34,7 +37,8 @@ import { IonicModule } from '@ionic/angular';
     HeaderEquiposComponent,
     ModalCestaComponent,
     HeaderMiCestaComponent,
-    FooterCestaComponent
+    FooterCestaComponent,
+    ProductoComponent
   ]
 })
 export class CestaModule { }

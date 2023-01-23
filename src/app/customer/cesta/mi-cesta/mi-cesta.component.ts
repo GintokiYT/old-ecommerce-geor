@@ -19,4 +19,9 @@ export class MiCestaComponent extends ViewComponent implements OnInit {
     },'Cancelar','Eliminar')
   }
 
+  eliminar(){
+    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
+    },'Cancelar','Eliminar')
+  }
+
 }

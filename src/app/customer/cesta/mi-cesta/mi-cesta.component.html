@@ -26,7 +26,7 @@
                 <div class="description fz-note d-flex flex-column">
                   <p>Mostaza, 120x150 cm, 25 mm</p>
                   <div class="d-flex flex-row justify-content-between">
-                    <img
+                    <img (click)="eliminar()"
                       src="/assets/collaborative-basquet/Delete 02.svg"
                       alt="icono"
                     />
@@ -52,6 +52,8 @@
       </ion-list>
     </div>
   </div>
+
+  <app-producto></app-producto>
   <app-modal-cesta></app-modal-cesta>
 
 </ion-content>

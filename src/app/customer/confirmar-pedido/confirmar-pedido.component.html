@@ -1,0 +1,60 @@
+<ion-content>
+
+    <!-- Header -->
+    <app-header title="Mi pedido"></app-header>
+
+    <!-- Componente detalles de entrega -->
+    <app-detalles-entrega
+        [envioADomicilio]="envioADomicilio" 
+        [recojoTienda]="recojoTienda"
+        (onChangeOption)="cambiarOpciones($event)"
+    ></app-detalles-entrega>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- Componente dejar pedido -->
+        <app-dejar-pedido
+            [envioADomicilio]="envioADomicilio" 
+            [recojoTienda]="recojoTienda"
+        ></app-dejar-pedido>
+
+
+        <!-- Métodos de pago -->
+        <div class="contenedor-metodos-pago">
+            <ion-label>Métodos de pago</ion-label>
+            <div class="metodos">
+                <div class="d-flex">
+                    <img class="asdf" src="/assets/icons/icon-danger.svg" />
+                    <ion-label color="induacril">Aún no eliges como pagar</ion-label>
+                </div>
+                <img src="/assets/icons/icon-arrow-right.svg" />
+            </div>
+            <!-- Cupón -->
+            <div class="contenedor-cupon">
+                <img src="/assets/icons/icon-ticket.svg">
+                <ion-label>Agregar cupón</ion-label>
+            </div>
+        </div>
+
+        <!-- Resumen del pedido -->
+        <app-resumen-pedido></app-resumen-pedido>
+
+        <!-- Datos de facturacion -->
+        <div class="contenedor-datos-facturacion">
+            <ion-label (click)="Click()">Datos de facturación</ion-label>
+            <div class="datos">
+                <ion-label>Agrega tu compañía</ion-label>
+                <img src="/assets/icons/icon-arrow-right.svg" />
+            </div>
+        </div>
+
+        <!-- Slider de productos -->
+        <app-slider-productos></app-slider-productos>
+        
+    </div>
+
+</ion-content>
+
+<!-- Footer -->
+<app-footer></app-footer>
