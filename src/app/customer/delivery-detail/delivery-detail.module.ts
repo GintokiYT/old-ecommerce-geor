@@ -8,6 +8,7 @@ import { DeliveryComponent } from './delivery/delivery.component';
 import { DirectionComponent } from './direction/direction.component';
 import { IonicModule } from '@ionic/angular';
 import { CustomerRoutingModule } from '../customer.routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { CustomerRoutingModule } from '../customer.routing.module';
   imports: [
     CommonModule,
     IonicModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    FormsModule
   ],
   exports:[
     AlertComponent,BuyComponent,ContactComponent,DateComponent,

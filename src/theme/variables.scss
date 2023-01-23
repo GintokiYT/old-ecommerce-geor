@@ -85,15 +85,6 @@
   --ion-color-light-shade: #8b8b8b;
   --ion-color-light-tint: #a8a8a8;
 
-  /** Estándar ecommerce **/
-  --ion-color-induacril: #023AFF;
-  --ion-color-induacril-filter: brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
-
-  /** Induacril **/
-  // --ion-color-induacril: #AA376A;
-  // --ion-color-induacril-filter: brightness(0) saturate(100%) invert(30%) sepia(29%) saturate(2851%) hue-rotate(297deg) brightness(86%) contrast(87%);
-
-
   
 }
   
@@ -283,12 +274,74 @@ body {
 }
 
 
-.ion-color-ecommerce{
-  --ion-color-base: var(--ion-color-ecommerce) !important;
-  --ion-color-filter: var(--ion-color-ecommerce-filter) !important;
+
+// Variables Scss(Frank P.)
+@include theme-light{
+  --ion-background-color: #{$white};
+  --ion-color-primary: #{$primary};
+  --ion-filter-primary: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(4223%) hue-rotate(231deg) brightness(101%) contrast(118%);
+
+  --ion-textPrimary-color : #{$black};
+  --ion-textLight-color: #00000061;
+
+  --ion-borderNotSelected-color : #F5F5F5;
+  --ion-parraphNotSelected-color : #00000061;
+  --ion-filterNotSelected-color : unset;
+  --ion-borderSelected-color : #{$primary};
+  --ion-parraphSelected-color : #{$primary};
+  --ion-filterSelected-color : brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
+
+
+  --ion-truckFilter-color: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(5747%) hue-rotate(104deg) brightness(103%) contrast(108%);;
+  --ion-dangerFilter-color: unset;
+
+
+  --ion-cuponBg-color : #FAFAFA;
+  --ion-filterTicket-color: unset;
+  --ion-arrowRightFilter-color: unset;
+  --ion-arrowLeftFilter-color: unset;
+
+  --ion-chatFilter-color : unset;
+
 }
 
-.ion-color-induacril{
-  --ion-color-base: var(--ion-color-induacril) !important;
-  --ion-color-filter: var(--ion-color-induacril-filter) !important;
+
+
+
+@include theme-dark{
+  --ion-background-color: #{$bg-dark};
+  --ion-color-primary: #{$primary};
+  --ion-filter-primary: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(4223%) hue-rotate(231deg) brightness(101%) contrast(118%);
+
+  --ion-textPrimary-color : #{$white};
+  --ion-textLight-color: #FFFFFF66;
+
+  --ion-borderNotSelected-color : #1B1F3C;
+  --ion-parraphNotSelected-color : #1B1F3C;
+  --ion-filterNotSelected-color : brightness(0) saturate(100%) invert(11%) sepia(10%) saturate(3338%) hue-rotate(195deg) brightness(98%) contrast(96%);
+  --ion-borderSelected-color: #{$primary};
+  --ion-parraphSelected-color: #{$primary};
+  --ion-filterSelected-color: brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
+
+
+  --ion-truckFilter-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
+  --ion-dangerFilter-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
+
+
+  --ion-cuponBg-color : #1B1F3C;
+  --ion-filterTicket-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
+  --ion-arrowRightFilter-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
+  --ion-arrowLeftFilter-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
+
+  --ion-chatFilter-color : brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
+
 }
+
+
+
+
+
+
+
+
+
