@@ -1,0 +1,66 @@
+// Footer
+.inbox-ion-footer {
+  border-top: 1px solid rgba(245, 245, 245, 1);
+  padding: 8px 16px 16px 16px;
+  background: #fff;
+  --min-height: unset;
+
+  .inbox-footer__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inbox-footer__content--item {
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .inbox-footer__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inbox-footer__image svg {
+    font-size: 24px;
+  }
+
+  .inbox-footer__name p {
+    font-size: 10px;
+    font-weight: 400px;
+    color: #000;
+  }
+
+  @media (min-width: 390px) {
+    padding: 10px 24px 16px 24px;
+  }
+}
+
+.inbox-footer__content .active {
+
+  .icon-home * {
+    fill:rgba(0, 55, 255, 1);
+  }
+
+  .icon-search * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .icon-chat * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .icon-buy * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .icon-profile * {
+    stroke:rgba(0, 55, 255, 1);
+  }
+
+  .inbox-footer__name p {
+    color:rgba(0, 55, 255, 1);
+  }
+}

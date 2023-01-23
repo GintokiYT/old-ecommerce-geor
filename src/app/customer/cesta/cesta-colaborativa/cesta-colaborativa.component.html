@@ -1,0 +1,84 @@
+<ion-content [fullscreen]="true">
+  <app-header-cesta></app-header-cesta>
+  <!-- <app-header-basquets></app-header-basquets> -->
+  <div class="Contenido">
+    <div class="aver2">
+      <ion-list>
+        <ion-item-sliding>
+          <ion-item lines="none">
+            <ion-label class="box-select">
+              <ion-checkbox
+                class="checkbox"
+                value="{{ chk01 }}"
+                slot="start"
+              ></ion-checkbox>
+              <div class="box d-flex flex-column">
+                <div class="box-name d-flex flex-row">
+                  <div>
+                    <img
+                      src="/assets/collaborative-basquet/Rectangle 1600.png"
+                      alt=""
+                    />
+                  </div>
+                  <p class="text-information fz-medium">
+                    <span class="number fz-small">S/9,780.00</span> <br />
+                    Plancha de bicarbonato <br />
+                    pulveriza zado lorem ipsum <br />
+                    lorem iprsum
+                  </p>
+                </div>
+                <div class="description fz-note d-flex flex-column">
+                  <p>Mostaza, 120x150 cm, 25 mm</p>
+                  <div class="d-flex flex-row justify-content-between">
+                    <img (click)="eliminar()"
+                      src="/assets/collaborative-basquet/Delete 02.svg"
+                      alt="icono"
+                    />
+                    <p class="number-signo">
+                      -<span class="number-2 fz-small">10,503</span>+
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item-options lines="none">
+            <ion-item-option class="option-background">
+              <img
+                (click)="eliminarProducto()"
+                class="img-delete"
+                src="/assets/collaborative-basquet/Delete 02-main.svg"
+                alt="icono"
+              />
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+
+  </div>
+  <app-producto></app-producto>
+
+  <app-modal-cesta></app-modal-cesta>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="contenedor-footer">
+      <div class="box-total d-flex flex-row justify-content-between">
+        <div class="total-checkbox">
+          <ion-checkbox class="checkbox2" slot="start"></ion-checkbox>
+          <p class="fz-small">Todo</p>
+        </div>
+        <div class="fz-small">
+          <p>S/ 45,789.00</p>
+        </div>
+      </div>
+      <ion-button expand="block" color="primary" shape="round"> Ir a pagar</ion-button >
+
+    </div>
+
+    <!-- <app-footer></app-footer> -->
+  </ion-toolbar>
+  <app-footer-cesta></app-footer-cesta>
+</ion-footer>
