@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  color: var(--ion-textPrimary-color);
+}
+
+.a-right{
+  filter: var(--ion-arrowRightFilter-color);
+  width: 8.17px;
+  height: 14px;
 }
 
 .swiper-slide {
@@ -12,9 +19,6 @@
 }
 
 
-img{
-  display: none;
-}
 
 @media(max-width:320px){
   ion-label{
