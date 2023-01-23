@@ -1,5 +1,4 @@
 ion-fab-button::part(native) {
-    background: #ffffff;
     margin-top: 30px;
     margin-left:0px;
     width: 44px;
@@ -7,7 +6,7 @@ ion-fab-button::part(native) {
   }
   
   ion-button {
-    --background: #ffffff;
+    --background: #ffffff !important;
     --border-radius: 32px;
     margin-top:662px;
     margin-right: 16px;
@@ -26,13 +25,10 @@ ion-fab-button::part(native) {
   
   #local-address{
     padding: 24px 24px 48px 24px ;
-    
     .fz-small{
-      color: #000000;
       margin: 0px;
     }
     .fz-note{
-      color: rgba(0, 0, 0, 0.6);
       margin: 4px 0px 0px 0px; 
     }
     
