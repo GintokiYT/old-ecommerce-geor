@@ -1,14 +1,16 @@
-button{
-    background-color: transparent;
-}
 
 ion-toolbar{
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
     --min-height: 0px;
     --padding-top: 56px;
     --padding-start: 24px;
     --padding-end: 24px;
     --padding-bottom: 40px
+}
+
+button{
+    filter: var(--ion-arrowLeftFilter-color);
+    background-color: transparent;
 }
 
 @media(max-width:320px){
@@ -23,4 +25,5 @@ ion-toolbar{
 ion-title{
     font-weight: bold;
     font-size: 16px;
+    color: var(--ion-textPrimary-color);
 }

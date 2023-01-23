@@ -1,23 +1,53 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Injector } from '@angular/core';
 import { Location } from '@angular/common';
+import { ConfirmarPedidoService } from '../../confirmar-pedido/services/confirmar-pedido.service';
+import { ViewComponent } from '@geor360/ecore';
 
 @Component({
   selector: 'app-direction',
   templateUrl: './direction.component.html',
   styleUrls: ['./direction.component.scss'],
 })
-export class DirectionComponent implements OnInit {
+export class DirectionComponent extends ViewComponent implements OnInit {
 
 
-  @Input() 
+  @Input()
   title: string = ""
 
-  constructor(private location: Location) { }
+  data: any[] = [
+    {
+      selected: false,
+      direction: "Jr. Samaritanos 879 Miraflores, Lima, Perú"
+    },
+    {
+      selected: false,
+      direction: "Jr. Enrique Segobiano 879 Miraflores, Lima, Perú"
+    }
+  ]
 
-  ngOnInit() {}
+  constructor(private location: Location,
+    private cpService: ConfirmarPedidoService,
+    _injector: Injector) {
+      super(_injector)
+  }
 
-  goBack(){
+  ngOnInit() { }
+
+  goBack() {
     this.location.back();
+  }
+
+  checkBoxSelect(direction: string) {
+    const indexOtherCheck = this.data.findIndex(element => element.direction !== direction);
+    this.data[indexOtherCheck].selected = false;
+  }
+
+  establecerDireccion() {
+    const selected = this.data.filter(element => element.selected === true);
+    if (selected[0]) {
+      this.cpService.changeDirectionDomicilio(selected[0].direction)
+    }
+    this.navigation.back("/customer/confirmar-pedido");
   }
 
 

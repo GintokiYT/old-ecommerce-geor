@@ -6,8 +6,8 @@ ion-footer{
 
 
 ion-toolbar{
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
-    --border-color: white;
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
+    --border-color: transparent;
     --padding-top: 8px;
     --padding-start: 24px;
     --padding-end: 24px;
@@ -22,11 +22,15 @@ ion-toolbar{
 
     button{
         width: 100%;
-        background-color: var(--ion-color-induacril);
+        background-color: var(--ion-color-primary);
         font-size: 16px;
         padding: 12px 20px;
         border-radius: 50px;
-        color: white;
+        color: var(--ion-textPrimary-color);
+    }
+
+    img{
+        filter: var(--ion-chatFilter-color);
     }
 }
 

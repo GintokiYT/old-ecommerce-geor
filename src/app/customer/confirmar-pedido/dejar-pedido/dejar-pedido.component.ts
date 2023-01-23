@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector, Input } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { ConfirmarPedidoService } from '../services/confirmar-pedido.service';
 
 @Component({
   selector: 'app-dejar-pedido',
@@ -8,7 +9,8 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class DejarPedidoComponent extends ViewComponent implements OnInit {
 
-  pedido: string = "¿Donde dejaremos tu pedido?";
+  pedidoDomicilio: string = "";
+  pedidoTienda: string = "";
 
   @Input()
   envioADomicilio: boolean = false;
@@ -16,11 +18,15 @@ export class DejarPedidoComponent extends ViewComponent implements OnInit {
   @Input()
   recojoTienda: boolean = false;
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, public cpService: ConfirmarPedidoService) {
     super(_injector)
+    this.pedidoDomicilio = cpService.miPedido.detallesEntregaADomicilio.direction
+    this.pedidoTienda = cpService.miPedido.detallesEntregaATienda.direction;
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    
+  }
 
   goTo(p1?: string, p2?: string) {
 
@@ -35,7 +41,7 @@ export class DejarPedidoComponent extends ViewComponent implements OnInit {
           }
         }, "permitir", "No permitir"
       )
-    }else{
+    } else {
       this.navigation.forward(p1);
     }
 
