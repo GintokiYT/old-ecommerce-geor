@@ -76,7 +76,7 @@
 //   --ion-color-light-tint: #a8a8a8;
 
 :root{
-  
+
   /** light **/
   --ion-color-light: #9E9E9E;
   --ion-color-light-rgb: 158, 158, 158;
@@ -85,9 +85,22 @@
   --ion-color-light-shade: #8b8b8b;
   --ion-color-light-tint: #a8a8a8;
 
+<<<<<<< HEAD
+  /** Estándar ecommerce **/
+  --ion-color-induacril: #023AFF;
+  --ion-color-induacril-filter: brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
+
+  /** Induacril **/
+  // --ion-color-induacril: #AA376A;
+  // --ion-color-induacril-filter: brightness(0) saturate(100%) invert(30%) sepia(29%) saturate(2851%) hue-rotate(297deg) brightness(86%) contrast(87%);
+
+
+
+=======
   
+>>>>>>> 035a19e62cfedb5cefe944a6417ef7070a291d56
 }
-  
+
 
 /** Dark Colors **/
 // body.dark {
@@ -262,9 +275,12 @@ $divider: rgba($black, 0.12);
 // Dark mode
 $btn-default: #5b6793;
 
+
+
 body {
   --ion-padding: 16px;
 }
+
 @include theme-light {
   --ion-background-color: #{$white};
 }
@@ -339,9 +355,40 @@ body {
 
 
 
+<<<<<<< HEAD
+// Variables CSS (RCNA)
+@include theme-light {
+  --ion-background-color: #{$white};
+  --ion-color-basic: #000000;
+  --ion-color-secondary: #00000099;
+  --ion-color-disabled: #00000061;
+  --ion-color-separator: #F5F5F5;
+
+  --ion-background-secondary: #FAFAFA;
+  --ion-background-tertiary: #023AFF;
+
+  --ion-color-icons: #424242;
+  --ion-color-icons-selected: #023aff;
+}
+
+@include theme-dark {
+  --ion-background-color: #{$bg-dark};
+  --ion-color-basic: #FFFFFF;
+  --ion-color-secondary: #ffffff99;
+  --ion-color-disabled: #ffffff66;
+  --ion-color-separator: #1B1F3C;
+
+  --ion-background-secondary: #1B1F3C;
+  --ion-background-tertiary: #3C66FB;
+
+  --ion-color-icons: #ffffff99;
+  --ion-color-icons-selected: #ffffff;
+}
+=======
 
 
 
 
 
 
+>>>>>>> 035a19e62cfedb5cefe944a6417ef7070a291d56
