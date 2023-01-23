@@ -84,21 +84,6 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #8b8b8b;
   --ion-color-light-tint: #a8a8a8;
-
-<<<<<<< HEAD
-  /** Estándar ecommerce **/
-  --ion-color-induacril: #023AFF;
-  --ion-color-induacril-filter: brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
-
-  /** Induacril **/
-  // --ion-color-induacril: #AA376A;
-  // --ion-color-induacril-filter: brightness(0) saturate(100%) invert(30%) sepia(29%) saturate(2851%) hue-rotate(297deg) brightness(86%) contrast(87%);
-
-
-
-=======
-  
->>>>>>> 035a19e62cfedb5cefe944a6417ef7070a291d56
 }
 
 
@@ -355,7 +340,6 @@ body {
 
 
 
-<<<<<<< HEAD
 // Variables CSS (RCNA)
 @include theme-light {
   --ion-background-color: #{$white};
@@ -384,11 +368,3 @@ body {
   --ion-color-icons: #ffffff99;
   --ion-color-icons-selected: #ffffff;
 }
-=======
-
-
-
-
-
-
->>>>>>> 035a19e62cfedb5cefe944a6417ef7070a291d56
