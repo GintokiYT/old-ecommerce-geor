@@ -50,15 +50,7 @@ export class MainInboxComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.setItem('mode', 'light');
-  }
-
-  onActive(id: string) {
-    const items = document.querySelectorAll('.inbox-footer__content--item');
-    items.forEach(item => item.classList.remove('active'));
-
-    const item = document.getElementById(id);
-    item?.classList.add('active');
+    // localStorage.setItem('mode', 'light');
   }
 
   openInternalBox(id: string) {
