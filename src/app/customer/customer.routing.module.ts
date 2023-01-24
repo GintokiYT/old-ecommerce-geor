@@ -3,11 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { CestaColaborativaComponent } from './cesta/cesta-colaborativa/cesta-colaborativa.component';
-
 import { EquiposComponent } from './cesta/equipos/equipos.component';
 import { MiCestaComponent } from './cesta/mi-cesta/mi-cesta.component';
-
-
 import { MainInboxComponent } from './inbox/main-inbox/main-inbox.component';
 import { InternalInboxComponent } from './inbox/internal-inbox/internal-inbox.component';
 import { TelefonoComponent } from './inbox/telefono/telefono.component';

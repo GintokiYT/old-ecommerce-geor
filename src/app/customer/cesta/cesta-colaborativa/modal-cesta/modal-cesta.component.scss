@@ -1,22 +1,28 @@
-
 ion-avatar.hydrated {
   margin-top: 0px;
   margin: 4px;
+
 }
 ion-modal::part(handle){
   display: none;
+
 }
 ion-content{
   --padding-top: 24px;
   --padding-end:24px;
 }
+
 ion-item{
   padding-left: 4px;
   padding-bottom: 28px;
 }
 ion-label{
   margin-left: 8px !important;
-  color: rgba(0, 0, 0, 1) !important;
+  color: var(--ion-color-basic) !important;
+
+}
+ion-modal {
+  --ion-background-color:var(--ion-background-color-popup);
 }
 
 

@@ -8,27 +8,28 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class CestaColaborativaComponent extends ViewComponent implements OnInit {
 
-  chk01: boolean=false;
+  /* chk01: boolean=false;
   chk02:boolean=false;
-  chkmain=false;
+  chkmain=false; */
   constructor(_injector: Injector) {
     super(_injector);
-        /* this.themeService = _injector.get(AppThemeService); */
    }
 
   ngOnInit() {
 
   }
-  eliminarProducto(){
-    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
-    },'Cancelar','Eliminar')
-  }
   eliminar(){
-    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
-    },'Cancelar','Eliminar')
+    console.log("eliminar");
+    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+    },'Eliminar','Cancelar')
   }
 
-  seleccionar(){
+  eliminarProducto(){
+    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+    },'Eliminar','Cancelar')
+  }
+
+/*   seleccionar(){
     if(this.chkmain){
       this.chkmain = false;
     }else{
@@ -38,4 +39,5 @@ export class CestaColaborativaComponent extends ViewComponent implements OnInit 
     this.chk01=this.chkmain;
     this.chk02=this.chkmain;
   }
+ */
 }
