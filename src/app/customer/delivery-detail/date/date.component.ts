@@ -26,6 +26,7 @@ export class DateComponent implements OnInit {
     opciones.forEach( opc => opc.classList.remove("selected"));
     opciones.forEach( opc => opc.classList.add("notSelected"));
     opcion?.classList.add("selected")
+    opcion?.classList.remove("notSelected")
 
   }
 
