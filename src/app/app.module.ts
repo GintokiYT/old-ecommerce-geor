@@ -14,6 +14,8 @@ import { OpenNativeSettings } from '@awesome-cordova-plugins/open-native-setting
 import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
 import { AppTranslations } from '@app/shared';
 
+import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
+
 function appInitializerFactory(injector: Injector) {
   return () => {
     return new Promise<boolean>((resolve, reject) => {
@@ -129,7 +131,8 @@ const getApplicationConfig = (appRootUrl: string, callback: () => void) => {
     ThemeDetection,
     AndroidPermissions,
     OpenNativeSettings,
-    Diagnostic
+    Diagnostic,
+    CallNumber
   ],
   bootstrap: [
     AppComponent
