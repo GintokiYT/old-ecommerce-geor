@@ -3,13 +3,12 @@ ion-fab-button::part(native) {
     margin-left:0px;
     width: 44px;
     height: 44px;
-  }
+}
   
   ion-button {
     --background: #ffffff !important;
     --border-radius: 32px;
-    margin-top:662px;
-    margin-right: 16px;
+    margin:662px 16px 24px 0px;
     width: 114px;
     height: 36px;
     right: 24px;
@@ -33,3 +32,19 @@ ion-fab-button::part(native) {
     }
     
   }
+  #map {
+    height:722px ;
+  }
+
+  @media(max-width:320px){
+    ion-button {
+      margin:410px 6px 22px 0px;
+    }
+    #map{
+      height:468px  ;
+    }
+    #local-address{
+      padding: 16px 16px 33px 16px ;
+      
+    }
+ }

@@ -15,22 +15,20 @@
     <ion-label id="update">Actualizar</ion-label>
   </ion-button>
   </ion-fab>
-
+  
   <!--Map-->
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499487.6353948528!2d-77.26797806411719!3d-12.026498673190375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses-419!2spe!4v1674135928841!5m2!1ses-419!2spe"
-    width="100%" height="722px" style="border:0;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499487.6353948528!2d-77.26797806411719!3d-12.026498673190375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses-419!2spe!4v1674135928841!5m2!1ses-419!2spe" 
+  width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-button>
-      <img src="/assets/icons/update.svg" />
-      <ion-label id="update">Actualizar</ion-label>
-    </ion-button>
+  <ion-fab vertical="top" horizontal="end" >
+      <ion-button>
+        <img src="/assets/icons/update.svg" />
+        <ion-label id="update">Actualizar</ion-label>
+      </ion-button>
   </ion-fab>
-
-  <footer>
-    <div id="local-address">
+  
+  <footer >
+    <div id="local-address" slot="fixed" vertical="end">
       <p class="fz-small">Induacril Miraflores</p>
       <p class="fz-note">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
     </div>
