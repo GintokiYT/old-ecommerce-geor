@@ -38,11 +38,21 @@
 <!-- RECOJO EN TIENDA -->
 <div class="dejar-pedido" *ngIf="recojoTienda">
     <ion-label 
+        *ngIf="cpService.miPedido.detallesEntregaATienda.direction==='¿Donde recojeras tu pedido?'"
         (click)="goTo('/customer/stores')" 
         class="lugar-pedido" 
     >
         {{cpService.miPedido.detallesEntregaATienda.direction}}
     </ion-label>
+    <ion-label 
+        *ngIf="cpService.miPedido.detallesEntregaATienda.direction!=='¿Donde recojeras tu pedido?'"
+        (click)="goTo('/customer/stores')" 
+        class="lugar-pedido with-direction" 
+    >
+        {{cpService.miPedido.detallesEntregaATienda.direction}}
+    </ion-label>
+
+
     <div class="contenedor-info-pedido">
         <div class="info-pedido" style="display: none;">
             <img src="/assets/icons/icon-truck.svg" />

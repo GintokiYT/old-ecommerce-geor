@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { ConfirmarPedidoService } from '../../confirmar-pedido/services/confirmar-pedido.service';
 
 @Component({
   selector: 'app-stores',
@@ -8,7 +9,27 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class StoresComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) { 
+  data: any[] = [
+    {
+      id: 1,
+      selected: false,
+      direction: "Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú"
+    },
+    {
+      id:2,
+      selected: false,
+      direction: "Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú"
+    },
+    {
+      id:3,
+      selected: false,
+      direction: "Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú"
+    }
+  ]
+
+
+  constructor(_injector: Injector,
+              private cpService: ConfirmarPedidoService,) { 
     super(_injector)
   }
 
@@ -16,6 +37,21 @@ export class StoresComponent extends ViewComponent implements OnInit {
 
   goTo(path:string){
     this.navigation.forward(path)
+  }
+
+  checkBoxSelect(id: number) {
+    const falses = this.data.filter( element => element.id!==id);
+    falses.forEach( element => {
+      element.selected = false;
+    })
+  }
+
+  establecerDireccion() {
+    const selected = this.data.filter(element => element.selected === true);
+    if (selected[0]) {
+      this.cpService.changeDirectionTienda(selected[0].direction)
+    }
+    this.navigation.back("/customer/confirmar-pedido");
   }
 
 }

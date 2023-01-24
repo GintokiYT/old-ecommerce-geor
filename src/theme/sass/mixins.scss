@@ -2,7 +2,7 @@
   body {
     &.light {
       @content;
-      ion-fab-button::part(native) {
+      ion-fab-button.map::part(native) {
         background: #ffffff !important;
       }
       ion-title{
@@ -69,13 +69,19 @@
         filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
       }
 
+      ion-fab-button.map::part(native) {
+        background: #05050F !important;
+      }
+
+
       .alert{
-        background:  #1B1F3C;;
+        background: #1B1F3C;
         ion-item{
-          --background:  #1B1F3C;;
-          --color:#fff;
+            --background: #1B1F3C;
+            --color:#fff;
         }
       } 
+
      
     }
   }
