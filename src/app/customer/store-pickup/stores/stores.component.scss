@@ -65,5 +65,21 @@
     ion-button{
         --background: #023AFF !important;
         --border-radius: 50px;
+    }  
+}
+
+@media(max-width:320px){
+    .content{
+        padding-left: 16px;
+        padding-right: 16px;
+        .checkbox{
+            margin-top: 24px;
+            margin-bottom: 95px;
+        }
+        ion-button{
+            width: 288px;
+            height: 40px;
+        }  
+       
     }
 }
