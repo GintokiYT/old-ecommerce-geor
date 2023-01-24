@@ -24,11 +24,12 @@ export class ConfirmarPedidoService {
     
   }
 
-  
-
-
   changeDirectionDomicilio(direction:string):void{
     this.miPedido.detallesEntregaADomicilio.direction = direction;
+  }
+
+  changeDirectionTienda(direction:string):void{
+    this.miPedido.detallesEntregaATienda.direction = direction;
   }
 
 

@@ -20,6 +20,7 @@ export class ModalCestaComponent extends ViewComponent implements OnInit {
   goCesta(){
       console.log("Mi cesta")
       this.navigation.root('/customer/mi-cesta', 'forward');
+
       this.dialog.dismiss();
            //this.router.navigate(['/', 'equipos']);
 

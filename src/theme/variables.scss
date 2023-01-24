@@ -85,6 +85,7 @@
   --ion-color-light-shade: #8b8b8b;
   --ion-color-light-tint: #a8a8a8;
 
+<<<<<<< HEAD
   /** Estándar ecommerce **/
   --ion-color-induacril: #023AFF;
   --ion-color-induacril-filter: brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
@@ -95,7 +96,9 @@
 
 
 
+=======
 
+>>>>>>> 035a19e62cfedb5cefe944a6417ef7070a291d56
 }
 
 
@@ -316,6 +319,11 @@ body {
 
   --ion-chatFilter-color : unset;
 
+  --ion-footerButton-color: #{$white};
+
+  --ion-backgroundAlert-color: #{$white};
+  --ion-borderAlert-color: #BDBDBD;
+
 }
 
 
@@ -348,6 +356,10 @@ body {
 
   --ion-chatFilter-color : brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
 
+  --ion-footerButton-color: #{$white};
+
+  --ion-backgroundAlert-color: #191932;
+  --ion-borderAlert-color: #5B6793;
 }
 
 
@@ -381,8 +393,23 @@ body {
   --ion-color-icons-selected: #ffffff;
 }
 
+/* MODO LIGHT */
+@include theme-light {
+  --ion-background-color: #{$white};
+  --ion-color-basic: #000000;
+  --ion-color-secondary: #00000099;
+  --ion-color-disabled: #00000061;
+  --ion-color-separator: #F5F5F5;
+  --ion-color-borde:#EEEEEE;
+  --ion-color-remove:#E3EAFD;
+  --ion-color-icons: #424242;
+  --ion-color-icons-selected: #023aff;
+  --ion-background-color-popup:#FFFFFF;
+  --ion-color-popup:#023AFF;
+}
 
 
 
 
 
+>>>>>>> 035a19e62cfedb5cefe944a6417ef7070a291d56

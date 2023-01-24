@@ -1,45 +1,34 @@
-
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <button (click)="goBack()" slot="start">
-      <img src="/assets/icons/icon-close.svg" width="12px" />
-    </button>
-    <ion-title>¿Cuando recibir?</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <button (click)="goBack()" slot="start" class="arrow">
+        <img src="/assets/icons/icon-close.svg" width="12px" />
+      </button>
+      <ion-title>¿Cuando recibir?</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
   <ion-item lines="none">
 
-    <img src="/assets/icons/icon-stoke-izquierda.svg" slot="start" />
+    <img src="/assets/icons/icon-stoke-izquierda.svg" slot="start" class="arrow" />
 
-    <label>Nov 2022</label>
+    <ion-label class="align">Nov 2022</ion-label>
 
-    <img src="/assets/icons/icon-stroke-derecha.svg" slot="end" />
+    <img src="/assets/icons/icon-stroke-derecha.svg" slot="end" class="arrow" />
 
   </ion-item>
   <br>
   <div class="contenedor-detalles-entrega">
     <div class="contenedor-opciones">
-      <div 
-        id="27"
-        class="opcion selected"
-        (click)="onSelect('27')"
-        >
+      <div id="27" class="opcion selected" (click)="onSelect('27')">
         <p>Dom 27/11</p>
       </div>
-      <div 
-        id="28"
-        class="opcion notSelected"
-        (click)="onSelect('28')"
-        >
+      <div id="28" class="opcion notSelected" (click)="onSelect('28')">
         <p>Lun 28/11</p>
       </div>
-      <div 
-        id="29"
-        class="opcion notSelected"
-        (click)="onSelect('29')"
-        >
+      <div id="29" class="opcion notSelected" (click)="onSelect('29')">
         <p>Mar 29/11</p>
       </div>
     </div>

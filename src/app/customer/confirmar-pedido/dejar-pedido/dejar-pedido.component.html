@@ -1,8 +1,20 @@
 <!-- ENVIO A DOMICILIO -->
 <div class="dejar-pedido" *ngIf="envioADomicilio">
-    <ion-label (click)="goTo('/customer/direction')" class="lugar-pedido">
+    <ion-label 
+        *ngIf="cpService.miPedido.detallesEntregaADomicilio.direction==='¿Donde dejaremos tu pedido?'"
+        (click)="goTo('/customer/direction')" 
+        class="lugar-pedido"
+    >
         {{cpService.miPedido.detallesEntregaADomicilio.direction}}
     </ion-label>
+    <ion-label 
+        *ngIf="cpService.miPedido.detallesEntregaADomicilio.direction!=='¿Donde dejaremos tu pedido?'"
+        (click)="goTo('/customer/direction')" 
+        class="lugar-pedido with-direction" 
+    >
+        {{cpService.miPedido.detallesEntregaADomicilio.direction}}
+    </ion-label>
+
     <div class="contenedor-info-pedido">
         <div class="info-pedido">
             <img src="/assets/icons/icon-truck.svg" />
@@ -25,9 +37,22 @@
 
 <!-- RECOJO EN TIENDA -->
 <div class="dejar-pedido" *ngIf="recojoTienda">
-    <ion-label (click)="goTo('/customer/stores')" class="lugar-pedido">
+    <ion-label 
+        *ngIf="cpService.miPedido.detallesEntregaATienda.direction==='¿Donde recojeras tu pedido?'"
+        (click)="goTo('/customer/stores')" 
+        class="lugar-pedido" 
+    >
         {{cpService.miPedido.detallesEntregaATienda.direction}}
     </ion-label>
+    <ion-label 
+        *ngIf="cpService.miPedido.detallesEntregaATienda.direction!=='¿Donde recojeras tu pedido?'"
+        (click)="goTo('/customer/stores')" 
+        class="lugar-pedido with-direction" 
+    >
+        {{cpService.miPedido.detallesEntregaATienda.direction}}
+    </ion-label>
+
+
     <div class="contenedor-info-pedido">
         <div class="info-pedido" style="display: none;">
             <img src="/assets/icons/icon-truck.svg" />
