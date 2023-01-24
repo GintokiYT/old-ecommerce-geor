@@ -99,4 +99,8 @@ export class MyLocationComponent implements OnInit, OnDestroy {
   cancel() {
     this.dialog.dismiss('cancel');
   }
+
+  nextProyect() {
+    this.navigator.forward('customer');
+  }
 }
