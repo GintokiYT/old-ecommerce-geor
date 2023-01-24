@@ -9,9 +9,6 @@ import { ConfirmarPedidoService } from '../services/confirmar-pedido.service';
 })
 export class DejarPedidoComponent extends ViewComponent implements OnInit {
 
-  pedidoDomicilio: string = "";
-  pedidoTienda: string = "";
-
   @Input()
   envioADomicilio: boolean = false;
 
@@ -20,8 +17,6 @@ export class DejarPedidoComponent extends ViewComponent implements OnInit {
 
   constructor(_injector: Injector, public cpService: ConfirmarPedidoService) {
     super(_injector)
-    this.pedidoDomicilio = cpService.miPedido.detallesEntregaADomicilio.direction
-    this.pedidoTienda = cpService.miPedido.detallesEntregaATienda.direction;
   }
 
   ngOnInit() {
@@ -31,7 +26,7 @@ export class DejarPedidoComponent extends ViewComponent implements OnInit {
   goTo(p1?: string, p2?: string) {
 
     if (p2) {
-      this.message.confirm("Al otorgar acceso, podrás ver tus contactos"
+      this.message.confirm(`Al otorgar acceso, podrás ver tus <br/>contactos`
         , "¿Induacril quiere acceder a tus contactos?"
         , (confirmation) => {
           if (confirmation) {
@@ -39,7 +34,7 @@ export class DejarPedidoComponent extends ViewComponent implements OnInit {
           } else {
             this.navigation.forward(p2)
           }
-        }, "permitir", "No permitir"
+        }, "Permitir", "No permitir"
       )
     } else {
       this.navigation.forward(p1);
