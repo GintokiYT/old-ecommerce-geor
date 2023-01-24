@@ -2,6 +2,26 @@
   body {
     &.light {
       @content;
+      ion-fab-button::part(native) {
+        background: #ffffff !important;
+      }
+      ion-title{
+        color: black ;
+      }
+      .fz-small{
+        color: #000000;
+      }
+      .fz-note{
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .alert{
+        background: #E3EAFD;
+        ion-item{
+            --background: #E3EAFD;
+           
+        }
+      } 
+      
     }
   }
 }

@@ -3,7 +3,7 @@ button{
 }
 
 ion-toolbar{
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50)); //, white  saqué esto para el
     --min-height: 0px;
     --padding-top: 56px;
     --padding-start: 24px;
@@ -20,7 +20,3 @@ ion-toolbar{
     }
 }
 
-ion-title{
-    font-weight: bold;
-    font-size: 16px;
-}

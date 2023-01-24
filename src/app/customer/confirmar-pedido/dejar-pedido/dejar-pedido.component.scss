@@ -4,8 +4,12 @@
         display: block;
         text-align: left;
         font-size: 16px;
-        color: #00000061;
+        color: var(--ion-textLight-color);
         padding-bottom: 32px;
+    }
+
+    .with-direction{
+        color: var(--ion-textPrimary-color);
     }
 
     .contenedor-info-pedido {
@@ -20,25 +24,45 @@
         align-items: center;
     }
 
-    .info-pedido:nth-child(1) img {
-        filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(4%) hue-rotate(320deg) brightness(96%) contrast(104%);
-        ;
+    .info-pedido:nth-child(1)  {
+        img{
+            filter: var(--ion-truckFilter-color);
+        }
+        ion-label{
+            color: var(--ion-textPrimary-color);
+        }
     }
 
-    .info-pedido:nth-child(3) ion-label {
-        color: #00000061;
-    }
 
     .info-pedido-destinatario {
         display: flex;
         flex-direction: column;
         gap: 2px;
+
+        ion-label:nth-child(1){
+            color: var(--ion-textPrimary-color);
+        }
+
+        ion-label:nth-child(2){
+            color: var(--ion-textLight-color);
+        }
     }
 
-    .info-pedido-destinatario ion-label:nth-child(2) {
-        color: #00000061;
-        font-size: 14px;
+
+    .info-pedido:nth-child(3) {
+        ion-label {
+            color: var(--ion-textLight-color);
+        }
+
+        img{
+            filter: var(--ion-dangerFilter-color);
+        }
+        
     }
+
+    
+
+    
 
     .lugar-pedido,
     .info-pedido {
@@ -91,3 +115,5 @@
         }
     }
 }
+
+

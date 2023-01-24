@@ -1,0 +1,17 @@
+/* HEADER */
+.chat-header {
+  padding: 56px 24px 40px 24px;
+  background-color:var(--ion-background-color);
+}
+.chat-ion-toolbar {
+  height: 32px;
+}
+.content-title {
+  flex: 1;
+  gap: 8px;
+  .content-title__name {
+    h2 {
+      color: var(--ion-color-basic);
+    }
+  }
+}

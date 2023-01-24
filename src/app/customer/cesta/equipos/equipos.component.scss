@@ -1,0 +1,39 @@
+/* CONTENIDO */
+.content{
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-bottom: 24px;
+}
+.contacts{
+  gap: 16px;
+}
+.information{
+  padding-top: 2px;
+  gap: 8px;
+}
+.text-description{
+  color: var(--ion-color-disabled);
+  gap:30px;
+}
+.nombre{
+  color:var(--ion-color-basic);
+}
+/* POSICION DE LA IMAGEN */
+.imagen-plus{
+position: absolute;
+width: 48px;
+height: 48px;
+left: 318px;
+bottom: 48px;
+}
+.imagen-pendiente{
+width: 8px;
+height: 8px;
+}
+.pendiente{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}

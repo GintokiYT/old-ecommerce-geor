@@ -1,5 +1,9 @@
 .contenedor-resumen-pedido{
     
+    ion-label{
+        color: var(--ion-textPrimary-color);
+    }
+
     >ion-label{
         font-weight: bold;
     }
