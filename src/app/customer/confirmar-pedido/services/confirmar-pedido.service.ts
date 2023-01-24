@@ -24,9 +24,6 @@ export class ConfirmarPedidoService {
     
   }
 
-  
-
-
   changeDirectionDomicilio(direction:string):void{
     this.miPedido.detallesEntregaADomicilio.direction = direction;
   }

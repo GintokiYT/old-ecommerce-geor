@@ -304,6 +304,11 @@ body {
 
   --ion-chatFilter-color : unset;
 
+  --ion-footerButton-color: #{$white};
+
+  --ion-backgroundAlert-color: #{$white};
+  --ion-borderAlert-color: #BDBDBD;
+
 }
 
 
@@ -336,6 +341,10 @@ body {
 
   --ion-chatFilter-color : brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
 
+  --ion-footerButton-color: #{$white};
+
+  --ion-backgroundAlert-color: #191932;
+  --ion-borderAlert-color: #5B6793;
 }
 
 
