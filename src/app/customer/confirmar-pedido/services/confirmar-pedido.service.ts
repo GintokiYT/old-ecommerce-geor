@@ -28,6 +28,10 @@ export class ConfirmarPedidoService {
     this.miPedido.detallesEntregaADomicilio.direction = direction;
   }
 
+  changeDirectionTienda(direction:string):void{
+    this.miPedido.detallesEntregaATienda.direction = direction;
+  }
+
 
 
 

@@ -5,7 +5,7 @@
     <div class="alert">
       <ion-item lines="none">
         <img id="time" src="/assets/icons/time-circle.svg">
-        <ion-label>
+        <ion-label class="alert" class="ion-text-wrap">
           El producto estará disponible en el lugar seleccionado<br>
           durante 5 días hábiles de 8:00am a 6:00pm.
         </ion-label>
@@ -14,7 +14,13 @@
 
     <div class="checkbox">
       <ion-item lines="none" detail="false">
-        <ion-checkbox slot="end" mode="ios"></ion-checkbox>
+        <ion-checkbox 
+            slot="end" 
+            mode="ios"
+            [(ngModel)]="data[0].selected"
+            (ngModelChange)="checkBoxSelect(data[0].id)" 
+        >
+        </ion-checkbox>
         <ion-label class="ion-text-wrp">
           <p class="fz-small">Induacril Miraflores</p>
           <p class="fz-note">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
@@ -23,7 +29,13 @@
       </ion-item>
 
       <ion-item lines="none">
-        <ion-checkbox slot="end" mode="ios"></ion-checkbox>
+        <ion-checkbox 
+            slot="end" 
+            mode="ios"
+            [(ngModel)]="data[1].selected"
+            (ngModelChange)="checkBoxSelect(data[1].id)"
+        >
+        </ion-checkbox>
         <ion-label class="ion-text-wrp">
           <p class="fz-small">Induacril Chorrillos</p>
           <p class="fz-note ">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
@@ -32,7 +44,13 @@
       </ion-item>
 
       <ion-item lines="none">
-        <ion-checkbox slot="end" mode="ios"></ion-checkbox>
+        <ion-checkbox 
+            slot="end" 
+            mode="ios"
+            [(ngModel)]="data[2].selected"
+            (ngModelChange)="checkBoxSelect(data[2].id)"
+        >
+        </ion-checkbox>
         <ion-label class="ion-text-wrp">
           <p class="fz-small">Induacril Miraflores</p>
           <p class="fz-note">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
@@ -42,7 +60,7 @@
     </div>
 
     <div>
-      <ion-button color="primary" shape="round" expand="block">Usar tienda</ion-button>
+      <ion-button (click)="establecerDireccion()" color="primary" shape="round" expand="block">Usar tienda</ion-button>
     </div>
   </div>
 </ion-content>
