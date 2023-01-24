@@ -3,7 +3,7 @@ button{
 }
 
 ion-toolbar{
-  --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+  --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
   --min-height: 0px;
   --padding-top: 56px;
   --padding-start: 24px;
@@ -21,6 +21,21 @@ ion-toolbar{
 }
 
 ion-title{
+  color:var(--ion-color-basic);
   font-weight: bold;
   font-size: 16px;
 }
+
+ion-item-options{
+  border-bottom-width:0px !important;
+}
+
+/* MODIFICACION DE IMAGEN A DARK */
+.back{
+  width: 24px;
+  height: 24px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
+}
+

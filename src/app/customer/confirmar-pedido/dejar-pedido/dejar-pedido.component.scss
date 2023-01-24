@@ -8,6 +8,10 @@
         padding-bottom: 32px;
     }
 
+    .with-direction{
+        color: var(--ion-textPrimary-color);
+    }
+
     .contenedor-info-pedido {
         display: flex;
         flex-direction: column;
@@ -111,3 +115,5 @@
         }
     }
 }
+
+
