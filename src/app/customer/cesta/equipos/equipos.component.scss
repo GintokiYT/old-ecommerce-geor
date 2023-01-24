@@ -12,10 +12,12 @@
   gap: 8px;
 }
 .text-description{
-  color: rgba(0, 0, 0, 0.38);
+  color: var(--ion-color-disabled);
   gap:30px;
 }
-
+.nombre{
+  color:var(--ion-color-basic);
+}
 /* POSICION DE LA IMAGEN */
 .imagen-plus{
 position: absolute;

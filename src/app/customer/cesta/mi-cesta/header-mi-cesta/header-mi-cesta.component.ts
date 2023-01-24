@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, Input } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
@@ -7,7 +7,8 @@ import { ViewComponent } from '@geor360/ecore';
   styleUrls: ['./header-mi-cesta.component.scss'],
 })
 export class HeaderMiCestaComponent extends ViewComponent implements OnInit {
-
+  @Input()
+  title: string = ""
   constructor(_injector: Injector) {
     super(_injector);
   }
@@ -15,21 +16,7 @@ export class HeaderMiCestaComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
- /*  showModal(){
-    this.dialog.show({
-      showBackdrop:true,
-      component: MiModalCestaComponent,
-      componentProps: {
-        title: "Algo"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
-  } */
-  goEquipo() {
-    console.log("equipos");
-    this.navigation.root('/customer/equipos', 'forward');
-    //this.router.navigate(['/', 'equipos']);
+  goGerardo(){
+    this.navigation.root('/customer/cesta-colaborativa','back');
   }
-
 }

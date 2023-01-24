@@ -2,24 +2,15 @@
   padding: 56px 24px 40px 24px;
 }
 .chat-ion-toolbar {
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   height: 32px;
 }
 .content-title {
   flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+   gap: 8px;
 
   .content-title__name {
     h2 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #000000;
+      color: var(--ion-color-basic);
     }
   }
 }

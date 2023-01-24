@@ -1,8 +1,7 @@
-// Footer
 .inbox-ion-footer {
-  border-top: 1px solid rgba(245, 245, 245, 1);
+  background-color: var(--ion-background-color);
+  border-top: 1px solid var(--ion-color-separator);
   padding: 8px 16px 16px 16px;
-  background: #fff;
   --min-height: unset;
 
   .inbox-footer__content {
@@ -29,8 +28,8 @@
 
   .inbox-footer__name p {
     font-size: 10px;
-    font-weight: 400px;
-    color: #000;
+    font-weight: 400;
+    color: var(--ion-color-icons);
   }
 
   @media (min-width: 390px) {
@@ -38,29 +37,104 @@
   }
 }
 
-.inbox-footer__content .active {
+.inbox-footer__content {
 
-  .icon-home * {
-    fill:rgba(0, 55, 255, 1);
+  .icon-home {
+    path {
+      stroke: var(--ion-color-icons);
+    }
   }
 
   .icon-search * {
-    stroke:rgba(0, 55, 255, 1);
+    stroke:var(--ion-color-icons);
   }
 
-  .icon-chat * {
-    stroke:rgba(0, 55, 255, 1);
+  .icon-chat {
+    path {
+      stroke: var(--ion-color-icons);
+    }
   }
 
-  .icon-buy * {
-    stroke:rgba(0, 55, 255, 1);
+  .icon-buy {
+    path {
+      stroke: var(--ion-color-icons);
+    }
   }
 
-  .icon-profile * {
-    stroke:rgba(0, 55, 255, 1);
+  .icon-profile {
+    path {
+      stroke: var(--ion-color-icons);
+    }
   }
 
   .inbox-footer__name p {
-    color:rgba(0, 55, 255, 1);
+    color:var(--ion-color-icons);
   }
 }
+
+.inbox-footer__content .active {
+  .icon-home {
+    fill: var(--ion-color-icons-selected);
+
+    path {
+      stroke: var(--ion-color-icons-selected);
+    }
+  }
+
+  .icon-chat {
+    fill: var(--ion-color-icons-selected);
+
+    path {
+      stroke: var(--ion-color-icons-selected);
+    }
+
+    path:nth-child(2),
+    path:nth-child(3),
+    path:nth-child(4) {
+      stroke: var(--ion-background-color);
+    }
+  }
+
+  .icon-search {
+    fill: var(--ion-color-icons-selected);
+
+    circle {
+      stroke: var(--ion-color-icons-selected);
+    }
+
+    path {
+      stroke: var(--ion-color-icons-selected);
+    }
+  }
+
+  .icon-buy {
+    fill: var(--ion-color-icons-selected);
+
+    path {
+      stroke: var(--ion-color-icons-selected);
+    }
+  }
+
+  .icon-profile {
+    path {
+      stroke: var(--ion-color-icons-selected);
+      fill: var(--ion-color-icons-selected);
+    }
+  }
+
+  .inbox-footer__name p {
+    color: var(--ion-color-icons-selected) !important;
+  }
+}
+
+// Remover el scroll del ion-content
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto! important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* ----------- */
