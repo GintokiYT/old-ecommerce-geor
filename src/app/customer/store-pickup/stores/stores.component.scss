@@ -9,13 +9,14 @@
             --padding-start: 0px;
             --inner-padding-end: 0px;
             #time{
-                margin-right: 8px;
+                margin-right: 8px ;
             }
             ion-label{
                 font-family: 'Roboto';
                 font-style: normal;
                 font-size: 12px;
                 margin: 16px 0 16px 0 ;
+                padding: 0px;
             }
         }
 
@@ -26,7 +27,7 @@
     .checkbox{
         margin-inline: 0px;
         margin-top: 32px;
-        margin-bottom: 296px;
+        margin-bottom: 335px;
         ion-item {
             --padding-start: 0px;
             --inner-padding-end: 0px; 
@@ -60,12 +61,16 @@
         ion-item::part(native){ 
             padding: 0px;
         }
-    }
-
-    ion-button{
-        --background: #023AFF !important;
-        --border-radius: 50px;
-    }  
+        ion-button{
+            width: 342px;
+            height: 48px;
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 16px;
+        } 
+        
+    } 
+    
 }
 
 @media(max-width:320px){
@@ -74,12 +79,14 @@
         padding-right: 16px;
         .checkbox{
             margin-top: 24px;
-            margin-bottom: 95px;
+            margin-bottom: 120px;
         }
-        ion-button{
-            width: 288px;
-            height: 40px;
-        }  
-       
     }
+    ion-button{
+        width: 288px;
+        height: 40px;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 14px;
+    } 
 }
