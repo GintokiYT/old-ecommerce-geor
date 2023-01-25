@@ -40,4 +40,7 @@ export class CestaColaborativaComponent extends ViewComponent implements OnInit 
     this.chk02=this.chkmain;
   }
  */
+  confirmarPerdido() {
+    return this.navigation.root('/customer/confirmar-pedido', 'forward');
+  }
 }

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { StorePickupComponent } from './store-pickup.component';
 import { CustomerRoutingModule } from '../customer.routing.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     IonicModule,
     CommonModule,
     CustomerRoutingModule,
+    FormsModule
   ],
   exports:[
     HeaderComponent,StoreMapComponent,StoresComponent,StorePickupComponent
