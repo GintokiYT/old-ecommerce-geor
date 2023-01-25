@@ -1,77 +1,33 @@
-import { Component, Injector, Input, OnDestroy, OnInit } from '@angular/core';
-import { AppDialogService, GeolocationService, GoogleMapService } from '@geor360/ecore';
-import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { RoutesCollection } from './../../../../conts/routes-collection';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    templateUrl: 'login.component.html',
-    styleUrls: [
-        'login.component.scss'
-    ]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginPage implements OnInit {
+  loginForm!: FormGroup;
+  pathRecoverPassword: string = RoutesCollection.auth.recoverPassword;
+  pathRegister: string = RoutesCollection.auth.register;
 
-    private dialog: AppDialogService;
-    private geolocation: GeolocationService;
-    private googleMap: GoogleMapService;
+  constructor(private router: Router) {}
 
-    private hasPermissionSubscription: Subscription;
-    private hasErrorSubscription: Subscription;
-    private hasPositionSubscription: Subscription;
+  ngOnInit() {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
+    });
+  }
 
-    map: google.maps.Map;
-
-    constructor(_injector: Injector) {
-        this.dialog = _injector.get(AppDialogService);
-        this.geolocation = _injector.get(GeolocationService);
-        this.googleMap = _injector.get(GoogleMapService);
-    }
-
-    ngOnInit() {
-
-        if(this.geolocation.loaded) {
-            if(this.googleMap.loaded) {
-                this.map = this.googleMap.createMap(document.getElementById('google-map-id'), this.geolocation.position.coords.latitude, this.geolocation.position.coords.longitude, () => {
-                    console.log('Render')
-                });
-            } else {
-
-            }
-        } else {
-            this.hasPermissionSubscription = this.geolocation.permission.subscribe((permission) => {
-                if (!permission) {
-    
-                }
-            });
-            this.hasErrorSubscription = this.geolocation.exception.subscribe((error) => {
-                if (!error) {
-    
-                }
-            });
-            this.geolocation.newPosition.subscribe((position) => {
-                this.geolocation.clearWatch(() => { });
-                this.googleMap.loadingSubscription.subscribe(() => {
-                    console.log('Load Complete')
-                    this.map = this.googleMap.createMap(document.getElementById('google-map-id'), position.coords.latitude, position.coords.longitude, () => {
-                        console.log('Render')
-                    });
-                });
-                this.googleMap.init();
-            });
-            this.geolocation.init();
-        }
-    }
-
-    ngOnDestroy(): void {
-        this.hasPermissionSubscription?.unsubscribe();
-        this.hasErrorSubscription?.unsubscribe();
-        this.hasPositionSubscription?.unsubscribe();
-    }
-
-    confirm() {
-        this.dialog.dismiss('confirm');
-    }
-
-    cancel() {
-        this.dialog.dismiss('cancel');
-    }
+  onSubmit() {
+    this.router.navigate([RoutesCollection.shop.home]);
+  }
 }

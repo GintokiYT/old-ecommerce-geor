@@ -18,11 +18,6 @@ ion-button {
       --background-activated: #{$white};
       --background-focused: #{$white};
     }
-    // &.button-disabled {
-    //   &::part(native) {
-    //     opacity: 1;
-    //   }
-    // }
     &.ion-color-primary {
       --ion-color-base: #{$primary} !important;
       &.button-disabled {
@@ -43,8 +38,14 @@ ion-button {
     &.button-outline {
       --background: #{$bg-dark};
     }
-  }
-  .ion-color-primary {
-    --ion-color-base: #{$primary} !important;
+    &.ion-color-primary {
+      --ion-color-base: #{$primary} !important;
+      &.button-disabled {
+        &::part(native) {
+          --ion-color-base: #{$gray-200};
+          color: #5B6793;
+        }
+      }
+    }
   }
 }
