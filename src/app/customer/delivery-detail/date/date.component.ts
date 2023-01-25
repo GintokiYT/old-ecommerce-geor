@@ -1,18 +1,21 @@
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Injector } from '@angular/core';
 import { Location } from '@angular/common';
+import { ViewComponent } from '@geor360/ecore';
 
 @Component({
   selector: 'app-date',
   templateUrl: './date.component.html',
   styleUrls: ['./date.component.scss'],
 })
-export class DateComponent implements OnInit {
+export class DateComponent extends ViewComponent implements OnInit {
 
   @Input()
   title: string = ""
 
-  constructor(private location: Location) { }
+  constructor(private location: Location,_injector: Injector) { 
+    super(_injector)
+  }
 
   ngOnInit() { }
 
@@ -28,6 +31,10 @@ export class DateComponent implements OnInit {
     opcion?.classList.add("selected")
     opcion?.classList.remove("notSelected")
 
+  }
+
+  goTo(path: string){
+    this.navigation.back(path);
   }
 
 
