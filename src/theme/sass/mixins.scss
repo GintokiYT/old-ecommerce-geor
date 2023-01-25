@@ -30,7 +30,7 @@
   body {
     &.dark {
       @content;
-      ion-fab-button::part(native) {
+      ion-fab-button.map::part(native) {
         background: #05050F !important;
       }
       ion-title, h3, label, p {
