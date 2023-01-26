@@ -1,0 +1,108 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <app-back-button></app-back-button>
+    </ion-buttons>
+    <ion-title> Regístrate </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item class="form-group">
+      <ion-label position="floating" class="text-secondary">Nombre</ion-label>
+      <ion-input formControlName="name"></ion-input>
+      <app-validation-messages
+        slot="error"
+        [control]="form.get('name')"
+      ></app-validation-messages>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-label position="floating" class="text-secondary">Celular</ion-label>
+      <ion-input
+        formControlName="movil"
+        inputmode="numeric"
+        type="number"
+      ></ion-input>
+      <app-validation-messages
+        slot="error"
+        [control]="form.get('movil')"
+      ></app-validation-messages>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-label position="floating" class="text-secondary"
+        >Correo electrónico</ion-label
+      >
+      <ion-input
+        formControlName="email"
+        inputmode="email"
+        type="email"
+      ></ion-input>
+      <app-validation-messages
+        slot="error"
+        [control]="form.get('email')"
+      ></app-validation-messages>
+    </ion-item>
+    <app-input-password>
+      <ion-item class="form-group">
+        <ion-label position="floating" class="text-secondary"
+          >Contraseña</ion-label
+        >
+        <ion-input type="password" formControlName="password"></ion-input>
+        <app-validation-messages
+          slot="error"
+          [control]="form.get('password')"
+        ></app-validation-messages>
+      </ion-item>
+    </app-input-password>
+
+    <ion-modal class="modal-alert" [canDismiss]="isPreventClose" #modal>
+      <ng-template>
+        <div class="ion-padding">
+          <ion-text class="text-center text fw-700 d-block"
+            >Valida tu celular</ion-text
+          >
+          <ion-text class="text text-sm text-muted text-center d-block mb-3"
+            >Elige cómo validar tu número</ion-text
+          >
+
+          <ion-button
+            expand="block"
+            shape="round"
+            fill="clear"
+            class="mb-3"
+            (click)="onValidPhone('sms')"
+          >
+            Enviar código por SMS
+          </ion-button>
+
+          <ion-button
+            expand="block"
+            shape="round"
+            color="primary"
+            (click)="onValidPhone('whatsapp')"
+          >
+            Enviar código por WhatsApp
+          </ion-button>
+        </div>
+      </ng-template>
+    </ion-modal>
+  </form>
+</ion-content>
+<ion-footer class="ion-padding ion-no-border">
+  <ion-toolbar>
+    <div class="text-center">
+      <span class="d-block text text-secondary text-sm mb-3"
+        >Al hacer clic en "Siguiente" aceptas los Términos y condiciones y
+        Politica de privacidad de Induacril</span
+      >
+      <ion-button
+        expand="block"
+        color="primary"
+        shape="round"
+        [disabled]="form.invalid"
+        (click)="onSubmit()"
+        >Siguiente</ion-button
+      >
+    </div>
+  </ion-toolbar>
+</ion-footer>
