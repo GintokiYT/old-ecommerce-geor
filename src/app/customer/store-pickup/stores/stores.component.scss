@@ -27,7 +27,7 @@
     .checkbox{
         margin-inline: 0px;
         margin-top: 32px;
-        margin-bottom: 335px;
+        margin-bottom: 316px;
         ion-item {
             --padding-start: 0px;
             --inner-padding-end: 0px; 
@@ -60,33 +60,46 @@
 
         ion-item::part(native){ 
             padding: 0px;
-        }
-        ion-button{
-            width: 342px;
-            height: 48px;
-            font-family: 'Roboto';
-            font-weight: 500;
-            font-size: 16px;
-        } 
-        
+        }  
     } 
-    
+    ion-footer{
+        padding: 8px 0px 32px 0px;
+        ion-button{
+            width: 342px ;
+            height: 48px ;
+            #button{
+                margin: 12px 24px 12px 24px;
+                font-size: 16px;
+            }
+        } 
+    }
 }
 
 @media(max-width:320px){
     .content{
         padding-left: 16px;
         padding-right: 16px;
+        .alert{
+            padding: 0px 10px 0px 10px; 
+            ion-label{
+                margin: 10px 0 10px 0 ;
+            }
+        }
         .checkbox{
             margin-top: 24px;
-            margin-bottom: 120px;
+            margin-bottom: 86px;
+            
         }
     }
-    ion-button{
-        width: 288px;
-        height: 40px;
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 14px;
-    } 
+    
+    ion-footer{
+        padding: 8px 0px 16px 0px !important;
+        ion-button{
+            width: 288px !important;
+            height: 40px !important;
+            #button{
+                margin: 9px 24px 12px 9px;
+            }
+        } 
+    }
 }
