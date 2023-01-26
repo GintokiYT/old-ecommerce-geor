@@ -9,10 +9,15 @@ img {
 }
 
 // Content
+ion-content {
+  background: var(--ion-background-color);
+}
+
 .inbox-ion-list {
   width: 100%;
   max-width: calc(100% - 32px);
-  margin: 24px auto 74px auto;
+  margin: 0 auto;
+  margin-top: 80px;
   padding: 0;
 
   display: flex;
@@ -22,6 +27,7 @@ img {
   @media (min-width: 390px) {
     max-width: calc(100% - 48px);
     gap: 32px;
+    margin-top: 104px;
   }
 }
 
@@ -122,4 +128,11 @@ ion-content {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.app-header-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }

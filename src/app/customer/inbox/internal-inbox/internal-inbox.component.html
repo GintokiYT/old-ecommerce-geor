@@ -1,10 +1,10 @@
-<app-header-inbox></app-header-inbox>
-
 <ion-content class="scroll-content">
+
+  <app-header-inbox class="app-header-inbox"></app-header-inbox>
 
   <!-- Content -->
   <div class="content-messages" #scrollContainer>
-    <div *ngFor="let message of messages" #messageRef>
+    <div *ngFor="let message of messages; let i = index" #messageRef (click)="showTime(i)">
       <div *ngIf="message.author === 'business'" class="message-business">
         <div class="content-message-logo">
           <div class="logo">
@@ -15,7 +15,7 @@
               {{ message.message.content }}
             </p>
             <img *ngIf="message.message.type === 'image'" [src]="message.message.content" alt="image">
-            <span class="time-business">
+            <span class="time-business invisible">
               {{ message.time }}
             </span>
           </div>
@@ -28,7 +28,7 @@
               {{ message.message.content }}
             </p>
             <img *ngIf="message.message.type === 'image'" [src]="message.message.content" alt="image">
-            <span class="time-user">
+            <span class="time-user invisible">
               {{ message.time }}
             </span>
           </div>
@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-</ion-content>
+
 
 <ion-footer class="ion-footer">
   <input
@@ -80,3 +80,4 @@
     </div>
   </div>
 </ion-footer>
+</ion-content>

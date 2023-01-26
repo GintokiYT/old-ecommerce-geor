@@ -57,7 +57,7 @@
   //first div
   .alert-header{
     padding-bottom: 0px;
-    
+
   }
 
   //second div
@@ -90,3 +90,8 @@
 
 
 
+// Cambiar el color del Status Bar en IOS (RCNA)
+//* IOS
+ion-app {
+  --ion-status-bar-background: var(--ion-color-icons-selected);
+}

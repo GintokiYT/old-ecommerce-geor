@@ -362,33 +362,33 @@ body {
 
 
 // Variables CSS (RCNA)
-@include theme-light {
-  --ion-background-color: #{$white};
-  --ion-color-basic: #000000;
-  --ion-color-secondary: #00000099;
-  --ion-color-disabled: #00000061;
-  --ion-color-separator: #F5F5F5;
+// @include theme-light {
+//   --ion-background-color: #{$white};
+//   --ion-color-basic: #000000;
+//   --ion-color-secondary: #00000099;
+//   --ion-color-disabled: #00000061;
+//   --ion-color-separator: #F5F5F5;
 
-  --ion-background-secondary: #FAFAFA;
-  --ion-background-tertiary: #023AFF;
+//   --ion-background-secondary: #FAFAFA;
+//   --ion-background-tertiary: #023AFF;
 
-  --ion-color-icons: #424242;
-  --ion-color-icons-selected: #023aff;
-}
+//   --ion-color-icons: #424242;
+//   --ion-color-icons-selected: #023aff;
+// }
 
-@include theme-dark {
-  --ion-background-color: #{$bg-dark};
-  --ion-color-basic: #FFFFFF;
-  --ion-color-secondary: #ffffff99;
-  --ion-color-disabled: #ffffff66;
-  --ion-color-separator: #1B1F3C;
+// @include theme-dark {
+//   --ion-background-color: #{$bg-dark};
+//   --ion-color-basic: #FFFFFF;
+//   --ion-color-secondary: #ffffff99;
+//   --ion-color-disabled: #ffffff66;
+//   --ion-color-separator: #1B1F3C;
 
-  --ion-background-secondary: #1B1F3C;
-  --ion-background-tertiary: #3C66FB;
+//   --ion-background-secondary: #1B1F3C;
+//   --ion-background-tertiary: #3C66FB;
 
-  --ion-color-icons: #ffffff99;
-  --ion-color-icons-selected: #ffffff;
-}
+//   --ion-color-icons: #ffffff99;
+//   --ion-color-icons-selected: #ffffff;
+// }
 
 /* MODO LIGHT */
 @include theme-light {

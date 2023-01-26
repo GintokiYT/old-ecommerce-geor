@@ -173,6 +173,13 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  showTime(index: number) {
+    let selectedDiv = this.messageRef.toArray()[index].nativeElement;
+
+    console.log(selectedDiv)
+    selectedDiv.querySelector('span').classList.toggle('invisible');
+  }
+
   enviarMessage() {
 
     let tiempoActual = '';
