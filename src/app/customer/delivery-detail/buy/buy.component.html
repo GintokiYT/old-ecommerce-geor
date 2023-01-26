@@ -1,13 +1,14 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <button (click)="goBack()" slot="start" class="arrow">
-      <img src="/assets/icons/icon-arrow-izquierda.svg" />
-    </button>
-    <ion-title>¿Quien recibirá la compra?</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <button (click)="goBack()" slot="start" class="arrow">
+        <img src="/assets/icons/icon-arrow-izquierda.svg" />
+      </button>
+      <ion-title>¿Quien recibirá la compra?</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-item>
     <ion-input placeholder="Nombre"></ion-input>
   </ion-item>
@@ -29,7 +30,7 @@
   </ion-item>
   <br>
   <ion-item>
-    <ion-label class="l-telefono"  position="stacked">Telefono</ion-label>
+    <ion-label class="l-telefono" position="stacked">Telefono</ion-label>
     <ion-input placeholder="">
       <img src="/assets/icons/icon-PE.svg" />+551
     </ion-input>
@@ -42,6 +43,6 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button color="primary" expand="block" shape="round">Confirmar</ion-button>  
+    <ion-button (click)="goTo('/customer/confirmar-pedido')" color="primary" expand="block" shape="round">Confirmar</ion-button>
   </ion-toolbar>
 </ion-footer>

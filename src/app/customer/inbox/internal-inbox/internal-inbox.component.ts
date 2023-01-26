@@ -1,5 +1,5 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import { ViewComponent } from '@geor360/ecore';
 
 interface Message {
   id: string;
