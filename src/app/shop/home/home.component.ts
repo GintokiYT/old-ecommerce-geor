@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
+import { AppThemeService, ViewComponent } from '@geor360/ecore';
 import IBanner from 'src/app/interfaces/IBanner';
 import IProduct from 'src/app/interfaces/IProduct';
 
@@ -6,7 +7,7 @@ import IProduct from 'src/app/interfaces/IProduct';
   selector: 'app-home',
   templateUrl: 'home.component.html',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent extends ViewComponent implements OnInit {
   slides: IBanner[] = [];
   slideOptions: any = {
     autoplay: {
@@ -14,20 +15,24 @@ export class HomeComponent implements OnInit {
     },
   };
   productsForYou: IProduct[] = [];
-  productsBestSellers: IProduct[] = [];
   productsFeatured: IProduct[] = [];
   productSlidesOptions: any = {
     spaceBetween: 16,
     slidesPerView: 'auto',
   };
+  private themeService: AppThemeService;
+  logoPath = '/assets/images/logo.svg';
 
-  constructor() {}
+  constructor(_injector: Injector) {
+    super(_injector);
+    this.themeService = _injector.get(AppThemeService);
+  }
 
   ngOnInit() {
+    if (this.themeService.mode === 'dark') {
+      this.logoPath = '/assets/images/logo-dark.svg';
+    }
     this.slides = [
-      { image: '/assets/images/banner.png' },
-      { image: '/assets/images/banner.png' },
-      { image: '/assets/images/banner.png' },
       { image: '/assets/images/banner.png' },
       { image: '/assets/images/banner.png' },
       { image: '/assets/images/banner.png' },
@@ -35,34 +40,23 @@ export class HomeComponent implements OnInit {
     ];
 
     this.productsForYou = [
-      { image: '/assets/images/hojas.png', price: 7551, currency: 'S/' },
-      { image: '/assets/images/llaveros.png', price: 115, currency: 'S/' },
-      { image: '/assets/images/crece.png', price: 120, currency: 'S/' },
+      { image: '/assets/images/cartera.jpg', price: 120, currency: 'S/' },
+      { image: '/assets/images/zapatillas.jpg', price: 390, currency: 'S/' },
+      { image: '/assets/images/plantas.jpg', price: 125, currency: 'S/' },
       { image: '/assets/images/cal-1.png', price: 85, currency: 'S/' },
       { image: '/assets/images/calendario.png', price: 75, currency: 'S/' },
       { image: '/assets/images/colores.png', price: 115, currency: 'S/' },
       { image: '/assets/images/romex.png', price: 120, currency: 'S/' },
       { image: '/assets/images/cal-2.png', price: 85, currency: 'S/' },
-    ];
-
-    this.productsBestSellers = [
-      { image: '/assets/images/calendario.png', price: 75, currency: 'S/' },
-      { image: '/assets/images/colores.png', price: 115, currency: 'S/' },
-      { image: '/assets/images/romex.png', price: 120, currency: 'S/' },
-      { image: '/assets/images/cal-2.png', price: 85, currency: 'S/' },
-      { image: '/assets/images/hojas.png', price: 7551, currency: 'S/' },
-      { image: '/assets/images/llaveros.png', price: 115, currency: 'S/' },
-      { image: '/assets/images/crece.png', price: 120, currency: 'S/' },
-      { image: '/assets/images/cal-1.png', price: 85, currency: 'S/' },
     ];
 
     this.productsFeatured = [
       {
-        image: '/assets/images/producto-big-5.png',
+        image: '/assets/images/bolso.jpg',
         isNew: true,
-        price: 75,
+        price: 189,
         currency: 'S/',
-        oldPrice: 100,
+        oldPrice: 259,
         inOffert: true,
         discountPercentage: 30,
         name: 'Acrílico rugoso de pol itileno rugoso',
@@ -77,7 +71,7 @@ export class HomeComponent implements OnInit {
         ],
       },
       {
-        image: '/assets/images/producto-big-3.png',
+        image: '/assets/images/taza-blanca.jpg',
         price: 120,
         isNew: false,
         inOffert: true,
@@ -90,7 +84,7 @@ export class HomeComponent implements OnInit {
         hasFreeDelivery: true,
       },
       {
-        image: '/assets/images/producto-big-4.png',
+        image: '/assets/images/zapatilla-negra.jpg',
         price: 115,
         isNew: false,
         currency: 'S/',
@@ -101,7 +95,7 @@ export class HomeComponent implements OnInit {
         hasFreeDelivery: false,
       },
       {
-        image: '/assets/images/producto-big-2.png',
+        image: '/assets/images/zapatilla-celeste.jpg',
         price: 85,
         isNew: false,
         inOffert: false,
@@ -112,7 +106,40 @@ export class HomeComponent implements OnInit {
         hasFreeDelivery: false,
       },
       {
-        image: '/assets/images/producto-big-1.png',
+        image: '/assets/images/florero.jpg',
+        price: 7551,
+        currency: 'S/',
+        inOffert: false,
+        isNew: false,
+        name: 'Acrílico rugoso de pol itileno rugoso',
+        hasMinimumOrder: true,
+        minimumOrder: 3,
+        hasFreeDelivery: false,
+      },
+      {
+        image: '/assets/images/flores.jpg',
+        price: 7551,
+        currency: 'S/',
+        inOffert: false,
+        isNew: false,
+        name: 'Acrílico rugoso de pol itileno rugoso',
+        hasMinimumOrder: true,
+        minimumOrder: 3,
+        hasFreeDelivery: false,
+      },
+      {
+        image: '/assets/images/platos.jpg',
+        price: 7551,
+        currency: 'S/',
+        inOffert: false,
+        isNew: false,
+        name: 'Acrílico rugoso de pol itileno rugoso',
+        hasMinimumOrder: true,
+        minimumOrder: 3,
+        hasFreeDelivery: false,
+      },
+      {
+        image: '/assets/images/polo.jpg',
         price: 7551,
         currency: 'S/',
         inOffert: false,
