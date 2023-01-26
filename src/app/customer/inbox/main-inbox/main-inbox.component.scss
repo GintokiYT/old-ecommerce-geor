@@ -10,7 +10,7 @@ img {
 
 // Content
 ion-content {
-  background: var(--ion-background-color);
+  background: var(--ion-background-color) !important;
 }
 
 .inbox-ion-list {

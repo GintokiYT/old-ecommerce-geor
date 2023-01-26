@@ -1,6 +1,8 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
+import { StatusBar } from '@capacitor/status-bar';
+
 interface Message {
   id: string;
   time: string;
@@ -245,5 +247,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       body.classList.add('dark');
       localStorage.setItem('mode', 'dark');
     }
+
+    const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+    StatusBar.setBackgroundColor({ color });
   }
 }
