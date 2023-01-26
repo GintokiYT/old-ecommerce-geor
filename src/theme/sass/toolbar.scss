@@ -1,0 +1,13 @@
+@include theme-dark {
+  ion-toolbar {
+    color: $white;
+    ion-button {
+      --color: #{$white};
+      svg {
+        path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+}

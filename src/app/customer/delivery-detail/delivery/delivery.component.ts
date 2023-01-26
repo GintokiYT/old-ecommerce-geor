@@ -1,21 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Injector } from '@angular/core';
 import { Location } from '@angular/common';
+import { ViewComponent } from '@geor360/ecore';
 
 @Component({
   selector: 'app-delivery',
   templateUrl: './delivery.component.html',
   styleUrls: ['./delivery.component.scss'],
 })
-export class DeliveryComponent implements OnInit {
+export class DeliveryComponent extends ViewComponent implements OnInit {
 
-  @Input() 
+  @Input()
   title: string = ""
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, _injector: Injector) { 
+    super(_injector)
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  goBack(){
+  goBack() {
     this.location.back();
   }
+
+  goTo(path:string){
+    this.navigation.back(path);
   }
+}
