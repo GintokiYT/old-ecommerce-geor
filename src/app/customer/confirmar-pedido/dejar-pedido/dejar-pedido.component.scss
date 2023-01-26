@@ -6,6 +6,7 @@
         font-size: 16px;
         color: var(--ion-textLight-color);
         padding-bottom: 32px;
+        cursor: pointer;
     }
 
     .with-direction{
@@ -13,60 +14,47 @@
     }
 
     .contenedor-info-pedido {
-        display: flex;
-        flex-direction: column;
-        gap: 24px
-    }
+        gap: 24px;
 
-    .info-pedido {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-    }
+        .info-pedido {
 
-    .info-pedido:nth-child(1)  {
-        img{
-            filter: var(--ion-truckFilter-color);
-        }
-        ion-label{
-            color: var(--ion-textPrimary-color);
-        }
-    }
+            gap: 12px;
+            cursor: pointer;
 
+            .info-pedido-destinatario {
 
-    .info-pedido-destinatario {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-
-        ion-label:nth-child(1){
-            color: var(--ion-textPrimary-color);
-        }
-
-        ion-label:nth-child(2){
-            color: var(--ion-textLight-color);
-        }
-    }
-
-
-    .info-pedido:nth-child(3) {
-        ion-label {
-            color: var(--ion-textLight-color);
-        }
-
-        img{
-            filter: var(--ion-dangerFilter-color);
-        }
+                gap: 2px;
         
-    }
+                ion-label:nth-child(1){
+                    color: var(--ion-textPrimary-color);
+                }
+        
+                ion-label:nth-child(2){
+                    color: var(--ion-textLight-color);
+                }
+            }
+        }
 
+        .info-pedido:nth-child(1)  {
+            img{
+                filter: var(--ion-truckFilter-color);
+            }
+            ion-label{
+                color: var(--ion-textPrimary-color);
+            }
+        }
+
+        .info-pedido:nth-child(3) {
+            ion-label {
+                color: var(--ion-textLight-color);
+            }
     
-
+            img{
+                filter: var(--ion-dangerFilter-color);
+            }
+            
+        }
     
-
-    .lugar-pedido,
-    .info-pedido {
-        cursor: pointer;
     }
 
 }

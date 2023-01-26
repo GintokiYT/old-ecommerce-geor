@@ -3,9 +3,7 @@
     max-width: 100%;
     padding-right: 24px;
     padding-left: 24px;
-    display: flex;
     padding-top: 32px;
-    flex-direction: column;
     gap: 32px;
 }
 
@@ -19,17 +17,17 @@
         color: var(--ion-textPrimary-color);
     }
 
-    .metodos{
+    .metodos-pago{
         cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-top: 24px;
 
-        .d-flex{
+        .metodos-pago-vacio{
             gap: 8.75px;
-            align-items: center;
             color: var(--ion-color-primary);
+
+            >img{
+                filter: var(--ion-filter-primary);
+            }
         }
 
         >img{
@@ -39,19 +37,12 @@
         }
     }
 
-
-    .metodos .d-flex img{
-        filter: var(--ion-filter-primary);
-    }
 }
 
 /** CUPÓN **/
 .contenedor-cupon{
     width: 242px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 7px;
     padding: 12px 0px; 
     background-color: var(--ion-cuponBg-color);
@@ -72,8 +63,6 @@
 /** Datos de facturación **/
 .contenedor-datos-facturacion{
 
-    display: flex;
-    flex-direction: column;
     gap: 8px;
 
     >ion-label{
@@ -81,13 +70,11 @@
         color: var(--ion-textPrimary-color);
     }
 
-    .datos{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .datos-facturacion{
+
         color: var(--ion-textLight-color);
 
-        img{
+        >img{
             filter: var(--ion-arrowRightFilter-color);
             width: 8.17px;
             height: 14px;
@@ -114,11 +101,11 @@
     
     .contenedor-metodos-pago{
 
-        .metodos{
+        .metodos-pago{
             margin-top: 14px;
         }
 
-        .metodos .d-flex img{
+        .metodos-pago .d-flex img{
             height: 15.42px !important;
         }
 
@@ -141,7 +128,7 @@
     }
 
     .contenedor-datos-facturacion{
-        .datos{
+        .datos-facturacion{
             margin-top: 8px;
         }
     }
