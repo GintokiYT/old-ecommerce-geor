@@ -14,10 +14,11 @@ ion-content {
 }
 
 .inbox-ion-list {
+  background: var(--ion-background-color);
   width: 100%;
   max-width: calc(100% - 32px);
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 72px;
   padding: 0;
 
   display: flex;
@@ -73,7 +74,8 @@ ion-content {
   .ion-detail__header--info {
     font-size: 12px;
     font-weight: 400;
-    color: var(--ion-color-disabled);
+    // color: var(--ion-color-disabled);
+    color: var(--ion-color-light);
   }
 }
 
@@ -88,7 +90,8 @@ ion-content {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: var(--ion-color-secondary);
+    // color: var(--ion-color-secondary);
+    color: var(--ion-color-light);
 
     @media(min-width: 390px) {
       font-size: 14px;
@@ -107,10 +110,12 @@ ion-content {
     text-overflow: ellipsis;
     font-size: 12px;
     font-weight: 400;
-    color: var(--ion-color-secondary);
+    // color: var(--ion-color-secondary);
+    color: var(--ion-color-light);
 
     .user-tag {
-      color: var(--ion-color-induacril);
+      // color: var(--ion-color-induacril);
+      color: var(--ion-color-primary);
     }
 
     @media(min-width: 390px) {

@@ -51,4 +51,18 @@ export class MainInboxComponent extends ViewComponent implements OnInit {
   openInternalBox(id: string) {
     this.navigation.root('/customer/internal-inbox/' + id, 'forward');
   }
+
+  changeMode() {
+    const body = document.querySelector('body');
+
+    if(body.classList.contains('dark')) {
+      body.classList.remove('dark');
+      body.classList.add('light');
+      localStorage.setItem('mode', 'light');
+    }else {
+      body.classList.remove('light');
+      body.classList.add('dark');
+      localStorage.setItem('mode', 'dark');
+    }
+  }
 }
