@@ -1,6 +1,8 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
+import { StatusBar } from '@capacitor/status-bar';
+
 interface Email {
   id: string;
   image: string;
@@ -50,5 +52,22 @@ export class MainInboxComponent extends ViewComponent implements OnInit {
 
   openInternalBox(id: string) {
     this.navigation.root('/customer/internal-inbox/' + id, 'forward');
+  }
+
+  changeMode() {
+    const body = document.querySelector('body');
+
+    if(body.classList.contains('dark')) {
+      body.classList.remove('dark');
+      body.classList.add('light');
+      localStorage.setItem('mode', 'light');
+    }else {
+      body.classList.remove('light');
+      body.classList.add('dark');
+      localStorage.setItem('mode', 'dark');
+    }
+
+    const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+    StatusBar.setBackgroundColor({ color });
   }
 }
