@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import { ViewComponent } from '@geor360/ecore';
 
 interface Email {
   id: string;
@@ -42,24 +42,11 @@ export class MainInboxComponent extends ViewComponent implements OnInit {
     }
   ]
 
-  private themeService: AppThemeService;
-
   constructor(_injector: Injector) {
     super(_injector);
-    this.themeService = _injector.get(AppThemeService);
   }
 
-  ngOnInit() {
-    localStorage.setItem('mode', 'light');
-  }
-
-  onActive(id: string) {
-    const items = document.querySelectorAll('.inbox-footer__content--item');
-    items.forEach(item => item.classList.remove('active'));
-
-    const item = document.getElementById(id);
-    item?.classList.add('active');
-  }
+  ngOnInit() {}
 
   openInternalBox(id: string) {
     this.navigation.root('/customer/internal-inbox/' + id, 'forward');

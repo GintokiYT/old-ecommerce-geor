@@ -1,0 +1,62 @@
+.chat-header {
+  padding: 24px 16px 4px 16px;
+  border-bottom: 1px solid var(--ion-color-separator);
+
+  @media (min-width: 390px) {
+    padding: 24px 24px 4px 24px;
+  }
+}
+
+.chat-ion-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+}
+
+.button-header {
+  width: auto;
+  height: auto;
+  background: transparent;
+
+  svg {
+    font-size: 24px;
+  }
+}
+
+.content-title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .content-title__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .content-title__name {
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--ion-color-basic);
+    }
+  }
+}
+
+// Iconos
+.icon-arrow-left {
+  path {
+    stroke: var(--ion-color-basic);
+  }
+}
+
+.icon-call {
+  path {
+    stroke: var(--ion-color-basic);
+  }
+}

@@ -2,25 +2,21 @@
     padding-left: 24px;
     padding-right: 24px;
     .alert{
-        background: #E3EAFD;
         border-radius: 4px;
         padding: 0px 12px 0px 12px; 
         margin-bottom: 0px;
         ion-item{
             --padding-start: 0px;
             --inner-padding-end: 0px;
-            --background: #E3EAFD;
-            
             #time{
-                margin-right: 8px;
+                margin-right: 8px ;
             }
             ion-label{
                 font-family: 'Roboto';
                 font-style: normal;
                 font-size: 12px;
                 margin: 16px 0 16px 0 ;
-                color: #00000099;
-
+                padding: 0px;
             }
         }
 
@@ -31,7 +27,7 @@
     .checkbox{
         margin-inline: 0px;
         margin-top: 32px;
-        margin-bottom: 296px;
+        margin-bottom: 335px;
         ion-item {
             --padding-start: 0px;
             --inner-padding-end: 0px; 
@@ -41,11 +37,7 @@
                 margin-bottom: 24px !important;
             }
 
-            .fz-small{
-                color: #000000;
-            }
             .fz-note{
-                color: rgba(0, 0, 0, 0.6);
                 margin-top: 4px !important;
                 margin-bottom: 0px !important;
             }
@@ -58,24 +50,43 @@
                 text-decoration: none;
                 padding-top: 10px !important;
             }
-            
-            
         }
 
         ion-checkbox{
             --size: 20px;
             margin-right: 0px;
             margin-bottom: 37px;
-        }        
+        }    
 
         ion-item::part(native){ 
             padding: 0px;
         }
-    }
-
-    ion-button{
-        --background: #023AFF !important;
-        --border-radius: 50px;
+        ion-button{
+            width: 342px;
+            height: 48px;
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 16px;
+        } 
         
+    } 
+    
+}
+
+@media(max-width:320px){
+    .content{
+        padding-left: 16px;
+        padding-right: 16px;
+        .checkbox{
+            margin-top: 24px;
+            margin-bottom: 120px;
+        }
     }
+    ion-button{
+        width: 288px;
+        height: 40px;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 14px;
+    } 
 }

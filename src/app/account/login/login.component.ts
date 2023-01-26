@@ -1,18 +1,16 @@
-import { Router } from '@angular/router';
-import { RoutesCollection } from './../../../../conts/routes-collection';
+import { AppNavigationService } from '@geor360/ecore';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RouteCollection } from 'src/shared/route-collection';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
 })
-export class LoginPage implements OnInit {
+export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  pathRecoverPassword: string = RoutesCollection.auth.recoverPassword;
-  pathRegister: string = RoutesCollection.auth.register;
 
-  constructor(private router: Router) {}
+  constructor(private navigator: AppNavigationService) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -27,7 +25,15 @@ export class LoginPage implements OnInit {
     });
   }
 
+  onToRegister() {
+    this.navigator.forward(RouteCollection.auth.register);
+  }
+
+  onToForgotPassword() {
+    this.navigator.forward(RouteCollection.auth.recoverPassword);
+  }
+
   onSubmit() {
-    this.router.navigate([RoutesCollection.shop.home]);
+    this.navigator.forward(RouteCollection.shop.home);
   }
 }

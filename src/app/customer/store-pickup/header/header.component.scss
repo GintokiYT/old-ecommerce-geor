@@ -3,9 +3,9 @@ button{
 }
 
 ion-toolbar{
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50)); 
     --min-height: 0px;
-    --padding-top: 56px;
+    --padding-top: 24px;
     --padding-start: 24px;
     --padding-end: 24px;
     --padding-bottom: 40px
@@ -13,14 +13,10 @@ ion-toolbar{
 
 @media(max-width:320px){
     ion-toolbar{
-        --padding-top: 32px;
+        --padding-top: 8px;
         --padding-start: 16px;
         --padding-end: 16px;
         --padding-bottom: 24px
     }
 }
 
-ion-title{
-    font-weight: bold;
-    font-size: 16px;
-}

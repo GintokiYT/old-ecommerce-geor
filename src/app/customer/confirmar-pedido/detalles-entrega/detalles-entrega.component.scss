@@ -9,6 +9,7 @@
         font-weight: bold;
         margin: 0;
         margin-bottom: 24px;
+        color: var(--ion-textPrimary-color);
     }
 
     .contenedor-opciones{
@@ -65,10 +66,19 @@
 }
 
 
+
+
+
+
+
+
+
+
+/* css para la clase seleccionada */
 .notSelected{
-    --borderColor: #F5F5F5;
-    --parraphColor: #00000061;
-    --filter: unset;
+    --borderColor : var(--ion-borderNotSelected-color);
+    --parraphColor: var(--ion-parraphNotSelected-color);
+    --filter: var(--ion-filterNotSelected-color);    
 }
 
 @media(max-width:320px){
@@ -78,9 +88,9 @@
 }
 
 .selected{
-    --borderColor: var(--ion-color-induacril);
-    --parraphColor: var(--ion-color-induacril);
-    --filter: var(--ion-color-induacril-filter);
+    --borderColor : var(--ion-borderSelected-color);
+    --parraphColor: var(--ion-parraphSelected-color);
+    --filter: var(--ion-filterSelected-color);
 }
 
 

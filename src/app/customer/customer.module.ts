@@ -12,7 +12,6 @@ import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
 
 @NgModule({
-
   imports:[
     CommonModule,
     IonicModule,

@@ -1,5 +1,5 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import { ViewComponent } from '@geor360/ecore';
 
 interface Message {
   id: string;
@@ -22,7 +22,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
   @ViewChild('messageInput') messageInput: ElementRef;
   @ViewChild('contentInput') contentInput: ElementRef;
 
-  @ViewChildren('elementRef') elementRefs: QueryList<ElementRef>;
+  @ViewChildren('messageRef') messageRef: QueryList<ElementRef>;
 
 
   ngAfterViewInit() {
@@ -35,8 +35,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       }
     });
 
-    this.elementRefs.changes.subscribe(()=>{
-      this.elementRefs.last.nativeElement.scrollIntoView({behavior: 'smooth'});
+    this.messageRef.changes.subscribe(()=>{
+      this.messageRef.last.nativeElement.scrollIntoView({behavior: 'smooth'});
     });
   }
 
@@ -166,18 +166,11 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     }
   }
 
-  private themeService: AppThemeService;
-
   constructor(_injector: Injector) {
     super(_injector);
-    this.themeService = _injector.get(AppThemeService);
   }
 
   ngOnInit() {
-  }
-
-  backMainInbox() {
-    this.navigation.root('/customer/main-inbox', 'back');
   }
 
   enviarMessage() {
@@ -231,9 +224,5 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
         }
       }
     }
-  }
-
-  openTelf() {
-    this.navigation.root('/customer/telefono', 'forward');
   }
 }

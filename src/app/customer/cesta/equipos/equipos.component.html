@@ -4,12 +4,12 @@
     <div class="contacts d-flex flex-row">
       <ion-img [src]="item.image"></ion-img>
       <div class="information fz-small d-flex flex-column">
-        <ion-label>{{item.nombre}}</ion-label>
+        <ion-label class="nombre">{{item.nombre}}</ion-label>
         <div  *ngFor="let estados  of item.estado" class="text-description d-flex flex-row">
           <ion-label *ngIf="estados.estado==='Pendiente'" class="pendiente">
             <ion-img class="imagen-pendiente"src="assets/collaborative-basquet/Pendiente.svg"></ion-img>
             {{estados.estado}}</ion-label>
-          <ion-label class="ver">{{estados.numero}}</ion-label>
+          <ion-label >{{estados.numero}}</ion-label>
         </div>
       </div>
     </div>

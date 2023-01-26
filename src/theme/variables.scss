@@ -75,7 +75,8 @@
 //   --ion-color-light-shade: #8b8b8b;
 //   --ion-color-light-tint: #a8a8a8;
 
-:root {
+:root{
+
   /** light **/
   --ion-color-light: #9e9e9e;
   --ion-color-light-rgb: 158, 158, 158;
@@ -94,6 +95,7 @@
   // --ion-color-induacril: #AA376A;
   // --ion-color-induacril-filter: brightness(0) saturate(100%) invert(30%) sepia(29%) saturate(2851%) hue-rotate(297deg) brightness(86%) contrast(87%);
 }
+
 
 /** Dark Colors **/
 // body.dark {
@@ -261,6 +263,7 @@ $black: #000000;
 $gray-100: #f5f5f5;
 $gray-200: #1b1f3c;
 $gray-300: #e0e0e0;
+$gray-800: #424242;
 $bg-dark: #05050f;
 $brand: #e3eafd;
 $text-light: rgba($black, 0.38);
@@ -269,11 +272,15 @@ $divider: rgba($black, 0.12);
 // Dark mode
 $btn-default: #5b6793;
 
+
+
 body {
   --ion-padding: 16px;
 }
+
 @include theme-light {
   --ion-background-color: #{$white};
+  --ion-toolbar-background: #{$white};
 }
 
 @include theme-dark {
@@ -281,14 +288,16 @@ body {
   --color: #{$white};
   --bs-body-color: #{$white};
   --ion-item-color: #{$white};
+  --ion-toolbar-background: #{$bg-dark};
 }
 
-.ion-color-ecommerce {
+
+.ion-color-ecommerce{
   --ion-color-base: var(--ion-color-ecommerce) !important;
   --ion-color-filter: var(--ion-color-ecommerce-filter) !important;
 }
 
-.ion-color-induacril {
+.ion-color-induacril{
   --ion-color-base: var(--ion-color-induacril) !important;
   --ion-color-filter: var(--ion-color-induacril-filter) !important;
 }

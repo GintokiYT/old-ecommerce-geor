@@ -1,17 +1,18 @@
 <ion-content [fullscreen]="true">
   <app-header-cesta></app-header-cesta>
   <!-- <app-header-basquets></app-header-basquets> -->
+  <!-- CONTENIDO -->
   <div class="Contenido">
-    <div class="aver2">
       <ion-list>
         <ion-item-sliding>
           <ion-item lines="none">
-            <ion-label class="box-select">
-              <ion-checkbox
+            <ion-label class="box-select d-flex flex-row">
+            <!--   <ion-checkbox
                 class="checkbox"
-                value="{{ chk01 }}"
+              value="{{ chk01 }}"
                 slot="start"
-              ></ion-checkbox>
+              ></ion-checkbox> -->
+              <ion-checkbox class="checkbox" slot="start"></ion-checkbox>
               <div class="box d-flex flex-column">
                 <div class="box-name d-flex flex-row">
                   <div>
@@ -34,8 +35,8 @@
                       src="/assets/collaborative-basquet/Delete 02.svg"
                       alt="icono"
                     />
-                    <p class="number-signo">
-                      -<span class="number-2 fz-small">10,503</span>+
+                    <p class="fz.normal">
+                      -<span class="number2 fz-small">10,503</span>+
                     </p>
                   </div>
                 </div>
@@ -44,6 +45,7 @@
           </ion-item>
           <ion-item-options lines="none">
             <ion-item-option class="option-background">
+
               <img
                 (click)="eliminarProducto()"
                 class="img-delete"
@@ -55,30 +57,28 @@
         </ion-item-sliding>
       </ion-list>
     </div>
-
-  </div>
   <app-producto></app-producto>
-
   <app-modal-cesta></app-modal-cesta>
 </ion-content>
-
+<!-- FOOTER -->
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <div class="contenedor-footer">
       <div class="box-total d-flex flex-row justify-content-between">
-        <div class="total-checkbox">
-          <ion-checkbox class="checkbox2" slot="start"></ion-checkbox>
+        <div class="total-checkbox d-flex flex-row align-items-center">
+         <!--  <ion-checkbox class="checkbox2" slot="start"></ion-checkbox> -->
+          <ion-checkbox  slot="start"></ion-checkbox>
           <p class="fz-small">Todo</p>
         </div>
         <div class="fz-small">
           <p>S/ 45,789.00</p>
         </div>
       </div>
-      <ion-button expand="block" color="primary" shape="round"> Ir a pagar</ion-button >
+      <ion-button expand="block" color="primary" shape="round" (click)="confirmarPerdido()"> Ir a pagar</ion-button >
 
     </div>
-
     <!-- <app-footer></app-footer> -->
   </ion-toolbar>
   <app-footer-cesta></app-footer-cesta>
 </ion-footer>
+

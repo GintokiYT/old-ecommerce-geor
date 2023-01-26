@@ -19,6 +19,7 @@ export class HeaderCestaComponent extends ViewComponent implements OnInit {
   goEquipo() {
     console.log("equipos");
     this.navigation.root('/customer/equipos', 'forward');
+   /*  this.navigation.forward('/customer/equipos', 'back'); */
     //this.router.navigate(['/', 'equipos']);
   }
 
@@ -27,7 +28,7 @@ export class HeaderCestaComponent extends ViewComponent implements OnInit {
       showBackdrop:true,
       component: ModalCestaComponent,
       componentProps: {
-        title: "Algo"
+        title: "Modal"
       }
     }).then((response) => {
       console.log(response);

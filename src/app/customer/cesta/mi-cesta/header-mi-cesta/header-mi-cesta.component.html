@@ -1,12 +1,12 @@
 <ion-header class="ion-no-border chat-header" mode="md">
-  <div class="chat-ion-toolbar">
-    <div class="content-title">
+  <div class="chat-ion-toolbar d-flex flex-row justify-content-between align-items-center">
+    <div class="content-title d-flex align-items-center">
       <div class="content-title__name">
-        <h2 class="fw-700">
-          Mi cesta (96)
+        <h2 (click)="goGerardo()"class="fz-normal fw-700">
+          {{title}}
         </h2>
       </div>
     </div>
-    <img (click)="goEquipo()" src="/assets/collaborative-basquet/Perfil.svg" alt="Equipo" />
+    <img src="/assets/collaborative-basquet/Perfil.svg" alt="Equipo" />
   </div>
 </ion-header>

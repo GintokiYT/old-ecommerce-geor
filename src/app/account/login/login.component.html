@@ -4,46 +4,51 @@
       <ion-title> Inicia sesión </ion-title>
     </ion-toolbar>
   </ion-header>
-  <div class="content__centered">
-    <form
-      class="body__content w-100"
-      [formGroup]="loginForm"
-      (ngSubmit)="onSubmit()"
-    >
-      <ion-item class="form-group">
-        <ion-label position="floating">Celular o correo electrónico</ion-label>
-        <ion-input formControlName="username"></ion-input>
-      </ion-item>
-      <ion-item class="form-group">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
-      </ion-item>
-      <div class="text-end form-group form-group__double">
-        <ion-router-link
-          class="sm"
-          color="secondary"
-          [href]="pathRecoverPassword"
-          >¿Olvidaste tu contraseña?</ion-router-link
+  <form class="w-100" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-item class="form-group">
+      <ion-label position="floating" class="text-secondary"
+        >Celular o correo electrónico</ion-label
+      >
+      <ion-input formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-label position="floating" class="text-secondary"
+        >Contraseña</ion-label
+      >
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="text-end form-group form-group__double">
+      <ion-button size="small" fill="clear" (click)="onToForgotPassword()">
+        <span class="text-x-small text-secondary"
+          >¿Olvidaste tu contraseña?</span
         >
-      </div>
-      <div class="form-group form-group__double">
-        <ion-button
-          expand="block"
-          color="primary"
-          shape="round"
-          type="submit"
-          [disabled]="loginForm.invalid"
-          >Iniciar sesión</ion-button
-        >
-      </div>
-      <div class="text-center">
-        <span class="text text-secondary text-sm"
-          >¿Aún no tienes una cuenta?
-        </span>
-        <ion-router-link class="sm" color="secondary" [href]="pathRegister"
-          >Regístrate</ion-router-link
-        >
-      </div>
-    </form>
-  </div>
+      </ion-button>
+    </div>
+  </form>
 </ion-content>
+<ion-footer class="ion-no-border">
+  <div class="ion-padding">
+    <div class="form-group form-group__double">
+      <ion-button
+        expand="block"
+        color="primary"
+        shape="round"
+        type="submit"
+        [disabled]="loginForm.invalid"
+        >Iniciar sesión</ion-button
+      >
+    </div>
+    <div class="text-center d-flex align-items-center justify-content-center">
+      <span class="text-secondary text-sm">¿Aún no tienes una cuenta? </span>
+      <ion-button
+        fill="clear"
+        size="small"
+        class="button-linear"
+        (click)="onToRegister()"
+      >
+        <span class="text-sm text-primary">Regístrate</span>
+      </ion-button>
+    </div>
+  </div>
+  <app-footer-buttons></app-footer-buttons>
+</ion-footer>

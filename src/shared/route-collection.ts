@@ -7,4 +7,16 @@ export const RouteCollection = {
       changeAddress: 'account/welcome/change-address',
     },
   },
+  auth: {
+    login: 'login',
+    register: 'register',
+    validPhone: 'valid-phone',
+    validEmail: 'valid-email',
+    recoverPassword: 'recover-password',
+    recoverPasswordEmail: 'recover-password-code',
+    restorePassword: 'restore-password',
+  },
+  shop: {
+    home: 'shop/home',
+  },
 };
