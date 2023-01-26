@@ -9,6 +9,7 @@ import { RouteCollection } from 'src/shared/route-collection';
 })
 export class RecoverPasswordComponent implements OnInit {
   form!: FormGroup;
+  urlBack: string = RouteCollection.auth.login;
 
   constructor(private router: Router) {}
 

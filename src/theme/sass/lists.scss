@@ -5,22 +5,22 @@ ion-item {
   }
 }
 
-@include theme-light {
-  ion-list {
-    --ion-item-background: #{$white};
-    --ion-item-color: #9e9e9e;
-    --ion-item-border-color: #eeeeee;
-  }
-  ion-item {
-    &.item-has-focus {
-      --ion-color-primary: #9e9e9e;
-      --border-width: 0;
-    }
-  }
-}
+// @include theme-light {
+//   ion-list {
+//     --ion-item-background: #{$white};
+//     --ion-item-color: #9e9e9e;
+//     --ion-item-border-color: #eeeeee;
+//   }
+//   ion-item {
+//     &.item-has-focus {
+//       --ion-color-primary: #9e9e9e;
+//       --border-width: 0;
+//     }
+//   }
+// }
 
-@include theme-dark {
-  ion-item {
-    --ion-item-border-color: #{$gray-200};
-  }
-}
+// @include theme-dark {
+//   ion-item {
+//     --ion-item-border-color: #{$gray-200};
+//   }
+// }
