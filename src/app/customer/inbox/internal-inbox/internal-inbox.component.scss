@@ -9,10 +9,16 @@ img {
 }
 
 // Content
+ion-content {
+  background: var(--ion-background-color);
+}
+
 .content-messages {
   width: 100%;
   max-width: calc(100% - 32px);
   margin: 24px auto 24px auto;
+  margin-top: 93px;
+  margin-bottom: 85px;
   display: flex;
   flex-direction: column;
   gap: 29px;
@@ -93,6 +99,11 @@ img {
 // Footer
 .ion-footer {
   border-top: 1px solid var(--ion-color-separator);
+  background-color: var(--ion-background-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .input-message {
@@ -159,4 +170,11 @@ ion-content {
   }
 }
 
+.app-header-inbox {
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
 

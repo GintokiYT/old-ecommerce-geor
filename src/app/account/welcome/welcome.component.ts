@@ -1,6 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { AppThemeService, ViewComponent } from '@geor360/ecore';
-import { LoginComponent } from '../login/login.component';
 
 @Component({
     templateUrl: 'welcome.component.html',

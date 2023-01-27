@@ -89,14 +89,40 @@ $btn-default: #5b6793;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #8b8b8b;
   --ion-color-light-tint: #a8a8a8;
-  --ion-color-light-filter: unset;
+
+  // custom colors
+  --ion-color-icons: #424242;
+  --ion-color-icons-selected: #023AFF;
+  --ion-color-basic: #000000;
+  --ion-color-separator: #F5F5F5;
+  --ion-background-secondary: #FAFAFA;
+  --ion-color-disabled: #00000061;
+  --ion-background-tertiary: #023AFF;
+
+}
+
+:root{
+
+  /** light **/
+  --ion-color-light: #9e9e9e;
+  --ion-color-light-rgb: 158, 158, 158;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #8b8b8b;
+  --ion-color-light-tint: #a8a8a8;
+
+  /** Estándar ecommerce **/
+  --ion-color-induacril: #023aff;
+  --ion-color-induacril-filter: brightness(0) saturate(100%) invert(11%)
+    sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%)
+    contrast(110%);
 
 }
 
 
 /** Dark Colors **/
 body.dark {
-  --ion-background-color: $white;
+  --ion-background-color: #{$bg-dark};
   /** primary **/
   --ion-color-primary: #3c66fb;
   --ion-color-primary-rgb: 60, 102, 251;
@@ -203,7 +229,7 @@ body.dark {
   --ion-color-step-900: #e6e6e6;
   --ion-color-step-950: #f2f2f2;
 
-  --ion-item-background: #000000;
+  --ion-item-background: #{$bg-dark};
 
   --ion-card-background: #1c1c1d;
 
