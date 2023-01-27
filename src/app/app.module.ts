@@ -13,8 +13,8 @@ import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions
 import { OpenNativeSettings } from '@awesome-cordova-plugins/open-native-settings/ngx';
 import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
 import { AppTranslations } from '@app/shared';
-
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
+
 
 function appInitializerFactory(injector: Injector) {
   return () => {
