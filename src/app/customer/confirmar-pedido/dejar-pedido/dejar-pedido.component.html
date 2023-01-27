@@ -1,73 +1,52 @@
-<!-- ENVIO A DOMICILIO -->
-<div class="dejar-pedido" *ngIf="envioADomicilio">
-    <ion-label 
-        *ngIf="cpService.miPedido.detallesEntregaADomicilio.direction==='¿Donde dejaremos tu pedido?'"
-        (click)="goTo('/customer/direction')" 
-        class="lugar-pedido"
-    >
-        {{cpService.miPedido.detallesEntregaADomicilio.direction}}
-    </ion-label>
-    <ion-label 
-        *ngIf="cpService.miPedido.detallesEntregaADomicilio.direction!=='¿Donde dejaremos tu pedido?'"
-        (click)="goTo('/customer/direction')" 
-        class="lugar-pedido with-direction" 
-    >
-        {{cpService.miPedido.detallesEntregaADomicilio.direction}}
-    </ion-label>
 
-    <div class="contenedor-info-pedido">
-        <div class="info-pedido">
-            <img src="/assets/icons/icon-truck.svg" />
-            <ion-label (click)="goTo('/customer/date')">Llega el 26 dic, 8:00am - 9:00am</ion-label>
-        </div>
-        <div class="info-pedido" (click)="goTo('/customer/contact','/customer/buy')">
-            <img src="/assets/images/gerardo.png" height="32px" />
-            <div class="info-pedido-destinatario">
-                <ion-label>Wilfredo</ion-label>
-                <ion-label>Recibirá el pedido</ion-label>
+<div class="dejar-pedido" [ngSwitch]="pedido.tipoPedido">
+
+    <!-- ENVIO A DOMICILIO -->
+    <div *ngSwitchCase="'domicilio'">
+        <ion-label 
+            (click)="goTo('/customer/direction')" 
+            [class]= pedido.detallesEntregaADomicilio.dClass
+        >
+            {{pedido.detallesEntregaADomicilio.direction}}
+         </ion-label>
+
+        <div class="contenedor-info-pedido d-flex flex-column">
+            <div class="info-pedido d-flex align-items-center date">
+                <img src="/assets/icons/icon-truck.svg" />
+                <ion-label (click)="goTo('/customer/date')">Llega el 26 dic, 8:00am - 9:00am</ion-label>
+            </div>
+            <div class="info-pedido d-flex align-items-center contact" (click)="goTo('/customer/contact','/customer/buy')">
+                <img src="/assets/images/gerardo.png" height="32px" />
+                <div class="info-pedido-destinatario d-flex flex-column">
+                    <ion-label>Wilfredo</ion-label>
+                    <ion-label  class="text-sm">Recibirá el pedido</ion-label>
+                </div>
+            </div>
+            <div class="info-pedido d-flex align-items-center requirements" (click)="goTo('/customer/delivery')">
+                <img src="/assets/icons/icon-danger.svg" />
+                <ion-label>Requisitos para la entrega</ion-label>
             </div>
         </div>
-        <div class="info-pedido" (click)="goTo('/customer/delivery')">
-            <img src="/assets/icons/icon-danger.svg" />
-            <ion-label>Requisitos para la entrega</ion-label>
-        </div>
     </div>
-</div>
 
+    <!-- RECOJO EN TIENDA -->
+    <div *ngSwitchCase="'tienda'">
+        <ion-label 
+            (click)="goTo('/customer/stores')" 
+            [class]= pedido.detallesEntregaATienda.dClass 
+        >
+            {{pedido.detallesEntregaATienda.direction}}
+        </ion-label>
 
-<!-- RECOJO EN STORE -->
-<div class="dejar-pedido" *ngIf="recojoTienda">
-    <ion-label 
-        *ngIf="cpService.miPedido.detallesEntregaATienda.direction==='¿Donde recojeras tu pedido?'"
-        (click)="goTo('/customer/stores')" 
-        class="lugar-pedido" 
-    >
-        {{cpService.miPedido.detallesEntregaATienda.direction}}
-    </ion-label>
-    <ion-label 
-        *ngIf="cpService.miPedido.detallesEntregaATienda.direction!=='¿Donde recojeras tu pedido?'"
-        (click)="goTo('/customer/stores')" 
-        class="lugar-pedido with-direction" 
-    >
-        {{cpService.miPedido.detallesEntregaATienda.direction}}
-    </ion-label>
-
-
-    <div class="contenedor-info-pedido">
-        <div class="info-pedido" style="display: none;">
-            <img src="/assets/icons/icon-truck.svg" />
-            <ion-label>Llega el 26 dic, 8:00am - 9:00am</ion-label>
-        </div>
-        <div class="info-pedido" (click)="goTo('/customer/contact','/customer/buy')">
-            <img src="/assets/images/gerardo.png" height="32px" />
-            <div class="info-pedido-destinatario">
-                <ion-label>Wilfredo</ion-label>
-                <ion-label>Recibirá el pedido</ion-label>
+        <div class="contenedor-info-pedido d-flex flex-column">
+            <div class="info-pedido d-flex align-items-center" (click)="goTo('/customer/contact','/customer/buy')">
+                <img src="/assets/images/gerardo.png" height="32px" />
+                <div class="info-pedido-destinatario d-flex flex-column">
+                    <ion-label>Wilfredo</ion-label>
+                    <ion-label>Recibirá el pedido</ion-label>
+                </div>
             </div>
         </div>
-        <div class="info-pedido" style="display: none;">
-            <img src="/assets/icons/icon-danger.svg" />
-            <ion-label>Requisitos para la entrega</ion-label>
-        </div>
     </div>
+
 </div>
