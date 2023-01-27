@@ -1,10 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConfirmarPedidoService } from '../services/confirmar-pedido.service';
 
-interface Options {
-  envioADomicilio: boolean,
-  recojoEnTienda: boolean
-}
 
 @Component({
   selector: 'app-detalles-entrega',
@@ -14,9 +10,8 @@ interface Options {
 export class DetallesEntregaComponent implements OnInit {
 
 
-
   constructor(private cpService: ConfirmarPedidoService) {
-
+    console.log("constructor")
   }
 
   ngOnInit() {
@@ -25,7 +20,9 @@ export class DetallesEntregaComponent implements OnInit {
     const pedidoSeleccionado = this.cpService.currentMiPedido$.subscribe(pedido => {
       document.getElementById(pedido.tipoPedido).classList.add("selected");
     })
+    console.log("init")
   }
+
 
   onSelect(id: string) {
     const opciones = document.querySelectorAll(".selected");
@@ -35,7 +32,5 @@ export class DetallesEntregaComponent implements OnInit {
 
     this.cpService.setTipoPedido(id);
   }
-
-
 
 }

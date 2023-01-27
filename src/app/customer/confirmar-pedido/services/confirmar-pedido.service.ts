@@ -47,10 +47,13 @@ export class ConfirmarPedidoService {
     this.miPedido$.next(this.miPedido);
   }
 
-  setTipoPedido(tipo:string):void{
+  setTipoPedido(tipo:string){
     this.miPedido.tipoPedido = tipo;
     this.miPedido$.next(this.miPedido);
+    console.log(this.miPedido.tipoPedido)
   }
+
+  
 
 
 
