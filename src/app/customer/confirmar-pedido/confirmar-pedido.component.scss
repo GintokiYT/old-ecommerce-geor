@@ -26,12 +26,12 @@
             color: var(--ion-color-primary);
 
             >img{
-                filter: var(--ion-filter-primary);
+                filter: var(--ion-color-primary-filter);
             }
         }
 
         >img{
-            filter: var(--ion-arrowRightFilter-color);
+            filter: var(--ion-color-light-filter);
             width: 8.17px;
             height: 14px;
         }
@@ -45,7 +45,7 @@
     margin: 0 auto;
     gap: 7px;
     padding: 12px 0px; 
-    background-color: var(--ion-cuponBg-color);
+    background-color: var(--ion-background-secondary);
     border-radius: 20px;
     margin-top: 32px;
     cursor: pointer;
@@ -56,7 +56,7 @@
     }
 
     img{
-        filter: var(--ion-filterTicket-color);
+        filter: var(--ion-color-dark-filter);
     }
 }
 
@@ -72,10 +72,10 @@
 
     .datos-facturacion{
 
-        color: var(--ion-textLight-color);
+        color: var(--ion-color-light);
 
         >img{
-            filter: var(--ion-arrowRightFilter-color);
+            filter: var(--ion-color-light-filter);
             width: 8.17px;
             height: 14px;
         }

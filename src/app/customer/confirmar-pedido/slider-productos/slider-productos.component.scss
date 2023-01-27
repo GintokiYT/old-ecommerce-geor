@@ -1,14 +1,11 @@
 .mt-4{
   margin-top: 0px !important;
   margin-bottom: 32px;
-  display: flex;
-  flex-direction: column;
   gap: 16px;
-  color: var(--ion-textPrimary-color);
 }
 
 .a-right{
-  filter: var(--ion-arrowRightFilter-color);
+  filter: var(--ion-color-light-filter);
   width: 8.17px;
   height: 14px;
 }

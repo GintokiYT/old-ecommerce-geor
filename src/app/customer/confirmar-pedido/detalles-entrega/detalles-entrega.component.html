@@ -5,34 +5,31 @@
   <div class="contenedor-opciones">
 
     <div class="opcion selected d-flex flex-column align-items-center"
-      id="location"
-      (click)="onSelect('location')"
-      >
+      id="domicilio"
+      (click)="onSelect('domicilio')"
+    >
       <img src="/assets/icons/icon-location.svg" width="15px" height="18px"/>
       <p>Envío a<br />domicilio</p>
 
     </div>
 
-    <div class="opcion notSelected d-flex flex-column align-items-center"
-      id="truck"
-      (click)="onSelect('truck')"
-      >
+    <div class="opcion d-flex flex-column align-items-center"
+      id="carga"
+      (click)="onSelect('carga')"
+    >
       <img src="/assets/icons/icon-truck.svg" width="20.68px" height="19.37px" />
       <p>Agencia de<br />carga</p>
 
     </div>
 
-    <div class="opcion notSelected d-flex flex-column align-items-center"
-      id="home"
-      (click)="onSelect('home')"
-      >
+    <div class="opcion d-flex flex-column align-items-center"
+      id="tienda"
+      (click)="onSelect('tienda')"
+    >
       <img src="/assets/icons/icon-home-gray.svg" width="19.17px" height="20px" />
       <p>Recojo en<br />tienda</p>
 
     </div>
-
-
-    
 
   </div>
 

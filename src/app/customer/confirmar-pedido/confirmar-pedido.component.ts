@@ -8,9 +8,6 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class ConfirmarPedidoComponent extends ViewComponent implements OnInit {
 
-  envioADomicilio: boolean = true;
-  recojoTienda: boolean = false;
-
   constructor(_injector: Injector) {
     super(_injector)
   }
@@ -18,14 +15,7 @@ export class ConfirmarPedidoComponent extends ViewComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  cambiarOpciones(argumento: any): void {
-    const { envioADomicilio, recojoEnTienda } = argumento;
-    this.envioADomicilio = envioADomicilio;
-    this.recojoTienda = recojoEnTienda;
-
-  }
-
+  
   Click(){
     this.navigation.back("");
   }

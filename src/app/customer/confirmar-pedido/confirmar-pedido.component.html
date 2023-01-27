@@ -4,21 +4,13 @@
     <app-header title="Mi pedido"></app-header>
 
     <!-- Componente detalles de entrega -->
-    <app-detalles-entrega
-        [envioADomicilio]="envioADomicilio" 
-        [recojoTienda]="recojoTienda"
-        (onChangeOption)="cambiarOpciones($event)"
-    ></app-detalles-entrega>
+    <app-detalles-entrega></app-detalles-entrega>
 
     <!-- Main -->
     <div class="main d-flex flex-column">
 
         <!-- Componente dejar pedido -->
-        <app-dejar-pedido
-            [envioADomicilio]="envioADomicilio" 
-            [recojoTienda]="recojoTienda"
-        ></app-dejar-pedido>
-
+        <app-dejar-pedido></app-dejar-pedido>
 
         <!-- Métodos de pago -->
         <div class="contenedor-metodos-pago">

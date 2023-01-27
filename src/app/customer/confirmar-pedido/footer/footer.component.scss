@@ -23,11 +23,11 @@ ion-toolbar{
         font-size: 16px;
         padding: 12px 20px;
         border-radius: 50px;
-        color: var(--ion-footerButton-color);
+        color: white;
     }
 
     img{
-        filter: var(--ion-chatFilter-color);
+        filter: var(--ion-color-dark-filter);
     }
 }
 

@@ -1,4 +1,3 @@
-
 .contenedor-detalles-entrega{
 
     max-width: 100%;
@@ -23,21 +22,27 @@
         text-align: center;
         line-height: 18px;
         width: 83.33px;
-        color: var(--parraphColor);
+        color: var(--ion-color-tipo-pedido);
+    }
+
+    @media(max-width:320px){
+        .contenedor-opciones p{
+            color: #00000099;
+        }
     }
 
     .opcion{
         max-width: 100%;
         gap: 11px;
         border: 1px solid;
-        border-color: var(--borderColor);
+        border-color: var(--ion-color-tipo-pedido-border);
         border-radius: 8px;
         padding: 10px;
         cursor: pointer;
     }
 
     .opcion img{
-        filter: var(--filter);
+        filter: var(--ion-color-tipo-pedido-filter);
     }
     
 }
@@ -61,40 +66,14 @@
     }
 }
 
+.selected{
+    border-color : var(--ion-color-primary);
+    filter: var(--ion-color-primary-filter);
 
-
-
-
-
-
-
-
-
-/* css para la clase seleccionada */
-.notSelected{
-    --borderColor : var(--ion-color-light);
-    --parraphColor: var(--ion-color-light);
-    --filter: var(--ion-color-light-filter);    
-}
-
-@media(max-width:320px){
-    .notSelected{
-        --parraphColor: #00000099;
+    p{
+        color: var(--ion-color-primary) !important;
     }
 }
-
-.selected{
-    --borderColor : var(--ion-color-primary);
-    --parraphColor: var(--ion-color-primary);
-    --filter: var(--ion-color-primary-filter);
-}
-
-
-
-
-
-
-
 
 
 // .opcion:nth-child(1){
