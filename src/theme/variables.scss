@@ -100,6 +100,8 @@ $btn-default: #5b6793;
   --ion-background-secondary: #FAFAFA;
   --ion-color-disabled: #00000061;
   --ion-background-tertiary: #023AFF;
+  --ion-background-alert: #FFFFFF;
+  --ion-background-alert-border:#BDBDBD;
 
   /** tipo-pedido **/
   --ion-color-tipo-pedido : #00000061;
@@ -196,7 +198,8 @@ body.dark {
    --ion-background-secondary: #1B1F3C;
    --ion-color-disabled: #ffffff66;
    --ion-background-tertiary: #3C66FB;
- 
+   --ion-background-alert: #191932;
+   --ion-background-alert-border: #5B6793;
   
   /** tipo-pedido **/ 
   --ion-color-tipo-pedido : #1B1F3C;
