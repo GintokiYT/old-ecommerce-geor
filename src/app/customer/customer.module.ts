@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CustomerRoutingModule } from './customer.routing.module';
 import { CoreModule } from '@geor360/ecore';
-import { CestaModule } from './cesta/cesta.module';
+import { CestaModule } from './basket/basket.module';
 import { ConfirmarPedidoModule } from './confirmar-pedido/confirmar-pedido.module';
 import { HomeComponent } from './home/home.component';
 import { StorePickupModule } from './store-pickup/store-pickup.module';
