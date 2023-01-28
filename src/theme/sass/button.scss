@@ -1,72 +1,72 @@
-ion-button {
-  --box-shadow: none;
-  height: 48px;
-  text-transform: none;
-  font-size: 16px;
-  &::part(native) {
-    letter-spacing: 0;
-  }
-  &.button-linear {
-    &::part(native) {
-      padding-inline-start: 4px;
-      padding-inline-end: 4px;
+// ion-button {
+//   --box-shadow: none;
+//   height: 48px;
+//   text-transform: none;
+//   font-size: 16px;
+//   &::part(native) {
+//     letter-spacing: 0;
+//   }
+//   &.button-linear {
+//     &::part(native) {
+//       padding-inline-start: 4px;
+//       padding-inline-end: 4px;
+//     }
+//   }
+//   &.button-icon {
+//     position: absolute;
+//     right: 0;
+//     top: 20px;
+//     z-index: 2;
+//     ion-icon {
+//       $size: 18px;
+//       width: $size;
+//       height: $size;
+//     }
+//     &::part(native) {
+//       padding-inline-start: 0;
+//       padding-inline-end: 16px;
+//     }
+//   }
+// }
+
+@include theme-light {
+  ion-button {
+    --background: #{$white};
+    color: #{$black};
+    --background-activated: #{$gray-100};
+    &.button-outline {
+      --background: #{$white};
+      --background-activated: #{$white};
+      --background-focused: #{$white};
     }
-  }
-  &.button-icon {
-    position: absolute;
-    right: 0;
-    top: 20px;
-    z-index: 2;
-    ion-icon {
-      $size: 18px;
-      width: $size;
-      height: $size;
-    }
-    &::part(native) {
-      padding-inline-start: 0;
-      padding-inline-end: 16px;
+    &.ion-color-primary {
+      --ion-color-base: #{$primary} !important;
+      &.button-disabled {
+        &::part(native) {
+          --ion-color-base: #{$brand};
+          color: $text-light;
+        }
+      }
     }
   }
 }
 
-// @include theme-light {
-//   ion-button {
-//     --background: #{$white};
-//     color: #{$black};
-//     --background-activated: #{$gray-100};
-//     &.button-outline {
-//       --background: #{$white};
-//       --background-activated: #{$white};
-//       --background-focused: #{$white};
-//     }
-//     &.ion-color-primary {
-//       --ion-color-base: #{$primary} !important;
-//       &.button-disabled {
-//         &::part(native) {
-//           --ion-color-base: #{$brand};
-//           color: $text-light;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @include theme-dark {
-//   ion-button {
-//     --background: #{$bg-dark};
-//     color: #{$btn-default};
-//     --background-activated: #{$gray-100};
-//     &.button-outline {
-//       --background: #{$bg-dark};
-//     }
-//     &.ion-color-primary {
-//       --ion-color-base: #{$primary} !important;
-//       &.button-disabled {
-//         &::part(native) {
-//           --ion-color-base: #{$gray-200};
-//           color: #5b6793;
-//         }
-//       }
-//     }
-//   }
-// }
+@include theme-dark {
+  ion-button {
+    --background: #{$bg-dark};
+    color: #{$btn-default};
+    --background-activated: #{$gray-100};
+    &.button-outline {
+      --background: #{$bg-dark};
+    }
+    &.ion-color-primary {
+      --ion-color-base: #{$primary} !important;
+      &.button-disabled {
+        &::part(native) {
+          --ion-color-base: #{$gray-200};
+          color: #5b6793;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,9 @@
 <ion-content>
 
   <app-header title="Tiendas"></app-header>
-  <div class="content">
+
+  <div class="content-stores">
+    
     <div class="alert">
       <ion-item lines="none">
         <img id="time" src="/assets/icons/time-circle.svg">
@@ -22,7 +24,7 @@
         >
         </ion-checkbox>
         <ion-label class="ion-text-wrp">
-          <p class="fz-small">Induacril Miraflores</p>
+          <p class="fz-small" >Induacril Miraflores</p>
           <p class="fz-note">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
           <a class="to-get" (click)="goTo('/customer/store-map')"> Como llegar</a>
         </ion-label>
@@ -37,7 +39,7 @@
         >
         </ion-checkbox>
         <ion-label class="ion-text-wrp">
-          <p class="fz-small">Induacril Chorrillos</p>
+          <p class="fz-small" color="black">Induacril Chorrillos</p>
           <p class="fz-note ">Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
           <a class="to-get" (click)="goTo('/customer/store-map')"> Como llegar</a>
         </ion-label>
@@ -59,11 +61,18 @@
       </ion-item>
     </div>
 
-    <ion-footer >
-      <ion-button  color="primary" (click)="establecerDireccion()" class="button-disabled" shape="round" expand="block">
-        <ion-label id="button" class="fz-normal"> Usar tienda</ion-label>
-      </ion-button>
-    </ion-footer>
+   
   </div>
+ 
   
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button 
+    [disabled]=oneTrue
+    color="primary" (click)="establecerDireccion()" shape="round" expand="block">
+      <ion-label class="fz-normal"> Usar tienda</ion-label>
+    </ion-button>  
+  </ion-toolbar>
+</ion-footer>
