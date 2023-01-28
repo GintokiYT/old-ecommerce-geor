@@ -1,6 +1,8 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
+import { StatusBar } from '@capacitor/status-bar';
+
 interface Message {
   id: string;
   time: string;
@@ -173,23 +175,16 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
   ngOnInit() {
   }
 
-  enviarMessage() {
+  showTime(index: number) {
+    let selectedDiv = this.messageRef.toArray()[index].nativeElement;
 
-    let tiempoActual = '';
+    console.log(selectedDiv)
+    selectedDiv.querySelector('span').classList.toggle('invisible');
+  }
 
-    let currentTime: any = new Date();
-    let hours: any = currentTime.getHours();
-    let minutes: any = currentTime.getMinutes();
+  sendMessage() {
 
-    if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
-
-    if(hours > 12) {
-      tiempoActual = `${hours - 12}:${minutes} pm`;
-    } else {
-      tiempoActual = `${hours}:${minutes} am`;
-    }
+    let tiempoActual = this.getCurrentTime();
 
     let uuid = self.crypto.randomUUID();
 
@@ -213,16 +208,57 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
       this.contentInput.nativeElement.style.display = "none";
 
-      this.contentMessage = {
-        id: '',
-        time: '',
-        author: '',
-        image: '',
-        message: {
-          type: 'text',
-          content: ''
-        }
+      this.clearMessageObject();
+    }
+  }
+
+  getCurrentTime() {
+    let tiempoActual = '';
+
+    let currentTime: any = new Date();
+    let hours: any = currentTime.getHours();
+    let minutes: any = currentTime.getMinutes();
+
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    if(hours > 12) {
+      tiempoActual = `${hours - 12}:${minutes} pm`;
+    } else {
+      tiempoActual = `${hours}:${minutes} am`;
+    }
+
+    return tiempoActual;
+  }
+
+  clearMessageObject() {
+    this.contentMessage = {
+      id: '',
+      time: '',
+      author: '',
+      image: '',
+      message: {
+        type: 'text',
+        content: ''
       }
     }
+  }
+
+  changeMode() {
+    const body = document.querySelector('body');
+
+    if(body.classList.contains('dark')) {
+      body.classList.remove('dark');
+      body.classList.add('light');
+      localStorage.setItem('mode', 'light');
+    }else {
+      body.classList.remove('light');
+      body.classList.add('dark');
+      localStorage.setItem('mode', 'dark');
+    }
+
+    const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+    StatusBar.setBackgroundColor({ color });
   }
 }

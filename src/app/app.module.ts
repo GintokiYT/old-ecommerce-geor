@@ -16,6 +16,7 @@ import { AppTranslations } from '@app/shared';
 
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 
+
 function appInitializerFactory(injector: Injector) {
   return () => {
     return new Promise<boolean>((resolve, reject) => {

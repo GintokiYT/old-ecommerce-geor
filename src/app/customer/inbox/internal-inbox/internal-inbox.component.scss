@@ -9,12 +9,16 @@ img {
 }
 
 // Content
+ion-content {
+  background: var(--ion-background-color);
+}
+
 .content-messages {
   width: 100%;
   max-width: calc(100% - 32px);
   margin: 24px auto 24px auto;
-  display: flex;
-  flex-direction: column;
+  margin-top: 93px;
+  margin-bottom: 85px;
   gap: 29px;
 
   @media (min-width: 390px) {
@@ -22,19 +26,8 @@ img {
   }
 }
 
-.message-business {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.message-user {
-  display: flex;
-  justify-content: flex-end;
-}
-
 // Contenedor con imagen (Solo empresas)
 .content-message-logo {
-  display: flex;
   gap: 8px;
 
   .logo {
@@ -93,6 +86,11 @@ img {
 // Footer
 .ion-footer {
   border-top: 1px solid var(--ion-color-separator);
+  background-color: var(--ion-background-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .input-message {
@@ -113,7 +111,6 @@ img {
 }
 
 .content-footer__items-icons {
-  display: flex;
   gap: 32px;
 
   svg {
@@ -159,4 +156,12 @@ ion-content {
   }
 }
 
+.app-header-inbox {
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid var(--ion-color-separator);
+}
 
