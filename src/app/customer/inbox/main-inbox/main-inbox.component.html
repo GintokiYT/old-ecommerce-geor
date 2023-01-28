@@ -1,27 +1,27 @@
 <ion-content>
 
-  <app-header-main class="app-header-main"></app-header-main>
+  <app-header-main></app-header-main>
 
-  <ion-list class="inbox-ion-list">
+  <ion-list class="inbox-ion-list d-flex flex-column">
     <div
-      class="inbox-ion-item"
+      class="inbox-ion-item d-flex"
       *ngFor="let email of emails"
       (click)="openInternalBox(email.id)"
     >
       <div class="ion-image">
         <img [src]="email.image" alt="Avatar">
       </div>
-      <div class="ion-detail">
-        <div class="ion-detail__header">
+      <div class="ion-detail d-flex flex-column">
+        <div class="ion-detail__header d-flex justify-content-between align-items-center">
           <h3 class="ion-detail__header--title">{{ email.title }}</h3>
           <span class="ion-detail__header--info">{{ email.time }}</span>
         </div>
-        <div class="ion-detail__content">
+        <div class="ion-detail__content d-flex align-items-center">
           <p class="ion-detail__content--description">{{ email.description }}</p>
         </div>
-        <div class="ion-detail__footer" *ngIf="email.sender">
+        <div class="ion-detail__footer d-flex align-items-center" *ngIf="email.sender">
           <p class="ion-detail__footer--description">
-            De <span class="user-tag ion-color-induacril">{{ email.sender }}</span>
+            De <span class="user-tag">{{ email.sender }}</span>
           </p>
         </div>
       </div>
