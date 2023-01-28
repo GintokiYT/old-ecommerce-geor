@@ -6,7 +6,7 @@ button{
 ion-toolbar{
     --background: var(--ion-toolbar-background, var(--ion-color-step-50));
     --min-height: 0px;
-    --padding-top: 56px;
+    --padding-top: 24px;
     --padding-start: 24px;
     --padding-end: 24px;
     --padding-bottom: 40px
@@ -119,8 +119,8 @@ ion-button {
 
 
 .notSelected{
-    --borderColor : var(--ion-borderNotSelected-color);
-    --parraphColor: var(--ion-parraphNotSelected-color);
+    --borderColor : var(--ion-color-light);
+    --parraphColor: var(--ion-color-light);
     --filter: unset;
 }
 
@@ -131,14 +131,20 @@ ion-button {
 }
 
 .selected{
-    --borderColor : var(--ion-borderSelected-color);
-    --parraphColor: var(--ion-parraphSelected-color);
+    --borderColor : var(--ion-color-primary);
+    --parraphColor: var(--ion-color-primary);
     --filter: var(--ion-color-induacril-filter);
 }
 
 .align {
     text-align: center;
 }
+
+p {
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
 
 ion-footer{
 
