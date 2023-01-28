@@ -101,7 +101,8 @@ $btn-default: #5b6793;
   --ion-color-disabled: #00000061;
   --ion-background-tertiary: #023AFF;
   --ion-background-icons-delete:#E3EAFD;
-  --ion-background-modal:#FFFFFF;  --ion-background-alert: #FFFFFF;
+  --ion-background-modal:#FFFFFF;
+  --ion-background-alert: #FFFFFF;
   --ion-background-alert-border:#BDBDBD;
 
 
@@ -202,27 +203,17 @@ body.dark {
    --ion-background-tertiary: #3C66FB;
    --ion-background-alert: #191932;
    --ion-background-alert-border: #5B6793;
+   --ion-background-icons-delete:#5B6793;
+    --ion-background-modal:#191932;
 
-   .arrow{  
+   .arrow{
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
   }
-  
+
   /** tipo-pedido **/
   --ion-color-tipo-pedido : #1B1F3C;
   --ion-color-tipo-pedido-border: #1B1F3C;
   --ion-color-tipo-pedido-filter: brightness(0) saturate(100%) invert(10%) sepia(48%) saturate(1066%) hue-rotate(198deg) brightness(91%) contrast(92%);
-
-  // custom colors
-  --ion-color-icons: #FFFFFF99;
-  --ion-color-icons-selected: #FFFFFF;
-  --ion-color-basic: #FFFFFF;
-  --ion-color-separator: #1B1F3C;
-  --ion-background-secondary: #1B1F3C;
-  --ion-color-disabled: #ffffff66;
-  --ion-background-tertiary: #3C66FB;
-  --ion-background-icons-delete:#5B6793;
-  --ion-background-modal:#191932;
-
 
 }
 
