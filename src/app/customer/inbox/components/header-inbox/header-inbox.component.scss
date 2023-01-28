@@ -1,24 +1,17 @@
-.chat-header {
-  padding: 24px 16px 4px 16px;
-  border-bottom: 1px solid var(--ion-color-separator);
+.container-header-inbox {
+  margin: 24px 16px 4px 16px;
 
   @media (min-width: 390px) {
-    padding: 24px 24px 4px 24px;
+    margin: 24px 24px 4px 24px;
   }
 }
 
 .chat-ion-toolbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   gap: 16px;
   height: 40px;
 }
 
 .button-header {
-  width: auto;
-  height: auto;
   background: transparent;
 
   svg {
@@ -28,8 +21,6 @@
 
 .content-title {
   flex: 1;
-  display: flex;
-  align-items: center;
   gap: 8px;
 
   .content-title__image {

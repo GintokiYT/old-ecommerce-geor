@@ -60,7 +60,9 @@
     </div>
 
     <div class="button" (click)="establecerDireccion()">
-      <ion-button color="primary" shape="round" expand="block">Usar tienda</ion-button>
+      <ion-button  
+      [disabled]= oneTrue
+      color="primary" shape="round" expand="block">Usar tienda</ion-button>
     </div>
     
   </div>

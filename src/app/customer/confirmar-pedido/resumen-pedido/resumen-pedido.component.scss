@@ -10,16 +10,10 @@
 
     .detalles-pedido{
         font-size: 14px;
-        display: flex;
-        flex-direction: column;
         gap: 10px;
         margin-top: 16px;
     }
 
-    .detalle{
-        display: flex;
-        justify-content: space-between;
-    }
 }
 
 @media(max-width:320px){

@@ -1,3 +1,10 @@
+.app-header-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 ion-toolbar {
   --min-height: unset;
   --background: var(--ion-background-color);
@@ -12,6 +19,10 @@ ion-title {
   font-weight: 700;
   padding: 0 16px;
   color: var(--ion-color-basic);
+
+  @media (min-width: 390px) {
+    margin-bottom: 40px;
+  }
 }
 
 ion-header ion-toolbar:first-of-type {

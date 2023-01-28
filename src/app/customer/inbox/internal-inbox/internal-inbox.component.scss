@@ -19,8 +19,6 @@ ion-content {
   margin: 24px auto 24px auto;
   margin-top: 93px;
   margin-bottom: 85px;
-  display: flex;
-  flex-direction: column;
   gap: 29px;
 
   @media (min-width: 390px) {
@@ -28,19 +26,8 @@ ion-content {
   }
 }
 
-.message-business {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.message-user {
-  display: flex;
-  justify-content: flex-end;
-}
-
 // Contenedor con imagen (Solo empresas)
 .content-message-logo {
-  display: flex;
   gap: 8px;
 
   .logo {
@@ -124,7 +111,6 @@ ion-content {
 }
 
 .content-footer__items-icons {
-  display: flex;
   gap: 32px;
 
   svg {
@@ -176,5 +162,6 @@ ion-content {
   top: 0;
   width: 100%;
   z-index: 1000;
+  border-bottom: 1px solid var(--ion-color-separator);
 }
 
