@@ -182,23 +182,9 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     selectedDiv.querySelector('span').classList.toggle('invisible');
   }
 
-  enviarMessage() {
+  sendMessage() {
 
-    let tiempoActual = '';
-
-    let currentTime: any = new Date();
-    let hours: any = currentTime.getHours();
-    let minutes: any = currentTime.getMinutes();
-
-    if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
-
-    if(hours > 12) {
-      tiempoActual = `${hours - 12}:${minutes} pm`;
-    } else {
-      tiempoActual = `${hours}:${minutes} am`;
-    }
+    let tiempoActual = this.getCurrentTime();
 
     let uuid = self.crypto.randomUUID();
 
@@ -222,15 +208,39 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
       this.contentInput.nativeElement.style.display = "none";
 
-      this.contentMessage = {
-        id: '',
-        time: '',
-        author: '',
-        image: '',
-        message: {
-          type: 'text',
-          content: ''
-        }
+      this.clearMessageObject();
+    }
+  }
+
+  getCurrentTime() {
+    let tiempoActual = '';
+
+    let currentTime: any = new Date();
+    let hours: any = currentTime.getHours();
+    let minutes: any = currentTime.getMinutes();
+
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    if(hours > 12) {
+      tiempoActual = `${hours - 12}:${minutes} pm`;
+    } else {
+      tiempoActual = `${hours}:${minutes} am`;
+    }
+
+    return tiempoActual;
+  }
+
+  clearMessageObject() {
+    this.contentMessage = {
+      id: '',
+      time: '',
+      author: '',
+      image: '',
+      message: {
+        type: 'text',
+        content: ''
       }
     }
   }

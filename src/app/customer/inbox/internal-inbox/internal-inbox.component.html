@@ -3,10 +3,10 @@
   <app-header-inbox class="app-header-inbox"></app-header-inbox>
 
   <!-- Content -->
-  <div class="content-messages" #scrollContainer>
+  <div class="content-messages d-flex flex-column" #scrollContainer>
     <div *ngFor="let message of messages; let i = index" #messageRef (click)="showTime(i)">
-      <div *ngIf="message.author === 'business'" class="message-business">
-        <div class="content-message-logo">
+      <div *ngIf="message.author === 'business'" class="d-flex justify-content-start">
+        <div class="content-message-logo d-flex">
           <div class="logo">
             <img [src]="message.image" alt="Logo">
           </div>
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="message.author === 'user'" class="message-user">
+      <div *ngIf="message.author === 'user'" class="d-flex justify-content-end">
         <div class="content">
           <div class="container-message">
             <p *ngIf="message.message.type === 'text'" class="message-user">
@@ -49,7 +49,7 @@
     #messageInput
   >
   <div class="content-footer__items" #contentInput>
-    <div class="content-footer__items-icons">
+    <div class="content-footer__items-icons d-flex">
       <div class="icon-camera">
         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0402 4.0515C16.0502 4.4535 16.3592 5.8535 16.7722 6.3035C17.1852 6.7535 17.7762 6.9065 18.1032 6.9065C19.8412 6.9065 21.2502 8.3155 21.2502 10.0525V15.8475C21.2502 18.1775 19.3602 20.0675 17.0302 20.0675H6.97024C4.63924 20.0675 2.75024 18.1775 2.75024 15.8475V10.0525C2.75024 8.3155 4.15924 6.9065 5.89724 6.9065C6.22324 6.9065 6.81424 6.7535 7.22824 6.3035C7.64124 5.8535 7.94924 4.4535 8.95924 4.0515C9.97024 3.6495 14.0302 3.6495 15.0402 4.0515Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -72,7 +72,7 @@
     </div>
     <div class="content-footer__items-icon-send"
     [ngStyle]="{'display': contentMessage.message.content.length > 0 ? 'block' : 'none'}" >
-      <div class="icon-send" (click)="enviarMessage()">
+      <div class="icon-send" (click)="sendMessage()">
         <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M21.4274 2.5783C20.9274 2.0673 20.1874 1.8783 19.4974 2.0783L3.40742 6.7273C2.67942 6.9293 2.16342 7.5063 2.02442 8.2383C1.88242 8.9843 2.37842 9.9323 3.02642 10.3283L8.05742 13.4003C8.57342 13.7163 9.23942 13.6373 9.66642 13.2093L15.4274 7.4483C15.7174 7.1473 16.1974 7.1473 16.4874 7.4483C16.7774 7.7373 16.7774 8.2083 16.4874 8.5083L10.7164 14.2693C10.2884 14.6973 10.2084 15.3613 10.5234 15.8783L13.5974 20.9283C13.9574 21.5273 14.5774 21.8683 15.2574 21.8683C15.3374 21.8683 15.4274 21.8683 15.5074 21.8573C16.2874 21.7583 16.9074 21.2273 17.1374 20.4773L21.9074 4.5083C22.1174 3.8283 21.9274 3.0883 21.4274 2.5783Z" fill="#023AFF"/>
         </svg>

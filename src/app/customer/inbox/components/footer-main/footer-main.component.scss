@@ -4,75 +4,56 @@
   padding: 8px 16px 16px 16px;
   --min-height: unset;
 
-  .inbox-footer__content {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .inbox-footer__content--item {
-    height: 42px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .inbox-footer__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .inbox-footer__image svg {
-    font-size: 24px;
-  }
-
-  .inbox-footer__name p {
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--ion-color-icons);
-  }
-
   @media (min-width: 390px) {
     padding: 10px 24px 16px 24px;
   }
 }
 
-.inbox-footer__content {
-
-  .icon-home {
-    path {
-      stroke: var(--ion-color-icons);
-    }
-  }
-
-  .icon-search * {
-    stroke:var(--ion-color-icons);
-  }
-
-  .icon-chat {
-    path {
-      stroke: var(--ion-color-icons);
-    }
-  }
-
-  .icon-buy {
-    path {
-      stroke: var(--ion-color-icons);
-    }
-  }
-
-  .icon-profile {
-    path {
-      stroke: var(--ion-color-icons);
-    }
-  }
-
-  .inbox-footer__name p {
-    color:var(--ion-color-icons);
-  }
+.inbox-footer__content--item {
+  height: 42px;
+  gap: 6px;
 }
 
-.inbox-footer__content .active {
+.icon-home,
+.icon-search,
+.icon-chat,
+.icon-buy,
+.icon-profile {
+  font-size: 24px;
+}
+
+.inbox-footer__name p {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--ion-color-icons);
+}
+
+
+.icon-home path {
+  stroke: var(--ion-color-icons);
+}
+
+.icon-search * {
+  stroke:var(--ion-color-icons);
+}
+
+.icon-chat path {
+  stroke: var(--ion-color-icons);
+}
+
+.icon-buy path {
+  stroke: var(--ion-color-icons);
+}
+
+.icon-profile path {
+  stroke: var(--ion-color-icons);
+}
+
+.inbox-footer__name p {
+  color:var(--ion-color-icons);
+}
+
+.inbox-footer__content--item.active {
   .icon-home {
     fill: var(--ion-color-icons-selected);
 
