@@ -48,6 +48,49 @@
 @import "./theme/sass/customs.scss";
 
 
+
+//estilos para la alerta de confirmar-pedido
+/* .alert-wrapper{
+  gap: 24px;
+  padding-bottom: 24px;
+  --background: var(--ion-backgroundAlert-color);
+
+
+  //first div
+  .alert-header{
+    padding-bottom: 0px;
+
+  }
+
+  //second div
+  .alert-message{
+    font-size: 16px;
+    padding-bottom: 0px;
+    color: var(--ion-textPrimary-color);
+  }
+
+
+  //tercer div
+  .sc-ion-alert-ios{
+    flex-wrap: nowrap;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 0px;
+
+    button{
+      white-space: nowrap;
+      border-top-color: var(--ion-borderAlert-color);
+      border-right-color: var(--ion-borderAlert-color);
+    }
+  }
+}
+
+//cambiarle el color al titulo de la alerta
+.alert-title.sc-ion-alert-ios{
+  color: var(--ion-textPrimary-color) !important;
+} */
+
+
 // Cambiar el color del Status Bar en IOS (RCNA)
 //* IOS
 ion-app {
