@@ -1,5 +1,7 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer-main',
@@ -8,21 +10,49 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class FooterMainComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) {
+  @ViewChild('myItems') myItems: ElementRef;
+
+  @ViewChild('myChat') myChat: ElementRef;
+  @ViewChild('myBuy') myBuy: ElementRef;
+  @ViewChild('myProfile') myProfile: ElementRef;
+
+  constructor(_injector: Injector, private router: Router) {
     super(_injector);
   }
 
   ngOnInit() {}
 
-  onActive(id: string) {
-    const items = document.querySelectorAll('.inbox-footer__content--item');
+  ngAfterViewInit() {
+
+    console.log(this.router.url);
+
+    const listItems = this.myItems.nativeElement;
+    const items = listItems.querySelectorAll('.inbox-footer__content--item');
+
     items.forEach(item => item.classList.remove('active'));
 
-    const item = document.getElementById(id);
-    item?.classList.add('active');
+    if(this.router.url === '/customer/main-inbox') {
+      this.myChat.nativeElement.classList.add('active')
+    }
+    if(this.router.url === '/customer/collaborative-basket') {
+      this.myBuy.nativeElement.classList.add('active')
+    }
+    if(this.router.url === '/login') {
+      this.myProfile.nativeElement.classList.add('active');
+    }
+ }
 
-    if(id === 'Buy') {
-      return this.navigation.root('/customer/cesta-colaborativa', 'forward');
+  onActive(id: string) {
+    switch(id) {
+      case 'Chat':
+        this.navigation.root('/customer/main-inbox', 'forward');
+        break;
+      case 'Buy':
+        this.navigation.root('/customer/collaborative-basket', 'forward');
+        break;
+      case 'Profile':
+        this.navigation.root('/login', 'forward');
+        break;
     }
   }
 }
