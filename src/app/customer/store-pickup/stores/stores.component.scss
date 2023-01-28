@@ -1,19 +1,20 @@
-.content{
+.content-stores{
     padding-left: 24px;
     padding-right: 24px;
     .alert{
         border-radius: 4px;
         padding: 0px 12px 0px 12px; 
         margin-bottom: 0px;
+        background: var(--ion-color-secondary);
         ion-item{
             --padding-start: 0px;
             --inner-padding-end: 0px;
+            --background: var(--ion-color-secondary);
             #time{
                 margin-right: 8px ;
             }
             ion-label{
                 font-family: 'Roboto';
-                font-style: normal;
                 font-size: 12px;
                 margin: 16px 0 16px 0 ;
                 padding: 0px;
@@ -27,7 +28,6 @@
     .checkbox{
         margin-inline: 0px;
         margin-top: 32px;
-        margin-bottom: 335px;
         ion-item {
             --padding-start: 0px;
             --inner-padding-end: 0px; 
@@ -36,17 +36,20 @@
                 margin:0px;
                 margin-bottom: 24px !important;
             }
-
+            .fz-small{
+                color:var(--ion-color-dark);
+            }
             .fz-note{
                 margin-top: 4px !important;
                 margin-bottom: 0px !important;
+                color:var(--ion-color-medium)
             }
             .to-get{
                 font-family: 'Roboto';
                 font-style: normal;
                 font-size: 12px;
                 line-height: 15px;
-                color: #023AFF;
+                color: var(--ion-color-primary);
                 text-decoration: none;
                 padding-top: 10px !important;
             }
@@ -60,33 +63,49 @@
 
         ion-item::part(native){ 
             padding: 0px;
-        }
-        ion-button{
-            width: 342px;
-            height: 48px;
-            font-family: 'Roboto';
-            font-weight: 500;
-            font-size: 16px;
-        } 
-        
+        }  
     } 
-    
+}
+button {
+    background-color: transparent;
+    margin: 0;
 }
 
+ion-footer{
+    ion-toolbar{
+      --border-width: 0px;
+      --padding-top: 8px;
+      --padding-start: 24px;
+      --padding-end: 24px;
+      --padding-bottom: 32px
+    }
+}
+  
 @media(max-width:320px){
-    .content{
+    .content-stores{
         padding-left: 16px;
         padding-right: 16px;
+        .alert{
+            padding: 0px 10px 0px 10px; 
+            ion-label{
+                margin: 10px 0 10px 0 !important;
+            }
+        }
         .checkbox{
             margin-top: 24px;
-            margin-bottom: 120px;
         }
     }
-    ion-button{
-        width: 288px;
-        height: 40px;
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 14px;
-    } 
+
+    ion-footer{
+        ion-toolbar{
+          --border-width: 0px;
+          --padding-top: 8px;
+          --padding-start: 16px;
+          --padding-end: 16px;
+          --padding-bottom: 16px;
+        }
+    }
+
 }
+
+

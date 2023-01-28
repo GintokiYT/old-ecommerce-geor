@@ -9,8 +9,7 @@ import { ConfirmarPedidoService } from '../../confirmar-pedido/services/confirma
 })
 export class StoresComponent extends ViewComponent implements OnInit {
 
-  oneTrue: boolean = true;
-
+  oneTrue:boolean=true;
 
   data: any[] = [
     {
@@ -41,8 +40,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
   goTo(path:string){
     this.navigation.forward(path)
   }
-
-
+  
   establecerDireccion() {
     const selected = this.data.filter(element => element.selected === true);
     if (selected[0]) {
@@ -62,8 +60,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
     }else{
       this.oneTrue = true;
     }
-
-      
+    
     }
   }
 
