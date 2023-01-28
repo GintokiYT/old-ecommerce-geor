@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+  <app-header-cesta></app-header-cesta>
+  <!-- CONTENIDO -->
+  <div class="content_basket">
+    <app-main-product></app-main-product>
+  </div>
+  <app-product></app-product>
+  <app-modal-basket></app-modal-basket>
+</ion-content>
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="box-total d-flex flex-row justify-content-between">
+      <div class="total-checkbox d-flex flex-row align-items-center">
+        <ion-checkbox slot="start"></ion-checkbox>
+        <p class="fz-small">Todo</p>
+      </div>
+      <div class="cost-total fz-small">
+        <p>S/ 45,789.00</p>
+      </div>
+    </div>
+    <ion-button expand="block" color="primary" shape="round">Ir a pagar</ion-button>
+  </ion-toolbar>
+  <app-footer-main></app-footer-main>
+</ion-footer>
