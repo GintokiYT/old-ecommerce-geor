@@ -9,10 +9,8 @@ import { ConfirmarPedidoService } from '../../confirmar-pedido/services/confirma
 })
 export class StoresComponent extends ViewComponent implements OnInit {
 
-  oneTrue: boolean = true;
-
-
   oneTrue:boolean=true;
+
   data: any[] = [
     {
       id: 1,
@@ -42,8 +40,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
   goTo(path:string){
     this.navigation.forward(path)
   }
-
-
+  
   establecerDireccion() {
     const selected = this.data.filter(element => element.selected === true);
     if (selected[0]) {
@@ -54,15 +51,16 @@ export class StoresComponent extends ViewComponent implements OnInit {
 
   checkBoxSelect(id: number) {
     const falses = this.data.filter( element => element.id!==id);
+    const trues = this.data.filter(element => element.selected===true);
     falses.forEach( element => {
       element.selected = false;
     })
-  }
-
-  establecerDireccion() {
-    const selected = this.data.filter(element => element.selected === true);
-    if (selected[0]) {
-      this.cpService.changeDirectionTienda(selected[0].direction)
+    if(trues.length>0){
+      this.oneTrue = false;
+    }else{
+      this.oneTrue = true;
+    }
+    
     }
   }
 
