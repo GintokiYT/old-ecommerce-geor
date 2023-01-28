@@ -6,7 +6,7 @@ button{
 ion-toolbar{
   --background: var(--ion-toolbar-background, var(--ion-color-step-50));
   --min-height: 0px;
-  --padding-top: 56px;
+  --padding-top: 24px;
   --padding-start: 24px;
   --padding-end: 24px;
   --padding-bottom: 40px
@@ -40,10 +40,14 @@ ion-item {
   --padding-end: 24px
 }
 ion-textarea {
-  background: #fff;
-  border-color:  #023AFF;
-  border: 1px solid;
+  --padding-end: 24px;
+  --padding-start: 24px;
+  border-color: #EEEEEE  ;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 5px;
+  height: 8em;
+  width: 344px;
 }
 
 ion-button {
