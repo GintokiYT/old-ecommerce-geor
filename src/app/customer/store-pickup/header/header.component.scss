@@ -3,7 +3,7 @@ button{
 }
 
 ion-toolbar{
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50)); 
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50));
     --min-height: 0px;
     --padding-top: 24px;
     --padding-start: 24px;
@@ -11,12 +11,12 @@ ion-toolbar{
     --padding-bottom: 40px
 }
 
-@media(max-width:320px){
-    ion-toolbar{
-        --padding-top: 8px;
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 24px
-    }
-}
+// @media(max-width:320px){
+//     ion-toolbar{
+//         --padding-top: 8px;
+//         --padding-start: 16px;
+//         --padding-end: 16px;
+//         --padding-bottom: 24px
+//     }
+// }
 

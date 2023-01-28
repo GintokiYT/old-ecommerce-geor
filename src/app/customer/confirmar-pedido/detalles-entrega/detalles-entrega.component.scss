@@ -24,11 +24,11 @@
         color: var(--ion-color-tipo-pedido);
     }
 
-    @media(max-width:320px){
-        .contenedor-opciones p{
-            color: #00000099;
-        }
-    }
+    // @media(max-width:320px){
+    //     .contenedor-opciones p{
+    //         color: #00000099;
+    //     }
+    // }
 
     .opcion{
         max-width: 100%;
@@ -43,13 +43,13 @@
     .opcion img{
         filter: var(--ion-color-tipo-pedido-filter);
     }
-    
+
 }
 
 /* MEDIA QUERIES PARA INDUACRIL */
 @media(max-width:320px){
     .contenedor-detalles-entrega{
-        
+
         padding-right: 16px;
         padding-left: 16px;
 
@@ -87,7 +87,7 @@
 //         color: #023AFF;
 //     }
 
-// } 
+// }
 
 
 
