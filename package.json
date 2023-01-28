@@ -4,7 +4,7 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "dev": "ionic serve port=3000 --external",
+    "dev": "ionic serve --external",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -33,7 +33,7 @@
     "@capacitor/haptics": "4.1.0",
     "@capacitor/keyboard": "4.1.0",
     "@capacitor/preferences": "^4.0.2",
-    "@capacitor/status-bar": "4.1.1",
+    "@capacitor/status-bar": "^4.1.1",
     "@geor360/ecore": "0.0.2",
     "@ionic/angular": "^6.1.9",
     "bootstrap": "^5.2.3",

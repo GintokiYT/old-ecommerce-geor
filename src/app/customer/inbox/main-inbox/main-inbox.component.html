@@ -1,6 +1,7 @@
-<app-header-main></app-header-main>
-
 <ion-content>
+
+  <app-header-main class="app-header-main"></app-header-main>
+
   <ion-list class="inbox-ion-list">
     <div
       class="inbox-ion-item"
@@ -27,6 +28,20 @@
     </div>
   </ion-list>
 
+  <button
+    style="
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      padding: 10px 20px;
+      z-index: 10000;
+      border-radius: 10px;
+      background: #0673f8;
+      color: #ebe2e2;"
+      (click)="changeMode()"
+    >Change Mode</button>
+
 </ion-content>
 
 <app-footer-main></app-footer-main>
+
