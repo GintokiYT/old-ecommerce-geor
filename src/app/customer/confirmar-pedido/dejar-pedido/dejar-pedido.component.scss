@@ -2,79 +2,53 @@
 
     .lugar-pedido {
         display: block;
-        text-align: left;
-        font-size: 16px;
-        color: var(--ion-textLight-color);
+        color: var(--ion-color-light);
         padding-bottom: 32px;
-    }
-
-    .with-direction{
-        color: var(--ion-textPrimary-color);
-    }
-
-    .contenedor-info-pedido {
-        display: flex;
-        flex-direction: column;
-        gap: 24px
-    }
-
-    .info-pedido {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-    }
-
-    .info-pedido:nth-child(1)  {
-        img{
-            filter: var(--ion-truckFilter-color);
-        }
-        ion-label{
-            color: var(--ion-textPrimary-color);
-        }
-    }
-
-
-    .info-pedido-destinatario {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-
-        ion-label:nth-child(1){
-            color: var(--ion-textPrimary-color);
-        }
-
-        ion-label:nth-child(2){
-            color: var(--ion-textLight-color);
-        }
-    }
-
-
-    .info-pedido:nth-child(3) {
-        ion-label {
-            color: var(--ion-textLight-color);
-        }
-
-        img{
-            filter: var(--ion-dangerFilter-color);
-        }
-        
-    }
-
-    
-
-    
-
-    .lugar-pedido,
-    .info-pedido {
         cursor: pointer;
     }
 
-}
+    .with-direction {
+        color: var(--ion-color-dark) !important;
+    }
 
+    .contenedor-info-pedido {
+        gap: 24px;
+
+        .info-pedido {
+            gap: 12px;
+            cursor: pointer;
+
+            &.date {
+                img {
+                    filter: var(--ion-color-dark-filter);
+                }
+            }
+
+            .info-pedido-destinatario {
+                gap: 2px;
+
+                ion-label:nth-child(2) {
+                    color: var(--ion-color-light);
+                }
+            }
+
+            &.requirements{
+                ion-label {
+                    color: var(--ion-color-light);
+                }
+
+                img {
+                    filter: var(--ion-color-dark-filter);
+                }
+            }
+        }
+
+    }
+}
 
 @media(max-width:320px) {
 
-    ion-label{
+    ion-label {
         font-size: 14px !important;
     }
 
@@ -115,5 +89,3 @@
         }
     }
 }
-
-

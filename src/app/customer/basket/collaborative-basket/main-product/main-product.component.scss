@@ -1,0 +1,72 @@
+/*  CONTENIDO */
+.box-select {
+  gap: 26px;
+}
+
+.unit_cost{
+  line-height: 22px;
+  color:var(--ion-color-basic);
+}
+
+.product {
+  color: var(--ion-color-light) ;
+  line-height: 24px;
+}
+
+.box-name {
+  gap: 10px;
+}
+
+.box {
+  gap: 48px;
+}
+.description {
+  width: 294px;
+  border: 1px solid  var(--ion-color-separator);
+  border-radius: 8px;
+  padding: 10px 10px 4px 10px;
+  gap: 30px;
+  p {
+      color: var(--ion-color-light) ;
+  }
+}
+
+.cost {
+  line-height: 22px;
+  color: var(--ion-color-basic);
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+ion-checkbox::part(container) {
+  border-radius: 14px;
+  width: 20px;
+  height: 20px;
+}
+
+.hydrated {
+  margin: 0px !important;
+}
+
+.img-delete {
+  padding: 33.67px 13.13px;
+  background-color: var(--ion-background-icons-delete);
+  margin-left: 24px;
+  margin-right: 11px;
+}
+
+.option-background {
+  background:var(--ion-background-color);
+}
+
+.list {
+  margin-bottom: 40px !important;
+}
+
+.div.item-native {
+  padding-left: 0px !important;
+}
+
+ion-item-options{
+  border-bottom-width:0px !important;
+}
