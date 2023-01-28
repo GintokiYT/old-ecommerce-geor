@@ -2,7 +2,7 @@
   body {
     &.light {
       @content;
-      ion-fab-button::part(native) {
+      ion-fab-button.map::part(native) {
         background: #ffffff !important;
       }
       ion-title{
@@ -30,33 +30,60 @@
   body {
     &.dark {
       @content;
-      ion-title{
-        color: white ;
+      ion-fab-button.map::part(native) {
+        background: #05050F !important;
       }
-      .fz-small{
-        color: #ffffff !important;
+      ion-title, h3, label, p {
+        color: #fff;
       }
-      .fz-note{
-        color: rgba(255, 255, 255, 0.6);
+
+      .align {
+        color : #fff;
       }
-      .alert{
-        background: #1B1F3C;
-        ion-item{
-          --background: #1B1F3C;
-          ion-label{
-            color: #ffffff;
-          }
-        }
+
+
+      .notSelected{
+        --borderColor: #F5F5F5;
+        --parraphColor: #818183;
+        --filter: unset;
+    }
+
+      .linea {
+        color:#818183;
       }
+
+      ion-input, .l-telefono {
+        color:#818183;
+      }
+      
+      ion-button {
+        color: #3C66FB;
+      }
+
       ion-checkbox{
         --border-color:  #5B6793;
       }
-      ion-fab-button::part(native) {
-        background: #000000 !important;
-      }
+
       .arrow{
+        
         filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
       }
+
+      ion-fab-button.map::part(native) {
+        background: #05050F !important;
+      }
+
+
+      .alert{
+        background: #1B1F3C;
+        ion-item{
+            --background: #1B1F3C;
+            --color:#fff;
+        }
+      } 
+
+     
     }
   }
 }
+

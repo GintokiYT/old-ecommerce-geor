@@ -21,8 +21,16 @@ ion-label{
   color: var(--ion-color-basic) !important;
 
 }
-ion-modal {
-  --ion-background-color:var(--ion-background-color-popup);
+ion-list{
+  background-color: var(--ion-background-modal)!important;
 }
+ion-modal {
+  --ion-background-color:var(--ion-background-modal);
+}
+
+ion-item::part(native) {
+  background-color: var(---ion-background-modal) !important;
+}
+
 
 

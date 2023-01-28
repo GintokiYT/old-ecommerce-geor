@@ -44,6 +44,8 @@
 @import "./theme/sass/button.scss";
 @import "./theme/sass/input.scss";
 @import "./theme/sass/alert.scss";
+@import "./theme/sass/toolbar.scss";
+@import "./theme/sass/customs.scss";
 
 
 
@@ -89,4 +91,8 @@
 } */
 
 
-
+// Cambiar el color del Status Bar en IOS (RCNA)
+//* IOS
+ion-app {
+  --ion-status-bar-background: var(--ion-color-icons-selected);
+}

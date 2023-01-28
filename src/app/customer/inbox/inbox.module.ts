@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 // Pages
 import { MainInboxComponent } from './main-inbox/main-inbox.component';
 import { InternalInboxComponent } from './internal-inbox/internal-inbox.component';
-import { TelefonoComponent } from './telefono/telefono.component';
 
 // Componentes
 import { HeaderMainComponent } from './components/header-main/header-main.component';
@@ -24,7 +23,6 @@ import { HeaderInboxComponent } from './components/header-inbox/header-inbox.com
   declarations: [
     MainInboxComponent,
     InternalInboxComponent,
-    TelefonoComponent,
     HeaderMainComponent,
     FooterMainComponent,
     HeaderInboxComponent
@@ -32,7 +30,6 @@ import { HeaderInboxComponent } from './components/header-inbox/header-inbox.com
   exports:[
     MainInboxComponent,
     InternalInboxComponent,
-    TelefonoComponent,
     HeaderMainComponent,
     FooterMainComponent,
     HeaderInboxComponent

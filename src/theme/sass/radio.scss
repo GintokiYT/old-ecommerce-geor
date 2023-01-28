@@ -39,3 +39,20 @@ ion-radio {
     }
   }
 }
+
+@include theme-dark {
+  ion-radio {
+    &::part(container) {
+      border: 1px solid $gray-200;
+    }
+    &.radio-checked {
+      &::part(container) {
+        background: $primary;
+        border-color: $primary;
+      }
+      &::part(mark) {
+        border-color: #fff;
+      }
+    }
+  }
+}

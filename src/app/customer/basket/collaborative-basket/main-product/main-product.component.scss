@@ -5,11 +5,11 @@
 
 .unit_cost{
   line-height: 22px;
-  color:var(--ion-color-basic); /* color: #000000 */
+  color:var(--ion-color-basic);
 }
 
 .product {
-  color: var(--ion-color-secondary) ;
+  color: var(--ion-color-light) ;
   line-height: 24px;
 }
 
@@ -27,7 +27,7 @@
   padding: 10px 10px 4px 10px;
   gap: 30px;
   p {
-      color: var(--ion-color-secondary) ;
+      color: var(--ion-color-light) ;
   }
 }
 
@@ -50,7 +50,7 @@ ion-checkbox::part(container) {
 
 .img-delete {
   padding: 33.67px 13.13px;
-  background-color: var(--ion-color-remove);
+  background-color: var(--ion-background-icons-delete);
   margin-left: 24px;
   margin-right: 11px;
 }

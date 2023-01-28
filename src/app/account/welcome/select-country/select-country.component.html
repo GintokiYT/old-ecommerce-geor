@@ -18,8 +18,8 @@
       <ion-item *ngFor="let country of countries; index as i" lines="none">
         <ion-label>
           <div class="d-flex ion-align-items-center">
-            <img src="{{ country.flag }}" width="24" class="img-fluid me-3" />
-            <span class="ml-3">{{ country.name }}</span>
+            <img src="{{ country.flag }}" width="24" class="img-fluid me-3 br-2" />
+            <span class="ms-3">{{ country.name }}</span>
           </div>
         </ion-label>
         <ion-radio slot="end" color="medium" [value]="country.id"></ion-radio>

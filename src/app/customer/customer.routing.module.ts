@@ -5,7 +5,6 @@ import { TeamComponent } from './basket/team/team.component';
 import { MyBasquetComponent } from './basket/my-basket/my-basquet.component';
 import { MainInboxComponent } from './inbox/main-inbox/main-inbox.component';
 import { InternalInboxComponent } from './inbox/internal-inbox/internal-inbox.component';
-import { TelefonoComponent } from './inbox/telefono/telefono.component';
 import { DirectionComponent } from './delivery-detail/direction/direction.component';
 import { DateComponent } from './delivery-detail/date/date.component';
 import { ContactComponent } from './delivery-detail/contact/contact.component';
@@ -30,7 +29,6 @@ const routes: Routes = [
       { path: '**', redirectTo: 'home' }, */
       { path: 'main-inbox', component: MainInboxComponent },
       { path: 'internal-inbox/:id', component: InternalInboxComponent },
-      { path: 'telefono', component: TelefonoComponent },
       { path: 'direction', component:DirectionComponent},
       { path: 'date', component:DateComponent},
       { path: 'contact', component:ContactComponent},

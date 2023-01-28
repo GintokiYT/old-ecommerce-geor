@@ -5,7 +5,7 @@ button {
 }
 
 ion-toolbar {
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50, white));
+    --background: var(--ion-toolbar-background, var(--ion-color-step-50));
     --min-height: 0px;
     --padding-top: 56px;
     --padding-start: 24px;
@@ -76,3 +76,4 @@ ion-footer{
     --padding-bottom: 48px
   }
 }
+

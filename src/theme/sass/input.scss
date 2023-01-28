@@ -1,6 +1,3 @@
-ion-input {
-  --color: #{$black} !important;
-}
 .custon-ion-search {
   .searchbar-input-container {
     height: 40px;
@@ -16,11 +13,26 @@ ion-input {
   display: none;
   z-index: -1;
 }
-@include theme-light {
-  .custon-ion-search {
-    .searchbar-input {
-      color: $black !important;
-      background-color: $gray-100 !important;
-    }
-  }
-}
+// @include theme-light {
+//   ion-input {
+//     --color: #{$black} !important;
+//   }
+//   .custon-ion-search {
+//     .searchbar-input {
+//       color: $black !important;
+//       background-color: $gray-100 !important;
+//     }
+//   }
+// }
+
+// @include theme-dark {
+//   ion-input {
+//     --color: #{$white} !important;
+//   }
+//   .custon-ion-search {
+//     .searchbar-input {
+//       color: $white !important;
+//       background-color: $gray-200 !important;
+//     }
+//   }
+// }

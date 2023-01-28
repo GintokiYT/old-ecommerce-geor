@@ -1,5 +1,7 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import { ViewComponent } from '@geor360/ecore';
+
+import { StatusBar } from '@capacitor/status-bar';
 
 interface Message {
   id: string;
@@ -173,6 +175,13 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  showTime(index: number) {
+    let selectedDiv = this.messageRef.toArray()[index].nativeElement;
+
+    console.log(selectedDiv)
+    selectedDiv.querySelector('span').classList.toggle('invisible');
+  }
+
   enviarMessage() {
 
     let tiempoActual = '';
@@ -224,5 +233,22 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
         }
       }
     }
+  }
+
+  changeMode() {
+    const body = document.querySelector('body');
+
+    if(body.classList.contains('dark')) {
+      body.classList.remove('dark');
+      body.classList.add('light');
+      localStorage.setItem('mode', 'light');
+    }else {
+      body.classList.remove('light');
+      body.classList.add('dark');
+      localStorage.setItem('mode', 'dark');
+    }
+
+    const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+    StatusBar.setBackgroundColor({ color });
   }
 }

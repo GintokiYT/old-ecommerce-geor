@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>Valida tu correo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form class="w-100 pt-5" [formGroup]="form">
+    <ion-text class="text text-sm text-muted d-block text-center mb-3"
+      >Hemos enviado un código de confirmación al correo
+      <span class="color-body">{{ email }}</span></ion-text
+    >
+    <div class="text-center mb-3">
+      <ion-button size="small" fill="clear" shape="round"
+        >Cambiar correo</ion-button
+      >
+    </div>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <ion-item>
+            <ion-input
+              (ionChange)="onChangeCode()"
+              formControlName="code"
+              inputmode="numeric"
+              class="ion-input-big"
+              #inputCode
+              type="number"
+            ></ion-input>
+          </ion-item>
+          <div class="text-center mb-5 mt-2">
+            <ion-text class="text text-sm">{{ counterTime }}</ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <ion-text class="d-block text text-sm text-center"
+    >¿No recibes el código?
+    <span [ngClass]="{'text-muted': !isCounterInZero}" (click)="onResendCode()"
+      >Reenviar</span
+    ></ion-text
+  >
+
+  <ion-modal class="modal-alert" [canDismiss]="isPreventClose" #modal>
+    <ng-template>
+      <div class="ion-padding">
+        <ion-text class="text-center text fw-700 d-block"
+          >¡Último paso!</ion-text
+        >
+        <ion-text class="text text-sm text-muted text-center d-block mb-3"
+          >Correo validado de forma correcta</ion-text
+        >
+
+        <ion-button
+          expand="block"
+          shape="round"
+          color="primary"
+          (click)="onContinue()"
+        >
+          Continuar
+        </ion-button>
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>
