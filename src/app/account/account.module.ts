@@ -18,6 +18,8 @@ import { SelectCountryComponent } from './welcome/select-country/select-country.
 import { WheAreYouComponent } from './welcome/whe-are-you/whe-are-you.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
+import { LoadingAppComponent } from './welcome/loading-app/loading-app.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -41,6 +43,8 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
     RecoverPasswordComponent,
     RecoverPasswordCodeComponent,
     RestorePasswordComponent,
+
+    LoadingAppComponent
   ],
 })
 export class AccountModule {}
