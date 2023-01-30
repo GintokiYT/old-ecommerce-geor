@@ -206,7 +206,7 @@ body.dark {
    --ion-color-basic: #FFFFFF;
    --ion-color-separator: #1B1F3C;
    --ion-background-secondary: #1B1F3C;
-   --ion-color-disabled: #ffffff66;
+   --ion-color-disabled: #ffffff66; 
    --ion-background-tertiary: #3C66FB;
    --ion-background-alert: #191932;
    --ion-background-alert-border: #5B6793;
@@ -310,7 +310,7 @@ body.dark {
 
 
 body {
-  --ion-padding: 16px;
+  --ion-padding: 24px;
 }
 
 @include theme-light {

@@ -1,25 +1,25 @@
 <ion-content [fullscreen]="true">
   <ion-header class="ion-no-border">
-    <ion-toolbar>
-      <ion-title> Inicia sesión </ion-title>
+    <ion-toolbar class="ion-no-padding">
+      <ion-title class="ion-text-left fz-normal"> Inicia sesión </ion-title>
     </ion-toolbar>
   </ion-header>
   <form class="w-100" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <ion-item class="form-group">
-      <ion-label position="floating" class="text-secondary"
+      <ion-label position="floating" class="disabled"
         >Celular o correo electrónico</ion-label
       >
       <ion-input formControlName="username"></ion-input>
     </ion-item>
     <ion-item class="form-group">
-      <ion-label position="floating" class="text-secondary"
+      <ion-label position="floating" class="disabled"
         >Contraseña</ion-label
       >
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <div class="text-end form-group form-group__double">
-      <ion-button size="small" fill="clear" (click)="onToForgotPassword()">
-        <span class="text-x-small text-secondary"
+      <ion-button size="small" fill="clear" (click)="onToForgotPassword()" class="ion-no-padding">
+        <span class="fz-note disabled"
           >¿Olvidaste tu contraseña?</span
         >
       </ion-button>
@@ -36,18 +36,19 @@
         type="submit"
         (click)="onSubmit()"
         [disabled]="loginForm.invalid"
+        style="margin-bottom: 24px;"
         >Iniciar sesión</ion-button
       >
     </div>
     <div class="text-center d-flex align-items-center justify-content-center">
-      <span class="text-secondary text-sm">¿Aún no tienes una cuenta? </span>
+      <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
       <ion-button
         fill="clear"
         size="small"
         class="button-linear"
         (click)="onToRegister()"
       >
-        <span class="text-sm text-primary">Regístrate</span>
+        <span class="fz-small" style="color: var(--ion-color-primary);">Regístrate</span>
       </ion-button>
     </div>
   </div>
