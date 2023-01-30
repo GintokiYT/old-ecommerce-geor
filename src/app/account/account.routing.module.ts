@@ -13,10 +13,16 @@ import { LoginComponent } from './login/login.component';
 import { MyLocationComponent } from './welcome/my-location/my-location.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
+import { LoadingAppComponent } from './welcome/loading-app/loading-app.component';
+
 const routes: Routes = [
   {
     path: '',
     children: [
+      {
+        path: 'loading',
+        component: LoadingAppComponent
+      },
       {
         path: RouteCollection.account.welcome.selectCountry,
         component: SelectCountryComponent,
@@ -33,10 +39,22 @@ const routes: Routes = [
         path: RouteCollection.account.welcome.changeAddress,
         component: ChangeAddressComponent,
       },
-      { path: RouteCollection.auth.login, component: LoginComponent },
-      { path: RouteCollection.auth.register, component: RegisterComponent },
-      { path: RouteCollection.auth.validPhone, component: ValidPhoneComponent },
-      { path: RouteCollection.auth.validEmail, component: ValidMailComponent },
+      {
+        path: RouteCollection.auth.login,
+        component: LoginComponent
+      },
+      {
+        path: RouteCollection.auth.register,
+        component: RegisterComponent
+      },
+      {
+        path: RouteCollection.auth.validPhone,
+        component: ValidPhoneComponent
+      },
+      {
+        path: RouteCollection.auth.validEmail,
+        component: ValidMailComponent
+      },
       {
         path: RouteCollection.auth.recoverPassword,
         component: RecoverPasswordComponent,
