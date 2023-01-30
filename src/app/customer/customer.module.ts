@@ -23,11 +23,10 @@ import { InboxModule } from './inbox/inbox.module';
     ConfirmarPedidoModule,
     StorePickupModule,
     DeliveryDetailModule,
-    InboxModule
+    InboxModule,
   ],
   declarations: [
     HomeComponent,
-
   ],
 
 })

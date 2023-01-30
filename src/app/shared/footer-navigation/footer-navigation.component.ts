@@ -4,11 +4,11 @@ import { ViewComponent } from '@geor360/ecore';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-footer-main',
-  templateUrl: './footer-main.component.html',
-  styleUrls: ['./footer-main.component.scss'],
+  selector: 'app-footer-navigation',
+  templateUrl: './footer-navigation.component.html',
+  styleUrls: ['./footer-navigation.component.scss'],
 })
-export class FooterMainComponent extends ViewComponent implements OnInit {
+export class FooterNavigationComponent extends ViewComponent implements OnInit {
 
   @ViewChild('myItems') myItems: ElementRef;
 

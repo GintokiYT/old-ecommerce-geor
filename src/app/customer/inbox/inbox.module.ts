@@ -11,14 +11,15 @@ import { InternalInboxComponent } from './internal-inbox/internal-inbox.componen
 import { HeaderMainComponent } from './components/header-main/header-main.component';
 import { FooterMainComponent } from './components/footer-main/footer-main.component';
 import { HeaderInboxComponent } from './components/header-inbox/header-inbox.component';
-
+import { ShareModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule
+    IonicModule,
+    ShareModule
   ],
   declarations: [
     MainInboxComponent,
