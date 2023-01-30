@@ -1,11 +1,8 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <app-back-button></app-back-button>
-    </ion-buttons>
-    <ion-title> Regístrate </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header
+  title="Regístrate"
+  iconLeft="icon-close"
+  backDirection="login">
+</app-header>
 <ion-content [fullscreen]="true">
   <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
     <ion-item class="form-group">

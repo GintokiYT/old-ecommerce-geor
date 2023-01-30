@@ -7,6 +7,7 @@ import { BackButtonComponent } from './back-button/back-button.component';
 import { ValidationMessagesComponent } from './validation-messages/validation-messages.component';
 import { FooterButtonsComponent } from './footer-buttons/footer-buttons.component';
 import { FooterNavigationComponent } from './footer-navigation/footer-navigation.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [CommonModule, IonicModule],
@@ -16,7 +17,8 @@ import { FooterNavigationComponent } from './footer-navigation/footer-navigation
     BackButtonComponent,
     InputPasswordComponent,
     IconTruckComponent,
-    FooterNavigationComponent
+    FooterNavigationComponent,
+    HeaderComponent
   ],
   declarations: [
     FooterButtonsComponent,
@@ -24,7 +26,8 @@ import { FooterNavigationComponent } from './footer-navigation/footer-navigation
     BackButtonComponent,
     InputPasswordComponent,
     IconTruckComponent,
-    FooterNavigationComponent
+    FooterNavigationComponent,
+    HeaderComponent
   ],
   providers: [],
 })

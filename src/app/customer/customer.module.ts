@@ -19,7 +19,6 @@ import { InboxModule } from './inbox/inbox.module';
     CustomerRoutingModule,
     CestaModule,
     FormsModule,
-    CustomerRoutingModule,
     ConfirmarPedidoModule,
     StorePickupModule,
     DeliveryDetailModule,
