@@ -10,8 +10,11 @@ ion-toolbar {
 button {
     filter: var(--ion-color-dark-filter);
     background-color: transparent;
-}
 
+    .not-display{
+        display: none;
+    }
+}
 
 ion-title {
     font-weight: bold;

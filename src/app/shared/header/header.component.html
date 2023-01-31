@@ -2,7 +2,8 @@
 
   <ion-toolbar>
       
-      <button 
+      <button
+          [ngClass]="{'not-display': iconLeft.length!==0}"
           (click)="goBack()"
           slot="start">
           <img [src] = "icons[iconLeft]"/>
