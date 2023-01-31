@@ -20,7 +20,6 @@ import { PayCardModule } from './pay-card/pay-card.module';
     CustomerRoutingModule,
     CestaModule,
     FormsModule,
-    CustomerRoutingModule,
     ConfirmarPedidoModule,
     StorePickupModule,
     DeliveryDetailModule,
