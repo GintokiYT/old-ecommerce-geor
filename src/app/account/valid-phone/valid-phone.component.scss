@@ -1,0 +1,49 @@
+ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px ;
+    
+    form{
+        ion-text {
+            .color-body {
+                font-weight: bold;
+                color: var(--color);
+            }
+        }
+        ion-button{
+            font-size: 16px;
+        }
+    }
+
+    .resend{
+        cursor: pointer !important;
+        color: var(--ion-color-primary) !important;
+        font-size: 14px !important;
+    }
+}
+
+ion-modal {
+    &.modal-alert {
+        --width: fit-content;
+        --max-width: 288px;
+        --height: fit-content;
+        --border-radius: 10px;
+        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@media(min-width:390px) {
+    ion-content {
+        --padding-start: 24px;
+        --padding-end: 24px
+    }
+
+    ion-modal {
+        &.modal-alert {
+            --width: fit-content;
+            --max-width: 342px;
+            --height: fit-content;
+            --border-radius: 10px;
+            --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+        }
+    }
+}
