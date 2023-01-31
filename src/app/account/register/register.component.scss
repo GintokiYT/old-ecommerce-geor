@@ -1,0 +1,22 @@
+.disabled{
+    color: var(--ion-color-disabled);
+}
+
+form{
+    ion-input{
+        --padding-bottom: 5px !important;
+        --padding-top: 5px !important;
+    }
+}
+
+ion-footer{
+    .terms,.politics{
+        color: var(--ion-color-primary);
+    }
+}
+
+@media(min-width:390px){
+    ion-footer{
+        padding-bottom: 48px;
+    }
+}

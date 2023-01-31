@@ -1,0 +1,44 @@
+.disabled{
+    color: var(--ion-color-disabled);
+}
+
+ion-header{
+    padding-bottom: 40px;
+    ion-toolbar{
+        ion-title{
+            padding-top: 16px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+    }
+}
+
+form{
+    ion-button{
+        margin-top: 5px;
+        margin-right: 16px;
+    }
+
+    ion-input{
+        --padding-bottom: 5px !important;
+        --padding-top: 5px !important;
+    }
+}
+
+@media(min-width:390px){
+    ion-header{
+        ion-toolbar{
+            ion-title{
+                padding-top: 24px;
+                padding-right: 24px;
+                padding-left: 24px;
+            }
+        }
+    }
+    
+    form{
+        ion-button{
+            margin-right: 24px;
+        }
+    }
+}
