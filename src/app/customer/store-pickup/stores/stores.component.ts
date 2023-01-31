@@ -60,7 +60,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
     }else{
       this.oneTrue = true;
     }
-    
+
     }
   }
 

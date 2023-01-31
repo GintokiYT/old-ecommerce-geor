@@ -16,6 +16,8 @@ import { StoreMapComponent } from './store-pickup/store-map/store-map.component'
 import { StoresComponent } from './store-pickup/stores/stores.component';
 import { ConfirmarPedidoComponent } from './confirmar-pedido/confirmar-pedido.component';
 import { CollaborativeBasketComponent } from './basket/collaborative-basket/collaborative-basket.component';
+import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
+import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,8 @@ const routes: Routes = [
       { path: 'store-map', component:StoreMapComponent },
       { path: 'stores', component:StoresComponent },
       { path: 'confirmar-pedido', component: ConfirmarPedidoComponent },
+      { path: 'way-pay', component:WayPayComponent },
+      { path: 'payment-methods', component:PaymentMethodsComponent },
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
     ]

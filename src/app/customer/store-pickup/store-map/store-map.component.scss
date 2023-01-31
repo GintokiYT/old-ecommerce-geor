@@ -5,7 +5,9 @@ ion-fab-button::part(native) {
   height: 44px;
   background: var(--ion-color-dark-contrast);
 }
-
+.arrow{
+  filter:var(--ion-color-light-filter)
+}
 ion-button {
   --background: #ffffff !important;
   --border-radius: 32px;

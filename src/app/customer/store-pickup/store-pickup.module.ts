@@ -9,8 +9,6 @@ import { CustomerRoutingModule } from '../customer.routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [HeaderComponent,StoreMapComponent,StoresComponent,StorePickupComponent],
   imports: [

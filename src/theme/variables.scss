@@ -30,7 +30,7 @@ $btn-default: #5b6793;
   --ion-color-secondary-rgb: 61, 194, 255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #E3EAFD;
+  --ion-color-secondary-shade: #FAFAFA;
   --ion-color-secondary-tint: #E3EAFD;
 
   /** tertiary **/
@@ -212,10 +212,6 @@ body.dark {
    --ion-background-alert-border: #5B6793;
    --ion-background-icons-delete:#5B6793;
     --ion-background-modal:#191932;
-
-   .arrow{
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
-  }
 
   /** tipo-pedido **/
   --ion-color-tipo-pedido : #1B1F3C;
