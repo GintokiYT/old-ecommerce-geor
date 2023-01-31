@@ -1,12 +1,16 @@
-<app-header
-  title="Regístrate"
-  iconLeft="icon-close"
-  backDirection="login">
-</app-header>
+
+
 <ion-content [fullscreen]="true">
+
+  <app-header 
+    title="Regístrate" 
+    iconLeft="icon-close" 
+    backDirection="login">
+  </app-header>
+
   <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
     <ion-item class="form-group">
-      <ion-label position="floating" class="text-secondary">Nombre</ion-label>
+      <ion-label position="floating" class="disabled">Nombre</ion-label>
       <ion-input formControlName="name"></ion-input>
       <app-validation-messages
         slot="error"
@@ -14,7 +18,7 @@
       ></app-validation-messages>
     </ion-item>
     <ion-item class="form-group">
-      <ion-label position="floating" class="text-secondary">Celular</ion-label>
+      <ion-label position="floating" class="disabled">Celular</ion-label>
       <ion-input
         formControlName="movil"
         inputmode="numeric"
@@ -26,7 +30,7 @@
       ></app-validation-messages>
     </ion-item>
     <ion-item class="form-group">
-      <ion-label position="floating" class="text-secondary"
+      <ion-label position="floating" class="disabled"
         >Correo electrónico</ion-label
       >
       <ion-input
@@ -41,7 +45,7 @@
     </ion-item>
     <app-input-password>
       <ion-item class="form-group">
-        <ion-label position="floating" class="text-secondary"
+        <ion-label position="floating" class="disabled"
           >Contraseña</ion-label
         >
         <ion-input type="password" formControlName="password"></ion-input>
@@ -58,7 +62,7 @@
           <ion-text class="text-center text fw-700 d-block"
             >Valida tu celular</ion-text
           >
-          <ion-text class="text text-sm text-muted text-center d-block mb-3"
+          <ion-text class="text fz-small text-muted text-center d-block mb-3"
             >Elige cómo validar tu número</ion-text
           >
 
@@ -84,14 +88,17 @@
       </ng-template>
     </ion-modal>
   </form>
+
 </ion-content>
+
 <ion-footer class="ion-padding ion-no-border">
   <ion-toolbar>
     <div class="text-center">
-      <span class="d-block text text-secondary text-sm mb-3"
-        >Al hacer clic en "Siguiente" aceptas los Términos y condiciones y
-        Politica de privacidad de Induacril</span
-      >
+      <span class="d-block text disabled fz-small mb-3"
+        >Al hacer clic en "Siguiente" aceptas los 
+        <span class="terms">Términos y condiciones</span> y
+        <span class="politics">Politica de privacidad de Induacril</span>
+      </span>
       <ion-button
         expand="block"
         color="primary"

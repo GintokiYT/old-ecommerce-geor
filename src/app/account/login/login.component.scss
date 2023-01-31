@@ -3,7 +3,7 @@
 }
 
 ion-header{
-    padding-bottom: 10px;
+    padding-bottom: 40px;
     ion-toolbar{
         ion-title{
             padding-top: 16px;
@@ -17,6 +17,11 @@ form{
     ion-button{
         margin-top: 5px;
         margin-right: 16px;
+    }
+
+    ion-input{
+        --padding-bottom: 5px !important;
+        --padding-top: 5px !important;
     }
 }
 

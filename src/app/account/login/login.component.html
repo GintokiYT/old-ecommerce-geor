@@ -1,9 +1,11 @@
 <ion-content [fullscreen]="true">
+
   <ion-header class="ion-no-border">
     <ion-toolbar class="ion-no-padding">
       <ion-title class="ion-text-left fz-normal"> Inicia sesión </ion-title>
     </ion-toolbar>
   </ion-header>
+
   <form class="w-100" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <ion-item class="form-group">
       <ion-label position="floating" class="disabled"
@@ -25,7 +27,9 @@
       </ion-button>
     </div>
   </form>
+
 </ion-content>
+
 <ion-footer class="ion-no-border">
   <div class="ion-padding">
     <div class="form-group form-group__double">
