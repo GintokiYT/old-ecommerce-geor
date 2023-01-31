@@ -28,7 +28,7 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "stores": "/customer/stores",
     "collaborative-basket": "/customer/collaborative-basket",
     "login": "",
-    "register": "/customer/register",
+    "register": "/register",
     "recover-password": "/customer/recover-password"
   }
 

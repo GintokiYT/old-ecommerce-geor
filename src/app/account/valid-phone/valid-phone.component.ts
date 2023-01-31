@@ -13,6 +13,7 @@ import { RouteCollection } from 'src/shared/route-collection';
 @Component({
   selector: 'app-valid-phone',
   templateUrl: 'valid-phone.component.html',
+  styleUrls: ['./valid-phone.component.scss']
 })
 export class ValidPhoneComponent implements OnInit, OnDestroy, AfterViewInit {
   movil: string | null = '';

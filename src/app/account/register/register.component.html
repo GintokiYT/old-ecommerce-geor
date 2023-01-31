@@ -45,9 +45,7 @@
     </ion-item>
     <app-input-password>
       <ion-item class="form-group">
-        <ion-label position="floating" class="disabled"
-          >Contraseña</ion-label
-        >
+        <ion-label position="floating" class="disabled">Contraseña</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
         <app-validation-messages
           slot="error"
@@ -56,11 +54,11 @@
       </ion-item>
     </app-input-password>
 
-    <ion-modal class="modal-alert" [canDismiss]="isPreventClose" #modal>
+    <ion-modal class="modal-alert" #modal>
       <ng-template>
         <div class="ion-padding">
           <ion-text class="text-center text fw-700 d-block"
-            >Valida tu celular</ion-text
+            ><b>Valida tu celular</b></ion-text
           >
           <ion-text class="text fz-small text-muted text-center d-block mb-3"
             >Elige cómo validar tu número</ion-text
@@ -88,16 +86,16 @@
       </ng-template>
     </ion-modal>
   </form>
-
 </ion-content>
 
-<ion-footer class="ion-padding ion-no-border">
+<ion-footer class="ion-no-border ion-padding">
   <ion-toolbar>
     <div class="text-center">
       <span class="d-block text disabled fz-small mb-3"
         >Al hacer clic en "Siguiente" aceptas los 
         <span class="terms">Términos y condiciones</span> y
-        <span class="politics">Politica de privacidad de Induacril</span>
+        <span class="politics">Politica de privacidad</span>
+        de Induacril
       </span>
       <ion-button
         expand="block"
@@ -110,3 +108,5 @@
     </div>
   </ion-toolbar>
 </ion-footer>
+
+
