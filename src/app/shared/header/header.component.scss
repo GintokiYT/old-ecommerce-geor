@@ -1,21 +1,26 @@
 ion-toolbar {
     --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
-    --min-height: 0px;
     --padding-top: 32px;
     --padding-start: 16px;
     --padding-end: 16px;
     --padding-bottom: 24px;
 }
 
-button {
-    filter: var(--ion-color-dark-filter);
-    background-color: transparent;
+.header-container{
+    button {
+        filter: var(--ion-color-dark-filter);
+        background-color: transparent;
+    }
+
+    .title{
+        font-weight: bold;
+    }
 }
 
-
-ion-title {
-    font-weight: bold;
-    font-size: 16px;
+    
+.not-visible{
+    visibility: hidden;
+    width: 17px;
 }
 
 @media(min-width:390px) {

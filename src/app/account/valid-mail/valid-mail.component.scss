@@ -1,6 +1,6 @@
-ion-content {
-    --padding-start: 16px;
-    --padding-end: 16px ;
+.valid-mail-container {
+    padding-right: 16px;
+    padding-left: 16px ;
     
     form{
         ion-text {
@@ -29,12 +29,14 @@ ion-modal {
         --border-radius: 10px;
         --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
     }
+
+    --background: var(--ion-background-alert)
 }
 
 @media(min-width:390px) {
-    ion-content {
-        --padding-start: 24px;
-        --padding-end: 24px
+    .valid-mail-container {
+        padding-right: 24px;
+        padding-left: 24px
     }
 
     ion-modal {

@@ -1,112 +1,71 @@
-
-
 <ion-content [fullscreen]="true">
 
-  <app-header 
-    title="Regístrate" 
-    iconLeft="icon-close" 
-    backDirection="login">
-  </app-header>
+  <div class="register-container d-flex flex-column justify-content-between">
 
-  <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <ion-item class="form-group">
-      <ion-label position="floating" class="disabled">Nombre</ion-label>
-      <ion-input formControlName="name"></ion-input>
-      <app-validation-messages
-        slot="error"
-        [control]="form.get('name')"
-      ></app-validation-messages>
-    </ion-item>
-    <ion-item class="form-group">
-      <ion-label position="floating" class="disabled">Celular</ion-label>
-      <ion-input
-        formControlName="movil"
-        inputmode="numeric"
-        type="number"
-      ></ion-input>
-      <app-validation-messages
-        slot="error"
-        [control]="form.get('movil')"
-      ></app-validation-messages>
-    </ion-item>
-    <ion-item class="form-group">
-      <ion-label position="floating" class="disabled"
-        >Correo electrónico</ion-label
-      >
-      <ion-input
-        formControlName="email"
-        inputmode="email"
-        type="email"
-      ></ion-input>
-      <app-validation-messages
-        slot="error"
-        [control]="form.get('email')"
-      ></app-validation-messages>
-    </ion-item>
-    <app-input-password>
-      <ion-item class="form-group">
-        <ion-label position="floating" class="disabled">Contraseña</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
-        <app-validation-messages
-          slot="error"
-          [control]="form.get('password')"
-        ></app-validation-messages>
-      </ion-item>
-    </app-input-password>
+    <!-- Header and Main -->
+    <div>
+      <app-header title="Regístrate" iconLeft="icon-close" backDirection="login">
+      </app-header>
 
-    <ion-modal class="modal-alert" #modal>
-      <ng-template>
-        <div class="ion-padding">
-          <ion-text class="text-center text fw-700 d-block"
-            ><b>Valida tu celular</b></ion-text
-          >
-          <ion-text class="text fz-small text-muted text-center d-block mb-3"
-            >Elige cómo validar tu número</ion-text
-          >
+      <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <ion-item class="form-group">
+          <ion-label position="floating" class="disabled">Nombre</ion-label>
+          <ion-input formControlName="name"></ion-input>
+          <app-validation-messages slot="error" [control]="form.get('name')"></app-validation-messages>
+        </ion-item>
+        <ion-item class="form-group">
+          <ion-label position="floating" class="disabled">Celular</ion-label>
+          <ion-input formControlName="movil" inputmode="numeric" type="number"></ion-input>
+          <app-validation-messages slot="error" [control]="form.get('movil')"></app-validation-messages>
+        </ion-item>
+        <ion-item class="form-group">
+          <ion-label position="floating" class="disabled">Correo electrónico</ion-label>
+          <ion-input formControlName="email" inputmode="email" type="email"></ion-input>
+          <app-validation-messages slot="error" [control]="form.get('email')"></app-validation-messages>
+        </ion-item>
+        <app-input-password>
+          <ion-item class="form-group">
+            <ion-label position="floating" class="disabled">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+            <app-validation-messages slot="error" [control]="form.get('password')"></app-validation-messages>
+          </ion-item>
+        </app-input-password>
 
-          <ion-button
-            expand="block"
-            shape="round"
-            fill="clear"
-            class="mb-3"
-            (click)="onValidPhone('sms')"
-          >
-            Enviar código por SMS
-          </ion-button>
+        <ion-modal class="modal-alert" #modal>
+          <ng-template>
+            <div class="ion-padding">
+              <ion-text class="text-center text fw-700 d-block"><b>Valida tu celular</b></ion-text>
+              <ion-text class="text fz-small text-muted text-center d-block mb-3">Elige cómo validar tu
+                número</ion-text>
 
-          <ion-button
-            expand="block"
-            shape="round"
-            color="primary"
-            (click)="onValidPhone('whatsapp')"
-          >
-            Enviar código por WhatsApp
-          </ion-button>
-        </div>
-      </ng-template>
-    </ion-modal>
-  </form>
-</ion-content>
+              <ion-button expand="block" shape="round" fill="clear" class="mb-3" (click)="onValidPhone('sms')">
+                Enviar código por SMS
+              </ion-button>
 
-<ion-footer class="ion-no-border ion-padding">
-  <ion-toolbar>
-    <div class="text-center">
-      <span class="d-block text disabled fz-small mb-3"
-        >Al hacer clic en "Siguiente" aceptas los 
-        <span class="terms">Términos y condiciones</span> y
-        <span class="politics">Politica de privacidad</span>
-        de Induacril
-      </span>
-      <ion-button
-        expand="block"
-        color="primary"
-        shape="round"
-        [disabled]="form.invalid"
-        (click)="onSubmit()"
-        >Siguiente</ion-button
-      >
+              <ion-button expand="block" shape="round" color="primary" (click)="onValidPhone('whatsapp')">
+                Enviar código por WhatsApp
+              </ion-button>
+            </div>
+          </ng-template>
+        </ion-modal>
+      </form>
     </div>
-  </ion-toolbar>
-</ion-footer>
 
+    <!-- Footer -->
+    <ion-footer class="ion-no-border ion-padding">
+      <ion-toolbar>
+        <div class="text-center">
+          <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
+            <span class="terms">Términos y condiciones</span> y
+            <span class="politics">Politica de privacidad</span>
+            de Induacril
+          </span>
+          <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid"
+            (click)="onSubmit()">Siguiente</ion-button>
+        </div>
+      </ion-toolbar>
+    </ion-footer>
+    
+  </div>
 
+</ion-content>

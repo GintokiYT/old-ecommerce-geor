@@ -7,6 +7,7 @@ import { RouteCollection } from 'src/shared/route-collection';
 @Component({
   selector: 'app-recover-password-code',
   templateUrl: 'recover-password-code.component.html',
+  styleUrls: ['recover-password-code.component.scss']
 })
 export class RecoverPasswordCodeComponent implements OnInit {
   email: string | null = '';
