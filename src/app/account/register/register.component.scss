@@ -22,6 +22,8 @@ ion-modal {
         --border-radius: 10px;
         --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
     }
+
+    --background: var(--ion-background-alert);
 }
 
 ion-footer {
