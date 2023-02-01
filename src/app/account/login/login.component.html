@@ -1,61 +1,46 @@
 <ion-content [fullscreen]="true">
 
-  <ion-header class="ion-no-border">
-    <ion-toolbar class="ion-no-padding">
-      <ion-title class="ion-text-left fz-normal"> Inicia sesión </ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="login-container d-flex flex-column justify-content-between">
 
-  <form class="w-100" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <ion-item class="form-group">
-      <ion-label position="floating" class="disabled"
-        >Celular o correo electrónico</ion-label
-      >
-      <ion-input formControlName="username"></ion-input>
-    </ion-item>
-    <ion-item class="form-group">
-      <ion-label position="floating" class="disabled"
-        >Contraseña</ion-label
-      >
-      <ion-input type="password" formControlName="password"></ion-input>
-    </ion-item>
-    <div class="text-end form-group form-group__double">
-      <ion-button size="small" fill="clear" (click)="onToForgotPassword()" class="ion-no-padding">
-        <span class="fz-note disabled"
-          >¿Olvidaste tu contraseña?</span
-        >
-      </ion-button>
+    <div>
+      <ion-header class="ion-no-border">
+        <ion-toolbar class="ion-no-padding">
+          <ion-title class="ion-text-left fz-normal"> Inicia sesión </ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <form class="w-100" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-item class="form-group">
+          <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
+          <ion-input formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item class="form-group">
+          <ion-label position="floating" class="disabled">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <div class="text-end form-group form-group__double">
+          <ion-button size="small" fill="clear" (click)="onToForgotPassword()" class="ion-no-padding">
+            <span class="fz-note disabled">¿Olvidaste tu contraseña?</span>
+          </ion-button>
+        </div>
+      </form>
     </div>
-  </form>
+
+    <ion-footer class="ion-no-border">
+      <div class="ion-padding">
+        <div class="form-group form-group__double">
+          <ion-button expand="block" color="primary" shape="round" type="submit" (click)="onSubmit()"
+            [disabled]="loginForm.invalid" style="margin-bottom: 24px;">Iniciar sesión</ion-button>
+        </div>
+        <div class="text-center d-flex align-items-center justify-content-center">
+          <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
+          <ion-button fill="clear" size="small" class="button-linear" (click)="onToRegister()">
+            <span class="fz-small" style="color: var(--ion-color-primary);">Regístrate</span>
+          </ion-button>
+        </div>
+      </div>
+      <app-footer-navigation></app-footer-navigation>
+    </ion-footer>
+  </div>
 
 </ion-content>
-
-<ion-footer class="ion-no-border">
-  <div class="ion-padding">
-    <div class="form-group form-group__double">
-      <ion-button
-        expand="block"
-        color="primary"
-        shape="round"
-        type="submit"
-        (click)="onSubmit()"
-        [disabled]="loginForm.invalid"
-        style="margin-bottom: 24px;"
-        >Iniciar sesión</ion-button
-      >
-    </div>
-    <div class="text-center d-flex align-items-center justify-content-center">
-      <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
-      <ion-button
-        fill="clear"
-        size="small"
-        class="button-linear"
-        (click)="onToRegister()"
-      >
-        <span class="fz-small" style="color: var(--ion-color-primary);">Regístrate</span>
-      </ion-button>
-    </div>
-  </div>
-  <!-- <app-footer-buttons></app-footer-buttons> -->
-  <app-footer-navigation></app-footer-navigation>
-</ion-footer>
