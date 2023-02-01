@@ -1,6 +1,6 @@
-ion-content {
-    --padding-start: 16px;
-    --padding-end: 16px ;
+.valid-phone-container {
+    padding-right: 16px;
+    padding-left: 16px ;
     
     form{
         ion-text {
@@ -34,9 +34,9 @@ ion-modal {
 }
 
 @media(min-width:390px) {
-    ion-content {
-        --padding-start: 24px;
-        --padding-end: 24px
+    .valid-phone-container {
+        padding-right: 24px;
+        padding-left: 24px
     }
 
     ion-modal {
