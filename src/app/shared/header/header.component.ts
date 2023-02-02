@@ -33,7 +33,7 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "confirmar-pedido": "/customer/confirmar-pedido",
     "stores": "/customer/stores",
     "collaborative-basket": "/customer/collaborative-basket",
-    "login": "",
+    "login": "/login",
     "register": "/register",
     "recover-password": "/recover-password"
   }
