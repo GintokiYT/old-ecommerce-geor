@@ -49,6 +49,17 @@ html {
 // Initial Slider Main
 .container-slider-main {
   margin: 0 16px;
+
+  @media (min-width: 390px) {
+    margin: 0 24px;
+  }
+
+  ion-img {
+    width: 100%;
+    min-height: 117px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
 }
 // End Slider Main
 
@@ -56,25 +67,64 @@ html {
 .container-slider-items {
   margin-left: 16px;
 
-  .text-start {
-    width: 80px;
-    height: 110px;
-  }
-
-  ion-img {
-    width: 80px;
-    height: 80px;
-  }
-
-  ion-slide {
-
-  }
-
   @media (min-width: 390px) {
     margin-left: 24px;
   }
+
+  .text-start {
+    width: 80px;
+  }
+
+  ion-img {
+    width: 72px;
+    margin-bottom: 8px;
+  }
+
+  ion-slide {
+    width: 72px;
+    margin: 0 !important;
+    padding-right: 16px;
+
+    @media (min-width: 390px) {
+      padding-right: 24px;
+    }
+  }
+
+  ion-slides {
+    max-height: 100px;
+  }
+
+  ion-text {
+    font-size: 12px;
+
+    @media (min-width: 390px) {
+      font-size: 14px;
+    }
+  }
 }
 // End Slider ITems
+
+// Productos destacados
+.container-productos-destacados {
+  padding: 0 16px;
+
+  @media (min-width: 390px) {
+    padding: 0 24px;
+  }
+
+  .products__product {
+    margin-bottom: 16px;
+
+    @media (min-width: 390px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .icon-truck path {
+    stroke: red !important;
+  }
+}
+// End Productos destacados
 
 // Remover el scroll del ion-content
 ion-content {
@@ -86,4 +136,3 @@ ion-content {
     display: none;
   }
 }
-

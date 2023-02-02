@@ -156,5 +156,9 @@ export class HomeComponent extends ViewComponent implements OnInit {
         hasFreeDelivery: false,
       },
     ];
+
+    const sliderContent: any = document.querySelector('ion-slides .swiper-wrapper');
+
+    // sliderContent.styles.gap = '20px';
   }
 }
