@@ -38,7 +38,7 @@
           </div>
         </ion-text>
         <ion-slides [options]="productSlidesOptions">
-          <ion-slide *ngFor="let product of productsForYou" class="ion-no-margin">
+          <ion-slide *ngFor="let product of productsForYou">
             <div class="text-start">
               <ion-img [src]="product.image" [alt]="product.image"></ion-img>
               <ion-text class="d-block text-sm fw-bold">
@@ -50,7 +50,60 @@
       </div>
     </div>
     <!-- Fin Slider Items -->
-
+    <!-- Productos Destacados -->
+    <div class="container-productos-destacados">
+      <div class="mt-4">
+        <ion-text>
+          <div class="d-flex ion-align-items-center mb-3 fw-bold">Destacados</div>
+        </ion-text>
+      </div>
+      <div class="products__column">
+        <div class="products__product" *ngFor="let product of productsFeatured">
+          <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
+          <ion-img [src]="product.image" [alt]="product.image"></ion-img>
+          <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
+          <ion-text class="d-block fw-semibold mt-2 mb-2"
+            >{{ product.currency }}{{ product.price  }}</ion-text
+          >
+          <ion-text
+            *ngIf="product.inOffert"
+            class="d-block fw-semibold mt-2 mb-3 text-sm text text-muted"
+          >
+            <span class="d-inline-block mr-3 text-line-through"
+              >{{ product.currency }}{{ product.oldPrice }}</span
+            >
+            <span class="fw-semibold text-primary"
+              >-{{ product.discountPercentage }}%</span
+            >
+          </ion-text>
+          <ion-text
+            *ngIf="product.hasMinimumOrder"
+            class="d-block mt-2 mb-2 text-sm"
+          >
+            <span class="d-inline-block mr-2"
+              >{{ product.minimumOrder }} unidades
+            </span>
+            <span class="text-muted">(Pedido mín.)</span>
+          </ion-text>
+          <ion-text *ngIf="product.hasFreeDelivery" class="d-block mb-2">
+            <div class="d-flex ion-align-items-center">
+              <app-icon-truck></app-icon-truck>
+              <span class="d-inline-block text text-sm text-muted ms-2"
+                >Envío gratis</span
+              >
+            </div>
+          </ion-text>
+          <div *ngIf="product.colors" class="product__colors">
+            <div
+              *ngFor="let color of product.colors"
+              class="product__color"
+              [style]="{backgroundColor: color.color}"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin de productos destacados -->
   </div>
 </ion-content>
 <app-footer-navigation></app-footer-navigation>

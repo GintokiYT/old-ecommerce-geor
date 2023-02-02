@@ -78,7 +78,8 @@
     padding: 4px 6px;
   }
   path {
-    fill: rgba($black, 0.6);
+    // fill: var(--ion-color-basic);
+    fill: #6c757d !important;;
   }
 }
 .products__name {
