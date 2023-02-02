@@ -15,6 +15,7 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   @ViewChild('myChat') myChat: ElementRef;
   @ViewChild('myBuy') myBuy: ElementRef;
   @ViewChild('myProfile') myProfile: ElementRef;
+  @ViewChild('myHome') myHome: ElementRef;
 
   constructor(_injector: Injector, private router: Router) {
     super(_injector);
@@ -40,6 +41,9 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
     if(this.router.url === '/login') {
       this.myProfile.nativeElement.classList.add('active');
     }
+    if(this.router.url === '/customer/home') {
+      this.myHome.nativeElement.classList.add('active');
+    }
  }
 
   onActive(id: string) {
@@ -52,6 +56,9 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
         break;
       case 'Profile':
         this.navigation.root('/login', 'forward');
+        break;
+      case 'Home':
+        this.navigation.root('/customer/home', 'forward');
         break;
     }
   }
