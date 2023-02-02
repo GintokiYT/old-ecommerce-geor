@@ -2,3 +2,68 @@
   height: 100%;
   width: 100%;
 }
+
+ion-footer {
+  height: 160px;
+  background-color: var(--ion-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 0;
+
+  @media (min-width: 390px) {
+    padding: 24px 0 48px 0;
+    height: 182px;
+  }
+}
+
+ion-input {
+  --padding-bottom: 12px;
+  --padding-end: 0;
+  --padding-start: 0;
+  --padding-top: 0;
+
+  border-bottom: 1px solid var(--ion-color-separator);
+  font-size: 14px;
+
+  @media (min-width: 390px) {
+    font-size: 16px;
+  }
+}
+
+.container-input {
+  margin: 0 16px;
+
+  @media(min-width: 390px) {
+    margin: 0 24px;
+  }
+}
+
+.container-button {
+  margin: 0 16px;
+
+  @media(min-width: 390px) {
+    margin: 0 24px;
+  }
+}
+
+ion-content {
+  position: relative;
+}
+
+.button-back {
+  position: absolute;
+  left: 24px;
+  top: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--ion-background-secondary);
+}
+
+.button-back svg path{
+  stroke: var(--ion-color-arrow-map);
+}
