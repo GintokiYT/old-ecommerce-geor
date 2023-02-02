@@ -35,6 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.navigator.forward(RouteCollection.shop.home);
+    this.navigator.forward("/customer/home");
   }
 }

@@ -35,7 +35,9 @@ export class ValidMailComponent implements OnInit {
     //     email: this.route.snapshot.queryParamMap.get('email'),
     //   },
     // };
-    this.router.navigate([RouteCollection.shop.home]);
+    // this.router.navigate([RouteCollection.shop.home]);
+    this.router.navigate(["/customer/home"]);
+
   }
 
   ngAfterViewInit() {
