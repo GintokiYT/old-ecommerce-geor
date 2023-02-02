@@ -7,6 +7,7 @@ import { RouteCollection } from 'src/shared/route-collection';
 @Component({
   selector: 'app-valid-mail',
   templateUrl: 'valid-mail.component.html',
+  styleUrls: ['./valid-mail.component.scss']
 })
 export class ValidMailComponent implements OnInit {
   email: string | null = '';

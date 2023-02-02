@@ -1,0 +1,49 @@
+.disabled {
+    color: var(--ion-color-disabled);
+}
+
+.register-container{
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    ion-input {
+        --padding-bottom: 5px !important;
+        --padding-top: 5px !important;
+    }
+}
+
+ion-modal {
+    &.modal-alert {
+        --width: fit-content;
+        --max-width: 288px;
+        --height: fit-content;
+        --border-radius: 10px;
+        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    }
+
+    --background: var(--ion-background-alert);
+}
+
+ion-footer {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    .terms,
+    .politics {
+        color: var(--ion-color-primary);
+    }
+}
+
+@media(min-width:390px) {
+    ion-footer {
+        padding-bottom: 48px;
+
+    }
+
+    ion-modal {
+        &.modal-alert {
+            --max-width: 342px;
+        }
+    }
+}

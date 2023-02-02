@@ -20,7 +20,6 @@ import { ShareModule } from '../shared/shared.module';
     CustomerRoutingModule,
     CestaModule,
     FormsModule,
-    CustomerRoutingModule,
     ConfirmarPedidoModule,
     StorePickupModule,
     DeliveryDetailModule,

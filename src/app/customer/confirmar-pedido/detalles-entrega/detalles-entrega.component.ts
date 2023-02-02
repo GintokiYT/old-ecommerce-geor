@@ -11,7 +11,6 @@ export class DetallesEntregaComponent implements OnInit {
 
 
   constructor(private cpService: ConfirmarPedidoService) {
-    console.log("constructor")
   }
 
   ngOnInit() {
@@ -20,7 +19,6 @@ export class DetallesEntregaComponent implements OnInit {
     const pedidoSeleccionado = this.cpService.currentMiPedido$.subscribe(pedido => {
       document.getElementById(pedido.tipoPedido).classList.add("selected");
     })
-    console.log("init")
   }
 
 
