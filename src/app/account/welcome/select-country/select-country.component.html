@@ -1,39 +1,30 @@
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <img
-      src="assets/images/bienvenida.svg"
-      alt="Placeholder"
-      class="img-fluid"
-      width="300"
-    />
+<ion-content>
+  <div class="container-welcome">
+    <div class="container-image">
+      <img src="assets/images/bienvenida.svg" alt="welcome image"/>
+    </div>
+    <div class="container-footer">
+      <h2 class="title">¡Bienvenido!</h2>
+      <span class="sub-title">Elige el país donde quieres comprar</span>
+      <div class="container-flags">
+        <div class="container-flags--item" *ngFor="let country of countries">
+          <img src="{{country.flag}}" alt="{{country.name}}" />
+          <span>{{ country.name }}</span>
+          <div class="radio-contry" [ngClass]="country.id" (click)="selectedContry(country.id)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+              <path d="M1 3.72727L4.46138 6.93695C4.49973 6.97251 4.55902 6.97252 4.59737 6.93695L11 1" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <ion-button
+          expand="block"
+          color="primary"
+          shape="round"
+          type="submit"
+          [disabled]="statusButton"
+          (click)="navigateToWheAreYou()"
+        >Confirmar</ion-button>
+      </div>
+    </div>
   </div>
 </ion-content>
-<ion-footer>
-  <form (submit)="onSubmit()" [formGroup]="selectCountryForm">
-    <div class="ion-padding">
-      <h5 class="text-big fw-bold">¡Bienvenido!</h5>
-      <p class="text-secondary mb-0">Elige el país donde quieres comprar</p>
-    </div>
-    <ion-radio-group formControlName="country_id" class="d-block">
-      <ion-item *ngFor="let country of countries; index as i" lines="none">
-        <ion-label>
-          <div class="d-flex ion-align-items-center">
-            <img src="{{ country.flag }}" width="24" class="img-fluid me-3 br-2" />
-            <span class="ms-3">{{ country.name }}</span>
-          </div>
-        </ion-label>
-        <ion-radio slot="end" color="medium" [value]="country.id"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-    <div class="ion-padding">
-      <ion-button
-        expand="block"
-        color="primary"
-        shape="round"
-        type="submit"
-        [disabled]="isEmptyForm"
-        >Confirmar</ion-button
-      >
-    </div>
-  </form>
-</ion-footer>
