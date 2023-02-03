@@ -15,6 +15,6 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   ngOnInit() {}
 
   goToConfirmOrder() {
-    this.navigation.root('/customer/confirmar-pedido', 'forward');
+    this.navigation.root('/customer/confirm-order', 'forward');
   }
 }

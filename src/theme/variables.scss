@@ -110,7 +110,6 @@ $btn-default: #5b6793;
   --ion-color-arrow-map: #000000;
   --ion-color-geor: #242424;
 
-  /** tipo-pedido **/
   --ion-color-tipo-pedido : #00000061;
   --ion-color-tipo-pedido-border: #F5F5F5;
   --ion-color-tipo-pedido-filter: unset;
@@ -123,14 +122,8 @@ $btn-default: #5b6793;
 /** Dark Colors **/
 body.dark {
   --ion-background-color: #{$bg-dark};
-
-  .arrow{
-
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
-  }
-
-
   --ion-background-color: $white;
+  
   /** primary **/
   --ion-color-primary: #3c66fb;
   --ion-color-primary-rgb: 60, 102, 251;
@@ -230,12 +223,6 @@ body.dark {
   --ion-color-arrow-map: #5B6793;
   --ion-color-geor: #ffffff;
 
-
-  .arrow{
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(155deg) brightness(103%) contrast(103%);
-  }
-
-  /** tipo-pedido **/
   --ion-color-tipo-pedido : #1B1F3C;
   --ion-color-tipo-pedido-border: #1B1F3C;
   --ion-color-tipo-pedido-filter: brightness(0) saturate(100%) invert(10%) sepia(48%) saturate(1066%) hue-rotate(198deg) brightness(91%) contrast(92%);
