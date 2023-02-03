@@ -30,7 +30,7 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   }
 
   directions = {
-    "confirmar-pedido": "/customer/confirmar-pedido",
+    "confirm-order": "/customer/confirm-order",
     "stores": "/customer/stores",
     "collaborative-basket": "/customer/collaborative-basket",
     "login": "/login",

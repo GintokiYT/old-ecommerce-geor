@@ -14,8 +14,8 @@ import { AlertComponent } from './delivery-detail/alert/alert.component';
 import { StorePickupComponent } from './store-pickup/store-pickup.component';
 import { StoreMapComponent } from './store-pickup/store-map/store-map.component';
 import { StoresComponent } from './store-pickup/stores/stores.component';
-import { ConfirmarPedidoComponent } from './confirmar-pedido/confirmar-pedido.component';
 import { CollaborativeBasketComponent } from './basket/collaborative-basket/collaborative-basket.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 
 const routes: Routes = [
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
       { path: 'store-pickup', component:StorePickupComponent },
       { path: 'store-map', component:StoreMapComponent },
       { path: 'stores', component:StoresComponent },
-      { path: 'confirmar-pedido', component: ConfirmarPedidoComponent },
+      { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
     ]
