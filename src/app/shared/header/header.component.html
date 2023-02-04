@@ -2,13 +2,25 @@
 
   <ion-toolbar>
       
-      <button 
+      <div class="header-container d-flex justify-content-between align-items-center">
+        <button
+          [ngClass]="{'not-visible': iconLeft.length===0}"
           (click)="goBack()"
-          slot="start">
+        >
           <img [src] = "icons[iconLeft]"/>
-      </button>
+        </button>
   
-      <ion-title>{{title}}</ion-title>
+        <div class="title">
+          <ion-label>{{title}}</ion-label>
+        </div>
+
+        <button
+          [ngClass]="{'not-visible': iconRight.length===0}"
+          (click)="goBack()"
+        >
+          <img [src] = "icons[iconRight]"/>
+        </button>
+      </div>
 
   </ion-toolbar>
 

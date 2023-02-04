@@ -12,6 +12,7 @@ import { MyBasquetComponent } from './my-basket/my-basquet.component';
 import { ModalBasketComponent } from './collaborative-basket/modal-basket/modal-basket.component';
 import { InboxModule } from '../inbox/inbox.module';
 import { MainProductComponent } from './collaborative-basket/main-product/main-product.component';
+import { ShareModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MainProductComponent } from './collaborative-basket/main-product/main-p
     CommonModule,
     IonicModule,
     InboxModule,
+    ShareModule
   ],
   exports:[
     HeaderBasketComponent,

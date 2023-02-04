@@ -1,0 +1,61 @@
+.valid-phone-container {
+    padding-right: 16px;
+    padding-left: 16px ;
+    
+    form{
+        ion-text {
+            .color-body {
+                font-weight: bold;
+                color: var(--color);
+            }
+        }
+        ion-button{
+            font-size: 16px;
+        }
+    }
+
+    .resend{
+        cursor: pointer !important;
+        color: var(--ion-color-primary) !important;
+        font-size: 14px !important;
+    }
+
+    .input-code{
+        &::part(native){
+            padding-inline-end: 0px;
+            padding-inline-start: 0px;
+        }
+        ion-input{
+            letter-spacing: 5px;
+            margin-left: 25px;
+        }
+    }
+}
+
+ion-modal {
+    &.modal-alert {
+        --height: fit-content;
+        --border-radius: 10px;
+    }
+
+    &::part(content) {
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+    --background: var(--ion-background-alert)
+}
+
+@media(min-width:390px) {
+    .valid-phone-container {
+        padding-right: 24px;
+        padding-left: 24px
+    }
+
+    ion-modal {
+        &::part(content) {
+            margin-right: 24px;
+            margin-left: 24px;
+        }
+    }
+}

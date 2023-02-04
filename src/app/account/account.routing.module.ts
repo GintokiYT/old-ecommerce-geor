@@ -70,7 +70,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: RouteCollection.auth.login,
+        redirectTo: 'loading',
       },
       { path: '**', redirectTo: 'welcome' },
     ],

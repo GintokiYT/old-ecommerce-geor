@@ -4,9 +4,12 @@ import { AppNavigationService } from '@geor360/ecore';
 import { IonInput } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 
+import { AcountService } from '../../services/acount.service';
+
 @Component({
   selector: 'app-change-adddress',
   templateUrl: 'change-address.component.html',
+  styleUrls: ['change-address.component.scss']
 })
 export class ChangeAddressComponent {
   filter: string | null = '';
@@ -18,7 +21,9 @@ export class ChangeAddressComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private navigator: AppNavigationService
+    private navigator: AppNavigationService,
+
+    private acountService: AcountService
   ) {
     this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
   }
@@ -26,7 +31,7 @@ export class ChangeAddressComponent {
     this.filter = this.route.snapshot.queryParamMap.get('address');
     this.lat = Number(this.route.snapshot.queryParamMap.get('latitude') || 0);
     this.lng = Number(this.route.snapshot.queryParamMap.get('longitude') || 0);
-    setTimeout(() => this.inputAddress.setFocus(), 500);
+    setTimeout(() => this.inputAddress.setFocus(), 1000);
   }
 
   onToBack() {
@@ -41,7 +46,8 @@ export class ChangeAddressComponent {
         lng: this.lng,
       },
     };
-    this.navigator.back(RouteCollection.account.welcome.myLocation, params);
+    this.acountService.direction =  params.queryParams['address'] || '';
+    this.navigator.back(RouteCollection.account.welcome.myLocation);
   }
 
   onSearch() {

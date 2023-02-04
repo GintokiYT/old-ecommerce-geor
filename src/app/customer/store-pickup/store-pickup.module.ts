@@ -5,9 +5,10 @@ import { StoresComponent } from './stores/stores.component';
 import { IonicModule } from '@ionic/angular';
 import { StorePickupComponent } from './store-pickup.component';
 import { CustomerRoutingModule } from '../customer.routing.module';
-import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ShareModule } from '../../shared/shared.module';
+import { ShareModule } from 'src/app/shared/shared.module';
+
+
 
 @NgModule({
   declarations: [StoreMapComponent,StoresComponent,StorePickupComponent],
@@ -16,7 +17,7 @@ import { ShareModule } from '../../shared/shared.module';
     CommonModule,
     CustomerRoutingModule,
     FormsModule,
-    ShareModule,
+    ShareModule
   ],
   exports:[
     StoreMapComponent,StoresComponent,StorePickupComponent

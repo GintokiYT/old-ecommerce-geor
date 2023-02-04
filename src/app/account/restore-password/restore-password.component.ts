@@ -1,21 +1,24 @@
-import { RouteCollection } from 'src/shared/route-collection';
-import { AppNavigationService } from '@geor360/ecore';
+import { AppNavigationService, ViewComponent } from '@geor360/ecore';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 
 @Component({
   selector: 'app-restore-password',
   templateUrl: 'restore-password.component.html',
+  styleUrls: ['restore-password.component.scss']
 })
-export class RestorePasswordComponent implements OnInit {
+export class RestorePasswordComponent extends ViewComponent implements OnInit {
   form!: FormGroup;
-  constructor(private navigator: AppNavigationService) {}
+  constructor(private navigator: AppNavigationService,
+    private _injector: Injector) {
+      super(_injector);
+    }
 
   ngOnInit() {
     this.form = new FormGroup({
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(8),
         Validators.maxLength(50),
       ]),
       password_confirmation: new FormControl('', [
@@ -26,7 +29,11 @@ export class RestorePasswordComponent implements OnInit {
     });
   }
 
+  onGoToLogin(){
+    this.navigation.back("/login")
+  }
+
   onSubmit() {
-    this.navigator.forward(RouteCollection.shop.home);
+    this.navigator.forward("/customer/home");
   }
 }

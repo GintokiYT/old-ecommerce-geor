@@ -17,8 +17,9 @@ import { LoginComponent } from './login/login.component';
 import { SelectCountryComponent } from './welcome/select-country/select-country.component';
 import { WheAreYouComponent } from './welcome/whe-are-you/whe-are-you.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
-
 import { LoadingAppComponent } from './welcome/loading-app/loading-app.component';
+import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
+
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { LoadingAppComponent } from './welcome/loading-app/loading-app.component
     CoreModule,
     AccountRoutingModule,
     ShareModule,
+    IonicInputMaskModule
   ],
   declarations: [
     WelcomeComponent,
@@ -43,8 +45,9 @@ import { LoadingAppComponent } from './welcome/loading-app/loading-app.component
     RecoverPasswordComponent,
     RecoverPasswordCodeComponent,
     RestorePasswordComponent,
-
-    LoadingAppComponent
+    LoadingAppComponent,
   ],
+  providers:[
+  ]
 })
 export class AccountModule {}

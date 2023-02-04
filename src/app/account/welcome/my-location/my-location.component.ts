@@ -8,6 +8,8 @@ import {
 } from '@geor360/ecore';
 import { Subscription } from 'rxjs';
 
+import { AcountService } from '../../services/acount.service';
+
 @Component({
   selector: 'app-my-location',
   templateUrl: 'my-location.component.html',
@@ -24,13 +26,19 @@ export class MyLocationComponent implements OnInit, OnDestroy {
 
   map: google.maps.Map;
 
+  direction: string;
+
   constructor(
     _injector: Injector,
-    private navigator: AppNavigationService
+    private navigator: AppNavigationService,
+
+    private acountService: AcountService
   ) {
     this.dialog = _injector.get(AppDialogService);
     this.geolocation = _injector.get(GeolocationService);
     this.googleMap = _injector.get(GoogleMapService);
+
+    this.direction = this.acountService.direction;
   }
 
   ngOnInit() {
@@ -101,6 +109,6 @@ export class MyLocationComponent implements OnInit, OnDestroy {
   }
 
   nextProyect() {
-    this.navigator.forward('customer');
+    this.navigator.forward('customer/home');
   }
 }
