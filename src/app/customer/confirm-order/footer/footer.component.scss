@@ -8,10 +8,10 @@ ion-footer{
 ion-toolbar{
     --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
     --border-color: transparent;
-    --padding-top: 8px;
-    --padding-start: 24px;
-    --padding-end: 24px;
-    --padding-bottom: 32px
+    --padding-top: 12px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-bottom: 16px
 }
 
 .contenedor-footer{
@@ -40,9 +40,9 @@ ion-toolbar{
     }
 
     ion-toolbar{
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 16px;
+        --padding-start: 24px;
+        --padding-end: 24px;
+        --padding-bottom: 24px;
     }
 }
 

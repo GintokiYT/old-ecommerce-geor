@@ -1,4 +1,3 @@
-import { RouteCollection } from 'src/shared/route-collection';
 import { AppNavigationService, ViewComponent } from '@geor360/ecore';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Injector } from '@angular/core';
@@ -35,6 +34,6 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   }
 
   onSubmit() {
-    this.navigator.forward(RouteCollection.shop.home);
+    this.navigator.forward("/customer/home");
   }
 }
