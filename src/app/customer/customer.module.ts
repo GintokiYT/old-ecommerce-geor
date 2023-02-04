@@ -28,7 +28,7 @@ import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
     StorePickupModule,
     DeliveryDetailModule,
     InboxModule,
-    SearchGeneralModule
+    SearchGeneralModule,
     PayCardModule,
     IonicInputMaskModule,
     ShareModule,
