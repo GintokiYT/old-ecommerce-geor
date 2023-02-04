@@ -10,6 +10,7 @@ import { StorePickupModule } from './store-pickup/store-pickup.module';
 import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
 import { ProductDetailModule } from './product-detail/product-detail.module';
+import { SearchGeneralModule } from '../search-general/search-general.module';
 import { PayCardModule } from './pay-card/pay-card.module';
 
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
@@ -29,6 +30,7 @@ import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
     DeliveryDetailModule,
     InboxModule,
     ProductDetailModule,
+    SearchGeneralModule,
     PayCardModule,
     IonicInputMaskModule,
     ShareModule,

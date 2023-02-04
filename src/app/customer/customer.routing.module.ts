@@ -26,6 +26,8 @@ import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
 import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
 import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
+import { SearchComponent } from '../search-general/search/search.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,8 @@ const routes: Routes = [
       { path: 'payment-methods', component:PaymentMethodsComponent },
       { path: 'add-card', component:AddCardComponent },
       { path: 'confirm-order', component: ConfirmOrderComponent},
+      { path: 'catalogue', component: CatalogueComponent },
+      { path: 'search', component: SearchComponent },
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
 
