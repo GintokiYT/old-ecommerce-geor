@@ -8,14 +8,14 @@
         al celular
         <span class="color-body">+51 {{movil}}</span></ion-text>
       <div class="text-center mb-3">
-        <ion-button fill="clear" shape="round" color="primary">Cambiar número</ion-button>
+        <ion-button fill="clear" shape="round" color="primary" (click)="onGoTo('/register')">Cambiar número</ion-button>
       </div>
       <ion-grid>
         <ion-row class="ion-justify-content-center">
           <ion-col size="6">
-            <ion-item>
+            <ion-item class="input-code">
               <ion-input color="primary" (ionChange)="onChangeCode()" formControlName="code" inputmode="numeric"
-                class="ion-input-big" #inputCode type="number"></ion-input>
+                class="ion-input-big fz-subtitle text-center" #inputCode type="text"></ion-input>
             </ion-item>
             <div class="text-center mb-5 mt-2">
               <ion-text class="text fz-small">{{ counterTime }}</ion-text>

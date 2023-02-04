@@ -1,4 +1,6 @@
 ion-item {
+  --padding-start: 16px !important;
+  --inner-padding-end: 16px !important;
   font-size: 16px;
   &::part(native) {
     padding-inline-end: 16px;
@@ -8,6 +10,8 @@ ion-item {
 
 @media(min-width:390px){
   ion-item {
+    --padding-start: 24px !important;
+    --inner-padding-end: 24px !important;
     font-size: 16px;
     &::part(native) {
       padding-inline-end: 24px;

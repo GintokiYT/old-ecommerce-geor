@@ -14,10 +14,12 @@
           <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
           <ion-input formControlName="username"></ion-input>
         </ion-item>
-        <ion-item class="form-group">
-          <ion-label position="floating" class="disabled">Contraseña</ion-label>
-          <ion-input type="password" formControlName="password"></ion-input>
-        </ion-item>
+        <app-input-password>
+          <ion-item class="form-group">
+            <ion-label position="floating" class="disabled">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </app-input-password>
         <div class="text-end form-group form-group__double">
           <ion-button size="small" fill="clear" (click)="onToForgotPassword()" class="ion-no-padding">
             <span class="fz-note disabled">¿Olvidaste tu contraseña?</span>

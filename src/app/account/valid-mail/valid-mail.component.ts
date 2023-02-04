@@ -1,15 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Injector } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonInput, IonModal } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
+import { ViewComponent } from '@geor360/ecore';
 
 @Component({
   selector: 'app-valid-mail',
   templateUrl: 'valid-mail.component.html',
   styleUrls: ['./valid-mail.component.scss']
 })
-export class ValidMailComponent implements OnInit {
+export class ValidMailComponent extends ViewComponent implements OnInit {
   email: string | null = '';
   counter: number = 60;
   counterTime: string = '';
@@ -18,27 +19,28 @@ export class ValidMailComponent implements OnInit {
   form!: FormGroup;
   @ViewChild('inputCode') inputCode!: IonInput;
   isPreventClose: boolean = false;
-  @ViewChild(IonModal) modal!: IonModal;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router,
+              private _injector: Injector) {
+                super(_injector)
+  }
 
   ngOnDestroy(): void {
     clearInterval(this.timer);
   }
 
-  async onContinue() {
-    this.isPreventClose = true;
-    await this.modal.dismiss();
+  // async onContinue() {
+  //   this.isPreventClose = true;
 
-    // const params: NavigationExtras = {
-    //   queryParams: {
-    //     email: this.route.snapshot.queryParamMap.get('email'),
-    //   },
-    // };
-    // this.router.navigate([RouteCollection.shop.home]);
-    this.router.navigate(["/customer/home"]);
+  //   // const params: NavigationExtras = {
+  //   //   queryParams: {
+  //   //     email: this.route.snapshot.queryParamMap.get('email'),
+  //   //   },
+  //   // };
+  //   // this.router.navigate([RouteCollection.shop.home]);
+  //   this.router.navigate(["/customer/home"]);
 
-  }
+  // }
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -51,7 +53,7 @@ export class ValidMailComponent implements OnInit {
     if (code) {
       if (new String(code).length === 6) {
         this.inputCode.readonly = true;
-        this.modal.present();
+        this.navigation.root("customer/home","forward");
       }
     }
   }
@@ -61,6 +63,10 @@ export class ValidMailComponent implements OnInit {
       this.counter = 60;
       this.isCounterInZero = false;
     }
+  }
+
+  onGoTo(path: string) : void{
+    this.navigation.back(path)
   }
 
   ngOnInit() {
