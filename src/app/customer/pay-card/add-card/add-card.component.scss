@@ -7,7 +7,7 @@ ion-item::part(native){
 } 
 
 ion-item {
-    --inner-padding-end: 0px
+    --inner-padding-end: 0px !important;
 }
 ion-item{
     margin-bottom: 24px;
@@ -82,7 +82,7 @@ ion-footer{
         margin-bottom: 0px;
         ion-item{
             --padding-start: 0px;
-            --inner-padding-end: 0px;
+            --inner-padding-end: 0px !important;
             #icon-security{
                 margin-right:8px;
             }

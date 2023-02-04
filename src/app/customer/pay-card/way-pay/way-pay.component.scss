@@ -22,7 +22,7 @@
     } 
     ion-item{
         margin-top: 24px;
-        
+        --inner-padding-end: 0px !important;
         ion-checkbox{
             --size: 20px;
             margin: 0px;
@@ -35,6 +35,7 @@
         #delete{
             width: 24px;
             height: 24px;
+            margin-right: 10px;
         }
     }
 }
