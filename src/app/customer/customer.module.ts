@@ -12,6 +12,8 @@ import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
 import { PayCardModule } from './pay-card/pay-card.module';
 
+import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
+
 @NgModule({
   imports:[
     CommonModule,
@@ -25,6 +27,7 @@ import { PayCardModule } from './pay-card/pay-card.module';
     DeliveryDetailModule,
     InboxModule,
     PayCardModule,
+    IonicInputMaskModule,
   ],
   declarations: [
     HomeComponent,

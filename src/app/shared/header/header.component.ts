@@ -29,7 +29,9 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "collaborative-basket": "/customer/collaborative-basket",
     "login": "",
     "register": "/customer/register",
-    "recover-password": "/customer/recover-password"
+    "recover-password": "/customer/recover-password",
+    "way-pay":"/customer/way-pay",
+    "payment-methods":"/customer/payment-methods"
   }
 
   constructor(private location: Location, private _injector: Injector) {

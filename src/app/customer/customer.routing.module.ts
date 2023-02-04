@@ -18,6 +18,7 @@ import { ConfirmarPedidoComponent } from './confirmar-pedido/confirmar-pedido.co
 import { CollaborativeBasketComponent } from './basket/collaborative-basket/collaborative-basket.component';
 import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
 import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
+import { AddCardComponent } from './pay-card/add-card/add-card.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,7 @@ const routes: Routes = [
       { path: 'confirmar-pedido', component: ConfirmarPedidoComponent },
       { path: 'way-pay', component:WayPayComponent },
       { path: 'payment-methods', component:PaymentMethodsComponent },
+      { path: 'add-card', component:AddCardComponent },
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
     ]
