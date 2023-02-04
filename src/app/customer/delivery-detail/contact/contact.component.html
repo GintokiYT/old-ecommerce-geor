@@ -1,19 +1,16 @@
-
-
 <ion-content>
-
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <button (click)="goBack()" slot="start" class="arrow">
         <img src="/assets/icons/icon-arrow-izquierda.svg" />
       </button>
       <ion-title>Lista de contactos</ion-title>
-      <button slot="end" class="arrow">
+      <button id="search" slot="end" class="arrow">
         <img src="/assets/icons/icon-search.svg" />
+        <!-- <ion-searchbar placeholder="Search" (click)="search()"></ion-searchbar> -->
       </button>
     </ion-toolbar>
   </ion-header>
-  
   <ion-item lines="none">
     <ion-label>
       <h3>Wilfredo (yo)</h3>
@@ -57,7 +54,7 @@
     </ion-label>
   </ion-item>
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button (click)="goTo('/customer/confirmar-pedido')">
+    <ion-fab-button (click)="goTo('/customer/buy')">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

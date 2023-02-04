@@ -1,7 +1,4 @@
-
-
 <ion-content>
-
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <button (click)="goBack()" slot="start" class="arrow">
@@ -10,22 +7,18 @@
       <ion-title>Requisitos para la entrega</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <ion-item lines="none">
     <ion-textarea></ion-textarea>
   </ion-item>
   <ion-item lines="none">
     <ion-label>
-    <p class="linea">Detalla los requisitos para la entrega (opcional)</p>
-  </ion-label>
+      <p class="linea">Detalla los requisitos para la entrega (opcional)</p>
+    </ion-label>
   </ion-item>
 </ion-content>
-
-
 <ion-footer>
   <ion-toolbar>
-    <ion-button 
-      (click)="goTo('/customer/confirmar-pedido')"
-      color="primary" expand="block" shape="round">Guardar</ion-button>  
+    <ion-button (click)="goTo('/customer/confirmar-pedido')" color="primary" expand="block"
+      shape="round">Guardar</ion-button>
   </ion-toolbar>
 </ion-footer>

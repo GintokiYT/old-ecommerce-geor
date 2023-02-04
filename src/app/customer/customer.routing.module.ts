@@ -16,6 +16,8 @@ import { StoreMapComponent } from './store-pickup/store-map/store-map.component'
 import { StoresComponent } from './store-pickup/stores/stores.component';
 import { ConfirmarPedidoComponent } from './confirmar-pedido/confirmar-pedido.component';
 import { CollaborativeBasketComponent } from './basket/collaborative-basket/collaborative-basket.component';
+import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
+import { SearchComponent } from '../search-general/search/search.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,8 @@ const routes: Routes = [
       { path: 'store-map', component:StoreMapComponent },
       { path: 'stores', component:StoresComponent },
       { path: 'confirmar-pedido', component: ConfirmarPedidoComponent },
+      { path: 'catalogue', component: CatalogueComponent },
+      { path: 'search', component: SearchComponent },
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
     ]

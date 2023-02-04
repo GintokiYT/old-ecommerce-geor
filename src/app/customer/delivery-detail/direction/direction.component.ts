@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Injector } from '@angular/core';
 import { Location } from '@angular/common';
+import { AlertController } from '@ionic/angular';
 import { ConfirmarPedidoService } from '../../confirmar-pedido/services/confirmar-pedido.service';
 import { ViewComponent } from '@geor360/ecore';
 
@@ -37,6 +38,11 @@ export class DirectionComponent extends ViewComponent implements OnInit {
     this.location.back();
   }
 
+  alert_message(){
+    this.message.confirm('¿Seguro que quieres eliminar esta dirección?','',(confirmation)=>{
+       },'Eliminar','Cancelar')
+  }
+    
   checkBoxSelect(direction: string) {
     const indexOtherCheck = this.data.findIndex(element => element.direction !== direction);
     this.data[indexOtherCheck].selected = false;
@@ -49,6 +55,9 @@ export class DirectionComponent extends ViewComponent implements OnInit {
     }
     this.navigation.back("/customer/confirmar-pedido");
   }
+  handlerMessage = '';
+  roleMessage = '';
 
-
+  
 }
+
