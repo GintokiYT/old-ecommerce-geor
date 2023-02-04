@@ -1,35 +1,17 @@
 <ion-content>
-  <ion-header class="ion-no-border">
-    <ion-toolbar color="none">
-      <ion-buttons slot="start">
-        <ion-button size="small" (click)="onToBack()">
-          <svg
-            width="17"
-            height="15"
-            viewBox="0 0 17 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 7.27436L16 7.27436"
-              stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M7.0498 13.2988L0.999804 7.27476L7.0498 1.24976"
-              stroke="black"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </ion-button>
-      </ion-buttons>
-      <ion-title>Dirección</ion-title>
-    </ion-toolbar>
-    <ion-toolbar color="none">
+  <div class="container-change-address">
+    <div class="app-header-main">
+      <ion-header class="ion-no-border" mode="md">
+        <ion-toolbar>
+          <div class="content-title">
+            <svg (click)="onToBack()" _ngcontent-idy-c157="" xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none"><path _ngcontent-idy-c157="" d="M1 7.27441L16 7.27441" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path _ngcontent-idy-c157="" d="M7.0498 13.2988L0.999804 7.27476L7.0498 1.24976" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span>Dirección</span>
+          </div>
+        </ion-toolbar>
+      </ion-header>
+    </div>
+
+    <div class="content-search">
       <ion-searchbar
         #inputAddress
         placeholder="Buscar dirección"
@@ -38,16 +20,16 @@
         debounce="350"
         (ionChange)="onSearch()"
       ></ion-searchbar>
-    </ion-toolbar>
-  </ion-header>
-  <ion-list lines="none">
-    <ion-item
-      *ngFor="let address of addresses"
-      button
-      [detail]="false"
-      (click)="onSelectAddress(address)"
-    >
-      <ion-label>{{ address }}</ion-label>
-    </ion-item>
-  </ion-list>
+      <ion-list lines="none">
+        <ion-item
+          *ngFor="let address of addresses"
+          button
+          [detail]="false"
+          (click)="onSelectAddress(address)"
+        >
+          <ion-label>{{ address }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
 </ion-content>

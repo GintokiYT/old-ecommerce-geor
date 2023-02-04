@@ -21,9 +21,12 @@
     <ion-input placeholder="Cargo"></ion-input>
   </ion-item>
   <br>
-  <ion-item>
-    <ion-input placeholder="Documentación"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-select interface="action-sheet" placeholder="Documento de identificación" > 
+        <ion-select-option value="apples">DNI</ion-select-option>
+        <ion-select-option value="oranges">Pasaporte</ion-select-option>
+      </ion-select>
+    </ion-item>
   <br>
   <ion-item>
     <ion-input placeholder="Correo electronico"></ion-input>
@@ -43,6 +46,6 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button (click)="goTo('/customer/confirmar-pedido')" color="primary" expand="block" shape="round">Confirmar</ion-button>
+    <ion-button (click)="goTo('/customer/confirm-order')" color="primary" expand="block" shape="round">Confirmar</ion-button>
   </ion-toolbar>
 </ion-footer>

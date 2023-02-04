@@ -1,6 +1,10 @@
+import MetodoPago from './MetodoPago';
+
+
 export default interface pedidoInterface {
 
     tipoPedido: string,
+    metodoPago: MetodoPago
     detallesEntregaADomicilio: {
         direction: string,
         dClass: string,

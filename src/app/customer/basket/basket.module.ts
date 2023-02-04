@@ -16,6 +16,7 @@ import { ModalInviteComponent } from './my-basket/modal-invite/modal-invite.comp
 import { ModalResendComponent } from './team/modal-resend/modal-resend.component';
 import { ModalAcceptedComponent } from './team/modal-accepted/modal-accepted.component';
 import { ContactBasketComponent } from './contact-basket/contact-basket.component';
+import { ShareModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ContactBasketComponent } from './contact-basket/contact-basket.componen
     CommonModule,
     IonicModule,
     InboxModule,
+    ShareModule
   ],
   exports:[
     HeaderBasketComponent,

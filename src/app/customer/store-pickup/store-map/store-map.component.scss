@@ -1,50 +1,56 @@
 ion-fab-button::part(native) {
-    margin-top: 18px;
-    margin-left:0px;
-    width: 44px;
-    height: 44px;
+  margin-top: 26px;
+  margin-left:14px;
+  width: 44px;
+  height: 44px;
+  background: var(--ion-color-dark-contrast);
 }
-  
-  ion-button {
-    --background: #ffffff !important;
-    --border-radius: 32px;
-    margin:662px 16px 24px 0px;
-    width: 114px;
-    height: 36px;
-    right: 24px;
-    bottom: 146px;
-    #update{
-      font-family: 'Roboto';
-      font-style: normal;
-      font-size: 14px;
-      color: #000000;
-      margin-left: 8px;
-    }
+.arrow{
+  filter:var(--ion-color-light-filter)
+}
+ion-button {
+  --background: #ffffff !important;
+  --border-radius: 32px;
+  margin:686px 16px 24px 0px;
+  width: 114px;
+  height: 36px;
+  right: 24px;
+  bottom: 146px;
+  #update{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 14px;
+     color: #000000;
+    margin-left: 8px;
   }
-  
-  #local-address{
-    padding: 24px 24px 48px 24px ;
-    .fz-small{
-      margin: 0px;
-    }
-    .fz-note{
-      margin: 4px 0px 0px 0px; 
-    }
-    
+}
+
+
+#local-address{
+  padding: 24px 24px 24px 24px ;
+  .fz-small{
+   margin: 0px;
+   color:var(--ion-color-dark)
   }
-  #map {
-    height:722px ;
+  .fz-note{
+    margin: 4px 0px 0px 0px; 
+   color:var(--ion-color-medium)
   }
 
-  @media(max-width:320px){
-    ion-button {
-      margin:410px 6px 22px 0px;
-    }
-    #map{
-      height:468px  ;
-    }
-    #local-address{
-      padding: 16px 16px 33px 16px ;
-      
-    }
- }
+}
+
+
+@media(max-width:320px){
+  ion-button {
+    margin:410px 6px 22px 0px;
+  }
+
+  #local-address{
+   padding: 16px 16px 33px 16px ;
+  
+  }
+}
+
+.arrow{
+  filter: var(--ion-color-light-filter);
+}
