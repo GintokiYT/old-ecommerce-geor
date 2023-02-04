@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import CountryInterface from 'src/app/interfaces/CountryInterface';
 import { ViewComponent } from '@geor360/ecore';
 
@@ -9,7 +9,12 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class SelectCountryComponent extends ViewComponent implements OnInit {
 
-  public countries: CountryInterface[] = [];
+  public countries: CountryInterface[] = [
+    { id: 'PE', name: 'Perú', flag: './assets/flags/pe.svg' },
+    { id: 'AR', name: 'Argentina', flag: './assets/flags/ar.svg' },
+    { id: 'CL', name: 'Chile', flag: './assets/flags/cl.svg' },
+  ];
+
   public statusButton: boolean = true;
 
   constructor(_injector: Injector) {
@@ -17,12 +22,6 @@ export class SelectCountryComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.countries = [
-      { id: 'PE', name: 'Perú', flag: './assets/flags/pe.svg' },
-      { id: 'AR', name: 'Argentina', flag: './assets/flags/ar.svg' },
-      { id: 'CL', name: 'Chile', flag: './assets/flags/cl.svg' },
-    ];
-
     this.clearSelectedRadius();
   }
 

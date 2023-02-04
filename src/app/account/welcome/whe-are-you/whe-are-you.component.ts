@@ -47,14 +47,15 @@ export class WheAreYouComponent {
   OnInit() {}
 
   onOpenModal() {
-    if(this.status === false) {
-      this.ContainerModal.nativeElement.classList.toggle('display-flex');
-      this.Modal.nativeElement.classList.add('animation-open-modal');
-      this.Modal.nativeElement.classList.remove('animation-close-modal');
-    } else {
-      this.onClose();
-      this.navigator.forward(RouteCollection.account.welcome.myLocation);
-    }
+    // if(this.status === false) {
+    //   this.ContainerModal.nativeElement.classList.toggle('display-flex');
+    //   this.Modal.nativeElement.classList.add('animation-open-modal');
+    //   this.Modal.nativeElement.classList.remove('animation-close-modal');
+    // } else {
+    //   this.onClose();
+    //   this.navigator.forward(RouteCollection.account.welcome.myLocation);
+    // }
+    this.navigator.forward(RouteCollection.account.welcome.myLocation);
   }
 
   onDenied() {
@@ -63,7 +64,7 @@ export class WheAreYouComponent {
 
   onSubmit() {
     this.onClose();
-    this.navigator.forward(RouteCollection.account.welcome.myLocation);
+    this.navigator.root(RouteCollection.account.welcome.myLocation, 'forward');
     this.status = true;
   }
 

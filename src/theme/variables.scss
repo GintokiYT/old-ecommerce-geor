@@ -123,7 +123,7 @@ $btn-default: #5b6793;
 body.dark {
   --ion-background-color: #{$bg-dark};
   --ion-background-color: $white;
-  
+
   /** primary **/
   --ion-color-primary: #3c66fb;
   --ion-color-primary-rgb: 60, 102, 251;
@@ -211,7 +211,6 @@ body.dark {
   --ion-color-basic: #FFFFFF;
   --ion-color-separator: #1B1F3C;
   --ion-background-secondary: #1B1F3C;
-  --ion-color-disabled: #ffffff66;
   --ion-background-tertiary: #3C66FB;
   --ion-background-alert: #191932;
   --ion-background-alert-border: #5B6793;
