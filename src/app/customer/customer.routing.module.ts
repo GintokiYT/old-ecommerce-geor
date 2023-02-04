@@ -41,7 +41,7 @@ const routes: Routes = [
       { path: 'store-pickup', component:StorePickupComponent },
       { path: 'store-map', component:StoreMapComponent },
       { path: 'stores', component:StoresComponent },
-      { path: 'confirmar-pedido', component: ConfirmarPedidoComponent },
+     
       { path: 'way-pay', component:WayPayComponent },
       { path: 'payment-methods', component:PaymentMethodsComponent },
       { path: 'add-card', component:AddCardComponent },
