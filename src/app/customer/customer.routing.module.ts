@@ -15,6 +15,9 @@ import { StorePickupComponent } from './store-pickup/store-pickup.component';
 import { StoreMapComponent } from './store-pickup/store-map/store-map.component';
 import { StoresComponent } from './store-pickup/stores/stores.component';
 import { CollaborativeBasketComponent } from './basket/collaborative-basket/collaborative-basket.component';
+import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
+import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
+import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 
 const routes: Routes = [
@@ -38,6 +41,10 @@ const routes: Routes = [
       { path: 'store-pickup', component:StorePickupComponent },
       { path: 'store-map', component:StoreMapComponent },
       { path: 'stores', component:StoresComponent },
+     
+      { path: 'way-pay', component:WayPayComponent },
+      { path: 'payment-methods', component:PaymentMethodsComponent },
+      { path: 'add-card', component:AddCardComponent },
       { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },

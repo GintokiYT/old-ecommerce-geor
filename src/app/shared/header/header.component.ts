@@ -33,6 +33,8 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "confirm-order": "/customer/confirm-order",
     "stores": "/customer/stores",
     "collaborative-basket": "/customer/collaborative-basket",
+    "way-pay":"/customer/way-pay",
+    "payment-methods":"/customer/payment-methods",
     "login": "/login",
     "register": "/register",
     "recover-password": "/recover-password"

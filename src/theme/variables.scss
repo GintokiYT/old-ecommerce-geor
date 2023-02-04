@@ -30,7 +30,7 @@ $btn-default: #5b6793;
   --ion-color-secondary-rgb: 61, 194, 255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #E3EAFD;
+  --ion-color-secondary-shade: #FAFAFA;
   --ion-color-secondary-tint: #E3EAFD;
 
   /** tertiary **/
@@ -105,6 +105,13 @@ $btn-default: #5b6793;
   --ion-background-alert: #FFFFFF;
   --ion-background-alert-border:#BDBDBD;
 
+  //card
+  --card-background-primary: #EEEEEE;
+  --card-background-secondary: #E2E2E2;
+  --card-background-tertiary: #FFFFFF;
+  --card-color-text: #000000;
+  --card-selected-color: #023AFF;
+  
   --icon-color-map: #0681FD;
   --ion-background-modal: #FCFCFC;
   --ion-color-arrow-map: #000000;
@@ -218,6 +225,14 @@ body.dark {
   --ion-background-icons-delete:#5B6793;
   --ion-background-modal:#191932;
 
+  //card
+  --card-background-primary: #5B6793;
+  --card-background-secondary: #191932;
+  --card-background-tertiary: #191932;
+  --card-color-text: #FFFFFF;
+  --card-selected-colorcard-selected-color: #3C66FB;
+  
+  /** tipo-pedido **/
   --icon-color-map: #C9ABA4;
   --ion-background-modal: #151724;
   --ion-color-arrow-map: #5B6793;
