@@ -1,1 +1,0 @@
-com.geor.ecommerce.test
