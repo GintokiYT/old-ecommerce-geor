@@ -3,18 +3,18 @@ import { ModalVariantsComponent } from './modal-variants/modal-variants.componen
 import { ViewComponent } from '@geor360/ecore';
 import { ModalAddComponent } from './modal-add/modal-add.component';
 
-interface Colours{
-  images:string,
-  name:string,
-  quantify:number
+interface Colours {
+  images: string,
+  name: string,
+  quantify: number
 }
 
-interface Measurements{
-  sizes:string
+interface Measurements {
+  sizes: string
 }
 
-interface Thickness{
-  number:number
+interface Thickness {
+  number: number
 }
 
 @Component({
@@ -24,40 +24,44 @@ interface Thickness{
 })
 export class VariantsComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector:Injector) {
+  constructor(_injector: Injector) {
     super(_injector);
-   }
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  colour:Colours[]=[
-  {  images:'/assets/images/azul.png', name:'Azul', quantify: 5},
-  {  images:'/assets/images/morado.png',name:'Morado',quantify: 0},
-  {  images:'/assets/images/verde.png', name:'Verde jade',quantify: 5 },
-  {  images:'/assets/images/azul.png',  name:'Azul',quantify: 0},
-  {  images:'/assets/images/azul.png',  name:'Azul', quantify: 0 }];
+  colour: Colours[] = [
+    { images: '/assets/images/azul.png', name: 'Azul', quantify: 5 },
+    { images: '/assets/images/morado.png', name: 'Morado', quantify: 0 },
+    { images: '/assets/images/verde.png', name: 'Verde jade', quantify: 5 },
+    { images: '/assets/images/azul.png', name: 'Azul', quantify: 0 },
+    { images: '/assets/images/azul.png', name: 'Azul', quantify: 0 }];
 
-  measurement:Measurements[]=[
-  { sizes:'150x120'},
-  { sizes:'100x110'},
-  { sizes:'150x110'},
-  { sizes:'200x240'}];
+  measurement: Measurements[] = [
+    { sizes: '150x120' },
+    { sizes: '100x110' },
+    { sizes: '150x110' },
+    { sizes: '200x240' }];
 
-  thicknes:Thickness[]=[
-  { number:2 },
-  { number:4 },
-  { number:8 },
-];
-showModal(){
-  this.dialog.show({
-    showBackdrop:true,
-    component: ModalVariantsComponent,
-    componentProps: {
-      title: "Modal"
-    }
-  }).then((response) => {
-    console.log(response);
-  });
-}
+  thicknes: Thickness[] = [
+    { number: 2 },
+    { number: 4 },
+    { number: 8 },
+  ];
+  showModal() {
+    this.dialog.show({
+      showBackdrop: true,
+      component: ModalVariantsComponent,
+      componentProps: {
+        title: "Modal"
+      }
+    }).then((response) => {
+      console.log(response);
+    });
+  }
+
+  goToConfirmOrder(){
+    this.navigation.root("/customer/confirm-order","forward");
+  }
 
 }
