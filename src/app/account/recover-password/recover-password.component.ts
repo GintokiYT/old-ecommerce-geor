@@ -1,6 +1,6 @@
 import { Router, NavigationExtras } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RouteCollection } from 'src/shared/route-collection';
 
 @Component({
@@ -9,6 +9,7 @@ import { RouteCollection } from 'src/shared/route-collection';
   styleUrls: ['./recover-password.component.scss']
 })
 export class RecoverPasswordComponent implements OnInit {
+
   form!: FormGroup;
   urlBack: string = RouteCollection.auth.login;
 
@@ -23,6 +24,7 @@ export class RecoverPasswordComponent implements OnInit {
       ]),
     });
   }
+
 
   onSubmit() {
     const params: NavigationExtras = {

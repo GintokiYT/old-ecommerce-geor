@@ -14,6 +14,17 @@
         }
     }
 
+    .input-code{
+        &::part(native){
+            padding-inline-end: 0px;
+            padding-inline-start: 0px;
+        }
+        ion-input{
+            letter-spacing: 5px;
+            margin-left: 25px;
+        }
+    }
+
     .resend{
         cursor: pointer !important;
         color: var(--ion-color-primary) !important;
@@ -21,31 +32,10 @@
     }
 }
 
-ion-modal {
-    &.modal-alert {
-        --width: fit-content;
-        --max-width: 288px;
-        --height: fit-content;
-        --border-radius: 10px;
-        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
-    }
-
-    --background: var(--ion-background-alert)
-}
 
 @media(min-width:390px) {
     .valid-mail-container {
         padding-right: 24px;
         padding-left: 24px
-    }
-
-    ion-modal {
-        &.modal-alert {
-            --width: fit-content;
-            --max-width: 342px;
-            --height: fit-content;
-            --border-radius: 10px;
-            --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
-        }
     }
 }
