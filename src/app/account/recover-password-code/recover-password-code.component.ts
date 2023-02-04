@@ -1,14 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Injector } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { IonInput } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
+import { ViewComponent } from '@geor360/ecore';
 
 @Component({
   selector: 'app-recover-password-code',
   templateUrl: 'recover-password-code.component.html',
+  styleUrls: ['recover-password-code.component.scss']
 })
-export class RecoverPasswordCodeComponent implements OnInit {
+export class RecoverPasswordCodeComponent extends ViewComponent implements OnInit {
   email: string | null = '';
   counter: number = 60;
   counterTime: string = '';
@@ -17,7 +19,9 @@ export class RecoverPasswordCodeComponent implements OnInit {
   form!: FormGroup;
   @ViewChild('inputCode') inputCode!: IonInput;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router
+              ,_injector: Injector) {
+    super(_injector)
     this.router.events.subscribe(() => {
       this.email = this.route.snapshot.queryParamMap.get('email');
     });
@@ -28,7 +32,7 @@ export class RecoverPasswordCodeComponent implements OnInit {
   }
 
   onChangeEmail(): void {
-    this.router.navigate([RouteCollection.auth.recoverPassword]);
+    this.navigation.back("/recover-password")
   }
 
   ngAfterViewInit() {

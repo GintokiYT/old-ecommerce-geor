@@ -14,8 +14,11 @@ import { AlertComponent } from './delivery-detail/alert/alert.component';
 import { StorePickupComponent } from './store-pickup/store-pickup.component';
 import { StoreMapComponent } from './store-pickup/store-map/store-map.component';
 import { StoresComponent } from './store-pickup/stores/stores.component';
-import { ConfirmarPedidoComponent } from './confirmar-pedido/confirmar-pedido.component';
 import { CollaborativeBasketComponent } from './basket/collaborative-basket/collaborative-basket.component';
+import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
+import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
+import { AddCardComponent } from './pay-card/add-card/add-card.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
 import { SearchComponent } from '../search-general/search/search.component';
 
@@ -40,7 +43,11 @@ const routes: Routes = [
       { path: 'store-pickup', component:StorePickupComponent },
       { path: 'store-map', component:StoreMapComponent },
       { path: 'stores', component:StoresComponent },
-      { path: 'confirmar-pedido', component: ConfirmarPedidoComponent },
+     
+      { path: 'way-pay', component:WayPayComponent },
+      { path: 'payment-methods', component:PaymentMethodsComponent },
+      { path: 'add-card', component:AddCardComponent },
+      { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: 'catalogue', component: CatalogueComponent },
       { path: 'search', component: SearchComponent },
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },

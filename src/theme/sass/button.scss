@@ -1,36 +1,6 @@
-// ion-button {
-//   --box-shadow: none;
-//   height: 48px;
-//   text-transform: none;
-//   font-size: 16px;
-//   &::part(native) {
-//     letter-spacing: 0;
-//   }
-//   &.button-linear {
-//     &::part(native) {
-//       padding-inline-start: 4px;
-//       padding-inline-end: 4px;
-//     }
-//   }
-//   &.button-icon {
-//     position: absolute;
-//     right: 0;
-//     top: 20px;
-//     z-index: 2;
-//     ion-icon {
-//       $size: 18px;
-//       width: $size;
-//       height: $size;
-//     }
-//     &::part(native) {
-//       padding-inline-start: 0;
-//       padding-inline-end: 16px;
-//     }
-//   }
-// }
-
 @include theme-light {
   ion-button {
+    margin-inline: 0px;
     --background: #{$white};
     color: #{$black};
     --background-activated: #{$gray-100};

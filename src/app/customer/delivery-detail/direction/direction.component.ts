@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, Injector } from '@angular/core';
 import { Location } from '@angular/common';
 import { AlertController } from '@ionic/angular';
-import { ConfirmarPedidoService } from '../../confirmar-pedido/services/confirmar-pedido.service';
 import { ViewComponent } from '@geor360/ecore';
+import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.service';
 
 @Component({
   selector: 'app-direction',
@@ -26,8 +26,9 @@ export class DirectionComponent extends ViewComponent implements OnInit {
     }
   ]
 
+  
   constructor(private location: Location,
-    private cpService: ConfirmarPedidoService,
+    private cpService: ConfirmOrderService,
     _injector: Injector) {
       super(_injector)
   }
@@ -53,7 +54,7 @@ export class DirectionComponent extends ViewComponent implements OnInit {
     if (selected[0]) {
       this.cpService.setDirectionDomicilio(selected[0].direction)
     }
-    this.navigation.back("/customer/confirmar-pedido");
+    this.navigation.back("/customer/confirm-order");
   }
   handlerMessage = '';
   roleMessage = '';

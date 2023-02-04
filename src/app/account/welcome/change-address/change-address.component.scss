@@ -1,0 +1,79 @@
+.container-change-address {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-header-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content-search {
+  min-height: 100vh;
+  padding-top: 72px;
+}
+
+ion-toolbar {
+  --min-height: unset;
+  --background: var(--ion-background-color);
+}
+
+.content-title {
+  width: 100%;
+  max-width: calc(100% - 32px);
+  margin: 24px auto 24px auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0;
+  color: var(--ion-color-basic);
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    flex: 1;
+    text-align: center;
+  }
+
+  svg {
+    font-size: 24px;
+    path {
+      stroke: var(--ion-color-basic);
+    }
+  }
+
+  @media (min-width: 390px) {
+    max-width: calc(100% - 48px);
+  }
+}
+
+ion-header ion-toolbar:first-of-type {
+  padding-top: 0;
+}
+
+//
+
+ion-searchbar {
+  padding: 0 16px;
+
+  @media (min-width: 390px) {
+    padding: 0 24px;
+  }
+}
+
+
+// Remover el scroll del ion-content
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto! important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
