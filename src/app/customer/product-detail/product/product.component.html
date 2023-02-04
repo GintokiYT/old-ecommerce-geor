@@ -1,0 +1,54 @@
+<app-header-product class="header"></app-header-product>
+<ion-content [fullscreen]="true">
+  <ion-slides (click)="goPicture()" class="carousel" pager="true">
+    <ion-slide>
+      <img src="assets/images/img_productos.png" alt="product" />
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/images/img_productos.png" alt="product" />
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/images/img_productos.png" alt="product" />
+    </ion-slide>
+  </ion-slides>
+
+  <div class="information-producto d-flex flex-column mt-4 mx-4">
+    <ion-text>
+      <ion-label>
+        Planchas de acrílico de distinto tamaño, espesor y color.
+        Induacril</ion-label
+      >
+    </ion-text>
+
+    <app-slider-costs></app-slider-costs>
+
+    <app-slider-variants></app-slider-variants>
+
+    <ion-text
+      (click)="goDetails()"
+      class="d-flex flex-row justify-content-between"
+    >
+      <ion-label class="fw-normal">Detalles</ion-label>
+      <img src="assets/icons/icon-stroke.svg" />
+    </ion-text>
+    <ion-text
+      (click)="goSend()"
+      class="d-flex flex-row justify-content-between"
+    >
+      <ion-label class="fw-normal">Envío</ion-label>
+      <div class="send d-flex flex-row">
+        <div class="icon-peru d-flex flex-row">
+          <img src="assets/icons/icon-PE.svg" />
+          <ion-label>Perú</ion-label>
+        </div>
+        <img src="assets/icons/icon-stroke.svg" />
+      </div>
+    </ion-text>
+    <ion-text class="d-flex flex-row justify-content-between">
+      <ion-label class="fw-normal">Cambios y devoluciones</ion-label>
+      <img src="assets/icons/icon-stroke.svg" />
+    </ion-text>
+  </div>
+</ion-content>
+
+<app-footer-product></app-footer-product>

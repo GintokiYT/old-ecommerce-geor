@@ -1,0 +1,57 @@
+/* variant */
+.variant{
+  gap:18px;
+  margin-bottom: 32px;
+}
+
+/* Tamaño (cm) */
+.size{
+  gap:10px;
+  margin-bottom: 32px;
+}
+
+.extent{
+  width: 63px;
+  height: 31px;
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  margin-right: 28px;
+}
+
+/* Espesor (mm) */
+.size-thicknes{
+  gap:10px;
+  margin-bottom: 32px;
+}
+
+.extent-thicknes{
+  width: 40px;
+  height: 31px;
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  margin-right: 24px;
+}
+
+/* Footer */
+.footer{
+  margin-top: 12px;
+}
+
+.dato{
+  color:#00000099;
+}
+
+/* Button */
+ion-button{
+  border: 0px;
+.btn{
+  --background:var(--ion-color-primary);
+}
+
+}
+.btn{
+  width: 100%;
+}
+
+
+

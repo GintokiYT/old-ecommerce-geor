@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './basket/team/team.component';
-import { MyBasquetComponent } from './basket/my-basket/my-basquet.component';
 import { MainInboxComponent } from './inbox/main-inbox/main-inbox.component';
 import { InternalInboxComponent } from './inbox/internal-inbox/internal-inbox.component';
 import { DirectionComponent } from './delivery-detail/direction/direction.component';
@@ -15,6 +14,14 @@ import { StorePickupComponent } from './store-pickup/store-pickup.component';
 import { StoreMapComponent } from './store-pickup/store-map/store-map.component';
 import { StoresComponent } from './store-pickup/stores/stores.component';
 import { CollaborativeBasketComponent } from './basket/collaborative-basket/collaborative-basket.component';
+import { MyBasketComponent } from './basket/my-basket/my-basket.component';
+import { DetailComponent } from './product-detail/detail/detail.component';
+import { SendComponent } from './product-detail/send/send.component';
+import { ProductComponent } from './product-detail/product/product.component';
+import { VariantsComponent } from './product-detail/variants/variants.component';
+import { PictureBigComponent } from './product-detail/picture-big/picture-big.component';
+import { EmptyBasketComponent } from './basket/empty-basket/empty-basket.component';
+import { ContactBasketComponent } from './basket/contact-basket/contact-basket.component';
 import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
 import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
 import { AddCardComponent } from './pay-card/add-card/add-card.component';
@@ -29,7 +36,16 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'collaborative-basket', component: CollaborativeBasketComponent},
       { path: 'team', component: TeamComponent },
-      { path: 'my-basquet', component: MyBasquetComponent },
+      { path: 'my-basket', component: MyBasketComponent },
+      { path: 'empty-basket', component: EmptyBasketComponent},
+      { path: 'contact-basket', component: ContactBasketComponent},
+      { path: 'detail', component: DetailComponent },
+      { path: 'send', component: SendComponent },
+      { path: 'product',component:ProductComponent},
+      { path: 'variants',component:VariantsComponent},
+      { path: 'picture-big',component:PictureBigComponent},
+
+        /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' }, */
       { path: 'main-inbox', component: MainInboxComponent },
@@ -43,7 +59,7 @@ const routes: Routes = [
       { path: 'store-pickup', component:StorePickupComponent },
       { path: 'store-map', component:StoreMapComponent },
       { path: 'stores', component:StoresComponent },
-     
+
       { path: 'way-pay', component:WayPayComponent },
       { path: 'payment-methods', component:PaymentMethodsComponent },
       { path: 'add-card', component:AddCardComponent },
@@ -52,6 +68,7 @@ const routes: Routes = [
       { path: 'search', component: SearchComponent },
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
+
     ]
   }
 ];
