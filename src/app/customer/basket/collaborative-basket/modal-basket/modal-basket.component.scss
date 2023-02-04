@@ -25,7 +25,7 @@ ion-list{
   background-color: var(--ion-background-modal)!important;
 }
 ion-modal {
-  --ion-background-color:var(--ion-background-modal);
+  --ion-background-color:var(--ion-background-modal) !important;
 }
 
 ion-item::part(native) {

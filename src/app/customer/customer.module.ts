@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { StorePickupModule } from './store-pickup/store-pickup.module';
 import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
+import { ProductDetailModule } from './product-detail/product-detail.module';
 
 @NgModule({
   imports:[
@@ -23,7 +24,9 @@ import { InboxModule } from './inbox/inbox.module';
     ConfirmarPedidoModule,
     StorePickupModule,
     DeliveryDetailModule,
-    InboxModule
+    InboxModule,
+    ProductDetailModule,
+
   ],
   declarations: [
     HomeComponent,

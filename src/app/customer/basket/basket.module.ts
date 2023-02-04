@@ -5,13 +5,17 @@ import { HeaderBasketComponent } from './collaborative-basket/header-basket/head
 import { TeamComponent } from './team/team.component';
 import { HeaderTeamComponent } from './team/header-team/header-team.component';
 import { HeaderMyBasketComponent } from './my-basket/header-my-basket/header-my-basket.component';
-import { ModalMiCestaComponent } from './my-basket/modal-mi-cesta/modal-mi-cesta.component';
 import { IonicModule } from '@ionic/angular';
 import { ProductComponent } from './collaborative-basket/product/product.component';
-import { MyBasquetComponent } from './my-basket/my-basquet.component';
+import { MyBasketComponent } from './my-basket/my-basket.component';
 import { ModalBasketComponent } from './collaborative-basket/modal-basket/modal-basket.component';
 import { InboxModule } from '../inbox/inbox.module';
 import { MainProductComponent } from './collaborative-basket/main-product/main-product.component';
+import { EmptyBasketComponent } from './empty-basket/empty-basket.component';
+import { ModalInviteComponent } from './my-basket/modal-invite/modal-invite.component';
+import { ModalResendComponent } from './team/modal-resend/modal-resend.component';
+import { ModalAcceptedComponent } from './team/modal-accepted/modal-accepted.component';
+import { ContactBasketComponent } from './contact-basket/contact-basket.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,16 @@ import { MainProductComponent } from './collaborative-basket/main-product/main-p
     HeaderTeamComponent,
     TeamComponent,
     ModalBasketComponent,
-    MyBasquetComponent,
+    MyBasketComponent,
     HeaderMyBasketComponent,
-    ModalMiCestaComponent,
     ProductComponent,
-    MainProductComponent
+    MainProductComponent,
+    EmptyBasketComponent,
+    ModalInviteComponent,
+    ModalResendComponent,
+    ModalAcceptedComponent,
+    ContactBasketComponent
+
   ],
   imports: [
     CommonModule,

@@ -4,10 +4,10 @@ import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-my-basquet',
   templateUrl: './my-basket.component.html',
-  styleUrls: ['./my-basquet.component.scss'],
+  styleUrls: ['./my-basket.component.scss'],
 
 })
-export class MyBasquetComponent extends ViewComponent implements OnInit {
+export class MyBasketComponent extends ViewComponent implements OnInit {
 
   constructor(_injector: Injector) {
     super(_injector);

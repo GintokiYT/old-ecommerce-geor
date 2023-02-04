@@ -1,0 +1,56 @@
+<ion-content class="modal">
+  <div class="modal-cesta">
+    <ion-modal
+      #modal
+      trigger="open-modal-resend"
+      [initialBreakpoint]="0.27"
+      [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    >
+      <ng-template>
+        <div class=" box d-flex flex-column mx-4 mt-4">
+        <div class="d-flex gap-2 ">
+          <div class="ion-no-padding">
+            <img src="assets/icons/icon-avatar-gerardo.svg" />
+          </div>
+          <ion-text class="d-flex flex-column gap-2">
+            <ion-label>Juliano del Carmen Soriano</ion-label>
+            <div class="text-description d-flex flex-row gap-2">
+              <ion-text
+                class="color d-flex flex-row justify-content-center align-items-center gap-1"
+              >
+                <ion-img
+                  src="assets/collaborative-basquet/Pendiente.svg"
+                ></ion-img>
+                Pendiente
+              </ion-text>
+              <ion-label class="resend"> Reenviar invitación</ion-label>
+            </div>
+            <ion-label class="color">23 dic 2022</ion-label>
+            <ion-label class="color">+51 971 945 234</ion-label>
+          </ion-text>
+        </div>
+        <div id="open-modal-delete" class="d-flex flex-row  gap-2">
+          <img class="delete" src="assets/icons/icon-delete-black.svg" />
+          <label class=" d-flex justify-content-center align-items-center">Eliminar</label>
+        </div>
+      </div>
+
+      <ion-modal trigger="open-modal-delete" class="modal-alert" #modal>
+        <ng-template>
+          <div class="ion-padding d-flex flex-column px-4 py-4" style="gap: 36px;">
+            <ion-label class="d-block text-center fz-small">¿Eliminar a Nombre y apellidos de tu equipo?</ion-label>
+            <div class="d-flex justify-content-around" style="gap: 32px;">
+                <ion-button  fill="clear" class="ion-no-padding">
+                    Cancelar
+                </ion-button>
+                <ion-button color="primary" fill="clear" class="ion-no-padding">
+                    Eliminar
+                </ion-button>
+            </div>
+          </div>
+        </ng-template>
+      </ion-modal>
+      </ng-template>
+    </ion-modal>
+  </div>
+</ion-content>

@@ -1,6 +1,24 @@
 <ion-content [fullscreen]="true">
-  <app-header-team title="Equipo">  </app-header-team>
-  <div *ngFor="let item of equipos"class="content-team">
+  <app-header-team title="Equipo"> </app-header-team>
+  <div id="open-modal-resend"
+ class="content-team">
+    <div class="contacts d-flex flex-row">
+      <img src="assets/collaborative-basquet/Avatar.svg">
+
+      <div class="information fz-small d-flex flex-column">
+        <ion-label class="name">Juliano del Carmen Soriano</ion-label>
+        <div class="text-description d-flex flex-row">
+          <ion-label class="pendiente d-flex flex-row justify-content-center align-items-center">
+            <ion-img class="imagen-pendiente"src="assets/collaborative-basquet/Pendiente.svg"></ion-img>
+            Pendiente</ion-label>
+          <ion-label >+51 971 945 234</ion-label>
+        </div>
+      </div>
+    </div>
+ </div>
+
+  <div id="open-modal-accepted"
+  *ngFor="let item of equipos"class="content-team">
     <div class="contacts d-flex flex-row">
       <ion-img [src]="item.image"></ion-img>
       <div class="information fz-small d-flex flex-column">
@@ -15,5 +33,7 @@
     </div>
  </div>
  <ion-img  class="icon-plus"src="assets/collaborative-basquet/Plus-circle.svg"></ion-img>
+ <app-modal-resend></app-modal-resend>
+ <app-modal-accepted></app-modal-accepted>
 </ion-content>
 
