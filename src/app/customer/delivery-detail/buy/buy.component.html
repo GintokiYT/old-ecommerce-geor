@@ -1,5 +1,4 @@
 <ion-content>
-
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <button (click)="goBack()" slot="start" class="arrow">
@@ -8,7 +7,6 @@
       <ion-title>¿Quien recibirá la compra?</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <ion-item>
     <ion-input placeholder="Nombre"></ion-input>
   </ion-item>
@@ -21,29 +19,24 @@
     <ion-input placeholder="Cargo"></ion-input>
   </ion-item>
   <br>
-    <ion-item>
-      <ion-select interface="action-sheet" placeholder="Documento de identificación" > 
-        <ion-select-option value="apples">DNI</ion-select-option>
-        <ion-select-option value="oranges">Pasaporte</ion-select-option>
-      </ion-select>
-    </ion-item>
+  <ion-item>
+    <ion-select interface="action-sheet" placeholder="Documento de identificación">
+      <ion-select-option value="apples">DNI</ion-select-option>
+      <ion-select-option value="oranges">Pasaporte</ion-select-option>
+    </ion-select>
+  </ion-item>
   <br>
   <ion-item>
     <ion-input placeholder="Correo electronico"></ion-input>
   </ion-item>
   <br>
   <ion-item>
-    <ion-label class="l-telefono" position="stacked">Telefono</ion-label>
+    <ion-label position="stacked">Telefono</ion-label>
     <ion-input placeholder="">
       <img src="/assets/icons/icon-PE.svg" />+551
     </ion-input>
   </ion-item>
-
-
-
 </ion-content>
-
-
 <ion-footer>
   <ion-toolbar>
     <ion-button (click)="goTo('/customer/confirm-order')" color="primary" expand="block" shape="round">Confirmar</ion-button>

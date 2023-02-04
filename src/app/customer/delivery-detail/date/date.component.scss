@@ -54,8 +54,11 @@ ion-button {
 .contenedor-detalles-entrega{
 
     max-width: 100%;
+    margin:24px;
     padding-right: 24px;
-    padding-left: 24px;
+    padding-left: 24px;    
+    overflow-x:hidden;
+    overflow: auto;
 
     >p{
         font-weight: bold;
@@ -145,6 +148,9 @@ p {
     margin-bottom: 2px;
 }
 
+.style {
+    color: var(--ion-color-medium);
+}
 
 ion-footer{
 
@@ -153,7 +159,7 @@ ion-footer{
       --padding-top: 0px;
       --padding-start: 24px;
       --padding-end: 24px;
-      --padding-bottom: 48px
+      --padding-bottom: 24px
     }
   }
 
