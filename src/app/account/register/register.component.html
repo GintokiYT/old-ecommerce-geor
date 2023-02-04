@@ -15,7 +15,22 @@
         </ion-item>
         <ion-item class="form-group">
           <ion-label position="floating" class="disabled">Celular</ion-label>
-          <ion-input formControlName="movil" inputmode="numeric" type="number"></ion-input>
+          <ion-input 
+            #inputPhone
+            class="ion-text-left input-phone"
+            formControlName="movil" 
+            inputmode="numeric" 
+            type="tel"
+            maxlength="12"
+            mask=" *** *** ***"
+            [(ngModel)]="inputPhoneValue"
+            (ionBlur) = "checkFocus()"
+          >
+            <div #contentInputPhone class="container-flag-digits">
+              <img src="/assets/icons/icon-PE.svg"/>
+              <p style="margin: 0;">+51</p>
+            </div>
+          </ion-input>
           <app-validation-messages slot="error" [control]="form.get('movil')"></app-validation-messages>
         </ion-item>
         <ion-item class="form-group">
@@ -30,12 +45,11 @@
             <app-validation-messages slot="error" [control]="form.get('password')"></app-validation-messages>
           </ion-item>
         </app-input-password>
-
         <ion-modal class="modal-alert" #modal>
           <ng-template>
             <div class="ion-padding">
               <ion-text class="text-center text fw-700 d-block"><b>Valida tu celular</b></ion-text>
-              <ion-text class="text fz-small text-muted text-center d-block mb-3">Elige cómo validar tu
+              <ion-text class="text text-muted text-center d-block mb-3">Elige cómo validar tu
                 número</ion-text>
 
               <ion-button expand="block" shape="round" fill="clear" class="mb-3" (click)="onValidPhone('sms')">
@@ -53,12 +67,11 @@
 
     <!-- Footer -->
     <ion-footer class="ion-no-border ion-padding">
-      <ion-toolbar>
+      <ion-toolbar class="ion-no-padding">
         <div class="text-center">
           <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
             <span class="terms">Términos y condiciones</span> y
             <span class="politics">Politica de privacidad</span>
-            de Induacril
           </span>
           <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid"
             (click)="onSubmit()">Siguiente</ion-button>

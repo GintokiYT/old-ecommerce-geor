@@ -9,13 +9,15 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { RouteCollection } from 'src/shared/route-collection';
+import { ViewComponent } from '@geor360/ecore';
+import { Injector } from '@angular/core';
 
 @Component({
   selector: 'app-valid-phone',
   templateUrl: 'valid-phone.component.html',
   styleUrls: ['./valid-phone.component.scss']
 })
-export class ValidPhoneComponent implements OnInit, OnDestroy, AfterViewInit {
+export class ValidPhoneComponent extends ViewComponent implements OnInit, OnDestroy, AfterViewInit {
   movil: string | null = '';
   counter: number = 60;
   counterTime: string = '';
@@ -26,7 +28,9 @@ export class ValidPhoneComponent implements OnInit, OnDestroy, AfterViewInit {
   isPreventClose: boolean = false;
   @ViewChild(IonModal) modal!: IonModal;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, _injector:Injector) {
+    super(_injector)
+  }
 
   ngOnDestroy(): void {
     clearInterval(this.timer);
@@ -65,6 +69,10 @@ export class ValidPhoneComponent implements OnInit, OnDestroy, AfterViewInit {
       this.counter = 60;
       this.isCounterInZero = false;
     }
+  }
+
+  onGoTo(path: string){
+    this.navigation.back(path)
   }
 
   ngOnInit() {

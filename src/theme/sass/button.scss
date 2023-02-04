@@ -1,5 +1,6 @@
 @include theme-light {
   ion-button {
+    margin-inline: 0px;
     --background: #{$white};
     color: #{$black};
     --background-activated: #{$gray-100};

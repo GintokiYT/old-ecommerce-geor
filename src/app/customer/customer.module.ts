@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { StorePickupModule } from './store-pickup/store-pickup.module';
 import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
+import { PayCardModule } from './pay-card/pay-card.module';
+
+import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { ShareModule } from '../shared/shared.module';
 import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
 
@@ -24,6 +27,8 @@ import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
     StorePickupModule,
     DeliveryDetailModule,
     InboxModule,
+    PayCardModule,
+    IonicInputMaskModule,
     ShareModule,
   ],
   declarations: [

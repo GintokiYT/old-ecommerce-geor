@@ -1,0 +1,100 @@
+.content-add{
+    margin: 0px 24px;
+}
+
+ion-item::part(native){ 
+    padding: 0px;
+} 
+
+ion-item {
+    --inner-padding-end: 0px !important;
+}
+ion-item{
+    margin-bottom: 24px;
+}
+
+#info{
+    margin: 43px 0px 0px 0px;
+    filter:var(--ion-color-light-filter)
+}
+
+ion-modal::part(content){
+    background: var(--ion-background-modal);
+}
+
+ion-modal{
+    --height: 255px;
+    --width: 342px;
+    --border-radius: 10px;
+    #icon-close{
+        margin: 16px 16px 0px 0px;
+        margin-left: auto !important;
+        filter:var(--ion-color-light-filter)
+    }
+    #card{
+        text-align: center;
+        padding-bottom: 24px;
+        svg rect:nth-child(1){
+        fill: var(--card-background-primary);
+        }
+          
+        svg rect:nth-child(2){
+          fill: var(--card-background-secondary);
+        }
+          
+        svg rect:nth-child(3){
+            fill: var(--card-background-tertiary);
+        }
+          
+        svg path {
+        fill: var(--card-color-text);
+        }
+          
+        svg rect:last-child {
+            stroke: var(--card-selected-color);
+        }
+
+    }
+    #note-code{
+       color:var(--ion-color-medium) !important;
+       margin-bottom: 24px;
+    }
+    p{
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .title-modal{
+        font-weight: bold;
+    }
+    
+}
+
+ion-footer{
+    ion-toolbar{
+      --border-width: 0px;
+      --padding-top: 8px;
+      --padding-start: 24px;
+      --padding-end: 24px;
+      --padding-bottom: 24px
+    }
+    .alert{
+        padding: 0px; 
+        margin-bottom: 0px;
+        ion-item{
+            --padding-start: 0px;
+            --inner-padding-end: 0px !important;
+            #icon-security{
+                margin-right:8px;
+            }
+            ion-label{
+                margin: 0 ;
+                padding: 0px;
+            }
+        }
+    }
+    ion-button{
+        height: 48px;
+        margin: 8px 0px 0px 0px;
+    }
+}
+

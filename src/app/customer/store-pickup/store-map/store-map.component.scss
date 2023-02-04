@@ -1,15 +1,17 @@
 ion-fab-button::part(native) {
-  margin-top: 18px;
-  margin-left:0px;
+  margin-top: 26px;
+  margin-left:14px;
   width: 44px;
   height: 44px;
   background: var(--ion-color-dark-contrast);
 }
-
+.arrow{
+  filter:var(--ion-color-light-filter)
+}
 ion-button {
   --background: #ffffff !important;
   --border-radius: 32px;
-  margin:662px 16px 24px 0px;
+  margin:686px 16px 24px 0px;
   width: 114px;
   height: 36px;
   right: 24px;
@@ -25,7 +27,7 @@ ion-button {
 
 
 #local-address{
-  padding: 24px 24px 48px 24px ;
+  padding: 24px 24px 24px 24px ;
   .fz-small{
    margin: 0px;
    color:var(--ion-color-dark)

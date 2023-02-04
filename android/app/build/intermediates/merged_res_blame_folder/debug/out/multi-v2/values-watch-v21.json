@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.geor.ecommerce.app-mergeDebugResources-21:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\GamingWorld\\.gradle\\caches\\transforms-3\\2d05c16d0b798ec48bcc24811f5c691c\\transformed\\appcompat-1.4.2\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}
