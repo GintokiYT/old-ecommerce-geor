@@ -12,6 +12,12 @@ export class ConfirmOrderService {
 
     tipoPedido: "domicilio",
 
+    metodoPago: {
+      tipo: "Aún no eliges como pagar",
+      numero : "",
+      icon: "/assets/icons/icon-danger.svg"
+    } ,
+
     detallesEntregaADomicilio: {
       direction : "¿Donde dejaremos tu pedido?",
       dClass: "lugar-pedido",
@@ -51,6 +57,11 @@ export class ConfirmOrderService {
 
   setTipoPedido(tipo:string){
     this.miPedido.tipoPedido = tipo;
+    this.miPedido$.next(this.miPedido);
+  }
+
+  setMetodoPago(metodo){
+    this.miPedido.metodoPago = metodo;
     this.miPedido$.next(this.miPedido);
   }
 
