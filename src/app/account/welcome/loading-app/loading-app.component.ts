@@ -18,7 +18,7 @@ export class LoadingAppComponent extends ViewComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.navigation.root('/account/welcome/select-country', 'forward');
-    }, 1200);
+    }, 1000);
   }
 
 }

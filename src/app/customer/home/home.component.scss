@@ -126,6 +126,15 @@ html {
 }
 // End Productos destacados
 
+.text-price {
+  &::before {
+    content: "S/";
+  }
+  &::after {
+    content: ".00";
+  }
+}
+
 // Remover el scroll del ion-content
 ion-content {
   // overwrite inline styles

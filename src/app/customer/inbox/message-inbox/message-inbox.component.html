@@ -1,0 +1,52 @@
+<div *ngIf="message.fecha" class="message-fecha">
+  <span>{{ message.fecha }}</span>
+</div>
+
+<!-- Messages Bussines -->
+<div
+  *ngIf="message.author === 'business'"
+  class="message-business"
+>
+  <div class="container-message" [ngStyle]="{'margin-bottom': message.separacion ? '20px': '0px'}">
+    <div class="image">
+      <img [src]="message.image" alt="Logo">
+    </div>
+    <!-- Contenido del chat (TEXTO) -->
+    <div class="message-text" *ngIf="message.message.type === 'text'">
+      <p>{{ message.message.content }}<span class="separator"></span></p>
+      <div class="content-time">
+        <span>10:00 a. m.</span>
+      </div>
+    </div>
+    <!-- Contenido del chat (IMAGEN) -->
+    <div class="message" *ngIf="message.message.type === 'image'">
+      <img [src]="message.message.content" alt="image">
+      <div class="content-time">
+        <span>10:00 a. m.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Messages Users -->
+<div
+  *ngIf="message.author === 'user'"
+  class="message-users"
+>
+  <div class="container-message" [ngStyle]="{'margin-bottom': message.separacion ? '20px': '0px'}">
+    <!-- Contenido del chat (TEXTO) -->
+    <div class="message-text" *ngIf="message.message.type === 'text'">
+      <p>{{ message.message.content }}<span class="separator"></span></p>
+      <div class="content-time">
+        <span>10:00 a. m.</span>
+      </div>
+    </div>
+    <!-- Contenido del chat (IMAGEN) -->
+    <div class="message-image" *ngIf="message.message.type === 'image'">
+      <img [src]="message.message.content" alt="image">
+      <div class="content-time">
+        <span>10:00 a. m.</span>
+      </div>
+    </div>
+  </div>
+</div>
