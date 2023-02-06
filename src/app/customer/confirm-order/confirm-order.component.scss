@@ -20,17 +20,16 @@
         color: var(--ion-color-primary);
     }
 
+    .metodos-pago-vacio-img{
+        filter: var(--ion-color-primary-filter);
+    }
+
     .metodos-pago{
         cursor: pointer;
         margin-top: 24px;
 
         .metodos-pago-vacio{
             gap: 8.75px;
-            
-
-            >img{
-                filter: var(--ion-color-primary-filter);
-            }
         }
 
         >img{
