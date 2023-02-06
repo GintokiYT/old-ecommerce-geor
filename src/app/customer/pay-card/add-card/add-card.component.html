@@ -15,7 +15,7 @@
           type="tel"
           name="cardnumber"
           inputmode="numeric"
-          mask="**** **** **** **** **** "
+          mask="**** **** **** **** ****"
           class="ion-text-left"
           name="cardnumber"
           [(ngModel)]="data.cardnumber"
@@ -36,7 +36,7 @@
         <ion-label position="floating" class="fz-normal" color="medium"
         >Vencimiento</ion-label>
         <ion-input
-          mask="**/**/****."
+          mask="**/**/****"
           class="ion-text-left"
           name="expiration"
           [(ngModel)]="data.expiration"
@@ -80,7 +80,7 @@
 <ion-footer>
   <ion-toolbar>
     <div class="alert">
-      <ion-item lines="none" [disabled]="formulario.invalid">
+      <ion-item lines="none" *ngIf="formulario.invalid===false">
         <img id="icon-security" src="/assets/icons/icon-security.svg">
         <ion-label class="alert" class="ion-text-wrap" class="fz-normal" color="medium">
           Tu tarjeta está 100% segura, solo<br>
