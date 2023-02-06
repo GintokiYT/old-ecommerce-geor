@@ -49,16 +49,16 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   onActive(id: string) {
     switch(id) {
       case 'Chat':
-        this.navigation.root('/customer/main-inbox', 'forward');
+        this.navigation.forward('/customer/main-inbox');
         break;
       case 'Buy':
-        this.navigation.root('/customer/collaborative-basket', 'forward');
+        this.navigation.forward('/customer/collaborative-basket');
         break;
       case 'Profile':
-        this.navigation.root('/login', 'forward');
+        this.navigation.forward('/login');
         break;
       case 'Home':
-        this.navigation.root('/customer/home', 'forward');
+        this.navigation.forward('/customer/home');
         break;
     }
   }

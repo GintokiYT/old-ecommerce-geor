@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <button (click)="goBack()"
+    slot="start" class="arrow">
+      <img src="/assets/icons/icon-arrow-izquierda.svg" />
+    </button>
+    <ion-title>Lista de contactos</ion-title>
+    <button slot="end" class="arrow">
+      <img src="/assets/icons/icon-search.svg" />
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content>
+   <ion-radio-group >
+    <ion-item *ngFor="let item of contact" class="ion-no-padding mx-4" lines="none">
+      <ion-label>
+        <div class="d-flex flex-column gap-1">
+          <ion-label>{{item.name}}}</ion-label>
+          <ion-label class="cel fz-small">{{item.cel}}</ion-label>
+        </div>
+      </ion-label>
+      <ion-radio slot="end" color="medium" ></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-content>
+<ion-footer>
+  <div class="ion-padding">
+    <ion-button
+      expand="block"
+      color="primary"
+      shape="round"
+      type="submit"
+      >Invitar (0)</ion-button
+    >
+  </div>
+</ion-footer>

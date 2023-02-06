@@ -1,8 +1,18 @@
+.container-change-address {
+  width: 100%;
+  min-height: 100vh;
+}
+
 .app-header-main {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.content-search {
+  min-height: 100vh;
+  padding-top: 72px;
 }
 
 ion-toolbar {
@@ -12,7 +22,7 @@ ion-toolbar {
 
 .content-title {
   width: 100%;
-  max-width: calc(100% - 64px);
+  max-width: calc(100% - 32px);
   margin: 24px auto 24px auto;
   text-align: center;
   font-size: 16px;
@@ -38,7 +48,7 @@ ion-toolbar {
   }
 
   @media (min-width: 390px) {
-    margin-bottom: 40px;
+    max-width: calc(100% - 48px);
   }
 }
 
@@ -49,9 +59,21 @@ ion-header ion-toolbar:first-of-type {
 //
 
 ion-searchbar {
-  margin-top: 72px;
+  padding: 0 16px;
 
   @media (min-width: 390px) {
-    margin-top: 88px;
+    padding: 0 24px;
+  }
+}
+
+
+// Remover el scroll del ion-content
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto! important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

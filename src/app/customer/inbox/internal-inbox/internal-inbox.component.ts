@@ -12,6 +12,8 @@ interface Message {
     type: string;
     content: string;
   };
+  separacion?: boolean;
+  fecha?: string;
 }
 
 @Component({
@@ -24,6 +26,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
   @ViewChild('messageInput') messageInput: ElementRef;
   @ViewChild('contentInput') contentInput: ElementRef;
 
+  @ViewChild('lastMessage') lastMessage: ElementRef;
+
   @ViewChildren('messageRef') messageRef: QueryList<ElementRef>;
 
 
@@ -31,15 +35,19 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     this.messageInput.nativeElement.addEventListener('focus', () => {
       this.contentInput.nativeElement.style.display = "flex"
     });
+
     this.messageInput.nativeElement.addEventListener('blur', () => {
       if(this.contentMessage.message.content.length === 0) {
         this.contentInput.nativeElement.style.display = "none"
       }
     });
 
-    this.messageRef.changes.subscribe(()=>{
-      this.messageRef.last.nativeElement.scrollIntoView({behavior: 'smooth'});
-    });
+    this.messageRef.changes.subscribe(() => {
+      setTimeout(() => {
+        const lastMessage: HTMLDivElement = this.lastMessage.nativeElement;
+        lastMessage.scrollIntoView({ behavior: 'smooth' })
+      }, 250);
+    })
   }
 
   messages: Message [] = [
@@ -51,7 +59,9 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'Lorem ipsum dolor 😅'
-      }
+      },
+      separacion: true,
+      fecha: 'Julio 24, 2022'
     },
     {
       id: '2',
@@ -60,7 +70,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec ut et nunc donec id sit sed sit velitiqua 😅'
-      }
+      },
+      separacion: false
     },
     {
       id: '3',
@@ -69,7 +80,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'Lorem ipsum dolor sit ame'
-      }
+      },
+      separacion: false
     },
     {
       id: '4',
@@ -78,7 +90,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'sit ame'
-      }
+      },
+      separacion: true
     },
     {
       id: '5',
@@ -88,7 +101,9 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'Lorem ipsum dolor 😅'
-      }
+      },
+      separacion: false,
+      fecha: 'Ayer'
     },
     {
       id: '6',
@@ -98,7 +113,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'Lorem ipsum dolor coe ram lor imp'
-      }
+      },
+      separacion: true
     },
     {
       id: '7',
@@ -107,7 +123,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'Lorem ipsum dolor sit ame'
-      }
+      },
+      separacion: false,
     },
     {
       id: '8',
@@ -116,7 +133,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'sit ame'
-      }
+      },
+      separacion: true
     },
     {
       id: '9',
@@ -126,7 +144,9 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'Lorem ipsum dolor mae loremd piwiye Lorem ipsum dolor 😅😅'
-      }
+      },
+      separacion: true,
+      fecha: 'Hoy'
     },
     {
       id: '10',
@@ -135,7 +155,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'image',
         content: '/assets/images/chat/image01.jpg'
-      }
+      },
+      separacion: false
     },
     {
       id: '11',
@@ -144,7 +165,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'text',
         content: 'sit ame'
-      }
+      },
+      separacion: false
     },
     {
       id: '12',
@@ -153,7 +175,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       message: {
         type: 'image',
         content: '/assets/images/chat/image02.png'
-      }
+      },
+      separacion: false
     },
   ]
 
@@ -165,7 +188,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     message: {
       type: 'text',
       content: ''
-    }
+    },
+    separacion: false
   }
 
   constructor(_injector: Injector) {
@@ -177,24 +201,21 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
   showTime(index: number) {
     let selectedDiv = this.messageRef.toArray()[index].nativeElement;
-
-    console.log(selectedDiv)
     selectedDiv.querySelector('span').classList.toggle('invisible');
   }
 
   sendMessage() {
-
     let tiempoActual = this.getCurrentTime();
 
-    let uuid = self.crypto.randomUUID();
+    // let uuid = self.crypto.randomUUID();
+    let uuid = 1;
 
     let messageActual = this.contentMessage.message.content;
 
     if(this.contentMessage.message.content.length > 0){
-      console.log('Mensaje enviado')
 
       this.contentMessage = {
-        id: uuid,
+        id: String(uuid),
         time: tiempoActual,
         author: 'user',
         image: '',
@@ -245,20 +266,20 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     }
   }
 
-  changeMode() {
-    const body = document.querySelector('body');
+  // changeMode() {
+  //   const body = document.querySelector('body');
 
-    if(body.classList.contains('dark')) {
-      body.classList.remove('dark');
-      body.classList.add('light');
-      localStorage.setItem('mode', 'light');
-    }else {
-      body.classList.remove('light');
-      body.classList.add('dark');
-      localStorage.setItem('mode', 'dark');
-    }
+  //   if(body.classList.contains('dark')) {
+  //     body.classList.remove('dark');
+  //     body.classList.add('light');
+  //     localStorage.setItem('mode', 'light');
+  //   }else {
+  //     body.classList.remove('light');
+  //     body.classList.add('dark');
+  //     localStorage.setItem('mode', 'dark');
+  //   }
 
-    const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
-    StatusBar.setBackgroundColor({ color });
-  }
+  //   const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+  //   StatusBar.setBackgroundColor({ color });
+  // }
 }

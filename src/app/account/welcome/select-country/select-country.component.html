@@ -7,10 +7,10 @@
       <h2 class="title">¡Bienvenido!</h2>
       <span class="sub-title">Elige el país donde quieres comprar</span>
       <div class="container-flags">
-        <div class="container-flags--item" *ngFor="let country of countries">
+        <div class="container-flags--item" *ngFor="let country of countries" (click)="selectedContry(country.id)" >
           <img src="{{country.flag}}" alt="{{country.name}}" />
           <span>{{ country.name }}</span>
-          <div class="radio-contry" [ngClass]="country.id" (click)="selectedContry(country.id)">
+          <div class="radio-contry" [ngClass]="country.id">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
               <path d="M1 3.72727L4.46138 6.93695C4.49973 6.97251 4.55902 6.97252 4.59737 6.93695L11 1" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
             </svg>

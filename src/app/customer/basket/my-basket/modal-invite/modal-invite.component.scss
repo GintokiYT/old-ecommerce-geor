@@ -1,0 +1,31 @@
+ion-modal::part(handle) {
+  display: none;
+}
+
+ion-modal {
+  --ion-background-color: var(--ion-background-modal) !important;
+}
+
+.information-invite {
+  gap: 12px;
+}
+
+.invite {
+  font-weight: 700;
+}
+
+.coment{
+  color: #00000099;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.box {
+  width: 147px;
+  height: 68px;
+}

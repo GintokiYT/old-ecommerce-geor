@@ -26,7 +26,7 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
 
 
   onGoToPayMethods(){
-    this.navigation.forward("");
+    this.navigation.root("customer/payment-methods","forward")
   }
 
 

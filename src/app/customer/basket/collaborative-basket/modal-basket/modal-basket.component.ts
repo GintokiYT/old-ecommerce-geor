@@ -18,7 +18,7 @@ export class ModalBasketComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goCesta(){
-      this.navigation.root('/customer/my-basquet', 'forward');
+      this.navigation.root('/customer/my-basket', 'forward');
       this.dialog.dismiss();
   }
 

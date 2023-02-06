@@ -97,7 +97,7 @@ export class MyLocationComponent implements OnInit, OnDestroy {
   }
 
   onBack() {
-    this.navigator.back(RouteCollection.account.welcome.wheAreYou);
+    this.navigator.root(RouteCollection.account.welcome.wheAreYou, 'back');
   }
 
   confirm() {

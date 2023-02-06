@@ -1,0 +1,24 @@
+<ion-content class="modal">
+  <div class="modal-cesta">
+    <ion-modal
+      #modal
+      trigger="open-modal-add"
+      [initialBreakpoint]="0.2"
+      [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    >
+      <ng-template>
+        <div class="ion-no-padding mx-4 mt-4">
+          <ion-text class="text-center d-block">
+            <img src="assets/icons/icon-circle-plus.svg" />
+          </ion-text>
+          <ion-text class="text-center d-block mt-2">
+            Producto agregado
+          </ion-text>
+          <ion-text class="basket text-center d-block mt-4">
+            Ir a la cesta</ion-text
+          >
+        </div>
+      </ng-template>
+    </ion-modal>
+  </div>
+</ion-content>

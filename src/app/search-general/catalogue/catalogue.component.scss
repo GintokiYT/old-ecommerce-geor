@@ -1,0 +1,42 @@
+ion-button {
+    margin: 0px 24px 0px 24px ;
+    width:342px;
+    height:108px;
+}
+
+.caracter {
+    width:55px;
+    height:72px;
+    margin:0 16px;
+}
+
+ion-searchbar {
+    margin: 24px;
+    padding: 0px;
+    width: 300px;
+   height: 36px;
+   border-radius: 100px;
+}
+
+.medidas {
+    margin: 30px 23px 0px 0px;
+    padding: 0px;
+
+}
+button {
+    background-color: transparent;
+    margin: 0;
+}
+
+ion-button {
+    --background:var(--ion-color-secondary-shade) !important;
+}
+
+h3 {
+    text-align: justify;
+    font-weight: bold;
+    vertical-align: text-top;  
+    
+}
+
+

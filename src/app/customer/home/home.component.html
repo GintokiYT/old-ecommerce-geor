@@ -22,7 +22,7 @@
       <ion-col size="12">
         <ion-slides class="pager-static" [options]="slideOptions" [pager]="true">
           <ion-slide *ngFor="let banner of slides">
-            <ion-img [src]="banner.image" [alt]="banner.image"></ion-img>
+            <ion-img (click)="goToProduct()" [src]="banner.image" [alt]="banner.image"></ion-img>
           </ion-slide>
         </ion-slides>
       </ion-col>
@@ -40,10 +40,8 @@
         <ion-slides [options]="productSlidesOptions">
           <ion-slide *ngFor="let product of productsForYou">
             <div class="text-start">
-              <ion-img [src]="product.image" [alt]="product.image"></ion-img>
-              <ion-text class="d-block text-sm fw-bold">
-                {{ product.currency }}{{ product.price }}
-              </ion-text>
+              <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image"></ion-img>
+              <ion-text class="d-block text-sm fw-bold text-price">{{ product.price }}</ion-text>
             </div>
           </ion-slide>
         </ion-slides>
@@ -60,17 +58,17 @@
       <div class="products__column">
         <div class="products__product" *ngFor="let product of productsFeatured">
           <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
-          <ion-img [src]="product.image" [alt]="product.image"></ion-img>
+          <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image"></ion-img>
           <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
-          <ion-text class="d-block fw-semibold mt-2 mb-2"
-            >{{ product.currency }}{{ product.price  }}</ion-text
+          <ion-text class="d-block fw-semibold mt-2 mb-2 text-price"
+            >{{ product.price }}</ion-text
           >
           <ion-text
             *ngIf="product.inOffert"
             class="d-block fw-semibold mt-2 mb-3 text-sm text text-muted"
           >
-            <span class="d-inline-block mr-3 text-line-through"
-              >{{ product.currency }}{{ product.oldPrice }}</span
+            <span class="d-inline-block mr-3 text-line-through text-price"
+              >{{ product.oldPrice }}</span
             >
             <span class="fw-semibold text-primary"
               >-{{ product.discountPercentage }}%</span
@@ -107,92 +105,3 @@
   </div>
 </ion-content>
 <app-footer-navigation></app-footer-navigation>
-<!-- <ion-content [fullscreen]="true" class="ion-padding"> -->
-  <!-- <ion-grid class="ion-no-padding mt-2">
-    <ion-row class="ion-justify-content-center">
-      <ion-col size="6" class="mb-4">
-        <ion-img
-          [src]="logoPath"
-          alt="Logo de induacrill"
-        ></ion-img>
-      </ion-col>
-      <ion-col size="12">
-        <ion-slides class="pager-static" [options]="slideOptions" [pager]="true">
-          <ion-slide *ngFor="let banner of slides">
-            <ion-img [src]="banner.image" [alt]="banner.image"></ion-img>
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
-  <!-- <div class="carousel__wrapper mt-4">
-    <ion-text>
-      <div class="d-flex ion-align-items-center mb-3">
-        <span class="me-2 fw-bold">Para ti</span>
-        <ion-icon name="arrow-forward-outline"></ion-icon>
-      </div>
-    </ion-text>
-    <ion-slides [options]="productSlidesOptions">
-      <ion-slide *ngFor="let product of productsForYou">
-        <div class="text-start">
-          <ion-img [src]="product.image" [alt]="product.image"></ion-img>
-          <ion-text class="d-block text-sm fw-bold"
-            >{{ product.currency }}{{ product.price }}</ion-text
-          >
-        </div>
-      </ion-slide>
-    </ion-slides>
-  </div> -->
-  <!-- <div class="mt-4">
-    <ion-text>
-      <div class="d-flex ion-align-items-center mb-3 fw-bold">Destacados</div>
-    </ion-text>
-  </div> -->
-  <!-- <div class="products__column">
-    <div class="products__product" *ngFor="let product of productsFeatured">
-      <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
-      <ion-img [src]="product.image" [alt]="product.image"></ion-img>
-      <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
-      <ion-text class="d-block fw-semibold mt-2 mb-2"
-        >{{ product.currency }}{{ product.price  }}</ion-text
-      >
-      <ion-text
-        *ngIf="product.inOffert"
-        class="d-block fw-semibold mt-2 mb-3 text-sm text text-muted"
-      >
-        <span class="d-inline-block mr-3 text-line-through"
-          >{{ product.currency }}{{ product.oldPrice }}</span
-        >
-        <span class="fw-semibold text-primary"
-          >-{{ product.discountPercentage }}%</span
-        >
-      </ion-text>
-      <ion-text
-        *ngIf="product.hasMinimumOrder"
-        class="d-block mt-2 mb-2 text-sm"
-      >
-        <span class="d-inline-block mr-2"
-          >{{ product.minimumOrder }} unidades
-        </span>
-        <span class="text-muted">(Pedido mín.)</span>
-      </ion-text>
-      <ion-text *ngIf="product.hasFreeDelivery" class="d-block mb-2">
-        <div class="d-flex ion-align-items-center">
-          <app-icon-truck></app-icon-truck>
-          <span class="d-inline-block text text-sm text-muted ms-2"
-            >Envío gratis</span
-          >
-        </div>
-      </ion-text>
-      <div *ngIf="product.colors" class="product__colors">
-        <div
-          *ngFor="let color of product.colors"
-          class="product__color"
-          [style]="{backgroundColor: color.color}"
-        ></div>
-      </div>
-    </div>
-  </div> -->
-<!-- </ion-content> -->
-<!--
-<app-footer-navigation></app-footer-navigation> -->
