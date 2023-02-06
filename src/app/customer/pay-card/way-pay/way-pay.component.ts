@@ -1,7 +1,8 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.service';
-import MetodoPago from '../../../interfaces/MetodoPago';
+import IPayMethod from '../../../interfaces/IPayMethod';
+
 @Component({
   selector: 'app-way-pay',
   templateUrl: './way-pay.component.html',
@@ -15,14 +16,14 @@ export class WayPayComponent extends ViewComponent implements OnInit {
     {
       id: 1,
       selected: false,
-      tipo: "Visa Débito",
-      numero: "*** 4115"
+      type: "Visa Débito",
+      number: "*** 4115"
     },
     {
       id:2,
       selected: false,
-      tipo: "Visa Débito",
-      numero: "*** 4115"
+      type: "Visa Débito",
+      number: "*** 4115"
     },
   ]
   
@@ -52,12 +53,12 @@ export class WayPayComponent extends ViewComponent implements OnInit {
   establecerMetodoDePago(){
     const selected = this.data.filter(element => element.selected === true);
     if (selected[0]) {
-      const metodo : MetodoPago ={
-        tipo : selected[0].tipo,
-        numero: selected[0].numero,
+      const method : IPayMethod ={
+        type : selected[0].type,
+        number: selected[0].number,
         icon : "/assets/icons/icon-visa-small.svg"
       }
-      this.cpService.setMetodoPago(metodo)
+      this.cpService.setPayMethod(method)
     }
     this.navigation.back("/customer/confirm-order");
   }
