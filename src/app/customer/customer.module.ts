@@ -16,6 +16,8 @@ import { PayCardModule } from './pay-card/pay-card.module';
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { ShareModule } from '../shared/shared.module';
 import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
+import { ManageProfileInformationComponent } from './manage-profile-information/manage-profile-information.component';
+import { AppSettingsComponent } from './app-settings/app-settings.component';
 
 @NgModule({
   imports:[
@@ -37,6 +39,8 @@ import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
   ],
   declarations: [
     HomeComponent,
+    ManageProfileInformationComponent,
+    AppSettingsComponent
   ],
 
 })

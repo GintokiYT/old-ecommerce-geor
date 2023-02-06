@@ -28,6 +28,8 @@ import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
 import { SearchComponent } from '../search-general/search/search.component';
+import { ManageProfileInformationComponent } from './manage-profile-information/manage-profile-information.component';
+import { AppSettingsComponent } from './app-settings/app-settings.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,8 @@ const routes: Routes = [
       { path: 'product',component:ProductComponent},
       { path: 'variants',component:VariantsComponent},
       { path: 'picture-big',component:PictureBigComponent},
+      { path: 'manage-profile-information', component: ManageProfileInformationComponent },
+      { path: 'app-settings', component: AppSettingsComponent },
 
         /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -68,7 +72,6 @@ const routes: Routes = [
       { path: 'search', component: SearchComponent },
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
-
     ]
   }
 ];

@@ -38,7 +38,7 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
     if(this.router.url === '/customer/collaborative-basket') {
       this.myBuy.nativeElement.classList.add('active')
     }
-    if(this.router.url === '/login') {
+    if(this.router.url === '/customer/manage-profile-information') {
       this.myProfile.nativeElement.classList.add('active');
     }
     if(this.router.url === '/customer/home') {
@@ -55,7 +55,7 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
         this.navigation.forward('/customer/collaborative-basket');
         break;
       case 'Profile':
-        this.navigation.forward('/login');
+        this.navigation.forward('/customer/manage-profile-information');
         break;
       case 'Home':
         this.navigation.forward('/customer/home');
