@@ -9,19 +9,23 @@
 </ion-content>
 <!-- FOOTER -->
 <ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <div class="box-total d-flex flex-row justify-content-between">
-      <div class="total-checkbox d-flex flex-row align-items-center">
-        <ion-checkbox slot="start"></ion-checkbox>
-        <p class="fz-small">Todo</p>
+  <ion-toolbar class="ion-no-padding" style="padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
+    <div class="box-total d-flex flex-row justify-content-between mx-4 mb-4 mt-3">
+      <div class="d-flex flex-row gap-2">
+        <label class="custom-checkbox">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+        <ion-label class=" d-flex justify-content-center align-items-center fz-small "> Todo</ion-label>
       </div>
-      <div class="cost-total fz-small">
-        <p>S/ 45,789.00</p>
+      <div class="fz-small">
+        <ion-label>S/ 45,789.00</ion-label>
       </div>
     </div>
+    <div class="mx-4">
     <ion-button expand="block" color="primary" shape="round" (click)="goToConfirmOrder()">Ir a pagar</ion-button>
+  </div>
   </ion-toolbar>
-  <!-- <app-footer-main></app-footer-main> -->
   <app-footer-navigation></app-footer-navigation>
 </ion-footer>
 

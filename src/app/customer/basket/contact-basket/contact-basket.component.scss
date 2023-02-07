@@ -9,7 +9,7 @@ ion-toolbar{
   --padding-top: 24px;
   --padding-start: 24px;
   --padding-end: 24px;
-  --padding-bottom: 40px
+  --padding-bottom: 24px
 }
 
 @media(max-width:320px){
@@ -34,9 +34,26 @@ ion-item{
 ion-item::part(native) {
   padding: 0px !important;
 }
-.cel{
+.phone{
  color: var(--ion-color-disabled);
 }
+ion-checkbox{
+  --size: 20px;
+}
+ion-item{
+  margin:0px 24px 0px 24px;
+}
 
+/* Dark */
+.icons{
+  width: 24px;
+  height: 24px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
+  circle{
+    stroke: var(--ion-color-basic);
+  }
+}
 
 

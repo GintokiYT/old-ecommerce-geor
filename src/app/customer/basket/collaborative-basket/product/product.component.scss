@@ -1,15 +1,9 @@
-/* FOOTER */
-.content-product {
-  padding-right: 0px;
-  padding-left: 4px;
-  padding-bottom: 40px;
-}
-
+/*  CONTENIDO */
 .box-select {
-  gap: 26px;
+  gap:14px;
 }
 
-.unit_cost {
+.unit_cost{
   line-height: 22px;
   color:var(--ion-color-basic);
 }
@@ -23,19 +17,16 @@
   gap: 10px;
 }
 
-.box {
-  gap: 24px;
-}
-
 .description {
-  width: 294px;
+  width: 306px;
   border: 1px solid  var(--ion-color-separator);
   border-radius: 8px;
-  padding: 10px 10px 4px 10px;
-  gap: 30px;
-  p {
-      color: var(--ion-color-light) ;
-  }
+  padding: 9px 9px 3px 9px;
+  gap: 18px;
+
+}
+.measurement {
+  color: var(--ion-color-light) ;
 }
 
 .cost {
@@ -43,20 +34,6 @@
   color: var(--ion-color-basic);
   margin-left: 8px;
   margin-right: 8px;
-}
-
-.list-md {
-  padding: 0px;
-}
-
-ion-checkbox::part(container) {
-  border-radius: 14px;
-  width: 20px;
-  height: 20px;
-}
-
-.hydrated {
-  margin: 0px !important;
 }
 
 .img-delete {
@@ -67,18 +44,120 @@ ion-checkbox::part(container) {
 }
 
 .option-background {
-  background: var(--ion-background-color);
+  background:var(--ion-background-color);
 }
 
 .list {
   margin-bottom: 40px !important;
 }
 
+.text{
+  color:var(--ion-color-text-secundary);
+}
+
+.name{
+  color:#023aff;
+}
 .div.item-native {
   padding-left: 0px !important;
 }
-
+ion-item {
+  --inner-padding-end: 0px !important;
+}
 ion-item-options{
   border-bottom-width:0px !important;
 }
 
+
+/* CUSTOM CHECKBOX */
+/* Customize the label (the container) */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--ion-background-icons-delete);
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input ~ .checkmark {
+  background-color: var(--ion-background-color);
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #023aff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Modal-delete */
+ion-modal {
+  &.modal-alert {
+      --height: fit-content;
+      --border-radius: 10px;
+  }
+
+  &::part(content) {
+      margin-right: 24px;
+      margin-left: 24px;
+  }
+
+  --background: var(--ion-background-alert)
+}
+/* Dark */
+.cancel{
+  color: var(--ion-color-basic) !important;
+}
+.delete{
+  color: var(--ion-color-delete) !important;
+}
