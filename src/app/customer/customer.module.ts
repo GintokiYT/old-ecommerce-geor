@@ -16,6 +16,7 @@ import { PayCardModule } from './pay-card/pay-card.module';
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { ShareModule } from '../shared/shared.module';
 import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
+import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 import { AddCouponsModule } from './add-coupons/add-coupons.module';
 import { BillingDataModule } from './billing-data/billing-data.module';
 
@@ -36,6 +37,7 @@ import { BillingDataModule } from './billing-data/billing-data.module';
     PayCardModule,
     IonicInputMaskModule,
     ShareModule,
+    ConfirmCardPayModule,
     AddCouponsModule,
     BillingDataModule
   ],

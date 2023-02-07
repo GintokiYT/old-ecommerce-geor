@@ -63,7 +63,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
     }
 
     }
-  }
+}
 
   
 
