@@ -30,6 +30,7 @@ import { CatalogueComponent } from '../search-general/catalogue/catalogue.compon
 import { SearchComponent } from '../search-general/search/search.component';
 import { AddCouponsComponent } from './add-coupons/add-coupons.component';
 import { BillingDataComponent } from './billing-data/billing-data.component';
+import { ManageUserInformationComponent } from './manage-user-information/manage-user-information.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,7 @@ const routes: Routes = [
 
       {path: 'add-coupons', component: AddCouponsComponent},
       {path: 'billing-data', component: BillingDataComponent},
+      {path: 'manage-user-information', component: ManageUserInformationComponent},
 
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
