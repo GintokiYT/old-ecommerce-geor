@@ -6,12 +6,10 @@
 ion-avatar.hydrated {
   margin-top: 0px;
   margin: 4px;
-
 }
 
 ion-content{
   --padding-top: 24px;
-
 }
 
 ion-item{
@@ -32,6 +30,7 @@ ion-modal {
 
 ion-item::part(native) {
   background-color: var(---ion-background-modal) !important;
+  padding: 0px !important;
 }
 
 /* Button */
@@ -51,4 +50,17 @@ color:#023AFF !important;
 }
 .add{
 color:#FFFFFF !important;
+}
+
+/* ---- */
+ion-radio{
+  margin:0px !important;
+}
+
+ion-item{
+  --inner-padding-end: 0px !important;
+}
+
+.basket{
+ gap: 10px;
 }

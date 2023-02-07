@@ -20,7 +20,7 @@
   }
 
 .color{
- color: #00000061;
+ color: var(--ion-color-disabled);
 }
 @media(max-width:320px){
   ion-label{

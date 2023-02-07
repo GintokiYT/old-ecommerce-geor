@@ -1,35 +1,40 @@
 <ion-content class="modal">
   <div class="modal-cesta">
-    <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.30" [breakpoints]="[0, 0.25, 0.5, 0.75]">
-    <ng-template>
-      <ion-content>
-        <ion-list>
-          <ion-item (click)="goCesta()" lines="none">
-            <ion-avatar slot="start">
-              <ion-img src="/assets/collaborative-basquet/Avatar1.svg"></ion-img>
-            </ion-avatar>
-            <ion-label class="fz-normal">
-               Mi cesta (0)
-            </ion-label>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-avatar slot="start">
-              <ion-img src="/assets/collaborative-basquet/Avatar1.svg"></ion-img>
-            </ion-avatar>
-            <ion-label class="fz-normal">
-              Cesta de Gerardo (9)
-            </ion-label>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-avatar slot="start">
-              <ion-img src="/assets/collaborative-basquet/Avatar3.svg"></ion-img>
-            </ion-avatar>
-            <ion-label class="fz-normal">
-              Cesta de Juliano Alvares Carrió...
-            </ion-label>
-          </ion-item>
-          </ion-list>
-      </ion-content>
-    </ng-template>
-  </ion-modal></div>
+    <ion-modal
+      #modal
+      trigger="open-modal"
+      [initialBreakpoint]="0.3"
+      [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    >
+      <ng-template>
+        <ion-content>
+          <div class="mt-4 mx-4">
+            <div class="ion-no-padding d-flex flex-row justify-content-between"  lines="none" >
+              <div (click)="goBasket()" class=" basket d-flex flex-row justify-content-center align-items-center" >
+                <img src="/assets/collaborative-basquet/Avatar1.svg" />
+                <ion-label class="fz-normal"> Mi cesta (0) </ion-label>
+              </div>
+            </div>
+
+            <div class="ion-no-padding d-flex flex-row justify-content-between my-4" lines="none" >
+              <div class="basket d-flex flex-row justify-content-center align-items-center" >
+                <img src="/assets/collaborative-basquet/Avatar1.svg" />
+                <ion-label class="fz-normal"> Cesta de Gerardo (9) </ion-label>
+              </div>
+              <div>
+                <img src="/assets/icons/icon-check.svg" />
+              </div>
+
+            </div>
+            <div class="ion-no-padding d-flex flex-row justify-content-between"  lines="none" >
+              <div (click)="goBasket()" class=" basket d-flex flex-row justify-content-center align-items-center" >
+                <img src="/assets/collaborative-basquet/Avatar3.svg" />
+                <ion-label class="fz-normal"> Cesta de Juliano Alvares Carrió... </ion-label>
+              </div>
+            </div>
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
 </ion-content>

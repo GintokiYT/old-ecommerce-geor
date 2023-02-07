@@ -23,4 +23,8 @@ export class MainProductComponent extends ViewComponent implements OnInit {
       },'Eliminar','Cancelar')
   }
 
+  goProductDetail(){
+   this.navigation.root('/customer/variants-product', 'forward');
+  }
+
 }
