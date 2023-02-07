@@ -19,6 +19,7 @@ import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 import { AddCouponsModule } from './add-coupons/add-coupons.module';
 import { BillingDataModule } from './billing-data/billing-data.module';
+import { ManageUserInformationModule } from './manage-user-information/manage-user-information.module';
 
 @NgModule({
   imports:[
@@ -39,7 +40,8 @@ import { BillingDataModule } from './billing-data/billing-data.module';
     ShareModule,
     ConfirmCardPayModule,
     AddCouponsModule,
-    BillingDataModule
+    BillingDataModule,
+    ManageUserInformationModule
   ],
   declarations: [
     HomeComponent,

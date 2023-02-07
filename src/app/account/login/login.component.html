@@ -1,14 +1,16 @@
 <ion-content [fullscreen]="true">
-  <!-- No hagan esos cambios en el module me asustan :c -->
+
   <div class="login-container d-flex flex-column justify-content-between">
 
     <div>
+      <!-- Header -->
       <ion-header class="ion-no-border">
         <ion-toolbar class="ion-no-padding">
           <ion-title class="ion-text-left fz-normal"> Inicia sesión </ion-title>
         </ion-toolbar>
       </ion-header>
 
+      <!-- Form -->
       <form class="w-100" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <ion-item class="form-group">
           <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
@@ -28,6 +30,7 @@
       </form>
     </div>
 
+    <!-- Footer -->
     <ion-footer class="ion-no-border">
       <div class="ion-padding">
         <div class="form-group form-group__double">
