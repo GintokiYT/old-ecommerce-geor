@@ -7,11 +7,15 @@ ion-toolbar {
 }
 
 .header-container{
-    button {
-        filter: var(--ion-color-dark-filter);
-        background-color: transparent;
-    }
 
+    button{
+        background-color: transparent;
+
+        &.button-left{
+            filter: var(--ion-color-dark-filter);
+        }
+    }
+    
     .title{
         font-weight: bold;
     }
@@ -23,12 +27,38 @@ ion-toolbar {
     width: 17px;
 }
 
+
+ion-modal {
+    &.modal-alert {
+        --height: fit-content;
+        --border-radius: 10px;
+
+        .buttons{
+            cursor: pointer;
+        }
+    }
+
+    &::part(content) {
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+    --background: var(--ion-background-alert);
+}
+
 @media(min-width:390px) {
     ion-toolbar {
         --padding-top: 24px;
         --padding-start: 24px;
         --padding-end: 24px;
         --padding-bottom: 40px
+    }
+
+    ion-modal {
+        &::part(content) {
+            margin-right: 24px;
+            margin-left: 24px;
+        }
     }
 }
 

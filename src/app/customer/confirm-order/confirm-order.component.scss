@@ -81,7 +81,27 @@
             width: 8.17px;
             height: 14px;
         }
+
+        .bill{
+            gap: 10px;
+            .bill-name{
+                color: var(--ion-color-basic);
+            }
+
+            .bill-code{
+                color: var(--ion-color-text-secundary);
+            }
+
+            .bill-type{
+                padding: 2px 4px;
+                background-color: var(--ion-color-secondary);
+                border-radius: 4px;
+            }
+        }
+
     }
+
+    
 
     
 }

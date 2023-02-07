@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import IOrder from '../../../interfaces/IOrder';
 import ICoupon from '../../../interfaces/ICoupon';
+import IBill from '../../../interfaces/IBill';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,14 @@ export class ConfirmOrderService {
       expiration: "",
       conditions: ""
     },
+
+    bill: 
+      {
+        name: "",
+        code: "",
+        type: "",
+      }
+    ,
 
     detailsOrderToHome: {
       direction : "¿Donde dejaremos tu pedido?",
@@ -76,6 +85,11 @@ export class ConfirmOrderService {
 
   setCoupon(coupon:ICoupon){
     this.myOrder.coupon = coupon;
+    this.myOrder$.next(this.myOrder);
+  }
+
+  setBill(bill:IBill){
+    this.myOrder.bill = bill;
     this.myOrder$.next(this.myOrder);
   }
 
