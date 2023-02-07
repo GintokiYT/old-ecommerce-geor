@@ -120,6 +120,8 @@ $btn-default: #5b6793;
   --ion-color-tipo-pedido-border: #F5F5F5;
   --ion-color-tipo-pedido-filter: unset;
 
+  --ion-color-border-input: #EEEEEE;
+
 }
 
 
@@ -237,6 +239,8 @@ body.dark {
   --ion-color-tipo-pedido : #1B1F3C;
   --ion-color-tipo-pedido-border: #1B1F3C;
   --ion-color-tipo-pedido-filter: brightness(0) saturate(100%) invert(10%) sepia(48%) saturate(1066%) hue-rotate(198deg) brightness(91%) contrast(92%);
+
+  --ion-color-border-input: #1B1F3C;
 
 }
 
