@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
-
+import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-add-card',
   templateUrl: './add-card.component.html',
   styleUrls: ['./add-card.component.scss'],
 })
-export class AddCardComponent implements OnInit {
+export class AddCardComponent extends ViewComponent implements OnInit {
   
   isModalOpen = false;
 
@@ -19,25 +18,16 @@ export class AddCardComponent implements OnInit {
     expiration:'',
     code:'',
   }
-  constructor(private alertController: AlertController) {}
+  constructor(private _injector: Injector) {
+    super(_injector)
+   }
 
   ngOnInit() {}
-
+  
+  goTo(path:string){
+    this.navigation.forward(path)
+  }
   onSubmit(formulario:NgForm){ }
-
-  // async presentAlert() {
-  //   const alert = await this.alertController.create({
-  //     buttons: ['X'],
-  //     header: `<img src="/assets/icons/security-code.svg">`, 
-  //     subHeader: 'Cod. de seguridad',
-  //     message: 'Código de 3 dígitos ubicados en el dorso de la tarjeta',
-      
-  //   });
-
-  //   await alert.present();
-  // }
-  
-  
 
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;
