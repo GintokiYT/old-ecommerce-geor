@@ -17,6 +17,8 @@ import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { ShareModule } from '../shared/shared.module';
 import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
+import { AddCouponsModule } from './add-coupons/add-coupons.module';
+import { BillingDataModule } from './billing-data/billing-data.module';
 
 @NgModule({
   imports:[
@@ -36,6 +38,8 @@ import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module
     IonicInputMaskModule,
     ShareModule,
     ConfirmCardPayModule,
+    AddCouponsModule,
+    BillingDataModule
   ],
   declarations: [
     HomeComponent,

@@ -29,6 +29,8 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
 import { SearchComponent } from '../search-general/search/search.component';
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
+import { AddCouponsComponent } from './add-coupons/add-coupons.component';
+import { BillingDataComponent } from './billing-data/billing-data.component';
 
 const routes: Routes = [
   {
@@ -68,8 +70,14 @@ const routes: Routes = [
       { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: 'catalogue', component: CatalogueComponent },
       { path: 'search', component: SearchComponent },
+
+      {path: 'add-coupons', component: AddCouponsComponent},
+      {path: 'billing-data', component: BillingDataComponent},
+
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
+
+      
 
     ]
   }

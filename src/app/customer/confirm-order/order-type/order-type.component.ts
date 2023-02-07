@@ -15,8 +15,8 @@ export class OrderTypeComponent implements OnInit {
   ngOnInit() {
     const opciones = document.querySelectorAll(".selected");
     opciones.forEach(opc => opc.classList.remove("selected"));
-    const pedidoSeleccionado = this.cpService.currentMiPedido$.subscribe(pedido => {
-      document.getElementById(pedido.tipoPedido).classList.add("selected");
+    const pedidoSeleccionado = this.cpService.currentMyOrder$.subscribe(order => {
+      document.getElementById(order.typeOrder)?.classList.add("selected");
     })
   }
 
@@ -26,7 +26,7 @@ export class OrderTypeComponent implements OnInit {
     opciones.forEach(opc => opc.classList.remove("selected"));
     opcion?.classList.add("selected")
 
-    this.cpService.setTipoPedido(id);
+    this.cpService.setTypeOrder(id);
   }
 
 
