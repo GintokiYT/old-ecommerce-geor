@@ -120,14 +120,29 @@
 }
 
 .form-group {
+
+  --border-color: var(--ion-color-border-input);
+
   ion-label {
-    color: #6c757d;
+    color: #6c757d !important;
   }
 }
 
 .form-group.item-has-focus{
+
+  --border-color: var(--ion-color-primary) !important;
+
   ion-label{
       color:  var(--ion-color-primary) !important;
+  }
+}
+
+.form-group.item-has-value{
+  &.ion-invalid{
+    ion-label{
+      color: red !important;
+    }
+    --border-color: red !important;
   }
 }
 
