@@ -119,6 +119,7 @@
   }
 }
 
+//Default
 .form-group {
 
   --border-color: var(--ion-color-border-input);
@@ -128,6 +129,7 @@
   }
 }
 
+//Focus
 .form-group.item-has-focus{
 
   --border-color: var(--ion-color-primary) !important;
@@ -137,12 +139,13 @@
   }
 }
 
+//Error
 .form-group.item-has-value{
   &.ion-invalid{
     ion-label{
-      color: red !important;
+      color: #F44336 !important;
     }
-    --border-color: red !important;
+    --border-color: #F44336 !important;
   }
 }
 
