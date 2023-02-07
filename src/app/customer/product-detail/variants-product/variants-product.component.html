@@ -1,5 +1,17 @@
 <ion-content [fullscreen]="true">
-  <app-header-variants></app-header-variants>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+        <button
+          (click)="goBack()"
+            slot="start">
+            <svg class="back" width="1em" height="1em" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L13 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M1 13L13 1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              </svg>
+        </button>
+    </ion-toolbar>
+  </ion-header>
+
   <div class="mx-4 mt-2">
     <ion-text class="variant d-flex flex-row">
       <img src="assets/images/polo-variante.png" />
@@ -54,32 +66,24 @@
 
 <ion-footer class="ion-no-padding ion-no-border">
   <ion-toolbar class="ion-no-padding">
-    <div class="footer mx-4 mb-4">
+    <div class="footer ">
       <ion-text class="d-flex flex-row justify-content-between mb-3">
         <ion-label>Total</ion-label>
         <ion-label>S/9,999.00</ion-label>
       </ion-text>
       <div class="d-flex mt-2 gap-3">
-        <ion-button
-          id="open-modal"
-          fill="outline"
-          class="btn ion-no-padding ion-no-margin"
-          expand="block"
-          shape="round"
-        >
-          Añadir a la cesta
-        </ion-button>
+
         <ion-button
           class="btn ion-no-padding ion-no-margin"
           expand="block"
           shape="round"
           color="primary"
         >
-          Ir a pagar
+          Actualizar
         </ion-button>
       </div>
     </div>
-    <app-modal-variants></app-modal-variants>
+
 
   </ion-toolbar>
 </ion-footer>

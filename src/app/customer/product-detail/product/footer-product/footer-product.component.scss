@@ -4,7 +4,7 @@ ion-footer{
 
 ion-toolbar{
   --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
-  --border-color: #F5F5F5;
+  --border-color:var(--ion-color-separator);
   --padding-top: 12px;
   --padding-start: 24px;
   --padding-end: 24px;

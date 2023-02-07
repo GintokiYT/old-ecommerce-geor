@@ -1,16 +1,30 @@
-.chat-header {
-  padding: 24px 24px 40px 24px;
+button{
+  background-color: transparent;
 }
-.chat-ion-toolbar {
-  height: 32px;
-}
-.content-title {
-  flex: 1;
-   gap: 8px;
 
-  .content-title__name {
-    h2 {
-      color: var(--ion-color-basic);
-    }
+ion-toolbar{
+  --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
+  --min-height: 0px;
+  --padding-top: 24px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --padding-bottom: 40px;
+}
+
+.text{
+  font-weight: 700 !important;
+}
+
+@media(max-width:320px){
+  ion-toolbar{
+      --padding-top: 32px;
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --padding-bottom: 24px
   }
+}
+ion-title{
+  color:var(--ion-color-basic);
+  font-weight: bold;
+  font-size: 16px;
 }

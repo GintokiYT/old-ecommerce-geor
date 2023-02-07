@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border chat-header" mode="md">
+<!-- <ion-header class="ion-no-border chat-header" mode="md">
   <div class="chat-ion-toolbar d-flex flex-row justify-content-between align-items-center">
     <div class="content-title d-flex align-items-center">
       <div class="content-title__name">
@@ -10,4 +10,21 @@
     <img id="open-modal-invite"
      src="/assets/collaborative-basquet/Perfil.svg" alt="Equipo" />
   </div>
+</ion-header> -->
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-label class="text">
+      {{title}}
+    </ion-label>
+      <button
+          slot="end">
+          <img id="open-modal-invite"
+          src="/assets/collaborative-basquet/Perfil.svg" alt="Equipo" />
+      </button>
+
+
+  </ion-toolbar>
+
 </ion-header>

@@ -17,6 +17,9 @@ import { ModalResendComponent } from './team/modal-resend/modal-resend.component
 import { ModalAcceptedComponent } from './team/modal-accepted/modal-accepted.component';
 import { ContactBasketComponent } from './contact-basket/contact-basket.component';
 import { ShareModule } from '../../shared/shared.module';
+import { ContactSearchComponent } from './contact-basket/contact-search/contact-search.component';
+import { FormsModule } from '@angular/forms';
+import { CollaborativeTeamComponent } from './team/collaborative-team/collaborative-team.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +36,17 @@ import { ShareModule } from '../../shared/shared.module';
     ModalInviteComponent,
     ModalResendComponent,
     ModalAcceptedComponent,
-    ContactBasketComponent
+    ContactBasketComponent,
+    ContactSearchComponent,
+    CollaborativeTeamComponent
 
   ],
   imports: [
     CommonModule,
     IonicModule,
     InboxModule,
-    ShareModule
+    ShareModule,
+    FormsModule,
   ],
   exports:[
     HeaderBasketComponent,

@@ -16,6 +16,8 @@ import { ModalVariantsComponent } from './variants/modal-variants/modal-variants
 import { ModalAddComponent } from './variants/modal-add/modal-add.component';
 import { ModalBasketComponent } from './variants/modal-basket/modal-basket.component';
 import { PictureBigComponent } from './picture-big/picture-big.component';
+import { VariantsProductComponent } from './variants-product/variants-product.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { PictureBigComponent } from './picture-big/picture-big.component';
     ModalVariantsComponent,
     ModalAddComponent,
     ModalBasketComponent,
-    PictureBigComponent
+    PictureBigComponent,
+    VariantsProductComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +54,7 @@ import { PictureBigComponent } from './picture-big/picture-big.component';
      ModalVariantsComponent,
      ModalAddComponent,
      ModalBasketComponent
+
   ]
 })
 export class ProductDetailModule { }

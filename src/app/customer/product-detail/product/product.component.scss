@@ -20,5 +20,13 @@
 }
 .icon-peru {
   gap: 6px;
-  color:#00000061;
+  color:var(--ion-color-disabled);
+}
+/* Dark */
+.arrow{
+width: 7px;
+height: 10px;
+  path{
+    stroke: var(--ion-color-arrow) !important;
+}
 }
