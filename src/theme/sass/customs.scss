@@ -137,6 +137,15 @@
   }
 }
 
+.form-group.item-has-value{
+  &.ion-invalid{
+    ion-label{
+      color: red !important;
+    }
+    --border-color: red !important;
+  }
+}
+
 .text-line-through {
   text-decoration: line-through;
 }
