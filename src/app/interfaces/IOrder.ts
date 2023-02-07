@@ -1,12 +1,14 @@
 import IPayMethod from './IPayMethod';
 import ICoupon from './ICoupon';
+import IBill from './IBill';
 
 
 export default interface IOrder {
 
     typeOrder: string,
     payMethod: IPayMethod,
-    coupon: ICoupon
+    coupon: ICoupon,
+    bill: IBill,
     detailsOrderToHome: {
         direction: string,
         dClass: string,

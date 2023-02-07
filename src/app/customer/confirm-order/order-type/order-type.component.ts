@@ -16,7 +16,7 @@ export class OrderTypeComponent implements OnInit {
     const opciones = document.querySelectorAll(".selected");
     opciones.forEach(opc => opc.classList.remove("selected"));
     const pedidoSeleccionado = this.cpService.currentMyOrder$.subscribe(order => {
-      document.getElementById(order.typeOrder).classList.add("selected");
+      document.getElementById(order.typeOrder)?.classList.add("selected");
     })
   }
 
