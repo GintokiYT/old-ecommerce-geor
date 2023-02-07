@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
+import { ViewComponent } from '@geor360/ecore';
 
 interface IBanner {
   image: string;
@@ -29,7 +30,7 @@ interface IProductColor {
   templateUrl: './slider-products.component.html',
   styleUrls: ['./slider-products.component.scss'],
 })
-export class SliderProductsComponent implements OnInit {
+export class SliderProductsComponent extends ViewComponent implements OnInit {
 
   slideOptions: any = {
     autoplay: {
@@ -42,7 +43,9 @@ export class SliderProductsComponent implements OnInit {
     slidesPerView: 'auto',
   };
 
-  constructor() { }
+  constructor(private _injector:Injector) {
+    super(_injector)
+   }
 
   ngOnInit() {
 
@@ -57,6 +60,10 @@ export class SliderProductsComponent implements OnInit {
       { image: '/assets/images/cal-2.png'},
     ];
 
+  }
+
+  goToCollaborativeBasket(){
+    this.navigation.root("/customer/collaborative-basket","back");
   }
 
 }

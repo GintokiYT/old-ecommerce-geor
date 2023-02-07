@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IonInput, IonModal } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-valid-mail',
@@ -21,7 +22,7 @@ export class ValidMailComponent extends ViewComponent implements OnInit {
   isPreventClose: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router,
-              private _injector: Injector) {
+              private _injector: Injector, private lgService: LoginService) {
                 super(_injector)
   }
 
@@ -53,6 +54,7 @@ export class ValidMailComponent extends ViewComponent implements OnInit {
     if (code) {
       if (new String(code).length === 6) {
         this.inputCode.readonly = true;
+        this.lgService.setUserLogged(true);
         this.navigation.root("customer/home","forward");
       }
     }

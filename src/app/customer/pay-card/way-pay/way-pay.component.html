@@ -4,7 +4,7 @@
   backDirection="payment-methods"
   iconLeft="icon-arrow-left"
   >
-</app-header>
+ </app-header>
 
   <div class="options">
     <div class="card">
@@ -58,9 +58,9 @@
       <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
     </ion-button> 
     <ion-button 
-      color="primary" shape="round" expand="block">
+      color="primary" shape="round" expand="block" [disabled]=oneTrue
+      (click)="establecerMetodoDePago()">
       <ion-label  class="fz-normal"> Confirmar</ion-label>
     </ion-button> 
   </ion-toolbar>
 </ion-footer>
-

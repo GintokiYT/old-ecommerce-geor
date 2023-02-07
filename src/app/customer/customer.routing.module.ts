@@ -31,6 +31,10 @@ import { SearchComponent } from '../search-general/search/search.component';
 import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
 import { CollaborativeTeamComponent } from './basket/team/collaborative-team/collaborative-team.component';
+import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
+import { AddCouponsComponent } from './add-coupons/add-coupons.component';
+import { BillingDataComponent } from './billing-data/billing-data.component';
+import { ManageUserInformationComponent } from './manage-user-information/manage-user-information.component';
 
 const routes: Routes = [
   {
@@ -69,11 +73,19 @@ const routes: Routes = [
       { path: 'way-pay', component:WayPayComponent },
       { path: 'payment-methods', component:PaymentMethodsComponent },
       { path: 'add-card', component:AddCardComponent },
+      { path: 'last-step', component:LastStepComponent },
       { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: 'catalogue', component: CatalogueComponent },
       { path: 'search', component: SearchComponent },
+
+      {path: 'add-coupons', component: AddCouponsComponent},
+      {path: 'billing-data', component: BillingDataComponent},
+      {path: 'manage-user-information', component: ManageUserInformationComponent},
+
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
+
+
 
     ]
   }

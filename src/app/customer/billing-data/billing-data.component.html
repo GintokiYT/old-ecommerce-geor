@@ -1,0 +1,54 @@
+<ion-content>
+
+  <!-- Header -->
+  <app-header 
+    title="Datos de facturación" 
+    iconLeft="icon-arrow-left" 
+    iconRight="icon-delete"
+    backDirection="confirm-order"
+    (onClickDelete)="deleteBill($event)"
+  >
+  </app-header>
+
+  <!-- Billing Data Container -->
+  <div class="billing-data_container d-flex flex-column">
+
+    <div class="d-flex align-items-center bill-container" *ngFor="let bill of bills">
+      <ion-checkbox
+        [(ngModel)] = bill.selected
+        (ngModelChange)="checkBoxChange(bill.id)"
+      >
+      </ion-checkbox>
+      <div class="d-flex flex-column bill-information">
+        <ion-label class="fz-normal ion-text-wrap">{{bill.name}}</ion-label>
+        <div class="d-flex" style="gap: 8px;">
+          <ion-label class="bill-information_code">{{bill.code}}</ion-label>
+          <ion-label class="bill-information_type fz-note" color="primary">{{bill.type}}</ion-label>
+        </div>
+        <ion-label class="bill-information_edit">Editar</ion-label>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center" style="gap: 8px;">
+      <img src="/assets/icons/icon-plus.svg" style="cursor: pointer;">
+      <ion-label color="primary" style="cursor: pointer;">Nueva compañía</ion-label>
+    </div>
+
+  </div>
+</ion-content>
+
+<!-- Footer -->
+<ion-footer class="ion-no-border ion-no-padding">
+  <ion-toolbar class="ion-no-padding">
+    <ion-button 
+      [disabled]="!oneTrue"
+      (click)="setBill()"
+      expand="full"  
+      shape="round" 
+      color="primary" 
+      style="margin: 0;"
+    >
+      Confirmar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

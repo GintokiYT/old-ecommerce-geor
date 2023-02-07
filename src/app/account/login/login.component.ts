@@ -2,6 +2,7 @@ import { AppNavigationService } from '@geor360/ecore';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouteCollection } from 'src/shared/route-collection';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ import { RouteCollection } from 'src/shared/route-collection';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
-  constructor(private navigator: AppNavigationService) {}
+  constructor(private navigator: AppNavigationService,
+              private lgService: LoginService) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.lgService.setUserLogged(true);
     this.navigator.forward("/customer/home");
   }
 }
