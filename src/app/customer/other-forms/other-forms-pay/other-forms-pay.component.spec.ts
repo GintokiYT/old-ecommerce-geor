@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { WayPayComponent } from './way-pay.component';
+import { OtherFormsPayComponent } from './other-forms-pay.component';
 
-describe('WayPayComponent', () => {
-  let component: WayPayComponent;
-  let fixture: ComponentFixture<WayPayComponent>;
+describe('OtherFormsPayComponent', () => {
+  let component: OtherFormsPayComponent;
+  let fixture: ComponentFixture<OtherFormsPayComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ WayPayComponent ],
+      declarations: [ OtherFormsPayComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(WayPayComponent);
+    fixture = TestBed.createComponent(OtherFormsPayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
