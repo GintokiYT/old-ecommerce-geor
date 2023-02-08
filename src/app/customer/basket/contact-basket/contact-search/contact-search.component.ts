@@ -1,13 +1,18 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+interface Contacts{
+  name:string,
+  phone: string
 
+ }
 @Component({
-  selector: 'app-contact-basket',
-  templateUrl: './contact-basket.component.html',
-  styleUrls: ['./contact-basket.component.scss'],
+  selector: 'app-contact-search',
+  templateUrl: './contact-search.component.html',
+  styleUrls: ['./contact-search.component.scss'],
 })
-export class ContactBasketComponent extends ViewComponent implements OnInit {
+export class ContactSearchComponent extends ViewComponent implements OnInit {
+
 
   oneTrue:boolean=true;
   constructor( _injector: Injector, private location: Location ) {
@@ -51,11 +56,9 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
   goBack(){
     this.location.back();
   }
+
   goCollaborativeBasket(){
     this.navigation.root('/customer/collaborative-basket','forward');
-  }
-  goContactSeatch(){
-    this.navigation.root('/customer/contact-search','forward');
   }
 
   checkBoxSelect(id: number) {
@@ -70,4 +73,5 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
       this.oneTrue = true;
     }
   }
+
 }

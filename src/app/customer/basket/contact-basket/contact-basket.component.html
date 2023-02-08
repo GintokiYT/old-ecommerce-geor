@@ -1,37 +1,115 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <button (click)="goBack()"
-    slot="start" class="arrow">
-      <img src="/assets/icons/icon-arrow-izquierda.svg" />
-    </button>
-    <ion-title>Lista de contactos</ion-title>
-    <button slot="end" class="arrow">
-      <img src="/assets/icons/icon-search.svg" />
-    </button>
-  </ion-toolbar>
-</ion-header>
+<ion-content >
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <button (click)="goBack()"
+      slot="start" class="arrow">
+      <svg class="icons" width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 12.2744L17 12.2744" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8.0498 18.299L1.9998 12.275L8.0498 6.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      </button>
+      <ion-title>Lista de contactos</ion-title>
+      <button (click)=" goContactSeatch()"
+       slot="end" class="arrow">
+       <svg class="icons" width="1em" height="1em" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="9.7893" cy="9.80297" r="8.46898" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.6797 16.1328L19 19.4445" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </ion-toolbar>
+  </ion-header>
 
- <ion-content>
-   <ion-radio-group >
-    <ion-item *ngFor="let item of contact" class="ion-no-padding mx-4" lines="none">
-      <ion-label>
-        <div class="d-flex flex-column gap-1">
-          <ion-label>{{item.name}}}</ion-label>
-          <ion-label class="cel fz-small">{{item.cel}}</ion-label>
-        </div>
-      </ion-label>
-      <ion-radio slot="end" color="medium" ></ion-radio>
-    </ion-item>
-  </ion-radio-group>
+  <ion-item lines="none">
+    <ion-checkbox slot="end" mode="ios"
+    [(ngModel)]="data[0].selected"
+    (ngModelChange)="checkBoxSelect(data[0].id)"  class="ion-no-margin" ></ion-checkbox>
+    <ion-label>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>Jualiano del carmen</ion-label>
+        <ion-label class="phone fz-small">+51 971 945 234</ion-label>
+      </div>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox slot="end" mode="ios"
+    [(ngModel)]="data[1].selected"
+    (ngModelChange)="checkBoxSelect(data[1].id)" class="ion-no-margin" ></ion-checkbox>
+    <ion-label>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>Anibal Cortez</ion-label>
+        <ion-label class="phone fz-small">+51 971 945 234</ion-label>
+      </div>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox slot="end" mode="ios"
+    [(ngModel)]="data[2].selected"
+    (ngModelChange)="checkBoxSelect(data[2].id)" class="ion-no-margin"></ion-checkbox>
+    <ion-label>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>Roberto Carlos de maracaná</ion-label>
+        <ion-label class="phone fz-small">+51 971 945 234</ion-label>
+      </div>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox slot="end" mode="ios"
+    [(ngModel)]="data[3].selected"
+    (ngModelChange)="checkBoxSelect(data[3].id)" class="ion-no-margin" ></ion-checkbox>
+    <ion-label>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>Anibal Cortez</ion-label>
+        <ion-label class="phone fz-small">+51 971 945 234</ion-label>
+      </div>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox slot="end" mode="ios"
+    [(ngModel)]="data[4].selected"
+    (ngModelChange)="checkBoxSelect(data[4].id)" class="ion-no-margin" ></ion-checkbox>
+    <ion-label>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>Roberto Carlos de maracaná</ion-label>
+        <ion-label class="phone fz-small">+51 971 945 234</ion-label>
+      </div>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox slot="end" mode="ios"
+    [(ngModel)]="data[5].selected"
+    (ngModelChange)="checkBoxSelect(data[5].id)" class="ion-no-margin" ></ion-checkbox>
+    <ion-label>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>Jorge Buen día</ion-label>
+        <ion-label class="phone fz-small">+51 971 945 234</ion-label>
+      </div>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox slot="end" mode="ios"
+    [(ngModel)]="data[6].selected"
+    (ngModelChange)="checkBoxSelect(data[6].id)" class="ion-no-margin" ></ion-checkbox>
+    <ion-label>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>Anibal Cortez</ion-label>
+        <ion-label class="phone fz-small">+51 971 945 234</ion-label>
+      </div>
+    </ion-label>
+  </ion-item>
 </ion-content>
-<ion-footer>
-  <div class="ion-padding">
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="ion-no-padding ">
     <ion-button
+    (click)="goCollaborativeBasket()"
+    [disabled]=oneTrue
+    (click)="checkBoxSelect"
       expand="block"
       color="primary"
       shape="round"
       type="submit"
-      >Invitar (0)</ion-button
-    >
-  </div>
+      style="margin-top: 0px; margin-bottom: 0px;">
+      Invitar (0)
+      </ion-button>
+
+</ion-toolbar>
 </ion-footer>
