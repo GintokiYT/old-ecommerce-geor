@@ -1,5 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { Camera, CameraResultType } from '@capacitor/camera';
+import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
 
 @Component({
   selector: 'app-manage-user-information',
@@ -17,6 +19,18 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
 
   onGoToConfiguration(){
     
+  }
+
+  async getOrTakePicture(){
+    
+    const image = await Camera.getPhoto({
+      // quality: 90,
+      // allowEditing: true,
+      // resultType: CameraResultType.Uri
+      quality: 90,
+      source: CameraSource.Prompt,
+      resultType: CameraResultType.Uri
+    });
   }
 
 }
