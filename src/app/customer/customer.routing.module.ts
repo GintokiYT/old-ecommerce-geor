@@ -32,6 +32,8 @@ import { LastStepComponent } from './confirm-card-pay/last-step/last-step.compon
 import { AddCouponsComponent } from './add-coupons/add-coupons.component';
 import { BillingDataComponent } from './billing-data/billing-data.component';
 import { ManageUserInformationComponent } from './manage-user-information/manage-user-information.component';
+import { OtherFormsPayComponent } from './other-forms/other-forms-pay/other-forms-pay.component';
+
 
 const routes: Routes = [
   {
@@ -66,6 +68,7 @@ const routes: Routes = [
 
       { path: 'way-pay', component:WayPayComponent },
       { path: 'payment-methods', component:PaymentMethodsComponent },
+      { path: 'other-forms-pay', component:OtherFormsPayComponent },
       { path: 'add-card', component:AddCardComponent },
       { path: 'last-step', component:LastStepComponent },
       { path: 'confirm-order', component: ConfirmOrderComponent},
