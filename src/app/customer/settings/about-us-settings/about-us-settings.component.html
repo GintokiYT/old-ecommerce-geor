@@ -1,0 +1,30 @@
+<ion-content>
+  <div class="container-app-settings">
+
+    <app-header
+      title="Acerca de"
+      backDirection="main-settings"
+      iconLeft="icon-arrow-left"
+      class="header-my-data-settings"
+    ></app-header>
+
+    <div class="container-body">
+      <div class="items">
+        <div class="item" (click)="goNextPage('/customer/settings/about-us/about')">
+          <span class="item-name">Quienes somos</span>
+        </div>
+        <div class="item" (click)="goNextPage('/customer/settings/about-us/privacy-policies')">
+          <span class="item-name">Políticas de privacidad</span>
+        </div>
+        <div class="item" (click)="goNextPage('/customer/settings/about-us/terms-conditions')">
+          <span class="item-name">Términos y condiciones</span>
+        </div>
+        <div class="item" (click)="goNextPage('/customer/settings/about-us/returns-exchanges')">
+          <span class="item-name">Cambios y devoluciones</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+

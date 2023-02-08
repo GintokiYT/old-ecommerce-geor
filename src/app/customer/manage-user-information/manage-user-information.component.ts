@@ -12,17 +12,17 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
 
   constructor(private _injector: Injector) {
       super(_injector);
-   }
+  }
 
   ngOnInit() {}
 
 
   onGoToConfiguration(){
-    
+    this.navigation.forward('customer/settings/main-settings');
   }
 
   async getOrTakePicture(){
-    
+
     const image = await Camera.getPhoto({
       // quality: 90,
       // allowEditing: true,
@@ -33,4 +33,7 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
     });
   }
 
+  goPageTeam() {
+    this.navigation.forward('customer/collaborative-team');
+  }
 }
