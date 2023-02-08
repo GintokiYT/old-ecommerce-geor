@@ -17,6 +17,7 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   @ViewChild('myBuy') myBuy: ElementRef;
   @ViewChild('myProfile') myProfile: ElementRef;
   @ViewChild('myHome') myHome: ElementRef;
+  @ViewChild('myCatalogue') myCatalogue: ElementRef;
 
   userLogged: boolean = false;
 
@@ -46,6 +47,9 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
     if(this.router.url === '/customer/empty-basket') {
       this.myBuy.nativeElement.classList.add('active')
     }
+    if(this.router.url === '/customer/catalogue') {
+      this.myCatalogue.nativeElement.classList.add('active')
+    }
     if(this.router.url === '/login' || this.router.url === '/customer/manage-user-information') {
       this.myProfile.nativeElement.classList.add('active');
     }
@@ -62,6 +66,11 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
       case 'Buy':
         this.navigation.forward('/customer/empty-basket');
         break;
+
+      case 'Catalogue':
+        this.navigation.forward('/customer/catalogue');
+        break;
+      
       case 'Profile':
         if(this.userLogged){
           this.navigation.forward("/customer/manage-user-information")
