@@ -43,6 +43,7 @@ import { ManageUserInformationComponent } from './manage-user-information/manage
 import { CollaborativeTeamComponent } from './basket/team/collaborative-team/collaborative-team.component';
 import { OtherFormsPayComponent } from './other-forms/other-forms-pay/other-forms-pay.component';
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
+import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
 const routes: Routes = [
   {
     path: '',
@@ -52,7 +53,7 @@ const routes: Routes = [
       { path: 'team', component: TeamComponent },
       { path: 'my-basket', component: MyBasketComponent },
       { path: 'empty-basket', component: EmptyBasketComponent},
-      // { path: 'contact-search', component: ContactSearchComponent},
+      { path: 'contact-search', component: ContactSearchComponent},
       { path: 'contact-basket', component: ContactBasketComponent},
       { path: 'detail', component: DetailComponent },
       { path: 'send', component: SendComponent },
