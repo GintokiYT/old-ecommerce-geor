@@ -36,6 +36,9 @@ ion-item::part(native){
             --size: 20px;
             margin-right: 12px;
         } 
+        #info{
+            filter:var(--ion-color-light-filter)
+        }
     }
 }
 
@@ -67,6 +70,7 @@ ion-modal::part(content){
         }
         ion-item{
             --inner-padding-end: 0px !important;
+            --background: var(--ion-background-modal);
             margin-bottom: 24px;
             ion-label{
                 margin:0px;
