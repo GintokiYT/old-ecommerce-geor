@@ -15,11 +15,13 @@
         <ion-item class="form-group">
           <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
           <ion-input formControlName="username"></ion-input>
+          <app-validation-messages slot="error" [control]="loginForm.get('username')"></app-validation-messages>
         </ion-item>
         <app-input-password>
           <ion-item class="form-group">
             <ion-label position="floating" class="disabled">Contraseña</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
+            <app-validation-messages slot="error" [control]="loginForm.get('password')"></app-validation-messages>
           </ion-item>
         </app-input-password>
         <div class="text-end form-group form-group__double">
