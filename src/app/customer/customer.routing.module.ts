@@ -21,6 +21,9 @@ import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
 import { SearchComponent } from '../search-general/search/search.component';
+import { SearchbarComponent } from '../search-general/searchbar/searchbar.component';
+import { FiltroComponent } from '../search-general/filtro/filtro.component';
+import { ProductsComponent } from '../search-general/products/products.component';
 
 const routes: Routes = [
   {
@@ -50,6 +53,9 @@ const routes: Routes = [
       { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: 'catalogue', component: CatalogueComponent },
       { path: 'search', component: SearchComponent },
+      {path: 'searchbar', component: SearchbarComponent},
+      {path: 'filtro', component: FiltroComponent},
+      {path: 'products', component: ProductsComponent},
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
     ]

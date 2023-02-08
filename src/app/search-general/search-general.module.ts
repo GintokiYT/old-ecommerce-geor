@@ -5,17 +5,22 @@ import { SearchComponent } from './search/search.component';
 import { IonicModule } from '@ionic/angular';
 import { CustomerRoutingModule } from '../customer/customer.routing.module';
 import { FormsModule } from '@angular/forms';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { FiltroComponent } from './filtro/filtro.component';
+import { ProductsComponent } from './products/products.component';
+import { ShareModule } from "../shared/shared.module";
 
 
 
 @NgModule({
-  declarations: [CatalogueComponent,SearchComponent],
-  imports: [
-    IonicModule,
-    CommonModule,
-    CustomerRoutingModule,
-    FormsModule,
-  ],
-  exports: [CatalogueComponent,SearchComponent]
+    declarations: [CatalogueComponent, SearchComponent, SearchbarComponent, FiltroComponent, ProductsComponent],
+    exports: [CatalogueComponent, SearchComponent],
+    imports: [
+        IonicModule,
+        CommonModule,
+        CustomerRoutingModule,
+        FormsModule,
+        ShareModule
+    ]
 })
 export class SearchGeneralModule { }
