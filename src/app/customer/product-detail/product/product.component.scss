@@ -1,0 +1,32 @@
+/* Carrucel */
+.header {
+  position: absolute;
+  width: 100%;
+  height:100%;
+}
+/* Footer */
+.footer {
+  gap: 26px;
+}
+.icons {
+  gap: 27px;
+}
+
+.information-producto {
+  gap: 24px;
+}
+.send {
+  gap: 12.46px;
+}
+.icon-peru {
+  gap: 6px;
+  color:var(--ion-color-disabled);
+}
+/* Dark */
+.arrow{
+width: 7px;
+height: 10px;
+  path{
+    stroke: var(--ion-color-arrow) !important;
+}
+}

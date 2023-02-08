@@ -1,6 +1,7 @@
 import { AppNavigationService, ViewComponent } from '@geor360/ecore';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Injector } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-restore-password',
@@ -10,7 +11,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 export class RestorePasswordComponent extends ViewComponent implements OnInit {
   form!: FormGroup;
   constructor(private navigator: AppNavigationService,
-    private _injector: Injector) {
+    private _injector: Injector, private lgService: LoginService) {
       super(_injector);
     }
 
@@ -34,6 +35,7 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   }
 
   onSubmit() {
+    this.lgService.setUserLogged(true);
     this.navigator.forward("/customer/home");
   }
 }

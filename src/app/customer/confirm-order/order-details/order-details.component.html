@@ -1,12 +1,12 @@
-<div class="dejar-pedido" [ngSwitch]="pedido.tipoPedido">
+<div class="dejar-pedido" [ngSwitch]="order.typeOrder">
 
   <!-- ENVIO A DOMICILIO -->
   <div *ngSwitchCase="'domicilio'">
       <ion-label 
           (click)="goTo('/customer/direction')" 
-          [class]= pedido.detallesEntregaADomicilio.dClass
+          [class]= order.detailsOrderToHome.dClass
       >
-          {{pedido.detallesEntregaADomicilio.direction}}
+          {{order.detailsOrderToHome.direction}}
        </ion-label>
 
       <div class="contenedor-info-pedido d-flex flex-column">
@@ -32,9 +32,9 @@
   <div *ngSwitchCase="'tienda'">
       <ion-label 
           (click)="goTo('/customer/stores')" 
-          [class]= pedido.detallesEntregaATienda.dClass 
+          [class]= order.detailsOrderToStore.dClass 
       >
-          {{pedido.detallesEntregaATienda.direction}}
+          {{order.detailsOrderToStore.direction}}
       </ion-label>
 
       <div class="contenedor-info-pedido d-flex flex-column">

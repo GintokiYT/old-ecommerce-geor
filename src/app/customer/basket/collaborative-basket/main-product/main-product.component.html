@@ -1,48 +1,82 @@
 <ion-list>
   <ion-item-sliding>
-    <ion-item lines="none">
-      <ion-label class="box-select d-flex flex-row">
-        <ion-checkbox class="checkbox" slot="start"></ion-checkbox>
-        <div class="box d-flex flex-column">
+    <ion-item class="ion-no-padding" lines="none">
+      <ion-label class="box-select d-flex flex-row" style="margin-top: 0px;margin-bottom: 0px; margin-right: 0px;">
+        <label class="custom-checkbox">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+        <div  class=" d-flex flex-column gap-3">
           <div class="box-name d-flex flex-row">
             <div>
-              <img
+              <img (click)="goProductDetail()"
                 src="/assets/collaborative-basquet/Rectangle 1600.png"
                 alt=""
               />
             </div>
-            <p class="product fz-medium">
-              <span class="unit_cost fz-small">S/9,780.00</span> <br />
-              Plancha de bicarbonato <br />
-              pulveriza zado lorem ipsum <br />
-              lorem iprsum
-            </p>
+            <div class="d-flex flex-column justify-content-between">
+                <ion-text>
+                <ion-label class="fz-small mb-1">S/9,780.00 </ion-label>
+                <ion-label class="text">
+                  Plancha de bicarbonato <br />
+                  pulveriza zado lorem ipsum
+                </ion-label>
+              </ion-text>
+              <ion-label class="fz-note text">Lo agregó <span class="name">Gerardo Ortíz</span> </ion-label>
+            </div>
           </div>
           <div class="description fz-note d-flex flex-column">
-            <p>Mostaza, 120x150 cm, 25 mm</p>
+            <ion-label class="fz-note measurement">Mostaza, 120x150 cm, 25 mm</ion-label>
             <div class="d-flex flex-row justify-content-between">
               <img
-                (click)="alert_message()"
+                id="open-modal-delete"
                 src="/assets/collaborative-basquet/Delete 02.svg"
                 alt="icono"
               />
-              <p class="fz.normal">
-                -<span class="cost fz-small">10,503</span>+
-              </p>
+              <ion-text class="d-flex " >
+                <img src="assets/icons/icon-line.svg">
+                <ion-label class="mx-3">10,503</ion-label>
+                <img src="assets/icons/icon-plus-main.svg">
+              </ion-text>
             </div>
           </div>
         </div>
       </ion-label>
     </ion-item>
-    <ion-item-options lines="none">
-      <ion-item-option class="option-background">
-        <img
-          (click)="alert_message2()"
-          class="img-delete"
+    <ion-item-options lines="none" style="align-items: start;">
+      <ion-item-option class="option-background ">
+        <img id="open-modal-delete-main"
+            class="img-delete"
           src="/assets/collaborative-basquet/Delete 02-main.svg"
           alt="icono"
         />
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
+
+<!-- Delete-product -->
+<ion-modal trigger="open-modal-delete" class="modal-alert" #modal>
+  <ng-template>
+    <div class="ion-padding d-flex flex-column px-4 py-4" style="gap: 36px;">
+      <ion-label class="d-block text-center ">¿Eliminar este producto?</ion-label>
+      <div class="d-flex justify-content-around" style="gap: 32px;">
+        <ion-label class="cancel">Cancelar</ion-label>
+        <ion-label class="delete">Eliminar</ion-label>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>
+<!-- Delete-products -->
+<ion-modal trigger="open-modal-delete-main" class="modal-alert" #modal>
+  <ng-template>
+    <div class="ion-padding d-flex flex-column px-4 py-4" style="gap: 36px;">
+      <ion-label class="d-block text-center">¿Eliminar los productos seleccionados?</ion-label>
+      <div class="d-flex justify-content-around" style="gap: 32px;">
+        <ion-label class="cancel">Cancelar</ion-label>
+        <ion-label class="delete">Eliminar</ion-label>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>
+
 </ion-list>

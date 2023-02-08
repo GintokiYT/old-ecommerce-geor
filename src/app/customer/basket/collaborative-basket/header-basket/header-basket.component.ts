@@ -1,6 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import {  ViewComponent } from '@geor360/ecore';
 import { ModalBasketComponent } from '../modal-basket/modal-basket.component';
 
 @Component({

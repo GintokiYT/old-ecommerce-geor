@@ -1,0 +1,102 @@
+.options{
+    padding-right: 52px;
+    padding-left: 24px;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 32px;
+    .card{
+        width: 141px;
+        height: 32px;
+        display: flex;
+        padding: 4px 0px;
+        text-align: center;
+        background: none;
+        border:none;
+    }
+    .other{
+        width: 141px;
+        height: 32px;
+        display: flex;
+        padding: 4px 0px;
+        justify-content: center;
+        border-radius: 4px;
+        background: var(--ion-color-secondary-shade);
+    }
+}
+ion-item::part(native){ 
+    padding: 0px;
+}
+#items{
+    padding: 32px 24px 0px 24px;
+    ion-item{
+        --inner-padding-end: 0px !important;
+        margin-bottom: 24px;
+        ion-checkbox{
+            --size: 20px;
+            margin-right: 12px;
+        } 
+        #info{
+            filter:var(--ion-color-light-filter)
+        }
+    }
+}
+
+ion-footer{
+    ion-toolbar{
+      --border-width: 0px;
+      --padding-top: 8px;
+      --padding-start: 24px;
+      --padding-end: 24px;
+      --padding-bottom: 24px
+    }
+    ion-button{
+        height: 48px;
+        margin: 0px ;
+    }
+}
+
+ion-modal::part(content){
+    background: var(--ion-background-modal);
+}
+
+
+.modals{
+    --border-radius: 10px;
+    .content-modals{
+        padding: 24px 24px 0px 24px;
+        .title{
+            margin-bottom: 30px;
+        }
+        ion-item{
+            --inner-padding-end: 0px !important;
+            --background: var(--ion-background-modal);
+            margin-bottom: 24px;
+            ion-label{
+                margin:0px;
+            }
+            .namber{
+                margin: 0px 24px 0px 0px;
+                color: var(--ion-color-primary);
+            }
+            .note{
+                margin-left: 35px;
+            }
+        }
+    }
+}
+
+#modal-cash{
+    --width: 342px;
+    --height: 242px;
+}
+
+#modal-transfer{
+    --width: 342px;
+    --height: 382px;
+}
+
+#modal-credit{
+    --width: 342px;
+    --height: 310px;
+}

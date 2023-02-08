@@ -1,0 +1,11 @@
+ion-modal::part(handle){
+  display: none;
+ }
+
+ion-modal {
+  --ion-background-color:var(--ion-background-modal) !important;
+}
+
+.basket{
+  color:#023AFF;
+}

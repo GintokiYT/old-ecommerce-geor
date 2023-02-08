@@ -1,0 +1,44 @@
+ion-modal::part(handle) {
+  display: none;
+}
+
+ion-modal {
+  --ion-background-color: var(--ion-background-modal) !important;
+}
+
+.color{
+  color:var(--ion-color-disabled);
+}
+
+.delete{
+  width:24px;
+  height:24px;
+  path {
+    fill: var(--ion-color-basic);
+  }
+}
+.box{
+  gap: 32px;
+}
+
+ion-modal {
+  &.modal-alert {
+      --height: fit-content;
+      --border-radius: 10px;
+  }
+
+  &::part(content) {
+      margin-right: 24px;
+      margin-left: 24px;
+  }
+
+  --background: var(--ion-background-alert)
+}
+
+/* Dark */
+.cancel{
+  color: var(--ion-color-basic) !important;
+}
+.delete-text{
+  color: var(--ion-color-delete) !important;
+}

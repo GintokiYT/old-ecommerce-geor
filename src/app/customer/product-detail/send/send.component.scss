@@ -1,0 +1,40 @@
+.detail{
+  color:var(--ion-color-light);
+}
+
+/* Pais */
+.color{
+color:var(--ion-color-disabled);
+}
+
+/* Direccion */
+.direction{
+ background-color:var(--ion-background-secondary);
+ padding: 10px;
+ border-radius: 4px;
+}
+
+.ubication{
+  gap: 8px;
+  border-radius: 4px;
+}
+
+.contry-name{
+color: var(--ion-color-basic);
+}
+
+.margin{
+  margin-bottom: 32px;
+}
+/*Pais*/
+.country{
+  border-bottom: 1px solid var(--ion-color-separator);
+}
+
+.icon-location{
+width: 24px;
+height: 24px;
+path{
+  stroke: var(--ion-color-basic);
+}
+}

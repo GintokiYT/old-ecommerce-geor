@@ -52,7 +52,7 @@ export class DirectionComponent extends ViewComponent implements OnInit {
   establecerDireccion() {
     const selected = this.data.filter(element => element.selected === true);
     if (selected[0]) {
-      this.cpService.setDirectionDomicilio(selected[0].direction)
+      this.cpService.setDirectionHome(selected[0].direction)
     }
     this.navigation.back("/customer/confirm-order");
   }

@@ -1,0 +1,38 @@
+ion-modal::part(handle) {
+  display: none;
+}
+
+ion-modal {
+  --ion-background-color: var(--ion-background-modal) !important;
+}
+
+.information-invite {
+  gap: 12px;
+}
+
+.invite {
+  font-weight: 700;
+}
+
+.coment{
+  color: var(--ion-color-text-secundary);
+}
+
+.box {
+  width: 147px;
+  height: 68px;
+}
+/* Dark */
+.icono{
+  width: 24px;
+  height: 24px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
+  rect{
+    stroke: var(--ion-color-basic);
+  }
+}
+

@@ -1,0 +1,59 @@
+
+button{
+  background-color: transparent;
+  }
+
+ion-toolbar{
+  --background: var(--ion-toolbar-background, var(--ion-color-step-50));
+  --min-height: 0px;
+  --padding-top: 24px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --padding-bottom: 24px
+}
+
+@media(max-width:320px){
+  ion-toolbar{
+      --padding-top: 32px;
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --padding-bottom: 24px
+}}
+
+ion-title{
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+ion-radio{
+  margin:0px !important;
+}
+ion-item{
+  --inner-padding-end: 0px !important;
+}
+ion-item::part(native) {
+  padding: 0px !important;
+}
+.phone{
+ color: var(--ion-color-disabled);
+}
+ion-checkbox{
+  --size: 20px;
+}
+ion-item{
+  margin:0px 24px 0px 24px;
+}
+
+/* Dark */
+.icons{
+  width: 24px;
+  height: 24px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
+  circle{
+    stroke: var(--ion-color-basic);
+  }
+}
+
+

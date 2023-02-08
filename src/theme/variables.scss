@@ -104,14 +104,17 @@ $btn-default: #5b6793;
   --ion-background-modal:#FFFFFF;
   --ion-background-alert: #FFFFFF;
   --ion-background-alert-border:#BDBDBD;
+  --ion-color-group:#F44336;
+  --ion-color-delete:#023AFF;
+  --ion-color-arrow:#9E9E9E;
+  --ion-color-variants:#FFFFFF;
 
-  //card
   --card-background-primary: #EEEEEE;
   --card-background-secondary: #E2E2E2;
   --card-background-tertiary: #FFFFFF;
   --card-color-text: #000000;
   --card-selected-color: #023AFF;
-  
+
   --icon-color-map: #0681FD;
   --ion-background-modal: #FCFCFC;
   --ion-color-arrow-map: #000000;
@@ -120,6 +123,12 @@ $btn-default: #5b6793;
   --ion-color-tipo-pedido : #00000061;
   --ion-color-tipo-pedido-border: #F5F5F5;
   --ion-color-tipo-pedido-filter: unset;
+  --ion-color-border-input: #EEEEEE;
+
+  --ion-color-text-button-modal: #023AFF;
+  --ion-color-text-error-button-modal: #023AFF;
+  --ion-color-separator-input: #EEEEEE;
+  --ion-color-label-disabled: #00000061;
 
 }
 
@@ -223,15 +232,17 @@ body.dark {
   --ion-background-alert-border: #5B6793;
   --ion-background-icons-delete:#5B6793;
   --ion-background-modal:#191932;
+  --ion-color-group:#023AFF;
+  --ion-color-delete:#F44336;
+  --ion-color-arrow:#5B6793;
+  --ion-color-variants:#05050F;
 
-  //card
   --card-background-primary: #5B6793;
   --card-background-secondary: #191932;
   --card-background-tertiary: #191932;
   --card-color-text: #FFFFFF;
   --card-selected-colorcard-selected-color: #3C66FB;
-  
-  /** tipo-pedido **/
+
   --icon-color-map: #C9ABA4;
   --ion-background-modal: #151724;
   --ion-color-arrow-map: #5B6793;
@@ -240,6 +251,13 @@ body.dark {
   --ion-color-tipo-pedido : #1B1F3C;
   --ion-color-tipo-pedido-border: #1B1F3C;
   --ion-color-tipo-pedido-filter: brightness(0) saturate(100%) invert(10%) sepia(48%) saturate(1066%) hue-rotate(198deg) brightness(91%) contrast(92%);
+  --ion-color-border-input: #1B1F3C;
+  
+
+  --ion-color-text-button-modal: #FFFFFF;
+  --ion-color-text-error-button-modal: #F44336;
+  --ion-color-separator-input: #1B1F3C;
+  --ion-color-label-disabled: #FFFFFF66;
 
 }
 

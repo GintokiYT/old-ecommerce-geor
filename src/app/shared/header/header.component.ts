@@ -1,6 +1,8 @@
-import { Component, Input, OnInit, Injector } from '@angular/core';
+import { Component, Input, OnInit, Injector, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Location } from '@angular/common';
 import { ViewComponent } from '@geor360/ecore';
+import { IonModal } from '@ionic/angular';
+
 
 
 @Component({
@@ -22,6 +24,12 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   @Input()
   backDirection: string = "";
 
+  @ViewChild(IonModal) modal!: IonModal;
+
+  @Output()
+  onClickDelete: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+
   icons = {
     "icon-close": "/assets/icons/icon-close.svg",
     "icon-arrow-left": "/assets/icons/icon-arrow-left.svg",
@@ -37,11 +45,15 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "payment-methods":"/customer/payment-methods",
     "login": "/login",
     "register": "/register",
-    "recover-password": "/recover-password"
+    "recover-password": "/recover-password",
+    "manage-user-information": "/customer/manage-user-information",
+    "main-settings": "/customer/settings/main-settings",
+    "about-us": "/customer/settings/about-us"
   }
 
   constructor(private location: Location, private _injector: Injector) {
     super(_injector);
+
   }
 
   ngOnInit() {
@@ -49,6 +61,20 @@ export class HeaderComponent extends ViewComponent implements OnInit {
 
   goBack() {
     this.navigation.back(this.directions[this.backDirection]);
+  }
+
+  cancelar(){
+    this.modal.dismiss();
+  }
+
+  eliminar(){
+    console.log("Hola")
+    this.modal.dismiss();
+    this.onClickDelete.emit(true);
+  }
+
+  openModal(){
+    this.modal.present();
   }
 
 }

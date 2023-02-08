@@ -1,7 +1,7 @@
 <div class="carousel__wrapper mt-4 d-flex flex-column">
   <div class="d-flex justify-content-between align-items-center">
       <ion-label><b>Estas comprando</b></ion-label>
-      <img class="a-right" src="/assets/icons/icon-arrow-right.svg" />
+      <img (click)="goToCollaborativeBasket()" class="a-right" src="/assets/icons/icon-arrow-right.svg" />
   </div>
   <ion-slides [options]="productSlidesOptions">
       <ion-slide *ngFor="let product of productsForYou">

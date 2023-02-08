@@ -38,13 +38,14 @@ interface Descripcions{
      },
 
     ]
+  ngOnInit() {}
 
-
-
-
-     ngOnInit() {}
-     eliminarProducto(){
-       this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
-       },'Cancelar','Eliminar')
-     }
+  eliminarProducto(){
+    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+  },'Cancelar','Eliminar')
    }
+
+  goProductDetail(){
+   this.navigation.root('/customer/variants-product', 'forward');
+  }
+}

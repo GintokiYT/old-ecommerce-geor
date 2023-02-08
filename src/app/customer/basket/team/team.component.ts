@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
+import { ModalResendComponent } from './modal-resend/modal-resend.component';
+import { ViewComponent } from '@geor360/ecore';
 interface Equipo{
   image:string,
   nombre:string,
@@ -13,22 +15,17 @@ interface Equipo{
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.scss'],
 })
-export class TeamComponent implements OnInit {
+export class TeamComponent extends ViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(_injector: Injector) {
+    super(_injector);
+        /* this.themeService = _injector.get(AppThemeService); */
+   }
 
   ngOnInit() {}
 
   equipos:Equipo[]=[
-    {
-      image:'assets/collaborative-basquet/Avatar.svg',
-      nombre: 'Juliano del Carmen Soriano',
-      estado:[{
-        estado:"Pendiente",
-        numero:"+51 971 945 234"
-      }],
 
-    },
     {
       image:'assets/collaborative-basquet/Avatar3.svg',
       nombre: 'Rolando Paredes Alvarado',
@@ -63,12 +60,32 @@ export class TeamComponent implements OnInit {
         estado:"Pendiente",
         numero:"+51 971 945 234"
       }],
+    }, ]
 
-    },
+    showModalInvite(){
+      this.dialog.show({
+        showBackdrop:true,
+        component: ModalResendComponent,
+        componentProps: {
+          title: "ModalResend"
+        }
+      }).then((response) => {
+        console.log(response);
+      });
+    }
+
+    showModalAccepted(){
+      this.dialog.show({
+        showBackdrop:true,
+        component: ModalResendComponent,
+        componentProps: {
+          title: "ModalAccepted"
+        }
+      }).then((response) => {
+        console.log(response);
+      });
+    }
+
+  }
 
 
-
-
-  ]
-
-}

@@ -20,17 +20,16 @@
         color: var(--ion-color-primary);
     }
 
+    .metodos-pago-vacio-img{
+        filter: var(--ion-color-primary-filter);
+    }
+
     .metodos-pago{
         cursor: pointer;
         margin-top: 24px;
 
         .metodos-pago-vacio{
             gap: 8.75px;
-            
-
-            >img{
-                filter: var(--ion-color-primary-filter);
-            }
         }
 
         >img{
@@ -82,7 +81,27 @@
             width: 8.17px;
             height: 14px;
         }
+
+        .bill{
+            gap: 10px;
+            .bill-name{
+                color: var(--ion-color-basic);
+            }
+
+            .bill-code{
+                color: var(--ion-color-text-secundary);
+            }
+
+            .bill-type{
+                padding: 2px 4px;
+                background-color: var(--ion-color-secondary);
+                border-radius: 4px;
+            }
+        }
+
     }
+
+    
 
     
 }
@@ -135,4 +154,18 @@
             margin-top: 8px;
         }
     }
+}
+
+ion-modal {
+    &.modal-alert {
+        --height: fit-content;
+        --border-radius: 10px;
+    }
+
+    &::part(content) {
+        margin-right: 24px;
+        margin-left: 24px;
+    }
+
+    --background: var(--ion-background-alert)
 }

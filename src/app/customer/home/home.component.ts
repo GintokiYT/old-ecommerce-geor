@@ -158,4 +158,8 @@ export class HomeComponent extends ViewComponent implements OnInit {
       this.logoPath = '/assets/images/logo-dark.svg';
     }
   }
+
+  goToProduct(){
+    this.navigation.root("/customer/product","forward");
+  }
 }

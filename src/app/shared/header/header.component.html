@@ -4,6 +4,7 @@
       
       <div class="header-container d-flex justify-content-between align-items-center">
         <button
+          class="button-left"
           [ngClass]="{'not-visible': iconLeft.length===0}"
           (click)="goBack()"
         >
@@ -15,11 +16,24 @@
         </div>
 
         <button
+          (click)="openModal()"
+          class="button-right"
           [ngClass]="{'not-visible': iconRight.length===0}"
-          (click)="goBack()"
         >
           <img [src] = "icons[iconRight]"/>
         </button>
+
+        <ion-modal class="modal-alert" #modal>
+          <ng-template>
+            <div class="ion-padding d-flex flex-column" style="gap: 36px;">
+              <ion-label class="text-center d-block">¿Eliminar este producto?</ion-label>
+              <div class="d-flex justify-content-around buttons" style="gap: 32px;">
+                <ion-label (click)="cancelar()">Cancelar</ion-label>
+                <ion-label (click)="eliminar()" color="primary">Eliminar</ion-label>
+              </div>
+            </div>
+          </ng-template>
+        </ion-modal>
       </div>
 
   </ion-toolbar>
