@@ -4,7 +4,7 @@
     <ion-text class="variant d-flex flex-row">
       <img src="assets/images/polo-variante.png" />
       <div class="d-flex flex-column justify-content-between">
-                <ion-label class="fz-small">
+        <ion-label class="fz-small">
           Planchas de acrílico de distinto tamañ..
         </ion-label>
         <app-slider-secondary></app-slider-secondary>
@@ -13,10 +13,10 @@
     <ion-text class="size d-flex flex-column">
       <ion-label  class="fw-normal">Tamaño (cm)</ion-label>
       <div class="d-flex flex-row">
+        <!-- <div class="quantity"><span >10</span></div> -->
         <div
           *ngFor="let value of measurement"
-          class="extent d-flex justify-content-center align-items-center"
-        >
+          class="extent d-flex justify-content-center align-items-center">
           <ion-label class="fz-note dato">{{ value.sizes }}</ion-label>
         </div>
       </div>
