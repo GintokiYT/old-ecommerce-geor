@@ -34,7 +34,7 @@ export class FooterMainComponent extends ViewComponent implements OnInit {
     if(this.router.url === '/customer/main-inbox') {
       this.myChat.nativeElement.classList.add('active')
     }
-    if(this.router.url === '/customer/collaborative-basket') {
+    if(this.router.url === '/customer/empty-basket') {
       this.myBuy.nativeElement.classList.add('active')
     }
     if(this.router.url === '/login') {
@@ -48,7 +48,7 @@ export class FooterMainComponent extends ViewComponent implements OnInit {
         this.navigation.root('/customer/main-inbox', 'forward');
         break;
       case 'Buy':
-        this.navigation.root('/customer/collaborative-basket', 'forward');
+        this.navigation.root('/customer/empty-basket', 'forward');
         break;
       case 'Profile':
         this.navigation.root('/login', 'forward');

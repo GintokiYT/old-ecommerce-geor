@@ -1,7 +1,7 @@
 import { Component, OnInit,Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { ConfirmOrderService } from '../services/confirm-order.service';
-import pedidoInterface from '../../../interfaces/pedidoInterface';
+import IOrder from '../../../interfaces/IOrder';
 
 @Component({
   selector: 'app-order-details',
@@ -11,14 +11,14 @@ import pedidoInterface from '../../../interfaces/pedidoInterface';
 export class OrderDetailsComponent extends ViewComponent implements OnInit {
 
   
-  pedido: pedidoInterface;
+  order: IOrder;
 
   constructor(_injector: Injector, public cpService: ConfirmOrderService) {
     super(_injector)
   }
 
   ngOnInit() {
-    this.cpService.currentMiPedido$.subscribe((miPedido) => this.pedido = miPedido)
+    this.cpService.currentMyOrder$.subscribe((myOrder) => this.order = myOrder)
   }
 
   goTo(p1?: string, p2?: string) {

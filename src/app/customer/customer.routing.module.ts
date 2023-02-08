@@ -28,8 +28,6 @@ import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
 import { SearchComponent } from '../search-general/search/search.component';
-import { ManageProfileInformationComponent } from './manage-profile-information/manage-profile-information.component';
-
 
 import { MainSettingsComponent } from './settings/main-settings/main-settings.component';
 import { MyDataSettingsComponent } from './settings/my-data-settings/my-data-settings.component';
@@ -39,6 +37,9 @@ import { AboutSettingsComponent } from './settings/about-settings/about-settings
 import { PrivacyPoliciesSettingsComponent } from './settings/privacy-policies-settings/privacy-policies-settings.component';
 import { TermsConditionsSettingsComponent } from './settings/terms-conditions-settings/terms-conditions-settings.component';
 import { ReturnsExchangesSettingsComponent } from './settings/returns-exchanges-settings/returns-exchanges-settings.component';
+import { AddCouponsComponent } from './add-coupons/add-coupons.component';
+import { BillingDataComponent } from './billing-data/billing-data.component';
+import { ManageUserInformationComponent } from './manage-user-information/manage-user-information.component';
 const routes: Routes = [
   {
     path: '',
@@ -48,13 +49,13 @@ const routes: Routes = [
       { path: 'team', component: TeamComponent },
       { path: 'my-basket', component: MyBasketComponent },
       { path: 'empty-basket', component: EmptyBasketComponent},
+      // { path: 'contact-search', component: ContactSearchComponent},
       { path: 'contact-basket', component: ContactBasketComponent},
       { path: 'detail', component: DetailComponent },
       { path: 'send', component: SendComponent },
       { path: 'product',component:ProductComponent},
       { path: 'variants',component:VariantsComponent},
       { path: 'picture-big',component:PictureBigComponent},
-      // { path: 'manage-profile-information', component: ManageProfileInformationComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
@@ -66,6 +67,7 @@ const routes: Routes = [
       { path: 'settings/about-us/terms-conditions', component: TermsConditionsSettingsComponent },
       { path: 'settings/about-us/returns-exchanges', component: ReturnsExchangesSettingsComponent },
       //* End routes settings
+
 
         /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -84,12 +86,20 @@ const routes: Routes = [
 
       { path: 'way-pay', component:WayPayComponent },
       { path: 'payment-methods', component:PaymentMethodsComponent },
+      // { path: 'other-forms-pay', component:OtherFormsPayComponent },
       { path: 'add-card', component:AddCardComponent },
+      // { path: 'last-step', component:LastStepComponent },
       { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: 'catalogue', component: CatalogueComponent },
       { path: 'search', component: SearchComponent },
+
+      {path: 'add-coupons', component: AddCouponsComponent},
+      {path: 'billing-data', component: BillingDataComponent},
+      {path: 'manage-user-information', component: ManageUserInformationComponent},
+
       { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
       { path: '**', redirectTo: 'main-inbox' },
+
     ]
   }
 ];

@@ -45,7 +45,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
   establecerDireccion() {
     const selected = this.data.filter(element => element.selected === true);
     if (selected[0]) {
-      this.cpService.setDirectionTienda(selected[0].direction)
+      this.cpService.setDirectionStore(selected[0].direction)
     }
     this.navigation.back("/customer/confirm-order");
   }
@@ -63,7 +63,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
     }
 
     }
-  }
+}
 
   
 

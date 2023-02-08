@@ -13,6 +13,9 @@ ion-modal {
 .delete{
   width:24px;
   height:24px;
+  path {
+    fill: var(--ion-color-basic);
+  }
 }
 .box{
   gap: 32px;
@@ -30,4 +33,12 @@ ion-modal {
   }
 
   --background: var(--ion-background-alert)
+}
+
+/* Dark */
+.cancel{
+  color: var(--ion-color-basic) !important;
+}
+.delete-text{
+  color: var(--ion-color-delete) !important;
 }

@@ -75,11 +75,11 @@ form {
     label {
       font-size: 10px;
       line-height: 12px;
-      color: rgba(255, 255, 255, 0.4);
+      color: var(--ion-color-label-disabled);
       transform: translateY(-15px);
     }
     input {
-      border-bottom: 1px solid #1B1F3C;
+      border-bottom: 1px solid var(--ion-color-separator-input);
     }
   }
 }
@@ -91,7 +91,7 @@ form {
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--ion-color-disabled);
   transition: all .3s ease;
 }
 
@@ -103,7 +103,8 @@ form {
   border: none;
   outline: none;
   background: none;
-  border-bottom: 1px solid #1B1F3C;
+  border-bottom: 1px solid var(--ion-color-separator-input);
+  color: var(--ion-color-basic);
   box-sizing: border-box;
 }
 

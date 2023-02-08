@@ -41,6 +41,10 @@ ion-content {
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  span {
+    color: var(--ion-color-basic);
+  }
 }
 
 // Remover el scroll del ion-content

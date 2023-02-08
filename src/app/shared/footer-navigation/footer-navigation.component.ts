@@ -2,6 +2,7 @@ import { Component, Injector, OnInit, ViewChild, ElementRef } from '@angular/cor
 import { ViewComponent } from '@geor360/ecore';
 
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/account/services/login.service';
 
 @Component({
   selector: 'app-footer-navigation',
@@ -17,11 +18,18 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   @ViewChild('myProfile') myProfile: ElementRef;
   @ViewChild('myHome') myHome: ElementRef;
 
-  constructor(_injector: Injector, private router: Router) {
+  userLogged: boolean = false;
+
+  constructor(_injector: Injector, private router: Router,
+              private lgService : LoginService) {
     super(_injector);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.lgService.currentUserLogged$.subscribe( (logged) => {
+      this.userLogged = logged;
+    })
+  }
 
   ngAfterViewInit() {
 
@@ -35,10 +43,10 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
     if(this.router.url === '/customer/main-inbox') {
       this.myChat.nativeElement.classList.add('active')
     }
-    if(this.router.url === '/customer/collaborative-basket') {
+    if(this.router.url === '/customer/empty-basket') {
       this.myBuy.nativeElement.classList.add('active')
     }
-    if(this.router.url === '/customer/manage-profile-information') {
+    if(this.router.url === '/login' || this.router.url === '/customer/manage-user-information') {
       this.myProfile.nativeElement.classList.add('active');
     }
     if(this.router.url === '/customer/home') {
@@ -52,10 +60,14 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
         this.navigation.forward('/customer/main-inbox');
         break;
       case 'Buy':
-        this.navigation.forward('/customer/collaborative-basket');
+        this.navigation.forward('/customer/empty-basket');
         break;
       case 'Profile':
-        this.navigation.forward('/customer/manage-profile-information');
+        if(this.userLogged){
+          this.navigation.forward("/customer/manage-user-information")
+        }else{
+          this.navigation.forward('/login');
+        }
         break;
       case 'Home':
         this.navigation.forward('/customer/home');

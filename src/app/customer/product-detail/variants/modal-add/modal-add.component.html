@@ -7,6 +7,7 @@
       [breakpoints]="[0, 0.25, 0.5, 0.75]"
     >
       <ng-template>
+
         <div class="ion-no-padding mx-4 mt-4">
           <ion-text class="text-center d-block">
             <img src="assets/icons/icon-circle-plus.svg" />
@@ -14,10 +15,13 @@
           <ion-text class="text-center d-block mt-2">
             Producto agregado
           </ion-text>
+          <div (click)="goCollaborativeBasket()">
           <ion-text class="basket text-center d-block mt-4">
             Ir a la cesta</ion-text
           >
         </div>
+        </div>
+
       </ng-template>
     </ion-modal>
   </div>
