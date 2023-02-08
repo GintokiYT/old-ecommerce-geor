@@ -28,6 +28,9 @@ import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
 import { SearchComponent } from '../search-general/search/search.component';
+import { SearchbarComponent } from '../search-general/searchbar/searchbar.component';
+import { FiltroComponent } from '../search-general/filtro/filtro.component';
+import { ProductsComponent } from '../search-general/products/products.component';
 
 import { MainSettingsComponent } from './settings/main-settings/main-settings.component';
 import { MyDataSettingsComponent } from './settings/my-data-settings/my-data-settings.component';
@@ -96,6 +99,9 @@ const routes: Routes = [
       { path: 'confirm-order', component: ConfirmOrderComponent},
       { path: 'catalogue', component: CatalogueComponent },
       { path: 'search', component: SearchComponent },
+      {path: 'searchbar', component: SearchbarComponent},
+      {path: 'filtro', component: FiltroComponent},
+      {path: 'products', component: ProductsComponent},
 
       {path: 'add-coupons', component: AddCouponsComponent},
       {path: 'billing-data', component: BillingDataComponent},
