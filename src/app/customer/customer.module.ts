@@ -16,12 +16,11 @@ import { PayCardModule } from './pay-card/pay-card.module';
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { ShareModule } from '../shared/shared.module';
 import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
-import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
+import { SettingsModule } from './settings/settings.module';
+import { AddCouponsComponent } from './add-coupons/add-coupons.component';
 import { AddCouponsModule } from './add-coupons/add-coupons.module';
 import { BillingDataModule } from './billing-data/billing-data.module';
 import { ManageUserInformationModule } from './manage-user-information/manage-user-information.module';
-import { OtherFormsModule } from './other-forms/other-forms.module';
-
 
 @NgModule({
   imports:[
@@ -40,15 +39,13 @@ import { OtherFormsModule } from './other-forms/other-forms.module';
     PayCardModule,
     IonicInputMaskModule,
     ShareModule,
-    ConfirmCardPayModule,
+    SettingsModule,
     AddCouponsModule,
     BillingDataModule,
     ManageUserInformationModule,
-    OtherFormsModule
-
   ],
   declarations: [
-    HomeComponent,
+    HomeComponent
   ],
 
 })
