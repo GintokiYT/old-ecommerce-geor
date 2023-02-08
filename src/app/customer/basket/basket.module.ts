@@ -20,6 +20,7 @@ import { ShareModule } from '../../shared/shared.module';
 import { ContactSearchComponent } from './contact-basket/contact-search/contact-search.component';
 import { FormsModule } from '@angular/forms';
 import { CollaborativeTeamComponent } from './team/collaborative-team/collaborative-team.component';
+import { ModalResendInvitationComponent } from './team/modal-resend-invitation/modal-resend-invitation.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CollaborativeTeamComponent } from './team/collaborative-team/collaborat
     ModalAcceptedComponent,
     ContactBasketComponent,
     ContactSearchComponent,
-    CollaborativeTeamComponent
+    CollaborativeTeamComponent,
+    ModalResendInvitationComponent
 
   ],
   imports: [

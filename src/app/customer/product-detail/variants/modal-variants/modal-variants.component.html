@@ -45,7 +45,6 @@
 
             <div class="d-flex mx-4 mt-2 gap-2">
               <ion-button
-                id="open-modal"
                 fill="outline"
                 class="btn ion-no-padding ion-no-margin"
                 expand="block"
@@ -55,12 +54,13 @@
               </ion-button>
               <ion-button
                 id="open-modal-add"
+                (click)="Close()"
                 class="btn ion-no-padding ion-no-margin"
                 expand="block"
                 shape="round"
                 color="primary"
               >
-                <ion-label (click)="Close()" class="add fw-normal"
+                <ion-label  id="open-modal-add" class="add fw-normal"
                   >Añadir</ion-label
                 >
               </ion-button>
@@ -68,91 +68,6 @@
           </div>
           <app-modal-basket></app-modal-basket>
           <app-modal-add></app-modal-add>
-          <!-- <ion-content>
-          <div class="mr-4">
-            <ion-list>
-              <ion-radio-group class="d-block">
-                <ion-item class="ion-no-padding" lines="none">
-                  <ion-avatar slot="start">
-                    <ion-img
-                      src="/assets/collaborative-basquet/Avatar1.svg"
-                    ></ion-img>
-                  </ion-avatar>
-                  <ion-label class="fz-normal"> Mi cesta (0) </ion-label>
-                  <ion-radio
-                    class="ion-no-margin"
-                    slot="end"
-                    color="medium"
-                    [value]=""
-                  ></ion-radio>
-                </ion-item>
-                <ion-item lines="none">
-                  <ion-avatar slot="start">
-                    <ion-img
-                      src="/assets/collaborative-basquet/Avatar1.svg"
-                    ></ion-img>
-                  </ion-avatar>
-                  <ion-label class="fz-normal">
-                    Cesta de Gerardo (9)
-                  </ion-label>
-                  <ion-radio
-                    (click)="Close()"
-                    id="open-modal-basket"
-                    class="ion-no-margin"
-                    slot="end"
-                    color="medium"
-                    [value]=""
-                  ></ion-radio>
-                </ion-item>
-                <ion-item lines="none">
-                  <ion-avatar slot="start">
-                    <ion-img
-                      src="/assets/collaborative-basquet/Avatar3.svg"
-                    ></ion-img>
-                  </ion-avatar>
-                  <ion-label class="fz-normal">
-                    Cesta de Juliano Alvares Carrió...
-                  </ion-label>
-                  <ion-radio
-                    class="ion-no-margin"
-                    slot="end"
-                    color="medium"
-                    [value]=""
-                  ></ion-radio>
-                </ion-item>
-              </ion-radio-group>
-            </ion-list>
-          </div>
-          <div class="d-flex mx-4 mt-2 gap-2">
-            <ion-button
-              id="open-modal"
-              fill="outline"
-              class="btn ion-no-padding ion-no-margin"
-              expand="block"
-              shape="round"
-            >
-              <ion-label class="cancel fw-normal">Cancelar</ion-label>
-            </ion-button>
-            <ion-button
-<<<<<<< HEAD
-              id="open-modal-add"
-=======
-              color="primary"
->>>>>>> 23b1c8cecc6cb6c7e15c24f3fd4651ad2307f974
-              class="btn ion-no-padding ion-no-margin"
-              expand="block"
-              shape="round"
-              color="primary"
-            >
-              <ion-label (click)="Close()" class="add fw-normal"
-                >Añadir</ion-label
-              >
-            </ion-button>
-          </div>
-          <app-modal-basket></app-modal-basket>
-          <app-modal-add></app-modal-add>
-        </ion-content>
-        -->
         </ion-content>
       </ng-template>
     </ion-modal>
