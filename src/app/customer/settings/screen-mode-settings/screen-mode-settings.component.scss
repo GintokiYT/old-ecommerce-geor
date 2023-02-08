@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ion-content {
+  position: relative;
+}
+
+.container-app-settings {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--ion-background-color);
+}
+
+.header-screen-mode-settings {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.container-body {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  padding: 96px 16px 24px 16px;
+
+  @media (min-width: 390px) {
+    padding: 96px 24px 24px 24px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--ion-color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+  }
+
+  &.active {
+
+    .icon {
+      border: 1px solid #023AFF;
+      background-color: #023AFF;
+
+      svg path {
+        stroke: #FFFFFF;
+      }
+    }
+  }
+}
+
+// Remover el scroll del ion-content
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto! important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
