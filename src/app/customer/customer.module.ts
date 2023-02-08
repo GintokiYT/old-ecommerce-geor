@@ -45,7 +45,8 @@ import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module
     BillingDataModule,
     ManageUserInformationModule,
     OtherFormsModule,
-    ConfirmCardPayModule
+    ConfirmCardPayModule,
+    CestaModule
   ],
   declarations: [
     HomeComponent
