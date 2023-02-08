@@ -20,4 +20,8 @@ ngOnInit() {
     this.navigation.back(path)
     console.log('ff')
   }
+
+  goToSearchBar(){
+    this.navigation.forward("/customer/searchbar");
+  }
 }

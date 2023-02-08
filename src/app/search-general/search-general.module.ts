@@ -14,7 +14,7 @@ import { ShareModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [CatalogueComponent, SearchComponent, SearchbarComponent, FiltroComponent, ProductsComponent],
-    exports: [CatalogueComponent, SearchComponent],
+    exports: [CatalogueComponent, SearchComponent, SearchbarComponent, FiltroComponent, ProductsComponent],
     imports: [
         IonicModule,
         CommonModule,
