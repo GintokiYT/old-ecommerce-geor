@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import IProduct from 'src/app/interfaces/IProduct';
+import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-empty-basket',
   templateUrl: './empty-basket.component.html',
   styleUrls: ['./empty-basket.component.scss'],
 })
-export class EmptyBasketComponent implements OnInit {
+export class EmptyBasketComponent extends ViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(_injector:Injector) {
+    super(_injector);
+  }
 
   ngOnInit() {}
   productsFeatured: IProduct[] = [
@@ -110,4 +113,7 @@ export class EmptyBasketComponent implements OnInit {
       hasFreeDelivery: false,
     },
   ];
+  goToProduct(){
+    this.navigation.root("/customer/product","forward");
+  }
 }

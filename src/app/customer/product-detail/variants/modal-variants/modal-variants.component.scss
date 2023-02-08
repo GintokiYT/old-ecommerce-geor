@@ -3,27 +3,6 @@
   display: none;
  }
 
-ion-avatar.hydrated {
-  margin-top: 0px;
-  margin: 4px;
-}
-
-ion-content{
-  --padding-top: 24px;
-}
-
-ion-item{
-  padding-left: 4px !important;
-  padding-bottom: 24px !important;
-}
-ion-label{
-  margin-left: 8px !important;
-  color: var(--ion-color-basic) !important;
-
-}
-ion-list{
-  background-color: var(--ion-background-modal)!important;
-}
 ion-modal {
   --ion-background-color:var(--ion-background-modal) !important;
 }

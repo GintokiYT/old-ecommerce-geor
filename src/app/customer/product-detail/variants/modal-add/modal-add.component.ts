@@ -17,7 +17,6 @@ export class ModalAddComponent extends ViewComponent implements OnInit {
 
     goCollaborativeBasket(){
       this.navigation.root('customer/collaborative-basket', 'forward');
-      
     }
 
 }

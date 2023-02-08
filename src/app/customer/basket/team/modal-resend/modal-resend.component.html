@@ -23,7 +23,7 @@
                 ></ion-img>
                 Pendiente
               </ion-text>
-              <ion-label class="resend"> Reenviar invitación</ion-label>
+              <ion-label (click)="Close()" id="open-modal-resend-invitation" class="resend"> Reenviar invitación</ion-label>
             </div>
             <ion-label class="color">23 dic 2022</ion-label>
             <ion-label class="color">+51 971 945 234</ion-label>
@@ -50,7 +50,9 @@
           </div>
         </ng-template>
       </ion-modal>
+      <app-modal-resend-invitation></app-modal-resend-invitation>
       </ng-template>
     </ion-modal>
   </div>
 </ion-content>
+

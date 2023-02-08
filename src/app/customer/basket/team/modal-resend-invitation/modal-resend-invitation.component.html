@@ -2,7 +2,7 @@
   <div class="modal-cesta">
     <ion-modal
       #modal
-      trigger="open-modal-invite"
+      trigger="open-modal-resend-invitation"
       [initialBreakpoint]="0.27"
       [breakpoints]="[0, 0.25, 0.5, 0.75]"
     >
@@ -10,12 +10,11 @@
         <div class="ion-no-padding mx-4 mt-4">
           <div class="d-flex flex-column information-invite">
             <ion-text class="text-center d-block">
-              <ion-label class="invite">Invitar</ion-label>
+              <ion-label class="invite">Reenviar invitación</ion-label>
             </ion-text>
             <ion-text class="text-center d-block">
               <ion-label class="coment">
-                Agrega a tus amigos a colaborar contigo y has que tus compras
-                sean mas divertidas
+                Talvez no vió tu invitación vuelve a invitarlo
               </ion-label>
             </ion-text>
           </div>
@@ -31,7 +30,7 @@
               <ion-label> Copiar Link </ion-label>
             </ion-text>
 
-            <ion-text (click)="goContact()"class="box text-center d-flex flex-column">
+            <ion-text (click)="goContact()" class="box text-center d-flex flex-column">
               <div class="d-flex justify-content-center">
                 <svg  class="icono" width="1em" height="em" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.0026 14.7881C10.5742 14.7881 8.5 15.171 8.5 16.7024C8.5 18.2344 10.5613 18.6308 13.0026 18.6308C15.431 18.6308 17.5052 18.2485 17.5052 16.7165C17.5052 15.1845 15.4445 14.7881 13.0026 14.7881" stroke="black" stroke-width="1.5"/>

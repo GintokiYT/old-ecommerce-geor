@@ -13,11 +13,15 @@
 .extent{
   width: 63px;
   height: 31px;
-  background-color: #F5F5F5;
+  background-color: var(--ion-color-separator);
   border-radius: 4px;
   margin-right: 28px;
 }
-
+.extent:hover{
+  background-color: var(--ion-color-variants);
+  color: #023AFF;
+  border: 1px solid #023AFF;
+}
 /* Espesor (mm) */
 .size-thicknes{
   gap:10px;
@@ -27,7 +31,7 @@
 .extent-thicknes{
   width: 40px;
   height: 31px;
-  background-color: #F5F5F5;
+  background-color: var(--ion-color-separator);
   border-radius: 4px;
   margin-right: 24px;
 }
@@ -40,6 +44,9 @@
 .dato{
   color:#00000099;
 }
+.dato:hover{
+  color: #023AFF;;
+}
 
 /* Button */
 ion-button{
@@ -50,3 +57,10 @@ ion-button{
   width: 100%;
 }
 
+.quantity{
+  width: 50px;
+  position: absolute;
+  left: 67px;
+  top: 200px;
+  background-color: blue;
+}
