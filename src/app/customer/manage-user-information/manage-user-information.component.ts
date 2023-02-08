@@ -33,4 +33,7 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
     });
   }
 
+  goPageTeam() {
+    this.navigation.forward('customer/collaborative-team');
+  }
 }
