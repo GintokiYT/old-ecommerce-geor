@@ -7,17 +7,17 @@ import { ViewComponent } from '@geor360/ecore';
   styleUrls: ['./searchbar.component.scss'],
 })
 export class SearchbarComponent extends ViewComponent implements OnInit {
-  constructor(private injector:Injector){
+  constructor(private injector: Injector) {
     super(injector)
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  
-  goTo(path: string){
+
+  goTo(path: string) {
     this.navigation.forward(path)
     console.log('ff')
   }
-  }
+}
 
 
