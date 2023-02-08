@@ -15,7 +15,7 @@ export class ManageProfileInformationComponent extends ViewComponent implements 
   ngOnInit() {}
 
   redirectAppSettings() {
-    this.navigation.root('/customer/app-settings', 'forward');
+    this.navigation.root('/customer/settings/main-settings', 'forward');
     localStorage.setItem('back', '/customer/manage-profile-information');
   }
 }

@@ -29,8 +29,16 @@ import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
 import { SearchComponent } from '../search-general/search/search.component';
 import { ManageProfileInformationComponent } from './manage-profile-information/manage-profile-information.component';
-import { AppSettingsComponent } from './app-settings/app-settings.component';
 
+
+import { MainSettingsComponent } from './settings/main-settings/main-settings.component';
+import { MyDataSettingsComponent } from './settings/my-data-settings/my-data-settings.component';
+import { PasswordSettingsComponent } from './settings/password-settings/password-settings.component';
+import { AboutUsSettingsComponent } from './settings/about-us-settings/about-us-settings.component';
+import { AboutSettingsComponent } from './settings/about-settings/about-settings.component';
+import { PrivacyPoliciesSettingsComponent } from './settings/privacy-policies-settings/privacy-policies-settings.component';
+import { TermsConditionsSettingsComponent } from './settings/terms-conditions-settings/terms-conditions-settings.component';
+import { ReturnsExchangesSettingsComponent } from './settings/returns-exchanges-settings/returns-exchanges-settings.component';
 const routes: Routes = [
   {
     path: '',
@@ -46,8 +54,18 @@ const routes: Routes = [
       { path: 'product',component:ProductComponent},
       { path: 'variants',component:VariantsComponent},
       { path: 'picture-big',component:PictureBigComponent},
-      { path: 'manage-profile-information', component: ManageProfileInformationComponent },
-      { path: 'app-settings', component: AppSettingsComponent },
+      // { path: 'manage-profile-information', component: ManageProfileInformationComponent },
+
+      //* routes settings
+      { path: 'settings/main-settings', component: MainSettingsComponent },
+      { path: 'settings/my-data-settings', component: MyDataSettingsComponent },
+      { path: 'settings/password-settings', component: PasswordSettingsComponent },
+      { path: 'settings/about-us', component: AboutUsSettingsComponent },
+      { path: 'settings/about-us/about', component: AboutSettingsComponent },
+      { path: 'settings/about-us/privacy-policies', component: PrivacyPoliciesSettingsComponent },
+      { path: 'settings/about-us/terms-conditions', component: TermsConditionsSettingsComponent },
+      { path: 'settings/about-us/returns-exchanges', component: ReturnsExchangesSettingsComponent },
+      //* End routes settings
 
         /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },

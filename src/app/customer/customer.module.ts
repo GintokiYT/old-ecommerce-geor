@@ -17,7 +17,7 @@ import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { ShareModule } from '../shared/shared.module';
 import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
 import { ManageProfileInformationComponent } from './manage-profile-information/manage-profile-information.component';
-import { AppSettingsComponent } from './app-settings/app-settings.component';
+import { SettingsModule } from './settings/settings.module';
 
 @NgModule({
   imports:[
@@ -36,11 +36,11 @@ import { AppSettingsComponent } from './app-settings/app-settings.component';
     PayCardModule,
     IonicInputMaskModule,
     ShareModule,
+    SettingsModule
   ],
   declarations: [
     HomeComponent,
     ManageProfileInformationComponent,
-    AppSettingsComponent
   ],
 
 })

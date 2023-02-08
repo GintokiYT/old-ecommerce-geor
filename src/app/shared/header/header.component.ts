@@ -37,7 +37,10 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "payment-methods":"/customer/payment-methods",
     "login": "/login",
     "register": "/register",
-    "recover-password": "/recover-password"
+    "recover-password": "/recover-password",
+    "manage-profile-information": "/customer/manage-profile-information",
+    "main-settings": "/customer/settings/main-settings",
+    "about-us": "/customer/settings/about-us"
   }
 
   constructor(private location: Location, private _injector: Injector) {
