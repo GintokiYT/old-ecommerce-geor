@@ -14,6 +14,7 @@ import { PrivacyPoliciesSettingsComponent } from './privacy-policies-settings/pr
 import { TermsConditionsSettingsComponent } from './terms-conditions-settings/terms-conditions-settings.component';
 import { ReturnsExchangesSettingsComponent } from './returns-exchanges-settings/returns-exchanges-settings.component';
 import { ScreenModeSettingsComponent } from './screen-mode-settings/screen-mode-settings.component';
+import { LanguageSettingsComponent } from './language-settings/language-settings.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { ScreenModeSettingsComponent } from './screen-mode-settings/screen-mode-
     PrivacyPoliciesSettingsComponent,
     TermsConditionsSettingsComponent,
     ReturnsExchangesSettingsComponent,
-    ScreenModeSettingsComponent
+    ScreenModeSettingsComponent,
+    LanguageSettingsComponent
   ],
   exports:[
     MainSettingsComponent,
@@ -44,7 +46,8 @@ import { ScreenModeSettingsComponent } from './screen-mode-settings/screen-mode-
     PrivacyPoliciesSettingsComponent,
     TermsConditionsSettingsComponent,
     ReturnsExchangesSettingsComponent,
-    ScreenModeSettingsComponent
+    ScreenModeSettingsComponent,
+    LanguageSettingsComponent
   ]
 })
 export class SettingsModule {}
