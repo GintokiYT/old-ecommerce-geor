@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Requerimos el acceso para compartir productos</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Requerimos el acceso para brindarte productos a tu alcance</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Requerimos el acceso para mejorar las búsqueda a tu alcance</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Requerimos el acceso para compartir información con sus contactos</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Requerimos el acceso para agregar notificaciones de sus compras</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Requerimos el acceso para acceder a tus imágenes</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -11,6 +21,8 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Utilizamos el GPS para ayudar a localizar productos a tu alcance</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Utilizamos el GPS para ayudar a localizar productos a tu alcance</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Utilizamos el GPS para ayudar a localizar productos a tu alcance</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>es</string>
