@@ -19,6 +19,13 @@ export class LoadingAppComponent extends ViewComponent implements OnInit {
     setTimeout(() => {
       this.navigation.root('/account/welcome/select-country', 'forward');
     }, 1000);
+
+    const colorStatusBar = localStorage.getItem('mode') === 'dark'? '#05050F' : '#023AFF'
+
+    const metaTag = document.createElement("meta");
+    metaTag.name = "theme-color";
+    metaTag.content = colorStatusBar;
+    document.getElementsByTagName("head")[0].appendChild(metaTag);
   }
 
 }
