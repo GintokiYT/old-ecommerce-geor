@@ -2,10 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Requerimos el acceso para acceder a tus imágenes</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Requerimos el acceso para acceder a tus imágenes</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Requerimos el acceso para acceder a tus imágenes</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Utilizamos el GPS para ayudar a localizar productos a tu alcance</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Utilizamos el GPS para ayudar a localizar productos a tu alcance</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>es</string>
 	<key>CFBundleDisplayName</key>
-	<string>app</string>
+	<string>Tienda</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
