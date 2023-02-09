@@ -55,7 +55,7 @@ export class ValidMailComponent extends ViewComponent implements OnInit {
       if (new String(code).length === 6) {
         this.inputCode.readonly = true;
         this.lgService.setUserLogged(true);
-        this.navigation.root("customer/home","forward");
+        this.navigation.root("customer/manage-user-information","forward");
       }
     }
   }
