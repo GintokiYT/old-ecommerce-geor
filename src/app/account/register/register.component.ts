@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { IonModal} from '@ionic/angular';
+import { IonModal } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 
 @Component({
@@ -16,8 +16,15 @@ export class RegisterComponent implements OnInit {
   @ViewChild(IonModal) modal!: IonModal;
   @ViewChild("inputPhone") inputPhone;
   @ViewChild("contentInputPhone") contentInputPhone;
-
   inputPhoneValue: string;
+
+  showTextHelperName = false;
+  showTextHelperPhone = false;
+  showTextHelperEmail = false;
+  showTextHelperPassword = false;
+
+  //minimo 8 caracteres sean letras, numeros o caracteres especiales
+  passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
 
   constructor(private router: Router) { }
 
@@ -38,7 +45,7 @@ export class RegisterComponent implements OnInit {
       ]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(6),
+        Validators.pattern(this.passwordPattern),
       ]),
     });
   }
@@ -62,18 +69,38 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  checkFocus() {
-    if (this.inputPhoneValue) {
-      const inputValue = this.inputPhoneValue?.trim();
-      if (inputValue.length > 0) {
-        this.contentInputPhone.nativeElement.classList.add("have-elements")
+  checkFocus(input: string) {
+    switch (input) {
+      case "name": this.showTextHelperName = true; break;
+      case "phone": this.showTextHelperPhone = true; break;
+      case "email": this.showTextHelperEmail = true; break;
+      case "password": this.showTextHelperPassword = true; break;
+    }
+  }
+
+
+  checkBlur(input: string, phone: boolean) {
+
+    switch (input) {
+      case "name": this.showTextHelperName = false; break;
+      case "phone": this.showTextHelperPhone = false; break;
+      case "email": this.showTextHelperEmail = false; break;
+      case "password": this.showTextHelperPassword = false; break;
+    }
+
+    if(phone){
+      if (this.inputPhoneValue) {
+        const inputValue = this.inputPhoneValue?.trim();
+        if (inputValue.length > 0) {
+          this.contentInputPhone.nativeElement.classList.add("have-elements")
+        } else {
+          this.contentInputPhone.nativeElement.classList.remove("have-elements")
+        }
       } else {
         this.contentInputPhone.nativeElement.classList.remove("have-elements")
       }
-    }else{
-      this.contentInputPhone.nativeElement.classList.remove("have-elements")
     }
-
+    
   }
 
 }

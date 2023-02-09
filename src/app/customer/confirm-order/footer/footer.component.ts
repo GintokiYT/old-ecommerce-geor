@@ -18,4 +18,8 @@ export class FooterComponent extends ViewComponent implements OnInit {
     this.navigation.root("customer/main-inbox","back");
   }
 
+  goToLastStep(){
+    this.navigation.root("customer/last-step","forward");
+  }
+
 }
