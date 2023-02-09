@@ -37,59 +37,68 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const dark = darkModeMediaQuery.matches;
+
+    if(dark) {
+      localStorage.setItem('themeDefault', 'dark');
+    } else {
+      localStorage.setItem('themeDefault', 'dark');
+    }
+  }
 
   onBack() {
     this.navigation.root('/customer/settings/main-settings', 'back')
   }
 
   toggleTheme(theme: string) {
-    this.myItem.forEach(item => {
-      item.nativeElement.addEventListener('click', () => {
-        this.myItem.forEach(item => item.nativeElement.classList.remove('active'));
-        item.nativeElement.classList.add('active');
-      })
-    })
+    const position: number = theme === 'Autómático' ? 0 : theme === 'Claro' ? 1 : 2;
+    const items = document.querySelectorAll('.item-theme');
 
-    localStorage.setItem('themeApp', theme);
+    items.forEach(item => item.classList.remove('active'));
+    items[position].classList.add('active')
 
-    const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const dark = darkModeMediaQuery.matches;
-    const body = document.querySelector('body');
+    const themeDefault = localStorage.getItem('themeDefault');
+    const body: HTMLBodyElement = document.querySelector('body');
 
-    if(theme === 'Autómático') {
-      if(dark) {
-        body.classList.remove('light');
-        body.classList.add('dark');
-        localStorage.setItem('mode', 'dark');
-        this.changeThemeStatusBar();
-      } else {
-        body.classList.remove('dark');
-        body.classList.add('light');
-        localStorage.setItem('mode', 'light');
-        this.changeThemeStatusBar();
-      }
-      localStorage.setItem('themeApp', 'Autómático');
-      this.appService.setThemeApp('Autómático');
-    } else if(theme === 'Claro') {
-      body.classList.remove('dark');
-      body.classList.add('light');
-      localStorage.setItem('mode', 'light');
-      this.changeThemeStatusBar();
-      localStorage.setItem('themeApp', 'Claro');
-      this.appService.setThemeApp('Claro');
-    } else {
-      body.classList.remove('light');
-      body.classList.add('dark');
-      localStorage.setItem('mode', 'dark');
-      this.changeThemeStatusBar();
-      localStorage.setItem('themeApp', 'Oscuro');
-      this.appService.setThemeApp('Oscuro');
+    switch(theme) {
+      case 'Autómático':
+        if(themeDefault === 'dark') {
+          this.changeThemeDark(body);
+        } else {
+          this.changeThemeLight(body);
+        }
+        localStorage.setItem('themeApp', 'Autómático');
+      break;
+      case 'Claro':
+        this.changeThemeLight(body);
+      break;
+      case 'Oscuro':
+        this.changeThemeDark(body);
+      break;
     }
+
+    this.appService.setThemeApp(theme);
+    this.changeThemeStatusBar();
   }
 
   changeThemeStatusBar() {
-    const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+    const color: string = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
     StatusBar.setBackgroundColor({ color });
+  }
+
+  changeThemeLight(body: HTMLBodyElement) {
+    body.classList.remove('dark');
+    body.classList.add('light');
+    localStorage.setItem('mode', 'light');
+    localStorage.setItem('themeApp', 'Claro');
+  }
+
+  changeThemeDark(body: HTMLBodyElement) {
+    body.classList.remove('light');
+    body.classList.add('dark');
+    localStorage.setItem('mode', 'dark');
+    localStorage.setItem('themeApp', 'Oscuro');
   }
 }

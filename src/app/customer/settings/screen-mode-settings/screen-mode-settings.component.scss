@@ -44,9 +44,10 @@ ion-content {
   gap: 24px;
 }
 
-.item {
+.item-theme {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   .icon {
     width: 20px;
