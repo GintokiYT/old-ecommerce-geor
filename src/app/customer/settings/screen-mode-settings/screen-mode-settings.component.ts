@@ -46,6 +46,13 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     } else {
       localStorage.setItem('themeDefault', 'dark');
     }
+
+    const colorStatusBar = localStorage.getItem('mode') === 'dark'? '#05050F' : '#023AFF'
+
+    const metaTag = document.createElement("meta");
+    metaTag.name = "theme-color";
+    metaTag.content = colorStatusBar;
+    document.getElementsByTagName("head")[0].appendChild(metaTag);
   }
 
   onBack() {
@@ -66,16 +73,22 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
       case 'Autómático':
         if(themeDefault === 'dark') {
           this.changeThemeDark(body);
+          this.changeStatusBarWeb('dark');
+          localStorage.setItem('mode', 'dark');
         } else {
           this.changeThemeLight(body);
+          this.changeStatusBarWeb('light');
+          localStorage.setItem('mode', 'light');
         }
         localStorage.setItem('themeApp', 'Autómático');
       break;
       case 'Claro':
         this.changeThemeLight(body);
+        this.changeStatusBarWeb('light');
       break;
       case 'Oscuro':
         this.changeThemeDark(body);
+        this.changeStatusBarWeb('dark');
       break;
     }
 
@@ -100,5 +113,22 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     body.classList.add('dark');
     localStorage.setItem('mode', 'dark');
     localStorage.setItem('themeApp', 'Oscuro');
+  }
+
+  changeStatusBarWeb(theme: string) {
+    const colorStatusBar = theme === 'dark'? '#05050F' : '#023AFF'
+
+    const metaTags = document.getElementsByTagName("meta");
+    let metaTheme;
+    for (var i = 0; i < metaTags.length; i++) {
+      if (metaTags[i].name === "theme-color") {
+        metaTheme = metaTags[i];
+        break;
+      }
+    }
+    metaTheme.content = colorStatusBar;
+
+    console.log(metaTheme)
+    location.reload();
   }
 }

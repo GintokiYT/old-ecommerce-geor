@@ -48,6 +48,7 @@ import { OtherFormsPayComponent } from './other-forms/other-forms-pay/other-form
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
 import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
+import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
 const routes: Routes = [
   {
     path: '',
@@ -75,6 +76,7 @@ const routes: Routes = [
       { path: 'settings/about-us/terms-conditions', component: TermsConditionsSettingsComponent },
       { path: 'settings/about-us/returns-exchanges', component: ReturnsExchangesSettingsComponent },
       { path: 'settings/screen-mode', component: ScreenModeSettingsComponent },
+      { path: 'settings/language', component: LanguageSettingsComponent },
       //* End routes settings
 
 
