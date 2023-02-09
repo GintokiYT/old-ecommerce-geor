@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-language-settings',
@@ -22,7 +23,7 @@ export class LanguageSettingsComponent implements OnInit {
     case 'es_ES':
       LanguageSpanish.classList.add('active');
     break;
-    case 'es_EN':
+    case 'es_US':
       LanguageEnglish.classList.add('active');
     break;
     case 'es_PT':
@@ -31,7 +32,7 @@ export class LanguageSettingsComponent implements OnInit {
    }
   }
 
-  constructor() { }
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit() {}
 
@@ -43,13 +44,22 @@ export class LanguageSettingsComponent implements OnInit {
     switch(language) {
       case 'es_ES':
         currentLanguage.classList.add('active');
+        localStorage.setItem('language', language);
       break;
       case 'es_US':
         currentLanguage.classList.add('active');
+        localStorage.setItem('language', language);
       break;
       case 'es_PT':
         currentLanguage.classList.add('active');
+        localStorage.setItem('language', language);
       break;
     }
+
+    const serviceLanguage = language === 'es_ES' ? 'Español' : language === 'es_US'? 'Inglés' : language === 'es_PT' ? 'Portugués' : 'Español';
+
+    console.log(serviceLanguage)
+
+    this.settingsService.setLanguageApp(serviceLanguage);
   }
 }

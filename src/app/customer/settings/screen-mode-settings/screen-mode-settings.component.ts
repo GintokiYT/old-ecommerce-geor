@@ -1,7 +1,8 @@
 import { Component, Injector, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { StatusBar } from '@capacitor/status-bar';
 import { ViewComponent } from '@geor360/ecore';
-import { LoginService } from 'src/app/account/services/login.service';
+// import { LoginService } from 'src/app/account/services/login.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-screen-mode-settings',
@@ -12,7 +13,7 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
 
   @ViewChildren('myItem') myItem: QueryList<ElementRef>;
 
-  constructor(_injector: Injector, private appService: LoginService) {
+  constructor(_injector: Injector, private settingsService: SettingsService) {
     super(_injector)
   }
 
@@ -92,7 +93,7 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
       break;
     }
 
-    this.appService.setThemeApp(theme);
+    this.settingsService.setThemeApp(theme);
     this.changeThemeStatusBar();
   }
 
@@ -129,6 +130,6 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     metaTheme.content = colorStatusBar;
 
     console.log(metaTheme)
-    location.reload();
+    // location.reload();
   }
 }
