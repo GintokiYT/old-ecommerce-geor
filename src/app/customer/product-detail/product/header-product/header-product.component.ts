@@ -17,5 +17,9 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
   goToHome(){
     this.navigation.root("/customer/home","back");
   }
+  goMyBasket(){
+    this.navigation.root("/customer/my-basket","forward");
+  }
+
 
 }
