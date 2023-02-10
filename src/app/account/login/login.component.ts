@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 
   onToRegister() {
     this.navigator.forward(RouteCollection.auth.register);
+    this.navigator.root("/register","forward")
   }
 
   onToForgotPassword() {
@@ -64,10 +65,7 @@ export class LoginComponent implements OnInit {
       case "password":
         this.showTextHelperPassword = false; break;
     }
-  }
+  }  
 
 
-  
-
-  
 }

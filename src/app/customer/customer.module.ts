@@ -23,6 +23,7 @@ import { ManageUserInformationModule } from './manage-user-information/manage-us
 import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 
+
 @NgModule({
   imports:[
     CommonModule,
@@ -46,7 +47,7 @@ import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module
     ManageUserInformationModule,
     OtherFormsModule,
     ConfirmCardPayModule,
-    CestaModule
+    CestaModule,
   ],
   declarations: [
     HomeComponent
