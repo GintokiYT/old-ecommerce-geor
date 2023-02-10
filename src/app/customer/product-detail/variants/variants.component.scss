@@ -6,17 +6,16 @@
 
 /* Tamaño (cm) */
 .size{
-  gap:10px;
+  gap:18px;
   margin-bottom: 32px;
 }
 
-.extent{
-  width: 63px;
-  height: 31px;
-  background-color: var(--ion-color-separator);
+.extent-cm{
+  padding: 8px;
+  background-color: #F5F5F5;
   border-radius: 4px;
-  margin-right: 28px;
 }
+
 .extent:hover{
   background-color: var(--ion-color-variants);
   color: #023AFF;
@@ -27,18 +26,21 @@
   gap:10px;
   margin-bottom: 32px;
 }
-
-.extent-thicknes{
+.extent-mm{
   width: 40px;
   height: 31px;
-  background-color: var(--ion-color-separator);
+  padding: 8px;
+  background-color: #F5F5F5;
   border-radius: 4px;
-  margin-right: 24px;
+  align-items: center;
 }
+
+
 
 /* Footer */
 .footer{
   margin-top: 12px;
+  border-top: 1px solid var( --ion-color-border-footer);
 }
 
 .dato{
@@ -56,11 +58,13 @@ ion-button{
 .btn{
   width: 100%;
 }
-
-.quantity{
-  width: 50px;
-  position: absolute;
-  left: 67px;
-  top: 200px;
-  background-color: blue;
+.amount{
+  padding: 2px 4px;
+  background-color: var(--ion-color-primary);
+  color: white;
+  border-radius: 10px;
+}
+sup{
+  top:-1.5em !important;
+  margin-left: 4px;
 }

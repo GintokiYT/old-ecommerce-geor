@@ -18,11 +18,11 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
 
 
   onGoToConfiguration(){
-    
+
   }
 
   async getOrTakePicture(){
-    
+
     const image = await Camera.getPhoto({
       // quality: 90,
       // allowEditing: true,
@@ -31,6 +31,10 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
       source: CameraSource.Prompt,
       resultType: CameraResultType.Uri
     });
+  }
+  goTeamCollaborative(){
+   this.navigation.root('/customer/collaborative-team','forward');
+
   }
 
 }

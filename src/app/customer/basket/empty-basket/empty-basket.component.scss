@@ -9,3 +9,12 @@
 .container-productos-destacados{
   margin-top: 94px;
 }
+
+.header-mybasket{
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+}
