@@ -45,17 +45,14 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
         ]),
         password_confirmation: new FormControl('', [
           Validators.required,
-          // Validators.minLength(6),
-          // Validators.maxLength(50),
         ],PasswordValidator.createValidatorConfirm(this.restoreService)),
       }
-
-
     );
   }
 
   changeInputValue(){
     this.restoreService.setInputPasswordValue(this.inputPasswordValue);
+    //to comunicate the other input the change of the current input
     const auxInput = this.inputPasswordConfirmValue;
     setTimeout(() => {
       this.inputPasswordConfirmValue = "";
@@ -70,10 +67,18 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   }
 
   onGoToLogin() {
+    this.inputPasswordValue = "";
+    this.inputPasswordConfirmValue = "";
+    this.restoreService.setInputPasswordValue(this.inputPasswordValue);
+    this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
     this.navigation.back("/login")
   }
 
   onSubmit() {
+    this.inputPasswordValue = "";
+    this.inputPasswordConfirmValue = "";
+    this.restoreService.setInputPasswordValue(this.inputPasswordValue);
+    this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
     this.lgService.setUserLogged(true);
     this.navigator.forward("/login");
   }
