@@ -15,8 +15,9 @@ export class ModalAddComponent extends ViewComponent implements OnInit {
 
     ngOnInit() {}
 
-    goCollaborativeBasket(){
+    goContact(){
       this.navigation.root('customer/collaborative-basket', 'forward');
+      console.log("aqui");
     }
 
 }

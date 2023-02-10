@@ -12,6 +12,7 @@ export class RecoverPasswordComponent implements OnInit {
 
   form!: FormGroup;
   urlBack: string = RouteCollection.auth.login;
+  showTextHelperEmail = false;
 
   constructor(private router: Router) {}
 
@@ -33,5 +34,14 @@ export class RecoverPasswordComponent implements OnInit {
       },
     };
     this.router.navigate([RouteCollection.auth.recoverPasswordEmail], params);
+  }
+
+
+  checkFocus(){
+    this.showTextHelperEmail = true;
+  }
+
+  checkBlur(){
+    this.showTextHelperEmail = false;
   }
 }

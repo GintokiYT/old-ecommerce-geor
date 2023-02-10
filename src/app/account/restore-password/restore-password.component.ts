@@ -9,7 +9,15 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['restore-password.component.scss']
 })
 export class RestorePasswordComponent extends ViewComponent implements OnInit {
+  
   form!: FormGroup;
+  showTextHelperPassword = false;
+  showTextHelperPasswordConfirmation = false;
+
+  //minimo 8 caracteres sean letras, numeros o caracteres especiales
+  passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
+
+
   constructor(private navigator: AppNavigationService,
     private _injector: Injector, private lgService: LoginService) {
       super(_injector);
@@ -19,13 +27,12 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
     this.form = new FormGroup({
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(50),
+        Validators.pattern(this.passwordPattern)
       ]),
       password_confirmation: new FormControl('', [
         Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(50),
+        // Validators.minLength(6),
+        // Validators.maxLength(50),
       ]),
     });
   }
@@ -36,6 +43,21 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
   onSubmit() {
     this.lgService.setUserLogged(true);
-    this.navigator.forward("/customer/home");
+    this.navigator.forward("/login");
+  }
+
+  checkFocus(input : string){
+
+    switch(input){
+      case "password" : this.showTextHelperPassword = true; break;
+      case "passwordConfirmation" : this.showTextHelperPasswordConfirmation = true; break;
+    }
+  }
+
+  checkBlur(input : string){
+    switch(input){
+      case "password" : this.showTextHelperPassword = false; break;
+      case "passwordConfirmation" : this.showTextHelperPasswordConfirmation = false; break;
+    }
   }
 }
