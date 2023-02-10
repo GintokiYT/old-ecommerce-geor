@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { AppThemeService, ViewComponent } from '@geor360/ecore';
 import IBanner from 'src/app/interfaces/IBanner';
 import IProduct from 'src/app/interfaces/IProduct';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: '<app-header-home>',
@@ -15,11 +16,7 @@ export class HomeComponent extends ViewComponent implements OnInit {
                   this.contry === 'AR' ? './assets/flags/ar.svg' :
                   './assets/flags/cl.svg' ;
 
-  slides: IBanner[] = [
-    { image: '/assets/home/slider-main/image1.jpg' },
-    { image: '/assets/home/slider-main/image2.jpg' },
-    { image: '/assets/home/slider-main/image3.jpg' }
-  ];
+  slides:IBanner[];
 
   slideOptions: any = {
     autoplay: {
@@ -148,15 +145,17 @@ export class HomeComponent extends ViewComponent implements OnInit {
 
   logoPath = '/assets/images/logo.svg';
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, private homeService: HomeService) {
     super(_injector);
     this.themeService = _injector.get(AppThemeService);
+    this.homeService.getSlides.subscribe( slides => this.slides = slides);
   }
 
   ngOnInit() {
     if (this.themeService.mode === 'dark') {
       this.logoPath = '/assets/images/logo-dark.svg';
     }
+    console.log(this.slides)
   }
 
   goToProduct(){

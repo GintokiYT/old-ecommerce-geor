@@ -60,6 +60,6 @@ export class LanguageSettingsComponent implements OnInit {
 
     console.log(serviceLanguage)
 
-    this.settingsService.setLanguageApp(serviceLanguage);
+    this.settingsService.setLanguage(serviceLanguage);
   }
 }

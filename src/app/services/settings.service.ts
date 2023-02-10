@@ -7,31 +7,26 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SettingsService {
 
   // Theme
-  private themeApp: string = localStorage.getItem('themeApp') || 'Automático';
-  private themeApp$ = new BehaviorSubject<string>(this.themeApp);
+  private theme = new BehaviorSubject<string>(localStorage.getItem('themeApp') || 'Automático');
 
-  get currentThemeApp$():Observable<string>{
-    return this.themeApp$;
+  setTheme(theme: string) {
+    this.theme.next(theme);
   }
-  setThemeApp(theme: string):void {
-    this.themeApp = theme;
-    this.themeApp$.next(this.themeApp);
+  get getTheme():Observable<string>{
+    return this.theme;
   }
 
   // Language
-  private localLanguage: string = localStorage.getItem('language') === 'es_ES'? 'Español' : localStorage.getItem('language') === 'es_US'? 'Inglés' : localStorage.getItem('language') === 'es_PT'? 'Portugués' : '';
+  private localLanguage = new BehaviorSubject<string>(
+    localStorage.getItem('language') === 'es_ES' ? 'Español' :
+    localStorage.getItem('language') === 'es_US' ? 'Inglés' :
+    localStorage.getItem('language') === 'es_PT' ? 'Portugués' : ''
+  );
 
-  private languageApp: string = this.localLanguage || 'Español';
-  private languageApp$ = new BehaviorSubject<string>(this.languageApp);
-
-  get currentLanguageApp$():Observable<string>{
-    return this.languageApp$;
+  setLanguage(language: string) {
+    this.localLanguage.next(language);
   }
-  setLanguageApp(language: string):void {
-    this.languageApp = language;
-    this.languageApp$.next(this.languageApp);
+  get getLanguage(): Observable<string> {
+    return this.localLanguage;
   }
-
-
-  constructor() { }
 }
