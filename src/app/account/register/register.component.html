@@ -8,11 +8,12 @@
       </app-header>
 
       <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
-        <ion-item class="form-group">
+        <ion-item class="form-group" (ionFocus) = "checkFocus('name')"  (ionBlur)="checkBlur('name',false)">
           <ion-label position="floating" class="disabled">Nombre</ion-label>
           <ion-input formControlName="name"></ion-input>
+          <app-validation-messages *ngIf="showTextHelperName" slot="error" [control]="form.get('name')"></app-validation-messages>
         </ion-item>
-        <ion-item class="form-group">
+        <ion-item class="form-group"  (ionBlur) = "checkBlur('phone',true)" (ionFocus) = "checkFocus('phone')">
           <ion-label position="floating" class="disabled">Celular</ion-label>
           <ion-input 
             #inputPhone
@@ -23,25 +24,24 @@
             maxlength="12"
             mask=" *** *** ***"
             [(ngModel)]="inputPhoneValue"
-            (ionBlur) = "checkFocus()"
           >
             <div #contentInputPhone class="container-flag-digits">
               <img src="/assets/icons/icon-PE.svg"/>
               <p style="margin: 0;">+51</p>
             </div>
           </ion-input>
-          <app-validation-messages slot="error" [control]="form.get('movil')"></app-validation-messages>
+          <app-validation-messages *ngIf="showTextHelperPhone" slot="error" [control]="form.get('movil')"></app-validation-messages>
         </ion-item>
-        <ion-item class="form-group">
+        <ion-item class="form-group" (ionFocus) = "checkFocus('email')"  (ionBlur)="checkBlur('email',false)">
           <ion-label position="floating" class="disabled">Correo electrónico</ion-label>
           <ion-input formControlName="email" inputmode="email" type="email"></ion-input>
-          <app-validation-messages slot="error" [control]="form.get('email')"></app-validation-messages>
+          <app-validation-messages *ngIf="showTextHelperEmail" slot="error" [control]="form.get('email')"></app-validation-messages>
         </ion-item>
         <app-input-password>
-          <ion-item class="form-group">
+          <ion-item class="form-group" (ionFocus) = "checkFocus('password')"  (ionBlur)="checkBlur('password',false)">
             <ion-label position="floating" class="disabled">Contraseña</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
-            <app-validation-messages slot="error" [control]="form.get('password')"></app-validation-messages>
+            <app-validation-messages *ngIf="showTextHelperPassword" slot="error" [control]="form.get('password')"></app-validation-messages>
           </ion-item>
         </app-input-password>
         <ion-modal class="modal-alert" #modal>
@@ -64,6 +64,7 @@
       </form>
     </div>
 
+
     <!-- Footer -->
     <ion-footer class="ion-no-border ion-padding">
       <ion-toolbar class="ion-no-padding">
@@ -77,7 +78,10 @@
         </div>
       </ion-toolbar>
     </ion-footer>
+
+    
     
   </div>
 
 </ion-content>
+

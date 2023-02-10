@@ -9,5 +9,9 @@ import { AbstractControl } from '@angular/forms';
 export class ValidationMessagesComponent {
   @Input() control!: AbstractControl | null;
 
-  constructor() {}
+  myjson: JSON;
+
+  constructor() {
+
+  }
 }

@@ -1,15 +1,19 @@
+
 <ion-header>
   <button slot="end" class="arrow">
     <img src="/assets/icons/icon-close.svg" />
   </button>
-  <ion-searchbar placeholder="" show-clear-button="always" [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
+  <ion-searchbar   placeholder="" show-clear-button="always" [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
 </ion-header>
 
-<ion-item lines="none">
-  <ion-list lines="none" >
+<ion-content >
+  <ion-list lines="none">
     <ion-item *ngFor="let result of results">
-      <ion-label class="caracter">{{ result }}
-        <img src="/assets/icons/icon-Arrow-inclinado.svg"> </ion-label>
+      <ion-label>{{ result }}</ion-label>
+      <img src="/assets/icons/icon-Arrow-inclinado.svg" slot="end" />
     </ion-item>
   </ion-list>
-</ion-item>
+</ion-content>
+
+
+

@@ -4,7 +4,7 @@
   *ngIf="
     control?.invalid &&
     control?.errors &&
-    (control?.dirty || control?.touched) &&
+    (control?.dirty || control?.touched || control?.pristine) &&
     control?.errors
   "
 >
@@ -12,6 +12,10 @@
   <span *ngIf="control?.errors?.['minlength']"
     >El campo no debe contener menos de
     {{ control?.errors?.["minlength"]["requiredLength"] }} caracteres</span
+  >
+  <!-- Para el password -->
+  <span *ngIf="control?.errors?.['pattern']"
+    >Utiliza 8 caracteres o más: mayúsculas, minúsculas, números y<br/>caracteres especiales</span
   >
   <span *ngIf="control?.errors?.['maxlength']"
     >El campo no debe contener más de

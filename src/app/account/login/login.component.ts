@@ -12,6 +12,14 @@ import { LoginService } from '../services/login.service';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
+  showTextHelperPhoneOrEmail = false;
+  showTextHelperPassword = false;
+
+  //minimo 8 caracteres sean letras, numeros o caracteres especiales
+  passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
+  
+  
+
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {}
 
@@ -19,11 +27,10 @@ export class LoginComponent implements OnInit {
     this.loginForm = new FormGroup({
       username: new FormControl('', [
         Validators.required,
-        Validators.minLength(3),
       ]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(6),
+        Validators.pattern(this.passwordPattern)
       ]),
     });
   }
@@ -38,6 +45,29 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.lgService.setUserLogged(true);
-    this.navigator.forward("/customer/home");
+    this.navigator.forward("/customer/manage-user-information");
   }
+
+  checkFocus(input : string){
+    switch(input){
+      case "phoneOrEmail" : 
+        this.showTextHelperPhoneOrEmail = true; break;
+      case "password":
+        this.showTextHelperPassword = true; break;
+    }
+  }
+
+  checkBlur(input:string){
+    switch(input){
+      case "phoneOrEmail" : 
+        this.showTextHelperPhoneOrEmail = false; break;
+      case "password":
+        this.showTextHelperPassword = false; break;
+    }
+  }
+
+
+  
+
+  
 }

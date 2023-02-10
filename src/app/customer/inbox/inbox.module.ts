@@ -14,7 +14,6 @@ import { HeaderInboxComponent } from './components/header-inbox/header-inbox.com
 import { ShareModule } from 'src/app/shared/shared.module';
 import { MessageInboxComponent } from './message-inbox/message-inbox.component';
 
-
 @NgModule({
   imports: [
     CommonModule,

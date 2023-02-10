@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-search',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 
-export class SearchComponent implements OnInit {
+export class SearchComponent  implements OnInit {
+
+ 
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -18,4 +22,5 @@ export class SearchComponent implements OnInit {
     const query = event.target.value.toLowerCase();
     this.results = this.data.filter(d => d.toLowerCase().indexOf(query) > -1);
   }
+
 }

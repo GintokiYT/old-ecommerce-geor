@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="container-app-settings">
+
+    <app-header
+      title="Mis datos"
+      backDirection="main-settings"
+      iconLeft="icon-arrow-left"
+      class="header-my-data-settings"
+    ></app-header>
+
+    <div class="container-body">
+      <form>
+        <div class="container-form">
+          <div class="form-control-settings">
+            <label>Nombre</label>
+            <input type="text" name="name" autocomplete="off" #myInput>
+          </div>
+          <div class="form-control-settings">
+            <label>Correo</label>
+            <input type="email" name="email" autocomplete="off" #myInput>
+          </div>
+          <div class="form-control-settings">
+            <label>Teléfono</label>
+            <input type="tel" name="cellphone" autocomplete="off" #myInput>
+          </div>
+        </div>
+
+        <div class="form-control-button">
+          <ion-button
+            class="btn-submit"
+            expand="block"
+            color="primary"
+            shape="round"
+            type="submit"
+            [disabled]="statusButton"
+          >Guardar</ion-button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</ion-content>
+

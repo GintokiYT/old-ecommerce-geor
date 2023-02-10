@@ -1,7 +1,7 @@
 ion-button {
-    margin: 0px 24px 0px 24px ;
     width:342px;
     height:108px;
+    --background:var(--ion-color-secondary-shade) !important;
 }
 
 .caracter {
@@ -28,9 +28,6 @@ button {
     margin: 0;
 }
 
-ion-button {
-    --background:var(--ion-color-secondary-shade) !important;
-}
 
 h3 {
     text-align: justify;
@@ -39,4 +36,12 @@ h3 {
     
 }
 
+ion-label {
+    white-space: normal !important;
+    text-align: left ;
+}
+
+.relleno {
+    margin: 0px 24px 0px 24px  ;
+}
 

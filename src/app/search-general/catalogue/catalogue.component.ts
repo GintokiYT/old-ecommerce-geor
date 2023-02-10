@@ -1,16 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Injector } from '@angular/core';
+import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-catalogue',
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.scss'],
 })
-export class CatalogueComponent implements OnInit {
+export class CatalogueComponent extends ViewComponent implements OnInit {
   
-constructor(){}
+constructor(private injector:Injector){
+  super(injector)
+}
 
 
 ngOnInit() {
   
 }
+
+  goTo(path: string){
+    this.navigation.back(path)
+    console.log('ff')
+  }
+
+  goToSearchBar(){
+    this.navigation.forward("/customer/searchbar");
+  }
 }
