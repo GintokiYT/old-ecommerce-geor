@@ -30,6 +30,12 @@ form{
     }
 }
 
+ion-footer {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    padding-bottom: 24px;
+}
+
 @media(min-width:390px){
     ion-header{
         ion-toolbar{
@@ -40,10 +46,15 @@ form{
             }
         }
     }
-    
     form{
         ion-button{
             margin-right: 24px;
         }
+    }
+
+    ion-footer {
+        padding-right: 24px !important;
+        padding-left: 24px !important;
+        padding-bottom: 24px;
     }
 }

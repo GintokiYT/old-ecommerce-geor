@@ -15,7 +15,7 @@
   >
   <!-- Para el password -->
   <span *ngIf="control?.errors?.['pattern']"
-    >Utiliza 8 caracteres o más: mayúsculas, minúsculas, números y<br/>caracteres especiales</span
+    >Utiliza 8 caracteres o más: mayúsculas, minúsculas, números y caracteres especiales</span
   >
   <span *ngIf="control?.errors?.['maxlength']"
     >El campo no debe contener más de
@@ -23,5 +23,8 @@
   >
   <span *ngIf="control?.errors?.['email']"
     >El campo debe contener un correo electrónico válido</span
+  >
+  <span *ngIf="control?.errors?.['mismatch']"
+    >Las contraseñas deben coincidir</span
   >
 </ion-note>
