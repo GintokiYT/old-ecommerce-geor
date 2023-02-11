@@ -45,7 +45,7 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
         ]),
         password_confirmation: new FormControl('', [
           Validators.required,
-        ],PasswordValidator.createValidatorConfirm(this.restoreService)),
+        ]),
       }
     );
   }
