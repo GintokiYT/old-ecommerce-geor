@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <button slot="start">
+      <img src="/assets/icons/icon-arrow-izquierda.svg" />
+    </button>
+    <ion-title>Mis cupones</ion-title>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Ingresa el codigo"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-label >Disponible</ion-label>
+    <ion-label slot="end" color="light" (click)="goTo('/customer/expired')">Vencidos</ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>
+      <h3>S/200</h3>
+      <h3>Feliz día de la madre, <br>que los pases super</h3>
+      <p>CÓDIGO: SODIM123NOV2022</p>
+      <p><img src="/assets/icons/icon-danger.svg" width="12" slot="start" /> Vence : 30 nov 2022</p>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label color="light" (click)="goTo('/customer/condition')">Condiciones</ion-label>
+    <ion-button color="primary" shape="round" class="caracter" (click)="goTo('/customer/productsbar')">Usar cupón</ion-button>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>
+      <h3>S/150</h3>
+      <h3>Black Friday</h3>
+      <p>CÓDIGO: SODIM123NOV2022</p>
+      <p><img src="/assets/icons/icon-danger.svg" width="12" slot="start" /> Vence : 30 nov 2022</p>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label color="light">Condiciones</ion-label>
+    <ion-button color="primary" shape="round" class="caracter">Usar cupón</ion-button>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>
+      <h3>-30%</h3>
+      <h3>Compras mayores a <br>500 soles</h3>
+      <p>CÓDIGO: SODIM123NOV2022</p>
+      <p><img src="/assets/icons/icon-danger.svg" width="12" slot="start" /> Vence : 30 nov 2022</p>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label color="light">Condiciones</ion-label>
+    <ion-button color="primary" shape="round" class="caracter">Usar cupón</ion-button>
+  </ion-item>
+</ion-content>
