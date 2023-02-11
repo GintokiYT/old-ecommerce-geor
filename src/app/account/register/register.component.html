@@ -1,11 +1,13 @@
 <!-- Header -->
-<app-header title="Regístrate" iconLeft="icon-close" backDirection="login">
-</app-header>
+
 
 <ion-content>
 
+  <app-header title="Regístrate" iconLeft="icon-close" backDirection="login">
+  </app-header>
+
   <!-- Form -->
-  <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form class="w-100 container-main" [formGroup]="form" (ngSubmit)="onSubmit()">
     <ion-item class="form-group" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
       <ion-label position="floating" class="disabled">Nombre</ion-label>
       <ion-input formControlName="name"></ion-input>
