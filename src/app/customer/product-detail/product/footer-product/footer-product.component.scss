@@ -19,7 +19,7 @@ ion-toolbar{
   button{
       width: 246px;
       height: 48px;
-      background-color: var(--ion-color-primary);
+      background-color:#023AFF;
       font-size: 16px;
       padding: 12px 20px;
       border-radius: 50px;
@@ -47,4 +47,22 @@ ion-toolbar{
   }
 }
 
+.icon{
+  width: 20px;
+  height: 20px;
+  path{
+  fill:var(--ion-color-basic);
 
+  }
+}
+.heart-icon {
+  font-size: 24px;
+}
+
+.heart-icon.active {
+  stroke: #023AFF;
+}
+
+.heart-icon.active path {
+  fill: #023AFF;
+}

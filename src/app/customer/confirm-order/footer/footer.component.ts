@@ -15,7 +15,11 @@ export class FooterComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goToInbox(){
-    this.navigation.root("customer/main-inbox","back");
+    this.navigation.root("customer/internal-inbox/1","back");
+  }
+
+  goToLastStep(){
+    this.navigation.root("customer/last-step","forward");
   }
 
 }

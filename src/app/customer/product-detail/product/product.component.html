@@ -2,13 +2,13 @@
 <ion-content [fullscreen]="true">
   <ion-slides (click)="goPicture()" class="carousel" pager="true">
     <ion-slide>
-      <img src="assets/images/img_productos.png" alt="product" />
+      <img class="img-fluid img" src="assets/images/img_productos.png" alt="product" />
     </ion-slide>
     <ion-slide>
-      <img src="assets/images/img_productos.png" alt="product" />
+      <img class="img-fluid img"  src="assets/images/img_productos.png" alt="product" />
     </ion-slide>
     <ion-slide>
-      <img src="assets/images/img_productos.png" alt="product" />
+      <img class="img-fluid img"  src="assets/images/img_productos.png" alt="product" />
     </ion-slide>
   </ion-slides>
 
@@ -53,7 +53,7 @@
         </div>
       </div>
     </ion-text>
-    <ion-text class="d-flex flex-row justify-content-between">
+    <ion-text class="d-flex flex-row justify-content-between" (click)="goReturnsExchanges()">
       <ion-label class="fw-normal">Cambios y devoluciones</ion-label>
       <div class="d-flex justify-content-center align-items-center">
         <svg class="arrow" width="1em" height="1em" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">

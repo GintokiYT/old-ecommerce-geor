@@ -17,3 +17,4 @@ import { ShareModule } from 'src/app/shared/shared.module';
   ]
 })
 export class ManageUserInformationModule { }
+

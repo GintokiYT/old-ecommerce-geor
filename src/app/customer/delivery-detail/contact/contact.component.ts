@@ -27,8 +27,5 @@ export class ContactComponent extends ViewComponent implements OnInit {
     this.navigation.back(path)
   }
 
-  searchbar() {
 
   }
-
-}

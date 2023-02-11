@@ -140,7 +140,7 @@
 }
 
 //Error
-.form-group.item-has-value{
+.form-group.item-has-focus{
   &.ion-invalid{
     ion-label{
       color: #F44336 !important;
@@ -148,6 +148,9 @@
     --border-color: #F44336 !important;
   }
 }
+
+
+
 
 .text-line-through {
   text-decoration: line-through;
@@ -276,5 +279,15 @@ ion-slides {
         }
       }
     }
+  }
+}
+
+.container-main{
+  margin-top: 80px !important;
+}
+
+@media(min-width:390px){
+  .container-main{
+    margin-top: 88px !important;
   }
 }

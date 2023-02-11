@@ -1,7 +1,6 @@
 <ion-content >
-  <app-header-my-basket title="Mi cesta"></app-header-my-basket>
-<app-modal-invite></app-modal-invite>
-  <div class="basket d-flex justify-content-center">
+  <app-header-my-basket class="header-mybasket" title="Mi cesta"></app-header-my-basket>
+  <div class="basket d-flex justify-content-center" style="margin-top: 85px;">
     <img src="/assets/collaborative-basquet/Carrito.png" alt="" />
   </div>
   <ion-label class="text fz-normal d-flex justify-content-center">
@@ -20,7 +19,7 @@
     <div class="products__column">
       <div class="products__product" *ngFor="let product of productsFeatured">
         <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
-        <ion-img [src]="product.image" [alt]="product.image"></ion-img>
+        <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image"></ion-img>
         <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
         <ion-text class="d-block fw-semibold mt-2 mb-2 text-price"
           >{{ product.price }}</ion-text
@@ -63,8 +62,9 @@
       </div>
     </div>
   </div>
+  <app-modal-invite></app-modal-invite>
 </ion-content>
 
 <ion-footer class="ion-no-border">
-  <app-footer-main></app-footer-main>
+  <app-footer-navigation></app-footer-navigation>
 </ion-footer>
