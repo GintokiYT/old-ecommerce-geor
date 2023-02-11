@@ -22,6 +22,7 @@ import { BillingDataModule } from './billing-data/billing-data.module';
 import { ManageUserInformationModule } from './manage-user-information/manage-user-information.module';
 import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
+import { CouponsModule } from './coupons/coupons.module';
 
 
 @NgModule({
@@ -47,6 +48,8 @@ import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module
     ManageUserInformationModule,
     OtherFormsModule,
     ConfirmCardPayModule,
+    CouponsModule,
+    CestaModule,
     CestaModule,
   ],
   declarations: [
