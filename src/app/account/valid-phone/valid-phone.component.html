@@ -2,7 +2,7 @@
   <app-header title="Valida tu celular" iconLeft="icon-arrow-left" backDirection="register">
   </app-header>
 
-  <div class="valid-phone-container">
+  <div class="valid-phone-container container-main">
     <form class="w-100" [formGroup]="form">
       <ion-text class="text fz-normal text-muted d-block text-center mb-3">Hemos enviado un código de validación <br />
         al celular
@@ -15,7 +15,8 @@
           <ion-col size="6">
             <ion-item class="input-code">
               <ion-input color="primary" (ionChange)="onChangeCode()" formControlName="code" inputmode="numeric"
-                class="ion-input-big fz-subtitle text-center" #inputCode type="text"></ion-input>
+                class="ion-input-big fz-subtitle ion-text-center" #inputCode type="text"></ion-input>
+              <!-- <input type="text" style="text-align: center; box-sizing: content-box;"/>   -->
             </ion-item>
             <div class="text-center mb-5 mt-2">
               <ion-text class="text fz-small">{{ counterTime }}</ion-text>
@@ -30,9 +31,9 @@
 
     <ion-modal class="modal-alert" #modal>
       <ng-template>
-        <div class="ion-padding">
-          <ion-text class="text-center text fw-700 d-block"><b>¡Último paso!</b></ion-text>
-          <ion-text class="text fz-small text-muted text-center d-block mb-3">Para finalizar validemos tu correo
+        <div class="modal-container">
+          <ion-text class="text-center fw-700 d-block"><b>¡Último paso!</b></ion-text>
+          <ion-text class="fz-small text-muted text-center d-block">Para finalizar validemos tu correo
             electrónico</ion-text>
 
           <ion-button expand="block" shape="round" color="primary" (click)="onContinue()">

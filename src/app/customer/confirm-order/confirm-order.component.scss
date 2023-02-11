@@ -107,6 +107,14 @@
 }
 
 
+.my-header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
 //MEDIA QUERIES PARA INDUACRIL
 @media(max-width:320px){
 

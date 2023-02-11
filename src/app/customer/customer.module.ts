@@ -24,6 +24,7 @@ import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 import { CouponsModule } from './coupons/coupons.module';
 
+
 @NgModule({
   imports:[
     CommonModule,
@@ -48,7 +49,8 @@ import { CouponsModule } from './coupons/coupons.module';
     OtherFormsModule,
     ConfirmCardPayModule,
     CouponsModule,
-    CestaModule
+    CestaModule,
+    CestaModule,
   ],
   declarations: [
     HomeComponent

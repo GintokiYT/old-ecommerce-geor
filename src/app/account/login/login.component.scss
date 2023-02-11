@@ -4,14 +4,14 @@
 
 .login-container{
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 146.8px);
 }
 
 ion-header{
     padding-bottom: 40px;
     ion-toolbar{
         ion-title{
-            padding-top: 16px;
+            padding-top: 32px;
             padding-right: 16px;
             padding-left: 16px;
         }
@@ -30,7 +30,18 @@ form{
     }
 }
 
+ion-footer {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    padding-bottom: 24px;
+}
+
 @media(min-width:390px){
+
+    .login-container{
+        height: calc(100vh - 156.8px) !important;
+    }
+
     ion-header{
         ion-toolbar{
             ion-title{
@@ -40,10 +51,15 @@ form{
             }
         }
     }
-    
     form{
         ion-button{
             margin-right: 24px;
         }
+    }
+
+    ion-footer {
+        padding-right: 24px !important;
+        padding-left: 24px !important;
+        padding-bottom: 24px;
     }
 }

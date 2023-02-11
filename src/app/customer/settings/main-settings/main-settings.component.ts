@@ -2,6 +2,7 @@ import { Component, OnInit, Injector, ViewChild, ElementRef } from '@angular/cor
 import { ViewComponent } from '@geor360/ecore';
 
 import { Router } from '@angular/router';
+import { SettingsService } from '../../../services/settings.service';
 
 @Component({
   selector: 'main-settings',
@@ -12,11 +13,17 @@ export class MainSettingsComponent extends ViewComponent implements OnInit {
 
   statusModal: boolean = false;
 
-  constructor(_injector: Injector, private router: Router) {
+  themeApp: string = '';
+  languageApp: string = '';
+
+  constructor(_injector: Injector, private router: Router, private settingsService: SettingsService) {
     super(_injector)
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.settingsService.currentThemeApp$.subscribe( theme => this.themeApp = theme )
+    this.settingsService.currentLanguageApp$.subscribe( language => this.languageApp = language)
+  }
 
   onBack() {
     const routeBack: string = localStorage.getItem('back') || '';

@@ -4,7 +4,7 @@
   *ngIf="
     control?.invalid &&
     control?.errors &&
-    (control?.dirty || control?.touched) &&
+    (control?.dirty || control?.touched || control?.pristine) &&
     control?.errors
   "
 >
@@ -13,11 +13,18 @@
     >El campo no debe contener menos de
     {{ control?.errors?.["minlength"]["requiredLength"] }} caracteres</span
   >
+  <!-- Para el password -->
+  <span *ngIf="control?.errors?.['pattern']"
+    >Utiliza 8 caracteres o más: mayúsculas, minúsculas, números y caracteres especiales</span
+  >
   <span *ngIf="control?.errors?.['maxlength']"
     >El campo no debe contener más de
     {{ control?.errors?.["maxlength"]["requiredLength"] }} caracteres</span
   >
   <span *ngIf="control?.errors?.['email']"
     >El campo debe contener un correo electrónico válido</span
+  >
+  <span *ngIf="control?.errors?.['mismatch']"
+    >Las contraseñas deben coincidir</span
   >
 </ion-note>

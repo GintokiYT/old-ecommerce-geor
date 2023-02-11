@@ -1,3 +1,41 @@
-<p>
-  screen-mode-settings works!
-</p>
+<ion-content>
+  <div class="container-app-settings">
+
+    <app-header
+      title="Modo de pantalla"
+      backDirection="main-settings"
+      iconLeft="icon-arrow-left"
+      class="header-screen-mode-settings"
+    ></app-header>
+
+    <div class="container-body">
+      <div class="items">
+        <div class="item-theme active" #myItem (click)="toggleTheme('Autómático')">
+          <span>Autómático</span>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
+              <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="item-theme" #myItem (click)="toggleTheme('Claro')">
+          <span>Claro</span>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
+              <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="item-theme" #myItem (click)="toggleTheme('Oscuro')">
+          <span>Oscuro</span>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
+              <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

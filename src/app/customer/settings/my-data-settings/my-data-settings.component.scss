@@ -58,28 +58,25 @@ form {
   position: relative;
   width: 100%;
   height: 44px;
+  border-bottom: 1px solid var(--ion-color-separator-input);
 
   &.active {
+    border-bottom: 1px solid #023AFF;
     label {
       font-size: 10px;
       line-height: 12px;
       color: #023AFF;
       transform: translateY(-15px);
     }
-    input {
-      border-bottom: 1px solid #023AFF;
-    }
   }
 
   &.data {
+    border-bottom: 1px solid var(--ion-color-separator-input);
     label {
       font-size: 10px;
       line-height: 12px;
       color: var(--ion-color-label-disabled);
       transform: translateY(-15px);
-    }
-    input {
-      border-bottom: 1px solid var(--ion-color-separator-input);
     }
   }
 }
@@ -103,7 +100,6 @@ form {
   border: none;
   outline: none;
   background: none;
-  border-bottom: 1px solid var(--ion-color-separator-input);
   color: var(--ion-color-basic);
   box-sizing: border-box;
 }

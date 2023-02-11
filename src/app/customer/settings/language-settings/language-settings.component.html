@@ -1,3 +1,41 @@
-<p>
-  language-settings works!
-</p>
+<ion-content>
+  <div class="container-app-settings">
+
+    <app-header
+      title="Idioma"
+      backDirection="main-settings"
+      iconLeft="icon-arrow-left"
+      class="header-screen-mode-settings"
+    ></app-header>
+
+    <div class="container-body">
+      <div class="items">
+        <div class="item-language active" (click)="changeLanguage('es_ES', $event)">
+          <span>Español</span>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
+              <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="item-language" (click)="changeLanguage('es_US', $event)">
+          <span>Inglés</span>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
+              <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="item-language" (click)="changeLanguage('es_PT', $event)">
+          <span>Portugués</span>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
+              <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

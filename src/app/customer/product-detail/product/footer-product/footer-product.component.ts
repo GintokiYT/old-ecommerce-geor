@@ -16,4 +16,15 @@ export class FooterProductComponent extends ViewComponent implements OnInit {
   goChat(){
     this.navigation.root('/customer/internal-inbox/1','forward');
   }
+  goVariants(){
+    this.navigation.root('/customer/variants','forward');
+  }
+
+
+click(){
+  const heartIcon = document.querySelector('.heart-icon');
+  heartIcon.classList.toggle('active');
+
+}
+
 }

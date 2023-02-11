@@ -53,6 +53,8 @@ import { ExpiredComponent } from './coupons/expired/expired.component';
 import { ProductsbarComponent } from './coupons/productsbar/productsbar.component';
 import { StartComponent } from './coupons/start/start.component';
 import { VoucherComponent } from './coupons/voucher/voucher.component';
+import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
+import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
 const routes: Routes = [
   {
     path: '',
@@ -79,6 +81,8 @@ const routes: Routes = [
       { path: 'settings/about-us/privacy-policies', component: PrivacyPoliciesSettingsComponent },
       { path: 'settings/about-us/terms-conditions', component: TermsConditionsSettingsComponent },
       { path: 'settings/about-us/returns-exchanges', component: ReturnsExchangesSettingsComponent },
+      { path: 'settings/screen-mode', component: ScreenModeSettingsComponent },
+      { path: 'settings/language', component: LanguageSettingsComponent },
       //* End routes settings
 
 

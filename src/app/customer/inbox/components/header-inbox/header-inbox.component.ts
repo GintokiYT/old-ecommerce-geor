@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-header-inbox',
@@ -10,14 +11,16 @@ import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 })
 export class HeaderInboxComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector, private callNumber: CallNumber) {
+  constructor(_injector: Injector, private callNumber: CallNumber,private location: Location) {
     super(_injector);
   }
 
   ngOnInit() {}
 
   backMainInbox() {
-    this.navigation.root('/customer/main-inbox', 'back');
+    /* this.navigation.root('/customer/main-inbox', 'back'); */
+      this.location.back();
+
   }
 
   openTelf() {
