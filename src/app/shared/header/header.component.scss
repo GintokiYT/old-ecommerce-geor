@@ -1,47 +1,39 @@
-ion-header{
+ion-header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-}
 
 
-ion-toolbar {
-    --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
-    --padding-top: 32px;
-    --padding-start: 16px;
-    --padding-end: 16px;
-    --padding-bottom: 24px;
-}
+    ion-toolbar {
+        --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
+        --padding-top: 12px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 24px;
 
-.header-container{
 
-    button{
-        background-color: transparent;
+        .header-container {
+            button {
+                background-color: transparent;
 
-        &.button-left{
-            filter: var(--ion-color-dark-filter);
+                &.button-left {
+                    filter: var(--ion-color-dark-filter);
+                }
+            }
+            .title {
+                font-weight: bold;
+            }
         }
     }
-    
-    .title{
-        font-weight: bold;
-    }
 }
-
-    
-.not-visible{
-    visibility: hidden;
-    width: 17px;
-}
-
 
 ion-modal {
     &.modal-alert {
         --height: fit-content;
         --border-radius: 10px;
 
-        .buttons{
+        .buttons {
             cursor: pointer;
         }
     }
@@ -54,12 +46,20 @@ ion-modal {
     --background: var(--ion-background-alert);
 }
 
+.not-visible {
+    visibility: hidden;
+    width: 17px;
+}
+
 @media(min-width:390px) {
-    ion-toolbar {
-        --padding-top: 24px;
-        --padding-start: 24px;
-        --padding-end: 24px;
-        --padding-bottom: 40px
+
+    ion-header{
+        ion-toolbar {
+            --padding-top: 24px;
+            --padding-start: 24px;
+            --padding-end: 24px;
+            --padding-bottom: 40px
+        }
     }
 
     ion-modal {
@@ -69,4 +69,3 @@ ion-modal {
         }
     }
 }
-
