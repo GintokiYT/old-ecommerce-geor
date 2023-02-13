@@ -49,6 +49,7 @@ import { LastStepComponent } from './confirm-card-pay/last-step/last-step.compon
 import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
 import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
+import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
 const routes: Routes = [
   {
     path: '',
@@ -65,6 +66,7 @@ const routes: Routes = [
       { path: 'product',component:ProductComponent},
       { path: 'variants',component:VariantsComponent},
       { path: 'picture-big',component:PictureBigComponent},
+      { path: 'variants-product',component:VariantsProductComponent},
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
@@ -78,7 +80,6 @@ const routes: Routes = [
       { path: 'settings/screen-mode', component: ScreenModeSettingsComponent },
       { path: 'settings/language', component: LanguageSettingsComponent },
       //* End routes settings
-
 
         /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },

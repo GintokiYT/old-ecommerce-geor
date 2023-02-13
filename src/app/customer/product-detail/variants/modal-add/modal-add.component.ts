@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 
@@ -8,6 +8,12 @@ import { ViewComponent } from '@geor360/ecore';
   styleUrls: ['./modal-add.component.scss'],
 })
 export class ModalAddComponent extends ViewComponent implements OnInit {
+
+  @ViewChild('myBasket') myBasket: ElementRef;
+
+  ngAfterViewInit() {
+    console.log(this.myBasket)
+  }
 
     constructor(_injector: Injector) {
       super(_injector);
@@ -19,5 +25,4 @@ export class ModalAddComponent extends ViewComponent implements OnInit {
       this.navigation.root('customer/collaborative-basket', 'forward');
       console.log("aqui");
     }
-
 }

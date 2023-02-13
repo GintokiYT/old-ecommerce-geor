@@ -18,123 +18,15 @@ export class HomeComponent extends ViewComponent implements OnInit {
 
   slides:IBanner[];
 
+  productsForYou: IProduct[];
+
+  productsFeatured: IProduct[];
+
   slideOptions: any = {
     autoplay: {
       delay: 5000,
     },
   };
-
-  productsForYou: IProduct[] = [
-    { image: '/assets/home/slider-items/item1.jpg', price: 120 },
-    { image: '/assets/home/slider-items/item2.jpg', price: 309 },
-    { image: '/assets/home/slider-items/item3.jpg', price: 125 },
-    { image: '/assets/home/slider-items/item4.jpg', price: 230 },
-    { image: '/assets/home/slider-items/item1.jpg', price: 120 },
-    { image: '/assets/home/slider-items/item2.jpg', price: 120 },
-    { image: '/assets/home/slider-items/item3.jpg', price: 120 },
-    { image: '/assets/home/slider-items/item4.jpg', price: 120 },
-  ];
-
-  productsFeatured: IProduct[] = [
-    {
-      image: '/assets/home/products/product1.jpg',
-      isNew: true,
-      price: 189,
-      currency: 'S/',
-      oldPrice: 259,
-      inOffert: true,
-      discountPercentage: 30,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: true,
-      colors: [
-        { color: '#0375F8' },
-        { color: '#02298F' },
-        { color: '#D6D6D6' },
-        { color: '#EF4152' },
-      ],
-    },
-    {
-      image: '/assets/home/products/product2.jpg',
-      price: 120,
-      isNew: false,
-      inOffert: true,
-      oldPrice: 150,
-      discountPercentage: 25,
-      currency: 'S/',
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: true,
-    },
-    {
-      image: '/assets/home/products/product3.jpg',
-      price: 115,
-      isNew: false,
-      currency: 'S/',
-      inOffert: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product4.jpg',
-      price: 85,
-      isNew: false,
-      inOffert: false,
-      currency: 'S/',
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product5.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product6.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product7.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product8.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-  ];
 
   productSlidesOptions: any = {
     spaceBetween: 16,
@@ -149,6 +41,8 @@ export class HomeComponent extends ViewComponent implements OnInit {
     super(_injector);
     this.themeService = _injector.get(AppThemeService);
     this.homeService.getSlides.subscribe( slides => this.slides = slides);
+    this.homeService.getProductsForYou.subscribe( product => this.productsForYou = product);
+    this.homeService.getProductsFeatured.subscribe( product => this.productsFeatured = product);
   }
 
   ngOnInit() {
