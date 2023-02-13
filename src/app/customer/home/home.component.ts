@@ -49,7 +49,6 @@ export class HomeComponent extends ViewComponent implements OnInit {
     if (this.themeService.mode === 'dark') {
       this.logoPath = '/assets/images/logo-dark.svg';
     }
-    console.log(this.slides)
   }
 
   goToProduct(){
