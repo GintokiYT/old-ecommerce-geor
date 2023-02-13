@@ -28,7 +28,6 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   ngAfterViewInit() {
     const currentRoute: string = this.router.url;
     const itemsFooter = Array.from(this.myItemFooter.toArray().map( item => item.nativeElement)) as HTMLDivElement[]
-
     this.addActiveClass(itemsFooter, currentRoute);
 
     itemsFooter.forEach( (item, index) => {
