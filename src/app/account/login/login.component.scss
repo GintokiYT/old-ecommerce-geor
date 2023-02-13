@@ -20,7 +20,7 @@ ion-header {
 
 .login-container {
     width: 100%;
-    height: calc(100vh - 146.8px);
+    height: calc(100vh - 146.8px); // resta del header y footer
 
     form {
         ion-button {
