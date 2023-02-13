@@ -1,31 +1,41 @@
 <ion-content [fullscreen]="true">
   <app-header-cesta></app-header-cesta>
   <!-- CONTENIDO -->
-  <div class="content_basket">
-    <app-main-product></app-main-product>
-  </div>
-  <app-product></app-product>
-  <app-modal-basket></app-modal-basket>
-</ion-content>
-<!-- FOOTER -->
-<ion-footer class="ion-no-border">
-  <ion-toolbar class="ion-no-padding" style="padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
-    <div class="box-total d-flex flex-row justify-content-between mx-4 mb-4 mt-3">
-      <div class="d-flex flex-row gap-2">
-        <label class="custom-checkbox">
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-        </label>
-        <ion-label class=" d-flex justify-content-center align-items-center fz-small "> Todo</ion-label>
-      </div>
-      <div class="fz-small">
-        <ion-label>S/ 45,789.00</ion-label>
-      </div>
+  <div style="margin-bottom: 20px;">
+    <div class="content_basket">
+      <app-main-product></app-main-product>
     </div>
-    <div class="mx-4">
-    <ion-button expand="block" color="primary" shape="round" (click)="goToConfirmOrder()">Ir a pagar</ion-button>
+    <app-product></app-product>
+    <app-modal-basket></app-modal-basket>
   </div>
-  </ion-toolbar>
-  <app-footer-navigation></app-footer-navigation>
-</ion-footer>
+
+  <!-- FOOTER -->
+  <ion-footer class="ion-no-border">
+    <ion-toolbar class="ion-no-padding" style="padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
+      <div class="box-total d-flex flex-row justify-content-between mx-4 mb-4 mt-3">
+        <div class="d-flex flex-row gap-2">
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+          <ion-label class=" d-flex justify-content-center align-items-center fz-small "> Todo</ion-label>
+        </div>
+        <div class="fz-small">
+          <ion-label>S/ 45,789.00</ion-label>
+        </div>
+      </div>
+      <!-- Margin para separar con el footer de renato -->
+      <div class="mx-4" style="margin-bottom: 92.8px;">
+        <ion-button expand="block" color="primary" shape="round" (click)="goToConfirmOrder()">Ir a pagar</ion-button>
+      </div>
+      <!-- <app-footer-navigation></app-footer-navigation> -->
+    </ion-toolbar>
+  </ion-footer>
+
+
+</ion-content>
+
+
+
+
 
