@@ -12,10 +12,14 @@
   }
   
   .swiper-slide {
-    width: 68.57px;
-    height: 90px;
+    width: fit-content;
+    height: fit-content;
+
+    ion-img{
+      width: 68.57px;
+      height: 90px;
+    }
   }
-  
   
   
   @media(max-width:320px){
