@@ -35,20 +35,22 @@
     </div>
 
   </div>
+
+
+  <!-- Footer -->
+  <ion-footer class="ion-no-border ion-no-padding">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button 
+        [disabled]="!oneTrue"
+        (click)="setBill()"
+        expand="full"  
+        shape="round" 
+        color="primary" 
+        style="margin: 0;"
+      >
+        Confirmar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<!-- Footer -->
-<ion-footer class="ion-no-border ion-no-padding">
-  <ion-toolbar class="ion-no-padding">
-    <ion-button 
-      [disabled]="!oneTrue"
-      (click)="setBill()"
-      expand="full"  
-      shape="round" 
-      color="primary" 
-      style="margin: 0;"
-    >
-      Confirmar
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>

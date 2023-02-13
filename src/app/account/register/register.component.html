@@ -1,7 +1,7 @@
 <!-- Header -->
 
 
-<ion-content>
+<ion-content class="position-relative">
 
   <app-header title="Regístrate" iconLeft="icon-close" backDirection="login">
   </app-header>
@@ -60,18 +60,19 @@
   </form>
   <!-- End Form -->
 
+  <!-- Footer -->
+  <ion-footer class="ion-no-border">
+    <ion-toolbar class="ion-no-padding">
+      <div class="text-center">
+        <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
+          <span class="terms">Términos y condiciones</span> y
+          <span class="politics">Politica de privacidad</span>
+        </span>
+        <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+          type="submit">Siguiente</ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+
 </ion-content>
 
-<!-- Footer -->
-<ion-footer class="ion-no-border">
-  <ion-toolbar class="ion-no-padding">
-    <div class="text-center">
-      <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
-        <span class="terms">Términos y condiciones</span> y
-        <span class="politics">Politica de privacidad</span>
-      </span>
-      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
-        type="submit">Siguiente</ion-button>
-    </div>
-  </ion-toolbar>
-</ion-footer>

@@ -36,6 +36,9 @@
 }
 
 ion-footer {
+    position: fixed;
+    bottom: 0;
+
     padding-right: 16px !important;
     padding-left: 16px !important;
     padding-bottom: 24px;
