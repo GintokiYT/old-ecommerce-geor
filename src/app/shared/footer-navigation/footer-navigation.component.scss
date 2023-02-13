@@ -9,6 +9,11 @@ html {
 }
 
 .inbox-ion-footer {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: var(--ion-background-color);
   border-top: 1px solid var(--ion-color-separator);
   padding: 8px 16px 16px 16px;
