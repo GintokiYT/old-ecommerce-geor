@@ -1,12 +1,15 @@
-<app-header
+
+
+<ion-content class="content-add">
+
+  <app-header
   title="Agregar tarjeta"
   backDirection="way-pay"
   iconLeft="icon-close"
   >
-</app-header>
+  </app-header>
 
-<ion-content class="content-add">
-  <div class="content-add">
+  <div class="content-add container-main">
     <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
       <ion-item >
         <ion-label position="floating" class="fz-normal" color="medium"
