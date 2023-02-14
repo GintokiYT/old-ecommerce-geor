@@ -11,7 +11,7 @@ export class AppComponent {
   constructor() {
     const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
     StatusBar.setBackgroundColor({ color });
-    StatusBar.hide();
+    // StatusBar.hide();
   }
 
 }

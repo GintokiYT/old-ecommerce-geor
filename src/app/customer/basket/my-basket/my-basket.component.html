@@ -7,24 +7,24 @@
   <app-product></app-product>
   <app-modal-basket></app-modal-basket>
   <app-modal-invite></app-modal-invite>
-</ion-content>
-<!-- FOOTER -->
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <div class="contenedor-footer">
-      <div class="box-total d-flex flex-row justify-content-between">
-        <div class="total-checkbox d-flex flex-row align-items-center">
-          <ion-checkbox slot="start"></ion-checkbox>
-          <p class="fz-small">Todo</p>
+  <!-- FOOTER -->
+  <div class="ion-no-border container-footer">
+    <div>
+      <div class="contenedor-footer">
+        <div class="box-total d-flex flex-row justify-content-between">
+          <div class="total-checkbox d-flex flex-row align-items-center">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p class="fz-small">Todo</p>
+          </div>
+          <div class="cost-total fz-small">
+            <p>S/ 45,789.00</p>
+          </div>
         </div>
-        <div class="cost-total fz-small">
-          <p>S/ 45,789.00</p>
-        </div>
+        <ion-button expand="block" color="primary" shape="round">
+          Ir a pagar</ion-button
+        >
       </div>
-      <ion-button expand="block" color="primary" shape="round">
-        Ir a pagar</ion-button
-      >
     </div>
-  </ion-toolbar>
+  </div>
   <app-footer-navigation></app-footer-navigation>
-</ion-footer>
+</ion-content>

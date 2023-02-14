@@ -32,25 +32,31 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
 
     itemsFooter.forEach( (item, index) => {
       item.addEventListener('click', () => {
-        this.navigation.forward(this.getRoutes(this.userLogged)[index]);
-        this.addActiveClass(itemsFooter, currentRoute);
+        if(itemsFooter[index].classList.contains('active') !== true) {
+          this.navigation.forward(this.getRoutes()[index][0]);
+          this.addActiveClass(itemsFooter, currentRoute);
+        }
       })
     })
  }
 
   addActiveClass(itemsFooter: HTMLDivElement[], currentRoute: string) {
     itemsFooter.forEach( item => item.classList.remove('active'));
-    const active = Object.entries(this.getRoutes(this.userLogged)).find(([key, value]) => value === currentRoute);
-    itemsFooter[Number(active[0])].classList.add('active');
+    const active = Object.entries(this.getRoutes()).find(([key, value]) => value.includes(currentRoute));
+    itemsFooter[active[0]].classList.add('active');
   }
 
-  getRoutes(userLogged: boolean) {
+  getRoutes() {
     return {
-      0: '/customer/home',
-      1: '/customer/catalogue',
-      2: '/customer/main-inbox',
-      3: '/customer/empty-basket',
-      4: userLogged? '/customer/manage-user-information' : '/login'
+      0: ['/customer/home'],
+      1: ['/customer/catalogue'],
+      2: ['/customer/main-inbox'],
+      3: [
+          '/customer/empty-basket',
+          '/customer/my-basket',
+          '/customer/collaborative-basket'
+        ],
+      4: ['/customer/manage-user-information', '/login'],
     }
   }
 }
