@@ -57,7 +57,7 @@ ion-footer{
 }
 
 ion-modal::part(content){
-    background: var(--ion-background-modal);
+    background: var(--ion-background-alert);
 }
 
 
@@ -70,7 +70,7 @@ ion-modal::part(content){
         }
         ion-item{
             --inner-padding-end: 0px !important;
-            --background: var(--ion-background-modal);
+            --background: var(--ion-background-alert);
             margin-bottom: 24px;
             ion-label{
                 margin:0px;

@@ -1,5 +1,3 @@
-
-
 <ion-content>
 
     <app-header
@@ -17,7 +15,7 @@
             <ion-label class="fz-small">
               Visa Débito *** 4115 </ion-label>
           </div>
-          <ion-item >
+          <ion-item class="item-has-focus ion-touched ion-invalid">
               <ion-label position="floating" class="fz-normal" color="medium">
                   Ingresa el código de seguridad</ion-label>
               <ion-input></ion-input>
@@ -83,13 +81,12 @@
       </ion-modal> -->
 
     </div><!-- End container main-->
-
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button (click)="setOpen2(true)"type="submit" color="primary" shape="round" expand="block">
+          <ion-label class="fz-normal">Confirmar pago</ion-label>
+        </ion-button>  
+      </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-    <ion-toolbar>
-      <ion-button (click)="setOpen2(true)"type="submit" color="primary" shape="round" expand="block">
-        <ion-label class="fz-normal">Confirmar pago</ion-label>
-      </ion-button>  
-    </ion-toolbar>
-</ion-footer>

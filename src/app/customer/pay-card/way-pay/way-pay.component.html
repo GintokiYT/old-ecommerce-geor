@@ -52,19 +52,20 @@
       </ion-item>
     </div>
   </div>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button 
+        (click)="goTo('/customer/add-card')"
+        color="primary" fill="outline" shape="round" expand="block">
+        <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
+      </ion-button> 
+      <ion-button 
+        color="primary" shape="round" expand="block" [disabled]=oneTrue
+        (click)="establecerMetodoDePago()">
+        <ion-label  class="fz-normal"> Confirmar</ion-label>
+      </ion-button> 
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-button 
-      (click)="goTo('/customer/add-card')"
-      color="primary" fill="outline" shape="round" expand="block">
-      <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
-    </ion-button> 
-    <ion-button 
-      color="primary" shape="round" expand="block" [disabled]=oneTrue
-      (click)="establecerMetodoDePago()">
-      <ion-label  class="fz-normal"> Confirmar</ion-label>
-    </ion-button> 
-  </ion-toolbar>
-</ion-footer>
