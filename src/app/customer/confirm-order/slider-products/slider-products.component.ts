@@ -30,6 +30,7 @@ export class SliderProductsComponent extends ViewComponent implements OnInit {
 
   productsForYou: IProduct[] = [];
   productSlidesOptions: any = {
+    spaceBetween: 12,
     slidesPerView: 'auto',
   };
 
