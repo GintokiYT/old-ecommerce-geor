@@ -2,6 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { ModalVariantsComponent } from './modal-variants/modal-variants.component';
 import { ViewComponent } from '@geor360/ecore';
 import { ModalAddComponent } from './modal-add/modal-add.component';
+import { ProductDetailService } from '../../../services/productDetail.service';
 
 interface Colours {
   images: string,
@@ -24,12 +25,15 @@ interface Thickness {
 })
 export class VariantsComponent extends ViewComponent implements OnInit {
 
-  modalVariants: boolean = false;
-  modalAdd: boolean = false;
-  modalBasket: boolean = false;
+  modalVariants: boolean;
+  modalAdd: boolean;
+  modalBasket: boolean;
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, private productDetailService: ProductDetailService) {
     super(_injector);
+    this.productDetailService.getStatusModalVariants.subscribe( status => this.modalVariants = status);
+    this.productDetailService.getStatusModalAdd.subscribe( status => this.modalAdd = status);
+    this.productDetailService.getStatusModalBasket.subscribe( status => this.modalBasket = status);
   }
 
   ngOnInit() { }
@@ -70,6 +74,7 @@ export class VariantsComponent extends ViewComponent implements OnInit {
 
   //* Abre el primer modal
   OpenModalVariants() {
-    this.modalVariants = true;
+    this.productDetailService.setStatusModalVariants(true);
   }
+
 }

@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="position-relative">
   <app-header-variants></app-header-variants>
   <div class="mx-4 mt-2">
     <ion-text class="variant d-flex flex-row">
@@ -46,44 +46,43 @@
       </ion-text>
     </div>
   </ion-text>
-</ion-content>
 
-<ion-footer class="footer ion-no-padding ion-no-border">
-  <ion-toolbar class="ion-no-padding">
-    <div class=" mx-4 mb-4">
-      <ion-text class="d-flex flex-row justify-content-between mb-3">
-        <ion-label>Total</ion-label>
-        <ion-label>S/9,999.00</ion-label>
-      </ion-text>
-      <div class="d-flex mt-2 gap-3">
-        <ion-button
-          id="open-modal"
-          fill="outline"
-          class="btn ion-no-padding ion-no-margin"
-          expand="block"
-          shape="round"
-          (click)="OpenModalVariants()"
-        >
-          Añadir a la cesta
-        </ion-button>
-        <ion-button
-          (click)="goToConfirmOrder()"
-          class="btn ion-no-padding ion-no-margin"
-          expand="block"
-          shape="round"
-          color="primary"
-        >
-          Ir a pagar
-        </ion-button>
+  <ion-footer class="footer ion-no-padding ion-no-border">
+    <ion-toolbar class="ion-no-padding">
+      <div class="mx-4 mb-4">
+        <ion-text class="d-flex flex-row justify-content-between mb-3">
+          <ion-label>Total</ion-label>
+          <ion-label>S/9,999.00</ion-label>
+        </ion-text>
+        <div class="d-flex mt-2 gap-3">
+          <ion-button
+            id="open-modal"
+            fill="outline"
+            class="btn ion-no-padding ion-no-margin"
+            expand="block"
+            shape="round"
+            (click)="OpenModalVariants()"
+          >
+            Añadir a la cesta
+          </ion-button>
+          <ion-button
+            (click)="goToConfirmOrder()"
+            class="btn ion-no-padding ion-no-margin"
+            expand="block"
+            shape="round"
+            color="primary"
+          >
+            Ir a pagar
+          </ion-button>
+        </div>
       </div>
-    </div>
-    <!-- First Modal -->
-    <app-modal-variants *ngIf="modalVariants"
-    ></app-modal-variants>
-    <app-modal-add *ngIf="modalAdd"
-    ></app-modal-add>
-    <app-modal-basket *ngIf="modalBasket"
-    ></app-modal-basket>
+    </ion-toolbar>
+  </ion-footer>
 
-  </ion-toolbar>
-</ion-footer>
+
+   <!-- First Modal -->
+   <app-modal-variants *ngIf="modalVariants"></app-modal-variants>
+   <app-modal-add *ngIf="modalAdd"></app-modal-add>
+   <app-modal-basket *ngIf="modalBasket"></app-modal-basket>
+
+</ion-content>
