@@ -1,18 +1,16 @@
 <ion-content [fullscreen]="true">
   <app-header-cesta></app-header-cesta>
   <!-- CONTENIDO -->
-  <div style="margin-bottom: 1000px;">
-    <div style="margin-bottom: 20px;">
-      <div class="content_basket">
-        <app-main-product></app-main-product>
-      </div>
-      <app-product></app-product>
-      <app-modal-basket></app-modal-basket>
+  <div style="margin-bottom: 20px; margin-bottom: '218.66px';">
+    <div class="content_basket">
+      <app-main-product></app-main-product>
     </div>
+    <app-product></app-product>
+    <app-modal-basket></app-modal-basket>
   </div>
 
   <!-- FOOTER -->
-  <ion-footer class="ion-no-border">
+  <div class="ion-no-border container-footer">
     <ion-toolbar class="ion-no-padding" style="padding-left: 0px;padding-right: 0px;padding-bottom: 0px;">
       <div class="box-total d-flex flex-row justify-content-between mx-4 mb-4 mt-3">
         <div class="d-flex flex-row gap-2">
@@ -27,14 +25,12 @@
         </div>
       </div>
       <!-- Margin para separar con el footer de renato -->
-      <div class="mx-4" style="margin-bottom: 92.8px;">
+      <div class="mx-4">
         <ion-button expand="block" color="primary" shape="round" (click)="goToConfirmOrder()">Ir a pagar</ion-button>
       </div>
-      <!-- <app-footer-navigation></app-footer-navigation> -->
     </ion-toolbar>
-  </ion-footer>
-
-
+  </div>
+  <app-footer-navigation></app-footer-navigation>
 </ion-content>
 
 

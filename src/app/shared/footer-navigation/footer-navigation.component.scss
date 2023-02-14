@@ -8,11 +8,16 @@ html {
   padding: 0;
 }
 
+.ion-safe-area-bottom {
+  padding-bottom: calc(var(--ion-safe-area-bottom) + 16px) !important;
+}
+
 .inbox-ion-footer {
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 10000;
   width: 100%;
   background-color: var(--ion-background-color);
   border-top: 1px solid var(--ion-color-separator);
