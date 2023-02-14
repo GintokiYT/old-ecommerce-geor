@@ -38,6 +38,7 @@ export class ModalAddComponent extends ViewComponent implements OnInit {
   }
 
   goMyBasquet() {
+    this.productDetailService.setStatusModalAdd(false);
     this.navigation.forward('customer/collaborative-basket');
   }
 }

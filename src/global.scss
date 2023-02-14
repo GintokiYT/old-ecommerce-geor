@@ -58,3 +58,16 @@ body.ios {
 ion-app {
   --ion-status-bar-background: var(--ion-color-icons-selected);
 }
+
+
+// Clases para el espacio en IOS
+
+//* Bottom
+.ion-safe-area-bottom {
+  padding-bottom: var(--ion-safe-area-bottom) !important;
+}
+
+//* Top
+.ion-safe-area-top {
+  padding-bottom: var(--ion-safe-area-top) !important;
+}
