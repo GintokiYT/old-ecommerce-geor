@@ -27,15 +27,17 @@
       <ion-label color="medium" class="fz-normal">No tienes ninguna tarjeta agregada</ion-label>
     </div>  
   </div>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button 
+        (click)="goTo('/customer/add-card')"
+        color="primary" fill="outline" shape="round" expand="block">
+        <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
+      </ion-button>  
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-button 
-      (click)="goTo('/customer/add-card')"
-      color="primary" fill="outline" shape="round" expand="block">
-      <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
-    </ion-button>  
-  </ion-toolbar>
-</ion-footer>
+
 

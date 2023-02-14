@@ -41,6 +41,8 @@
 }
 
 ion-footer{
+    position: fixed;
+    bottom: 0;
     ion-toolbar{
       --border-width: 0px;
       --padding-top: 0px;

@@ -1,5 +1,3 @@
-
-
 <ion-content class="content-add">
 
   <app-header
@@ -79,25 +77,27 @@
         <p class="fz-note" id="note-code">Código de 3 dígitos ubicados en el dorso de la tarjeta </p>
     </ng-template>
   </ion-modal>
+  
+  <ion-footer>
+    <ion-toolbar>
+      <div class="alert">
+        <ion-item lines="none" *ngIf="formulario.invalid===false">
+          <img id="icon-security" src="/assets/icons/icon-security.svg">
+          <ion-label class="alert" class="ion-text-wrap" class="fz-normal" color="medium">
+            Tu tarjeta está 100% segura, solo<br>
+            guardaremos el número, volveremos a<br>
+            pedirte el código para confirmar tu compra.
+          </ion-label>
+        </ion-item>
+      </div>
+      <ion-button [disabled]="formulario.invalid"
+                  (click)="goTo('/customer/way-pay')"
+                  type="submit" color="primary" shape="round" expand="block">
+        <ion-label class="fz-normal">Guardar</ion-label>
+      </ion-button>  
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <div class="alert">
-      <ion-item lines="none" *ngIf="formulario.invalid===false">
-        <img id="icon-security" src="/assets/icons/icon-security.svg">
-        <ion-label class="alert" class="ion-text-wrap" class="fz-normal" color="medium">
-          Tu tarjeta está 100% segura, solo<br>
-          guardaremos el número, volveremos a<br>
-          pedirte el código para confirmar tu compra.
-        </ion-label>
-      </ion-item>
-    </div>
-    <ion-button [disabled]="formulario.invalid"
-                (click)="goTo('/customer/way-pay')"
-                type="submit" color="primary" shape="round" expand="block">
-      <ion-label class="fz-normal">Guardar</ion-label>
-    </ion-button>  
-  </ion-toolbar>
-</ion-footer>
+
 
