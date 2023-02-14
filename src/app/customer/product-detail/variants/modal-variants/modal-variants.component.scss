@@ -43,3 +43,47 @@ ion-item{
 .basket{
  gap: 10px;
 }
+
+// Estilos modal
+
+.container-modal-variants {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000;
+  background-color: rgba(0,0,0,.5);
+}
+
+.modal-variants {
+  width: 100%;
+  height: 318px;
+  background-color: var(--ion-background-modal);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: modalOpen .3s ease;
+}
+
+@keyframes modalOpen {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.close-modal {
+  animation: modalClose .3s ease;
+}
+
+@keyframes modalClose {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
