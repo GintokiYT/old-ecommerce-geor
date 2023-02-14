@@ -57,6 +57,9 @@
           required 
         ></ion-input>
       </ion-item>  
+      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
     </form>
   </div>
 

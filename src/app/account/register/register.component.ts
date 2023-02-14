@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonModal } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
-
+import { InfiniteScrollCustomEvent } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
@@ -27,8 +27,11 @@ export class RegisterComponent implements OnInit {
   passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
 
   constructor(private router: Router) { }
+  items = [];
+
 
   ngOnInit() {
+    this.generateItems();
     this.form = new FormGroup({
 
       name: new FormControl('', [
@@ -102,5 +105,16 @@ export class RegisterComponent implements OnInit {
     }
     
   }
-
+  private generateItems() {
+    const count = this.items.length + 1;
+    for (let i = 0; i < 50; i++) {
+      this.items.push(`Item ${count + i}`);
+    }
+  }
+  onIonInfinite(ev) {
+    this.generateItems();
+    setTimeout(() => {
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
 }

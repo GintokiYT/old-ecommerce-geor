@@ -57,6 +57,9 @@
         </div>
       </ng-template>
     </ion-modal>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </form>
   <!-- End Form -->
 
