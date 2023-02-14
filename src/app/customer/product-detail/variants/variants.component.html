@@ -62,6 +62,7 @@
           class="btn ion-no-padding ion-no-margin"
           expand="block"
           shape="round"
+          (click)="OpenModalVariants()"
         >
           Añadir a la cesta
         </ion-button>
@@ -76,7 +77,13 @@
         </ion-button>
       </div>
     </div>
-    <app-modal-variants></app-modal-variants>
+    <!-- First Modal -->
+    <app-modal-variants *ngIf="modalVariants"
+    ></app-modal-variants>
+    <app-modal-add *ngIf="modalAdd"
+    ></app-modal-add>
+    <app-modal-basket *ngIf="modalBasket"
+    ></app-modal-basket>
 
   </ion-toolbar>
 </ion-footer>

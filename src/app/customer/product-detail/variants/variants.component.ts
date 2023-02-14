@@ -24,6 +24,10 @@ interface Thickness {
 })
 export class VariantsComponent extends ViewComponent implements OnInit {
 
+  modalVariants: boolean = false;
+  modalAdd: boolean = false;
+  modalBasket: boolean = false;
+
   constructor(_injector: Injector) {
     super(_injector);
   }
@@ -64,4 +68,8 @@ export class VariantsComponent extends ViewComponent implements OnInit {
     this.navigation.root("/customer/confirm-order","forward");
   }
 
+  //* Abre el primer modal
+  OpenModalVariants() {
+    this.modalVariants = true;
+  }
 }
