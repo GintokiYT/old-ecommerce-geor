@@ -1,10 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
-interface IBanner {
-  image: string;
-}
-
 interface IProduct {
   image?: string;
   name?: string;
@@ -32,11 +28,6 @@ interface IProductColor {
 })
 export class SliderProductsComponent extends ViewComponent implements OnInit {
 
-  slideOptions: any = {
-    autoplay: {
-      delay: 5000,
-    },
-  };
   productsForYou: IProduct[] = [];
   productSlidesOptions: any = {
     spaceBetween: 12,
@@ -50,6 +41,15 @@ export class SliderProductsComponent extends ViewComponent implements OnInit {
   ngOnInit() {
 
     this.productsForYou = [
+      { image: '/assets/images/hojas.png' },
+      { image: '/assets/images/llaveros.png'},
+      { image: '/assets/images/crece.png'},
+      { image: '/assets/images/cal-1.png'},
+      { image: '/assets/images/calendario.png'},
+      { image: '/assets/images/colores.png'},
+      { image: '/assets/images/romex.png'},
+      { image: '/assets/images/cal-2.png'},
+
       { image: '/assets/images/hojas.png' },
       { image: '/assets/images/llaveros.png'},
       { image: '/assets/images/crece.png'},

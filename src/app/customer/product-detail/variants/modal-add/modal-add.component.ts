@@ -1,5 +1,6 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { ProductDetailService } from '../../../../services/productDetail.service';
 
 
 @Component({
@@ -9,15 +10,34 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class ModalAddComponent extends ViewComponent implements OnInit {
 
-    constructor(_injector: Injector) {
-      super(_injector);
-     }
+  @ViewChild('ContainerModal') ContainerModal:ElementRef;
+  @ViewChild('modal') modal: ElementRef;
 
-    ngOnInit() {}
+  ngAfterViewInit() {
+   const ContainerModal: HTMLDivElement = this.ContainerModal.nativeElement;
 
-    goContact(){
-      this.navigation.root('customer/collaborative-basket', 'forward');
-      console.log("aqui");
+   ContainerModal.addEventListener('click', (event: Event) => {
+    const modal: HTMLDivElement = this.modal.nativeElement;
+    if(event.target === ContainerModal) {
+      modal.classList.add('close-modal');
+      setTimeout(() => {
+        this.productDetailService.setStatusModalAdd(false);
+      }, 250);
     }
+   })
+  }
 
+  constructor(_injector: Injector, private productDetailService: ProductDetailService) {
+    super(_injector);
+  }
+
+  ngOnInit() {}
+
+  goContact(){
+    this.navigation.root('customer/collaborative-basket', 'forward');
+  }
+
+  goMyBasquet() {
+    this.navigation.forward('customer/collaborative-basket');
+  }
 }

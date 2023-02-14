@@ -107,5 +107,16 @@
 }
 
 .container-flags ion-button {
-  margin: 0;
+  margin-bottom: 24px;
+}
+
+// Remover el scroll del ion-content
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

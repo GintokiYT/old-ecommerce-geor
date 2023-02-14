@@ -1,7 +1,7 @@
-ion-content {
-    --padding-top: 16px;
-    --padding-end: 16px;
-    --padding-start: 16px;
+.container-user-information {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
 
 
     .header {
@@ -45,10 +45,10 @@ ion-content {
 
 
 @media(min-width:390px) {
-    ion-content {
-        --padding-top: 24px;
-        --padding-end: 24px;
-        --padding-start: 24px;
+    .container-user-information {
+        padding-top: 24px !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
     }
 
 

@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, Injector, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 import { Router } from '@angular/router';
@@ -11,14 +11,7 @@ import { LoginService } from 'src/app/account/services/login.service';
 })
 export class FooterNavigationComponent extends ViewComponent implements OnInit {
 
-  @ViewChild('myItems') myItems: ElementRef;
-
-  @ViewChild('myChat') myChat: ElementRef;
-  @ViewChild('myBuy') myBuy: ElementRef;
-  @ViewChild('myProfile') myProfile: ElementRef;
-  @ViewChild('myHome') myHome: ElementRef;
-  @ViewChild('myCatalogue') myCatalogue: ElementRef;
-
+  @ViewChildren('myItemFooter') myItemFooter: QueryList<ElementRef>;
   userLogged: boolean = false;
 
   constructor(_injector: Injector, private router: Router,
@@ -33,55 +26,37 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+    const currentRoute: string = this.router.url;
+    const itemsFooter = Array.from(this.myItemFooter.toArray().map( item => item.nativeElement)) as HTMLDivElement[]
+    this.addActiveClass(itemsFooter, currentRoute);
 
-    console.log(this.router.url);
-
-    const listItems = this.myItems.nativeElement;
-    const items = listItems.querySelectorAll('.inbox-footer__content--item');
-
-    items.forEach(item => item.classList.remove('active'));
-
-    if(this.router.url === '/customer/main-inbox') {
-      this.myChat.nativeElement.classList.add('active')
-    }
-    if(this.router.url === '/customer/empty-basket') {
-      this.myBuy.nativeElement.classList.add('active')
-    }
-    if(this.router.url === '/customer/catalogue') {
-      this.myCatalogue.nativeElement.classList.add('active')
-    }
-    if(this.router.url === '/login' || this.router.url === '/customer/manage-user-information') {
-      this.myProfile.nativeElement.classList.add('active');
-    }
-    if(this.router.url === '/customer/home') {
-      this.myHome.nativeElement.classList.add('active');
-    }
+    itemsFooter.forEach( (item, index) => {
+      item.addEventListener('click', () => {
+        if(itemsFooter[index].classList.contains('active') !== true) {
+          this.navigation.forward(this.getRoutes()[index][0]);
+          this.addActiveClass(itemsFooter, currentRoute);
+        }
+      })
+    })
  }
 
-  onActive(id: string) {
-    switch(id) {
-      case 'Chat':
-        this.navigation.forward('/customer/main-inbox');
-        break;
-      case 'Buy':
-        this.navigation.forward('/customer/empty-basket');
-        break;
-
-      case 'Catalogue':
-        this.navigation.forward('/customer/catalogue');
-        break;
-      
-      case 'Profile':
-        if(this.userLogged){
-          this.navigation.forward("/customer/manage-user-information")
-        }else{
-          this.navigation.forward('/login');
-        }
-        break;
-      case 'Home':
-        this.navigation.forward('/customer/home');
-        break;
-    }
+  addActiveClass(itemsFooter: HTMLDivElement[], currentRoute: string) {
+    itemsFooter.forEach( item => item.classList.remove('active'));
+    const active = Object.entries(this.getRoutes()).find(([key, value]) => value.includes(currentRoute));
+    itemsFooter[active[0]].classList.add('active');
   }
 
+  getRoutes() {
+    return {
+      0: ['/customer/home'],
+      1: ['/customer/catalogue'],
+      2: ['/customer/main-inbox'],
+      3: [
+          '/customer/empty-basket',
+          '/customer/my-basket',
+          '/customer/collaborative-basket'
+        ],
+      4: ['/customer/manage-user-information', '/login'],
+    }
+  }
 }

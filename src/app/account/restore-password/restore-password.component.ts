@@ -67,20 +67,24 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   }
 
   onGoToLogin() {
+    // this.inputPasswordValue = "";
+    // this.inputPasswordConfirmValue = "";
+    // this.restoreService.setInputPasswordValue(this.inputPasswordValue);
+    // this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
+    this.navigation.back("/login")
     this.inputPasswordValue = "";
     this.inputPasswordConfirmValue = "";
-    this.restoreService.setInputPasswordValue(this.inputPasswordValue);
-    this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
-    this.navigation.back("/login")
   }
 
   onSubmit() {
+    // this.inputPasswordValue = "";
+    // this.inputPasswordConfirmValue = "";
+    // this.restoreService.setInputPasswordValue(this.inputPasswordValue);
+    // this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
+    // this.lgService.setUserLogged(true);
+    this.navigator.forward("/login");
     this.inputPasswordValue = "";
     this.inputPasswordConfirmValue = "";
-    this.restoreService.setInputPasswordValue(this.inputPasswordValue);
-    this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
-    this.lgService.setUserLogged(true);
-    this.navigator.forward("/login");
   }
 
   checkFocus(input: string) {

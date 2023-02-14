@@ -1,65 +1,77 @@
-.disabled{
-    color: var(--ion-color-disabled);
-}
-
-.login-container{
+ion-header {
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: calc(100vh - 146.8px);
-}
+    z-index: 1000;
 
-ion-header{
-    padding-bottom: 40px;
-    ion-toolbar{
-        ion-title{
-            padding-top: 32px;
-            padding-right: 16px;
-            padding-left: 16px;
-        }
-    }
-}
+    ion-toolbar {
+        --padding-top: 12px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 40px;
 
-form{
-    ion-button{
-        margin-top: 5px;
-        margin-right: 16px;
-    }
-
-    ion-input{
-        --padding-bottom: 5px !important;
-        --padding-top: 5px !important;
-    }
-}
-
-ion-footer {
-    padding-right: 16px !important;
-    padding-left: 16px !important;
-    padding-bottom: 24px;
-}
-
-@media(min-width:390px){
-
-    .login-container{
-        height: calc(100vh - 156.8px) !important;
-    }
-
-    ion-header{
-        ion-toolbar{
-            ion-title{
-                padding-top: 24px;
-                padding-right: 24px;
-                padding-left: 24px;
+        .header-container {
+            .title {
+                font-weight: bold;
             }
         }
     }
-    form{
-        ion-button{
-            margin-right: 24px;
+}
+
+.login-container {
+    width: 100%;
+    height: calc(100vh - 146.8px); // resta del header y footer
+
+    form {
+        ion-button {
+            margin-top: 5px;
+            margin-right: 16px;
+        }
+
+        ion-input {
+            --padding-bottom: 5px !important;
+            --padding-top: 5px !important;
         }
     }
 
     ion-footer {
-        padding-right: 24px !important;
-        padding-left: 24px !important;
+        padding-right: 16px !important;
+        padding-left: 16px !important;
         padding-bottom: 24px;
     }
+}
+
+.disabled {
+    color: var(--ion-color-disabled);
+}
+
+
+@media(min-width:390px) {
+
+    ion-header {
+        ion-toolbar {
+            --padding-top: 24px;
+            --padding-start: 24px;
+            --padding-end: 24px;
+            --padding-bottom: 40px;
+        }
+    }
+
+
+    .login-container {
+
+        height: calc(100vh - 156.8px) !important;
+        form {
+            ion-button {
+                margin-right: 24px;
+            }
+        }
+
+        ion-footer {
+            padding-right: 24px !important;
+            padding-left: 24px !important;
+            padding-bottom: 24px;
+        }
+    }
+
 }

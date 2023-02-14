@@ -41,6 +41,7 @@ function appInitializerFactory(injector: Injector) {
 
           setupConfig(document, configurationService);
           themeService.init().then(() => {
+            document.body.classList.add(platform.is('android') ? 'md' : 'ios');
             resolve(true);
 
             //sessionProxie.getCurrentLoginInformations().subscribe({

@@ -93,7 +93,7 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
       break;
     }
 
-    this.settingsService.setThemeApp(theme);
+    this.settingsService.setTheme(theme);
     this.changeThemeStatusBar();
   }
 

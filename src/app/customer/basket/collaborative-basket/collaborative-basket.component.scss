@@ -4,12 +4,19 @@
   padding-bottom: 40px;
 }
 
+ion-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 /* FOOTER */
 ion-toolbar {
   --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 21px !important;
+  // padding-bottom: 21px !important;
 }
 .ion-toolbar{
   padding: 24px;
@@ -106,3 +113,14 @@ ion-modal {
   --background: var(--ion-background-alert)
 }
 
+//
+.container-footer {
+  position: fixed;
+  bottom: 68.89px;
+  left: 0;
+  width: 100%;
+  background-color: var(--ion-background-color);
+  z-index: 1000;
+  padding-top: 16px;
+  padding-bottom: 24px;
+}

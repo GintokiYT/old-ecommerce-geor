@@ -37,10 +37,21 @@
 @import "./theme/sass/toolbar.scss";
 @import "./theme/sass/customs.scss";
 
-ion-content {
-  --padding-top: var(--ion-safe-area-top);
-  --padding-bottom: var(--ion-safe-area-bottom);
+body.md {
+  ion-content {
+    --padding-top: 1.5rem;
+    --padding-bottom: 1.5rem;
+  }
 }
+
+
+body.ios {
+  ion-content {
+    --padding-top: var(--ion-safe-area-top);
+    --padding-bottom: var(--ion-safe-area-bottom);
+  }
+}
+
 
 // Cambiar el color del Status Bar en IOS (RCNA)
 //* IOS
