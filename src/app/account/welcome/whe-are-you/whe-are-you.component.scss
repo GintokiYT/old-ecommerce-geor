@@ -1,14 +1,17 @@
 .container-whereAreYou {
-  position: relative;
   width: 100%;
   min-height: 100vh;
+  background-color: var(--ion-background-color);
+
   display: flex;
   flex-direction: column;
-  background-color: var(--ion-background-color);
+  justify-content: space-between;
+  align-items: center;
 }
 
 .container-main {
   flex: 1;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +26,8 @@
   width: 100%;
   max-width: calc(100% - 32px);
   margin: 0 auto;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
+  padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
 
   @media(min-width: 390px) {
     max-width: calc(100% - 48px);
@@ -57,4 +61,9 @@ ion-content {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+ion-content {
+  --padding-top: 0 !important;
+  --padding-bottom: 0 !important;
 }

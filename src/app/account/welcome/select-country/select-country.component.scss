@@ -22,9 +22,10 @@
   max-width: 275px;
 }
 
-.container-footer {
+.container-footer{
   width: calc(100% - 32px);
   margin: 0 auto;
+  padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
 
   @media (min-width: 390px) {
     width: calc(100% - 48px);
@@ -58,6 +59,7 @@
 
   ion-button {
     margin-top: 8px;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -111,6 +113,7 @@
 }
 
 // Remover el scroll del ion-content
+
 ion-content {
   // overwrite inline styles
   --offset-bottom: auto;
@@ -119,4 +122,9 @@ ion-content {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+ion-content {
+  --padding-top: 0 !important;
+  --padding-bottom: 0 !important;
 }

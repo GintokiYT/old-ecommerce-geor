@@ -32,17 +32,21 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
 
   ngAfterViewInit() {
+    const messageInput: HTMLInputElement = this.messageInput.nativeElement;
     this.messageInput.nativeElement.addEventListener('focus', () => {
-      this.contentInput.nativeElement.style.display = "flex"
+      this.contentInput.nativeElement.style.display = "flex";
+      messageInput.style.paddingBottom = '24px';
     });
 
     this.messageInput.nativeElement.addEventListener('blur', () => {
       if(this.contentMessage.message.content.length === 0) {
-        this.contentInput.nativeElement.style.display = "none"
+        this.contentInput.nativeElement.style.display = "none";
+        messageInput.style.paddingBottom = 'calc(var(--ion-safe-area-bottom) + 24px)';
       }
     });
 
     this.messageRef.changes.subscribe(() => {
+      messageInput.style.paddingBottom = 'calc(var(--ion-safe-area-bottom) + 24px)';
       setTimeout(() => {
         const lastMessage: HTMLDivElement = this.lastMessage.nativeElement;
         lastMessage.scrollIntoView({ behavior: 'smooth' })

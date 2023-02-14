@@ -59,6 +59,7 @@ ion-content {
   position: fixed;
   left: 16px;
   top: 24px;
+  top: calc(var(--ion-safe-area-top) + 24px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,11 +95,17 @@ ion-footer {
   position: fixed;
   z-index: 1000;
   bottom: 0;
-
-  height: 160px;
+  height: cal(var(--ion-safe-area-bottom) + 160px);
 
   @media (min-width: 390px) {
-    height: 182px;
+    height: cal(var(--ion-safe-area-bottom) + 182px);
+  }
+
+}
+
+.container-button {
+  ion-button {
+    margin-bottom: var(--ion-safe-area-bottom);
   }
 }
 
