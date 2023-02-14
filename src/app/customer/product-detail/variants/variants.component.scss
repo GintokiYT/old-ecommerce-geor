@@ -68,3 +68,8 @@ sup{
   top:-1.5em !important;
   margin-left: 4px;
 }
+
+ion-button:nth-child(1)::part(native) {
+  border: 1px solid var(--ion-outline-color-button) !important;
+  color: var(--ion-outline-color-button);
+}
