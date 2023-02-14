@@ -20,7 +20,7 @@ ion-header {
 
 .login-container {
     width: 100%;
-    height: calc(100vh - 146.8px); // resta del header y footer
+    // height: calc(100% - 146.8px); // resta del header y footer
 
     form {
         ion-button {
@@ -35,6 +35,9 @@ ion-header {
     }
 
     ion-footer {
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 66.8px;
         padding-right: 16px !important;
         padding-left: 16px !important;
         padding-bottom: 24px;
@@ -60,7 +63,7 @@ ion-header {
 
     .login-container {
 
-        height: calc(100vh - 156.8px) !important;
+        // height: calc(100% - 156.8px) !important;
         form {
             ion-button {
                 margin-right: 24px;
@@ -68,6 +71,7 @@ ion-header {
         }
 
         ion-footer {
+            margin-bottom: 68.8px;
             padding-right: 24px !important;
             padding-left: 24px !important;
             padding-bottom: 24px;
