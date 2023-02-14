@@ -5,6 +5,7 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "dev": "ionic serve --external",
+    "geor": "ionic cap run ios --external --livereload",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

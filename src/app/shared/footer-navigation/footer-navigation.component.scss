@@ -8,10 +8,6 @@ html {
   padding: 0;
 }
 
-.ion-safe-area-bottom {
-  padding-bottom: calc(var(--ion-safe-area-bottom) + 16px) !important;
-}
-
 .inbox-ion-footer {
   box-sizing: border-box;
   position: fixed;
