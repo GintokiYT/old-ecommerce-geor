@@ -49,6 +49,11 @@ body.ios {
   ion-content {
     --padding-top: var(--ion-safe-area-top);
     --padding-bottom: var(--ion-safe-area-bottom);
+
+    &.remove-safe-area {
+      --padding-top: unset;
+      --padding-botom: unset;
+    }
   }
 }
 
@@ -56,13 +61,6 @@ body.ios {
 //* IOS
 ion-app {
   --ion-status-bar-background: var(--ion-color-icons-selected);
-}
-
-.remove-safe-area {
-  --padding-top: var(--ion-safe-area-top) !important;
-  --padding-bottom: var(--ion-safe-area-bottom) !important;
-  --padding-left: var(--ion-safe-area-left) !important;
-  --padding-right: var(--ion-safe-area-right) !important;
 }
 
 .remove-scroll {
