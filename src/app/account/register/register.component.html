@@ -1,8 +1,6 @@
-<!-- Header -->
+<ion-content [scrollEvents]="true">
 
-
-<ion-content class="position-relative">
-
+  <!-- Header -->
   <app-header title="Regístrate" iconLeft="icon-close" backDirection="login">
   </app-header>
 
@@ -57,11 +55,7 @@
         </div>
       </ng-template>
     </ion-modal>
-    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-      <ion-infinite-scroll-content></ion-infinite-scroll-content>
-    </ion-infinite-scroll>
-  </form>
-  <!-- End Form -->
+  </form>  <!-- End Form -->
 
   <!-- Footer -->
   <ion-footer class="ion-no-border">
@@ -77,5 +71,10 @@
     </ion-toolbar>
   </ion-footer>
 
+
 </ion-content>
+
+
+
+
 

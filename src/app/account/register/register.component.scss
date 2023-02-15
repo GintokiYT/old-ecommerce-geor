@@ -7,6 +7,7 @@ form {
         --padding-bottom: 5px !important;
         --padding-top: 5px !important;
     }
+    margin-bottom: 200px;
 }
 
 ion-modal {
@@ -26,10 +27,13 @@ ion-modal {
 ion-footer {
     position: fixed;
     bottom: 0;
+    z-index: 1000;
 
-    padding-right: 16px !important;
-    padding-left: 16px !important;
-    padding-bottom: 24px;
+    ion-toolbar{
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 24px;
+    }
 
     .terms,
     .politics {
@@ -39,8 +43,10 @@ ion-footer {
 
 @media(min-width:390px) {
     ion-footer {
-        padding-right: 24px !important;
-        padding-left: 24px !important;
+        ion-toolbar{
+            --padding-start: 24px;
+            --padding-end: 24px;
+        }
     }
 
     ion-modal {

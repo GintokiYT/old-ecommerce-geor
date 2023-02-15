@@ -22,10 +22,12 @@
         gap: 24px;
 
         .option{
-            justify-content: space-between;
+            position: relative;
 
             ion-label{
-                width: 248px;
+                position: absolute;
+                left: 39px;
+                width: calc(100% - 39px);
             }
 
             img{
@@ -54,11 +56,5 @@
 
     .options-container{
         padding-bottom: 0px !important;
-    }
-
-    .option{
-        ion-label{
-            width: 302px !important;
-        }
     }
 }
