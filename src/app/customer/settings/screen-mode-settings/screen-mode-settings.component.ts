@@ -128,8 +128,5 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
       }
     }
     metaTheme.content = colorStatusBar;
-
-    console.log(metaTheme)
-    // location.reload();
   }
 }
