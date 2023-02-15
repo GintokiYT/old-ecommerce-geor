@@ -54,6 +54,15 @@ body.ios {
       --padding-top: unset;
       --padding-botom: unset;
     }
+
+    &.remove-scroll {
+      --offset-bottom: auto! important;
+      --overflow: hidden;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 }
 
@@ -63,15 +72,7 @@ ion-app {
   --ion-status-bar-background: var(--ion-color-icons-selected);
 }
 
-.remove-scroll {
-  // overwrite inline styles
-  --offset-bottom: auto! important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+
 
 .button-regular {
   width: 100%;
@@ -79,14 +80,17 @@ ion-app {
   border-radius: 50px;
   padding: 12px 20px 12px 20px;
   transition: all .3s ease;
+
+
+  .button-disabled {
+    background-color: var(--ion-background-button-disabled);
+    color: var(--ion-color-text-button-disabled);
+  }
+  
+  .button-active {
+    background-color: #023AFF;
+    color: #FFFFFF;
+  }
 }
 
-.button-disabled {
-  background-color: var(--ion-background-button-disabled);
-  color: var(--ion-color-text-button-disabled);
-}
 
-.button-active {
-  background-color: #023AFF;
-  color: #FFFFFF;
-}
