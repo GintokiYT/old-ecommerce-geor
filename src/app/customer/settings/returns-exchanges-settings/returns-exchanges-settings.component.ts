@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, Injector, OnInit } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
@@ -8,13 +9,14 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class ReturnsExchangesSettingsComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector,private location:Location) {
     super(_injector)
   }
 
   ngOnInit() {}
 
   onBack() {
-    this.navigation.back('/customer/settings/main-settings')
+    /* this.navigation.back('/customer/settings/main-settings') */
+    this.location.back();
   }
 }
