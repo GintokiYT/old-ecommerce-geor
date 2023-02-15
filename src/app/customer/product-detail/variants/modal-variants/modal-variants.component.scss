@@ -12,6 +12,7 @@ ion-item::part(native) {
   padding: 0px !important;
 }
 
+
 /* Button */
 ion-button{
   border: 0px;
@@ -19,21 +20,20 @@ ion-button{
   --background:var(--ion-color-primary);
 }
 }
+ion-button:nth-child(1)::part(native) {
+  border: 1px solid var(--ion-outline-color-button) !important;
+  color: var(--ion-outline-color-button);
+  background-color: #191932;
+}
 
 .btn{
   width: 100%;
 }
 
-.cancel{
-color:#023AFF !important;
-}
-.add{
-color:#FFFFFF !important;
-}
-
 /* ---- */
 ion-radio{
   margin:0px !important;
+
 }
 
 ion-item{
@@ -45,7 +45,6 @@ ion-item{
 }
 
 // Estilos modal
-
 .container-modal-variants {
   position: fixed;
   top: 0;

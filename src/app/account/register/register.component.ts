@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { IonModal } from '@ionic/angular';
+import { IonModal, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
-import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import { Keyboard } from '@capacitor/keyboard';
+
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
@@ -11,6 +12,7 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 })
 export class RegisterComponent implements OnInit {
 
+  @ViewChild(IonContent) content: IonContent;
   form!: FormGroup;
   isPreventClose: boolean = false;
   @ViewChild(IonModal) modal!: IonModal;
@@ -23,15 +25,46 @@ export class RegisterComponent implements OnInit {
   showTextHelperEmail = false;
   showTextHelperPassword = false;
 
+  focusEmail = false;
+  focusPassword = false;
+
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
   passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
 
-  constructor(private router: Router) { }
-  items = [];
+  constructor(private router: Router) {
 
+    //Este evento se llama antes de que se muestre el teclado.
+    Keyboard.addListener('keyboardWillShow', info => {
+      console.log('keyboard will show with height:', info.keyboardHeight);
+    });
+
+    //Este evento se activa cuando el teclado está completamente abierto. 
+    Keyboard.addListener('keyboardDidShow', info => {
+      console.log('keyboard did show with height:', info.keyboardHeight);
+      // if(!this.focusEmail && !this.focusPassword){
+      //   //any
+      // }
+      // if(this.focusEmail===true){
+      //   this.content.scrollByPoint(0,50,500)
+      // }
+      // if(this.focusPassword===true){
+      //   this.content.scrollByPoint(0,150,500)
+      // }
+    });
+
+
+    //Este evento se evoca antes de que se cierre el teclado.
+    Keyboard.addListener('keyboardWillHide', () => {
+      console.log('keyboard will hide');
+    });
+    
+    //Este evento se dispara cuando el teclado está completamente cerrado.
+    Keyboard.addListener('keyboardDidHide', () => {
+    });
+  }
 
   ngOnInit() {
-    this.generateItems();
+    
     this.form = new FormGroup({
 
       name: new FormControl('', [
@@ -74,10 +107,26 @@ export class RegisterComponent implements OnInit {
 
   checkFocus(input: string) {
     switch (input) {
-      case "name": this.showTextHelperName = true; break;
-      case "phone": this.showTextHelperPhone = true; break;
-      case "email": this.showTextHelperEmail = true; break;
-      case "password": this.showTextHelperPassword = true; break;
+      case "name": this.showTextHelperName = true; 
+                    this.focusEmail = false;
+                    this.focusPassword = false;
+                    this.content.scrollToTop();
+                   break;
+      case "phone": this.showTextHelperPhone = true; 
+                    this.focusEmail = false;
+                    this.focusPassword = false;
+                    break;
+
+      case "email": this.showTextHelperEmail = true;
+                    this.focusEmail = true;
+                    this.focusPassword = false;
+                    this.content.scrollByPoint(0,50,500)
+                    break;
+      case "password": this.showTextHelperPassword = true; 
+                    this.focusEmail = false;
+                    this.focusPassword = true;
+                    this.content.scrollByPoint(0,150,500)
+                    break;
     }
   }
 
@@ -105,16 +154,9 @@ export class RegisterComponent implements OnInit {
     }
     
   }
-  private generateItems() {
-    const count = this.items.length + 1;
-    for (let i = 0; i < 50; i++) {
-      this.items.push(`Item ${count + i}`);
-    }
-  }
-  onIonInfinite(ev) {
-    this.generateItems();
-    setTimeout(() => {
-      (ev as InfiniteScrollCustomEvent).target.complete();
-    }, 500);
+
+
+  scrollToBottom() {
+    this.content.scrollToBottom()
   }
 }
