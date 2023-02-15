@@ -1,6 +1,7 @@
 import { AppNavigationService } from '@geor360/ecore';
 import { RouteCollection } from 'src/shared/route-collection';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'app-whe-are-you',
@@ -9,9 +10,11 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class WheAreYouComponent {
 
-  theme: string = localStorage.getItem('mode') === 'dark'? 'dark' : 'light';
+  languageWelcomeWheareyou: any;
 
-  constructor(private navigator: AppNavigationService) {}
+  constructor(private navigator: AppNavigationService, private languageService: LanguageService ) {
+    this.languageService.getLanguageWelcomeWheareyou.subscribe( language => this.languageWelcomeWheareyou = language);
+  }
 
   OnInit() {}
 

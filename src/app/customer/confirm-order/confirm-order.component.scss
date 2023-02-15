@@ -3,9 +3,12 @@
 
     .main {
         max-width: 100%;
-        padding-right: 24px;
-        padding-left: 24px;
-        padding-top: 32px;
+        // padding-right: calc(var(--ion-safe-area-right) + 24px) !important;
+        // padding-left: calc( var(--ion-safe-area-left) + 24px) !important;
+        // padding-top: calc( var(--ion-safe-area-top) + 32px) !important;
+        padding-right: 24px !important;
+        padding-left: 24px !important;
+        padding-top: 32px !important;
         gap: 32px;
 
         /** METODOS DE PAGO**/
@@ -121,11 +124,13 @@ app-footer {
     .confirm-order-container {
         margin-bottom: 76px;
 
-
         .main {
-            padding-right: 16px;
-            padding-left: 16px;
-            padding-top: 16px;
+            // padding-right: calc(var(--ion-safe-area-right) + 16px) !important;
+            // padding-left: calc( var(--ion-safe-area-left) + 16px) !important;
+            // padding-top: calc( var(--ion-safe-area-top) + 16px) !important;
+            padding-right: 16px !important;
+            padding-left: 16px !important;
+            padding-top: 16px !important;
             gap: 40px;
 
             ion-label {

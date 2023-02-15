@@ -1,8 +1,11 @@
 .contenedor-detalles-entrega{
 
     max-width: 100%;
-    padding-right: 24px;
-    padding-left: 24px;
+    // padding-right: calc(var(--ion-safe-area-right) + 24px) !important;
+    // padding-left: calc( var(--ion-safe-area-left) + 24px) !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+
 
     >p{
         font-weight: bold;
@@ -24,12 +27,6 @@
         color: var(--ion-color-tipo-pedido);
     }
 
-    // @media(max-width:320px){
-    //     .contenedor-opciones p{
-    //         color: #00000099;
-    //     }
-    // }
-
     .opcion{
         max-width: 100%;
         gap: 11px;
@@ -50,8 +47,10 @@
 @media(max-width:320px){
     .contenedor-detalles-entrega{
 
-        padding-right: 16px;
-        padding-left: 16px;
+        // padding-right: calc(var(--ion-safe-area-right) + 16px) !important;
+        // padding-left: calc( var(--ion-safe-area-left) + 16px) !important;
+        padding-right: 16px !important;
+        padding-left: 16px !important;
 
         >p{
             font-size: 14px;
@@ -74,20 +73,6 @@
     }
 }
 
-
-// .opcion:nth-child(1){
-
-//     img{
-//         filter: brightness(0) saturate(100%) invert(11%) sepia(76%) saturate(7498%) hue-rotate(234deg) brightness(105%) contrast(110%);
-//     }
-
-//     border-color: #023AFF;
-
-//     p{
-//         color: #023AFF;
-//     }
-
-// }
 
 
 

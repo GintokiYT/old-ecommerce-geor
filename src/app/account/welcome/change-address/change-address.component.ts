@@ -2,9 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AppNavigationService } from '@geor360/ecore';
 import { IonInput } from '@ionic/angular';
+import { SettingsService } from 'src/app/services/settings.service';
 import { RouteCollection } from 'src/shared/route-collection';
-
-import { AcountService } from '../../services/acount.service';
 
 @Component({
   selector: 'app-change-adddress',
@@ -19,12 +18,7 @@ export class ChangeAddressComponent {
   lng: number = 0;
   @ViewChild('inputAddress', { static: false }) inputAddress!: IonInput;
 
-  constructor(
-    private route: ActivatedRoute,
-    private navigator: AppNavigationService,
-
-    private acountService: AcountService
-  ) {
+  constructor(private route: ActivatedRoute, private navigator: AppNavigationService, private settingsService: SettingsService) {
     this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
   }
   ionViewWillEnter(): void {
@@ -46,7 +40,7 @@ export class ChangeAddressComponent {
         lng: this.lng,
       },
     };
-    this.acountService.direction =  params.queryParams['address'] || '';
+    this.settingsService.setAddressMyLocation(params.queryParams["address"]);
     this.navigator.back(RouteCollection.account.welcome.myLocation);
   }
 

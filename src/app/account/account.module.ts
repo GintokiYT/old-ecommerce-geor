@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountRoutingModule } from './account.routing.module';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { CoreModule } from '@geor360/ecore';
 import { LoginComponent } from './login/login.component';
 import { SelectCountryComponent } from './welcome/select-country/select-country.component';
@@ -33,7 +32,6 @@ import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
     IonicInputMaskModule
   ],
   declarations: [
-    WelcomeComponent,
     LoginComponent,
     SelectCountryComponent,
     WheAreYouComponent,

@@ -1,17 +1,13 @@
 .container-loading {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  min-height: 100vh;
-}
+  background-color: var(--ion-background-color);
 
-.container-loading img {
-  width: 213px;
-  height: 214px;
-}
-
-ion-content {
-  --padding-top: 0 !important;
-  --padding-bottom: 0 !important;
+  img {
+    width: 213px;
+    height: 214px;
+  }
 }

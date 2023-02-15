@@ -37,18 +37,46 @@
 @import "./theme/sass/toolbar.scss";
 @import "./theme/sass/customs.scss";
 
-// body.md {
-//   ion-content {
-//     --padding-top: 1.5rem;
-//     --padding-bottom: 1.5rem;
-//   }
-// }
+body.md {
+  ion-content {
+    // --padding-top: 1.5rem;
+    // --padding-bottom: 1.5rem;
+
+    &.remove-safe-area {
+      --padding-top: unset;
+      --padding-botom: unset;
+    }
+
+    &.remove-scroll {
+      --offset-bottom: auto! important;
+      --overflow: hidden;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
 
 
 body.ios {
   ion-content {
     --padding-top: var(--ion-safe-area-top);
     --padding-bottom: var(--ion-safe-area-bottom);
+
+    &.remove-safe-area {
+      --padding-top: unset;
+      --padding-botom: unset;
+    }
+
+    &.remove-scroll {
+      --offset-bottom: auto! important;
+      --overflow: hidden;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 }
 
@@ -58,15 +86,20 @@ ion-app {
   --ion-status-bar-background: var(--ion-color-icons-selected);
 }
 
+.button-regular {
+  width: 100%;
+  height: 48px;
+  border-radius: 50px;
+  padding: 12px 20px 12px 20px;
+  transition: all .3s ease;
 
-// Clases para el espacio en IOS
+  &.button-disabled {
+    background-color: var(--ion-background-button-disabled);
+    color: var(--ion-color-text-button-disabled);
+  }
 
-//* Bottom
-.ion-safe-area-bottom {
-  padding-bottom: var(--ion-safe-area-bottom) !important;
-}
-
-//* Top
-.ion-safe-area-top {
-  padding-bottom: var(--ion-safe-area-top) !important;
+  &.button-active {
+    background-color: #023AFF;
+    color: #FFFFFF;
+  }
 }
