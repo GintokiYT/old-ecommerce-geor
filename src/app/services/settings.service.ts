@@ -29,4 +29,15 @@ export class SettingsService {
   get getLanguage(): Observable<string> {
     return this.localLanguage;
   }
+
+  // Address
+  private addressMyLocation = new BehaviorSubject<string>('Pacto andino 8799');
+
+  setAddressMyLocation(address: string) {
+    this.addressMyLocation.next(address);
+  }
+
+  get getAddressMyLocation(): Observable<string> {
+    return this.addressMyLocation;
+  }
 }
