@@ -1,12 +1,14 @@
 <ion-content [fullscreen]="true">
-  <app-header-my-basket title="Mi cesta (96)"></app-header-my-basket>
+  <app-header-my-basket class="header-my-basket" title="Mi cesta (96)"></app-header-my-basket>
   <!-- CONTENIDO -->
-  <div class="content-my-cesta">
+  <div style="margin-top: 88px; margin-bottom: '218.66px';">
+  <div class="content-my-cesta" >
     <app-main-product></app-main-product>
   </div>
   <app-product></app-product>
   <app-modal-basket></app-modal-basket>
   <app-modal-invite></app-modal-invite>
+</div>
   <!-- FOOTER -->
   <div class="ion-no-border container-footer">
     <div>
@@ -26,5 +28,5 @@
       </div>
     </div>
   </div>
-  <!-- <app-footer-navigation></app-footer-navigation> -->
 </ion-content>
+<app-footer-navigation></app-footer-navigation>
