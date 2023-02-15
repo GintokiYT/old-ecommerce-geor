@@ -6,6 +6,9 @@
   align-items: center;
   background-color: var(--ion-background-color);
 
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
+
   img {
     width: 213px;
     height: 214px;

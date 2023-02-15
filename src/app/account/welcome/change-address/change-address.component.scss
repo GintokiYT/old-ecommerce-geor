@@ -5,6 +5,9 @@
   flex-direction: column;
   background-color: var(--ion-background-color);
   position: relative;
+
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 .header-basic {
@@ -12,9 +15,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding-left: calc(var(--ion-safe-area-left) + 16px);
-  padding-right: calc(var(--ion-safe-area-right) + 16px);
-  padding-top: calc(var(--ion-safe-area-top) + 24px);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
   padding-bottom: 24px;
 
   .content-header {
@@ -52,11 +55,11 @@
   }
 
   @media (min-width: 390px) {
-    padding-left: calc(var(--ion-safe-area-left) + 24px);
-    padding-right: calc(var(--ion-safe-area-right) + 24px);
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 .content-search {
-  margin-top: calc(var(--ion-safe-area-top) + 72px);
+  margin-top: 72px;
 }

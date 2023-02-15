@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 .container-my-location {
@@ -15,10 +18,6 @@
   flex: 1;
   position: relative;
   overflow: hidden;
-  padding-top: var(--ion-safe-area-top);
-  padding-bottom: var(--ion-safe-area-bottom);
-  padding-left: var(--ion-safe-area-left);
-  padding-right: var(--ion-safe-area-right);
 
   iframe {
     position: absolute;
@@ -32,9 +31,9 @@
 .container-footer {
   width: 100%;
   padding-top: 24px;
-  padding-left: calc(var(--ion-safe-area-left) + 16px);
-  padding-right: calc(var(--ion-safe-area-right) + 16px);
-  padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 24px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -46,15 +45,15 @@
   }
 
   @media (min-width: 390px) {
-    padding-left: calc(var(--ion-safe-area-left) + 24px);
-    padding-right: calc(var(--ion-safe-area-right) + 24px);
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 
 .button-back {
   position: fixed;
-  left: calc(var(--ion-safe-area-left) + 16px);
+  left: 16px;
   top: calc(var(--ion-safe-area-top) + 24px);
   display: flex;
   justify-content: center;
@@ -69,7 +68,7 @@
   }
 
   @media (min-width: 390px) {
-    left: calc(var(--ion-safe-area-left) + 24px);
+    left: 24px;
   }
 }
 
