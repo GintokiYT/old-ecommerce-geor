@@ -1,13 +1,21 @@
-<ion-content>
+<ion-content class="remove-safe-area remove-scroll">
   <div class="container-welcome">
     <div class="container-image">
       <img src="assets/images/bienvenida.svg" alt="welcome image"/>
     </div>
     <div class="container-footer">
-      <h2 class="title">¡Bienvenido!</h2>
-      <span class="sub-title">Elige el país donde quieres comprar</span>
+      <h2 class="title">
+        {{ languageWelcomeSelectCountry.title }}
+      </h2>
+      <span class="sub-title">
+        {{ languageWelcomeSelectCountry.subTitle }}
+      </span>
       <div class="container-flags">
-        <div class="container-flags--item" *ngFor="let country of countries" (click)="selectedContry(country.id)" >
+        <div
+          class="container-flags--item"
+          *ngFor="let country of countries"
+          (click)="selectedContry(country.id)"
+        >
           <img src="{{country.flag}}" alt="{{country.name}}" />
           <span>{{ country.name }}</span>
           <div class="radio-contry" [ngClass]="country.id">
@@ -16,14 +24,11 @@
             </svg>
           </div>
         </div>
-        <ion-button
-          expand="block"
-          color="primary"
-          shape="round"
-          type="submit"
-          [disabled]="statusButton"
+        <button
+          class="button-regular"
           (click)="navigateToWheAreYou()"
-        >Confirmar</ion-button>
+          [ngClass]="statusButton? 'button-disabled' : 'button-active'"
+        >{{ languageWelcomeSelectCountry.button }}</button>
       </div>
     </div>
   </div>

@@ -132,6 +132,9 @@ $btn-default: #5b6793;
 
   --ion-border-color: #1B1F3C;
   --ion-outline-color-button: #023AFF;
+
+  --ion-background-button-disabled: #E3EAFD;
+  --ion-color-text-button-disabled: #00000061;
 }
 
 
@@ -261,6 +264,9 @@ body.dark {
 
   --ion-border-color: #1B1F3C;
   --ion-outline-color-button: #5B6793;
+
+  --ion-background-button-disabled: #1B1F3C;
+  --ion-color-text-button-disabled: #5B6793;
 }
 
 /*
