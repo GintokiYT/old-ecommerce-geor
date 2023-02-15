@@ -8,10 +8,12 @@ ion-footer{
 ion-toolbar{
     --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
     --border-color: transparent;
-    --padding-top: 12px;
-    --padding-start: 24px;
-    --padding-end: 24px;
-    --padding-bottom: 24px
+    --padding-top: calc( var(--ion-safe-area-top) + 12px) !important;
+    --padding-start: calc( var(--ion-safe-area-left) + 24px) !important;
+    --padding-end: calc(var(--ion-safe-area-right) + 24px) !important;
+    --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
+
+    
 }
 
 .contenedor-footer{
@@ -40,9 +42,9 @@ ion-toolbar{
     }
 
     ion-toolbar{
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 16px;
+        --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
+        --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
+        --padding-bottom: calc( var(--ion-safe-area-bottom) + 16px) !important;
     }
 }
 

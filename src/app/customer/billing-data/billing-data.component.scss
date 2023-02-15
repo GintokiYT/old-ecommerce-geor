@@ -1,8 +1,7 @@
 .billing-data_container {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-left:  calc( var(--ion-safe-area-left) + 16px) !important;
+    padding-right:  calc(var(--ion-safe-area-right) + 16px) !important;
     gap: 24px;
-
 
     .bill-container {
         gap: 25px;
@@ -39,16 +38,16 @@ ion-footer {
     position: fixed;
     bottom: 0;
 
-    padding-right: 16px !important;
-    padding-left: 16px !important;
-    padding-bottom: 24px;
+    padding-left:  calc( var(--ion-safe-area-left) + 16px) !important;
+    padding-right:  calc(var(--ion-safe-area-right) + 16px) !important;
+    padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
 }
 
 
 @media(min-width:390px) {
     .billing-data_container {
-        padding-right: 24px;
-        padding-left: 24px;
+        padding-left:  calc( var(--ion-safe-area-left) + 24px) !important;
+        padding-right:  calc(var(--ion-safe-area-right) + 24px) !important;
     }
 
     .bill-information{
@@ -56,8 +55,8 @@ ion-footer {
     }
 
     ion-footer {
-        padding-right: 24px !important;
-        padding-left: 24px !important;
-        padding-bottom: 24px;
+        padding-left:  calc( var(--ion-safe-area-left) + 24px) !important;
+        padding-right:  calc(var(--ion-safe-area-right) + 24px) !important;
+        padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
     }
 }
