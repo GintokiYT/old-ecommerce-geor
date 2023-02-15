@@ -5,8 +5,6 @@ import { IonModal, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { Keyboard } from '@capacitor/keyboard';
 
-
-
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
