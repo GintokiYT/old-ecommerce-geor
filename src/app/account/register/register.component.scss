@@ -17,8 +17,11 @@ ion-modal {
     }
 
     &::part(content) {
-        margin-right: calc( var(--ion-safe-area-left) + 16px) !important;
-        margin-left: calc(var(--ion-safe-area-right) + 16px) !important;
+        // margin-right: calc( var(--ion-safe-area-left) + 16px) !important;
+        // margin-left: calc(var(--ion-safe-area-right) + 16px) !important;
+
+        margin-right: 16px !important;
+        margin-left: 16px !important;
     }
 
     --background: var(--ion-background-alert);
@@ -30,9 +33,13 @@ ion-footer {
     z-index: 1000;
 
     ion-toolbar{
-        --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
-        --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
-        --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
+        // --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
+        // --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
+        // --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
+
+        --padding-start:  16px !important;
+        --padding-end:  16px !important;
+        --padding-bottom: 24px !important;
     }
 
     .terms,
@@ -44,15 +51,21 @@ ion-footer {
 @media(min-width:390px) {
     ion-footer {
         ion-toolbar{
-            --padding-start:  calc( var(--ion-safe-area-left) + 24px) !important;
-            --padding-end:  calc(var(--ion-safe-area-right) + 24px) !important;
+            // --padding-start:  calc( var(--ion-safe-area-left) + 24px) !important;
+            // --padding-end:  calc(var(--ion-safe-area-right) + 24px) !important;
+
+            --padding-start:  24px !important;
+            --padding-end:  24px !important;
         }
     }
 
     ion-modal {
         &::part(content) {
-            margin-right: calc( var(--ion-safe-area-left) + 24px) !important;
-            margin-left: calc(var(--ion-safe-area-right) + 24px) !important;
+            // margin-right: calc( var(--ion-safe-area-left) + 24px) !important;
+            // margin-left: calc(var(--ion-safe-area-right) + 24px) !important;
+
+            margin-right: 24px !important;
+            margin-left: 24px !important;
         }
     }
 }
