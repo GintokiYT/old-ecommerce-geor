@@ -1,8 +1,10 @@
 import { AppNavigationService } from '@geor360/ecore';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouteCollection } from 'src/shared/route-collection';
 import { LoginService } from '../services/login.service';
+import { IonContent } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,8 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+
+  @ViewChild(IonContent) content: IonContent;
   loginForm!: FormGroup;
 
   showTextHelperPhoneOrEmail = false;
@@ -18,10 +22,9 @@ export class LoginComponent implements OnInit {
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
   passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
   
-  
-
   constructor(private navigator: AppNavigationService,
-              private lgService: LoginService) {}
+              private lgService: LoginService) {
+  }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -52,9 +55,13 @@ export class LoginComponent implements OnInit {
   checkFocus(input : string){
     switch(input){
       case "phoneOrEmail" : 
-        this.showTextHelperPhoneOrEmail = true; break;
+        this.showTextHelperPhoneOrEmail = true; 
+        this.content.scrollToTop();
+        break;
       case "password":
-        this.showTextHelperPassword = true; break;
+        this.showTextHelperPassword = true;
+        this.content.scrollByPoint(0,50,500)
+        break;
     }
   }
 
@@ -65,7 +72,7 @@ export class LoginComponent implements OnInit {
       case "password":
         this.showTextHelperPassword = false; break;
     }
-  }  
+  }    
 
 
 }
