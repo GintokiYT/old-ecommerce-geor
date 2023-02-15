@@ -12,30 +12,22 @@
 
 .extent-cm{
   padding: 8px;
-  background-color: #F5F5F5;
+  background-color:var(--ion-color-separator);
   border-radius: 4px;
 }
 
-.extent:hover{
-  background-color: var(--ion-color-variants);
-  color: #023AFF;
-  border: 1px solid #023AFF;
-}
+
 /* Espesor (mm) */
 .size-thicknes{
   gap:10px;
   margin-bottom: 32px;
 }
+
 .extent-mm{
-  width: 40px;
-  height: 31px;
   padding: 8px;
-  background-color: #F5F5F5;
+  background-color:var(--ion-color-separator);
   border-radius: 4px;
-  align-items: center;
 }
-
-
 
 /* Footer */
 .footer{
@@ -44,7 +36,7 @@
 }
 
 .dato{
-  color:#00000099;
+  color:var(--ion-color-text-secundary);
 }
 .dato:hover{
   color: #023AFF;;
@@ -54,24 +46,39 @@
 ion-button{
   border: 0px;
 }
+.btn-outline{
+width: 100%;
+}
 
 .btn{
   width: 100%;
 }
+
 .amount{
   padding: 2px 4px;
   background-color: var(--ion-color-primary);
   color: white;
   border-radius: 10px;
 }
+
 sup{
   top:-1.5em !important;
   margin-left: 4px;
 }
 
+.header-variants{
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
 ion-button:nth-child(1)::part(native) {
   border: 1px solid var(--ion-outline-color-button) !important;
   color: var(--ion-outline-color-button);
+
 }
 
 .footer {

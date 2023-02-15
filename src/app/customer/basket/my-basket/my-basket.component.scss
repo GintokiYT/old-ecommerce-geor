@@ -60,3 +60,10 @@ ion-checkbox::part(container) {
   }
 }
 
+.header-my-basket{
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
