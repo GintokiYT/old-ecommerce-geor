@@ -3,6 +3,9 @@
   min-height: 100vh;
   background-color: var(--ion-background-color);
 
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(ion--safe-area-bottom);
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
