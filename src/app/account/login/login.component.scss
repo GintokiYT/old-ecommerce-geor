@@ -5,10 +5,10 @@ ion-header {
     z-index: 1000;
 
     ion-toolbar {
-        --padding-top: 12px;
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 40px;
+        --padding-top: calc( var(--ion-safe-area-top) + 12px) !important;
+        --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
+        --padding-end:  calc (var(--ion-safe-area-right) + 16px) !important;
+        --padding-bottom: calc( var(--ion-safe-area-bottom) + 40px) !important;
 
         .header-container {
             .title {
@@ -43,9 +43,9 @@ ion-footer {
     margin-bottom: 66.8px;
 
     ion-toolbar{
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 24px;
+        --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
+        --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
+        --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
     }
 }
 
@@ -59,10 +59,9 @@ ion-footer {
 
     ion-header {
         ion-toolbar {
-            --padding-top: 24px;
-            --padding-start: 24px;
-            --padding-end: 24px;
-            --padding-bottom: 40px;
+            --padding-top: calc( var(--ion-safe-area-top) + 24px) !important;
+            --padding-start: calc( var(--ion-safe-area-left) + 24px) !important;
+            --padding-end: calc( var(--ion-safe-area-right) + 24px) !important;
         }
     }
 
@@ -76,10 +75,9 @@ ion-footer {
     }
 
     ion-footer {
-
         ion-toolbar{
-            --padding-start: 24px;
-            --padding-end: 24px;
+            --padding-start: calc( var(--ion-safe-area-left) + 24px) !important;
+            --padding-end: calc(var(--ion-safe-area-right) + 24px) !important;
         }
     }
 

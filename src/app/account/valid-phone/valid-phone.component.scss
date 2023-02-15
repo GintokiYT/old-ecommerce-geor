@@ -1,6 +1,6 @@
 .valid-phone-container {
-    padding-right: 16px;
-    padding-left: 16px ;
+    padding-left:  calc( var(--ion-safe-area-left) + 16px) !important;
+    padding-right:  calc(var(--ion-safe-area-right) + 16px) !important;
     
     form{
         ion-text {
@@ -45,35 +45,35 @@ ion-modal {
     }
 
     &::part(content) {
-        margin-right: 16px;
-        margin-left: 16px;
+        margin-right: calc(var(--ion-safe-area-right) + 16px) !important;
+        margin-left: calc( var(--ion-safe-area-left) + 16px) !important; 
     }
 
     --background: var(--ion-background-alert);
 
     .modal-container{
         padding : 24px 16px;
+
+        ion-text:nth-child(2){
+            margin-bottom: 32px;
+        }
     }
 }
 
 @media(min-width:390px) {
     .valid-phone-container {
-        padding-right: 24px;
-        padding-left: 24px
+        padding-left:  calc( var(--ion-safe-area-left) + 24px) !important;
+        padding-right:  calc(var(--ion-safe-area-right) + 24px) !important;
     }
 
     ion-modal {
         &::part(content) {
-            margin-right: 24px;
-            margin-left: 24px;
+            margin-right: calc(var(--ion-safe-area-right) + 24px) !important;
+            margin-left: calc( var(--ion-safe-area-left) + 24px) !important;
         }
 
         .modal-container{
             padding : 24px !important;
-
-            ion-text:nth-child(2){
-                margin-bottom: 32px;
-            }
         }
     }
 }
