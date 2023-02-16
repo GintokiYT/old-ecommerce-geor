@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 1000;
   padding-top: var(--ion-safe-area-top);
+
 }
 
 ion-toolbar {
@@ -26,6 +27,4 @@ ion-title {
   }
 }
 
-ion-header ion-toolbar:first-of-type {
-  padding-top: 0;
-}
+
