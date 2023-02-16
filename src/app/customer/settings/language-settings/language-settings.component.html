@@ -1,39 +1,42 @@
-<ion-content>
+<ion-content class="remove-safe-area remove-scroll">
   <div class="container-app-settings">
 
-    <app-header
-      title="Idioma"
-      backDirection="main-settings"
-      iconLeft="icon-arrow-left"
-      class="header-screen-mode-settings"
-    ></app-header>
+    <header class="header-basic">
+      <div class="content-header">
+        <h2>{{ contenido.title }}</h2>
+        <div class="icon-back" (click)="onToBack('/customer/settings/main-settings')">
+          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-arrow-left"><path _ngcontent-byu-c175="" d="M2 12.2744L17 12.2744" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path _ngcontent-byu-c175="" d="M8.0498 18.299L1.9998 12.275L8.0498 6.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+      </div>
+    </header>
 
     <div class="container-body">
       <div class="items">
         <div class="item-language active" (click)="changeLanguage('es_ES', $event)">
-          <span>Español</span>
+          <span>{{ contenido.spanish }}</span>
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
               <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
             </svg>
           </div>
         </div>
-        <div class="item-language" (click)="changeLanguage('es_US', $event)">
-          <span>Inglés</span>
+        <div class="item-language" (click)="changeLanguage('en_US', $event)">
+          <span>{{ contenido.english }}</span>
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
               <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
             </svg>
           </div>
         </div>
-        <div class="item-language" (click)="changeLanguage('es_PT', $event)">
+        <!-- NO HAY Portugués-->
+        <!-- <div class="item-language" (click)="changeLanguage('pt_PT', $event)">
           <span>Portugués</span>
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="7.5px" height="5px" viewBox="0 0 10 7" fill="none">
               <path d="M1.25 2.77273L3.89703 5.5L8.75 0.5" stroke="none" stroke-width="0.833333" stroke-linecap="round"/>
             </svg>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

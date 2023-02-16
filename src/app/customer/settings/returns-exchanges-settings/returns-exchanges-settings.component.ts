@@ -5,7 +5,7 @@ import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-returns-exchanges-settings',
   templateUrl: './returns-exchanges-settings.component.html',
-  styleUrls: ['./returns-exchanges-settings.component.scss'],
+  styleUrls: ['./returns-exchanges-settings.component.scss', '../../../../theme/personalizado.scss'],
 })
 export class ReturnsExchangesSettingsComponent extends ViewComponent implements OnInit {
 
@@ -15,8 +15,8 @@ export class ReturnsExchangesSettingsComponent extends ViewComponent implements 
 
   ngOnInit() {}
 
-  onBack() {
-    /* this.navigation.back('/customer/settings/main-settings') */
-    this.location.back();
+  onToBack(route: string) {
+    this.navigation.back(route);
   }
+
 }

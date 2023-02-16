@@ -4,7 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-terms-conditions-settings',
   templateUrl: './terms-conditions-settings.component.html',
-  styleUrls: ['./terms-conditions-settings.component.scss'],
+  styleUrls: ['./terms-conditions-settings.component.scss', '../../../../theme/personalizado.scss'],
 })
 export class TermsConditionsSettingsComponent extends ViewComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class TermsConditionsSettingsComponent extends ViewComponent implements O
 
   ngOnInit() {}
 
-  onBack() {
-    this.navigation.back('/customer/settings/main-settings')
+  onToBack(route: string) {
+    this.navigation.back(route)
   }
 }

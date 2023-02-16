@@ -19,8 +19,8 @@ export class SettingsService {
   // Language
   private localLanguage = new BehaviorSubject<string>(
     localStorage.getItem('language') === 'es_ES' ? 'Español' :
-    localStorage.getItem('language') === 'es_US' ? 'Inglés' :
-    localStorage.getItem('language') === 'es_PT' ? 'Portugués' : ''
+    localStorage.getItem('language') === 'en_US' ? 'Inglés' :
+    localStorage.getItem('language') === 'pt_PT' ? 'Portugués' : ''
   );
 
   setLanguage(language: string) {

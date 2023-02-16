@@ -1,15 +1,4 @@
-.container-change-address {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--ion-background-color);
-  position: relative;
-
-  padding-top: var(--ion-safe-area-top);
-  padding-bottom: var(--ion-safe-area-bottom);
-}
-
+// Header
 .header-basic {
   box-sizing: border-box;
   position: fixed;
@@ -61,8 +50,4 @@
     padding-left: 24px;
     padding-right: 24px;
   }
-}
-
-.content-search {
-  margin-top: 72px;
 }
