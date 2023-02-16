@@ -27,10 +27,14 @@ ion-modal {
     --background: var(--ion-background-alert);
 }
 
+.container-register{
+    height: calc(100% + var(--ion-safe-area-bottom))
+}
+
 ion-footer {
-    position: fixed;
-    bottom: 0;
-    z-index: 1000;
+    // position: fixed;
+    // bottom: 0;
+    // z-index: 1000;
 
     ion-toolbar{
         // --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
