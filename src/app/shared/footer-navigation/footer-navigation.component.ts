@@ -12,11 +12,12 @@ import { LoginService } from 'src/app/account/services/login.service';
 export class FooterNavigationComponent extends ViewComponent implements OnInit {
 
   @ViewChildren('myItemFooter') myItemFooter: QueryList<ElementRef>;
-  userLogged: boolean = false;
+  userLogged: boolean;
 
   constructor(_injector: Injector, private router: Router,
               private lgService : LoginService) {
     super(_injector);
+    this.lgService.currentUserLogged$.subscribe( userLogged => this.userLogged = userLogged);
   }
 
   ngOnInit() {
@@ -33,7 +34,13 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
     itemsFooter.forEach( (item, index) => {
       item.addEventListener('click', () => {
         if(itemsFooter[index].classList.contains('active') !== true) {
-          this.navigation.forward(this.getRoutes()[index][0]);
+
+          if(this.userLogged === true && index === 4) {
+            this.navigation.forward(this.getRoutes()[index][1])
+          } else {
+            this.navigation.forward(this.getRoutes()[index][0]);
+          }
+
           this.addActiveClass(itemsFooter, currentRoute);
         }
       })
@@ -57,7 +64,7 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
           '/customer/collaborative-basket'
         ],
       // 4: this.userLogged ? ['/customer/manage-user-information'] :  ['/login'],
-      4: ['/customer/manage-user-information', '/login'],
+      4: ['/login', '/customer/manage-user-information'],
     }
   }
 }
