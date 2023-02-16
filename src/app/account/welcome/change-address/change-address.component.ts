@@ -9,7 +9,7 @@ import { RouteCollection } from 'src/shared/route-collection';
 @Component({
   selector: 'app-change-adddress',
   templateUrl: 'change-address.component.html',
-  styleUrls: ['change-address.component.scss']
+  styleUrls: ['change-address.component.scss', '../../../../theme/personalizado.scss']
 })
 export class ChangeAddressComponent {
   filter: string | null = '';
