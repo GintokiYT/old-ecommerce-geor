@@ -4,7 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-privacy-policies-settings',
   templateUrl: './privacy-policies-settings.component.html',
-  styleUrls: ['./privacy-policies-settings.component.scss'],
+  styleUrls: ['./privacy-policies-settings.component.scss', '../../../../theme/personalizado.scss'],
 })
 export class PrivacyPoliciesSettingsComponent extends ViewComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class PrivacyPoliciesSettingsComponent extends ViewComponent implements O
 
   ngOnInit() {}
 
-  onBack() {
-    this.navigation.back('/customer/settings/main-settings')
+  onToBack(route: string) {
+    this.navigation.back(route)
   }
 }

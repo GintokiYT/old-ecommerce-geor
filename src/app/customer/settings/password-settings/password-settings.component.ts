@@ -4,7 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-password-settings',
   templateUrl: './password-settings.component.html',
-  styleUrls: ['./password-settings.component.scss'],
+  styleUrls: ['./password-settings.component.scss', '../../../../theme/personalizado.scss'],
 })
 export class PasswordSettingsComponent extends ViewComponent implements OnInit {
 
@@ -68,5 +68,9 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
       ...this.statusButtons,
       [button]: !this.statusButtons[button]
     }
+  }
+
+  onToBack(route: string) {
+    this.navigation.back(route);
   }
 }

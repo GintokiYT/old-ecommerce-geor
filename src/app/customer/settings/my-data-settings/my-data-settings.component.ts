@@ -4,7 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-my-data-settings',
   templateUrl: './my-data-settings.component.html',
-  styleUrls: ['./my-data-settings.component.scss'],
+  styleUrls: ['./my-data-settings.component.scss', '../../../../theme/personalizado.scss'],
 })
 export class MyDataSettingsComponent extends ViewComponent implements OnInit {
 
@@ -61,8 +61,8 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
-  onBack() {
-    this.navigation.back('/customer/settings/main-settings')
+  onToBack(route: string) {
+    this.navigation.back(route);
   }
 
 }
