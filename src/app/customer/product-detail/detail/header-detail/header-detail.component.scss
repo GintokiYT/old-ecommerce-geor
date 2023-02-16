@@ -11,7 +11,7 @@ ion-toolbar{
   --padding-bottom: 24px;
 }
 
-@media(max-width:320px){
+@media(max-width:320px){    
   ion-toolbar{
       --padding-top: 32px;
       --padding-start: 16px;
@@ -36,5 +36,9 @@ ion-item-options{
   path {
     stroke: var(--ion-color-basic);
   }
+}
+
+ion-header ion-toolbar:first-of-type {
+  padding-top: 0;
 }
 
