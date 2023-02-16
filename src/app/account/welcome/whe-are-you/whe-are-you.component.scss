@@ -3,34 +3,38 @@
   min-height: 100vh;
   background-color: var(--ion-background-color);
 
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(ion--safe-area-bottom);
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
 
-.container-main {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .container-main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.container-main img {
-  width: 100%;
-  max-width: 160.5px;
+    img {
+      width: 100%;
+      max-width: 160.5px;
+    }
+  }
 }
 
 .container-footer {
   width: 100%;
-  max-width: calc(100% - 32px);
-  margin: 0 auto;
-  padding-bottom: 24px;
+  padding-top: 16px;
+  padding-left: calc(var(--ion-safe-area-left) + 16px);
+  padding-right: calc(var(--ion-safe-area-right) + 16px);
   padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
 
   @media(min-width: 390px) {
-    max-width: calc(100% - 48px);
+    padding-left: calc(var(--ion-safe-area-left) + 24px);
+    padding-right: calc(var(--ion-safe-area-right) + 24px);
   }
 }
 
@@ -46,24 +50,4 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--ion-color-text-secundary)
-}
-
-.container-footer ion-button {
-  margin: 0;
-}
-
-// Remover el scroll del ion-content
-ion-content {
-  // overwrite inline styles
-  --offset-bottom: auto! important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-ion-content {
-  --padding-top: 0 !important;
-  --padding-bottom: 0 !important;
 }

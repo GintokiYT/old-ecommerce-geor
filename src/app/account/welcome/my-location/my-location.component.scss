@@ -1,64 +1,60 @@
-.google-map {
-  height: 100%;
-  width: 100%;
-}
-
-ion-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 160px;
-  background-color: var(--ion-background-color);
+.container-my-location {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 24px 0;
-
-  @media (min-width: 390px) {
-    padding: 24px 0 24px 0;
-    height: 182px;
-  }
+  min-height: 100vh;
 }
 
-ion-input {
-  --padding-bottom: 12px;
-  --padding-end: 0;
-  --padding-start: 0;
-  --padding-top: 0;
-
-  border-bottom: 1px solid var(--ion-color-separator);
-  font-size: 14px;
-
-  @media (min-width: 390px) {
-    font-size: 16px;
-  }
+.container-my-location {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.container-input {
-  margin: 0 16px;
-
-  @media(min-width: 390px) {
-    margin: 0 24px;
-  }
-}
-
-.container-button {
-  margin: 0 16px;
-
-  @media(min-width: 390px) {
-    margin: 0 24px;
-  }
-}
-
-ion-content {
+.content-map {
+  flex: 1;
   position: relative;
+  overflow: hidden;
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
+  padding-left: var(--ion-safe-area-left);
+  padding-right: var(--ion-safe-area-right);
+
+  iframe {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: calc(100% + 200px);
+    height: calc(100% + 200px);
+  }
 }
+
+.container-footer {
+  width: 100%;
+  padding-top: 24px;
+  padding-left: calc(var(--ion-safe-area-left) + 16px);
+  padding-right: calc(var(--ion-safe-area-right) + 16px);
+  padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  background-color: var(--ion-background-color);
+
+  span {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ion-color-separator);
+  }
+
+  @media (min-width: 390px) {
+    padding-left: calc(var(--ion-safe-area-left) + 24px);
+    padding-right: calc(var(--ion-safe-area-right) + 24px);
+  }
+}
+
 
 .button-back {
   position: fixed;
-  left: 16px;
-  top: 24px;
+  left: calc(var(--ion-safe-area-left) + 16px);
   top: calc(var(--ion-safe-area-top) + 24px);
   display: flex;
   justify-content: center;
@@ -68,54 +64,12 @@ ion-content {
   border-radius: 50%;
   background-color: var(--ion-background-secondary);
 
-  @media (min-width: 390px) {
-    left: 24px;
+  svg path{
+    stroke: var(--ion-color-arrow-map);
   }
-}
-
-.button-back svg path{
-  stroke: var(--ion-color-arrow-map);
-}
-
-// iframe {
-//   width: 100%;
-//   height: calc(100% - 92px);
-
-//   @media (min-width: 390px) {
-//     height: calc(100% - 115px);
-//   }
-// }
-
-iframe {
-  width: 100%;
-  min-height: 100vh;
-}
-
-ion-footer {
-  position: fixed;
-  z-index: 1000;
-  bottom: 0;
-  height: cal(var(--ion-safe-area-bottom) + 160px);
 
   @media (min-width: 390px) {
-    height: cal(var(--ion-safe-area-bottom) + 182px);
-  }
-
-}
-
-.container-button {
-  ion-button {
-    margin-bottom: var(--ion-safe-area-bottom);
+    left: calc(var(--ion-safe-area-left) + 24px);
   }
 }
 
-// Remover el scroll del ion-content
-ion-content {
-  // overwrite inline styles
-  --offset-bottom: auto! important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}

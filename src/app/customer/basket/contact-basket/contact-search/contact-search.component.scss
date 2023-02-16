@@ -50,3 +50,8 @@ ion-item {
     stroke: var(--ion-color-basic);
   }
 }
+
+ion-header ion-toolbar:first-of-type{
+  padding-top:24px;
+  
+}

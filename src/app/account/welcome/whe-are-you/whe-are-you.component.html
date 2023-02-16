@@ -1,34 +1,15 @@
-<!-- <ion-content [fullscreen]="true">
-  <div id="container" class="mt-5">
-    <img
-      src="assets/images/mi-posicion.svg"
-      alt="Donde te encuentras"
-      class="img-fluid"
-      width="170"
-    />
-  </div>
-</ion-content>
-<ion-footer class="ion-padding">
-  <p class="fw-semibold mb-3">Cuentanos dónde te encuentras</p>
-  <p class="text-secondary mb-3">
-    Esto nos ayudará a ofrecerte productos disponibles para tu ubicación
-  </p>
-  <ion-button expand="block" color="primary" shape="round" (click)="onSubmit()"
-    >Confirmar</ion-button
-  >
-</ion-footer> -->
-
-<ion-content>
+<ion-content class="remove-safe-area remove-scroll">
   <div class="container-whereAreYou">
     <div class="container-main">
       <img src="assets/images/mi-posicion.svg" alt="Donde te encuentras"/>
     </div>
     <div class="container-footer">
-      <h2>Cuentanos dónde te encuentras</h2>
-      <p>Esto nos ayudará a ofrecerte productos disponibles para tu ubicación</p>
-      <ion-button expand="block" color="primary" shape="round" (click)="onSubmit()"
-      >Confirmar</ion-button>
+      <h2> {{ languageWelcomeWheareyou.subTitle }} </h2>
+      <p> {{ languageWelcomeWheareyou.description }} </p>
+      <button
+        class="button-regular button-active"
+        (click)="onSubmit()"
+      > {{ languageWelcomeWheareyou.button }} </button>
     </div>
   </div>
-
 </ion-content>

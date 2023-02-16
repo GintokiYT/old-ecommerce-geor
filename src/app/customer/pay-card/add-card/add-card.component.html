@@ -9,22 +9,23 @@
 
   <div class="content-add container-main">
     <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
-      <ion-item >
-        <ion-label position="floating" class="fz-normal" color="medium"
+      <ion-item class="form-group">
+        <ion-label position="floating" class="fz-normal disabled" color="medium"
         >Número de tarjeta</ion-label>
-        <ion-input 
+        <ion-input
+        
           type="tel"
           name="cardnumber"
           inputmode="numeric"
           mask="**** **** **** **** ****"
-          maxlength="20"
+          maxlength="24"
           class="ion-text-left"
           name="cardnumber"
           [(ngModel)]="data.cardnumber"
           required
         ></ion-input>
       </ion-item>
-      <ion-item >
+      <ion-item class="form-group">
         <ion-label position="floating" class="fz-normal" color="medium"
         >Nombre del titular de la tarjeta</ion-label>
         <ion-input
@@ -34,10 +35,11 @@
           required  
         ></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item class="form-group">
         <ion-label position="floating" class="fz-normal" color="medium"
         >Vencimiento</ion-label>
         <ion-input
+          type="tel"
           mask="**/**/****"
           class="ion-text-left"
           maxlength="10"
@@ -46,7 +48,7 @@
           required  
         ></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item class="form-group">
         <img id="info" slot="end" (click)="setOpen(true)" src="/assets/icons/icon-help.svg" alt="help">
         <ion-label position="floating" class="fz-normal" color="medium"
         >Código de seguridad</ion-label>
@@ -57,9 +59,6 @@
           required 
         ></ion-input>
       </ion-item>  
-      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-        <ion-infinite-scroll-content></ion-infinite-scroll-content>
-      </ion-infinite-scroll>
     </form>
   </div>
 

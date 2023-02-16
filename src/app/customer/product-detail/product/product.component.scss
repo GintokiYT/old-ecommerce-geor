@@ -16,6 +16,7 @@
 }
 
 .information-producto {
+  margin-bottom: 84px;
   gap: 24px;
 }
 .send {
@@ -32,4 +33,10 @@ height: 10px;
   path{
     stroke: var(--ion-color-arrow) !important;
 }
+}
+.footer-product{
+position:fixed;
+bottom:0;
+width:100%;
+z-index:1000;
 }

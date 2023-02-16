@@ -4,12 +4,15 @@ button{
   }
 
 ion-toolbar{
-  --background: var(--ion-toolbar-background, var(--ion-color-step-50));
+  
+ /* --background: var(--ion-toolbar-background, var(--ion-color-step-50));
   --min-height: 0px;
-  --padding-top: 24px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --padding-bottom: 24px
+  --inner-padding-end:24px
+  --padding-start: 24px !important;
+  --padding-end: 24px !important;
+  --padding-bottom: 24px !important;*/
+  --min-height:unset;
+  --background:var(--ion-background-color)
 }
 /**/
 
@@ -42,7 +45,7 @@ ion-checkbox{
   --size: 20px;
 }
 ion-item{
-  margin:0px 24px 0px 24px;
+  margin:0px 0px 0px 0px;
 }
 
 /* Dark */
@@ -56,5 +59,39 @@ ion-item{
     stroke: var(--ion-color-basic);
   }
 }
+/*
+.header-basket{
+  padding-top: var(--ion-safe-area-top);
+}
+*/
+.header-contact{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:10000;
+  padding-top:var(--ion-safe-area-top);
+ 
+}
+.container-contact{
+  width:100%;
+  min-height: 100vh;
+ 
+}
 
+ion-header ion-toolbar:first-of-type{
+  padding-top:24px;
+  
+}
 
+ion-footer {
+  position:fixed;
+  bottom:0;
+  ion-toolbar{
+      // --padding-start: calc( var(--ion-safe-area-left)  24px) !important;
+      // --padding-end: calc(var(--ion-safe-area-right)  24px) !important;
+
+      --padding-start: 24px !important;
+      --padding-end: 24px !important;
+      --padding-bottom: 24px !important;
+  }
+}
