@@ -33,12 +33,8 @@ export class ModalAddComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
-  goContact(){
-    this.navigation.root('customer/collaborative-basket', 'forward');
-  }
-
   goMyBasquet() {
     this.productDetailService.setStatusModalAdd(false);
-    this.navigation.forward('customer/collaborative-basket');
+    this.navigation.forward('customer/my-basket');
   }
 }
