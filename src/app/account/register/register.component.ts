@@ -110,7 +110,7 @@ export class RegisterComponent implements OnInit {
       case "name": this.showTextHelperName = true; 
                     this.focusEmail = false;
                     this.focusPassword = false;
-                    this.content.scrollToTop();
+                    //this.content.scrollToTop();
                    break;
       case "phone": this.showTextHelperPhone = true; 
                     this.focusEmail = false;
@@ -120,12 +120,12 @@ export class RegisterComponent implements OnInit {
       case "email": this.showTextHelperEmail = true;
                     this.focusEmail = true;
                     this.focusPassword = false;
-                    this.content.scrollByPoint(0,50,500)
+                    //this.content.scrollByPoint(0,50,500)
                     break;
       case "password": this.showTextHelperPassword = true; 
                     this.focusEmail = false;
                     this.focusPassword = true;
-                    this.content.scrollByPoint(0,150,500)
+                    //this.content.scrollByPoint(0,150,500)
                     break;
     }
   }

@@ -1,7 +1,5 @@
 import { Component, OnInit, Injector, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
-import { ModalAddComponent } from '../modal-add/modal-add.component';
-import { ModalBasketComponent } from '../modal-basket/modal-basket.component';
 import { ProductDetailService } from '../../../../services/productDetail.service';
 
 @Component({
@@ -32,34 +30,6 @@ export class ModalVariantsComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {}
-
-  Close(){
-    this.dialog.dismiss();
-  }
-
-  showModalBasket(){
-    this.dialog.show({
-      showBackdrop:true,
-      component: ModalBasketComponent,
-      componentProps: {
-        title: "ModalBasket"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
-  }
-
-  showModalAdd(){
-    this.dialog.show({
-      showBackdrop:true,
-      component: ModalAddComponent,
-      componentProps: {
-        title: "ModalAdd"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
-  }
 
   openModalAdd() {
     this.productDetailService.setStatusModalVariants(false);
