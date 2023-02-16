@@ -56,7 +56,8 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
           '/customer/my-basket',
           '/customer/collaborative-basket'
         ],
-      4: this.userLogged ? ['/customer/manage-user-information'] :  ['/login'],
+      // 4: this.userLogged ? ['/customer/manage-user-information'] :  ['/login'],
+      4: ['/customer/manage-user-information', '/login'],
     }
   }
 }

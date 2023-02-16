@@ -16,6 +16,9 @@ ion-content {
   width: 100%;
   min-height: 100vh;
   background-color: var(--ion-background-color);
+
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 .header-screen-mode-settings {
@@ -70,16 +73,5 @@ ion-content {
         stroke: #FFFFFF;
       }
     }
-  }
-}
-
-// Remover el scroll del ion-content
-ion-content {
-  // overwrite inline styles
-  --offset-bottom: auto! important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
   }
 }

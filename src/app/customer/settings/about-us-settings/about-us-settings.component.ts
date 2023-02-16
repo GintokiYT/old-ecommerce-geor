@@ -4,7 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-about-us-settings',
   templateUrl: './about-us-settings.component.html',
-  styleUrls: ['./about-us-settings.component.scss'],
+  styleUrls: ['./about-us-settings.component.scss', '../../../../theme/personalizado.scss'],
 })
 export class AboutUsSettingsComponent extends ViewComponent implements OnInit {
 
@@ -20,5 +20,9 @@ export class AboutUsSettingsComponent extends ViewComponent implements OnInit {
 
   goNextPage(route: string) {
     this.navigation.forward(route)
+  }
+
+  onToBack(route: string) {
+    this.navigation.back(route);
   }
 }

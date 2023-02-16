@@ -22,12 +22,16 @@ export class AppComponent {
     const mql: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
     const handleThemeChange = (event: any) => {
-      if (event.matches) {
-        body.classList.add('dark');
-        body.classList.remove('light');
+      if(localStorage.getItem('mode') !== '') {
+        body.classList.add(localStorage.getItem('mode'));
       } else {
-        body.classList.add('light');
-        body.classList.remove('dark');
+        if (event.matches) {
+          body.classList.add('dark');
+          body.classList.remove('light');
+        } else {
+          body.classList.add('light');
+          body.classList.remove('dark');
+        }
       }
     };
 

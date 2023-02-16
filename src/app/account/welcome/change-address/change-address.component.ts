@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AppNavigationService } from '@geor360/ecore';
