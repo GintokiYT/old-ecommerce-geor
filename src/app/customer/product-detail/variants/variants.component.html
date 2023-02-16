@@ -21,11 +21,10 @@
      </ion-text>
     <ion-text class="size-thicknes d-flex flex-column">
       <ion-label class="fw-normal ">Espesor (mm)</ion-label>
-      <div class="d-flex">
-        <div class="fz-note " style="margin-right: 7px;"> <ion-label class="extent-mm">2</ion-label> <sup class="amount">10</sup> </div>
-        <div class="fz-note " style="margin-right: 11px;"> <ion-label class="extent-mm">4</ion-label>  </div>
-        <div class="fz-note " style="margin-right: 16px;"> <ion-label class="extent-mm">8</ion-label></div>
-
+      <div class="d-flex g-4">
+        <div class="fz-note "> <ion-label class="extent-mm px-3">2</ion-label> <sup class="amount">10</sup> </div>
+        <div class="fz-note me-4 "> <ion-label class="extent-mm px-3">4</ion-label></div>
+        <div class="fz-note "> <ion-label class="extent-mm px-3">8</ion-label></div>
       </div>
     </ion-text>
   </div>
@@ -62,16 +61,17 @@
             expand="block"
             shape="round"
             (click)="OpenModalVariants()"
-          >
+            style="height: 48px !important;">
             Añadir a la cesta
           </ion-button>
+
           <ion-button
             (click)="goToConfirmOrder()"
             class="btn ion-no-padding ion-no-margin"
             expand="block"
             shape="round"
             color="primary"
-          >
+            style="height: 48px !important;">
             Ir a pagar
           </ion-button>
         </div>

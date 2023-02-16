@@ -16,7 +16,10 @@
   border-radius: 4px;
 }
 
-
+/* .extent-cm.active {
+  background-color: red;
+}
+ */
 /* Espesor (mm) */
 .size-thicknes{
   gap:10px;
@@ -37,9 +40,6 @@
 
 .dato{
   color:var(--ion-color-text-secundary);
-}
-.dato:hover{
-  color: #023AFF;;
 }
 
 /* Button */

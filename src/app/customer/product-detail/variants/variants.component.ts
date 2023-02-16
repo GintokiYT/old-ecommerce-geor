@@ -56,17 +56,6 @@ export class VariantsComponent extends ViewComponent implements OnInit {
     { number: 4 },
     { number: 8 },
   ];
-  showModal() {
-    this.dialog.show({
-      showBackdrop: true,
-      component: ModalVariantsComponent,
-      componentProps: {
-        title: "Modal"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
-  }
 
   goToConfirmOrder(){
     this.navigation.root("/customer/confirm-order","forward");
@@ -76,5 +65,11 @@ export class VariantsComponent extends ViewComponent implements OnInit {
   OpenModalVariants() {
     this.productDetailService.setStatusModalVariants(true);
   }
+
+ /*  click(){
+    const click=document.querySelector('.extent-cm');
+    click.classList.toggle('active');
+    console.log();
+  } */
 
 }
