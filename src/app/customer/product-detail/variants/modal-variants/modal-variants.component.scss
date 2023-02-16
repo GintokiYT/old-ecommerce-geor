@@ -23,7 +23,7 @@ ion-button{
 ion-button:nth-child(1)::part(native) {
   border: 1px solid var(--ion-outline-color-button) !important;
   color: var(--ion-outline-color-button);
-  background-color: #191932;
+  background-color:  var(---ion-background-modal) !important;
 }
 
 .btn{

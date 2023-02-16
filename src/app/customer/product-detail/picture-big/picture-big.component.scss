@@ -31,3 +31,6 @@ ion-toolbar{
     stroke: white;
   }
 }
+ion-header ion-toolbar:first-of-type {
+  padding-top: 0;
+}
