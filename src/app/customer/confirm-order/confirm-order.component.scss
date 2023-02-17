@@ -1,5 +1,6 @@
 .confirm-order-container {
-    margin-bottom: 66px;
+    //margin-bottom: 66px;
+    margin-bottom: calc(var(--ion-safe-area-bottom,0) + 66px);
 
     .main {
         max-width: 100%;
