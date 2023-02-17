@@ -41,17 +41,8 @@ export class RegisterComponent implements OnInit {
     //Este evento se activa cuando el teclado está completamente abierto. 
     Keyboard.addListener('keyboardDidShow', info => {
       console.log('keyboard did show with height:', info.keyboardHeight);
-      // if(!this.focusEmail && !this.focusPassword){
-      //   //any
-      // }
-      // if(this.focusEmail===true){
-      //   this.content.scrollByPoint(0,50,500)
-      // }
-      // if(this.focusPassword===true){
-      //   this.content.scrollByPoint(0,150,500)
-      // }
-    });
 
+    });
 
     //Este evento se evoca antes de que se cierre el teclado.
     Keyboard.addListener('keyboardWillHide', () => {
