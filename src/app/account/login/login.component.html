@@ -13,11 +13,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- Login container Container -->
+  <!-- Login container -->
   <div class="login-container container-main d-flex flex-column justify-content-between">
-
-    <!-- Form Container -->
-    <div class="form-container">      
       <!-- Form -->
       <form class="w-100l" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <ion-item class="form-group" (ionBlur)="checkBlur('phoneOrEmail')" (ionFocus)="checkFocus('phoneOrEmail')">
@@ -40,7 +37,6 @@
           </ion-button>
         </div>
       </form>
-    </div>
   </div><!--End Login Container-->
 
   <!-- Footer -->

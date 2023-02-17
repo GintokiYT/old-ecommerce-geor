@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
-  <app-header-team class="" title="Equipo"> </app-header-team>
-  <div id="open-modal-resend"
- class="content-team">
+  <app-header-team class="header-team" title="Equipo"> </app-header-team>
+  <div class="container-main" >
+  <div id="open-modal-resend" class="content-team">
     <div class="contacts d-flex flex-row">
       <img src="assets/collaborative-basquet/Avatar.svg">
 
@@ -16,6 +16,7 @@
       </div>
     </div>
  </div>
+</div>
 
   <div id="open-modal-accepted"
   *ngFor="let item of equipos"class="content-team">
@@ -25,9 +26,9 @@
         <ion-label class="name">{{item.nombre}}</ion-label>
         <div  *ngFor="let estados  of item.estado" class="text-description d-flex flex-row">
           <ion-label *ngIf="estados.estado==='Pendiente'" class="pendiente d-flex flex-row justify-content-center align-items-center">
-            <ion-img class="imagen-pendiente"src="assets/collaborative-basquet/Pendiente.svg"></ion-img>
+            <ion-img colass="imagen-pendiente"src="assets/collaborative-basquet/Pendiente.svg"></ion-img>
             {{estados.estado}}</ion-label>
-          <ion-label >{{estados.numero}}</ion-label>
+          <ion-label>{{estados.numero}}</ion-label>
         </div>
       </div>
     </div>
@@ -36,5 +37,6 @@
  <app-modal-invite></app-modal-invite>
  <app-modal-resend></app-modal-resend>
  <app-modal-accepted></app-modal-accepted>
+
 </ion-content>
 
