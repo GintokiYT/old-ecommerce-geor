@@ -21,6 +21,8 @@ ion-content {
 
   padding-top: var(--ion-safe-area-top);
   padding-bottom: var(--ion-safe-area-bottom);
+
+  position: relative;
 }
 // End container page
 
@@ -29,6 +31,12 @@ ion-content {
   padding-top: var(--ion-safe-area-top);
   height: 68px;
   height: cal(var(--ion-safe-area-top) + 68px);
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid var(--ion-color-separator);
 }
 // End Page
 
@@ -57,7 +65,6 @@ ion-content {
   width: 100%;
   z-index: 1000;
   padding-bottom: var(--ion-safe-bottom);
-  background: red;
 }
 
 .input-message {
@@ -112,15 +119,6 @@ ion-content {
   svg {
     font-size: 24px;
   }
-}
-
-.app-header-inbox {
-  background-color: var(--ion-background-color);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 1px solid var(--ion-color-separator);
 }
 
 .last-message {

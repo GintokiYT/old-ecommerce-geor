@@ -42,11 +42,6 @@ body.md {
     // --padding-top: 1.5rem;
     // --padding-bottom: 1.5rem;
 
-    &.remove-safe-area {
-      --padding-top: unset;
-      --padding-botom: unset;
-    }
-
     &.remove-scroll {
       --offset-bottom: auto! important;
       --overflow: hidden;
@@ -73,11 +68,6 @@ body.ios {
   ion-content {
     //--padding-top: var(--ion-safe-area-top);
     //--padding-bottom: var(--ion-safe-area-bottom);
-
-    &.remove-safe-area {
-      --padding-top: unset;
-      --padding-botom: unset;
-    }
 
     &.remove-scroll {
       --offset-bottom: auto! important;
