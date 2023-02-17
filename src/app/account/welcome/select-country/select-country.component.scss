@@ -1,7 +1,3 @@
-// Variables
-$padding-top: var(--ion--safe-area-top);
-$padding-bottom: var(--ion--safe-area-bottom);
-
 .container-welcome {
   width: 100%;
   height: 100vh;
@@ -12,8 +8,8 @@ $padding-bottom: var(--ion--safe-area-bottom);
   justify-content: space-between;
   align-items: center;
 
-  padding-top: $padding-top;
-  padding-bottom: $padding-bottom;
+  padding-top: var(--ion--safe-area-top);
+  padding-bottom: var(--ion--safe-area-bottom);
 }
 
 .container-image {
