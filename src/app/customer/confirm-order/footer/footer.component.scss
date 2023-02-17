@@ -7,6 +7,7 @@ ion-footer{
     ion-toolbar{
         --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
         --border-color: transparent;
+        --padding-top: 8px !important;
 
         .contenedor-footer{
             gap: 27px;
@@ -34,6 +35,8 @@ ion-footer{
 @media(min-width:390px){
     ion-footer{
         ion-toolbar{
+            --padding-top: 12px !important;
+
             .contenedor-footer{
                 button{
                     font-size: 16px !important;

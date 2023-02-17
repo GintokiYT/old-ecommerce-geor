@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonModal, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
-import { Keyboard } from '@capacitor/keyboard';
+import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
 
 @Component({
   selector: 'app-register',
@@ -41,7 +41,6 @@ export class RegisterComponent implements OnInit {
     //Este evento se activa cuando el teclado está completamente abierto. 
     Keyboard.addListener('keyboardDidShow', info => {
       console.log('keyboard did show with height:', info.keyboardHeight);
-
     });
 
     //Este evento se evoca antes de que se cierre el teclado.
@@ -55,6 +54,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+
     
     this.form = new FormGroup({
 
