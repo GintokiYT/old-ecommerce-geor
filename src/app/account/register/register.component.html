@@ -4,7 +4,6 @@
   <app-header title="Regístrate" iconLeft="icon-close" backDirection="login">
   </app-header>
 
-  <div class="container-register d-flex flex-column justify-content-between" >
   <!-- Form -->
   <form class="w-100 container-main" [formGroup]="form" (ngSubmit)="onSubmit()">
     <ion-item class="form-group" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
@@ -39,7 +38,7 @@
           [control]="form.get('password')"></app-validation-messages>
       </ion-item>
     </app-input-password>
-    <ion-modal class="modal-alert" #modal>
+    <ion-modal position="center" class="modal-alert" #modal>
       <ng-template>
         <div class="ion-padding">
           <ion-text class="text-center text fw-700 d-block"><b>Valida tu celular</b></ion-text>
@@ -71,7 +70,6 @@
       </div>
     </ion-toolbar>
   </ion-footer>
-</div>
 
 </ion-content>
 
