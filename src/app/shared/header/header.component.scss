@@ -6,13 +6,7 @@ ion-header {
 
 
     ion-toolbar {
-        // --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
-        // --padding-top: calc( var(--ion-safe-area-top) + 12px) !important;
-        // --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
-        // --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
-        // --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
-
-        --padding-top:  12px !important;
+        --padding-top:  24px !important;
         --padding-start: 16px !important;
         --padding-end: 16px !important;
         --padding-bottom: 24px !important;
@@ -43,10 +37,7 @@ ion-modal {
         }
     }
 
-    &::part(content) {
-        // margin-right: calc(var(--ion-safe-area-right) + 16px) !important;
-        // margin-left: calc( var(--ion-safe-area-left) + 16px) !important;
-        
+    &::part(content) {        
         margin-right: 16px !important;
         margin-left: 16px !important;
     }
@@ -63,11 +54,6 @@ ion-modal {
 
     ion-header{
         ion-toolbar {
-            // --padding-top: calc( var(--ion-safe-area-top) + 24px) !important;
-            // --padding-start: calc( var(--ion-safe-area-left) + 24px) !important;
-            // --padding-end: calc( var(--ion-safe-area-right) + 24px) !important;
-            // --padding-bottom: calc( var(--ion-safe-area-bottom) + 40px) !important;
-
             --padding-top: 24px !important;
             --padding-start: 24px !important;
             --padding-end: 24px !important;
@@ -77,9 +63,6 @@ ion-modal {
 
     ion-modal {
         &::part(content) {
-            // margin-right: calc(var(--ion-safe-area-right) + 24px) !important;
-            // margin-left: calc( var(--ion-safe-area-left) + 24px) !important;
-
             margin-right: 24px !important;
             margin-left: 24px !important;
         }

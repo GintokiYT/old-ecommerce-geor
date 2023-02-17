@@ -22,7 +22,7 @@
 .icon-plus {
   width: 48px;
   height: 48px;
-  position: absolute;
+  position: fixed;
   right: 0px;
   bottom: 0px;
   margin-right: 24px;
@@ -34,5 +34,11 @@
 }
 .pendiente {
   gap: 4px;
+}
+.header-team{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
 }
 

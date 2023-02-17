@@ -4,6 +4,7 @@
   <app-header title="Regístrate" iconLeft="icon-close" backDirection="login">
   </app-header>
 
+  <div class="container-register d-flex flex-column justify-content-between" >
   <!-- Form -->
   <form class="w-100 container-main" [formGroup]="form" (ngSubmit)="onSubmit()">
     <ion-item class="form-group" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
@@ -70,7 +71,7 @@
       </div>
     </ion-toolbar>
   </ion-footer>
-
+</div>
 
 </ion-content>
 

@@ -2,7 +2,7 @@
 .header-basic {
   box-sizing: border-box;
   position: fixed;
-  top: 0;
+  top: calc(var(--ion-safe-area-top));
   left: 0;
   width: 100%;
   padding-left: 16px;

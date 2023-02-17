@@ -12,7 +12,7 @@ import { Keyboard } from '@capacitor/keyboard';
 })
 export class RegisterComponent implements OnInit {
 
-  @ViewChild(IonContent) content: IonContent;
+  //@ViewChild(IonContent) content: IonContent;
   form!: FormGroup;
   isPreventClose: boolean = false;
   @ViewChild(IonModal) modal!: IonModal;
@@ -155,8 +155,4 @@ export class RegisterComponent implements OnInit {
     
   }
 
-
-  scrollToBottom() {
-    this.content.scrollToBottom()
-  }
 }

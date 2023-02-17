@@ -56,13 +56,24 @@ body.md {
       }
     }
   }
+
+  ion-footer{
+    &.footer-ionic{
+      ion-toolbar{
+        --padding-top: 12px !important;
+        --padding-start: 16px !important;
+        --padding-end: 16px !important;
+        --padding-bottom: 16px !important;
+      }
+    }
+  }
 }
 
 
 body.ios {
   ion-content {
-    --padding-top: var(--ion-safe-area-top);
-    --padding-bottom: var(--ion-safe-area-bottom);
+    //--padding-top: var(--ion-safe-area-top);
+    //--padding-bottom: var(--ion-safe-area-bottom);
 
     &.remove-safe-area {
       --padding-top: unset;
@@ -77,6 +88,35 @@ body.ios {
         display: none;
       }
     }
+  }
+
+  ion-footer{
+    &.footer-ionic{
+      ion-toolbar{
+        --padding-top: 12px !important;
+        --padding-start: 24px !important;
+        --padding-end: 24px !important;
+        --padding-bottom: 16px !important;
+      }
+    }
+  }
+}
+
+@media(min-width:390px){
+  body.md{
+    ion-footer{
+      &.footer-ionic{
+        ion-toolbar{
+          --padding-start: 24px !important;
+          --padding-end: 24px !important;
+          --padding-bottom: 24px !important;
+        }
+      }
+    }
+  }
+
+  body.ios{
+
   }
 }
 
