@@ -3,7 +3,7 @@ form {
         --padding-bottom: 5px !important;
         --padding-top: 5px !important;
     }
-    margin-bottom: 200px;
+    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 120px)
 }
 
 ion-modal {
@@ -25,12 +25,6 @@ ion-footer {
     bottom: 0;
     z-index: 1000;
 
-    ion-toolbar{
-        --padding-start:  16px !important;
-        --padding-end:  16px !important;
-        --padding-bottom: 24px !important;
-    }
-
     .terms,
     .politics {
         color: var(--ion-color-primary);
@@ -38,12 +32,6 @@ ion-footer {
 }
 
 @media(min-width:390px) {
-    ion-footer {
-        ion-toolbar{
-            --padding-start:  24px !important;
-            --padding-end:  24px !important;
-        }
-    }
 
     ion-modal {
         &::part(content) {

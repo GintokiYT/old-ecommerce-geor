@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onToRegister() {
+  onGoToRegister() {
     this.navigator.forward(RouteCollection.auth.register);
     this.navigator.root("/register","forward")
   }

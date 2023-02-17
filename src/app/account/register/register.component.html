@@ -58,15 +58,15 @@
   </form>  <!-- End Form -->
 
   <!-- Footer -->
-  <ion-footer class="ion-no-border">
+  <ion-footer class="ion-no-border footer-ionic">
     <ion-toolbar class="ion-no-padding">
       <div class="text-center">
-        <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
+        <!-- <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
           <span class="terms">Términos y condiciones</span> y
           <span class="politics">Politica de privacidad</span>
-        </span>
+        </span> -->
         <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
-          type="submit">Siguiente</ion-button>
+          type="submit" style="margin: 0px;">Siguiente</ion-button>
       </div>
     </ion-toolbar>
   </ion-footer>
