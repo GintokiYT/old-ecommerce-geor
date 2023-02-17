@@ -140,7 +140,16 @@
 }
 
 //Error
-.form-group.item-has-focus{
+// .form-group.item-has-focus{
+//   &.ion-invalid{
+//     ion-label{
+//       color: #F44336 !important;
+//     }
+//     --border-color: #F44336 !important;
+//   }
+// }
+
+.form-group.item-has-value{
   &.ion-invalid{
     ion-label{
       color: #F44336 !important;
