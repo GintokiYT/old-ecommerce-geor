@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonModal, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
-import { Keyboard, KeyboardResize } from '@capacitor/keyboard';
+import { Keyboard, KeyboardResize } from '@geor360/capacitor-keyboard';
 
 @Component({
   selector: 'app-register',
