@@ -84,6 +84,8 @@ ion-footer{
         ion-item{
             --padding-start: 0px;
             --inner-padding-end: 0px !important;
+            padding-bottom: 20px;
+            margin: 0px;
             #icon-security{
                 margin-right:8px;
             }
@@ -95,7 +97,7 @@ ion-footer{
     }
     ion-button{
         height: 48px;
-        margin: 8px 0px 0px 0px;
+        margin: 0px;
     }
 }
 
