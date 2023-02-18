@@ -29,7 +29,7 @@
           (ngModelChange)="checkbox(options[0].id)"
         ></ion-checkbox>
         <ion-label>Efectivo</ion-label>
-        <img id="info" slot="end" (click)="setOpen1(true)" 
+        <img class="info" slot="end" id="open-modal-cash" 
         src="/assets/icons/icon-help.svg" alt="help">
         <a></a>
       </ion-item>
@@ -39,7 +39,7 @@
           (ngModelChange)="checkbox(options[1].id)"
         ></ion-checkbox>
         <ion-label>Transferenecia/deposito</ion-label>
-        <img id="info" slot="end" (click)="setOpen2(true)" 
+        <img class="info" slot="end" id="open-modal-transfer" 
         src="/assets/icons/icon-help.svg" alt="help">
         <a></a>
       </ion-item>
@@ -49,12 +49,12 @@
           (ngModelChange)="checkbox(options[2].id)"
         ></ion-checkbox>
         <ion-label>Crédito (a 30 días)</ion-label>
-        <img id="info" slot="end" (click)="setOpen3(true)"  
+        <img class="info" slot="end" id="open-modal-credit" 
         src="/assets/icons/icon-help.svg" alt="help">
         <a></a>
       </ion-item>
 
-      <ion-modal id="modal-cash" class="modals" [isOpen]="isCashOpen">
+      <ion-modal id="modal-cash" class="modals" #modal trigger="open-modal-cash" >
         <ng-template>
           <div class="content-modals">
             <p class="fz-small title"><b>Efectivo</b></p>
@@ -76,7 +76,7 @@
         </ng-template>
       </ion-modal>
 
-      <ion-modal id="modal-transfer" class="modals" [isOpen]="isTransferOpen">
+      <ion-modal id="modal-transfer" class="modals" #modal trigger="open-modal-transfer">
         <ng-template>
           <div class="content-modals">
             <p class="fz-small title"><b>Transferencia/depósito</b></p>
@@ -107,7 +107,7 @@
         </ng-template>
       </ion-modal>
 
-      <ion-modal id="modal-credit" class="modals" [isOpen]="isCreditOpen">
+      <ion-modal id="modal-credit" class="modals" #modal trigger="open-modal-credit">
         <ng-template>
           <div class="content-modals">
             <p class="fz-small title"><b>Crédito</b></p>

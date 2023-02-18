@@ -13,7 +13,6 @@
         <ion-label position="floating" class="fz-normal disabled" color="medium"
         >Número de tarjeta</ion-label>
         <ion-input
-        
           type="tel"
           name="cardnumber"
           inputmode="numeric"
@@ -40,9 +39,9 @@
         >Vencimiento</ion-label>
         <ion-input
           type="tel"
-          mask="**/**/****"
+          mask="**/**"
           class="ion-text-left"
-          maxlength="10"
+          maxlength="5"
           name="expiration"
           [(ngModel)]="data.expiration"
           required  
@@ -53,8 +52,10 @@
         <ion-label position="floating" class="fz-normal" color="medium"
         >Código de seguridad</ion-label>
         <ion-input 
-          type="number"
+          inputmode="numeric"
+          type="tel"
           name="code"
+          maxlength="3"
           [(ngModel)]="data.code"
           required 
         ></ion-input>
@@ -85,9 +86,9 @@
       <div class="alert">
         <ion-item lines="none" *ngIf="formulario.invalid===false">
           <img id="icon-security" src="/assets/icons/icon-security.svg">
-          <ion-label class="alert" class="ion-text-wrap" class="fz-normal" color="medium">
-            Tu tarjeta está 100% segura, solo<br>
-            guardaremos el número, volveremos a<br>
+          <ion-label class="alert ion-text-wrap fz-small" color="medium">
+            Tu tarjeta está 100% segura, solo
+            guardaremos el número, volveremos a
             pedirte el código para confirmar tu compra.
           </ion-label>
         </ion-item>
