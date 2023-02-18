@@ -15,7 +15,7 @@ interface Email {
 @Component({
   selector: 'app-main-inbox',
   templateUrl: './main-inbox.component.html',
-  styleUrls: ['./main-inbox.component.scss', '../../../../theme/personalizado.scss']
+  styleUrls: ['./main-inbox.component.scss']
 })
 export class MainInboxComponent extends ViewComponent implements OnInit {
 
