@@ -39,17 +39,16 @@
       </form>
   </div><!--End Login Container-->
 
-  
 </ion-content>
 
 <!-- Footer -->
 <ion-footer class="ion-no-border" #loginFooter>
+
   <ion-toolbar class="ion-no-padding">
     <div class="form-group form-group__double">
       <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
         [disabled]="loginForm.invalid" style="margin-bottom: 24px; margin-top: 0px !important;"
       >
-        <!-- <ion-label style="font-weight: 500;">Iniciar sesión</ion-label> -->
         Iniciar sesión
       </ion-button>
     </div>
@@ -58,8 +57,9 @@
       <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
     </div>
   </ion-toolbar>
-  <app-footer-navigation 
-  >
+
+
+  <app-footer-navigation>
   </app-footer-navigation>
 
 </ion-footer>

@@ -6,7 +6,6 @@ form {
         --padding-bottom: 5px !important;
         --padding-top: 5px !important;
     }
-    //margin-bottom: calc( var(--ion-safe-area-bottom,0) + 72px)
 }
 
 ion-modal {
@@ -23,11 +22,7 @@ ion-modal {
     --background: var(--ion-background-alert);
 }
 
-ion-footer {
-    // position: fixed;
-    // bottom: 0;
-    // z-index: 1000;
-    
+ion-footer {   
     .terms,
     .politics {
         color: var(--ion-color-primary);
