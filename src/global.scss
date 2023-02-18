@@ -42,17 +42,22 @@ body.md {
     // --padding-top: 1.5rem;
     // --padding-bottom: 1.5rem;
 
-    &.remove-safe-area {
-      --padding-top: unset;
-      --padding-botom: unset;
-    }
-
     &.remove-scroll {
       --offset-bottom: auto! important;
       --overflow: hidden;
       overflow: auto;
       &::-webkit-scrollbar {
         display: none;
+      }
+    }
+  }
+
+  ion-footer{
+    &.footer-ionic{
+      ion-toolbar{
+        --padding-start: 16px !important;
+        --padding-end: 16px !important;
+        --padding-bottom: 16px !important;
       }
     }
   }
@@ -61,13 +66,8 @@ body.md {
 
 body.ios {
   ion-content {
-    --padding-top: var(--ion-safe-area-top);
-    --padding-bottom: var(--ion-safe-area-bottom);
-
-    &.remove-safe-area {
-      --padding-top: unset;
-      --padding-botom: unset;
-    }
+    //--padding-top: var(--ion-safe-area-top);
+    //--padding-bottom: var(--ion-safe-area-bottom);
 
     &.remove-scroll {
       --offset-bottom: auto! important;
@@ -78,28 +78,38 @@ body.ios {
       }
     }
   }
+
+  ion-footer{
+    &.footer-ionic{
+      ion-toolbar{
+        --padding-start: 24px !important;
+        --padding-end: 24px !important;
+        --padding-bottom: 16px !important;
+      }
+    }
+  }
+}
+
+@media(min-width:390px){
+  body.md{
+    ion-footer{
+      &.footer-ionic{
+        ion-toolbar{
+          --padding-start: 24px !important;
+          --padding-end: 24px !important;
+          --padding-bottom: 24px !important;
+        }
+      }
+    }
+  }
+
+  body.ios{
+
+  }
 }
 
 // Cambiar el color del Status Bar en IOS (RCNA)
 //* IOS
 ion-app {
   --ion-status-bar-background: var(--ion-color-icons-selected);
-}
-
-.button-regular {
-  width: 100%;
-  height: 48px;
-  border-radius: 50px;
-  padding: 12px 20px 12px 20px;
-  transition: all .3s ease;
-
-  &.button-disabled {
-    background-color: var(--ion-background-button-disabled);
-    color: var(--ion-color-text-button-disabled);
-  }
-
-  &.button-active {
-    background-color: #023AFF;
-    color: #FFFFFF;
-  }
 }

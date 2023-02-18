@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
   <app-header-variants class="header-variants"></app-header-variants>
-  <div class="mx-4" style="margin-top: 88px;">
+  <div class="mx-4 container-main">
     <ion-text class="variant d-flex flex-row">
       <img src="assets/images/polo-variante.png" />
       <div class="d-flex flex-column justify-content-between">
@@ -19,13 +19,12 @@
       <div class="fz-note dato"> <ion-label class="extent-cm">200x240</ion-label> </div>
     </div>
      </ion-text>
-    <ion-text class="size-thicknes d-flex flex-column">
+     <ion-text class="size-thicknes d-flex flex-column">
       <ion-label class="fw-normal ">Espesor (mm)</ion-label>
-      <div class="d-flex">
-        <div class="fz-note " style="margin-right: 7px;"> <ion-label class="extent-mm">2</ion-label> <sup class="amount">10</sup> </div>
-        <div class="fz-note " style="margin-right: 11px;"> <ion-label class="extent-mm">4</ion-label>  </div>
-        <div class="fz-note " style="margin-right: 16px;"> <ion-label class="extent-mm">8</ion-label></div>
-
+      <div class="d-flex g-4">
+        <div class="fz-note "> <ion-label class="extent-mm px-3">2</ion-label> <sup class="amount">10</sup> </div>
+        <div class="fz-note me-4 "> <ion-label class="extent-mm px-3">4</ion-label></div>
+        <div class="fz-note "> <ion-label class="extent-mm px-3">8</ion-label></div>
       </div>
     </ion-text>
   </div>
@@ -61,7 +60,8 @@
           class="btn ion-no-padding ion-no-margin"
           expand="block"
           shape="round"
-          color="primary">
+          color="primary"
+          style="height:48px ">
           Actualizar
         </ion-button>
       </div>

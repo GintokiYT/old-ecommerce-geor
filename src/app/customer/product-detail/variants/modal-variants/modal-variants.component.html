@@ -25,7 +25,7 @@
             <img src="/assets/collaborative-basquet/Avatar3.svg" />
             <ion-label class="fz-normal"> Cesta de Juliano Alvares Carrió... </ion-label>
           </ion-text>
-          <ion-radio slot="end" color="medium"></ion-radio>
+          <ion-radio class="radio" slot="end" color="medium"></ion-radio>
         </ion-item>
 
       </ion-radio-group>
@@ -35,7 +35,8 @@
           fill="outline"
           class="btn ion-no-padding ion-no-margin"
           expand="block"
-          shape="round" >
+          shape="round"
+          style="height: 48px !important;">
          Cancelar
         </ion-button>
         <ion-button
@@ -44,7 +45,7 @@
           shape="round"
           color="primary"
           (click)="openModalAdd()"
-        >
+          style="height: 48px !important;">
           <ion-label class="add fw-normal"
             >Añadir</ion-label >
         </ion-button>

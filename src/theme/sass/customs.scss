@@ -140,7 +140,16 @@
 }
 
 //Error
-.form-group.item-has-focus{
+// .form-group.item-has-focus{
+//   &.ion-invalid{
+//     ion-label{
+//       color: #F44336 !important;
+//     }
+//     --border-color: #F44336 !important;
+//   }
+// }
+
+.form-group.item-has-value{
   &.ion-invalid{
     ion-label{
       color: #F44336 !important;
@@ -283,11 +292,59 @@ ion-slides {
 }
 
 .container-main{
-  margin-top: 80px !important;
+  margin-top: calc( var(--ion-safe-area-top,0) + 72px) !important;
 }
 
 @media(min-width:390px){
   .container-main{
-    margin-top: 88px !important;
+    margin-top: calc( var(--ion-safe-area-top,0) + 88px) !important;
+  }
+}
+
+
+// body.md{
+
+//   ion-footer{
+
+  
+//   &.footer-ionic{
+//     ion-toolbar{
+//       --padding-top: 12px !important;
+//       --padding-start: 24px !important;
+//       --padding-end: 24px !important;
+//       --padding-bottom: 24px !important;
+//       }
+//     }
+//   }
+// }
+
+// body.ios{
+//   &.footer-ionic{
+//     position: fixed;
+//     ion-toolbar{
+//       --padding-top: 12px !important;
+//       --padding-start: 24px !important;
+//       --padding-end: 24px !important;
+//       --padding-bottom: 16px !important;
+//     }
+//   }
+// }
+
+// Custom RCNA
+.button-regular {
+  width: 100%;
+  height: 48px;
+  border-radius: 50px;
+  padding: 12px 20px 12px 20px;
+  transition: all .3s ease;
+
+  &.button-disabled {
+    background-color: var(--ion-background-button-disabled);
+    color: var(--ion-color-text-button-disabled);
+  }
+
+  &.button-active {
+    background-color: #023AFF;
+    color: #FFFFFF;
   }
 }

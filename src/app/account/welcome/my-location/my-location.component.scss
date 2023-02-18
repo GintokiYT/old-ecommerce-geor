@@ -1,75 +1,80 @@
-.container-my-location {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  --padding-top: var(--ion-safe-area-top);
+  --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
 }
 
 .container-my-location {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.content-map {
+.container-my-location .map {
+  width: 100%;
   flex: 1;
   position: relative;
   overflow: hidden;
-  padding-top: var(--ion-safe-area-top);
-  padding-bottom: var(--ion-safe-area-bottom);
-  padding-left: var(--ion-safe-area-left);
-  padding-right: var(--ion-safe-area-right);
 
   iframe {
     position: absolute;
+    z-index: 500;
     top: -100px;
     left: -100px;
     width: calc(100% + 200px);
     height: calc(100% + 200px);
   }
+
+  .button-back {
+    position: sticky;
+    z-index: 1000;
+    left: 16px;
+    top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--ion-background-secondary);
+
+    @media (min-width: 390px) {
+      left: 24px;
+    }
+
+    svg path{
+      stroke: var(--ion-color-arrow-map);
+    }
+  }
 }
 
-.container-footer {
+
+.container-my-location .footer {
   width: 100%;
-  padding-top: 24px;
-  padding-left: calc(var(--ion-safe-area-left) + 16px);
-  padding-right: calc(var(--ion-safe-area-right) + 16px);
-  padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  padding: 24px 16px 24px 16px;
+
   display: flex;
   flex-direction: column;
   gap: 26px;
   background-color: var(--ion-background-color);
 
+  @media (min-width: 390px) {
+    padding: 24px;
+  }
+
   span {
     padding-bottom: 12px;
     border-bottom: 1px solid var(--ion-color-separator);
   }
-
-  @media (min-width: 390px) {
-    padding-left: calc(var(--ion-safe-area-left) + 24px);
-    padding-right: calc(var(--ion-safe-area-right) + 24px);
-  }
 }
-
-
-.button-back {
-  position: fixed;
-  left: calc(var(--ion-safe-area-left) + 16px);
-  top: calc(var(--ion-safe-area-top) + 24px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--ion-background-secondary);
-
-  svg path{
-    stroke: var(--ion-color-arrow-map);
-  }
-
-  @media (min-width: 390px) {
-    left: calc(var(--ion-safe-area-left) + 24px);
-  }
-}
-

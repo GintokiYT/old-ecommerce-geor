@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonModal, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
-import { Keyboard } from '@capacitor/keyboard';
+import { Keyboard, KeyboardResize } from '@geor360/capacitor-keyboard';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +12,7 @@ import { Keyboard } from '@capacitor/keyboard';
 })
 export class RegisterComponent implements OnInit {
 
-  @ViewChild(IonContent) content: IonContent;
+  //@ViewChild(IonContent) content: IonContent;
   form!: FormGroup;
   isPreventClose: boolean = false;
   @ViewChild(IonModal) modal!: IonModal;
@@ -41,17 +41,7 @@ export class RegisterComponent implements OnInit {
     //Este evento se activa cuando el teclado está completamente abierto. 
     Keyboard.addListener('keyboardDidShow', info => {
       console.log('keyboard did show with height:', info.keyboardHeight);
-      // if(!this.focusEmail && !this.focusPassword){
-      //   //any
-      // }
-      // if(this.focusEmail===true){
-      //   this.content.scrollByPoint(0,50,500)
-      // }
-      // if(this.focusPassword===true){
-      //   this.content.scrollByPoint(0,150,500)
-      // }
     });
-
 
     //Este evento se evoca antes de que se cierre el teclado.
     Keyboard.addListener('keyboardWillHide', () => {
@@ -64,6 +54,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+
     
     this.form = new FormGroup({
 
@@ -110,7 +101,7 @@ export class RegisterComponent implements OnInit {
       case "name": this.showTextHelperName = true; 
                     this.focusEmail = false;
                     this.focusPassword = false;
-                    this.content.scrollToTop();
+                    //this.content.scrollToTop();
                    break;
       case "phone": this.showTextHelperPhone = true; 
                     this.focusEmail = false;
@@ -120,12 +111,12 @@ export class RegisterComponent implements OnInit {
       case "email": this.showTextHelperEmail = true;
                     this.focusEmail = true;
                     this.focusPassword = false;
-                    this.content.scrollByPoint(0,50,500)
+                    //this.content.scrollByPoint(0,50,500)
                     break;
       case "password": this.showTextHelperPassword = true; 
                     this.focusEmail = false;
                     this.focusPassword = true;
-                    this.content.scrollByPoint(0,150,500)
+                    //this.content.scrollByPoint(0,150,500)
                     break;
     }
   }
@@ -155,8 +146,4 @@ export class RegisterComponent implements OnInit {
     
   }
 
-
-  scrollToBottom() {
-    this.content.scrollToBottom()
-  }
 }

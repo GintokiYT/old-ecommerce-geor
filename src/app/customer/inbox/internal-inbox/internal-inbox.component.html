@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="remove-safe-area remove-scroll">
 
   <div class="container-internal-inbox">
     <!-- Header -->
@@ -6,7 +6,7 @@
     <!-- End Header -->
 
     <!-- Content Messages -->
-    <div class="content-messages">
+    <div class="content-messages" #contenedorDeChats>
       <app-message-inbox
         *ngFor="let message of messages" [message]="message" #messageRef
       ></app-message-inbox>

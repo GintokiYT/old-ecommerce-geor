@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AppNavigationService } from '@geor360/ecore';
@@ -8,7 +9,7 @@ import { RouteCollection } from 'src/shared/route-collection';
 @Component({
   selector: 'app-change-adddress',
   templateUrl: 'change-address.component.html',
-  styleUrls: ['change-address.component.scss']
+  styleUrls: ['change-address.component.scss', '../../../../theme/personalizado.scss']
 })
 export class ChangeAddressComponent {
   filter: string | null = '';

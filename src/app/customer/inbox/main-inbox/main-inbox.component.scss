@@ -4,30 +4,28 @@
   padding: 0;
 }
 
-img {
+.container-main-inbox {
+  box-sizing: border-box;
   width: 100%;
-}
+  min-height: 100vh;
+  background-color: var(--ion-background-color);
 
-ion-content {
-  background: var(--ion-background-color) !important;
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 .inbox-ion-list {
   width: 100%;
   max-width: calc(100% - 32px);
   margin: 0 auto;
-  margin-top: 72px;
-  margin-bottom: 24px;
   padding: 0;
   background: var(--ion-background-color);
   gap: 24px;
-
-  margin-top: calc(var(--ion-safe-area-top) + 72px);
+  padding-top: calc(72px + 16px);
+  padding-bottom: calc(69px + 24px);
 
   @media (min-width: 390px) {
     max-width: calc(100% - 48px);
-    margin-top: 88px;
-    margin-top: calc(var(--ion-safe-area-top) + 88px);
     gap: 32px;
   }
 }
@@ -110,23 +108,56 @@ ion-content {
   }
 }
 
-// Remover el scroll del ion-content
-ion-content {
-  // overwrite inline styles
-  --offset-bottom: auto! important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-ion-content {
-  --padding-bottom: 0 !important;
-  --padding-top: 0 !important;
-}
-
-.container-main-inbox {
+// Header
+.header-basic {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  min-height: 100vh;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  z-index: 1000;
+  background-color: var(--ion-background-color);
+
+  .content-header {
+    position: relative;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700px;
+      margin: 0;
+    }
+
+    .icon-back {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        font-size: 24px;
+      }
+      svg path {
+        stroke: var(--ion-color-basic);
+      }
+    }
+  }
+
+  @media (min-width: 390px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }

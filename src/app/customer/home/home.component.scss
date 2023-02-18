@@ -1,10 +1,11 @@
-
 // Container Page
 .container-home {
   width: 100%;
   min-height: 100vh;
   background-color: var(--ion-background-color);
+
   padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 // Initial Header
@@ -57,6 +58,7 @@
 
 // Initial Slider Items
 .container-slider-items {
+  margin-top: 10px;
   margin-left: 16px;
 
   @media (min-width: 390px) {
@@ -65,19 +67,22 @@
 
   .text-start {
     width: 80px;
+    height: 200px;
   }
 
   ion-img {
-    width: 72px;
-    margin-bottom: 8px;
+    width: 80px;
   }
 
   ion-slide {
-    width: 72px;
-    padding-right: 16px;
+    width: 80px;
 
-    @media (min-width: 390px) {
-      padding-right: 24px;
+    &:last-child {
+      margin-right: 16px;
+
+      @media (min-width: 390px) {
+        margin-right: 24px;
+      }
     }
   }
 
@@ -86,6 +91,7 @@
   }
 
   ion-text {
+    padding-top: 4px;
     font-size: 12px;
 
     @media (min-width: 390px) {

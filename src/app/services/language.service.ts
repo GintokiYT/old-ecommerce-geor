@@ -7,64 +7,82 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 export class LanguageService {
 
-  //* Welcome Select Country
-  languageWelcomeSelectCountry = {
+  //TODO: Language (Spanish and English )
+  language = {
     es_ES: {
-      title: '¡Bienvenido!',
-      subTitle: 'Elige el país donde quieres comprar',
-      button: 'Confirmar'
+      // Select Country
+      selectCountry: {
+        title: '¡Bienvenido!',
+        subTitle: 'Elige el país donde quieres comprar',
+        button: 'Confirmar'
+      },
+      // whe are you
+      wheAreYou: {
+        subTitle: 'Cuentanos dónde te encuentras',
+        description: 'Esto nos ayudará a ofrecerte productos disponibles para tu ubicación',
+        button: 'Confirmar'
+      },
+      // Main Settings
+      mainSettings: {
+        title: 'Configuración',
+        mydata: 'Mis datos',
+        password: 'Contraseña',
+        language: 'Idioma',
+        screenmode: 'Modo de pantalla',
+        about: 'Acerca de',
+        signoff: 'Cerrar sesión'
+      },
+      // LanguageSettings
+      languageSettings: {
+        title: 'Idioma',
+        spanish: 'Español',
+        english: 'Inglés'
+      }
     },
-    en_EN: {
-      title: 'Welcome!',
-      subTitle: 'Choose the country where you want to buy',
-      button: 'Confirm'
-    },
-    pt_PT: {
-      title: 'Bem-vindo!',
-      subTitle: 'Escolha o país onde deseja comprar',
-      button: 'Confirme'
+    en_US: {
+      // Select Country
+      selectCountry: {
+        title: 'Welcome!',
+        subTitle: 'Choose the country where you want to buy',
+        button: 'Confirm'
+      },
+      // whe are you
+      wheAreYou: {
+        subTitle: 'Tell us where you are',
+        description: 'This will help us offer you products available for your location.',
+        button: 'Confirm'
+      },
+      // Main Settings
+      mainSettings: {
+        title: 'Setting',
+        mydata: 'My data',
+        password: 'Password',
+        language: 'Language',
+        screenmode: 'Screen mode',
+        about: 'About',
+        signoff: 'Sign off'
+      },
+      // LanguageSettings
+      languageSettings: {
+        title: 'Language',
+        spanish: 'Spanish',
+        english: 'English'
+      }
     }
+
   }
 
-  private $languageWelcomeSelectCountry = new BehaviorSubject<object>(localStorage.getItem('language') === 'es_ES'? this.languageWelcomeSelectCountry.es_ES : localStorage.getItem('language') === 'en_EN'? this.languageWelcomeSelectCountry.en_EN : localStorage.getItem('language') === 'pt_PT'? this.languageWelcomeSelectCountry.pt_PT : this.languageWelcomeSelectCountry.es_ES);
+  private $language = new BehaviorSubject<Object>(
+    localStorage.getItem('language') === 'es_ES'? this.language.es_ES :
+    localStorage.getItem('language') === 'en_US'? this.language.en_US :
+    this.language.es_ES);
 
-  setLanguageWelcomeSelectCountry(language: string) {
-    this.$languageWelcomeSelectCountry.next(this.languageWelcomeSelectCountry[language]);
+  setLanguage(language: string) {
+    this.$language.next(this.language[language]);
   }
 
-  get getLanguageWelcomeSelectCountry(): Observable<object> {
-    return this.$languageWelcomeSelectCountry;
+  get getLanguage(): Observable<object> {
+    return this.$language;
   }
-  //* End Welcome Select Country
-
-  //* Welcome Whe are you
-  languageWelcomeWheareyou = {
-    es_ES: {
-      subTitle: 'Cuentanos dónde te encuentras',
-      description: 'Esto nos ayudará a ofrecerte productos disponibles para tu ubicación',
-      button: 'Confirmar'
-    },
-    en_EN: {
-      subTitle: 'Tell us where you are',
-      description: 'This will help us offer you products available for your location.',
-      button: 'Confirm'
-    },
-    pt_PT: {
-      subTitle: 'Diga-nos onde você está',
-      description: 'Isso nos ajudará a oferecer produtos disponíveis para a sua localização.',
-      button: 'Confirme'
-    }
-  }
-
-  private $languageWelcomeWheareyou = new BehaviorSubject<object>(localStorage.getItem('language') === 'es_ES'? this.languageWelcomeWheareyou.es_ES : localStorage.getItem('language') === 'en_EN'? this.languageWelcomeWheareyou.en_EN : localStorage.getItem('language') === 'pt_PT'? this.languageWelcomeWheareyou.pt_PT : this.languageWelcomeWheareyou.es_ES);
-
-  setLanguageWelcomeWheareyou(language: string) {
-    this.$languageWelcomeWheareyou.next(this.languageWelcomeWheareyou[language]);
-  }
-
-  get getLanguageWelcomeWheareyou(): Observable<object> {
-    return this.$languageWelcomeWheareyou;
-  }
-  //* End Welcome Whe are you
 
 }

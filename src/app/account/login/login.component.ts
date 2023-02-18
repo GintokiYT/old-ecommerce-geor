@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouteCollection } from 'src/shared/route-collection';
 import { LoginService } from '../services/login.service';
 import { IonContent } from '@ionic/angular';
-import { Keyboard } from '@capacitor/keyboard';
+import { Keyboard } from '@geor360/capacitor-keyboard';
 
 
 @Component({
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onToRegister() {
+  onGoToRegister() {
     this.navigator.forward(RouteCollection.auth.register);
     this.navigator.root("/register","forward")
   }

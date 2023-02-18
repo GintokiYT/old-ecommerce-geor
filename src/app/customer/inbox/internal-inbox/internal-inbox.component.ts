@@ -1,8 +1,6 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
-import { StatusBar } from '@capacitor/status-bar';
-
 interface Message {
   id: string;
   time: string;
@@ -30,23 +28,29 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
   @ViewChildren('messageRef') messageRef: QueryList<ElementRef>;
 
+  @ViewChild('contenedorDeChats') contenedorDeChats: ElementRef;
+
 
   ngAfterViewInit() {
-    const messageInput: HTMLInputElement = this.messageInput.nativeElement;
+
+    const contenedorDeChats = this.contenedorDeChats.nativeElement as HTMLDivElement;
+    contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
+    console.log(contenedorDeChats);
+
+    //const messageInput: HTMLInputElement = this.messageInput.nativeElement;
     this.messageInput.nativeElement.addEventListener('focus', () => {
-      this.contentInput.nativeElement.style.display = "flex";
-      messageInput.style.paddingBottom = '24px';
+      setTimeout(() => {
+        this.contentInput.nativeElement.style.display = "flex";
+      }, 100)
     });
 
     this.messageInput.nativeElement.addEventListener('blur', () => {
       if(this.contentMessage.message.content.length === 0) {
         this.contentInput.nativeElement.style.display = "none";
-        messageInput.style.paddingBottom = 'calc(var(--ion-safe-area-bottom) + 24px)';
       }
     });
 
     this.messageRef.changes.subscribe(() => {
-      messageInput.style.paddingBottom = 'calc(var(--ion-safe-area-bottom) + 24px)';
       setTimeout(() => {
         const lastMessage: HTMLDivElement = this.lastMessage.nativeElement;
         lastMessage.scrollIntoView({ behavior: 'smooth' })
@@ -200,8 +204,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     super(_injector);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   showTime(index: number) {
     let selectedDiv = this.messageRef.toArray()[index].nativeElement;
@@ -269,21 +272,4 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       }
     }
   }
-
-  // changeMode() {
-  //   const body = document.querySelector('body');
-
-  //   if(body.classList.contains('dark')) {
-  //     body.classList.remove('dark');
-  //     body.classList.add('light');
-  //     localStorage.setItem('mode', 'light');
-  //   }else {
-  //     body.classList.remove('light');
-  //     body.classList.add('dark');
-  //     localStorage.setItem('mode', 'dark');
-  //   }
-
-  //   const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
-  //   StatusBar.setBackgroundColor({ color });
-  // }
 }
