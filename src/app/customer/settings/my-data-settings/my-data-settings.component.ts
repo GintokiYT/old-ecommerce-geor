@@ -28,6 +28,17 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
         formControlSettings.classList.add('active')
         formControlSettings.classList.remove('data');
+
+        setTimeout(() => {
+          const $input: HTMLInputElement = input.nativeElement;
+          const positionInputY: number = $input.getBoundingClientRect().y;
+          const height: number = document.querySelector('ion-content').clientHeight - 92;
+
+          if(positionInputY > height) {
+            $input.scrollIntoView({ behavior: 'smooth'})
+          }
+        }, 300);
+
       });
       input.nativeElement.addEventListener('blur', () => {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;

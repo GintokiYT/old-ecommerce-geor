@@ -16,6 +16,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
     {
       id: 1,
       selected: false,
+      store: "Induacril Miraflores",
       direction: "Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú"
     },
     {
@@ -45,6 +46,7 @@ export class StoresComponent extends ViewComponent implements OnInit {
   establecerDireccion() {
     const selected = this.data.filter(element => element.selected === true);
     if (selected[0]) {
+      this.cpService.setDirectionStore(selected[0].store)
       this.cpService.setDirectionStore(selected[0].direction)
     }
     this.navigation.back("/customer/confirm-order");

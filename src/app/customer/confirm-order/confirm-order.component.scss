@@ -1,11 +1,9 @@
 .confirm-order-container {
-    margin-bottom: 66px;
+    //margin-bottom: 66px;
+    margin-bottom: calc(var(--ion-safe-area-bottom,0) + 66px);
 
     .main {
         max-width: 100%;
-        // padding-right: calc(var(--ion-safe-area-right) + 24px) !important;
-        // padding-left: calc( var(--ion-safe-area-left) + 24px) !important;
-        // padding-top: calc( var(--ion-safe-area-top) + 32px) !important;
         padding-right: 24px !important;
         padding-left: 24px !important;
         padding-top: 32px !important;
@@ -109,15 +107,6 @@
     }
 }
 
-//FOOTER
-app-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-
 //MEDIA QUERIES PARA INDUACRIL
 @media(max-width:320px) {
 
@@ -125,9 +114,6 @@ app-footer {
         margin-bottom: 76px;
 
         .main {
-            // padding-right: calc(var(--ion-safe-area-right) + 16px) !important;
-            // padding-left: calc( var(--ion-safe-area-left) + 16px) !important;
-            // padding-top: calc( var(--ion-safe-area-top) + 16px) !important;
             padding-right: 16px !important;
             padding-left: 16px !important;
             padding-top: 16px !important;

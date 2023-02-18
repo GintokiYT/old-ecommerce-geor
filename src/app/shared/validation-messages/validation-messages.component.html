@@ -8,7 +8,7 @@
     control?.errors
   "
 >
-  <span *ngIf="control?.errors?.['required']">El campo es obligatorio</span>
+  <!-- <span *ngIf="control?.errors?.['required']">El campo es obligatorio</span> -->
   <span *ngIf="control?.errors?.['minlength']"
     >El campo no debe contener menos de
     {{ control?.errors?.["minlength"]["requiredLength"] }} caracteres</span

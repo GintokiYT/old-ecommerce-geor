@@ -8,120 +8,93 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
-@import "./theme/sass/mixins.scss";
-@import "./theme/variables.scss";
+ @import "./theme/sass/mixins.scss";
+ @import "./theme/variables.scss";
 
-/* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+ /* Core CSS required for Ionic components to work properly */
+ @import "~@ionic/angular/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import "~@ionic/angular/css/display.css";
+ /* Basic CSS for apps built with Ionic */
+ @import "~@ionic/angular/css/normalize.css";
+ @import "~@ionic/angular/css/structure.css";
+ @import "~@ionic/angular/css/typography.css";
+ @import "~@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+ /* Optional CSS utils that can be commented out */
+ @import "~@ionic/angular/css/padding.css";
+ @import "~@ionic/angular/css/float-elements.css";
+ @import "~@ionic/angular/css/text-alignment.css";
+ @import "~@ionic/angular/css/text-transformation.css";
+ @import "~@ionic/angular/css/flex-utils.css";
 
-// Customs
-@import "./theme/sass/lists.scss";
-@import "./theme/sass/radio.scss";
-@import "./theme/sass/text.scss";
-@import "./theme/sass/button.scss";
-@import "./theme/sass/input.scss";
-@import "./theme/sass/alert.scss";
-@import "./theme/sass/toolbar.scss";
-@import "./theme/sass/customs.scss";
+ // Customs
+ @import "./theme/sass/lists.scss";
+ @import "./theme/sass/radio.scss";
+ @import "./theme/sass/text.scss";
+ @import "./theme/sass/button.scss";
+ @import "./theme/sass/input.scss";
+ @import "./theme/sass/alert.scss";
+ @import "./theme/sass/toolbar.scss";
+ @import "./theme/sass/customs.scss";
 
-body.md {
-  ion-content {
-    // --padding-top: 1.5rem;
-    // --padding-bottom: 1.5rem;
+ @import "./theme/personalizado.scss";
 
-    &.remove-safe-area {
-      --padding-top: unset;
-      --padding-botom: unset;
-    }
+ body.md {
+   ion-content {
+     // --padding-top: 1.5rem;
+     // --padding-bottom: 1.5rem;
+   }
 
-    &.remove-scroll {
-      --offset-bottom: auto! important;
-      --overflow: hidden;
-      overflow: auto;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-  }
-
-  ion-footer{
-    &.footer-ionic{
-      ion-toolbar{
-        --padding-top: 12px !important;
-        --padding-start: 16px !important;
-        --padding-end: 16px !important;
-        --padding-bottom: 16px !important;
-      }
-    }
-  }
-}
+   ion-footer{
+     &.footer-ionic{
+       ion-toolbar{
+         --padding-top: 12px;
+         --padding-start: 16px;
+         --padding-end: 16px;
+         --padding-bottom: 16px;
+       }
+     }
+   }
+ }
 
 
-body.ios {
-  ion-content {
-    //--padding-top: var(--ion-safe-area-top);
-    //--padding-bottom: var(--ion-safe-area-bottom);
+ body.ios {
 
-    &.remove-safe-area {
-      --padding-top: unset;
-      --padding-botom: unset;
-    }
+  transition: 0.25s height ease-out;
 
-    &.remove-scroll {
-      --offset-bottom: auto! important;
-      --overflow: hidden;
-      overflow: auto;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-  }
+   ion-content {
+     //--padding-top: var(--ion-safe-area-top);
+     //--padding-bottom: var(--ion-safe-area-bottom);
+   }
 
-  ion-footer{
-    &.footer-ionic{
-      ion-toolbar{
-        --padding-top: 12px !important;
-        --padding-start: 24px !important;
-        --padding-end: 24px !important;
-        --padding-bottom: 16px !important;
-      }
-    }
-  }
-}
+   ion-footer{
+     &.footer-ionic{
+       ion-toolbar{
+         --padding-top: 12px;
+         --padding-start: 24px;
+         --padding-end: 24px;
+         --padding-bottom: 16px;
+       }
+     }
+   }
+ }
 
-@media(min-width:390px){
-  body.md{
-    ion-footer{
-      &.footer-ionic{
-        ion-toolbar{
-          --padding-start: 24px !important;
-          --padding-end: 24px !important;
-          --padding-bottom: 24px !important;
-        }
-      }
-    }
-  }
+ @media(min-width:390px){
+   body.md{
+     ion-footer{
+       &.footer-ionic{
+         ion-toolbar{
+           --padding-start: 24px;
+           --padding-end: 24px;
+           --padding-bottom: 24px;
+         }
+       }
+     }
+   }
+ }
 
-  body.ios{
-
-  }
-}
-
-// Cambiar el color del Status Bar en IOS (RCNA)
-//* IOS
-ion-app {
-  --ion-status-bar-background: var(--ion-color-icons-selected);
-}
+ // Cambiar el color del Status Bar en IOS (RCNA)
+ //* IOS
+ ion-app {
+   --ion-status-bar-background: var(--ion-color-icons-selected);
+ }

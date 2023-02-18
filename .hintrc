@@ -8,8 +8,28 @@
       "default",
       {
         "ignore": [
-          "meta[name=color-scheme]"
+          "meta[name=color-scheme]",
+          "iframe[loading]"
         ]
+      }
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ],
+    "no-inline-styles": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
       }
     ]
   }

@@ -1,3 +1,14 @@
+ion-button{
+  --border-radius: 50px;
+  height: 40px;
+}
+
+@media(min-width:390px){
+  ion-button{
+    height: 48px !important;
+  }
+}
+
 @include theme-light {
   ion-button {
     margin-inline: 0px;
@@ -14,7 +25,7 @@
       &.button-disabled {
         &::part(native) {
           --ion-color-base: #{$brand};
-          color: $text-light;
+          color: #95A8C5;
         }
       }
     }
@@ -40,3 +51,6 @@
     }
   }
 }
+
+
+

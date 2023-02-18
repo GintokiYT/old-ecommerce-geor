@@ -1,36 +1,36 @@
-/* .sc-ion-alert-ios-s .alert-wrapper {
-  width: 342px;
-  max-width: 500px;
-  gap: 24px;
-  padding-bottom: 24px;
-  --background: var(--ion-background-alert) !important;
+// .sc-ion-alert-ios-s .alert-wrapper {
+//   width: 342px;
+//   max-width: 500px;
+//   gap: 24px;
+//   padding-bottom: 24px;
+//   --background: var(--ion-background-alert) !important;
 
-  //first div
-  .alert-header {
-    padding-bottom: 0px;
-  }
+//   //first div
+//   .alert-header {
+//     padding-bottom: 0px;
+//   }
 
-  //second div
-  .alert-message {
-    font-size: 16px;
-    padding-bottom: 0px;
-  }
+//   //second div
+//   .alert-message {
+//     font-size: 16px;
+//     padding-bottom: 0px;
+//   }
 
-  //tercer div
-  .sc-ion-alert-ios {
-    flex-wrap: nowrap;
-    padding-right: 24px;
-    padding-left: 24px;
-    padding-bottom: 0px;
+//   //tercer div
+//   .sc-ion-alert-ios {
+//     flex-wrap: nowrap;
+//     padding-right: 24px;
+//     padding-left: 24px;
+//     padding-bottom: 0px;
 
-    button {
-      white-space: nowrap;
-      border-top-color: var(--ion-background-alert-border);
-      border-right-color: var(--ion-background-alert-border);
-    }
-  }
+//     button {
+//       white-space: nowrap;
+//       border-top-color: var(--ion-background-alert-border);
+//       border-right-color: var(--ion-background-alert-border);
+//     }
+//   }
 
-} */
+// }
 
 .sc-ion-alert-ios-s .alert-wrapper{
   width: 342px;
@@ -60,5 +60,4 @@ color: var(--ion-color-basic);
   font-weight: normal;
   color: var(--ion-color-primary);
  }
-
 }

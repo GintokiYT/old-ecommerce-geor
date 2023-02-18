@@ -7,64 +7,30 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 export class LanguageService {
 
-  //* Welcome Select Country
-  languageWelcomeSelectCountry = {
-    es_ES: {
-      title: '¡Bienvenido!',
-      subTitle: 'Elige el país donde quieres comprar',
-      button: 'Confirmar'
-    },
-    en_US: {
-      title: 'Welcome!',
-      subTitle: 'Choose the country where you want to buy',
-      button: 'Confirm'
-    }
-  }
-
-  private $languageWelcomeSelectCountry = new BehaviorSubject<object>(
-    localStorage.getItem('language') === 'es_ES'? this.languageWelcomeSelectCountry.es_ES : localStorage.getItem('language') === 'en_US'? this.languageWelcomeSelectCountry.en_US : this.languageWelcomeSelectCountry.es_ES);
-
-  setLanguageWelcomeSelectCountry(language: string) {
-    this.$languageWelcomeSelectCountry.next(this.languageWelcomeSelectCountry[language]);
-  }
-
-  get getLanguageWelcomeSelectCountry(): Observable<object> {
-    return this.$languageWelcomeSelectCountry;
-  }
-  //* End Welcome Select Country
-
-  //* Welcome Whe are you
-  languageWelcomeWheareyou = {
-    es_ES: {
-      subTitle: 'Cuentanos dónde te encuentras',
-      description: 'Esto nos ayudará a ofrecerte productos disponibles para tu ubicación',
-      button: 'Confirmar'
-    },
-    en_US: {
-      subTitle: 'Tell us where you are',
-      description: 'This will help us offer you products available for your location.',
-      button: 'Confirm'
-    }
-  }
-
-  private $languageWelcomeWheareyou = new BehaviorSubject<object>(
-    localStorage.getItem('language') === 'es_ES'? this.languageWelcomeWheareyou.es_ES : localStorage.getItem('language') === 'en_US'? this.languageWelcomeWheareyou.en_US :
-    this.languageWelcomeWheareyou.es_ES);
-
-  setLanguageWelcomeWheareyou(language: string) {
-    this.$languageWelcomeWheareyou.next(this.languageWelcomeWheareyou[language]);
-  }
-
-  get getLanguageWelcomeWheareyou(): Observable<object> {
-    return this.$languageWelcomeWheareyou;
-  }
-  //* End Welcome Whe are you
-
-
-
   //TODO: Language (Spanish and English )
   language = {
     es_ES: {
+      // Select Country
+      selectCountry: {
+        title: '¡Bienvenido!',
+        subTitle: 'Elige el país donde quieres comprar',
+        button: 'Confirmar'
+      },
+      // whe are you
+      wheAreYou: {
+        subTitle: 'Cuentanos dónde te encuentras',
+        description: 'Esto nos ayudará a ofrecerte productos disponibles para tu ubicación',
+        button: 'Confirmar'
+      },
+      // My Location
+      myLocation: {
+        button: 'Confirmar'
+      },
+      // Change Address
+      changeAddress: {
+        title: 'Dirección',
+        placeholder: 'Buscar Dirección'
+      },
       // Main Settings
       mainSettings: {
         title: 'Configuración',
@@ -83,6 +49,27 @@ export class LanguageService {
       }
     },
     en_US: {
+      // Select Country
+      selectCountry: {
+        title: 'Welcome!',
+        subTitle: 'Choose the country where you want to buy',
+        button: 'Confirm'
+      },
+      // whe are you
+      wheAreYou: {
+        subTitle: 'Tell us where you are',
+        description: 'This will help us offer you products available for your location.',
+        button: 'Confirm'
+      },
+      // My Location
+      myLocation: {
+        button: 'Confirm'
+      },
+      // Change Address
+      changeAddress: {
+        title: 'Address',
+        placeholder: 'Search Address'
+      },
       // Main Settings
       mainSettings: {
         title: 'Setting',

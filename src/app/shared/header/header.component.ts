@@ -2,6 +2,8 @@ import { Component, Input, OnInit, Injector, ViewChild, Output, EventEmitter } f
 import { Location } from '@angular/common';
 import { ViewComponent } from '@geor360/ecore';
 import { IonModal } from '@ionic/angular';
+import { Keyboard } from '@geor360/capacitor-keyboard';
+import { Platform } from '@ionic/angular';
 
 
 
@@ -25,6 +27,8 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   backDirection: string = "";
 
   @ViewChild(IonModal) modal!: IonModal;
+
+  keyboardHeight : number;
 
   @Output()
   onClickDelete: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -51,16 +55,38 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "about-us": "/customer/settings/about-us"
   }
 
-  constructor(private location: Location, private _injector: Injector) {
+  constructor(private location: Location, private _injector: Injector,public platform: Platform ) {
     super(_injector);
-
+    this.keyboardHeight = window.innerHeight;
   }
 
   ngOnInit() {
   }
 
   goBack() {
+    // if(window.innerHeight<this.keyboardHeight){
+    //   setTimeout(() => {
+    //     this.navigation.back(this.directions[this.backDirection]);
+    //     console.log("1")
+    //   }, 1000);
+    // }
+    // else{
+    //   this.navigation.back(this.directions[this.backDirection]);
+    //   console.log("2")
+    // }
+    // this.platform.ready().then( () => {
+    //   if(this.platform.is("ios")){
+    //     setTimeout(() => {
+    //       this.navigation.back(this.directions[this.backDirection]);
+    //       console.log("1")
+    //     }, 1000);
+    //   }
+    //   else{
+    //     this.navigation.back(this.directions[this.backDirection]);
+    //   }
+    // })
     this.navigation.back(this.directions[this.backDirection]);
+
   }
 
   cancelar(){

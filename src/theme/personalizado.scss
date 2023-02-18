@@ -1,8 +1,7 @@
 // Header
 .header-basic {
-  box-sizing: border-box;
-  position: fixed;
-  top: calc(var(--ion-safe-area-top));
+  position: sticky;
+  top: 0;
   left: 0;
   width: 100%;
   padding-left: 16px;

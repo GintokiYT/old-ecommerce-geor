@@ -1,36 +1,52 @@
-*,*::after, *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  // --padding-top: var(--ion-safe-area-top);
+  // --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .container-main-inbox {
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   background-color: var(--ion-background-color);
 
-  padding-top: var(--ion-safe-area-top);
-  padding-bottom: var(--ion-safe-area-bottom);
+  position: relative;
 }
 
 .inbox-ion-list {
+  flex: 1;
   width: 100%;
-  max-width: calc(100% - 32px);
-  margin: 0 auto;
-  padding: 0;
   background: var(--ion-background-color);
+  display: flex;
+  flex-direction: column;
   gap: 24px;
-  padding-top: calc(72px + 16px);
-  padding-bottom: calc(69px + 24px);
+  padding: 16px 16px 24px 16px;
 
   @media (min-width: 390px) {
-    max-width: calc(100% - 48px);
+    padding: 16px 24px 24px 24px;
     gap: 32px;
   }
 }
 
 .inbox-ion-item {
+  display: flex;
   gap: 12px;
 }
 
@@ -43,6 +59,8 @@
 
 .ion-detail {
   width: calc(100% - 48px - 12px);
+  display: flex;
+  flex-direction: column;
   gap: 4px;
 
   @media (min-width: 390px) {
@@ -51,6 +69,9 @@
 }
 
 .ion-detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 16px;
   height: 24px;
 }
@@ -62,6 +83,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: clip;
+  margin: 0;
 }
 
 .ion-detail__header--info {
@@ -71,6 +93,8 @@
 }
 
 .ion-detail__content {
+  display: flex;
+  align-items: center;
   height: 16px;
 }
 
@@ -81,6 +105,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   color: var(--ion-color-light);
+  margin: 0;
 
   @media(min-width: 390px) {
     font-size: 14px;
@@ -88,6 +113,8 @@
 }
 
 .ion-detail .ion-detail__footer {
+  display: flex;
+  align-items: center;
   height: 16px;
 
   .ion-detail__footer--description {
@@ -97,6 +124,7 @@
     font-size: 12px;
     font-weight: 400;
     color: var(--ion-color-light);
+    margin: 0;
 
     .user-tag {
       color: var(--ion-color-primary);
@@ -108,56 +136,15 @@
   }
 }
 
-// Header
 .header-basic {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
+  padding-top: calc(var(--ion-safe-area-top) + 24px) !important;
+  //padding-top: calc(16px + 24px) !important;
+}
+
+app-footer-navigation {
+  position: sticky;
+  bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  z-index: 1000;
-  background-color: var(--ion-background-color);
-
-  .content-header {
-    position: relative;
-    height: 24px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    h2 {
-      font-size: 16px;
-      font-weight: 700px;
-      margin: 0;
-    }
-
-    .icon-back {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 24px;
-      height: 24px;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      svg {
-        font-size: 24px;
-      }
-      svg path {
-        stroke: var(--ion-color-basic);
-      }
-    }
-  }
-
-  @media (min-width: 390px) {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }

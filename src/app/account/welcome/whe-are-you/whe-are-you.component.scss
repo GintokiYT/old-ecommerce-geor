@@ -1,53 +1,73 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  --padding-top: var(--ion-safe-area-top);
+  --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .container-whereAreYou {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   background-color: var(--ion-background-color);
-
-  padding-top: var(--ion-safe-area-top);
-  padding-bottom: var(ion--safe-area-bottom);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
 
-  .container-main {
-    flex: 1;
+.container-whereAreYou .image {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+
+  .logo {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      width: 100%;
-      max-width: 160.5px;
-    }
+    max-width: 160.5px;
+    height: 100%;
+    max-height: 110.65px;
+    background-image: url('/assets/images/mi-posicion.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
-.container-footer {
+.container-whereAreYou .footer {
   width: 100%;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 24px;
+  padding: 16px 16px 24px 16px;
 
   @media(min-width: 390px) {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 16px 24px 24px 24px;
   }
-}
 
-.container-footer h2 {
-  margin: 0 0 24px 0;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--ion-color-basic);
-}
+  h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: var(--ion-color-basic);
+  }
 
-.container-footer p {
-  margin-bottom: 40px;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--ion-color-text-secundary)
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: var(--ion-color-text-secundary)
+  }
 }

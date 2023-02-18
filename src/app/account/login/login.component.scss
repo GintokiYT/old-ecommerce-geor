@@ -5,10 +5,10 @@ ion-header {
     z-index: 1000;
 
     ion-toolbar {
-        --padding-top: 12px !important;
+        --padding-top: 24px !important;
         --padding-start: 16px !important;
         --padding-end: 16px !important;
-        --padding-bottom: 40px !important;
+        --padding-bottom: 24px !important;
 
         .header-container {
             .title {
@@ -37,10 +37,10 @@ ion-header {
 }
 
 ion-footer {
-    position: fixed;
-    bottom: 0;
-    z-index: 1000;
-    margin-bottom: 66.8px;
+    // position: fixed;
+    // bottom: 0;
+    // z-index: 1000;
+    //margin-bottom: 68.8px;
 
     ion-toolbar{
         --padding-start: 16px !important;
@@ -62,6 +62,7 @@ ion-footer {
             --padding-top: 24px !important;
             --padding-start: 24px !important;
             --padding-end: 24px !important;
+            --padding-bottom: 40px !important;
         }
     }
 

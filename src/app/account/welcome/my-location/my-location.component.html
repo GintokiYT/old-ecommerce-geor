@@ -1,23 +1,24 @@
-<ion-content class="remove-safe-area remove-scroll">
+<ion-content>
   <!-- <div class="google-map" id="google-map-id"></div> -->
   <div class="container-my-location">
-    <div class="content-map">
+    <div class="map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62431.8863154334!2d-76.95598913007096!3d-12.044009550826795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1676467834843!5m2!1ses-419!2spe" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <button class="button-back" (click)="onBack()" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
+          <path d="M1 7.27441L16 7.27441" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.0498 13.2988L0.999804 7.27476L7.0498 1.24976" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </button>
     </div>
 
-    <button class="button-back" (click)="onBack()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none">
-        <path d="M1 7.27441L16 7.27441" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M7.0498 13.2988L0.999804 7.27476L7.0498 1.24976" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
-
-    <div class="container-footer">
+    <div class="footer">
       <span (click)="onToChangeAddress()">{{ myAddress }}</span>
       <button
         class="button-regular button-active"
         (click)="nextProyect()"
-      >Confirmar</button>
+        type="button"
+      >{{ contenido.button }}</button>
     </div>
 
   </div>
