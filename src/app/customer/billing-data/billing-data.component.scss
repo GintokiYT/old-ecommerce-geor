@@ -1,6 +1,4 @@
 .billing-data_container {
-    // padding-left:  calc( var(--ion-safe-area-left) + 16px) !important;
-    // padding-right:  calc(var(--ion-safe-area-right) + 16px) !important;
     padding-left:  16px !important;
     padding-right:  16px !important;
     gap: 24px;
@@ -39,21 +37,11 @@
 ion-footer {
     position: fixed;
     bottom: 0;
-
-    // padding-left:  calc( var(--ion-safe-area-left) + 16px) !important;
-    // padding-right:  calc(var(--ion-safe-area-right) + 16px) !important;
-    // padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
-
-    padding-left:  16px !important;
-    padding-right:  16px !important;
-    padding-bottom: 24px !important;
 }
 
 
 @media(min-width:390px) {
     .billing-data_container {
-        // padding-left:  calc( var(--ion-safe-area-left) + 24px) !important;
-        // padding-right:  calc(var(--ion-safe-area-right) + 24px) !important;
         padding-left:  24px !important;
         padding-right:  24px !important;
     }
@@ -62,12 +50,4 @@ ion-footer {
         max-width: 298px !important;
     }
 
-    ion-footer {
-        // padding-left:  calc( var(--ion-safe-area-left) + 24px) !important;
-        // padding-right:  calc(var(--ion-safe-area-right) + 24px) !important;
-        // padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
-        padding-left:  24px !important;
-        padding-right:  24px !important;
-        padding-bottom: 24px !important;
-    }
 }
