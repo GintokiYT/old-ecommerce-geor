@@ -36,7 +36,7 @@ ion-item::part(native){
             --size: 20px;
             margin-right: 12px;
         } 
-        #info{
+        .info{
             filter:var(--ion-color-light-filter)
         }
     }

@@ -3,7 +3,7 @@ ion-fab-button::part(native) {
   margin-left: 16px;
   width: 44px;
   height: 44px;
-  background: var(--ion-color-dark-contrast);
+  background: var(--ion-color-variants);
 
   @media(max-width:390px){
     margin-left: 24px;
@@ -15,7 +15,7 @@ ion-fab-button::part(native) {
 ion-button {
   --background: #ffffff !important;
   --border-radius: 32px;
-  margin:686px 16px 24px 0px;
+  margin:0px 16px 106px 0px;
   width: 114px;
   height: 36px;
   right: 24px;
@@ -42,18 +42,6 @@ ion-button {
    color:var(--ion-color-medium)
   }
 
-}
-
-
-@media(max-width:320px){
-  ion-button {
-    margin:410px 6px 22px 0px;
-  }
-
-  #local-address{
-   padding: 16px 16px 33px 16px ;
-  
-  }
 }
 
 .arrow{

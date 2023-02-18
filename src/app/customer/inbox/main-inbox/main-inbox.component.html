@@ -1,4 +1,4 @@
-<ion-content class="remove-safe-area remove-scroll">
+<ion-content>
   <div class="container-main-inbox">
     <header class="header-basic">
       <div class="content-header">
@@ -6,7 +6,7 @@
       </div>
     </header>
     <!-- <app-header-main></app-header-main> -->
-    <div class="inbox-ion-list d-flex flex-column">
+    <div class="inbox-ion-list">
       <div
         class="inbox-ion-item d-flex"
         *ngFor="let email of emails"
@@ -31,8 +31,8 @@
         </div>
       </div>
     </div>
-    <app-footer-navigation></app-footer-navigation>
   </div>
+  <app-footer-navigation></app-footer-navigation>
 </ion-content>
 
 
