@@ -58,10 +58,11 @@
       <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
     </div>
   </ion-toolbar>
+  <app-footer-navigation 
+   *ngIf="visibleFooterNavigation"
+  >
+  </app-footer-navigation>
+
 </ion-footer>
 
-<app-footer-navigation 
-  *ngIf="visibleFooterNavigation"
->
-</app-footer-navigation>
 
