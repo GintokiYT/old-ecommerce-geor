@@ -7,7 +7,7 @@ import { SettingsService } from 'src/app/services/settings.service';
 @Component({
   selector: 'app-screen-mode-settings',
   templateUrl: './screen-mode-settings.component.html',
-  styleUrls: ['./screen-mode-settings.component.scss'],
+  styleUrls: ['./screen-mode-settings.component.scss', '../../../../theme/personalizado.scss'],
 })
 export class ScreenModeSettingsComponent extends ViewComponent implements OnInit {
 
@@ -93,7 +93,7 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
       break;
     }
 
-    this.settingsService.setThemeApp(theme);
+    this.settingsService.setTheme(theme);
     this.changeThemeStatusBar();
   }
 
@@ -128,8 +128,9 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
       }
     }
     metaTheme.content = colorStatusBar;
+  }
 
-    console.log(metaTheme)
-    // location.reload();
+  onToBack(route: string) {
+    this.navigation.back(route);
   }
 }

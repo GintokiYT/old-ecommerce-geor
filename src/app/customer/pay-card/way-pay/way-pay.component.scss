@@ -4,13 +4,21 @@
     display: flex;
     justify-content: space-between;
     .card{
-        padding: 4px 46px;
+        width: 141px;
+        height: 32px;
+        display: flex;
+        padding: 4px 0px;
         margin-right: 32px;
+        text-align: center;
         border: 0px;
         background: var(--ion-color-secondary-shade);
     }
     .other{
-        padding: 4px 31px 4px 10px; 
+        width: 141px;
+        height: 32px;
+        display: flex;
+        padding: 4px 0px;
+        justify-content: center;
     }
 }
 .cards{
@@ -41,6 +49,8 @@
 }
 
 ion-footer{
+    position: fixed;
+    bottom: 0;
     ion-toolbar{
       --border-width: 0px;
       --padding-top: 0px;

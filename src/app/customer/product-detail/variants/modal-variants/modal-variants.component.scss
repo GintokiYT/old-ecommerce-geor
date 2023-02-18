@@ -12,6 +12,7 @@ ion-item::part(native) {
   padding: 0px !important;
 }
 
+
 /* Button */
 ion-button{
   border: 0px;
@@ -19,21 +20,22 @@ ion-button{
   --background:var(--ion-color-primary);
 }
 }
+ion-button:nth-child(1)::part(native) {
+  border: 1px solid var(--ion-outline-color-button) !important;
+  color: var(--ion-outline-color-button);
+  background-color:  var(---ion-background-modal) !important;
+}
 
 .btn{
   width: 100%;
 }
 
-.cancel{
-color:#023AFF !important;
-}
-.add{
-color:#FFFFFF !important;
-}
-
 /* ---- */
 ion-radio{
   margin:0px !important;
+}
+ion-radio::part(container) {
+  border: 1px solid var(--ion-border-radio) !important;
 }
 
 ion-item{
@@ -42,4 +44,47 @@ ion-item{
 
 .basket{
  gap: 10px;
+}
+
+// Estilos modal
+.container-modal-variants {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000;
+  background-color: rgba(0,0,0,.5);
+}
+
+.modal-variants {
+  width: 100%;
+  height: 318px;
+  background-color: var(--ion-background-modal);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: modalOpen .3s ease;
+}
+
+@keyframes modalOpen {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.close-modal {
+  animation: modalClose .3s ease;
+}
+
+@keyframes modalClose {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }

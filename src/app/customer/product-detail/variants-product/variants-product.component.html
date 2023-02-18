@@ -1,21 +1,10 @@
 <ion-content [fullscreen]="true">
-  <ion-header class="ion-no-border">
-    <ion-toolbar>
-        <button
-          (click)="goBack()"
-            slot="start">
-            <svg class="back" width="1em" height="1em" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L13 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-              <path d="M1 13L13 1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-              </svg>
-        </button>
-    </ion-toolbar>
-  </ion-header>
-  <div class="mx-4 mt-2">
+  <app-header-variants class="header-variants"></app-header-variants>
+  <div class="mx-4 container-main">
     <ion-text class="variant d-flex flex-row">
       <img src="assets/images/polo-variante.png" />
       <div class="d-flex flex-column justify-content-between">
-                <ion-label class="fz-small">
+        <ion-label class="fz-small">
           Planchas de acrílico de distinto tamañ..
         </ion-label>
         <app-slider-secondary></app-slider-secondary>
@@ -30,13 +19,12 @@
       <div class="fz-note dato"> <ion-label class="extent-cm">200x240</ion-label> </div>
     </div>
      </ion-text>
-    <ion-text class="size-thicknes d-flex flex-column">
+     <ion-text class="size-thicknes d-flex flex-column">
       <ion-label class="fw-normal ">Espesor (mm)</ion-label>
-      <div class="d-flex">
-        <div class="fz-note " style="margin-right: 7px;"> <ion-label class="extent-mm">2</ion-label> <sup class="amount">10</sup> </div>
-        <div class="fz-note " style="margin-right: 11px;"> <ion-label class="extent-mm">4</ion-label>  </div>
-        <div class="fz-note " style="margin-right: 16px;"> <ion-label class="extent-mm">8</ion-label></div>
-
+      <div class="d-flex g-4">
+        <div class="fz-note "> <ion-label class="extent-mm px-3">2</ion-label> <sup class="amount">10</sup> </div>
+        <div class="fz-note me-4 "> <ion-label class="extent-mm px-3">4</ion-label></div>
+        <div class="fz-note "> <ion-label class="extent-mm px-3">8</ion-label></div>
       </div>
     </ion-text>
   </div>
@@ -61,7 +49,7 @@
 
 <ion-footer class="ion-no-padding ion-no-border">
   <ion-toolbar class="ion-no-padding">
-    <div class="footer ">
+    <div class="footer mx-4 mb-4">
       <ion-text class="d-flex flex-row justify-content-between mb-3">
         <ion-label>Total</ion-label>
         <ion-label>S/9,999.00</ion-label>
@@ -73,7 +61,7 @@
           expand="block"
           shape="round"
           color="primary"
-        >
+          style="height:48px ">
           Actualizar
         </ion-button>
       </div>

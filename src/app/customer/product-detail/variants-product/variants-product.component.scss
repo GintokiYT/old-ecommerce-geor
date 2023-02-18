@@ -1,69 +1,69 @@
 /* variant */
-.variant{
-  gap:18px;
+.variant {
+  gap: 18px;
   margin-bottom: 32px;
 }
 
 /* Tamaño (cm) */
-.size{
-  gap:18px;
+.size {
+  gap: 18px;
   margin-bottom: 32px;
 }
 
 .extent-cm{
   padding: 8px;
-  background-color: #F5F5F5;
+  background-color:var(--ion-color-separator);
   border-radius: 4px;
 }
 
-.extent:hover{
-  background-color: var(--ion-color-variants);
-  color: #023AFF;
-  border: 1px solid #023AFF;
-}
+
 /* Espesor (mm) */
-.size-thicknes{
-  gap:10px;
+.size-thicknes {
+  gap: 10px;
   margin-bottom: 32px;
 }
+
 .extent-mm{
-  width: 40px;
-  height: 31px;
   padding: 8px;
-  background-color: #F5F5F5;
+  background-color:var(--ion-color-separator);
   border-radius: 4px;
-  align-items: center;
 }
 
-
-
 /* Footer */
-.footer{
+.footer {
   margin-top: 12px;
 }
 
 .dato{
-  color:#00000099;
-}
-.dato:hover{
-  color: #023AFF;;
+  color:var(--ion-color-text-secundary);
 }
 
+
 /* Button */
-ion-button{
+ion-button {
   border: 0px;
 }
 
-.btn{
+.btn {
   width: 100%;
 }
-.amount{
+
+.amount {
   padding: 2px 4px;
   background-color: var(--ion-color-primary);
   color: white;
   border-radius: 10px;
+
 }
-sup{
-  top:-1.5em !important;
+sup {
+  top: -1.5em !important;
   margin-left: 4px;
+}
+
+.header-variants {
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }

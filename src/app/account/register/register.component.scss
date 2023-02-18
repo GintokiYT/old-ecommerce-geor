@@ -1,12 +1,12 @@
-.disabled {
-    color: var(--ion-color-disabled);
-}
+
+
 
 form {
     ion-input {
         --padding-bottom: 5px !important;
         --padding-top: 5px !important;
     }
+    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 72px)
 }
 
 ion-modal {
@@ -16,18 +16,18 @@ ion-modal {
     }
 
     &::part(content) {
-        margin-right: 16px;
-        margin-left: 16px;
+        margin-right: 16px !important;
+        margin-left: 16px !important;
     }
 
     --background: var(--ion-background-alert);
 }
 
 ion-footer {
-    padding-right: 16px !important;
-    padding-left: 16px !important;
-    padding-bottom: 24px;
-
+    // position: fixed;
+    // bottom: 0;
+    // z-index: 1000;
+    
     .terms,
     .politics {
         color: var(--ion-color-primary);
@@ -35,19 +35,14 @@ ion-footer {
 }
 
 @media(min-width:390px) {
-    ion-footer {
-        padding-right: 24px !important;
-        padding-left: 24px !important;
-    }
 
     ion-modal {
         &::part(content) {
-            margin-right: 24px;
-            margin-left: 24px;
+            margin-right: 24px !important;
+            margin-left: 24px !important;
         }
     }
 }
-
 
 .have-elements{
     display: flex !important;
@@ -63,6 +58,11 @@ ion-footer {
         align-items: center;
     }
 }
+
+.disabled {
+    color: var(--ion-color-disabled);
+}
+
 
 
 

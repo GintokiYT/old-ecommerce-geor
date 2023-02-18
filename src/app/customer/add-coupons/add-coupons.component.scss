@@ -1,7 +1,9 @@
 .coupon-container {
     font-family: var(--ion-font-family);
-    padding-right: 16px;
-    padding-left: 16px;
+    // padding-left:  calc( var(--ion-safe-area-left) + 16px) !important;
+    // padding-right:  calc(var(--ion-safe-area-right) + 16px) !important;
+    padding-left:  16px !important;
+    padding-right:  16px !important;
 
 
     .coupon-input_container {
@@ -91,7 +93,10 @@
 
 @media(min-width:390px) {
     .coupon-container {
-        padding-left: 24px;
-        padding-right: 24px;
+        // padding-left:  calc( var(--ion-safe-area-left) + 24px) !important;
+        // padding-right:  calc(var(--ion-safe-area-right) + 24px) !important;
+
+        padding-left:  24px !important;
+        padding-right:  24px !important;
     }
 }

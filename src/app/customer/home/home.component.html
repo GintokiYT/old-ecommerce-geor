@@ -19,18 +19,18 @@
     <!-- Fin Header Logo -->
     <!-- Slider  Main-->
     <div class="container-slider-main">
-      <ion-col size="12">
+      <div>
         <ion-slides class="pager-static" [options]="slideOptions" [pager]="true">
           <ion-slide *ngFor="let banner of slides">
             <ion-img (click)="goToProduct()" [src]="banner.image" [alt]="banner.image"></ion-img>
           </ion-slide>
         </ion-slides>
-      </ion-col>
+      </div>
     </div>
     <!-- Fin Slider Main -->
     <!-- Slider Items -->
     <div class="container-slider-items">
-      <div class="carousel__wrapper mt-4">
+      <div class="carousel__wrapper">
         <ion-text>
           <div class="d-flex ion-align-items-center mb-3">
             <span class="me-2 fw-bold">Para ti</span>
@@ -40,7 +40,7 @@
         <ion-slides [options]="productSlidesOptions">
           <ion-slide *ngFor="let product of productsForYou">
             <div class="text-start">
-              <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image"></ion-img>
+              <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img>
               <ion-text class="d-block text-sm fw-bold text-price">{{ product.price }}</ion-text>
             </div>
           </ion-slide>
@@ -58,7 +58,7 @@
       <div class="products__column">
         <div class="products__product" *ngFor="let product of productsFeatured">
           <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
-          <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image"></ion-img>
+          <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img>
           <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
           <ion-text class="d-block fw-semibold mt-2 mb-2 text-price"
             >{{ product.price }}</ion-text
@@ -103,5 +103,5 @@
     </div>
     <!-- Fin de productos destacados -->
   </div>
+  <app-footer-navigation></app-footer-navigation>
 </ion-content>
-<app-footer-navigation></app-footer-navigation>

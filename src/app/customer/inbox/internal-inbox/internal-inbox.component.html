@@ -1,12 +1,10 @@
 <ion-content>
-
   <div class="container-internal-inbox">
     <!-- Header -->
     <app-header-inbox class="app-header-inbox"></app-header-inbox>
     <!-- End Header -->
-
     <!-- Content Messages -->
-    <div class="content-messages">
+    <div class="content-messages" #contenedorDeChats>
       <app-message-inbox
         *ngFor="let message of messages" [message]="message" #messageRef
       ></app-message-inbox>

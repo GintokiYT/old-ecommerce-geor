@@ -3,6 +3,7 @@
  
     #data-card{ 
         padding: 16px 0px 16px 10px;
+        margin-bottom: 32px;
         border-radius: 10px;
         background: var(--ion-color-secondary-shade);
         #card{
@@ -20,17 +21,17 @@
         padding: 0px;
     } 
     ion-item{
-    --inner-padding-end: 0px !important;
-    #info{
-        margin: 40px 0px 0px 0px;
-        filter:var(--ion-color-light-filter)
-    }
+        --inner-padding-end: 0px !important;
+        #info{
+            margin: 40px 0px 0px 0px;
+            filter:var(--ion-color-light-filter)
+        }
     }
 }
 
 
 ion-modal::part(content){
-    background: var(--ion-background-modal);
+    background: var(--ion-background-alert);
 }
 
 #alert{
@@ -162,6 +163,8 @@ ion-modal::part(content){
 
 
 ion-footer{
+    position: fixed;
+    bottom: 0;
     ion-toolbar{
       --border-width: 0px;
       --padding-top: 8px;

@@ -2,6 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 import { ViewComponent } from '@geor360/ecore';
+
 @Component({
   selector: 'app-add-card',
   templateUrl: './add-card.component.html',
@@ -21,9 +22,10 @@ export class AddCardComponent extends ViewComponent implements OnInit {
   constructor(private _injector: Injector) {
     super(_injector)
    }
+   items = [];
 
-  ngOnInit() {}
-  
+   ngOnInit() { }
+
   goTo(path:string){
     this.navigation.forward(path)
   }

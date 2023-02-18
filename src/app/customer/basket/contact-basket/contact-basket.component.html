@@ -1,6 +1,8 @@
 <ion-content >
-  <ion-header class="ion-no-border">
-    <ion-toolbar>
+  <div class="container-contact ">
+    <div class="header-contact">
+  <ion-header class="header-basket ion-no-border px-4">
+    <ion-toolbar class="ion-no-padding">
       <button (click)="goBack()"
       slot="start" class="arrow">
       <svg class="icons" width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,9 +18,12 @@
         <path d="M15.6797 16.1328L19 19.4445" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
     </ion-toolbar>
   </ion-header>
+</div >
 
+<div class="container-main px-4">
   <ion-item lines="none">
     <ion-checkbox slot="end" mode="ios"
     [(ngModel)]="data[0].selected"
@@ -96,20 +101,25 @@
       </div>
     </ion-label>
   </ion-item>
-</ion-content>
-<ion-footer class="ion-no-border">
-  <ion-toolbar class="ion-no-padding ">
-    <ion-button
-    (click)="goCollaborativeBasket()"
-    [disabled]=oneTrue
-    (click)="checkBoxSelect"
-      expand="block"
-      color="primary"
-      shape="round"
-      type="submit"
-      style="margin-top: 0px; margin-bottom: 0px;">
-      Invitar (0)
-      </ion-button>
+</div>
+  <ion-footer class="ion-no-border ">
+    <ion-toolbar class="ion-no-padding ">
+      <div style="height: 48px;">
+      <ion-button
+      (click)="goCollaborativeBasket()"
+      [disabled]=oneTrue
+      (click)="checkBoxSelect"
+        expand="block"
+        color="primary"
+        shape="round"
+        type="submit"
+        style="margin-top: 0px; margin-bottom: 0px; ">
+        Invitar (0)
+        </ion-button>
+      </div>
 
-</ion-toolbar>
-</ion-footer>
+  </ion-toolbar>
+  </ion-footer>
+</div>
+</ion-content>
+

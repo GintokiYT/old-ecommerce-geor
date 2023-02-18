@@ -11,12 +11,12 @@
 }
 
 /* FOOTER */
-ion-toolbar {
+/*ion-toolbar {
   --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 21px !important;
-}
+}*/
 
 .total-checkbox{
   gap: 8px;
@@ -41,5 +41,47 @@ ion-checkbox::part(container) {
 }
 }
 
+//
+/*.container-footer {
+  position: fixed;
+  bottom: 68.89px;
+  left: 0;
+  width: 100%;
+  background-color: var(--ion-background-color);
+  z-index: 1000;
+  padding: 0 16px;
+  padding-top: 16px;
+  padding-bottom: 24px;
 
+  @media (min-width: 390px) {
+    padding: 0 24px;
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+}*/
 
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  margin-bottom: calc( var(--ion-safe-area-bottom) + 69px) !important;
+  background-color: var(--ion-background-color);
+
+  ion-toolbar{
+      // --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
+      // --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
+      // --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
+
+      --padding-start: 24px !important;
+      --padding-end: 24px !important;
+      --padding-bottom: 24px !important;
+  }
+}
+
+.header-my-basket{
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}

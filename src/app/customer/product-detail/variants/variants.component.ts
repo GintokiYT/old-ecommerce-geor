@@ -2,6 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { ModalVariantsComponent } from './modal-variants/modal-variants.component';
 import { ViewComponent } from '@geor360/ecore';
 import { ModalAddComponent } from './modal-add/modal-add.component';
+import { ProductDetailService } from '../../../services/productDetail.service';
 
 interface Colours {
   images: string,
@@ -24,8 +25,15 @@ interface Thickness {
 })
 export class VariantsComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) {
+  modalVariants: boolean;
+  modalAdd: boolean;
+  modalBasket: boolean;
+
+  constructor(_injector: Injector, private productDetailService: ProductDetailService) {
     super(_injector);
+    this.productDetailService.getStatusModalVariants.subscribe( status => this.modalVariants = status);
+    this.productDetailService.getStatusModalAdd.subscribe( status => this.modalAdd = status);
+    this.productDetailService.getStatusModalBasket.subscribe( status => this.modalBasket = status);
   }
 
   ngOnInit() { }
@@ -48,20 +56,20 @@ export class VariantsComponent extends ViewComponent implements OnInit {
     { number: 4 },
     { number: 8 },
   ];
-  showModal() {
-    this.dialog.show({
-      showBackdrop: true,
-      component: ModalVariantsComponent,
-      componentProps: {
-        title: "Modal"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
-  }
 
   goToConfirmOrder(){
     this.navigation.root("/customer/confirm-order","forward");
   }
+
+  //* Abre el primer modal
+  OpenModalVariants() {
+    this.productDetailService.setStatusModalVariants(true);
+  }
+
+ /*  click(){
+    const click=document.querySelector('.extent-cm');
+    click.classList.toggle('active');
+    console.log();
+  } */
 
 }

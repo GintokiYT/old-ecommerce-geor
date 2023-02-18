@@ -69,14 +69,15 @@
     </div>
   </div>
   
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button  
+      [disabled]=oneTrue
+      color="primary" (click)="establecerDireccion()" shape="round" expand="block">
+        <ion-label class="fz-normal"> Usar tienda</ion-label>
+      </ion-button> 
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-button  
-    [disabled]=oneTrue
-    color="primary" (click)="establecerDireccion()" shape="round" expand="block">
-      <ion-label class="fz-normal"> Usar tienda</ion-label>
-    </ion-button> 
-  </ion-toolbar>
-</ion-footer>
+

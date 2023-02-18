@@ -16,6 +16,9 @@ ion-content {
   width: 100%;
   min-height: 100vh;
   background-color: var(--ion-background-color);
+
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 .header-main-settings {
@@ -30,10 +33,10 @@ ion-content {
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
-  padding: 96px 16px 24px 16px;
+  padding: 88px 16px 24px 16px;
 
   @media (min-width: 390px) {
-    padding: 96px 24px 24px 24px;
+    padding: 88px 24px 24px 24px;
   }
 }
 
@@ -104,17 +107,5 @@ ion-content {
 
   &.active {
     display: flex;
-  }
-}
-
-
-// Remover el scroll del ion-content
-ion-content {
-  // overwrite inline styles
-  --offset-bottom: auto! important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
   }
 }

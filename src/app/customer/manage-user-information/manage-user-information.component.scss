@@ -1,8 +1,7 @@
-ion-content {
-    --padding-top: 16px;
-    --padding-end: 16px;
-    --padding-start: 16px;
-
+.container-user-information {
+    padding-top: calc(var(--ion-safe-area-top,0) + 16px) !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
 
     .header {
         padding-bottom: 12px;
@@ -22,10 +21,12 @@ ion-content {
         gap: 24px;
 
         .option{
-            justify-content: space-between;
+            position: relative;
 
             ion-label{
-                width: 248px;
+                position: absolute;
+                left: 39px;
+                width: calc(100% - 39px);
             }
 
             img{
@@ -45,20 +46,19 @@ ion-content {
 
 
 @media(min-width:390px) {
-    ion-content {
-        --padding-top: 24px;
-        --padding-end: 24px;
-        --padding-start: 24px;
+    .container-user-information {
+        padding-top: calc(var(--ion-safe-area-top,0) + 24px) !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
     }
 
 
     .options-container{
         padding-bottom: 0px !important;
     }
-
-    .option{
-        ion-label{
-            width: 302px !important;
-        }
-    }
 }
+
+.no-is-header{
+    padding-top: calc(var(--ion-safe-area-top,0) + 24px) 
+}
+

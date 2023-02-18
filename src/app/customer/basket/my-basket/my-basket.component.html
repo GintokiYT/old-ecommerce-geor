@@ -1,30 +1,33 @@
 <ion-content [fullscreen]="true">
-  <app-header-my-basket title="Mi cesta (96)"></app-header-my-basket>
+  <app-header-my-basket class="header-my-basket" title="Mi cesta (96)"></app-header-my-basket>
   <!-- CONTENIDO -->
-  <div class="content-my-cesta">
+  <div s class="container-main" tyle="margin-bottom: '218.66px';">
+  <div class="content-my-cesta" >
     <app-main-product></app-main-product>
   </div>
   <app-product></app-product>
   <app-modal-basket></app-modal-basket>
   <app-modal-invite></app-modal-invite>
-</ion-content>
-<!-- FOOTER -->
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <div class="contenedor-footer">
-      <div class="box-total d-flex flex-row justify-content-between">
-        <div class="total-checkbox d-flex flex-row align-items-center">
-          <ion-checkbox slot="start"></ion-checkbox>
-          <p class="fz-small">Todo</p>
+</div>
+  <!-- FOOTER -->
+  <ion-footer class="ion-no-border container-footer px-4 pb-4">
+    <div>
+      <div class="contenedor-footer">
+        <div class="box-total d-flex flex-row justify-content-between">
+          <div class="total-checkbox d-flex flex-row align-items-center">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <p class="fz-small">Todo</p>
+          </div>
+          <div class="cost-total fz-small">
+            <p>S/ 45,789.00</p>
+          </div>
         </div>
-        <div class="cost-total fz-small">
-          <p>S/ 45,789.00</p>
-        </div>
+        <ion-button class="ion-no-margin" expand="block" color="primary" shape="round" style="height: 48px;">
+          Ir a pagar</ion-button
+        >
       </div>
-      <ion-button expand="block" color="primary" shape="round">
-        Ir a pagar</ion-button
-      >
     </div>
-  </ion-toolbar>
+  </ion-footer>
   <app-footer-navigation></app-footer-navigation>
-</ion-footer>
+</ion-content>
+

@@ -124,14 +124,17 @@ $btn-default: #5b6793;
   --ion-color-tipo-pedido-border: #F5F5F5;
   --ion-color-tipo-pedido-filter: unset;
   --ion-color-border-input: #EEEEEE;
-
+  --ion-border-radio:#E0E0E0;
   --ion-color-text-button-modal: #023AFF;
   --ion-color-text-error-button-modal: #023AFF;
   --ion-color-separator-input: #EEEEEE;
   --ion-color-label-disabled: #00000061;
-
+  --ion-background-outline:#FFFFFF;
   --ion-border-color: #1B1F3C;
+  --ion-outline-color-button: #023AFF;
 
+  --ion-background-button-disabled: #E3EAFD;
+  --ion-color-text-button-disabled: #00000061;
 }
 
 
@@ -233,7 +236,7 @@ body.dark {
   --ion-background-alert: #191932;
   --ion-background-alert-border: #5B6793;
   --ion-background-icons-delete:#5B6793;
-  --ion-background-modal:#191932;
+  --ion-background-modal: #151724;
   --ion-color-group:#023AFF;
   --ion-color-delete:#F44336;
   --ion-color-arrow:#5B6793;
@@ -242,9 +245,9 @@ body.dark {
   --card-background-secondary: #191932;
   --card-background-tertiary: #191932;
   --card-color-text: #FFFFFF;
-  --card-selected-colorcard-selected-color: #3C66FB;
+  --card-selected-color: #3C66FB;
   --icon-color-map: #C9ABA4;
-  --ion-background-modal: #151724;
+  --ion-background-modal:#191932;
   --ion-color-arrow-map: #5B6793;
   --ion-color-geor: #ffffff;
   --ion-color-border-footer:#1B1F3C;
@@ -252,14 +255,18 @@ body.dark {
   --ion-color-tipo-pedido-border: #1B1F3C;
   --ion-color-tipo-pedido-filter: brightness(0) saturate(100%) invert(10%) sepia(48%) saturate(1066%) hue-rotate(198deg) brightness(91%) contrast(92%);
   --ion-color-border-input: #1B1F3C;
-
+  --ion-border-radio:#5B6793;
 
   --ion-color-text-button-modal: #FFFFFF;
   --ion-color-text-error-button-modal: #F44336;
   --ion-color-separator-input: #1B1F3C;
   --ion-color-label-disabled: #FFFFFF66;
-
+  --ion-background-outline:#5B6793;
   --ion-border-color: #1B1F3C;
+  --ion-outline-color-button: #5B6793;
+
+  --ion-background-button-disabled: #1B1F3C;
+  --ion-color-text-button-disabled: #5B6793;
 }
 
 /*

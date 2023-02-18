@@ -25,6 +25,7 @@
         </ion-row>
       </ion-grid>
     </form>
+    
     <ion-text class="d-block text fz-small text-center">¿No recibes el código?
       <span class="text-muted" [ngClass]="{'resend': isCounterInZero}"
         (click)="onResendCode()">Reenviar</span></ion-text>
@@ -32,7 +33,7 @@
     <ion-modal class="modal-alert" #modal>
       <ng-template>
         <div class="modal-container">
-          <ion-text class="text-center fw-700 d-block"><b>¡Último paso!</b></ion-text>
+          <ion-text class="text-center fw-700 d-block" style="margin-bottom: 10px;"><b>¡Último paso!</b></ion-text>
           <ion-text class="fz-small text-muted text-center d-block">Para finalizar validemos tu correo
             electrónico</ion-text>
 

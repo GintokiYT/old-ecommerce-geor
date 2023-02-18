@@ -1,6 +1,8 @@
 .basket {
+  margin-top: calc(var(--ion-safe-area-top,0) + 88px)!important;
    margin-bottom: 42px;
-}
+
+} 
 
 .text {
   color: var(--ion-color-disabled);
@@ -16,5 +18,4 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-
 }

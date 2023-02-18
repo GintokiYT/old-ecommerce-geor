@@ -1,0 +1,52 @@
+// Header
+.header-basic {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  z-index: 1000;
+  background-color: var(--ion-background-color);
+
+  .content-header {
+    position: relative;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700px;
+      margin: 0;
+    }
+
+    .icon-back {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        font-size: 24px;
+      }
+      svg path {
+        stroke: var(--ion-color-basic);
+      }
+    }
+  }
+
+  @media (min-width: 390px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

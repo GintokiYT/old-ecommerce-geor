@@ -1,27 +1,18 @@
-<ion-content class="modal">
-  <div class="modal-cesta">
-    <ion-modal
-      #modal
-      trigger="open-modal-basket"
-      [initialBreakpoint]="0.30"
-      [breakpoints]="[0, 0.25, 0.5, 0.75]"
-    >
-      <ng-template>
-        <div class="ion-no-padding mx-4 mt-4">
-          <ion-text class="text-center d-block">
-            <img src="assets/icons/icon-circle-plus-orange.svg" />
-          </ion-text>
-          <ion-text class="text-center d-block mt-2">
-            Este producto producto ya fue agregado a la cesta de Gerardo Ortíz
-          </ion-text>
-          <ion-text class="basket text-center d-block mt-3 mb-3">
-            Ir a la cesta</ion-text
-          >
-          <ion-button expand="block" shape="round" color="primary">
-            Agregar a otra cesta
-          </ion-button>
-        </div>
-      </ng-template>
-    </ion-modal>
+<div class="container-modal-basket" #ContainerModal>
+  <div class="modal-basket" #modal>
+    <div class="ion-no-padding mx-4 mt-4">
+      <ion-text class="text-center d-block">
+        <img src="assets/icons/icon-circle-plus-orange.svg" />
+      </ion-text>
+      <ion-text class="text-center d-block mt-2">
+        Este producto producto ya fue agregado a la cesta de Gerardo Ortíz
+      </ion-text>
+      <ion-text (click)="goMybasket()" class="basket text-center d-block mt-3 mb-3" >
+        Ir a la cesta</ion-text
+      >
+      <ion-button class="ion-no-margin"expand="block" shape="round" color="primary" style=" height: 48px;">
+        Agregar a otra cesta
+      </ion-button>
+    </div>
   </div>
-</ion-content>
+</div>

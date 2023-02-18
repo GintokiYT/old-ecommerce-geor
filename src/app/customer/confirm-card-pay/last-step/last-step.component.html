@@ -1,10 +1,8 @@
-
-
 <ion-content>
 
     <app-header
       title="Último paso"
-      backDirection="payment-methods"
+      backDirection="confirm-order"
       iconLeft="icon-arrow-left"
       >
     </app-header>
@@ -17,12 +15,21 @@
             <ion-label class="fz-small">
               Visa Débito *** 4115 </ion-label>
           </div>
-          <ion-item >
+        <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+          <ion-item class="form-group ion-touched ion-invalid">
               <ion-label position="floating" class="fz-normal" color="medium">
                   Ingresa el código de seguridad</ion-label>
-              <ion-input></ion-input>
+              <ion-input
+              inputmode="numeric"
+              type="tel"
+              name="code"
+              maxlength="3"
+              [(ngModel)]="data.code"
+              required 
+              ></ion-input>
               <img id="info" slot="end" (click)="setOpen(true)" src="/assets/icons/icon-help.svg" alt="help">
           </ion-item>
+        </form>
       </div>
 
       <ion-modal id="alert" [isOpen]="isAlertOpen" >
@@ -59,7 +66,9 @@
             </div>
             <div id="buttons">
               <ion-label class="fz-small conditions">Condiciones</ion-label>
-              <ion-button color="primary" shape="round"
+              <ion-button (click)="goTo('/customer/internal-inbox/3')"
+              (click)="setOpen2(false)"
+              color="primary" shape="round"
               >Usar cupón</ion-button>
             </div>
           </div>
@@ -83,13 +92,16 @@
       </ion-modal> -->
 
     </div><!-- End container main-->
-
+    
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button 
+          [disabled]="formulario.invalid"
+          (click)="setOpen2(true)"
+          type="submit" color="primary" shape="round" expand="block">
+          <ion-label class="fz-normal">Confirmar pago</ion-label>
+        </ion-button>  
+      </ion-toolbar>
+  </ion-footer>
 </ion-content>
 
-<ion-footer>
-    <ion-toolbar>
-      <ion-button (click)="setOpen2(true)"type="submit" color="primary" shape="round" expand="block">
-        <ion-label class="fz-normal">Confirmar pago</ion-label>
-      </ion-button>  
-    </ion-toolbar>
-</ion-footer>

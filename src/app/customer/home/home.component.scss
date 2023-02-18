@@ -1,17 +1,27 @@
-html {
-  box-sizing: border-box;
-}
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
 
-*,*::after,*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+  --padding-top: var(--ion-safe-area-top);
+  // --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // Container Page
 .container-home {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: var(--ion-background-color);
 }
 
@@ -65,6 +75,7 @@ html {
 
 // Initial Slider Items
 .container-slider-items {
+  margin-top: 10px;
   margin-left: 16px;
 
   @media (min-width: 390px) {
@@ -73,20 +84,22 @@ html {
 
   .text-start {
     width: 80px;
+    height: 200px;
   }
 
   ion-img {
-    width: 72px;
-    margin-bottom: 8px;
+    width: 80px;
   }
 
   ion-slide {
-    width: 72px;
-    margin: 0 !important;
-    padding-right: 16px;
+    width: 80px;
 
-    @media (min-width: 390px) {
-      padding-right: 24px;
+    &:last-child {
+      margin-right: 16px;
+
+      @media (min-width: 390px) {
+        margin-right: 24px;
+      }
     }
   }
 
@@ -95,6 +108,7 @@ html {
   }
 
   ion-text {
+    padding-top: 4px;
     font-size: 12px;
 
     @media (min-width: 390px) {
@@ -135,13 +149,3 @@ html {
   }
 }
 
-// Remover el scroll del ion-content
-ion-content {
-  // overwrite inline styles
-  --offset-bottom: auto! important;
-  --overflow: hidden;
-  overflow: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}

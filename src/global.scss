@@ -8,48 +8,93 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
-@import "./theme/sass/mixins.scss";
-@import "./theme/variables.scss";
+ @import "./theme/sass/mixins.scss";
+ @import "./theme/variables.scss";
 
-/* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+ /* Core CSS required for Ionic components to work properly */
+ @import "~@ionic/angular/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import "~@ionic/angular/css/display.css";
+ /* Basic CSS for apps built with Ionic */
+ @import "~@ionic/angular/css/normalize.css";
+ @import "~@ionic/angular/css/structure.css";
+ @import "~@ionic/angular/css/typography.css";
+ @import "~@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+ /* Optional CSS utils that can be commented out */
+ @import "~@ionic/angular/css/padding.css";
+ @import "~@ionic/angular/css/float-elements.css";
+ @import "~@ionic/angular/css/text-alignment.css";
+ @import "~@ionic/angular/css/text-transformation.css";
+ @import "~@ionic/angular/css/flex-utils.css";
 
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  bottom: 0;
-  transform: translateY(-50%);
-}
+ // Customs
+ @import "./theme/sass/lists.scss";
+ @import "./theme/sass/radio.scss";
+ @import "./theme/sass/text.scss";
+ @import "./theme/sass/button.scss";
+ @import "./theme/sass/input.scss";
+ @import "./theme/sass/alert.scss";
+ @import "./theme/sass/toolbar.scss";
+ @import "./theme/sass/customs.scss";
 
-// Customs
-@import "./theme/sass/lists.scss";
-@import "./theme/sass/radio.scss";
-@import "./theme/sass/text.scss";
-@import "./theme/sass/button.scss";
-@import "./theme/sass/input.scss";
-@import "./theme/sass/alert.scss";
-@import "./theme/sass/toolbar.scss";
-@import "./theme/sass/customs.scss";
+ @import "./theme/personalizado.scss";
+
+ body.md {
+   ion-content {
+     // --padding-top: 1.5rem;
+     // --padding-bottom: 1.5rem;
+   }
+
+   ion-footer{
+     &.footer-ionic{
+       ion-toolbar{
+         --padding-top: 12px;
+         --padding-start: 16px;
+         --padding-end: 16px;
+         --padding-bottom: 16px;
+       }
+     }
+   }
+ }
 
 
-// Cambiar el color del Status Bar en IOS (RCNA)
-//* IOS
-ion-app {
-  --ion-status-bar-background: var(--ion-color-icons-selected);
-}
+ body.ios {
+
+  transition: 0.25s height ease-out;
+
+   ion-content {
+     //--padding-top: var(--ion-safe-area-top);
+     //--padding-bottom: var(--ion-safe-area-bottom);
+   }
+
+   ion-footer{
+     &.footer-ionic{
+       ion-toolbar{
+         --padding-top: 12px;
+         --padding-start: 24px;
+         --padding-end: 24px;
+         --padding-bottom: 16px;
+       }
+     }
+   }
+ }
+
+ @media(min-width:390px){
+   body.md{
+     ion-footer{
+       &.footer-ionic{
+         ion-toolbar{
+           --padding-start: 24px;
+           --padding-end: 24px;
+           --padding-bottom: 24px;
+         }
+       }
+     }
+   }
+ }
+
+ // Cambiar el color del Status Bar en IOS (RCNA)
+ //* IOS
+ ion-app {
+   --ion-status-bar-background: var(--ion-color-icons-selected);
+ }
