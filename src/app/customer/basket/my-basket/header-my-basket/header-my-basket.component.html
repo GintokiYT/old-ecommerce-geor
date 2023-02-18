@@ -1,16 +1,48 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-
     <ion-label class="text">
-      {{title}}
+      {{ title }}
     </ion-label>
-      <button
-          slot="end">
-          <img id="open-modal-invite"
-          src="/assets/collaborative-basquet/Perfil.svg" alt="Equipo" />
-      </button>
-
-
+    <button (click)="openInvite()" slot="end">
+      <svg
+        class="equipo"
+        width="1em"
+        height="1em"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="32" height="32" rx="16" fill="#F5F5F5" />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M13.9223 25.8087C10.1083 25.8087 6.85034 25.2317 6.85034 22.9217C6.85034 20.6117 10.0873 18.5107 13.9223 18.5107C17.7363 18.5107 20.9943 20.5917 20.9943 22.9007C20.9943 25.2097 17.7573 25.8087 13.9223 25.8087Z"
+          stroke="#130F26"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M13.9223 15.2164C16.4253 15.2164 18.4553 13.1864 18.4553 10.6834C18.4553 8.17939 16.4253 6.15039 13.9223 6.15039C11.4193 6.15039 9.38931 8.17939 9.38931 10.6834C9.38031 13.1774 11.3963 15.2074 13.8903 15.2164H13.9223Z"
+          stroke="#130F26"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M23.1313 12.1299V16.1399"
+          stroke="#130F26"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M25.1776 14.1348H21.0876"
+          stroke="#130F26"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
   </ion-toolbar>
-
-</ion-header>
