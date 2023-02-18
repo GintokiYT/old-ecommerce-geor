@@ -33,13 +33,13 @@ export class LoginComponent implements OnInit {
 
     //Este evento se llama antes de que se muestre el teclado.
     Keyboard.addListener('keyboardWillShow', info => {
-      this.visibleFooterNavigation = false;
+      this.visibleFooterNavigation = true;
     });
 
 
     //Este evento se evoca antes de que se cierre el teclado.
     Keyboard.addListener('keyboardWillHide', () => {
-      this.visibleFooterNavigation = true;
+      this.visibleFooterNavigation = false;
     });
 
 
