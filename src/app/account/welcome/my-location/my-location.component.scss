@@ -12,6 +12,10 @@ ion-content {
   --padding-start: var(--ion-safe-area-right);
   --padding-end: var(--ion-safe-area-left);
   --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .container-my-location {
