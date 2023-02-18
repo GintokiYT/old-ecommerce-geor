@@ -19,15 +19,19 @@
         (ionChange)="onSearch()"
       ></ion-searchbar>
 
-    <ion-list lines="none">
-      <ion-item
-        *ngFor="let address of addresses"
-        [detail]="false"
-        (click)="onSelectAddress(address)"
-      >
-        <ion-label>{{ address }}</ion-label>
-      </ion-item>
-    </ion-list>
+    <div class="container-ion-list">
+      <ion-list lines="none">
+        <ion-item
+          *ngFor="let address of addresses"
+          [detail]="false"
+          (click)="onSelectAddress(address)"
+        >
+          <ion-label>{{ address }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <div class="separator"></div>
+    </div>
+
 
     <!-- <div class="app-header-main">
       <ion-header class="ion-no-border" mode="md">

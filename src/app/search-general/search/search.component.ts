@@ -1,4 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
+import { ViewComponent } from '@geor360/ecore';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -7,15 +9,28 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 
-export class SearchComponent  implements OnInit {
+export class SearchComponent extends ViewComponent implements OnInit {
 
- 
+  
+  constructor(private location: Location, _injector: Injector) { 
+    super(_injector);
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+
+  goTo(path: string){
+    this.navigation.back(path)
+    console.log('ff')
+  }
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
 
-  public data = ['acrilicos', 'planchas de acrilico', 'acrilissdds', 'gttght'];
+  public data = ['acrilicos', 'planchas', 'acrilissdds', 'ropa'];
   public results = [...this.data];
 
   handleChange(event) {

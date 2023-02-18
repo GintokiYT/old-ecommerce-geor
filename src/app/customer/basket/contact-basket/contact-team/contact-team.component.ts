@@ -1,13 +1,13 @@
 import { Location } from '@angular/common';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
-  selector: 'app-contact-basket',
-  templateUrl: './contact-basket.component.html',
-  styleUrls: ['./contact-basket.component.scss'],
+  selector: 'app-contact-team',
+  templateUrl: './contact-team.component.html',
+  styleUrls: ['./contact-team.component.scss'],
 })
-export class ContactBasketComponent extends ViewComponent implements OnInit {
+export class ContactTeamComponent extends ViewComponent implements OnInit {
 
   oneTrue:boolean=true;
   constructor( _injector: Injector, private location: Location ) {
@@ -50,11 +50,9 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
   goBack(){
     this.location.back();
   }
-
   goCollaborativeBasket(){
-    this.navigation.root('/customer/collaborative-basket','forward');
+    this.navigation.root('/customer/team','forward');
   }
-
   goContactSeatch(){
     this.navigation.root('/customer/contact-search','forward');
   }
