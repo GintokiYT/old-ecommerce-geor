@@ -7,8 +7,8 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class LoadingAppComponent extends ViewComponent implements OnInit {
 
-  image: string;
-  alt: string;
+  image: string = '';
+  alt: string = '';
 
   constructor(_injector: Injector) {
     super(_injector);

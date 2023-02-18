@@ -37,6 +37,8 @@
 @import "./theme/sass/toolbar.scss";
 @import "./theme/sass/customs.scss";
 
+@import "./theme/personalizado.scss";
+
 body.md {
   ion-content {
     // --padding-top: 1.5rem;
@@ -83,10 +85,11 @@ body.ios {
   ion-footer{
     &.footer-ionic{
       ion-toolbar{
-        --padding-top: 12px !important;
-        --padding-start: 24px !important;
-        --padding-end: 24px !important;
-        --padding-bottom: 16px !important;
+        // No usar important!
+        --padding-top: 12px;
+        --padding-start: 24px;
+        --padding-end: 24px;
+        --padding-bottom: 16px;
       }
     }
   }
@@ -97,16 +100,13 @@ body.ios {
     ion-footer{
       &.footer-ionic{
         ion-toolbar{
-          --padding-start: 24px !important;
-          --padding-end: 24px !important;
-          --padding-bottom: 24px !important;
+          // No usar important!
+          --padding-start: 24px;
+          --padding-end: 24px;
+          --padding-bottom: 24px;
         }
       }
     }
-  }
-
-  body.ios{
-
   }
 }
 

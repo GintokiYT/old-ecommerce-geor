@@ -1,5 +1,7 @@
+$padding-bottom: var(--ion-safe-area-bottom);
+
 .inbox-ion-footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   z-index: 10000;
@@ -14,6 +16,7 @@
   padding-bottom: 16px;
 
   padding-bottom: calc(var(--ion-safe-area-bottom) + 16px);
+  padding-bottom: calc(16px + 16px);
 
   @media (min-width: 390px) {
     padding-left: 24px;
