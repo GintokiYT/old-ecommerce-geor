@@ -46,13 +46,14 @@ ion-content {
 
     &::after {
       content: "";
-      position: fixed;
+      position: sticky;
       z-index: 1000;
       bottom: 0;
       left: 0;
       width: 100%;
       height: var(--ion-safe-area-bottom);
-      background-color: red;
+      background-color: var(--ion-background-color);
+      background: red;
     }
   }
 
