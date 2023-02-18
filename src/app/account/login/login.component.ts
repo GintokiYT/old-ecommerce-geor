@@ -26,7 +26,10 @@ export class LoginComponent implements OnInit {
   
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {
+        
+  }
 
+  ngOnInit() {
 
     //Este evento se llama antes de que se muestre el teclado.
     Keyboard.addListener('keyboardWillShow', info => {
@@ -38,10 +41,8 @@ export class LoginComponent implements OnInit {
     Keyboard.addListener('keyboardWillHide', () => {
       this.visibleFooterNavigation = true;
     });
-        
-  }
 
-  ngOnInit() {
+
     this.loginForm = new FormGroup({
       username: new FormControl('', [
         Validators.required,
