@@ -21,6 +21,7 @@ ion-searchbar {
 .medidas {
     margin: 30px 23px 0px 0px;
     padding: 0px;
+    filter:var(--ion-color-light-filter);
 
 }
 button {
@@ -44,4 +45,3 @@ ion-label {
 .relleno {
     margin: 0px 24px 0px 24px  ;
 }
-
