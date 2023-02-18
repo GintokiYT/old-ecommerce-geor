@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InviteService } from 'src/app/services/Invite';
 
 @Component({
   selector: 'app-collaborative-team',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollaborativeTeamComponent implements OnInit {
 
-  constructor() { }
-
+  modalInvite: boolean;
+  constructor( private inviteService:InviteService) {
+    this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+  }
   ngOnInit() {}
+
+  openInvite(){
+    this.inviteService.setStatusModalInvite(true);
+  }
 
 }

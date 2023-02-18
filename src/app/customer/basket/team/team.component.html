@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <app-header-team class="header-team" title="Equipo"> </app-header-team>
   <div class="container-main" >
-  <div id="open-modal-resend" class="content-team">
+  <div (click)="openResend()"class="content-team">
     <div class="contacts d-flex flex-row">
       <img src="assets/collaborative-basquet/Avatar.svg">
 
@@ -33,10 +33,11 @@
       </div>
     </div>
  </div>
- <ion-img  id="open-modal-invite" class="icon-plus"src="assets/collaborative-basquet/Plus-circle.svg"></ion-img>
- <app-modal-invite></app-modal-invite>
- <app-modal-resend></app-modal-resend>
- <app-modal-accepted></app-modal-accepted>
+ <ion-img   (click)="openInvite()" class="icon-plus"src="assets/collaborative-basquet/Plus-circle.svg"></ion-img>
+ <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
+ <app-modal-resend  *ngIf="modalResend"></app-modal-resend>
+ <!-- <app-modal-accepted *ngIf="modalAccepted"></app-modal-accepted> -->
+ <app-modal-accepted ></app-modal-accepted>
 
 </ion-content>
 
