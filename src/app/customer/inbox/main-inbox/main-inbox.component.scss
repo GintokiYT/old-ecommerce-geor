@@ -18,19 +18,20 @@ ion-content {
   }
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .container-main-inbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   background-color: var(--ion-background-color);
+
+  position: relative;
 }
 
 .inbox-ion-list {
+  flex: 1;
   width: 100%;
   background: var(--ion-background-color);
   display: flex;
@@ -45,6 +46,7 @@ ion-content {
 }
 
 .inbox-ion-item {
+  display: flex;
   gap: 12px;
 }
 
@@ -57,6 +59,8 @@ ion-content {
 
 .ion-detail {
   width: calc(100% - 48px - 12px);
+  display: flex;
+  flex-direction: column;
   gap: 4px;
 
   @media (min-width: 390px) {
@@ -65,6 +69,9 @@ ion-content {
 }
 
 .ion-detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 16px;
   height: 24px;
 }
@@ -76,6 +83,7 @@ ion-content {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: clip;
+  margin: 0;
 }
 
 .ion-detail__header--info {
@@ -85,6 +93,8 @@ ion-content {
 }
 
 .ion-detail__content {
+  display: flex;
+  align-items: center;
   height: 16px;
 }
 
@@ -95,6 +105,7 @@ ion-content {
   white-space: nowrap;
   text-overflow: ellipsis;
   color: var(--ion-color-light);
+  margin: 0;
 
   @media(min-width: 390px) {
     font-size: 14px;
@@ -102,6 +113,8 @@ ion-content {
 }
 
 .ion-detail .ion-detail__footer {
+  display: flex;
+  align-items: center;
   height: 16px;
 
   .ion-detail__footer--description {
@@ -111,6 +124,7 @@ ion-content {
     font-size: 12px;
     font-weight: 400;
     color: var(--ion-color-light);
+    margin: 0;
 
     .user-tag {
       color: var(--ion-color-primary);
@@ -122,13 +136,19 @@ ion-content {
   }
 }
 
-// Header
 .header-basic {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
+  padding-top: calc(var(--ion-safe-area-top) + 16px) !important;
+  //padding-top: calc(16px + 16px) !important;
+}
+
+app-footer-navigation {
+  position: sticky;
+  bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
+<<<<<<< HEAD
+=======
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 24px;
@@ -179,4 +199,5 @@ ion-content {
 .header-basic {
   padding-top: calc(var(--ion-safe-area-top) + 16px) !important;
   //padding-top: calc(16px + 16px) !important;
+>>>>>>> 67e98dfe02410dd283487504eecb9f4f8bd10711
 }
