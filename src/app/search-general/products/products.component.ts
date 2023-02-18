@@ -1,4 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { AppThemeService, ViewComponent } from '@geor360/ecore';
 import IBanner from 'src/app/interfaces/IBanner';
 import IProduct from 'src/app/interfaces/IProduct';
@@ -147,9 +148,17 @@ export class ProductsComponent extends ViewComponent implements OnInit {
 
   logoPath = '/assets/images/logo.svg';
 
-  constructor(_injector: Injector) {
+  constructor(private location: Location, _injector: Injector) { 
     super(_injector);
     this.themeService = _injector.get(AppThemeService);
+  }
+
+  goBack() {
+    this.location.back();
+  }
+  
+  goTo(path:string){
+    this.navigation.back(path);
   }
 
   ngOnInit() {

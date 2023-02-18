@@ -13,18 +13,24 @@ export class MainProductComponent extends ViewComponent implements OnInit {
    }
 
   ngOnInit() {}
-  alert_message(){
-    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
-       },'Eliminar','Cancelar')
-   }
 
-  alert_message2(){
-   this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
-      },'Eliminar','Cancelar')
+  deleteDescription(){
+    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
+    },'Eliminar','Cancelar');
+  }
+
+  deleteProduct(){
+    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+    },'Eliminar','Cancelar');
   }
 
   goProductDetail(){
    this.navigation.root('/customer/variants-product', 'forward');
+  }
+
+  delete(){
+    document.getElementById('delete').innerHTML = '';
+    this.dialog.dismiss();
   }
 
 }
