@@ -20,7 +20,7 @@ ion-modal {
     &.modal-terms {
         &::part(content) {
             position: absolute;
-            bottom: 16px;
+            bottom: 10px;
             width: calc(100% - 32px);
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
