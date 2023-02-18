@@ -1,34 +1,32 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar >
-    <button slot="end" class="arrow">
-      <img src="/assets/icons/icon-scan.svg" class="medidas"/>
-    </button>
-    <ion-searchbar (click)="goToSearchBar()" placeholder="¿Qué estas buscando?"></ion-searchbar> 
-  </ion-toolbar>
-</ion-header>
-<br>
 <ion-content>
-  <ion-button  (click)="goTo('/customer/products')" class="relleno">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <button slot="end" class="arrow">
+        <img src="/assets/icons/icon-scan.svg" class="medidas" />
+      </button>
+      <ion-searchbar (click)="goTo('/customer/searchbar')" placeholder="¿Qué estas buscando?"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button (click)="goTo('/customer/products')" class="relleno">
     <img src="/assets/images/producto-big-4.png" class="caracter" />
     <ion-label>
       <h3>Acrílico liso</h3><br>
       <p>Lorem ipsum dolor sit amet consectetur. </p>
-    </ion-label> 
-    </ion-button><br><br>
-    <ion-button class="relleno">
-      <img src="/assets/images/producto-big-3.png" class="caracter"/>
-      <ion-label>
-        <h3>Acrílico liso</h3><br>
-        <p>Lorem ipsum dolor sit amet consectetur. </p>
-      </ion-label> 
-      </ion-button><br><br>
-      <ion-button class="relleno">
-        <img src="/assets/images/producto-big-4.png" class="caracter"/>
-        <ion-label>
-          <h3>Acrílico liso</h3><br>
-          <p>Lorem ipsum dolor sit amet consectetur. </p>
-        </ion-label>   
+    </ion-label>
+  </ion-button><br><br>
+  <ion-button class="relleno">
+    <img src="/assets/images/producto-big-3.png" class="caracter" />
+    <ion-label>
+      <h3>Acrílico liso</h3><br>
+      <p>Lorem ipsum dolor sit amet consectetur. </p>
+    </ion-label>
+  </ion-button><br><br>
+  <ion-button class="relleno">
+    <img src="/assets/images/producto-big-4.png" class="caracter" />
+    <ion-label>
+      <h3>Acrílico liso</h3><br>
+      <p>Lorem ipsum dolor sit amet consectetur. </p>
+    </ion-label>
   </ion-button>
-
 </ion-content>
-<app-footer-navigation></app-footer-navigation>
+  <app-footer-navigation></app-footer-navigation>
