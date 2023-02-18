@@ -13,8 +13,6 @@ ion-content {
   --padding-end: var(--ion-safe-area-left);
   --background: var(--ion-background-color);
 
-  position: relative;
-
   &::-webkit-scrollbar {
     display: none;
   }
