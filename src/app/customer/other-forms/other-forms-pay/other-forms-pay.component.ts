@@ -10,10 +10,6 @@ export class OtherFormsPayComponent extends ViewComponent implements OnInit {
 
   oneTrue:boolean=true;
 
-  isCashOpen = false;
-  isTransferOpen=false;
-  isCreditOpen=false;
-
   options: any[] = [
     {
       id: 0,
@@ -55,15 +51,4 @@ export class OtherFormsPayComponent extends ViewComponent implements OnInit {
     }
   }
 
-  setOpen1(isOpen: boolean) {
-    this.isCashOpen = isOpen;
-  }
-
-  setOpen2(isOpen: boolean) {
-    this.isTransferOpen = isOpen;
-  }
-
-  setOpen3(isOpen: boolean) {
-    this.isCreditOpen = isOpen;
-  }
 }
