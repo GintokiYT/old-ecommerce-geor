@@ -46,6 +46,7 @@ export class ConfirmOrderService {
   
   
     detailsOrderToStore:{
+      store: "",
       direction : "¿Donde recojeras tu pedido?",
       dClass: "lugar-pedido",
       who: "Wilfredo"
@@ -67,8 +68,9 @@ export class ConfirmOrderService {
     this.myOrder$.next(this.myOrder);
   }
 
-  setDirectionStore(direction:string):void{
-    this.myOrder.detailsOrderToStore.direction = direction;
+  setDirectionStore(ubication:any):void{
+    this.myOrder.detailsOrderToStore.direction = ubication.direction;
+    this.myOrder.detailsOrderToStore.store = ubication.store;
     this.myOrder.detailsOrderToStore.dClass = "lugar-pedido with-direction"
     this.myOrder$.next(this.myOrder);
   }
