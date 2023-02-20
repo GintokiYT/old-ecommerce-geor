@@ -1,6 +1,6 @@
 import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
-import { InviteService } from 'src/app/services/Invite';
+import { InviteService } from 'src/app/services/Invite.service';
 
 @Component({
   selector: 'app-modal-resend',
@@ -23,9 +23,12 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
       }
     })
   }
+    /* Modal Resend Invitation */
+
 
   constructor(_injector:Injector,private inviteService:InviteService) {
     super(_injector);
+
   }
 
   ngOnInit() {}
@@ -40,4 +43,10 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
     },'Eliminar','Cancelar');
     /* this.inviteService.setStatusModalResend(false); */
   }
+  openResendInvitation(){
+    this.inviteService.setStatusModalResendInvitation(true);
+    this.inviteService.setStatusModalResend(false);
+    console.log("no abre")
+  }
+
 }

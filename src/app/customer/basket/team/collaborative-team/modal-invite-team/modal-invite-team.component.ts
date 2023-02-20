@@ -1,5 +1,5 @@
 import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
-import { InviteService } from 'src/app/services/Invite';
+import { InviteService } from 'src/app/services/Invite.service';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({

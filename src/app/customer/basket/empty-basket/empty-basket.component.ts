@@ -2,7 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 import IBanner from 'src/app/interfaces/IBanner';
 import IProduct from 'src/app/interfaces/IProduct';
 import { AppThemeService, ViewComponent } from '@geor360/ecore';
-import { InviteService } from 'src/app/services/Invite';
+import { InviteService } from 'src/app/services/Invite.service';
 import { HomeService } from 'src/app/services/home.service';
 
 @Component({
