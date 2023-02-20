@@ -10,6 +10,9 @@ import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
 })
 export class ManageUserInformationComponent extends ViewComponent implements OnInit {
 
+  modalIsVisible : boolean = false;
+
+
   constructor(private _injector: Injector) {
       super(_injector);
   }
@@ -23,16 +26,32 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
   }
 
   async getOrTakePicture(){
-
-    const image = await Camera.getPhoto({
-      // quality: 90,
-      // allowEditing: true,
-      // resultType: CameraResultType.Uri
-      quality: 90,
-      source: CameraSource.Prompt,
-      resultType: CameraResultType.Uri
-    });
+    this.modalIsVisible = true;
+    // const image = await Camera.getPhoto({
+    //   // quality: 90,
+    //   // allowEditing: true,
+    //   // resultType: CameraResultType.Uri
+    //   quality: 90,
+    //   source: CameraSource.Prompt,
+    //   resultType: CameraResultType.Uri
+    // });
   }
+
+  async closeModal(value:string){
+    this.modalIsVisible = false;
+    if(value==="prompt-camera"){
+      console.log("Hola")
+      const image = await Camera.getPhoto({
+        // quality: 90,
+        // allowEditing: true,
+        // resultType: CameraResultType.Uri
+        quality: 90,
+        source: CameraSource.Prompt,
+        resultType: CameraResultType.Uri
+      });
+    }
+  }
+
   goTeamCollaborative(){
    this.navigation.root('/customer/collaborative-team','forward');
 

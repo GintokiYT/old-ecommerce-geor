@@ -1,0 +1,16 @@
+<div class="overlay"
+   [ngClass]="{'modal-visible': modalIsVisible===true,
+               'modal-not-visible' : modalIsVisible===false}"
+   #modal 
+>
+  <div class="modal-container d-flex justify-content-center" style="gap: 100px;">
+    <div class="d-flex flex-column align-items-center" style="gap: 10px; cursor: pointer;" (click)="openDefaultPromptCamera()">
+      <img src="/assets/icons/camera-modal.svg" width="30px"/>
+      <ion-label class="text-muted">Cámara</ion-label>
+    </div>
+    <div class="d-flex flex-column align-items-center"  style="gap: 10px; cursor: pointer;" (click)="openDefaultPromptCamera()">
+      <img src="/assets/icons/galeria-modal.svg" width="30px"/>
+      <ion-label class="text-muted">Galería</ion-label>
+    </div>
+  </div>
+</div>
