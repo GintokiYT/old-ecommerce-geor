@@ -73,6 +73,9 @@ img {
   width: 100%;
   z-index: 1000;
   padding-bottom: var(--ion-safe-area-bottom);
+
+  padding-left: var(--ion-safe-area-left);
+  padding-right: var(--ion-safe-area-right);
 }
 
 .input-message {
@@ -91,8 +94,6 @@ img {
   flex-direction: row;
   justify-content: space-between;
   padding: 0 16px 24px 16px;
-
-  //padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
 
   &.active {
     display: flex !important;
