@@ -20,14 +20,14 @@ export class TeamComponent extends ViewComponent implements OnInit {
 
   modalInvite: boolean;
   modalResend: boolean;
-  modalAccepted:boolean;
+ /*  modalAccepted:boolean; */
 
   constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
     //Modal Invite
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
     this.inviteService.getStatusModalResend.subscribe(status=>this.modalResend =status);
-    this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status);
+    /* this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status); */
   }
 
   ngOnInit() {}
@@ -102,9 +102,9 @@ export class TeamComponent extends ViewComponent implements OnInit {
       this.inviteService.setStatusModalResend(true);
     }
 
-    openAccepted(){
+   /*  openAccepted(){
       this.inviteService.setStatusModalAccepted(true);
-    }
+    } */
 
 
   }

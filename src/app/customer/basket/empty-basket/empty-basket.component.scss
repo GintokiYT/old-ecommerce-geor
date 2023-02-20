@@ -2,15 +2,12 @@
   margin-top: calc(var(--ion-safe-area-top,0) + 88px)!important;
    margin-bottom: 42px;
 
-} 
+}
 
 .text {
   color: var(--ion-color-disabled);
 }
 
-.container-productos-destacados{
-  margin-top: 94px;
-}
 
 .header-mybasket{
   background-color: var(--ion-background-color);
@@ -18,4 +15,35 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+/* Producto Destacado */
+.container-productos-destacados {
+  padding: 0 16px;
+
+  @media (min-width: 390px) {
+    padding: 0 24px;
+  }
+
+  .products__product {
+    margin-bottom: 16px;
+
+    @media (min-width: 390px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .icon-truck path {
+    stroke: red !important;
+  }
+}
+// End Productos destacados
+
+.text-price {
+  &::before {
+    content: "S/";
+  }
+  &::after {
+    content: ".00";
+  }
 }
