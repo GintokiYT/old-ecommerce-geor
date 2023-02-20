@@ -4,11 +4,12 @@ import { ManageUserInformationComponent } from './manage-user-information.compon
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ShareModule } from 'src/app/shared/shared.module';
+import { ModalCameraComponent } from './modal-camera/modal-camera.component';
 
 
 
 @NgModule({
-  declarations: [ManageUserInformationComponent],
+  declarations: [ManageUserInformationComponent, ModalCameraComponent],
   imports: [
     CommonModule,
     IonicModule,

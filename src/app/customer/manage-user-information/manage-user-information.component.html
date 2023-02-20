@@ -9,7 +9,7 @@
         </div>
 
         <!-- Title -->
-        <ion-label class="title d-block fz-normal fw-500">Nombres y apellidos</ion-label>
+        <ion-label class="title d-block fz-normal fw-500">Miguel Jimenez</ion-label>
 
         <!-- Options container -->
         <div class="options-container d-flex flex-column">
@@ -49,4 +49,10 @@
     </div>
 </ion-content>
 <app-footer-navigation></app-footer-navigation>
+<app-modal-camera
+    [modalIsVisible]="modalIsVisible"
+    (onModalNotVisible)="closeModal($event)"
+>
+
+</app-modal-camera>
 
