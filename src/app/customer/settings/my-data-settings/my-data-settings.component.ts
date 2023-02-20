@@ -30,7 +30,8 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
         formControlSettings.classList.add('active')
         formControlSettings.classList.remove('data');
-        footerButton.style.paddingBottom = '24px';
+        footerButton.classList.add('active');
+        footerButton.classList.remove('disabled');
       });
       input.nativeElement.addEventListener('blur', () => {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
@@ -38,6 +39,8 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
         if(input.nativeElement.value !== '') {
           formControlSettings.classList.add('data');
         }
+        footerButton.classList.add('disabled');
+        footerButton.classList.remove('active');
       });
       input.nativeElement.addEventListener('input', (event: Event) => {
         console.log(this.myData)
