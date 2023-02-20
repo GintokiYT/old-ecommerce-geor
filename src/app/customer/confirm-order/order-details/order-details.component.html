@@ -7,7 +7,7 @@
           [class]= order.detailsOrderToHome.dClass
       >
           {{order.detailsOrderToHome.direction}}
-       </ion-label>
+      </ion-label>
 
       <div class="contenedor-info-pedido d-flex flex-column">
           <div class="info-pedido d-flex align-items-center date">
@@ -34,7 +34,13 @@
           (click)="goTo('/customer/stores')" 
           [class]= order.detailsOrderToStore.dClass 
       >
-          {{order.detailsOrderToStore.direction}}
+        <span 
+            *ngIf="order.detailsOrderToStore.store.length!==0"
+            style="font-weight: bold;"
+            >
+            {{order.detailsOrderToStore.store}}<br/>
+        </span>
+        <span>{{order.detailsOrderToStore.direction}}</span>
       </ion-label>
 
       <div class="contenedor-info-pedido d-flex flex-column">

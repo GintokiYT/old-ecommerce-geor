@@ -34,8 +34,10 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
   ngAfterViewInit() {
 
     const contenedorDeChats = this.contenedorDeChats.nativeElement as HTMLDivElement;
-    contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
-    console.log(contenedorDeChats);
+
+    setTimeout(() => {
+      contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
+    }, 100);
 
     //const messageInput: HTMLInputElement = this.messageInput.nativeElement;
     this.messageInput.nativeElement.addEventListener('focus', () => {

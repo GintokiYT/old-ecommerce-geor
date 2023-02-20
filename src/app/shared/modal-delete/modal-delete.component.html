@@ -1,0 +1,14 @@
+<div class="overlay"
+   [ngClass]="{'modal-visible': modalIsVisible===true,
+               'modal-not-visible' : modalIsVisible===false}"
+   #modal 
+>
+  <div class="modal-container d-flex flex-column">
+      <ion-label class="ion-text-center d-block">
+        {{titleModalDelete}}</ion-label>
+      <div class="options-container">
+        <ion-label class="ion-text-center" (click)="onClickBtnCancelar()">Cancelar</ion-label>
+        <ion-label class="ion-text-center" (click)="onClickBtnEliminar()" color="primary">Eliminar</ion-label>
+      </div>
+  </div>
+</div>

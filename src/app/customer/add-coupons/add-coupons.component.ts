@@ -15,7 +15,7 @@ export class AddCouponsComponent extends ViewComponent implements OnInit {
   coupons = [
     {
       id:1,
-      discount: "S/200",
+      discount: "S/200.00",
       ocassion: `Feliz día de la madre,<br/>que lo pases super`,
       code: "CASFG123NOV2022",
       expiration: "30 nov 2022",
@@ -23,7 +23,7 @@ export class AddCouponsComponent extends ViewComponent implements OnInit {
     },
     {
       id:2,
-      discount: "S/150",
+      discount: "S/150.00",
       ocassion: "Black Friday",
       code: "SAMNL123NOV2022",
       expiration: "30 nov 2022",

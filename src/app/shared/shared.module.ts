@@ -8,6 +8,7 @@ import { ValidationMessagesComponent } from './validation-messages/validation-me
 import { FooterButtonsComponent } from './footer-buttons/footer-buttons.component';
 import { FooterNavigationComponent } from './footer-navigation/footer-navigation.component';
 import { HeaderComponent } from './header/header.component';
+import { ModalDeleteComponent } from './modal-delete/modal-delete.component';
 
 @NgModule({
   imports: [CommonModule, IonicModule],
@@ -18,7 +19,8 @@ import { HeaderComponent } from './header/header.component';
     InputPasswordComponent,
     IconTruckComponent,
     FooterNavigationComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModalDeleteComponent
   ],
   declarations: [
     FooterButtonsComponent,
@@ -27,7 +29,8 @@ import { HeaderComponent } from './header/header.component';
     InputPasswordComponent,
     IconTruckComponent,
     FooterNavigationComponent,
-    HeaderComponent
+    HeaderComponent,
+    ModalDeleteComponent
   ],
   providers: [],
 })
