@@ -1,4 +1,5 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Keyboard } from '@geor360/capacitor-keyboard';
 import { ViewComponent } from '@geor360/ecore';
 
 interface Message {
@@ -32,8 +33,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
 
   ngAfterViewInit() {
-
     const contenedorDeChats = this.contenedorDeChats.nativeElement as HTMLDivElement;
+    const contentInput: HTMLDivElement = this.contentInput.nativeElement;
 
     setTimeout(() => {
       contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
@@ -42,13 +43,13 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     //const messageInput: HTMLInputElement = this.messageInput.nativeElement;
     this.messageInput.nativeElement.addEventListener('focus', () => {
       setTimeout(() => {
-        this.contentInput.nativeElement.style.display = "flex";
+        contentInput.classList.add('active');
       }, 100)
     });
 
     this.messageInput.nativeElement.addEventListener('blur', () => {
       if(this.contentMessage.message.content.length === 0) {
-        this.contentInput.nativeElement.style.display = "none";
+        contentInput.classList.remove('active');
       }
     });
 
@@ -204,6 +205,26 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
   constructor(_injector: Injector) {
     super(_injector);
+    // Keyboard Geor 360
+
+    //Este evento se llama antes de que se muestre el teclado.
+    Keyboard.addListener('keyboardWillShow', info => {
+      console.log('keyboard will show with height:', info.keyboardHeight);
+    });
+
+    //Este evento se activa cuando el teclado está completamente abierto.
+    Keyboard.addListener('keyboardDidShow', info => {
+      console.log('keyboard did show with height:', info.keyboardHeight);
+    });
+
+    //Este evento se evoca antes de que se cierre el teclado.
+    Keyboard.addListener('keyboardWillHide', () => {
+      console.log('keyboard will hide');
+    });
+
+    //Este evento se dispara cuando el teclado está completamente cerrado.
+    Keyboard.addListener('keyboardDidHide', () => {
+    });
   }
 
   ngOnInit() {}
@@ -236,7 +257,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
       this.messages.push(this.contentMessage);
 
-      this.contentInput.nativeElement.style.display = "none";
+      this.contentInput.nativeElement.classList.remove('active');
 
       this.clearMessageObject();
     }

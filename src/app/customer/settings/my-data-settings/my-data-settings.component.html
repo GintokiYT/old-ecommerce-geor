@@ -26,20 +26,22 @@
             <input type="tel" name="cellphone" autocomplete="off" #myInput>
           </div>
         </div>
-
-        <div class="form-control-button">
-          <ion-button
-            class="btn-submit"
-            expand="block"
-            color="primary"
-            shape="round"
-            type="submit"
-            [disabled]="statusButton"
-          >Guardar</ion-button>
-        </div>
       </form>
     </div>
 
   </div>
 </ion-content>
+
+<ion-footer>
+  <div class="form-control-button disabled">
+    <ion-button
+      class="btn-submit"
+      expand="block"
+      color="primary"
+      shape="round"
+      type="submit"
+      [disabled]="statusButton"
+    >Guardar</ion-button>
+  </div>
+</ion-footer>
 

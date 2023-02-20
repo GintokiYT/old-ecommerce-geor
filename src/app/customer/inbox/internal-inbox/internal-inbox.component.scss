@@ -41,12 +41,11 @@ img {
 
 //*** Header Page
 .app-header-inbox {
-  flex: 1;
   background-color: var(--ion-background-color);
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 2000;
+  z-index: 1000;
   border-bottom: 1px solid var(--ion-color-separator);
 }
 // End Page
@@ -74,6 +73,9 @@ img {
   width: 100%;
   z-index: 1000;
   padding-bottom: var(--ion-safe-area-bottom);
+
+  padding-left: var(--ion-safe-area-left);
+  padding-right: var(--ion-safe-area-right);
 }
 
 .input-message {
@@ -88,12 +90,14 @@ img {
 }
 
 .content-footer__items {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 16px 24px 16px;
 
-  //padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  &.active {
+    display: flex !important;
+  }
 }
 
 .content-footer__items-icons {
