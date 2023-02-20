@@ -15,8 +15,8 @@ export class RegisterComponent implements OnInit {
   //@ViewChild(IonContent) content: IonContent;
   form!: FormGroup;
   isPreventClose: boolean = false;
+  modalIsVisible : boolean = false;
   @ViewChild(IonModal) modalValidate!: IonModal;
-  @ViewChild("modalTerms") modalTerms!: IonModal;
   @ViewChild("inputPhone") inputPhone;
   @ViewChild("contentInputPhone") contentInputPhone;
   inputPhoneValue: string;
@@ -80,19 +80,18 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  async openModalValidate(){
-    await this.modalTerms.dismiss();
-    await this.modalValidate.present();
+  async openModalValidate(value){
+    this.modalIsVisible = false;
+    if(value==="validate"){
+      await this.modalValidate.present();
+    }
   }
 
   async onSubmit() {
-    
     setTimeout(() => {
-      this.modalTerms.present();
-    }, 500);
-    // await this.modalValidate.present();
+      this.modalIsVisible = true;
+    }, 300);
   }
-
 
 
   async onValidPhone(type: string) {
