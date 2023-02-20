@@ -32,6 +32,7 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
 
   Close(){
     this.dialog.dismiss();
+
   }
 
   deleteContact(){
