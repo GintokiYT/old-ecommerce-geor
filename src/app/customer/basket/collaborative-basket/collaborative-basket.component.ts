@@ -9,10 +9,8 @@ import { InviteService } from 'src/app/services/Invite';
 })
 export class CollaborativeBasketComponent extends ViewComponent implements OnInit {
 
-
   constructor(_injector: Injector) {
     super(_injector);
-
   }
 
   ngOnInit() {}
@@ -20,6 +18,5 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   goToConfirmOrder() {
     this.navigation.root('/customer/confirm-order', 'forward');
   }
-
 
 }

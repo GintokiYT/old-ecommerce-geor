@@ -1,13 +1,13 @@
-import { Component, OnInit, Injector, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
+import { InviteService } from 'src/app/services/Invite';
 import { ViewComponent } from '@geor360/ecore';
-import { InviteService } from '../../../../services/Invite';
 
 @Component({
-  selector: 'app-modal-invite',
-  templateUrl: './modal-invite.component.html',
-  styleUrls: ['./modal-invite.component.scss'],
+  selector: 'app-modal-invite-team',
+  templateUrl: './modal-invite-team.component.html',
+  styleUrls: ['./modal-invite-team.component.scss'],
 })
-export class ModalInviteComponent extends ViewComponent implements OnInit {
+export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
 
   @ViewChild('ContainerModal') ContainerModal:ElementRef;
   @ViewChild('modal') modal:ElementRef;
@@ -18,7 +18,7 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
       if(event.target===ContainerModal){
         modal.classList.add('close-modal');
         setTimeout(()=>{
-          this.inviteService.setStatusModalInvite(false);
+          this.inviteService.setStatusModalInviteTeam(false);
         },250);
       }
     })
@@ -29,9 +29,9 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {}
-  goContact(){
-    this.inviteService.setStatusModalInvite(false);
-    this.navigation.root('/customer/contact-basket','forward');
-    this.dialog.dismiss();
+
+  goContactTeam(){
+    this.navigation.root('/customer/contact-team','forward');
+    this.inviteService.setStatusModalInviteTeam(false);
   }
 }
