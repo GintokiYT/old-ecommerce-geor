@@ -18,6 +18,7 @@ import { WheAreYouComponent } from './welcome/whe-are-you/whe-are-you.component'
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { LoadingAppComponent } from './welcome/loading-app/loading-app.component';
 import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
+import { ModalTermsComponent } from './register/modal-terms/modal-terms.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
     RecoverPasswordCodeComponent,
     RestorePasswordComponent,
     LoadingAppComponent,
+    ModalTermsComponent
   ],
   providers:[
   ]
