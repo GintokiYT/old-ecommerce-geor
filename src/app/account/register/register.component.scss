@@ -19,11 +19,11 @@ ion-modal {
 
     &.modal-terms {
         &::part(content) {
-            position: absolute;
-            bottom: 10px;
+            //position: absolute;
+            //bottom: 10px;
             width: calc(100% - 32px);
-            border-bottom-left-radius: 27px;
-            border-bottom-right-radius: 27px;
+            //border-bottom-left-radius: 27px;
+            //border-bottom-right-radius: 27px;
         }
 
         .terms,

@@ -86,7 +86,11 @@ export class RegisterComponent implements OnInit {
   }
 
   async onSubmit() {
-    await this.modalTerms.present();
+    
+    setTimeout(() => {
+      this.modalTerms.present();
+    }, 500);
+    // await this.modalValidate.present();
   }
 
 
