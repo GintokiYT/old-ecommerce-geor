@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, Injector } from '@angular/core';
+import { Component, Input, OnInit, Injector, ElementRef, ViewChild } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { InviteService } from 'src/app/services/Invite';
 
 
 @Component({
@@ -10,9 +11,9 @@ import { ViewComponent } from '@geor360/ecore';
 export class ModalBasketComponent extends ViewComponent implements OnInit {
 
   @Input() title: string;
+  constructor(_injector:Injector) {
+    super(_injector)
 
-  constructor(_injector: Injector) {
-    super(_injector);
   }
 
   ngOnInit() {}

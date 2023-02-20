@@ -1,5 +1,6 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, ElementRef, ViewChild } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { InviteService } from 'src/app/services/Invite';
 
 @Component({
   selector: 'app-modal-resend-invitation',
@@ -8,9 +9,10 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class ModalResendInvitationComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector:Injector) {
-    super(_injector);
-   }
+   constructor(_injector:Injector,private inviteService:InviteService) {
+    super(_injector)
+
+  }
 
   ngOnInit() {}
   goContact(){
