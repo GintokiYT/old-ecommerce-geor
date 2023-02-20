@@ -136,14 +136,18 @@ form {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 24px 16px 0 16px;
+  padding: 24px 16px 24px 16px;
   background-color: var(--ion-background-color);
 
-  @media (min-width: 390px) {
-    padding: 24px 24px 0 24px;
+  &.active {
+    padding-bottom: 24px;
   }
-}
 
-.header-basic {
-  padding-top: calc(var(--ion-safe-area-top) + 24px) !important;
+  &.disabled {
+    padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  }
+
+  @media (min-width: 390px) {
+    padding: 24px 24px 24px 24px;
+  }
 }
