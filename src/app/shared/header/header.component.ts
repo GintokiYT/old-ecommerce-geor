@@ -29,6 +29,9 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   @Input()
   backDirection: string = "";
 
+  @Input()
+  haveSelected : boolean = true
+
   @Output()
   onClickDelete: EventEmitter<boolean> = new EventEmitter<boolean>();
 

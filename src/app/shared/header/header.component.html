@@ -19,6 +19,7 @@
           (click)="openModal()"
           class="button-right"
           [ngClass]="{'not-visible': iconRight.length===0}"
+          [disabled]="haveSelected===false"
         >
           <img [src] = "icons[iconRight]"/>
         </button>

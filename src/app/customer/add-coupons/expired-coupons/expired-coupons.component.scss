@@ -1,0 +1,30 @@
+.coupon-list_container {
+    margin-top: 20px;
+    margin-bottom: 64px;
+    gap: 24px;
+
+    .coupon {
+        gap: 8px;
+    }
+
+    .coupon_code {
+        color: var(--ion-color-text-secundary);
+    }
+
+    .coupon_expiration {
+        img {
+            filter: var(--ion-color-dark-filter);
+            width: fit-content;
+            height: fit-content;
+        }
+
+        ion-label {
+            color: var(--ion-color-text-secundary);
+
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+
+}
