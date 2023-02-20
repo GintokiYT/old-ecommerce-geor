@@ -17,7 +17,7 @@
 
     .modal-container {
         position: absolute;
-        bottom: 10px;
+        bottom: calc(var(--ion-safe-area-bottom,0) + 10px);
         width: calc(100% - 32px);
         background-color: var(--ion-background-alert);
         border-radius: 10px;

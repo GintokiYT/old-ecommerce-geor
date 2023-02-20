@@ -41,12 +41,11 @@ img {
 
 //*** Header Page
 .app-header-inbox {
-  flex: 1;
   background-color: var(--ion-background-color);
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 2000;
+  z-index: 1000;
   border-bottom: 1px solid var(--ion-color-separator);
 }
 // End Page
