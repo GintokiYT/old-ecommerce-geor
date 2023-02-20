@@ -30,7 +30,7 @@
                 font-size: 12px;
                 position: absolute;
                 right: 0;
-                top: 6px;
+                top: 0;
                 z-index: 2;
             }
         }
@@ -41,52 +41,52 @@
         margin-top: 20px;
         gap: 24px;
 
-        .not-active {
-            color: var(--ion-color-disabled);
-        }
-
         ion-button {
-            color: var(--ion-color-basic);
+            color: var(--ion-color-disabled);
             --background-activated: unset
         }
     }
 
-    .coupon-list_container {
-        margin-top: 20px;
-        margin-bottom: 64px;
-        gap: 24px;
+    // .coupon-list_container {
+    //     margin-top: 20px;
+    //     margin-bottom: 64px;
+    //     gap: 24px;
 
-        .coupon {
-            gap: 8px;
-        }
+    //     .coupon {
+    //         gap: 8px;
+    //     }
 
-        .coupon_code {
-            color: var(--ion-color-text-secundary);
-        }
+    //     .coupon_code {
+    //         color: var(--ion-color-text-secundary);
+    //     }
 
-        .coupon_expiration {
-            img {
-                filter: var(--ion-color-dark-filter);
-                width: fit-content;
-                height: fit-content;
-            }
+    //     .coupon_expiration {
+    //         img {
+    //             filter: var(--ion-color-dark-filter);
+    //             width: fit-content;
+    //             height: fit-content;
+    //         }
 
-            ion-label {
-                color: var(--ion-color-text-secundary);
+    //         ion-label {
+    //             color: var(--ion-color-text-secundary);
 
-                span {
-                    font-weight: 500;
-                }
-            }
-        }
+    //             span {
+    //                 font-weight: 500;
+    //             }
+    //         }
+    //     }
 
-        .coupon_conditions {
-            ion-label {
-                color: var(--ion-color-text-secundary);
-                cursor: pointer;
-            }
-        }
-    }
+    //     .coupon_conditions {
+    //         ion-label {
+    //             color: var(--ion-color-text-secundary);
+    //             cursor: pointer;
+    //         }
+    //     }
+    // }
+}
+
+.selected{
+    color: var(--ion-color-basic) !important;
 }
 
 @media(min-width:390px) {
