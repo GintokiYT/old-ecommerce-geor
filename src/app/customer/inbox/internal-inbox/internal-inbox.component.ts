@@ -1,4 +1,5 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Keyboard } from '@geor360/capacitor-keyboard';
 import { ViewComponent } from '@geor360/ecore';
 
 interface Message {
@@ -204,6 +205,26 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
   constructor(_injector: Injector) {
     super(_injector);
+    // Keyboard Geor 360
+
+    //Este evento se llama antes de que se muestre el teclado.
+    Keyboard.addListener('keyboardWillShow', info => {
+      console.log('keyboard will show with height:', info.keyboardHeight);
+    });
+
+    //Este evento se activa cuando el teclado está completamente abierto.
+    Keyboard.addListener('keyboardDidShow', info => {
+      console.log('keyboard did show with height:', info.keyboardHeight);
+    });
+
+    //Este evento se evoca antes de que se cierre el teclado.
+    Keyboard.addListener('keyboardWillHide', () => {
+      console.log('keyboard will hide');
+    });
+
+    //Este evento se dispara cuando el teclado está completamente cerrado.
+    Keyboard.addListener('keyboardDidHide', () => {
+    });
   }
 
   ngOnInit() {}
