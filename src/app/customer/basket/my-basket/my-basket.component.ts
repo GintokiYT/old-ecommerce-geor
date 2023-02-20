@@ -9,6 +9,7 @@ import { InviteService } from 'src/app/services/Invite';
 
 })
 export class MyBasketComponent extends ViewComponent implements OnInit {
+
   modalInvite: boolean;
   constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);

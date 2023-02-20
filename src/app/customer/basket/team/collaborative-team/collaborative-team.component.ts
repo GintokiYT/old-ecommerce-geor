@@ -9,15 +9,19 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class CollaborativeTeamComponent extends ViewComponent implements OnInit {
 
-  modalInvite: boolean;
-  constructor( private inviteService:InviteService, _injector:Injector) {
+  modalInviteTeam: boolean;
+  constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
-    this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+    this.inviteService.getStatusModalInviteTeam.subscribe(status=>this.modalInviteTeam =status);
+
   }
+
+
   ngOnInit() {}
 
-  openInvite(){
-    this.inviteService.setStatusModalInvite(true);
+  openInviteTeam(){
+    this.inviteService.setStatusModalInviteTeam(true);
+
   }
 
 }

@@ -6,14 +6,15 @@
   </div>
   <ion-text class="text d-flex flex-column justify-content-center align-items-center"  >
     <ion-label>Invita a tus amigos </ion-label>
-    <ion-label>a comprar contigo</ion-label>
+    <ion-label>a comprar contigo
+    </ion-label>
   </ion-text>
 
   <ion-img
-  (click)="openInvite()"
+  (click)="openInviteTeam()"
     class="icon-plus"
     src="assets/collaborative-basquet/Plus-circle.svg">
   </ion-img>
 
-  <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
+  <app-modal-invite-team *ngIf="modalInviteTeam"></app-modal-invite-team>
 </ion-content>
