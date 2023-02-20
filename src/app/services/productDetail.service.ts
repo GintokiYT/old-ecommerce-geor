@@ -29,7 +29,6 @@ export class ProductDetailService {
 
   // Modal basket
   private statusModalBasket = new BehaviorSubject<boolean>(false);
-
   setStatusModalBasket(status: boolean) {
     this.statusModalBasket.next(status);
   }

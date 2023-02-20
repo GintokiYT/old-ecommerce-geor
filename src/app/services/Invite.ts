@@ -15,7 +15,7 @@ export class InviteService {
     return this.statusModalInvite;
   }
 
-   // Modal Invite
+   // Modal Resend
    private statusModalResend = new BehaviorSubject<boolean>(false);
    setStatusModalResend(status: boolean) {
      this.statusModalResend.next(status);
@@ -23,6 +23,16 @@ export class InviteService {
    get getStatusModalResend():Observable<boolean>{
      return this.statusModalResend;
    }
+
+    // Modal Resend
+    private statusModalResendInvitation = new BehaviorSubject<boolean>(false);
+    setStatusModalResendInvitation(status: boolean) {
+      this.statusModalResendInvitation.next(status);
+    }
+    get getStatusModalResendInvitation():Observable<boolean>{
+      return this.statusModalResendInvitation;
+    }
+
    // Modal Accepted
    private statusModalAccepted= new BehaviorSubject<boolean>(false);
    setStatusModalAccepted(status: boolean) {
@@ -31,5 +41,14 @@ export class InviteService {
    get getStatusModalAccepted():Observable<boolean>{
      return this.statusModalAccepted;
    }
+
+   // Modal Basket
+   private statusModalBaskets= new BehaviorSubject<boolean>(false);
+   setStatusModalBaskets(status: boolean) {
+   this.statusModalBaskets.next(status);
+   }
+   get getStatusModalBaskets():Observable<boolean>{
+   return this.statusModalBaskets;
+  }
 
 }
