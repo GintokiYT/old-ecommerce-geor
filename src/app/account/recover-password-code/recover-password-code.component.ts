@@ -4,6 +4,9 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { IonInput } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
+import { Keyboard } from '@geor360/capacitor-keyboard';
+import { Platform } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-recover-password-code',
@@ -20,7 +23,7 @@ export class RecoverPasswordCodeComponent extends ViewComponent implements OnIni
   @ViewChild('inputCode') inputCode!: IonInput;
 
   constructor(private route: ActivatedRoute, private router: Router
-              ,_injector: Injector) {
+              ,_injector: Injector,  public platform: Platform ) {
     super(_injector)
     this.router.events.subscribe(() => {
       this.email = this.route.snapshot.queryParamMap.get('email');
@@ -41,7 +44,7 @@ export class RecoverPasswordCodeComponent extends ViewComponent implements OnIni
     }, 500);
   }
 
-  onChangeCode() {
+  async onChangeCode() {
     const code = this.form.get('code')?.value;
     if (code) {
       if (new String(code).length === 6) {
@@ -51,7 +54,21 @@ export class RecoverPasswordCodeComponent extends ViewComponent implements OnIni
             email: this.route.snapshot.queryParamMap.get('email'),
           },
         };
-        this.router.navigate([RouteCollection.auth.restorePassword], params);
+        
+        this.platform.ready().then( () => {
+          if(this.platform.is("ios")){
+            setTimeout(() => {
+              this.router.navigate([RouteCollection.auth.
+                restorePassword], params);
+            }, 250);
+            Keyboard.hide();
+          }
+          else{
+            this.router.navigate([RouteCollection.auth.
+              restorePassword], params);
+          }
+      })
+      
       }
     }
   }

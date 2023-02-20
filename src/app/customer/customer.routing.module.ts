@@ -56,6 +56,8 @@ import { VoucherComponent } from './coupons/voucher/voucher.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
 import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
+import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -72,6 +74,7 @@ const routes: Routes = [
       { path: 'product',component:ProductComponent},
       { path: 'variants',component:VariantsComponent},
       { path: 'picture-big',component:PictureBigComponent},
+      { path: 'contact-team',component:ContactTeamComponent},
       { path: 'variants-product',component:VariantsProductComponent},
 
       //* routes settings
