@@ -139,6 +139,7 @@ form {
   padding: 24px 16px 0 16px;
   background-color: var(--ion-background-color);
   padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  padding-bottom: 24px;
 
   @media (min-width: 390px) {
     padding: 24px 24px 0 24px;
