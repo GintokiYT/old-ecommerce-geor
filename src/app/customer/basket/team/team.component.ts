@@ -1,7 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ModalResendComponent } from './modal-resend/modal-resend.component';
 import { ViewComponent } from '@geor360/ecore';
-import { InviteService } from 'src/app/services/Invite';
+import { InviteService } from 'src/app/services/Invite.service';
 interface Equipo{
   image:string,
   nombre:string,
@@ -20,6 +20,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
 
   modalInvite: boolean;
   modalResend: boolean;
+  modalResendInvitation: boolean;
  /*  modalAccepted:boolean; */
 
   constructor(_injector: Injector, private inviteService:InviteService) {
@@ -27,6 +28,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
     //Modal Invite
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
     this.inviteService.getStatusModalResend.subscribe(status=>this.modalResend =status);
+    this.inviteService.getStatusModalResendInvitation.subscribe(status=>this.modalResendInvitation =status);
     /* this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status); */
   }
 
@@ -70,7 +72,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
       }],
     }, ]
 
-    showModalInvite(){
+   /*  showModalInvite(){
       this.dialog.show({
         showBackdrop:true,
         component: ModalResendComponent,
@@ -81,7 +83,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
         console.log(response);
       });
     }
-
+ */
     showModalAccepted(){
       this.dialog.show({
         showBackdrop:true,

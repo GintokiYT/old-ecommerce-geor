@@ -34,7 +34,7 @@ export class InviteService {
      return this.statusModalResend;
    }
 
-    // Modal Resend
+    // Modal Resend Invitation
     private statusModalResendInvitation = new BehaviorSubject<boolean>(false);
     setStatusModalResendInvitation(status: boolean) {
       this.statusModalResendInvitation.next(status);
