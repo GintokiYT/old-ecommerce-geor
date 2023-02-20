@@ -18,6 +18,9 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   title: string = ""
 
   @Input()
+  titleModalDelete: string = "";
+
+  @Input()
   iconLeft: string = "";
 
   @Input()
@@ -26,12 +29,13 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   @Input()
   backDirection: string = "";
 
+  @Output()
+  onClickDelete: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   @ViewChild(IonModal) modal!: IonModal;
 
   keyboardHeight : number;
-
-  @Output()
-  onClickDelete: EventEmitter<boolean> = new EventEmitter<boolean>();
+  modalIsVisible : boolean = false;
 
 
   icons = {
@@ -89,18 +93,15 @@ export class HeaderComponent extends ViewComponent implements OnInit {
 
   }
 
-  cancelar(){
-    this.modal.dismiss();
-  }
-
-  eliminar(){
-    console.log("Hola")
-    this.modal.dismiss();
-    this.onClickDelete.emit(true);
-  }
-
   openModal(){
-    this.modal.present();
+    this.modalIsVisible = true
+  }
+
+  closeModal(value : any){
+    this.modalIsVisible = false;
+    if(value.btnEliminar===true){
+      this.onClickDelete.emit(true);
+    }
   }
 
 }

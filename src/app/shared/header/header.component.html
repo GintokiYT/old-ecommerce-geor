@@ -22,21 +22,17 @@
         >
           <img [src] = "icons[iconRight]"/>
         </button>
-
-        <ion-modal #modal>
-          <ng-template>
-            <div class="ion-padding d-flex flex-column" style="gap: 36px;">
-              <ion-label class="text-center d-block">¿Eliminar este producto?</ion-label>
-              <div class="d-flex justify-content-around buttons" style="gap: 32px;">
-                <ion-label (click)="cancelar()">Cancelar</ion-label>
-                <ion-label (click)="eliminar()" color="primary">Eliminar</ion-label>
-              </div>
-            </div>
-          </ng-template>
-        </ion-modal>
       </div>
 
   </ion-toolbar>
 
 </ion-header>
+
+
+<app-modal-delete
+  [modalIsVisible] = "modalIsVisible"
+  [titleModalDelete] = "titleModalDelete"
+  (onModalNotVisible)="closeModal($event)"
+>
+</app-modal-delete>
 

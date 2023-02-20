@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import IOrder from '../../../interfaces/IOrder';
 import ICoupon from '../../../interfaces/ICoupon';
 import IBill from '../../../interfaces/IBill';
+import IPayMethod from '../../../interfaces/IPayMethod';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,7 @@ export class ConfirmOrderService {
   
   
     detailsOrderToStore:{
+      store: "",
       direction : "¿Donde recojeras tu pedido?",
       dClass: "lugar-pedido",
       who: "Wilfredo"
@@ -67,8 +69,9 @@ export class ConfirmOrderService {
     this.myOrder$.next(this.myOrder);
   }
 
-  setDirectionStore(direction:string):void{
-    this.myOrder.detailsOrderToStore.direction = direction;
+  setDirectionStore(ubication:any):void{
+    this.myOrder.detailsOrderToStore.direction = ubication.direction;
+    this.myOrder.detailsOrderToStore.store = ubication.store;
     this.myOrder.detailsOrderToStore.dClass = "lugar-pedido with-direction"
     this.myOrder$.next(this.myOrder);
   }
@@ -78,7 +81,7 @@ export class ConfirmOrderService {
     this.myOrder$.next(this.myOrder);
   }
 
-  setPayMethod(metodo){
+  setPayMethod(metodo: IPayMethod){
     this.myOrder.payMethod = metodo;
     this.myOrder$.next(this.myOrder);
   }
