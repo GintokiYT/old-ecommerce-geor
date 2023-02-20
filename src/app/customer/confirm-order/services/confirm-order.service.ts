@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import IOrder from '../../../interfaces/IOrder';
 import ICoupon from '../../../interfaces/ICoupon';
 import IBill from '../../../interfaces/IBill';
+import IPayMethod from '../../../interfaces/IPayMethod';
 
 @Injectable({
   providedIn: 'root'
@@ -80,7 +81,7 @@ export class ConfirmOrderService {
     this.myOrder$.next(this.myOrder);
   }
 
-  setPayMethod(metodo){
+  setPayMethod(metodo: IPayMethod){
     this.myOrder.payMethod = metodo;
     this.myOrder$.next(this.myOrder);
   }
