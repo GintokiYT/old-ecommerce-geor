@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
   //@ViewChild(IonContent) content: IonContent;
   form!: FormGroup;
   isPreventClose: boolean = false;
-  @ViewChild(IonModal) modal!: IonModal;
+  @ViewChild(IonModal) modalValidate!: IonModal;
+  @ViewChild("modalTerms") modalTerms!: IonModal;
   @ViewChild("inputPhone") inputPhone;
   @ViewChild("contentInputPhone") contentInputPhone;
   inputPhoneValue: string;
@@ -38,7 +39,7 @@ export class RegisterComponent implements OnInit {
       console.log('keyboard will show with height:', info.keyboardHeight);
     });
 
-    //Este evento se activa cuando el teclado está completamente abierto. 
+    //Este evento se activa cuando el teclado está completamente abierto.
     Keyboard.addListener('keyboardDidShow', info => {
       console.log('keyboard did show with height:', info.keyboardHeight);
     });
@@ -47,15 +48,17 @@ export class RegisterComponent implements OnInit {
     Keyboard.addListener('keyboardWillHide', () => {
       console.log('keyboard will hide');
     });
-    
+
     //Este evento se dispara cuando el teclado está completamente cerrado.
     Keyboard.addListener('keyboardDidHide', () => {
     });
   }
 
+  
+
   ngOnInit() {
 
-    
+
     this.form = new FormGroup({
 
       name: new FormControl('', [
@@ -77,13 +80,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  async onSubmit() {
-    this.modal.present();
+  async openModalValidate(){
+    await this.modalTerms.dismiss();
+    await this.modalValidate.present();
   }
+
+  async onSubmit() {
+    await this.modalTerms.present();
+  }
+
+
 
   async onValidPhone(type: string) {
     this.isPreventClose = true;
-    await this.modal.dismiss(null, 'confirm');
+    await this.modalValidate.dismiss(null, 'confirm');
 
     const params: NavigationExtras = {
       queryParams: {
@@ -98,12 +108,12 @@ export class RegisterComponent implements OnInit {
 
   checkFocus(input: string) {
     switch (input) {
-      case "name": this.showTextHelperName = true; 
+      case "name": this.showTextHelperName = true;
                     this.focusEmail = false;
                     this.focusPassword = false;
                     //this.content.scrollToTop();
                    break;
-      case "phone": this.showTextHelperPhone = true; 
+      case "phone": this.showTextHelperPhone = true;
                     this.focusEmail = false;
                     this.focusPassword = false;
                     break;
@@ -113,7 +123,7 @@ export class RegisterComponent implements OnInit {
                     this.focusPassword = false;
                     //this.content.scrollByPoint(0,50,500)
                     break;
-      case "password": this.showTextHelperPassword = true; 
+      case "password": this.showTextHelperPassword = true;
                     this.focusEmail = false;
                     this.focusPassword = true;
                     //this.content.scrollByPoint(0,150,500)
@@ -143,7 +153,7 @@ export class RegisterComponent implements OnInit {
         this.contentInputPhone.nativeElement.classList.remove("have-elements")
       }
     }
-    
+
   }
 
 }

@@ -7,6 +7,8 @@
     iconRight="icon-delete"
     backDirection="confirm-order"
     (onClickDelete)="deleteBill($event)"
+    titleModalDelete = "¿Eliminar este producto?"
+    [haveSelected]="oneTrue"
   >
   </app-header>
 
@@ -34,11 +36,11 @@
       <ion-label color="primary" style="cursor: pointer;">Nueva compañía</ion-label>
     </div>
 
-  </div>
+  </div> <!--End Billing Data Container-->
 
 
   <!-- Footer -->
-  <ion-footer class="ion-no-border ion-no-padding">
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
     <ion-toolbar class="ion-no-padding">
       <ion-button 
         [disabled]="!oneTrue"
@@ -52,5 +54,6 @@
       </ion-button>
     </ion-toolbar>
   </ion-footer>
+  
 </ion-content>
 

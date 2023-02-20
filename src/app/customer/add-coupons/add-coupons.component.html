@@ -7,7 +7,7 @@
     title="Agregar cupón">
   </app-header>
 
-  <!-- coupon container -->
+  <!-- -Coupon container -->
   <div class="coupon-container container-main">
 
     <!-- Coupon input -->
@@ -23,7 +23,7 @@
         </ion-input>
         <ion-button
           class="coupon-button position-absolute"
-          [disabled]="!haveCode"  
+          [disabled]="haveCode===false || couponType!=='avaible'"  
           tabindex="-1"
           fill="clear"
           size="small"    
@@ -38,15 +38,25 @@
 
     <!-- Coupon options -->
     <div class="coupon-option_container d-flex">
-      <ion-button fill="clear" class="ion-no-padding">
+      <ion-button 
+        fill="clear" 
+        class="ion-no-padding selected" 
+        id="avaible"
+        (click)="onSelect('avaible')"
+      >
         Disponibles
       </ion-button>
-      <ion-button fill="clear" class="ion-no-padding not-active">
+      <ion-button 
+        fill="clear" 
+        class="ion-no-padding" 
+        id="expired"
+        (click)="onSelect('expired')"
+      >
         Vencidos
       </ion-button>
     </div>
 
-    <!-- coupons list -->
+    <!-- coupons list
     <div class="coupon-list_container d-flex flex-column">
       <div class="d-flex flex-column coupon" *ngFor="let coupon of coupons">
         <ion-label class="d-block fz-normal fw-bold">{{coupon.discount}}</ion-label>
@@ -63,8 +73,20 @@
           </ion-button>
         </div>
       </div>
+    </div> -->
+    <span [ngSwitch]="couponType">
+    <div *ngSwitchCase="'avaible'">
+      <app-avaible-coupons [couponsC]="coupons"></app-avaible-coupons>
     </div>
+    <div *ngSwitchCase="'expired'">
+      <app-expired-coupons></app-expired-coupons>
+    </div>
+    <div *ngSwitchDefault>
+    
+    </div>
+    </span>
+    
 
-  </div>
+  </div> <!--End Coupon container-->
 
 </ion-content>
