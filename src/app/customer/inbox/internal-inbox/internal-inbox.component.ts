@@ -32,8 +32,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
 
   ngAfterViewInit() {
-
     const contenedorDeChats = this.contenedorDeChats.nativeElement as HTMLDivElement;
+    const contentInput: HTMLDivElement = this.contentInput.nativeElement;
 
     setTimeout(() => {
       contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
@@ -42,13 +42,13 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     //const messageInput: HTMLInputElement = this.messageInput.nativeElement;
     this.messageInput.nativeElement.addEventListener('focus', () => {
       setTimeout(() => {
-        this.contentInput.nativeElement.style.display = "flex";
+        contentInput.classList.add('active');
       }, 100)
     });
 
     this.messageInput.nativeElement.addEventListener('blur', () => {
       if(this.contentMessage.message.content.length === 0) {
-        this.contentInput.nativeElement.style.display = "none";
+        contentInput.classList.remove('active');
       }
     });
 
@@ -236,7 +236,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
       this.messages.push(this.contentMessage);
 
-      this.contentInput.nativeElement.style.display = "none";
+      this.contentInput.nativeElement.classList.remove('active');
 
       this.clearMessageObject();
     }

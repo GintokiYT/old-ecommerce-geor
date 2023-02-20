@@ -88,12 +88,16 @@ img {
 }
 
 .content-footer__items {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 16px 24px 16px;
 
   //padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+
+  &.active {
+    display: flex !important;
+  }
 }
 
 .content-footer__items-icons {
