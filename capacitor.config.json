@@ -2,5 +2,11 @@
 	"appId": "com.geor.ecommerce",
 	"appName": "app",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"plugins":{
+		"Keyboard": {
+			"resize": "body",
+			"resizeOnFullScreen": true
+		}
+	}
 }

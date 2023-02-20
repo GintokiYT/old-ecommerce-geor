@@ -40,11 +40,15 @@ interface Descripcions{
     ]
   ngOnInit() {}
 
-  eliminarProducto(){
-    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
-  },'Cancelar','Eliminar')
-   }
+  deleteDescription(){
+    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
+    },'Eliminar','Cancelar');
+  }
 
+  deleteProduct(){
+    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+    },'Eliminar','Cancelar');
+  }
   goProductDetail(){
    this.navigation.root('/customer/variants-product', 'forward');
   }

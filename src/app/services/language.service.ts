@@ -22,6 +22,15 @@ export class LanguageService {
         description: 'Esto nos ayudará a ofrecerte productos disponibles para tu ubicación',
         button: 'Confirmar'
       },
+      // My Location
+      myLocation: {
+        button: 'Confirmar'
+      },
+      // Change Address
+      changeAddress: {
+        title: 'Dirección',
+        placeholder: 'Buscar Dirección'
+      },
       // Main Settings
       mainSettings: {
         title: 'Configuración',
@@ -51,6 +60,15 @@ export class LanguageService {
         subTitle: 'Tell us where you are',
         description: 'This will help us offer you products available for your location.',
         button: 'Confirm'
+      },
+      // My Location
+      myLocation: {
+        button: 'Confirm'
+      },
+      // Change Address
+      changeAddress: {
+        title: 'Address',
+        placeholder: 'Search Address'
       },
       // Main Settings
       mainSettings: {

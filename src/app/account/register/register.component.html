@@ -46,7 +46,7 @@
           [control]="form.get('password')"></app-validation-messages>
       </ion-item>
     </app-input-password>
-    <ion-modal position="center" class="modal-alert" #modal>
+    <ion-modal class="modal-validate" #modalValidate>
       <ng-template>
         <div class="ion-padding">
           <ion-text class="text-center text fw-700 d-block"><b>Valida tu celular</b></ion-text>
@@ -64,18 +64,48 @@
       </ng-template>
     </ion-modal>
   </form>  <!-- End Form -->
-
-  <!-- Footer -->
-  <ion-footer class="ion-no-border footer-ionic">
-    <ion-toolbar class="ion-no-padding">
-      <div class="text-center">
-        <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
-          type="submit" style="margin: 0px;">Siguiente</ion-button>
-      </div>
-    </ion-toolbar>
-  </ion-footer>
-
+  
 </ion-content>
+
+
+
+<!-- Footer -->
+<ion-footer class="ion-no-border footer-ionic">
+
+  <ion-toolbar class="ion-no-padding">
+    <div class="text-center">
+      <!-- <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
+        <span class="terms">Términos y condiciones</span> y
+        <span class="politics">Politica de privacidad</span>
+      </span> -->
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+        type="submit" style="margin: 0px;">Siguiente</ion-button>
+    </div>
+  </ion-toolbar>
+
+  <ion-modal class="modal-terms" #modalTerms>
+    <ng-template>
+      <div class="ion-padding d-flex flex-column justify-content-center" style="gap: 24px;">
+        <ion-label class="ion-text-center fz-small">
+           Al hacer click en "Continuar" acepto la 
+          <span class="terms">Política de privacidad</span> y
+          <span class="politics">Términos y condiciones</span>
+          de Geor
+        </ion-label>
+        <ion-button (click)="openModalValidate()" color="primary" expand="block" fill="solid" shape="round">
+          Continuar
+        </ion-button>
+      </div>
+    </ng-template>
+  </ion-modal>
+  
+</ion-footer>
+
+
+
+
+
+
 
 
 

@@ -8,6 +8,11 @@ import {
 } from '@geor360/ecore';
 import { Subscription } from 'rxjs';
 import { SettingsService } from 'src/app/services/settings.service';
+import { LanguageService } from '../../../services/language.service';
+
+interface Contenido {
+  button: string;
+}
 
 @Component({
   selector: 'app-my-location',
@@ -15,6 +20,9 @@ import { SettingsService } from 'src/app/services/settings.service';
   styleUrls: ['my-location.component.scss'],
 })
 export class MyLocationComponent implements OnInit, OnDestroy {
+
+  contenido: Contenido;
+
   // private dialog: AppDialogService;
   // private geolocation: GeolocationService;
   // private googleMap: GoogleMapService;
@@ -27,11 +35,12 @@ export class MyLocationComponent implements OnInit, OnDestroy {
 
   myAddress: string;
 
-  constructor(_injector: Injector, private navigator: AppNavigationService, private settingsService: SettingsService) {
+  constructor(_injector: Injector, private navigator: AppNavigationService, private settingsService: SettingsService, private languageService: LanguageService) {
     // this.dialog = _injector.get(AppDialogService);
     // this.geolocation = _injector.get(GeolocationService);
     // this.googleMap = _injector.get(GoogleMapService);
     this.settingsService.getAddressMyLocation.subscribe( address => this.myAddress = address );
+    this.languageService.getLanguage.subscribe( language => this.contenido = language['myLocation'] );
   }
 
   ngOnInit() {
@@ -86,7 +95,7 @@ export class MyLocationComponent implements OnInit, OnDestroy {
   }
 
   onToChangeAddress() {
-    this.navigator.forward(RouteCollection.account.welcome.changeAddress);
+    this.navigator.forward('/account/welcome/change-address');
   }
 
   onBack() {

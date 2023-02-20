@@ -23,25 +23,26 @@ export class LoginComponent implements OnInit {
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
   passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
-  
+
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {
 
-
-    //Este evento se llama antes de que se muestre el teclado.
-    Keyboard.addListener('keyboardWillShow', info => {
-      this.visibleFooterNavigation = false;
-    });
-        
-
-    //Este evento se evoca antes de que se cierre el teclado.
-    Keyboard.addListener('keyboardWillHide', () => {
-      this.visibleFooterNavigation = true;
-    });
-        
   }
 
   ngOnInit() {
+
+    //Este evento se llama antes de que se muestre el teclado.
+    Keyboard.addListener('keyboardWillShow', info => {
+      this.visibleFooterNavigation = true;
+    });
+
+
+    //Este evento se evoca antes de que se cierre el teclado.
+    Keyboard.addListener('keyboardWillHide', () => {
+      this.visibleFooterNavigation = false;
+    });
+
+
     this.loginForm = new FormGroup({
       username: new FormControl('', [
         Validators.required,
@@ -69,8 +70,8 @@ export class LoginComponent implements OnInit {
 
   checkFocus(input : string){
     switch(input){
-      case "phoneOrEmail" : 
-        this.showTextHelperPhoneOrEmail = true; 
+      case "phoneOrEmail" :
+        this.showTextHelperPhoneOrEmail = true;
         this.content.scrollToTop();
         break;
       case "password":
@@ -82,12 +83,10 @@ export class LoginComponent implements OnInit {
 
   checkBlur(input:string){
     switch(input){
-      case "phoneOrEmail" : 
+      case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = false; break;
       case "password":
         this.showTextHelperPassword = false; break;
     }
-  }    
-
-
+  }
 }

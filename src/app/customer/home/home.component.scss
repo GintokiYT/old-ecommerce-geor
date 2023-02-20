@@ -1,11 +1,28 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  --padding-top: var(--ion-safe-area-top);
+  // --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 // Container Page
 .container-home {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: var(--ion-background-color);
-
-  padding-top: var(--ion-safe-area-top);
-  padding-bottom: var(--ion-safe-area-bottom);
 }
 
 // Initial Header
@@ -102,9 +119,7 @@
 // End Slider ITems
 
 // Productos destacados
-// Carga el merge xd
 .container-productos-destacados {
-  margin-bottom: calc(var(--ion-safe-area-bottom) + 67px);
   padding: 0 16px;
 
   @media (min-width: 390px) {

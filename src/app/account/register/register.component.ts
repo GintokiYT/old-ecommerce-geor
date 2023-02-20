@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
   //@ViewChild(IonContent) content: IonContent;
   form!: FormGroup;
   isPreventClose: boolean = false;
-  @ViewChild(IonModal) modal!: IonModal;
+  @ViewChild(IonModal) modalValidate!: IonModal;
+  @ViewChild("modalTerms") modalTerms!: IonModal;
   @ViewChild("inputPhone") inputPhone;
   @ViewChild("contentInputPhone") contentInputPhone;
   inputPhoneValue: string;
@@ -53,6 +54,8 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  
+
   ngOnInit() {
 
     
@@ -77,13 +80,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  async onSubmit() {
-    this.modal.present();
+  async openModalValidate(){
+    await this.modalTerms.dismiss();
+    await this.modalValidate.present();
   }
+
+  async onSubmit() {
+    await this.modalTerms.present();
+  }
+
+
 
   async onValidPhone(type: string) {
     this.isPreventClose = true;
-    await this.modal.dismiss(null, 'confirm');
+    await this.modalValidate.dismiss(null, 'confirm');
 
     const params: NavigationExtras = {
       queryParams: {

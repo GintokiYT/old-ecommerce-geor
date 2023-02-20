@@ -5,6 +5,8 @@ import { IonInput, IonModal } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
 import { LoginService } from '../services/login.service';
+import { Keyboard } from '@geor360/capacitor-keyboard';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-valid-mail',
@@ -22,7 +24,7 @@ export class ValidMailComponent extends ViewComponent implements OnInit {
   isPreventClose: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router,
-              private _injector: Injector, private lgService: LoginService) {
+              private _injector: Injector, private lgService: LoginService, public platform: Platform ) {
                 super(_injector)
   }
 
@@ -49,13 +51,25 @@ export class ValidMailComponent extends ViewComponent implements OnInit {
     }, 500);
   }
 
-  onChangeCode() {
+  async onChangeCode() {
     const code = this.form.get('code')?.value;
-    if (code) {
+    if (code){
       if (new String(code).length === 6) {
         this.inputCode.readonly = true;
         this.lgService.setUserLogged(true);
-        this.navigation.root("customer/manage-user-information","forward");
+        this.platform.ready().then( () => {
+            if(this.platform.is("ios")){
+              setTimeout(() => {
+                this.navigation.root("customer/manage-user-information","forward");
+              }, 300);
+              Keyboard.hide();
+            }
+            else{
+              this.navigation.root("customer/manage-user-information","forward");
+            }
+        })
+        
+        
       }
     }
   }

@@ -10,10 +10,10 @@
   </ion-text>
 
   <ion-img
-    id="open-modal-invite"
+  (click)="openInvite()"
     class="icon-plus"
     src="assets/collaborative-basquet/Plus-circle.svg">
   </ion-img>
 
-  <app-modal-invite></app-modal-invite>
+  <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector, Input } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { InviteService } from 'src/app/services/Invite';
 import { ModalInviteComponent } from '../modal-invite/modal-invite.component';
 
 @Component({
@@ -12,8 +13,11 @@ export class HeaderMyBasketComponent extends ViewComponent implements OnInit {
   @Input()
   title: string = ""
 
-  constructor(_injector: Injector) {
+  modalInvite: boolean;
+
+  constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
+    this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
   }
 
   ngOnInit() {}
@@ -27,7 +31,7 @@ export class HeaderMyBasketComponent extends ViewComponent implements OnInit {
     }
   } */
   }
-  showModalInvite(){
+  /* showModalInvite(){
     this.dialog.show({
       showBackdrop:true,
       component: ModalInviteComponent,
@@ -37,6 +41,9 @@ export class HeaderMyBasketComponent extends ViewComponent implements OnInit {
     }).then((response) => {
       console.log(response);
     });
-  }
+  } */
 
+  openInvite(){
+    this.inviteService.setStatusModalInvite(true);
+  }
 }
