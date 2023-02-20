@@ -1,42 +1,52 @@
-html {
-  box-sizing: border-box;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
 ion-content {
-  position: relative;
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  // --padding-top: var(--ion-safe-area-top);
+  // --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .container-app-settings {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: var(--ion-background-color);
 
   padding-top: var(--ion-safe-area-top);
   padding-bottom: var(--ion-safe-area-bottom);
-}
 
-.header-my-data-settings {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .container-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100vh;
-  padding: 96px 16px 24px 16px;
+  min-height: 100%;
+  padding: 0 16px 24px 16px;
+  padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
 
   @media (min-width: 390px) {
-    padding: 96px 24px 24px 24px;
+    padding: 0 24px 24px 24px;
+    padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
   }
 }
 
@@ -48,4 +58,8 @@ ion-content {
   span {
     color: var(--ion-color-basic);
   }
+}
+
+.header-basic {
+  padding-top: calc(var(--ion-safe-area-top) + 24px) !important;
 }

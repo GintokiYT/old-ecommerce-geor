@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
       console.log('keyboard will show with height:', info.keyboardHeight);
     });
 
-    //Este evento se activa cuando el teclado está completamente abierto. 
+    //Este evento se activa cuando el teclado está completamente abierto.
     Keyboard.addListener('keyboardDidShow', info => {
       console.log('keyboard did show with height:', info.keyboardHeight);
     });
@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
     Keyboard.addListener('keyboardWillHide', () => {
       console.log('keyboard will hide');
     });
-    
+
     //Este evento se dispara cuando el teclado está completamente cerrado.
     Keyboard.addListener('keyboardDidHide', () => {
     });
@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
 
-    
+
     this.form = new FormGroup({
 
       name: new FormControl('', [
@@ -98,12 +98,12 @@ export class RegisterComponent implements OnInit {
 
   checkFocus(input: string) {
     switch (input) {
-      case "name": this.showTextHelperName = true; 
+      case "name": this.showTextHelperName = true;
                     this.focusEmail = false;
                     this.focusPassword = false;
                     //this.content.scrollToTop();
                    break;
-      case "phone": this.showTextHelperPhone = true; 
+      case "phone": this.showTextHelperPhone = true;
                     this.focusEmail = false;
                     this.focusPassword = false;
                     break;
@@ -113,7 +113,7 @@ export class RegisterComponent implements OnInit {
                     this.focusPassword = false;
                     //this.content.scrollByPoint(0,50,500)
                     break;
-      case "password": this.showTextHelperPassword = true; 
+      case "password": this.showTextHelperPassword = true;
                     this.focusEmail = false;
                     this.focusPassword = true;
                     //this.content.scrollByPoint(0,150,500)
@@ -143,7 +143,7 @@ export class RegisterComponent implements OnInit {
         this.contentInputPhone.nativeElement.classList.remove("have-elements")
       }
     }
-    
+
   }
 
 }

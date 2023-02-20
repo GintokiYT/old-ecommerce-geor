@@ -2,13 +2,13 @@ ion-content {
   width: 100vw;
   height: 100vh;
   // --padding-top: 16px;
-  // // --padding-bottom: 16px;
+  // --padding-bottom: 16px;
   // --padding-end: 16px;
   // --padding-start: 16px;
   // --background: red;
 
-  --padding-top: var(--ion-safe-area-top);
-  // --padding-bottom: var(--ion-safe-area-bottom);
+  // --padding-top: var(--ion-safe-area-top);
+  // // --padding-bottom: var(--ion-safe-area-bottom);
   --padding-start: var(--ion-safe-area-right);
   --padding-end: var(--ion-safe-area-left);
   --background: var(--ion-background-color);
@@ -147,5 +147,15 @@ ion-content {
   &::after {
     content: ".00";
   }
+}
+
+// Separador
+.container-home .separator {
+  width: 100%;
+  height: var(--ion-safe-area-top);
+  background-color: var(--ion-background-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
