@@ -38,6 +38,7 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
         formControlSettings.classList.remove('active');
         if(input.nativeElement.value !== '') {
           formControlSettings.classList.add('data');
+          footerButton.style.paddingBottom = 'calc(var(--ion-safe-area-bottom) + 24px)';
         }
         footerButton.classList.add('disabled');
         footerButton.classList.remove('active');
