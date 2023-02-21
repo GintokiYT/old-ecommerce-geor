@@ -1,14 +1,16 @@
 <ion-content [fullscreen]="true">
-  <app-header-my-basket class="header-my-basket" title="Mi cesta (96)"></app-header-my-basket>
+  <app-header-my-basket
+    class="header-my-basket"
+    title="Mi cesta (96)"
+  ></app-header-my-basket>
   <!-- CONTENIDO -->
-  <div s class="container-main" tyle="margin-bottom: '218.66px';">
-  <div class="content-my-cesta" >
-    <app-main-product></app-main-product>
+  <div  class="container-main" style="margin-bottom: '218.66px';">
+    <div class="content-my-cesta">
+      <app-main-product></app-main-product>
+    </div>
+    <app-product></app-product>
+    <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
   </div>
-  <app-product></app-product>
-  <app-modal-basket></app-modal-basket>
-  <app-modal-invite></app-modal-invite>
-</div>
   <!-- FOOTER -->
   <ion-footer class="ion-no-border container-footer px-4 pb-4">
     <div>
@@ -22,12 +24,15 @@
             <p>S/ 45,789.00</p>
           </div>
         </div>
-        <ion-button class="ion-no-margin" expand="block" color="primary" shape="round" style="height: 48px;">
-          Ir a pagar</ion-button
-        >
+        <ion-button
+          class="ion-no-margin"
+          expand="block"
+          color="primary"
+          shape="round"
+          style="height: 48px">
+          Ir a pagar</ion-button>
       </div>
     </div>
   </ion-footer>
   <app-footer-navigation></app-footer-navigation>
 </ion-content>
-

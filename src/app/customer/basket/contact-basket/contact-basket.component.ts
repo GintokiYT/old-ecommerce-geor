@@ -14,7 +14,6 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
     super(_injector);
    }
 
-
   ngOnInit() {}
 
   data: any[] = [
@@ -51,9 +50,11 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
   goBack(){
     this.location.back();
   }
+
   goCollaborativeBasket(){
     this.navigation.root('/customer/collaborative-basket','forward');
   }
+
   goContactSeatch(){
     this.navigation.root('/customer/contact-search','forward');
   }

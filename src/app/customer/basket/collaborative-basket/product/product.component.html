@@ -10,19 +10,20 @@
           <span class="checkmark"></span>
         </label>
         <div class="d-flex flex-column gap-3">
-          <div class="box-name d-flex flex-row">
+          <div (click)="goProductDetail()" class="box-name d-flex flex-row">
             <div>
-              <img (click)="goProductDetail()"
+              <img
                 src="/assets/collaborative-basquet/Producto2.png"
                 alt="img"
               />
             </div>
-            <div class="d-flex flex-column ">
+            <div class="d-flex flex-column">
               <ion-text>
                 <ion-label class="fz-small mb-1">S/48.90</ion-label>
                 <ion-label class="text"> Acrílico liso bajo </ion-label>
               </ion-text>
-              <ion-label class="text fz-note mt-4">Lo agregó
+              <ion-label class="text fz-note mt-4"
+                >Lo agregó
                 <span class="name">Gerardo Ortiz, Wilfredo, Luis</span>
               </ion-label>
             </div>
@@ -31,10 +32,12 @@
             *ngFor="let item of descripcion"
             class="description fz-note d-flex flex-column"
           >
-            <ion-label class="fz-note measurement">{{item.detalle}}</ion-label>
+            <ion-label class="fz-note measurement">{{
+              item.detalle
+            }}</ion-label>
             <div class="d-flex flex-row justify-content-between">
               <img
-                id="open-modal-delete2"
+              (click)="deleteDescription()"
                 src="/assets/collaborative-basquet/Delete 02.svg"
                 alt="icono"
               />
@@ -48,10 +51,10 @@
         </div>
       </ion-label>
     </ion-item>
-    <ion-item-options lines="none" style="align-items: start;">
+    <ion-item-options lines="none" style="align-items: start">
       <ion-item-option class="option-background">
         <img
-          id="open-modal-delete-main2"
+          (click)="deleteProduct()"
           class="img-delete"
           src="/assets/collaborative-basquet/Delete 02-main.svg"
           alt="icono"
@@ -60,31 +63,4 @@
     </ion-item-options>
   </ion-item-sliding>
 </ion-list>
-<!-- Delete-product -->
-<ion-modal trigger="open-modal-delete2" class="modal-alert" #modal>
-  <ng-template>
-    <div class="ion-padding d-flex flex-column px-4 py-4" style="gap: 36px">
-      <ion-label class="d-block text-center fz-small"
-        >¿Eliminar este producto?</ion-label
-      >
-      <div class="d-flex justify-content-around" style="gap: 32px">
-        <ion-label class="cancel">Cancelar</ion-label>
-        <ion-label class="delete">Eliminar</ion-label>
-      </div>
-    </div>
-  </ng-template>
-</ion-modal>
-<!-- Delete-products -->
-<ion-modal trigger="open-modal-delete-main2" class="modal-alert" #modal>
-  <ng-template>
-    <div class="ion-padding d-flex flex-column px-4 py-4" style="gap: 36px">
-      <ion-label class="d-block text-center fz-small"
-        >¿Eliminar los productos seleccionados?</ion-label
-      >
-      <div class="d-flex justify-content-around" style="gap: 32px">
-        <ion-label class="cancel">Cancelar</ion-label>
-        <ion-label class="delete">Eliminar</ion-label>
-      </div>
-    </div>
-  </ng-template>
-</ion-modal>
+

@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ModalResendComponent } from './modal-resend/modal-resend.component';
 import { ViewComponent } from '@geor360/ecore';
+import { InviteService } from 'src/app/services/Invite.service';
 interface Equipo{
   image:string,
   nombre:string,
@@ -17,14 +18,31 @@ interface Equipo{
 })
 export class TeamComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) {
+  modalInvite: boolean;
+  modalResend: boolean;
+  modalResendInvitation: boolean;
+  modalAccepted:boolean;
+
+  constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
-        /* this.themeService = _injector.get(AppThemeService); */
-   }
+    //Modal Invite
+    this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+    this.inviteService.getStatusModalResend.subscribe(status=>this.modalResend =status);
+    this.inviteService.getStatusModalResendInvitation.subscribe(status=>this.modalResendInvitation =status);
+    this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status);
+  }
 
   ngOnInit() {}
 
   equipos:Equipo[]=[
+    {
+      image:'assets/collaborative-basquet/Avatar.svg',
+      nombre: 'Juliano del Carmen Soriano',
+      estado:[{
+        estado:"Pendiente",
+        numero:"+51 971 945 234"
+      }]
+    },
 
     {
       image:'assets/collaborative-basquet/Avatar3.svg',
@@ -60,9 +78,9 @@ export class TeamComponent extends ViewComponent implements OnInit {
         estado:"Pendiente",
         numero:"+51 971 945 234"
       }],
-    }, ]
+    } ]
 
-    showModalInvite(){
+   /*  showModalInvite(){
       this.dialog.show({
         showBackdrop:true,
         component: ModalResendComponent,
@@ -73,7 +91,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
         console.log(response);
       });
     }
-
+ */
     showModalAccepted(){
       this.dialog.show({
         showBackdrop:true,
@@ -86,6 +104,20 @@ export class TeamComponent extends ViewComponent implements OnInit {
       });
     }
 
+    openInvite(){
+      this.inviteService.setStatusModalInvite(true);
+    }
+
+    openResend(){
+      this.inviteService.setStatusModalResend(true);
+    }
+
+    openAccepted(){
+      this.inviteService.setStatusModalAccepted(true);
+    }
+
+
   }
+
 
 

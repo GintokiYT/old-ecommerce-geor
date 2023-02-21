@@ -1,119 +1,70 @@
 import { Component, OnInit, Injector } from '@angular/core';
+import IBanner from 'src/app/interfaces/IBanner';
 import IProduct from 'src/app/interfaces/IProduct';
-import { ViewComponent } from '@geor360/ecore';
+import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import { InviteService } from 'src/app/services/Invite.service';
+import { HomeService } from 'src/app/services/home.service';
+
 @Component({
   selector: 'app-empty-basket',
   templateUrl: './empty-basket.component.html',
   styleUrls: ['./empty-basket.component.scss'],
 })
+
 export class EmptyBasketComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector:Injector) {
+  contry: string = localStorage.getItem('country') || 'PE';
+  image: string = this.contry === 'PE' ? './assets/flags/pe.svg' :
+                  this.contry === 'AR' ? './assets/flags/ar.svg' :
+                  './assets/flags/cl.svg' ;
+
+  slides:IBanner[];
+
+  productsForYou: IProduct[];
+
+  productsFeatured: IProduct[];
+
+  slideOptions: any = {
+    autoplay: {
+      delay: 5000,
+    },
+  };
+
+  productSlidesOptions: any = {
+    spaceBetween: 16,
+    slidesPerView: 'auto',
+  };
+
+  private themeService: AppThemeService;
+
+  logoPath = '/assets/images/logo.svg';
+
+
+    /* MODAL INVITE */
+  modalInvite: boolean;
+
+  constructor(_injector: Injector, private inviteService:InviteService, private homeService: HomeService) {
     super(_injector);
+    //Modal Invite
+    this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+
+    //Contenido de MyBasket
+    this.themeService = _injector.get(AppThemeService);
+    this.homeService.getSlides.subscribe( slides => this.slides = slides);
+    this.homeService.getProductsForYou.subscribe( product => this.productsForYou = product);
+    this.homeService.getProductsFeatured.subscribe( product => this.productsFeatured = product);
+
+
   }
 
   ngOnInit() {}
-  productsFeatured: IProduct[] = [
-    {
-      image: '/assets/home/products/product1.jpg',
-      isNew: true,
-      price: 189,
-      currency: 'S/',
-      oldPrice: 259,
-      inOffert: true,
-      discountPercentage: 30,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: true,
-      colors: [
-        { color: '#0375F8' },
-        { color: '#02298F' },
-        { color: '#D6D6D6' },
-        { color: '#EF4152' },
-      ],
-    },
-    {
-      image: '/assets/home/products/product2.jpg',
-      price: 120,
-      isNew: false,
-      inOffert: true,
-      oldPrice: 150,
-      discountPercentage: 25,
-      currency: 'S/',
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: true,
-    },
-    {
-      image: '/assets/home/products/product3.jpg',
-      price: 115,
-      isNew: false,
-      currency: 'S/',
-      inOffert: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product4.jpg',
-      price: 85,
-      isNew: false,
-      inOffert: false,
-      currency: 'S/',
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product5.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product6.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product7.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-    {
-      image: '/assets/home/products/product8.jpg',
-      price: 7551,
-      currency: 'S/',
-      inOffert: false,
-      isNew: false,
-      name: 'Acrílico rugoso de pol itileno rugoso',
-      hasMinimumOrder: true,
-      minimumOrder: 3,
-      hasFreeDelivery: false,
-    },
-  ];
+
+
   goToProduct(){
     this.navigation.root("/customer/product","forward");
+  }
+
+  openInvite(){
+    this.inviteService.setStatusModalInvite(true);
   }
 }

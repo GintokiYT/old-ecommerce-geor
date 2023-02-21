@@ -1,50 +1,37 @@
-
-
-
 form {
     ion-input {
         --padding-bottom: 5px !important;
         --padding-top: 5px !important;
     }
-    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 72px)
 }
 
 ion-modal {
-    &.modal-alert {
-        --height: fit-content;
-        --border-radius: 10px;
-    }
-
-    &::part(content) {
-        margin-right: 16px !important;
-        margin-left: 16px !important;
-    }
-
+    --height: fit-content;
     --background: var(--ion-background-alert);
-}
+    --border-radius: 10px;
 
-ion-footer {
-    // position: fixed;
-    // bottom: 0;
-    // z-index: 1000;
-    
-    .terms,
-    .politics {
-        color: var(--ion-color-primary);
-    }
-}
-
-@media(min-width:390px) {
-
-    ion-modal {
+    &.modal-validate {
         &::part(content) {
-            margin-right: 24px !important;
-            margin-left: 24px !important;
+            margin-right: 16px !important;
+            margin-left: 16px !important;
         }
     }
 }
 
-.have-elements{
+
+@media(min-width:390px) {
+
+    ion-modal {
+        &.modal-validate {
+            &::part(content) {
+                margin-right: 24px !important;
+                margin-left: 24px !important;
+            }
+        }
+    }
+}
+
+.have-elements {
     display: flex !important;
 }
 
@@ -62,7 +49,3 @@ ion-footer {
 .disabled {
     color: var(--ion-color-disabled);
 }
-
-
-
-

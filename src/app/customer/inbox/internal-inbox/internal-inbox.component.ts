@@ -1,4 +1,5 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Keyboard } from '@geor360/capacitor-keyboard';
 import { ViewComponent } from '@geor360/ecore';
 
 interface Message {
@@ -32,21 +33,28 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
 
   ngAfterViewInit() {
-
     const contenedorDeChats = this.contenedorDeChats.nativeElement as HTMLDivElement;
-    contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
-    console.log(contenedorDeChats);
+    const contentInput: HTMLDivElement = this.contentInput.nativeElement;
 
-    //const messageInput: HTMLInputElement = this.messageInput.nativeElement;
+    const ionFooter: HTMLDivElement = document.querySelector('.ion-footer');
+
+    setTimeout(() => {
+      contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
+    }, 100);
+
     this.messageInput.nativeElement.addEventListener('focus', () => {
+      ionFooter.classList.add('active');
+      ionFooter.classList.remove('disabled');
       setTimeout(() => {
-        this.contentInput.nativeElement.style.display = "flex";
+        contentInput.classList.add('active');
       }, 100)
     });
 
     this.messageInput.nativeElement.addEventListener('blur', () => {
+      ionFooter.classList.remove('active');
+      ionFooter.classList.add('disabled');
       if(this.contentMessage.message.content.length === 0) {
-        this.contentInput.nativeElement.style.display = "none";
+        contentInput.classList.remove('active');
       }
     });
 
@@ -234,7 +242,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
       this.messages.push(this.contentMessage);
 
-      this.contentInput.nativeElement.style.display = "none";
+      this.contentInput.nativeElement.classList.remove('active');
 
       this.clearMessageObject();
     }

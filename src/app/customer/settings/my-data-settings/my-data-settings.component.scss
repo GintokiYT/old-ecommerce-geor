@@ -1,3 +1,23 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  // --padding-top: var(--ion-safe-area-top);
+  --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -14,47 +34,50 @@ ion-content {
 
 .container-app-settings {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: var(--ion-background-color);
 
   padding-top: var(--ion-safe-area-top);
   padding-bottom: var(--ion-safe-area-bottom);
-}
 
-.header-my-data-settings {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .container-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100vh;
-  padding: 96px 16px 24px 16px;
+  height: 100%;
+  padding: 0 16px 24px 16px;
+  padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
 
   @media (min-width: 390px) {
-    padding: 96px 24px 24px 24px;
+    padding: 0 24px 24px 24px;
+    padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
   }
 }
 
 form {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
   width: 100%;
-  min-height: calc(100vh - 96px);
+  min-height: calc(100% - 96px);
 }
 
 .container-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding-bottom: 92.8px;
 }
 
 .form-control-settings {
@@ -107,20 +130,24 @@ form {
   box-sizing: border-box;
 }
 
-.btn-submit {
-  margin-bottom: 24px;
-}
-
 .form-control-button {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 24px 16px 0 16px;
+  padding: 24px 16px 24px 16px;
   background-color: var(--ion-background-color);
 
+  &.active {
+    padding-bottom: 24px;
+  }
+
+  &.disabled {
+    padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  }
+
   @media (min-width: 390px) {
-    padding: 24px 24px 0 24px;
+    padding: 24px 24px 24px 24px;
   }
 }

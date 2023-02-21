@@ -17,6 +17,7 @@ export default interface IOrder {
         requirements: string
     },
     detailsOrderToStore:{
+        store: string,
         direction: string,
         dClass: string,
         who: string

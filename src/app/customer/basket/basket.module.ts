@@ -21,6 +21,9 @@ import { ContactSearchComponent } from './contact-basket/contact-search/contact-
 import { FormsModule } from '@angular/forms';
 import { CollaborativeTeamComponent } from './team/collaborative-team/collaborative-team.component';
 import { ModalResendInvitationComponent } from './team/modal-resend-invitation/modal-resend-invitation.component';
+import { ContactTeamComponent } from './contact-basket/contact-team/contact-team.component';
+import { ModalInviteTeamComponent } from './team/collaborative-team/modal-invite-team/modal-invite-team.component';
+
 
 @NgModule({
   declarations: [
@@ -40,8 +43,9 @@ import { ModalResendInvitationComponent } from './team/modal-resend-invitation/m
     ContactBasketComponent,
     ContactSearchComponent,
     CollaborativeTeamComponent,
-    ModalResendInvitationComponent
-
+    ModalResendInvitationComponent,
+    ContactTeamComponent,
+    ModalInviteTeamComponent
   ],
   imports: [
     CommonModule,

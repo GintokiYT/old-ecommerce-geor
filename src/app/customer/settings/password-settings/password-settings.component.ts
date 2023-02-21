@@ -29,11 +29,16 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+    const footerButton: HTMLDivElement = document.querySelector('.form-control-button');
+
     this.myInput.forEach( input => {
       input.nativeElement.addEventListener('focus', () => {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
         formControlSettings.classList.add('active')
         formControlSettings.classList.remove('data');
+
+        footerButton.classList.add('active');
+        footerButton.classList.remove('disabled');
       });
       input.nativeElement.addEventListener('blur', () => {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
@@ -41,6 +46,9 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
         if(input.nativeElement.value !== '') {
           formControlSettings.classList.add('data');
         }
+
+        footerButton.classList.add('disabled');
+        footerButton.classList.remove('active');
       });
       input.nativeElement.addEventListener('input', (event: Event) => {
         const target = event.target as HTMLInputElement;

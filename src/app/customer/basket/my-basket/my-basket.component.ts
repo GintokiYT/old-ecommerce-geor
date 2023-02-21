@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { InviteService } from 'src/app/services/Invite.service';
 
 @Component({
   selector: 'app-my-basquet',
@@ -9,10 +10,11 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class MyBasketComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) {
+  modalInvite: boolean;
+  constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
-        /* this.themeService = _injector.get(AppThemeService); */
-   }
+    this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+  }
 
   ngOnInit() {}
   eliminarProducto(){
@@ -25,4 +27,8 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
     },'Cancelar','Eliminar')
   }
 
+  openInvite(){
+    this.inviteService.setStatusModalInvite(true);
+
+  }
 }
