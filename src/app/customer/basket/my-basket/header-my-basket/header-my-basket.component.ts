@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector, Input } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
-import { InviteService } from 'src/app/services/Invite';
+import { InviteService } from 'src/app/services/Invite.service';
 import { ModalInviteComponent } from '../modal-invite/modal-invite.component';
 
 @Component({

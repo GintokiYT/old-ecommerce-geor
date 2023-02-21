@@ -1,6 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import {  ViewComponent } from '@geor360/ecore';
-import { InviteService } from 'src/app/services/Invite';
+import { InviteService } from 'src/app/services/Invite.service';
 import { ModalBasketComponent } from '../modal-basket/modal-basket.component';
 
 @Component({

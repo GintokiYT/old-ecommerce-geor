@@ -15,8 +15,11 @@ export class ReturnsExchangesSettingsComponent extends ViewComponent implements 
 
   ngOnInit() {}
 
-  onToBack(route: string) {
+  /* onToBack(route: string) {
     this.navigation.back(route);
+  } */
+  onToBack(){
+    this.location.back();
   }
 
 }

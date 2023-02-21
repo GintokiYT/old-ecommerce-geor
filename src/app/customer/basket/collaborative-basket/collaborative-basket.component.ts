@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
-import { InviteService } from 'src/app/services/Invite';
+import { InviteService } from 'src/app/services/Invite.service';
 
 @Component({
   selector: 'app-collaborative-basket',
@@ -9,10 +9,8 @@ import { InviteService } from 'src/app/services/Invite';
 })
 export class CollaborativeBasketComponent extends ViewComponent implements OnInit {
 
-
   constructor(_injector: Injector) {
     super(_injector);
-
   }
 
   ngOnInit() {}
@@ -20,6 +18,5 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   goToConfirmOrder() {
     this.navigation.root('/customer/confirm-order', 'forward');
   }
-
 
 }

@@ -36,6 +36,7 @@ ion-modal {
   }
 }
 
+//* Modal
 .container-modal-invite {
   position: fixed;
   top: 0;
@@ -49,7 +50,7 @@ ion-modal {
 .modal-invite {
   border-radius: 10px 10px 0px 0px;
   width: 100%;
-  height: 219px;
+  height: 243px;
   background-color: var(--ion-background-modal);
   position: absolute;
   bottom: 0;

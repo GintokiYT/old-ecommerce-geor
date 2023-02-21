@@ -16,11 +16,15 @@
               ></ion-img>
               Pendiente
             </ion-text>
-            <ion-label
+            <!-- <ion-label
               (click)="Close()"
               id="open-modal-resend-invitation"
               class="resend"
-            >
+            > -->
+            <ion-label
+             (click)="openResendInvitation()"
+              class="resend">
+
               Reenviar invitación</ion-label
             >
           </div>
@@ -59,7 +63,8 @@
         <label class="d-flex justify-content-center align-items-center">Eliminar</label>
       </div>
     </div>
-    <app-modal-resend-invitation></app-modal-resend-invitation>
+
+<!--     <app-modal-resend-invitation></app-modal-resend-invitation> -->
 
   </div>
 </div>
