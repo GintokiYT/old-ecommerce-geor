@@ -1,6 +1,4 @@
 ion-button {
-    width:342px;
-    height:108px;
     --background:var(--ion-color-secondary-shade) !important;
 }
 
@@ -43,5 +41,8 @@ ion-label {
 }
 
 .relleno {
-    margin: 0px 24px 0px 24px  ;
+    margin: 0px 24px 0px 24px;
+    height: 108px !important;
+    width: 342px !important;
+    --border-radius: 10px;
 }
