@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import {  ViewComponent } from '@geor360/ecore';
 import { ModalBasketComponent } from '../modal-basket/modal-basket.component';
+import { InviteService } from '../../../../services/Invite.service';
 
 @Component({
   selector: 'app-header-cesta',
@@ -9,7 +10,7 @@ import { ModalBasketComponent } from '../modal-basket/modal-basket.component';
 })
 export class HeaderBasketComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, private inviteService: InviteService) {
     super(_injector);
   }
 
@@ -36,7 +37,9 @@ export class HeaderBasketComponent extends ViewComponent implements OnInit {
     console.log("no salio");
   } */
 
-
+  openModal() {
+    this.inviteService.setStatusModalBasketCollaborative(true);
+  }
 
 
 }

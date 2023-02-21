@@ -9,8 +9,11 @@ import { InviteService } from 'src/app/services/Invite.service';
 })
 export class CollaborativeBasketComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector) {
+  statusModal: boolean;
+
+  constructor(_injector: Injector, private inviteService: InviteService) {
     super(_injector);
+    this.inviteService.getStatusModalBasketCollaborative.subscribe( status => this.statusModal = status );
   }
 
   ngOnInit() {}
