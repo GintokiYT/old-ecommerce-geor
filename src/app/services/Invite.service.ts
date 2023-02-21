@@ -54,9 +54,11 @@ export class InviteService {
 
    // Modal Basket Collaborative
    private statusModalBasketCollaborative= new BehaviorSubject<boolean>(false);
+
    setStatusModalBasketCollaborative(status: boolean) {
      this.statusModalBasketCollaborative.next(status);
    }
+
    get getStatusModalBasketCollaborative():Observable<boolean>{
      return this.statusModalBasketCollaborative;
    }
