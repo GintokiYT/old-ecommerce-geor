@@ -12,14 +12,14 @@ export class ModalBasketComponent extends ViewComponent implements OnInit {
 
   @Input() title: string;
   constructor(_injector:Injector) {
-    super(_injector)
-
+    super(_injector);
   }
 
   ngOnInit() {}
 
   goBasket(){
       this.navigation.root('/customer/my-basket', 'forward');
+
       this.dialog.dismiss();
   }
 

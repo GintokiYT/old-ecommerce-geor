@@ -13,11 +13,11 @@ export class HeaderMyBasketComponent extends ViewComponent implements OnInit {
   @Input()
   title: string = ""
 
-  modalInvite: boolean;
+
 
   constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
-    this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+
   }
 
   ngOnInit() {}

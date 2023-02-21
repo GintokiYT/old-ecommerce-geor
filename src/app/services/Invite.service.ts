@@ -52,13 +52,13 @@ export class InviteService {
      return this.statusModalAccepted;
    }
 
-   // Modal Basket
-   private statusModalBaskets= new BehaviorSubject<boolean>(false);
-   setStatusModalBaskets(status: boolean) {
-   this.statusModalBaskets.next(status);
+   // Modal Basket Collaborative
+   private statusModalBasketCollaborative= new BehaviorSubject<boolean>(false);
+   setStatusModalBasketCollaborative(status: boolean) {
+     this.statusModalBasketCollaborative.next(status);
    }
-   get getStatusModalBaskets():Observable<boolean>{
-   return this.statusModalBaskets;
-  }
+   get getStatusModalBasketCollaborative():Observable<boolean>{
+     return this.statusModalBasketCollaborative;
+   }
 
 }
