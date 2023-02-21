@@ -7,8 +7,6 @@
       <app-main-product></app-main-product>
     </div>
     <app-product></app-product>
-    <app-modal-basket></app-modal-basket>
-    <!-- <app-modal-basket *ngIf="modalBaskets"></app-modal-basket> -->
   </div>
 
   <!-- FOOTER -->
@@ -26,7 +24,6 @@
           <ion-label>S/ 45,789.00</ion-label>
         </div>
       </div>
-      <!-- Margin para separar con el footer de renato -->
       <div >
         <ion-button class ="ion-no-margin" expand="block" color="primary" shape="round" (click)="goToConfirmOrder()" style="
         height: 48px" >Ir a pagar</ion-button>
@@ -34,6 +31,9 @@
     </ion-toolbar>
   </ion-footer>
   <app-footer-navigation></app-footer-navigation>
+
+  <!--!  <app-modal-basket></app-modal-basket> -->
+  <app-modal-basket *ngIf="statusModal"></app-modal-basket>
 </ion-content>
 
 

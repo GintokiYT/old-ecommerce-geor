@@ -46,7 +46,6 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
   openResendInvitation(){
     this.inviteService.setStatusModalResendInvitation(true);
     this.inviteService.setStatusModalResend(false);
-    console.log("no abre")
   }
 
 }

@@ -21,7 +21,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
   modalInvite: boolean;
   modalResend: boolean;
   modalResendInvitation: boolean;
- /*  modalAccepted:boolean; */
+  modalAccepted:boolean;
 
   constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
@@ -29,12 +29,20 @@ export class TeamComponent extends ViewComponent implements OnInit {
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
     this.inviteService.getStatusModalResend.subscribe(status=>this.modalResend =status);
     this.inviteService.getStatusModalResendInvitation.subscribe(status=>this.modalResendInvitation =status);
-    /* this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status); */
+    this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status);
   }
 
   ngOnInit() {}
 
   equipos:Equipo[]=[
+    {
+      image:'assets/collaborative-basquet/Avatar.svg',
+      nombre: 'Juliano del Carmen Soriano',
+      estado:[{
+        estado:"Pendiente",
+        numero:"+51 971 945 234"
+      }]
+    },
 
     {
       image:'assets/collaborative-basquet/Avatar3.svg',
@@ -70,7 +78,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
         estado:"Pendiente",
         numero:"+51 971 945 234"
       }],
-    }, ]
+    } ]
 
    /*  showModalInvite(){
       this.dialog.show({
@@ -104,9 +112,9 @@ export class TeamComponent extends ViewComponent implements OnInit {
       this.inviteService.setStatusModalResend(true);
     }
 
-   /*  openAccepted(){
+    openAccepted(){
       this.inviteService.setStatusModalAccepted(true);
-    } */
+    }
 
 
   }

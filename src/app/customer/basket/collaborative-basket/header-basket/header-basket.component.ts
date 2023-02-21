@@ -1,7 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import {  ViewComponent } from '@geor360/ecore';
-import { InviteService } from 'src/app/services/Invite.service';
 import { ModalBasketComponent } from '../modal-basket/modal-basket.component';
+import { InviteService } from '../../../../services/Invite.service';
 
 @Component({
   selector: 'app-header-cesta',
@@ -10,11 +10,9 @@ import { ModalBasketComponent } from '../modal-basket/modal-basket.component';
 })
 export class HeaderBasketComponent extends ViewComponent implements OnInit {
 
-
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, private inviteService: InviteService) {
     super(_injector);
   }
-
 
   ngOnInit() {}
 
@@ -22,18 +20,8 @@ export class HeaderBasketComponent extends ViewComponent implements OnInit {
     this.navigation.root('/customer/team', 'forward');
   }
 
-  showModal(){
-    this.dialog.show({
-      showBackdrop:true,
-      component: ModalBasketComponent,
-      componentProps: {
-        title: "Modal"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
+  openModal() {
+    this.inviteService.setStatusModalBasketCollaborative(true);
   }
-
-
 
 }

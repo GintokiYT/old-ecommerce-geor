@@ -68,6 +68,16 @@ ion-modal {
   position: absolute;
   bottom: 0;
   left: 0;
+  animation: modalOpen .3s ease;
+}
+
+@keyframes modalOpen {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .close-modal {
