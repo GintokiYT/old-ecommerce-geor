@@ -1,34 +1,37 @@
 <div class="header-basket">
-<ion-header class="ion-no-border chat-header" mode="md">
-  <div class="chat-ion-toolbar d-flex flex-row justify-content-between align-items-center">
-    <div class="content-title d-flex align-items-center">
-      <div class="content-title__name" (click)="openModal()">
-        <h2 class="fz-normal fw-700">
-          Cesta de Gerardo
-          <svg
-          id="open-modal"
-          class="icono"
-          width="1em"
-          height="1em"
-          viewBox="0 0 22 19"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M11.0834 9.95801L7.00008 14.0413L2.91675 9.95801"
-            stroke="#9E9E9E"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <circle cx="18" cy="4" r="4" fill="#F44336" />
-        </svg>
-
-        </h2>
+  <ion-header class="ion-no-border chat-header" mode="md">
+    <div
+      class="chat-ion-toolbar d-flex flex-row justify-content-between align-items-center"
+    >
+      <div class="content-title d-flex align-items-center">
+        <div class="content-title__name" (click)="openModal()">
+          <h2 class="fz-normal fw-700">
+            Cesta de Gerardo
+            <svg
+              id="open-modal"
+              class="icono"
+              width="1em"
+              height="1em"
+              viewBox="0 0 22 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11.0834 9.95801L7.00008 14.0413L2.91675 9.95801"
+                stroke="#9E9E9E"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="18" cy="4" r="4" fill="#F44336" />
+            </svg>
+          </h2>
+        </div>
       </div>
+      <img
+        (click)="goTeam()"
+        src="/assets/collaborative-basquet/Equipo.svg"
+        alt="Team"
+      />
     </div>
-    <img (click)="goTeam()" src="/assets/collaborative-basquet/Equipo.svg" alt="Team" />
-  </div>
-
-</ion-header>
+  </ion-header>
 </div>
