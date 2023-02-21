@@ -29,5 +29,6 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
 
   openInvite(){
     this.inviteService.setStatusModalInvite(true);
+
   }
 }
