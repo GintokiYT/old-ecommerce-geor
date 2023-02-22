@@ -8,7 +8,9 @@
           [ngClass]="{'not-visible': iconLeft.length===0}"
           (click)="goBack()"
         >
-          <img [src] = "icons[iconLeft]"/>
+          <img [src] = "icons[iconLeft]" style="width: 14px;" *ngIf="iconLeft==='icon-close'"/>
+          <img [src] = "icons[iconLeft]" style="width: 17px;" *ngIf="iconLeft==='icon-arrow-left'"/>
+          <img [src] = "icons[iconLeft]" style="width: 17px;" *ngIf="iconLeft!=='icon-arrow-left' && iconLeft!=='icon-close'"/>
         </button>
   
         <div class="title">
