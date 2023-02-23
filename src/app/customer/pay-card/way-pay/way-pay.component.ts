@@ -11,6 +11,7 @@ import IPayMethod from '../../../interfaces/IPayMethod';
 export class WayPayComponent extends ViewComponent implements OnInit {
 
   oneTrue:boolean=true;
+  modalIsVisible : boolean = false;
 
   data: any[] = [
     {
@@ -69,6 +70,15 @@ export class WayPayComponent extends ViewComponent implements OnInit {
     },'Eliminar','Cancelar')
     document.getElementById('delete').innerHTML = '';
 
+  }
+
+
+  openModal(){
+    this.modalIsVisible = true;
+  }
+
+  closeModal(){
+    this.modalIsVisible = false;
   }
 }
 

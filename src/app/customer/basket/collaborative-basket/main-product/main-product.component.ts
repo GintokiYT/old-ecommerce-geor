@@ -8,11 +8,31 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class MainProductComponent extends ViewComponent implements OnInit {
 
+
+  modalIsVisible: boolean = false;
+
   constructor(_injector: Injector) {
     super(_injector);
    }
 
   ngOnInit() {}
+
+
+  openModal1(){
+    this.modalIsVisible = true;
+  }
+
+  closeModal1(){
+    this.modalIsVisible = false;
+  }
+
+  openModal2(){
+    this.modalIsVisible = true;
+  }
+
+  closeModal2(){
+    this.modalIsVisible = false;
+  }
 
   deleteDescription(){
     this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
