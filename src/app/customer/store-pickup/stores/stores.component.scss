@@ -1,6 +1,6 @@
 .content-stores{
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
     .alert{
         border-radius: 4px;
         padding: 0px 12px 0px 12px; 
@@ -64,7 +64,7 @@
 }
 
 button {
-    height: 48px;
+    height: 40px;
 }
 
 ion-footer{
@@ -81,8 +81,8 @@ ion-footer{
 
 @media(max-width:320px){
     .content-stores{
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: 24px;
+        padding-right: 24px;
         .alert{
             padding: 0px 10px 0px 10px; 
             ion-label{
@@ -91,6 +91,15 @@ ion-footer{
         }
         .checkbox{
             margin-top: 24px;
+        }
+    }
+    
+}
+
+@media(min-width:390px){
+    ion-footer{
+        ion-button{
+            height: 48px !important;
         }
     }
 }
