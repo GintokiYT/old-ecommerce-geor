@@ -27,40 +27,44 @@ export class ChangeAddressComponent {
   lng: number = 0;
   @ViewChild('inputAddress') inputAddress: IonSearchbar;
 
-  constructor(private route: ActivatedRoute, private navigator: AppNavigationService, private settingsService: SettingsService, private languageService: LanguageService) {
-    this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
+  constructor(
+    private route: ActivatedRoute,
+    private navigator: AppNavigationService,
+    private settingsService: SettingsService,
+    private languageService: LanguageService) {
+    // this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
     this.languageService.getLanguage.subscribe( language =>  this.contenido = language['changeAddress'])
   }
-  ionViewWillEnter(): void {
-    this.filter = this.route.snapshot.queryParamMap.get('address');
-    this.lat = Number(this.route.snapshot.queryParamMap.get('latitude') || 0);
-    this.lng = Number(this.route.snapshot.queryParamMap.get('longitude') || 0);
-  }
+  // ionViewWillEnter(): void {
+  //   this.filter = this.route.snapshot.queryParamMap.get('address');
+  //   this.lat = Number(this.route.snapshot.queryParamMap.get('latitude') || 0);
+  //   this.lng = Number(this.route.snapshot.queryParamMap.get('longitude') || 0);
+  // }
 
   onToBack() {
     this.navigator.back('/account/welcome/my-location');
   }
 
   onSelectAddress(address: string) {
-    const params: NavigationExtras = {
-      queryParams: {
-        address,
-        lat: this.lat,
-        lng: this.lng,
-      },
-    };
-    this.settingsService.setAddressMyLocation(params.queryParams["address"]);
-    this.navigator.back(RouteCollection.account.welcome.myLocation);
+    // const params: NavigationExtras = {
+    //   queryParams: {
+    //     address,
+    //     lat: this.lat,
+    //     lng: this.lng,
+    //   },
+    // };
+    // this.settingsService.setAddressMyLocation(params.queryParams["address"]);
+    // this.navigator.back(RouteCollection.account.welcome.myLocation);
   }
 
   onSearch() {
-    this.GoogleAutocomplete.getPlacePredictions(
-      { input: this.filter },
-      (predictions: any) => {
-        predictions.forEach((address: any) => {
-          this.addresses.push(address.description);
-        });
-      }
-    );
+    // this.GoogleAutocomplete.getPlacePredictions(
+    //   { input: this.filter },
+    //   (predictions: any) => {
+    //     predictions.forEach((address: any) => {
+    //       this.addresses.push(address.description);
+    //     });
+    //   }
+    // );
   }
 }
