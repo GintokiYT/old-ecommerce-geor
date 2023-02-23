@@ -1,6 +1,6 @@
 
 ion-searchbar {
-    margin: 24px;
+    margin: 0px 24px;
     padding: 0px;
     width: 340px;
    height: 40px;
@@ -9,6 +9,36 @@ ion-searchbar {
 
 ion-content {
     margin: 0px 24px 0px 24px;
+}
+.header-searhbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000000000;
+    padding-top: calc(var(--ion-safe-area-top,0) + 16px);   
+}
+
+
+
+.toolbar{
+    margin-right: 34px;
+    // position: relative;
+
+    // .icon-close{
+    //     position: absolute;
+    //     right: 24px;
+    //     bottom: 15px;
+    // }
+}
+
+// ion-header{
+// //     padding-top: calc(var(--ion-safe-area-top,0) + 16px)   
+// }
+
+ion-item{
+    &::part(native){
+        --inner-padding-end: 0px !important;
+    }
 }
 
 

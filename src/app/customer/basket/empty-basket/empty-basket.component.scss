@@ -1,15 +1,13 @@
 .basket {
-  margin-top: calc(var(--ion-safe-area-top,0) + 88px)!important;
-   margin-bottom: 42px;
-
+  margin-top: calc(var(--ion-safe-area-top, 0) + 88px) !important;
+  margin-bottom: 42px;
 }
 
 .text {
   color: var(--ion-color-disabled);
 }
 
-
-.header-mybasket{
+.header-mybasket {
   background-color: var(--ion-background-color);
   position: fixed;
   top: 0;
@@ -37,8 +35,8 @@
     stroke: red !important;
   }
 }
-// End Productos destacados
 
+// End Productos destacados
 .text-price {
   &::before {
     content: "S/";

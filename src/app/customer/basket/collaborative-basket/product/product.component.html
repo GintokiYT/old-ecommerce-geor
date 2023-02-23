@@ -22,19 +22,14 @@
                 <ion-label class="fz-small mb-1">S/48.90</ion-label>
                 <ion-label class="text"> Acrílico liso bajo </ion-label>
               </ion-text>
-              <ion-label class="text fz-note mt-4"
-                >Lo agregó
-                <span class="name">Gerardo Ortiz, Wilfredo, Luis</span>
+              <ion-label class="text fz-note mt-4">Lo agregó <span class="name">Gerardo Ortiz, Wilfredo, Luis</span>
               </ion-label>
             </div>
           </div>
           <div
             *ngFor="let item of descripcion"
-            class="description fz-note d-flex flex-column"
-          >
-            <ion-label class="fz-note measurement">{{
-              item.detalle
-            }}</ion-label>
+            class="description fz-note d-flex flex-column">
+            <ion-label class="fz-note measurement">{{item.detalle}}</ion-label>
             <div class="d-flex flex-row justify-content-between">
               <img
               (click)="deleteDescription()"

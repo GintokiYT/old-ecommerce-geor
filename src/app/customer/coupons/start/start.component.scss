@@ -7,7 +7,7 @@ button {
 ion-toolbar {
     --background: var(--ion-toolbar-background, var(--ion-color-step-50));
     --min-height: 0px;
-    --padding-top: 24px;
+    --padding-top: 16px;
     --padding-start: 24px;
     --padding-end: 24px;
     --padding-bottom: 40px;
@@ -56,5 +56,9 @@ ion-footer{
       --padding-bottom: 24px
     }
   }
-  
-  
+  .header-start{
+    position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  }

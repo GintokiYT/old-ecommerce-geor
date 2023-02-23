@@ -1,12 +1,14 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <button slot="start" (click)="goToManageUserInformation()">
-      <img src="/assets/icons/icon-arrow-izquierda.svg" />
-    </button>
-    <ion-title>Mis cupones</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 <ion-content>
+  <ion-header class="ion-no-border header-start">
+    <ion-toolbar>
+      <button slot="start" (click)="goToManageUserInformation()">
+        <img src="/assets/icons/icon-arrow-izquierda.svg" />
+      </button>
+      <ion-title>Mis cupones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-item lines="none">
     <img class="caracter" src="/assets/icons/icon-cupon.svg" />
   </ion-item>
@@ -17,7 +19,7 @@
     </ion-label>
   </ion-item>
 </ion-content>
-<ion-footer>
+<ion-footer class="footer-ionic">
   <ion-toolbar>
     <ion-button color="primary" expand="block" shape="round" (click)="goTo('/customer/add')">
       Agregar cupón
