@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="ion-content-var">
   <div class="container-welcome">
     <div class="image">
       <div class="logo"></div>
@@ -26,12 +26,11 @@
           </div>
         </div>
         <button
-          class="button-regular"
+          [ngClass]="statusButton? 'ion-button disabled': 'ion-button'"
           (click)="navigateToWheAreYou()"
-          [ngClass]="statusButton? 'button-disabled' : 'button-active'"
           type="button"
           [disabled]="statusButton"
-        >{{ contenido.button }}</button>
+        > {{ contenido.button }} </button>
       </div>
     </div>
   </div>

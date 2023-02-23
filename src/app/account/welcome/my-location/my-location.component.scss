@@ -45,6 +45,7 @@ ion-content {
     z-index: 1000;
     left: 16px;
     top: 24px;
+    top: var(--ion-padding-top);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,8 +74,11 @@ ion-content {
   gap: 26px;
   background-color: var(--ion-background-color);
 
+  padding-bottom: var(--ion-padding-bottom);
+
   @media (min-width: 390px) {
     padding: 24px;
+    padding-bottom: var(--ion-padding-bottom);
   }
 
   span {

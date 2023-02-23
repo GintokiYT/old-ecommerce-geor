@@ -1,3 +1,38 @@
+body.md {
+  .ion-content-var {
+    --ion-padding-top: 24px;
+    --ion-padding-bottom: 24px;
+  }
+}
+
+body.ios {
+  .ion-content-var {
+    --ion-padding-top: 16px;
+    --ion-padding-bottom: 16px;
+  }
+}
+
+// Button Principal
+.ion-button {
+  width: 100%;
+  height: 40px;
+  background-color: #023AFF;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 400px;
+
+  &.disabled {
+    background-color: var(--ion-button-background-disabled);
+    color: var(--ion-button-color-disabled);
+  }
+
+  @media (min-width: 390px) {
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
 // Header
 .header-basic {
   position: sticky;
@@ -7,6 +42,7 @@
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 24px;
+  padding-top: var(--ion-padding-top);
   padding-bottom: 24px;
   z-index: 1000;
   background-color: var(--ion-background-color);
