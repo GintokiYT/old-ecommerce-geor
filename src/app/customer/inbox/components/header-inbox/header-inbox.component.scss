@@ -4,12 +4,14 @@
 
   padding-top: calc(var(--ion-safe-area-top) + 24px);
   // padding-top: calc(16px + 24px);
+  padding-top: calc(var(--ion-safe-area-top) + var(--ion-padding-top));
 
   @media (min-width: 390px) {
     padding: 24px 24px 4px 24px;
 
     padding-top: calc(var(--ion-safe-area-top) + 24px);
     // padding-top: calc(16px + 24px);
+    padding-top: calc(var(--ion-safe-area-top) + var(--ion-padding-top));
   }
 }
 
