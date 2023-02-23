@@ -1,8 +1,8 @@
 .contenedor-detalles-entrega{
 
     max-width: 100%;
-    padding-right: 24px !important;
-    padding-left: 24px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
 
 
     >p{
@@ -42,12 +42,18 @@
 
 }
 
+
+@media(min-width:390px){
+    .contenedor-detalles-entrega{
+        padding-right: 24px !important;
+        padding-left: 24px !important;
+    }
+}
+
+
 /* MEDIA QUERIES PARA INDUACRIL */
 @media(max-width:320px){
     .contenedor-detalles-entrega{
-
-        padding-right: 16px !important;
-        padding-left: 16px !important;
 
         .opcion{
             width: 83.33px;
