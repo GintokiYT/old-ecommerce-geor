@@ -26,7 +26,6 @@ export class ModalResendInvitationComponent extends ViewComponent implements OnI
 
    constructor(_injector:Injector,private inviteService:InviteService) {
     super(_injector)
-
   }
 
   ngOnInit() {}

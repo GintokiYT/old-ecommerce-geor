@@ -13,15 +13,12 @@ export class CollaborativeTeamComponent extends ViewComponent implements OnInit 
   constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
     this.inviteService.getStatusModalInviteTeam.subscribe(status=>this.modalInviteTeam =status);
-
   }
-
 
   ngOnInit() {}
 
   openInviteTeam(){
     this.inviteService.setStatusModalInviteTeam(true);
-
   }
 
 }

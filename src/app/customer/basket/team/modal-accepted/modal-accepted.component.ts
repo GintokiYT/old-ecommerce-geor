@@ -8,6 +8,7 @@ import { InviteService } from 'src/app/services/Invite.service';
   styleUrls: ['./modal-accepted.component.scss'],
 })
 export class ModalAcceptedComponent extends ViewComponent implements OnInit {
+
   @ViewChild('ContainerModal') ContainerModal:ElementRef;
   @ViewChild('modal') modal:ElementRef;
   ngAfterViewInit(): void {
