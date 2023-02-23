@@ -1,11 +1,11 @@
 .confirm-order-container {
     //margin-bottom: 66px;
-    margin-bottom: calc(var(--ion-safe-area-bottom,0) + 66px);
+    margin-bottom: calc(var(--ion-safe-area-bottom, 0) + 66px);
 
     .main {
         max-width: 100%;
-        padding-right: 24px !important;
-        padding-left: 24px !important;
+        padding-right: 16px !important;
+        padding-left: 16px !important;
         padding-top: 32px !important;
         gap: 32px;
 
@@ -25,7 +25,7 @@
                 filter: var(--ion-color-primary-filter);
             }
 
-            .metodos-pago_only-text{
+            .metodos-pago_only-text {
                 color: var(--ion-color-basic) !important;
             }
 
@@ -112,6 +112,15 @@
     }
 }
 
+@media(min-width:390px) {
+    .confirm-order-container {
+        .main {
+            padding-right: 24px !important;
+            padding-left: 24px !important;
+        }
+    }
+}
+
 //MEDIA QUERIES PARA INDUACRIL
 @media(max-width:320px) {
 
@@ -119,8 +128,6 @@
         margin-bottom: 76px;
 
         .main {
-            padding-right: 16px !important;
-            padding-left: 16px !important;
             padding-top: 16px !important;
             gap: 40px;
 
