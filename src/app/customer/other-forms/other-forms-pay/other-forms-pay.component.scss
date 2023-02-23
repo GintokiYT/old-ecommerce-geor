@@ -51,7 +51,7 @@ ion-footer{
       --padding-bottom: 24px
     }
     ion-button{
-        height: 48px;
+        height: 40px;
         margin: 0px ;
     }
 }
@@ -87,16 +87,39 @@ ion-modal::part(content){
 }
 
 #modal-cash{
-    --width: 342px;
-    --height: 242px;
+    --width: 288px;
+    --height: 266px;
 }
 
 #modal-transfer{
-    --width: 342px;
-    --height: 382px;
+    --width: 288px;
+    --height: 387px;
 }
 
 #modal-credit{
-    --width: 342px;
-    --height: 310px;
+    --width: 288px;
+    --height: 294px;
+}
+
+
+@media(min-width:390px){
+    #modal-cash{
+        --width: 342px;
+        --height: 242px;
+    }
+    
+    #modal-transfer{
+        --width: 342px;
+        --height: 382px;
+    }
+    
+    #modal-credit{
+        --width: 342px;
+        --height: 310px;
+    }
+    ion-footer{
+        ion-button{
+            height: 48px !important;
+        }
+    }
 }
