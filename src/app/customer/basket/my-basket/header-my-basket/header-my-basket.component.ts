@@ -13,11 +13,8 @@ export class HeaderMyBasketComponent extends ViewComponent implements OnInit {
   @Input()
   title: string = ""
 
-
-
   constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
-
   }
 
   ngOnInit() {}
@@ -25,25 +22,11 @@ export class HeaderMyBasketComponent extends ViewComponent implements OnInit {
   goGerardo(){
     if(this.title==="Mi cesta (96)"){
     this.navigation.root('/customer/collaborative-basket','back');
-    }/* else{
-      if(this.title==="Mi cesta"){
-    this.navigation.root('/customer/my-basket','back');
     }
-  } */
   }
-  /* showModalInvite(){
-    this.dialog.show({
-      showBackdrop:true,
-      component: ModalInviteComponent,
-      componentProps: {
-        title: "ModalBasket"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
-  } */
 
   openInvite(){
     this.inviteService.setStatusModalInvite(true);
   }
+
 }

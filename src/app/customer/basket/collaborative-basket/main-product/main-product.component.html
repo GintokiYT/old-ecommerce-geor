@@ -40,6 +40,11 @@
                 src="/assets/collaborative-basquet/Delete 02.svg"
                 alt="icono"
               />
+              <!-- <img
+                (click)="openModal1()"                
+                src="/assets/collaborative-basquet/Delete 02.svg"
+                alt="icono"
+              /> -->
               <ion-text class="d-flex">
                 <img src="assets/icons/icon-line.svg" />
                 <ion-label class="mx-3">10,503</ion-label>
@@ -58,8 +63,34 @@
           src="/assets/collaborative-basquet/Delete 02-main.svg"
           alt="icono"
         />
+        <!-- <img
+          (click)="openModal2()"
+          class="img-delete"
+          src="/assets/collaborative-basquet/Delete 02-main.svg"
+          alt="icono"
+        /> -->
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
 </ion-list>
+
+
+
+
+<!-- <app-modal-delete
+  titleModalDelete="¿Eliminar este producto?"
+  [modalIsVisible]="modalIsVisible"
+  (onModalNotVisible)="closeModal1()"
+>
+
+</app-modal-delete>
+
+
+<app-modal-delete
+  titleModalDelete="¿Eliminar los productos seleccionados?"
+  [modalIsVisible]="modalIsVisible"
+  (onModalNotVisible)="closeModal2()"
+>
+
+</app-modal-delete> -->

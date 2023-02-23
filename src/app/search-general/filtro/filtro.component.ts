@@ -9,6 +9,11 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class FiltroComponent extends ViewComponent  implements OnInit {
 
+  showFilter:boolean=false;
+  showFilter2:boolean=false;
+  showFilter3:boolean=false;
+  showFilter4:boolean=false;
+
   @Input()
   title: string = ""
 
@@ -36,7 +41,17 @@ export class FiltroComponent extends ViewComponent  implements OnInit {
     this.navigation.back(path);
   }
 
+  open(){
+    this.showFilter=!this.showFilter;
+  }
 
-
-
+  open2(){
+    this.showFilter2=!this.showFilter2;
+  }
+  open3(){
+    this.showFilter3=!this.showFilter3;
+  }
+  open4(){
+    this.showFilter4=!this.showFilter4;
+  }
 }

@@ -9,7 +9,7 @@ ion-button {
 }
 
 ion-searchbar {
-    margin: 24px;
+    margin: 16px 24px;
     padding: 0px;
     width: 300px;
    height: 36px;
@@ -46,3 +46,12 @@ ion-label {
     width: 342px !important;
     --border-radius: 10px;
 }
+
+.header-catalogue{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    //padding-top: var(--ion-safe-area-top);
+}
+

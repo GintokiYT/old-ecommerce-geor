@@ -10,6 +10,9 @@ import IOrder from '../../../interfaces/IOrder';
 })
 export class OrderDetailsComponent extends ViewComponent implements OnInit {
 
+
+  modalIsVisible: boolean = false;
+
   
   order: IOrder;
 
@@ -37,7 +40,14 @@ export class OrderDetailsComponent extends ViewComponent implements OnInit {
     } else {
       this.navigation.forward(p1);
     }
+  }
 
 
+  openModal(){
+    this.modalIsVisible = true;
+  }
+
+  closeModal(){
+    this.modalIsVisible = false;
   }
 }

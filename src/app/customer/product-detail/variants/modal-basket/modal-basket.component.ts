@@ -14,7 +14,6 @@ export class ModalBasketComponent extends ViewComponent implements OnInit {
 
   ngAfterViewInit() {
     const ContainerModal: HTMLDivElement = this.ContainerModal.nativeElement;
-
     ContainerModal.addEventListener('click', (event: Event) => {
       const modal: HTMLDivElement = this.modal.nativeElement;
       if(event.target === ContainerModal) {

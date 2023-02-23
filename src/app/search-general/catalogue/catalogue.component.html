@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-header class="ion-no-border">
+  <ion-header class="ion-no-border header-catalogue">
     <ion-toolbar>
       <button slot="end" class="arrow">
         <img src="/assets/icons/icon-scan.svg" class="medidas" />
@@ -7,7 +7,9 @@
       <ion-searchbar (click)="goTo('/customer/searchbar')" placeholder="¿Qué estas buscando?"></ion-searchbar>
     </ion-toolbar>
   </ion-header>
-  <ion-button (click)="goTo('/customer/products')" class="relleno">
+
+  <div class="container-main">
+  <ion-button  (click)="goTo('/customer/products')" class="relleno">
     <img src="/assets/images/producto-big-4.png" class="caracter" />
     <ion-label>
       <h3>Acrílico liso</h3><br>
@@ -28,5 +30,8 @@
       <p>Lorem ipsum dolor sit amet consectetur. </p>
     </ion-label>
   </ion-button>
+</div>
+
 </ion-content>
-  <app-footer-navigation></app-footer-navigation>
+
+<app-footer-navigation></app-footer-navigation>

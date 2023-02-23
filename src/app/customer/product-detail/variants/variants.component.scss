@@ -88,3 +88,13 @@ ion-button:nth-child(1)::part(native) {
   width: 100%;
   z-index: 1000;
 }
+
+ion-button {
+  height: 40px !important;
+}
+
+@media (min-width: 390px) {
+  ion-button {
+    height: 48px !important;
+  }
+}

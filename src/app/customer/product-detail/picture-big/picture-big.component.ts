@@ -12,8 +12,8 @@ export class PictureBigComponent implements OnInit {
 
   ngOnInit() {}
 
-
   goBack(){
     this.location.back();
   }
+
 }
