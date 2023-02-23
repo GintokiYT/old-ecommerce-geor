@@ -48,6 +48,8 @@ export class SelectCountryComponent extends ViewComponent implements OnInit {
   }
 
   navigateToWheAreYou() {
-    this.navigation.root('/account/welcome/whe-are-you', 'forward');
+    if(this.statusButton === false) {
+      this.navigation.root('/account/welcome/whe-are-you', 'forward');
+    }
   }
 }

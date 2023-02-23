@@ -52,9 +52,11 @@ ion-content {
 .container-whereAreYou .footer {
   width: 100%;
   padding: 16px 16px 24px 16px;
+  padding-bottom: var(--ion-padding-bottom);
 
   @media(min-width: 390px) {
     padding: 16px 24px 24px 24px;
+    padding-bottom: var(--ion-padding-bottom);
   }
 
   h2 {

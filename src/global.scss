@@ -52,10 +52,14 @@ body.md {
   }
 }
 
+ 
+ion-app{
+  transition: 0.25s height ease-out !important;
+}
 
 body.ios {
 
-  transition: 0.25s height ease-out;
+  transition: 0.25s height ease-out !important;
 
   ion-footer {
     &.footer-ionic {

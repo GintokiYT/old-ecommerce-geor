@@ -139,6 +139,7 @@ ion-content {
 .header-basic {
   padding-top: calc(var(--ion-safe-area-top) + 24px) !important;
   //padding-top: calc(16px + 24px) !important;
+  padding-top: calc(var(--ion-safe-area-top) + var(--ion-padding-top)) !important;
 }
 
 app-footer-navigation {
