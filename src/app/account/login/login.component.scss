@@ -36,10 +36,11 @@ ion-header {
 }
 
 ion-footer {
-    ion-toolbar{
-        --padding-start: 16px !important;
-        --padding-end: 16px !important;
-        --padding-bottom: 24px !important;
+    //padding-bottom : 16px;
+    .toolbar{
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+        padding-bottom: 24px !important;
     }
 }
 
@@ -71,8 +72,8 @@ ion-footer {
 
     ion-footer {
         ion-toolbar{
-            --padding-start: 24px !important;
-            --padding-end: 24px !important;
+            padding-left: 24px !important;
+            padding-right: 24px !important;
         }
     }
 

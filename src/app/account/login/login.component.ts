@@ -26,11 +26,23 @@ export class LoginComponent implements OnInit {
 
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {
+                this.visibleFooterNavigation = true;
 
   }
 
   ngOnInit() {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', [
+        Validators.required,
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.passwordPattern)
+      ]),
+    });
+  }
 
+  ngAfterViewInit(){
     //Este evento se llama antes de que se muestre el teclado.
     Keyboard.addListener('keyboardWillShow', info => {
       this.visibleFooterNavigation = true;
@@ -42,15 +54,12 @@ export class LoginComponent implements OnInit {
       this.visibleFooterNavigation = false;
     });
 
+    Keyboard.addListener('keyboardDidShow', info => {
+      this.visibleFooterNavigation = true;
+    });
 
-    this.loginForm = new FormGroup({
-      username: new FormControl('', [
-        Validators.required,
-      ]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.pattern(this.passwordPattern)
-      ]),
+    Keyboard.addListener('keyboardDidHide', () => {
+      this.visibleFooterNavigation = false;
     });
   }
 
