@@ -25,6 +25,18 @@ export class WheAreYouComponent {
   OnInit() {}
 
   onSubmit() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        // Aquí puedes utilizar las coordenadas para mostrar la ubicación del usuario en un mapa o realizar otras acciones.
+        console.log(lat, lng);
+      });
+    } else {
+      // Si el navegador del usuario no es compatible con la geolocalización, puedes mostrar un mensaje de error o realizar otra acción.
+    }
+
+
     this.navigator.root(RouteCollection.account.welcome.myLocation, 'forward');
   }
 
