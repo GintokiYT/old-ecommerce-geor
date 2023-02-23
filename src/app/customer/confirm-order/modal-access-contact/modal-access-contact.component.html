@@ -1,0 +1,20 @@
+<div class="overlay"
+   [ngClass]="{'modal-visible': modalIsVisible===true,
+               'modal-not-visible' : modalIsVisible===false}"
+   #modal 
+>
+  <div class="modal-container d-flex flex-column">
+
+      <ion-label class="d-block ion-text-center" style="font-weight: bold;">"Induacril" quiere acceder a tus <br/> contactos</ion-label>
+      <ion-label class="d-block ion-text-center">Al otorgar acceso, Podrás ver a tus<br/> contactos</ion-label>
+
+      <div class="modal-options">
+        <div class="not-allow d-flex justify-content-center" (click)="onGoToBuy()">
+          <ion-label color="primary">No permitir</ion-label>
+        </div>
+        <div class="allow d-flex justify-content-center" (click)="onGoToContacts()">
+          <ion-label color="primary">Permitir</ion-label>
+        </div>
+      </div>
+  </div>
+</div>
