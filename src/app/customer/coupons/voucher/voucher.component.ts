@@ -14,7 +14,11 @@ export class VoucherComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goTo(path: string){
-    this.navigation.back(path)
+    this.navigation.forward(path)
     console.log('ff')
+  }
+
+  goToAdd(){
+    this.navigation.back("/customer/add")
   }
 }

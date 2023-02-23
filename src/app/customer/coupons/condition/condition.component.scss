@@ -10,7 +10,11 @@ ion-toolbar {
     --padding-top: 24px;
     --padding-start: 24px;
     --padding-end: 24px;
-    --padding-bottom: 40px
+    --padding-bottom: 40px;
+
+    button{
+        filter: var(--ion-color-dark-filter);
+    }
 }
 
 @media(max-width:320px) {
