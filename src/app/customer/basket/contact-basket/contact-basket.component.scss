@@ -46,7 +46,7 @@ ion-header{
   z-index:1000;
 
   ion-toolbar{
-    --padding-top: 24px !important;
+    --padding-top: 16px !important;
   }
 }
 
@@ -59,7 +59,7 @@ ion-footer {
 
       --padding-start: 24px !important;
       --padding-end: 24px !important;
-      --padding-bottom: 24px !important;
+     // --padding-bottom: 24px !important;
   }
 }
 
