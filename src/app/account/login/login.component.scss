@@ -35,6 +35,19 @@ ion-header {
 
 }
 
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9000;
+
+    .toolbar{
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+        padding-bottom: 24px !important;
+    }
+}
+
 ion-footer {
     //padding-bottom : 16px;
     .toolbar{
@@ -70,8 +83,15 @@ ion-footer {
         }
     }
 
+    .footer{
+        .toolbar{
+            padding-right: 24px !important;
+            padding-left: 24px !important;
+        }
+    }
+
     ion-footer {
-        ion-toolbar{
+        .toolbar{
             padding-left: 24px !important;
             padding-right: 24px !important;
         }
