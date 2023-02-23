@@ -20,33 +20,33 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
   ngAfterViewInit() {
     this.myItem.forEach(item => item.nativeElement.classList.remove('active'));
 
-    if(localStorage.getItem('themeApp') !== null) {
-      switch(localStorage.getItem('themeApp')) {
-        case 'Autómático':
+    if(localStorage.getItem('defaultTheme') !== null) {
+      switch(localStorage.getItem('defaultTheme')) {
+        case 'auto':
           this.myItem.toArray()[0].nativeElement.classList.add('active')
         break;
-        case 'Claro':
+        case 'light':
           this.myItem.toArray()[1].nativeElement.classList.add('active')
         break;
-        case 'Oscuro':
+        case 'dark':
           this.myItem.toArray()[2].nativeElement.classList.add('active')
         break;
       }
     } else {
       this.myItem.toArray()[0].nativeElement.classList.add('active');
-      localStorage.setItem('themeApp', 'Autómático');
+      localStorage.setItem('defaultTheme', 'auto');
     }
   }
 
   ngOnInit() {
-    const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const dark = darkModeMediaQuery.matches;
+    // const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    // const dark = darkModeMediaQuery.matches;
 
-    if(dark) {
-      localStorage.setItem('themeDefault', 'dark');
-    } else {
-      localStorage.setItem('themeDefault', 'dark');
-    }
+    // if(dark) {
+    //   localStorage.setItem('themeDefault', 'dark');
+    // } else {
+    //   localStorage.setItem('themeDefault', 'dark');
+    // }
 
     const colorStatusBar = localStorage.getItem('mode') === 'dark'? '#05050F' : '#023AFF'
 
@@ -61,17 +61,17 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
   }
 
   toggleTheme(theme: string) {
-    const position: number = theme === 'Autómático' ? 0 : theme === 'Claro' ? 1 : 2;
+    const position: number = theme === 'auto' ? 0 : theme === 'light' ? 1 : 2;
     const items = document.querySelectorAll('.item-theme');
 
     items.forEach(item => item.classList.remove('active'));
     items[position].classList.add('active')
 
-    const themeDefault = localStorage.getItem('themeDefault');
+    const themeDefault = localStorage.getItem('defaultTheme');
     const body: HTMLBodyElement = document.querySelector('body');
 
     switch(theme) {
-      case 'Autómático':
+      case 'auto':
         if(themeDefault === 'dark') {
           this.changeThemeDark(body);
           this.changeStatusBarWeb('dark');
@@ -81,13 +81,13 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
           this.changeStatusBarWeb('light');
           localStorage.setItem('mode', 'light');
         }
-        localStorage.setItem('themeApp', 'Autómático');
+        localStorage.setItem('defaultTheme', 'auto');
       break;
-      case 'Claro':
+      case 'light':
         this.changeThemeLight(body);
         this.changeStatusBarWeb('light');
       break;
-      case 'Oscuro':
+      case 'dark':
         this.changeThemeDark(body);
         this.changeStatusBarWeb('dark');
       break;
@@ -106,14 +106,14 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     body.classList.remove('dark');
     body.classList.add('light');
     localStorage.setItem('mode', 'light');
-    localStorage.setItem('themeApp', 'Claro');
+    localStorage.setItem('defaultTheme', 'light');
   }
 
   changeThemeDark(body: HTMLBodyElement) {
     body.classList.remove('light');
     body.classList.add('dark');
     localStorage.setItem('mode', 'dark');
-    localStorage.setItem('themeApp', 'Oscuro');
+    localStorage.setItem('defaultTheme', 'dark');
   }
 
   changeStatusBarWeb(theme: string) {
