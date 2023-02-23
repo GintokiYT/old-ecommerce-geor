@@ -11,8 +11,10 @@
     <ion-label>
       Tamaño
     </ion-label>
-    <img src="/assets/icons/icon-arrow-abajo.svg" />
+    <img (click)="open()" src="/assets/icons/icon-arrow-abajo.svg" />
   </ion-item>
+  <div class="filter-container" [ngClass]="{'show':showFilter===true,
+'close':showFilter===false}">
   <div  class="contenedor-detalles-entrega">
     <ion-item lines="none">
       <div class="contenedor-opciones">
@@ -33,12 +35,15 @@
         </div> </div>
     </ion-item> 
   </div>
+</div>
   <ion-item lines="none">
     <ion-label>
       Espesor
     </ion-label>
-    <img src="/assets/icons/icon-arrow-abajo.svg" />
+    <img  (click)="open2()" src="/assets/icons/icon-arrow-abajo.svg" />
   </ion-item>
+  <div class="filter-container" [ngClass]="{'show':showFilter2===true,
+'close':showFilter2===false}">
   <div  class="contenedor-detalles-entrega">
     <ion-item lines="none">
       <div class="contenedor-opciones">
@@ -62,12 +67,16 @@
         </div> </div>
     </ion-item> 
   </div>
+</div>
   <ion-item lines="none">
     <ion-label>
       Color
     </ion-label>
-    <img src="/assets/icons/icon-arrow-abajo.svg" />
+    <img (click)="open3()" src="/assets/icons/icon-arrow-abajo.svg" />
  </ion-item>
+
+ <div class="filter-container" [ngClass]="{'show':showFilter3===true,
+'close':showFilter3===false}">
  <ion-item lines="none">
       <img src="/assets/icons/icon-color1.svg" />
       <img src="/assets/icons/icon-color2.svg" />
@@ -75,13 +84,17 @@
       <img src="/assets/icons/icon-color4.svg" />
  
   </ion-item>
+  </div>
   <ion-item lines="none">
     <ion-label>
       Precio
     </ion-label>
-    <img src="/assets/icons/icon-arrow-abajo.svg" />
+    <img (click)="open4()" src="/assets/icons/icon-arrow-abajo.svg" />
  </ion-item>
+ <div class="filter-container" [ngClass]="{'show':showFilter4===true,
+'close':showFilter4===false}">
  <ion-range></ion-range>
+ </div>
 
  
     <!-- <ion-button [disabled]="true" shape="round" slot="start">Limpiar</ion-button>
