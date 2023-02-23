@@ -21,7 +21,6 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
 
 
   onGoToConfiguration(){
-
     this.navigation.forward('customer/settings/main-settings');
   }
 
@@ -50,6 +49,10 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
         resultType: CameraResultType.Uri
       });
     }
+  }
+
+  goToCoupons(){
+    this.navigation.root('/customer/start','forward');
   }
 
   goTeamCollaborative(){
