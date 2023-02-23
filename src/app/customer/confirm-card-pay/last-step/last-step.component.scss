@@ -35,8 +35,8 @@ ion-modal::part(content){
 }
 
 #alert{
+    --width: 288px;
     --height: 279px;
-    --width: 342px;
     --border-radius: 10px;
     #icon-close{
         margin: 16px 16px 0px 0px;
@@ -69,11 +69,11 @@ ion-modal::part(content){
     }
     #note-code{
        color:var(--ion-color-medium) !important;
-       margin-bottom: 48px;
+       margin-bottom: 24px;
     }
     p{
         text-align: center;
-        margin-bottom: 8px;
+        margin: 0px 16px 8px 16px;
     }
     .title-modal{
         font-weight: bold;
@@ -81,8 +81,8 @@ ion-modal::part(content){
 }
 
 #coupon{
-    --height: 336px;
-    --width: 343px;
+        --width: 288px;
+        --height: 279px;
     --border-radius: 10px;
     #icon-close{
         margin: 24px 24px 0px 0px;
@@ -173,7 +173,25 @@ ion-footer{
       --padding-bottom: 24px
     }
     ion-button{
-        height: 48px;
+        height: 40px;
         margin: 0px ;
+    }
+}
+
+@media(min-width:390px){
+    #alert{
+        --height: 279px;
+        --width: 342px;
+        #note-code{
+            margin-bottom: 48px;
+         }
+        p{
+            margin: 0px 24px 8px 24px;
+        }
+    }
+    ion-footer{
+        ion-button{
+            height: 48px !important;
+        }
     }
 }
