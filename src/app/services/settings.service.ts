@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SettingsService {
 
   // Theme
-  private theme = new BehaviorSubject<string>(localStorage.getItem('themeApp') || 'Automático');
+  private theme = new BehaviorSubject<string>(localStorage.getItem('defaultTheme') || 'auto');
 
   setTheme(theme: string) {
     this.theme.next(theme);

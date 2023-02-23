@@ -487,7 +487,7 @@ export class GoogleMapService {
       styles: localStorage.getItem("mode") == "light" ? this.styleMapLight:this.styleMapDark
     });
 
-    // google.maps.event.addListenerOnce(map, 'idle', () => iddle());
+    google.maps.event.addListenerOnce(map, 'idle', () => iddle());
 
     return map;
   }

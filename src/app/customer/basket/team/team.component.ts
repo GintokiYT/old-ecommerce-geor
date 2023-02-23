@@ -27,8 +27,11 @@ export class TeamComponent extends ViewComponent implements OnInit {
     super(_injector);
     //Modal Invite
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+    //Modal Resend
     this.inviteService.getStatusModalResend.subscribe(status=>this.modalResend =status);
+    //Modal Resend Invitation
     this.inviteService.getStatusModalResendInvitation.subscribe(status=>this.modalResendInvitation =status);
+    //Modal Accepted
     this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status);
   }
 

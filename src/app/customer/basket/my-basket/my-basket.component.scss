@@ -10,15 +10,7 @@
   padding-bottom: 40px;
 }
 
-/* FOOTER */
-/*ion-toolbar {
-  --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 21px !important;
-}*/
-
-.total-checkbox{
+.total-checkbox {
   gap: 8px;
   p {
     margin-bottom: 6px;
@@ -27,7 +19,7 @@
 
 .box-total {
   margin-bottom: 8px;
-  color:var(--ion-color-basic);
+  color: var(--ion-color-basic);
 }
 
 ion-checkbox::part(container) {
@@ -35,53 +27,42 @@ ion-checkbox::part(container) {
   width: 20px;
   height: 20px;
 }
-.cost-total{
-  p{
-  margin-bottom: 6px;
-}
-}
 
-//
-/*.container-footer {
-  position: fixed;
-  bottom: 68.89px;
-  left: 0;
-  width: 100%;
-  background-color: var(--ion-background-color);
-  z-index: 1000;
-  padding: 0 16px;
-  padding-top: 16px;
-  padding-bottom: 24px;
-
-  @media (min-width: 390px) {
-    padding: 0 24px;
-    padding-top: 16px;
-    padding-bottom: 24px;
+.cost-total {
+  p {
+    margin-bottom: 6px;
   }
-}*/
+}
 
 ion-footer {
   position: fixed;
   bottom: 0;
   z-index: 1000;
-  margin-bottom: calc( var(--ion-safe-area-bottom) + 69px) !important;
+  margin-bottom: calc(var(--ion-safe-area-bottom) + 69px) !important;
   background-color: var(--ion-background-color);
 
-  ion-toolbar{
-      // --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
-      // --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
-      // --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
-
-      --padding-start: 24px !important;
-      --padding-end: 24px !important;
-      --padding-bottom: 24px !important;
+  ion-toolbar {
+    --padding-start: 24px !important;
+    --padding-end: 24px !important;
+    --padding-bottom: 24px !important;
   }
 }
 
-.header-my-basket{
+.header-my-basket {
   background-color: var(--ion-background-color);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+ion-button{
+  height: 40px !important;
+}
+
+@media(min-width:390px) {
+  ion-button{
+    height: 48px !important;
+  }
+
 }

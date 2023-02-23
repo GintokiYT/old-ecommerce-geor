@@ -36,15 +36,14 @@ export class EmptyBasketComponent extends ViewComponent implements OnInit {
   };
 
   private themeService: AppThemeService;
-
   logoPath = '/assets/images/logo.svg';
-
 
     /* MODAL INVITE */
   modalInvite: boolean;
 
   constructor(_injector: Injector, private inviteService:InviteService, private homeService: HomeService) {
     super(_injector);
+
     //Modal Invite
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
 
@@ -53,12 +52,9 @@ export class EmptyBasketComponent extends ViewComponent implements OnInit {
     this.homeService.getSlides.subscribe( slides => this.slides = slides);
     this.homeService.getProductsForYou.subscribe( product => this.productsForYou = product);
     this.homeService.getProductsFeatured.subscribe( product => this.productsFeatured = product);
-
-
   }
 
   ngOnInit() {}
-
 
   goToProduct(){
     this.navigation.root("/customer/product","forward");
@@ -67,4 +63,5 @@ export class EmptyBasketComponent extends ViewComponent implements OnInit {
   openInvite(){
     this.inviteService.setStatusModalInvite(true);
   }
+
 }
