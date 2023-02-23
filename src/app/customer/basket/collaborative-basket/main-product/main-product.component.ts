@@ -27,10 +27,4 @@ export class MainProductComponent extends ViewComponent implements OnInit {
   goProductDetail(){
    this.navigation.root('/customer/variants-product', 'forward');
   }
-
-  delete(){
-    document.getElementById('delete').innerHTML = '';
-    this.dialog.dismiss();
-  }
-
 }

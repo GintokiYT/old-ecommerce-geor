@@ -23,26 +23,22 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
       }
     })
   }
-    /* Modal Resend Invitation */
-
 
   constructor(_injector:Injector,private inviteService:InviteService) {
     super(_injector);
-
   }
 
   ngOnInit() {}
 
   Close(){
     this.dialog.dismiss();
-
   }
 
   deleteContact(){
     this.message.confirm('¿Eliminar de tu equipo?','',(confirmation)=>{
     },'Eliminar','Cancelar');
-    /* this.inviteService.setStatusModalResend(false); */
-  }
+    }
+
   openResendInvitation(){
     this.inviteService.setStatusModalResendInvitation(true);
     this.inviteService.setStatusModalResend(false);

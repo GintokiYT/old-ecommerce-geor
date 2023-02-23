@@ -4,7 +4,7 @@
   padding-bottom: 40px;
 }
 
-ion-footer{
+ion-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -13,17 +13,20 @@ ion-footer{
 
 /* FOOTER */
 ion-toolbar {
-  --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
+  --background: var(
+    --ion-toolbar-background,
+    var(--ion-color-step-50, var(--ion-background-color))
+  );
   padding-left: 20px;
   padding-right: 20px;
-  // padding-bottom: 21px !important;
 }
-.ion-toolbar{
+
+.ion-toolbar {
   padding: 24px;
 }
 
 .box-total {
-  color:var(--ion-color-basic);
+  color: var(--ion-color-basic);
 }
 
 /* Customize the label (the container) */
@@ -99,60 +102,50 @@ ion-toolbar {
 /* Modal-delete */
 ion-modal {
   &.modal-alert {
-      --height: fit-content;
-      --border-radius: 10px;
+    --height: fit-content;
+    --border-radius: 10px;
   }
 
   &::part(content) {
-      margin-right: 24px;
-      margin-left: 24px;
+    margin-right: 24px;
+    margin-left: 24px;
   }
 
-  --background: var(--ion-background-alert)
+  --background: var(--ion-background-alert);
 }
-
-/*
-.container-footer {
-  position: fixed;
-  //bottom: 68.89px;
-  bottom:0;
-  margin-bottom: 68.89px;
-  left: 0;
-  width: 100%;
-  background-color: var(--ion-background-color);
-  z-index: 1000;
-  //padding-top: 16px;
-  //padding-bottom:cal(var(--ion-safe-area-bottom) + 24px);
-}*/
 
 ion-footer {
   position: fixed;
   bottom: 0;
   z-index: 1000;
-  //margin-bottom: 69px;
-  margin-bottom: calc( var(--ion-safe-area-bottom) + 69px) !important;
+  margin-bottom: calc(var(--ion-safe-area-bottom) + 69px) !important;
 
-
-  ion-toolbar{
-      // --padding-start:  calc( var(--ion-safe-area-left) + 16px) !important;
-      // --padding-end:  calc(var(--ion-safe-area-right) + 16px) !important;
-      // --padding-bottom: calc( var(--ion-safe-area-bottom) + 24px) !important;
-
-      --padding-start: 24px !important;
-      --padding-end: 24px !important;
-      --padding-bottom: 24px !important;
+  ion-toolbar {
+    --padding-start: 24px !important;
+    --padding-end: 24px !important;
+    --padding-bottom: 24px !important;
   }
 }
 
-.header-cesta{
+.header-cesta {
   background-color: var(--ion-background-color);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding-top:var(--ion-safe-area-top);
+  padding-top: var(--ion-safe-area-top);
 }
 
-.content-collaborative{
-  margin-top: calc(var(--ion-safe-area-top,0) + 88px)!important;
+.content-collaborative {
+  margin-top: calc(var(--ion-safe-area-top, 0) + 88px) !important;
+}
+
+ion-button {
+  height: 40px !important;
+}
+
+@media (min-width: 390px) {
+  ion-button {
+    height: 48px !important;
+  }
 }

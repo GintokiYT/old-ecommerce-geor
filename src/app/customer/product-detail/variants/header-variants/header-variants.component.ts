@@ -12,8 +12,8 @@ export class HeaderVariantsComponent implements OnInit {
 
   ngOnInit() {}
 
-
   goBack(){
     this.location.back();
   }
+
 }
