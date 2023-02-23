@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <button slot="start">
+    <button slot="start" (click)="goToStart()">
       <img src="/assets/icons/icon-close.svg" />
     </button>
     <ion-title>Agregar cupón</ion-title>
@@ -8,10 +8,11 @@
   </ion-header>
   <ion-content>
     <ion-item>
-      <ion-input placeholder="Ingresa el código"></ion-input>
+      <ion-input (ionChange) = "inputChange($event)" placeholder="Ingresa el código"></ion-input>
     </ion-item>
     <ion-toolbar>
-      <ion-button color="secondary" expand="block" shape="round" [disabled]="true">
+      <ion-button 
+        (click)="goToProductsBar()" color="secondary" expand="block" shape="round" [disabled]="!haveValueInput">
         Agregar cupón
       </ion-button>
     </ion-toolbar>
