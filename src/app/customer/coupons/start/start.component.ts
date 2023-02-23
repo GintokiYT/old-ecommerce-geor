@@ -17,4 +17,8 @@ export class StartComponent extends ViewComponent implements OnInit {
     this.navigation.back(path)
     console.log('ff')
   }
+
+  goToManageUserInformation(){
+    this.navigation.back("/customer/manage-user-information")
+  }
 }

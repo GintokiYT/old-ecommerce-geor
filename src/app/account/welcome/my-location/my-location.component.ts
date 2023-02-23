@@ -22,6 +22,7 @@ interface Contenido {
 export class MyLocationComponent implements OnInit, OnDestroy {
 
   contenido: Contenido;
+  myAddress: string;
 
   // private dialog: AppDialogService;
   // private geolocation: GeolocationService;
@@ -31,9 +32,7 @@ export class MyLocationComponent implements OnInit, OnDestroy {
   // private hasErrorSubscription: Subscription;
   // private hasPositionSubscription: Subscription;
 
-  map: google.maps.Map;
-
-  myAddress: string;
+  // map: google.maps.Map;
 
   constructor(_injector: Injector, private navigator: AppNavigationService, private settingsService: SettingsService, private languageService: LanguageService) {
     // this.dialog = _injector.get(AppDialogService);
