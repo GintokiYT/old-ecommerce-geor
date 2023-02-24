@@ -14,56 +14,60 @@
   </ion-header>
 
   <!-- Login container -->
-  <div class="login-container container-main">
-      <!-- Form -->
-      <form class="w-100l" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <ion-item class="form-group" (ionBlur)="checkBlur('phoneOrEmail')" (ionFocus)="checkFocus('phoneOrEmail')">
-          <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
-          <ion-input formControlName="username"></ion-input>
-          <app-validation-messages *ngIf="showTextHelperPhoneOrEmail" slot="error"
-            [control]="loginForm.get('username')"></app-validation-messages>
+  <div class="login-container container-main d-flex flex-column justify-content-between">
+
+    <!-- Form -->
+    <form class="w-100l" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item class="form-group" (ionBlur)="checkBlur('phoneOrEmail')" (ionFocus)="checkFocus('phoneOrEmail')">
+        <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
+        <ion-input formControlName="username"></ion-input>
+        <app-validation-messages *ngIf="showTextHelperPhoneOrEmail" slot="error"
+          [control]="loginForm.get('username')"></app-validation-messages>
+      </ion-item>
+      <app-input-password>
+        <ion-item class="form-group" (ionBlur)="checkBlur('password')" (ionFocus)="checkFocus('password')">
+          <ion-label position="floating" class="disabled">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+          <app-validation-messages *ngIf="showTextHelperPassword" slot="error"
+            [control]="loginForm.get('password')"></app-validation-messages>
         </ion-item>
-        <app-input-password>
-          <ion-item class="form-group" (ionBlur)="checkBlur('password')" (ionFocus)="checkFocus('password')">
-            <ion-label position="floating" class="disabled">Contraseña</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input>
-            <app-validation-messages *ngIf="showTextHelperPassword" slot="error"
-              [control]="loginForm.get('password')"></app-validation-messages>
-          </ion-item>
-        </app-input-password>
-        <div class="text-end form-group form-group__double">
-          <ion-button size="small" fill="clear" (click)="onToForgotPassword()" class="ion-no-padding">
-            <span class="fz-note disabled">¿Olvidaste tu contraseña?</span>
+      </app-input-password>
+      <div class="text-end form-group form-group__double">
+        <ion-button size="small" fill="clear" (click)="onToForgotPassword()" class="ion-no-padding">
+          <span class="fz-note disabled">¿Olvidaste tu contraseña?</span>
+        </ion-button>
+      </div>
+    </form>
+
+
+    <!-- Footer -->
+    <ion-footer class="ion-no-border" #loginFooter>
+
+      <div class="toolbar">
+        <div class="form-group form-group__double">
+          <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
+            [disabled]="loginForm.invalid" style="margin-bottom: 24px; margin-top: 0px !important;"
+          >
+            Iniciar sesión
           </ion-button>
         </div>
-      </form>
+        <div class="text-center d-flex align-items-center justify-content-center" style="gap: 5px;">
+          <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
+          <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
+        </div>
+      </div>
+
+
+    </ion-footer>
+
   </div><!--End Login Container-->
 
 </ion-content>
 
-<!-- Footer -->
-<ion-footer class="ion-no-border" #loginFooter>
+<app-footer-navigation>
+</app-footer-navigation>
 
 
-  <div class="toolbar">
-    <div class="form-group form-group__double">
-      <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
-        [disabled]="loginForm.invalid" style="margin-bottom: 24px; margin-top: 0px !important;"
-      >
-        Iniciar sesión
-      </ion-button>
-    </div>
-    <div class="text-center d-flex align-items-center justify-content-center" style="gap: 5px;">
-      <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
-      <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
-    </div>
-  </div>
-
-  <app-footer-navigation>
-  </app-footer-navigation>
-  
-
-</ion-footer>
 
 
 <!-- 
