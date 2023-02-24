@@ -1,20 +1,21 @@
-<ion-fab slot="fixed" vertical="start"> 
-  <ion-fab-button  size="small" color="ligth"  (click)="goBack()">
-    <img class="arrow" src="/assets/icons/icon-arrow-left.svg"/>
-  </ion-fab-button>
-</ion-fab>
-
-<div id="map">
-</div>
-
-<ion-fab vertical="bottom" horizontal="end" >
-  <ion-button>
-    <img src="/assets/icons/update.svg" />
-    <ion-label id="update">Actualizar</ion-label>
-  </ion-button>
-</ion-fab>
-
-<ion-footer id="local-address" slot="fixed" vertical="end">
-  <p class="fz-small">Induacril Miraflores</p>
-  <p class="fz-note" >Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
-</ion-footer> 
+<ion-content>
+  <ion-fab slot="fixed" vertical="start"> 
+    <ion-fab-button  size="small" color="ligth"  (click)="goBack()">
+      <img class="arrow" src="/assets/icons/icon-arrow-left.svg"/>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <div id="map">
+  </div>
+  
+  <ion-fab vertical="bottom" horizontal="end" >
+    <ion-button >
+      <img src="/assets/icons/geo.png" />
+      <ion-label id="update" class="fz-small">Actualizar</ion-label>
+    </ion-button>
+  </ion-fab>
+  <ion-footer id="local-address">
+    <p class="fz-small">Induacril Miraflores</p>
+    <p class="fz-note" >Jr. Samaritanos 879 Miraflores, Lima, Lima, Perú</p>
+  </ion-footer>
+</ion-content>
