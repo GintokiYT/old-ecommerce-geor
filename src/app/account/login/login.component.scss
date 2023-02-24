@@ -20,7 +20,7 @@ ion-header {
 
 .login-container {
     width: 100%;
-    height: calc(100% - 71.8px);
+    height: calc(100% - (var(--ion-safe-area-bottom) + 71.8px));
 
     form {
 
