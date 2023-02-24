@@ -8,7 +8,7 @@ ion-header{
     ion-toolbar {
         --background: var(--ion-toolbar-background, var(--ion-color-step-50));
         --min-height: 0px;
-        --padding-top: 24px;
+        --padding-top: 16px;
         --padding-start: 24px;
         --padding-end: 24px;
         --padding-bottom: 40px
@@ -173,4 +173,13 @@ ion-footer{
 
 ion-range {
     margin:0px 24px 0px 24px;
+}
+
+
+.show{
+display: unset;
+}
+
+.close{
+display: none;
 }

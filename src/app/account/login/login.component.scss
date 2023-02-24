@@ -20,8 +20,10 @@ ion-header {
 
 .login-container {
     width: 100%;
+    height: calc(100% - ( var(--ion-safe-area-top) + 72px ));
 
     form {
+
         ion-button {
             margin-top: 5px;
             margin-right: 16px;
@@ -45,15 +47,17 @@ ion-header {
         padding-right: 16px !important;
         padding-left: 16px !important;
         padding-bottom: 24px !important;
+
     }
 }
 
 ion-footer {
-    //padding-bottom : 16px;
+
     .toolbar{
         padding-right: 16px !important;
         padding-left: 16px !important;
         padding-bottom: 24px !important;
+        //  smargin-bottom: calc(var(--ion-safe-area-bottom,0) + 71.8px);
     }
 }
 
@@ -76,6 +80,8 @@ ion-footer {
 
 
     .login-container {
+        height: calc(100% - ( var(--ion-safe-area-top) + 88px ));
+
         form {
             ion-button {
                 margin-right: 24px;

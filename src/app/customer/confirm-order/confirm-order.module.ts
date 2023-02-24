@@ -9,12 +9,13 @@ import { OrderTypeComponent } from './order-type/order-type.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SliderProductsComponent } from './slider-products/slider-products.component';
 import { ConfirmOrderComponent } from './confirm-order.component';
+import { ModalAccessContactComponent } from './modal-access-contact/modal-access-contact.component';
 
 
 
 @NgModule({
   declarations: [FooterComponent,OrderDetailsComponent,OrderTypeComponent,
-                  OrderSummaryComponent,SliderProductsComponent,ConfirmOrderComponent],
+                  OrderSummaryComponent,SliderProductsComponent,ConfirmOrderComponent,ModalAccessContactComponent],
   imports: [
     CommonModule, IonicModule, RouterModule, ShareModule
   ]

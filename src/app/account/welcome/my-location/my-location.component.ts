@@ -1,14 +1,10 @@
 import { RouteCollection } from 'src/shared/route-collection';
-import { Component, Injector, OnDestroy, OnInit } from '@angular/core';
-import {
-  AppDialogService,
-  AppNavigationService,
-  GeolocationService,
-  GoogleMapService,
-} from '@geor360/ecore';
-import { Subscription } from 'rxjs';
-import { SettingsService } from 'src/app/services/settings.service';
+import { Component, Injector, OnInit, OnDestroy } from '@angular/core';
+// import { AppNavigationService, ViewComponent } from '@geor360/ecore';
+// import { SettingsService } from 'src/app/services/settings.service';
 import { LanguageService } from '../../../services/language.service';
+// import { GoogleMapService } from 'src/app/services/google-map.service';
+  import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 
 interface Contenido {
   button: string;
@@ -19,97 +15,67 @@ interface Contenido {
   templateUrl: 'my-location.component.html',
   styleUrls: ['my-location.component.scss'],
 })
-export class MyLocationComponent implements OnInit, OnDestroy {
+export class MyLocationComponent extends GeolocationComponent implements OnInit, OnDestroy {
 
   contenido: Contenido;
-  myAddress: string;
 
-  // private dialog: AppDialogService;
-  // private geolocation: GeolocationService;
-  // private googleMap: GoogleMapService;
+  // private mapCenterChangeListener: google.maps.MapsEventListener;
+  // private mapCenterDragEndListener: google.maps.MapsEventListener;
 
-  // private hasPermissionSubscription: Subscription;
-  // private hasErrorSubscription: Subscription;
-  // private hasPositionSubscription: Subscription;
+  positionMarker: google.maps.Marker;
 
-  // map: google.maps.Map;
-
-  constructor(_injector: Injector, private navigator: AppNavigationService, private settingsService: SettingsService, private languageService: LanguageService) {
-    // this.dialog = _injector.get(AppDialogService);
-    // this.geolocation = _injector.get(GeolocationService);
-    // this.googleMap = _injector.get(GoogleMapService);
-    this.settingsService.getAddressMyLocation.subscribe( address => this.myAddress = address );
-    this.languageService.getLanguage.subscribe( language => this.contenido = language['myLocation'] );
+  constructor(_injector: Injector, private languageService: LanguageService ) {
+    super(_injector);
+    this.mapId = 'map';
+    this.languageService.getLanguage.subscribe( language => this.contenido = language['myLocation'])
   }
 
-  ngOnInit() {
-    // if (this.geolocation.loaded) {
-    //   if (this.googleMap.loaded) {
-    //     this.map = this.googleMap.createMap(
-    //       document.getElementById('google-map-id'),
-    //       this.geolocation.position.coords.latitude,
-    //       this.geolocation.position.coords.longitude,
-    //       () => {
-    //         console.log('Render');
-    //       }
-    //     );
-    //   } else {
-    //   }
-    // } else {
-    //   this.hasPermissionSubscription = this.geolocation.permission.subscribe(
-    //     (permission) => {
-    //       if (!permission) {
-    //       }
-    //     }
-    //   );
-    //   this.hasErrorSubscription = this.geolocation.exception.subscribe(
-    //     (error) => {
-    //       if (!error) {
-    //       }
-    //     }
-    //   );
-    //   this.geolocation.newPosition.subscribe((position) => {
-    //     this.geolocation.clearWatch(() => {});
-    //     this.googleMap.loadingSubscription.subscribe(() => {
-    //       console.log('Load Complete');
-    //       this.map = this.googleMap.createMap(
-    //         document.getElementById('google-map-id'),
-    //         position.coords.latitude,
-    //         position.coords.longitude,
-    //         () => {
-    //           console.log('Render');
-    //         }
-    //       );
-    //     });
-    //     this.googleMap.init();
-    //   });
-    //   this.geolocation.init();
-    // }
+  override ngOnInit(): void {
+    super.ngOnInit();
+
+    this.geolocation.init();
+    this.googleMap.init('AIzaSyB3iDWSD87oIotNQNnfDT1kram3J_4epOA', <any>this.language);
   }
 
-  ngOnDestroy(): void {
-    // this.hasPermissionSubscription?.unsubscribe();
-    // this.hasErrorSubscription?.unsubscribe();
-    // this.hasPositionSubscription?.unsubscribe();
+  override ngOnDestroy(): void {
+    super.ngOnDestroy();
+
+    //google.maps.event.removeListener(this.mapCenterChangeListener);
+    //google.maps.event.removeListener(this.mapCenterDragEndListener);
+  }
+
+  override onMapLoaded(): void {
+
+    // this.positionMarker = this.googleMap.createMarker(this.map, {
+    //   latitude: this.geolocation.position.coords.latitude,
+    //   longitude: this.geolocation.position.coords.longitude
+    // });
+
+    // this.mapCenterChangeListener = google.maps.event.addListener(this.map, 'center_changed', () => {
+    //   this.positionMarker.setPosition(this.map.getCenter());
+    // });
+
+    // this.mapCenterDragEndListener = google.maps.event.addListener(this.map, 'dragend', () => {
+    //   const center: google.maps.LatLng = this.map.getCenter();
+
+    // });
   }
 
   onToChangeAddress() {
-    this.navigator.forward('/account/welcome/change-address');
+    this.navigation.forward('/account/welcome/change-address');
+    // this.navigator.forward('/account/welcome/change-address');
   }
 
   onBack() {
-    this.navigator.root(RouteCollection.account.welcome.wheAreYou, 'back');
+    this.navigation.back(RouteCollection.account.welcome.wheAreYou);
+    // this.navigator.root(RouteCollection.account.welcome.wheAreYou, 'back');
   }
-
-  // confirm() {
-  //   this.dialog.dismiss('confirm');
-  // }
-
-  // cancel() {
-  //   this.dialog.dismiss('cancel');
-  // }
 
   nextProyect() {
-    this.navigator.forward('customer/home');
+    this.navigation.forward('customer/home');
+    // this.navigator.forward('customer/home');
   }
+
 }
+
+

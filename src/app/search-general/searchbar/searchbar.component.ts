@@ -18,6 +18,9 @@ export class SearchbarComponent extends ViewComponent implements OnInit {
     this.navigation.forward(path)
     console.log('ff')
   }
+  back(){
+    this.navigation.root('/customer/catalogue','back');
+  }
 }
 
 

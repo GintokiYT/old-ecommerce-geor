@@ -4,7 +4,12 @@
 
 export const environment = {
   production: false,
-  appConfig: 'appconfig.json'
+  appConfig: 'appconfig.json',
+  maps: {
+    maxZoom: 16,
+    minZoom: 5,
+    defaultZoom: 16
+  }
 };
 
 /*

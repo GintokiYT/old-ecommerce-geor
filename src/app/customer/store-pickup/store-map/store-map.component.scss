@@ -10,24 +10,28 @@ ion-fab-button::part(native) {
   }
 }
 .arrow{
-  filter:var(--ion-color-light-filter)
+  filter:var(--ion-color-light-filter);
 }
+
 ion-button {
-  --background: #ffffff !important;
   --border-radius: 32px;
+  --background: var(--ion-background-secondary) !important;
   margin:0px 16px 106px 0px;
   width: 114px;
   height: 36px !important;
   right: 24px;
   bottom: 146px;
+  img {
+    min-width: 18px;
+    min-height: 18px;
+  }
   #update{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-size: 14px;
-     color: #000000;
+     color: var(--card-color-text)!important;
     margin-left: 8px;
   }
 }
+
+
 
 
 #local-address{
@@ -46,4 +50,18 @@ ion-button {
 
 .arrow{
   filter: var(--ion-color-light-filter);
+}
+
+#map{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+}
+
+
+ion-footer{
+  position: fixed;
+  bottom:  0px;
+  background-color: var(--ion-background-color);
 }
