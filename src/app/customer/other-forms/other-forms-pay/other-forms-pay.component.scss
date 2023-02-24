@@ -3,13 +3,12 @@
     padding-left: 24px;
     display: flex;
     justify-content: space-between;
-    justify-content: center;
-    gap: 32px;
     .card{
         width: 141px;
         height: 32px;
         display: flex;
         padding: 4px 0px;
+        margin-right: 32px;
         text-align: center;
         background: none;
         border:none;
