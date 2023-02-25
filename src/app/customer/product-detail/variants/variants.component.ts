@@ -72,4 +72,24 @@ export class VariantsComponent extends ViewComponent implements OnInit {
     console.log();
   } */
 
+  selectedLabel: number = null;
+
+  selectLabel(index: number) {
+    if (this.selectedLabel === index) {
+      this.selectedLabel = null;
+    } else {
+      this.selectedLabel = index;
+    }
+  }
+
+  selectedLabel2: number = null;
+
+  selectLabel2(index: number) {
+    if (this.selectedLabel2 === index) {
+      this.selectedLabel2 = null;
+    } else {
+      this.selectedLabel2 = index;
+    }
+  }
+
 }

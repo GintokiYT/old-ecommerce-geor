@@ -89,6 +89,86 @@ ion-button:nth-child(1)::part(native) {
   z-index: 1000;
 }
 
+
+.container {
+  display: flex;
+  gap: 28px;
+}
+
+.label {
+  display: inline-block;
+  position: relative;
+  background-color: var(--ion-color-separator);
+  color: var(--ion-color-text-secundary);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.label2 {
+  display: inline-block;
+  position: relative;
+  background-color: var(--ion-color-separator);
+  color: var(--ion-color-text-secundary);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.label2 .top {
+  position: absolute;
+  top: -6px;
+  right: -20px;
+  z-index: 1000px;
+  background-color: var(--ion-color-primary);
+  padding: 2px 4px 2px 4px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+}
+
+.label .top {
+  position: absolute;
+  top: -6px;
+  right: -20px;
+  z-index: 1000px;
+  background-color: var(--ion-color-primary);
+  padding: 2px 4px 2px 4px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+}
+.label .top-2 {
+  position: absolute;
+  top: -6px;
+  right: -16px;
+  z-index: 1000px;
+  background-color: var(--ion-color-primary);
+  padding: 2px 4px 2px 4px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+}
+
+.label.selected {
+  border: 1px solid #023aff;
+  background-color: var(--ion-button-select);
+  color: #023aff;
+}
+
+.label2.selected2 {
+  border: 1px solid #023aff;
+  background-color: var(--ion-button-select);
+  color: #023aff;
+}
+
 ion-button {
   height: 40px !important;
 }
