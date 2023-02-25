@@ -10,6 +10,18 @@ ion-modal {
     --background: var(--ion-background-alert);
     --border-radius: 10px;
 
+    ion-button{
+        --background-activated: unset;
+    }
+
+    ion-button:hover{
+        &::part(native){
+            background-color: var(--ion-color-primary);
+            color: white;
+        }
+    }
+
+
     &.modal-validate {
         &::part(content) {
             margin-right: 16px !important;
@@ -48,4 +60,12 @@ ion-modal {
 
 .disabled {
     color: var(--ion-color-disabled);
+}
+
+.eye{
+    position: absolute;
+    right: 0;
+    top: 40px;
+    font-size: 20px;
+    cursor: pointer;
 }

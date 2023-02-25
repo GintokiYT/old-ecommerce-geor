@@ -17,10 +17,14 @@
 
     .modal-container {
         position: absolute;
-        bottom: calc(var(--ion-safe-area-bottom,0) + 10px);
-        width: calc(100% - 32px);
+        //bottom: calc(var(--ion-safe-area-bottom,0) + 10px);
+        bottom: 0px;
+        //width: calc(100% - 32px);
+        width: 100%;
         background-color: var(--ion-background-alert);
-        border-radius: 10px;
+        //border-radius: 10px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
         padding: 16px;
         gap: 36px;
         font-size: 14px;
@@ -46,7 +50,8 @@
 @media(min-width:390px){
     .overlay{
         .modal-container{
-            width: calc(100% - 48px);
+            //width: calc(100% - 48px);
+            width: 100%;
             padding: 24px;
             font-size: 16px;
         }
