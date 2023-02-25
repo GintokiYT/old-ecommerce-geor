@@ -64,11 +64,11 @@
 
 
 .option{
-    border-radius: 10px;
+    border-radius: 5px;
     padding-block: 10px;
 }
 
 .option:active{
-    background-color: rgb(181, 181, 181);
+    background-color: var(--ion-background-hover-selected);
 }
 
