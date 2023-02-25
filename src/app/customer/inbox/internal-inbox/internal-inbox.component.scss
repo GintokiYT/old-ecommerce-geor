@@ -61,6 +61,10 @@ img {
   overflow: hidden;
   overflow-y: scroll;
 }
+
+.content-messages::-webkit-scrollbar {
+  display: none;
+}
 // End Container Message
 
 // Footer

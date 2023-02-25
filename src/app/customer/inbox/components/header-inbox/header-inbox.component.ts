@@ -18,7 +18,8 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   backMainInbox() {
-    this.navigation.root('/customer/main-inbox', 'back');
+    // Las animaciones de root y back lagea el ion-footer
+    this.navigation.forward('/customer/main-inbox');
     // this.location.back();
 
   }
