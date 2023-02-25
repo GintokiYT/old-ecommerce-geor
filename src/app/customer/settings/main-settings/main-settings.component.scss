@@ -34,7 +34,6 @@ ion-content {
 
 .container-app-settings {
   width: 100%;
-  min-height: 100vh;
   background-color: var(--ion-background-color);
 
   padding-top: var(--ion-safe-area-top);
@@ -51,8 +50,7 @@ ion-content {
   flex: 1;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100%;
-  padding: 0 16px 24px 16px;
+  padding: 10px 16px 24px 16px;
 
   padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
 
@@ -145,4 +143,8 @@ ion-content {
   &.active {
     display: flex;
   }
+}
+
+ion-header {
+  padding-top: var(--ion-safe-area-top);
 }

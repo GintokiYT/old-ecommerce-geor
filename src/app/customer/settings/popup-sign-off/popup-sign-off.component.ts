@@ -37,7 +37,10 @@ export class PopupSignOffComponent extends ViewComponent implements OnInit {
   }
 
   onLogout() {
-    this.loginService.setUserLogged(false);
-    this.navigation.back('/customer/home');
+    this.statusEvent.emit(false);
+    setTimeout(() => {
+      this.loginService.setUserLogged(false);
+      this.navigation.back('/customer/home');
+    }, 250)
   }
 }
