@@ -1,21 +1,22 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild, Injector } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonModal, IonInput } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
+import { ViewComponent } from '@geor360/ecore';
 
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
   styleUrls: ['register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent extends ViewComponent implements OnInit {
 
   form!: FormGroup;
   isPreventClose: boolean = false;
   modalIsVisible : boolean = false;
   @ViewChild(IonModal) modalValidate!: IonModal;
-  @ViewChild("inputPhone") inputPhone;
+  @ViewChild("inputPhone") inputPhone: IonInput;
   @ViewChild("contentInputPhone") contentInputPhone;
   @ViewChild("inputPassword") inputPassword: IonInput;
   inputPhoneValue: string;
@@ -33,8 +34,10 @@ export class RegisterComponent implements OnInit {
   //passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
   passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{8,}')
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router, private _injector: Injector) {
+    super(_injector)
+
+  } 
 
   ngOnInit() {
 
@@ -85,6 +88,10 @@ export class RegisterComponent implements OnInit {
     };
 
     this.router.navigate([RouteCollection.auth.validPhone], params);
+  }
+
+  onGoToCountrySelect(){
+    this.navigation.forward("/register/country-select")
   }
 
   onChangeType(){
