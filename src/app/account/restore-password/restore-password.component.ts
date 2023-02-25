@@ -1,9 +1,10 @@
 import { AppNavigationService, ViewComponent } from '@geor360/ecore';
 import { FormGroup, FormControl, Validators, ValidatorFn, ValidationErrors, AbstractControl, AsyncValidatorFn } from '@angular/forms';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { RestoreService } from './restore.service';
 import { PasswordValidator } from './passwordValidator';
+import { IonInput } from '@ionic/angular';
 
 
 @Component({
@@ -19,6 +20,12 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
   inputPasswordValue = ""
   inputPasswordConfirmValue = "";
+
+  inputPasswordType = "password";
+  inputPasswordTypeConfirm = "password";
+
+  @ViewChild("inputPassword") inputPassword : IonInput;
+  @ViewChild("inputPasswordConfirm") inputPasswordConfirm : IonInput;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
   passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
@@ -85,6 +92,26 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
     this.navigator.forward("/login");
     this.inputPasswordValue = "";
     this.inputPasswordConfirmValue = "";
+  }
+
+  onChangeType(input:string){
+    if(input==="default"){
+      if(this.inputPassword.type === "password"){
+        this.inputPasswordType = "text";
+        this.inputPassword.type = "text";
+      }else{
+        this.inputPasswordType = "password";
+        this.inputPassword.type = "password";
+      }
+    }else{
+      if(this.inputPasswordConfirm.type === "password"){
+        this.inputPasswordTypeConfirm = "text";
+        this.inputPasswordConfirm.type = "text";
+      }else{
+        this.inputPasswordTypeConfirm = "password";
+        this.inputPasswordConfirm.type = "password";
+      }
+    }
   }
 
   checkFocus(input: string) {

@@ -52,21 +52,13 @@ body.md {
   }
 }
 
-
-ion-app{
-  transition: 0.25s height ease-out !important;
-}
-
 body.ios {
-
-  transition: 0.25s height ease-out !important;
-
   ion-footer {
     &.footer-ionic {
       ion-toolbar {
         --padding-top: 12px;
-        --padding-start: 24px;
-        --padding-end: 24px;
+        --padding-start: 16px;
+        --padding-end: 16px;
         --padding-bottom: 16px;
       }
     }
@@ -81,6 +73,18 @@ body.ios {
           --padding-start: 24px;
           --padding-end: 24px;
           --padding-bottom: 24px;
+        }
+      }
+    }
+  }
+
+  body.ios {
+    ion-footer {
+      &.footer-ionic {
+        ion-toolbar {
+          --padding-start: 24px;
+          --padding-end: 24px;
+          --padding-bottom: 16px;
         }
       }
     }
