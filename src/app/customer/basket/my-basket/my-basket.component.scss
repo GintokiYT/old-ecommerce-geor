@@ -64,5 +64,11 @@ ion-button{
   ion-button{
     height: 48px !important;
   }
-
 }
+
+.footer-navigation{
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  }

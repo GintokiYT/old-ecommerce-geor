@@ -66,6 +66,41 @@ sup {
   z-index: 1000;
 }
 
+//Js
+
+
+.container {
+ display: flex;
+ gap: 28px;
+}
+
+.label{
+ display: inline-block;
+ position: relative;
+ background-color:var(--ion-color-separator);;
+ color:var(--ion-color-text-secundary);
+ padding: 8px;
+ border-radius: 4px;
+}
+
+.label .top {
+  position: absolute;
+  top: -6px;
+  right: -20px;
+  z-index: 1000px;
+  background-color: red;
+  padding: 2px 4px 2px 4px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+}
+
+.label.selected {
+  background-color: red;
+}
+
 ion-button {
   height: 40px !important;
 }
