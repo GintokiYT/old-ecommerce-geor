@@ -3,13 +3,12 @@
     padding-left: 24px;
     display: flex;
     justify-content: space-between;
-    justify-content: center;
-    gap: 32px;
     .card{
         width: 141px;
         height: 32px;
         display: flex;
         padding: 4px 0px;
+        margin-right: 32px;
         text-align: center;
         background: none;
         border:none;
@@ -64,9 +63,9 @@ ion-modal::part(content){
 .modals{
     --border-radius: 10px;
     .content-modals{
-        padding: 24px 24px 0px 24px;
+        padding: 24px 16px 0px 16px;
         .title{
-            margin-bottom: 30px;
+            margin-bottom:16 px;
         }
         ion-item{
             --inner-padding-end: 0px !important;
@@ -88,34 +87,40 @@ ion-modal::part(content){
 
 #modal-cash{
     --width: 288px;
-    --height: 266px;
+    --height: 256px;
 }
 
 #modal-transfer{
     --width: 288px;
-    --height: 387px;
+    --height: 350px;
 }
 
 #modal-credit{
     --width: 288px;
-    --height: 294px;
+    --height: 280px;
 }
 
 
 @media(min-width:390px){
+    .content-modals{
+        padding: 24px 24px 0px 24px !important;
+        .title{
+            margin-bottom: 30px;
+        }
+    }
     #modal-cash{
         --width: 342px;
-        --height: 242px;
+        --height: 247px;
     }
     
     #modal-transfer{
         --width: 342px;
-        --height: 382px;
+        --height: 392px;
     }
     
     #modal-credit{
         --width: 342px;
-        --height: 310px;
+        --height: 295px;
     }
     ion-footer{
         ion-button{
