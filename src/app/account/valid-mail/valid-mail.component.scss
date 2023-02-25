@@ -15,6 +15,10 @@
         ion-button{
             font-size: 16px;
         }
+
+        .msg-btn{
+            --background-activated: unset !important;
+        }
     }
 
     .input-code{
