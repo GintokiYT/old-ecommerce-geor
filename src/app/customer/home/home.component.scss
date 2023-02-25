@@ -85,6 +85,26 @@ ion-content {
   .text-start {
     width: 80px;
     height: 200px;
+
+    .productsForYou {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      background-color: #111;
+      overflow: hidden;
+
+      &.active {
+        animation: fadeIn 1s ease-in-out infinite;
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
   }
 
   ion-img {
@@ -159,3 +179,15 @@ ion-content {
   z-index: 1000;
 }
 
+// Animaciones
+@keyframes fadeIn {
+  0% {
+    opacity: 50%;
+  }
+  50% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 50%;
+  }
+}
