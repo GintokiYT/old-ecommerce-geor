@@ -2,11 +2,10 @@
   <app-header-cesta class="header-cesta"></app-header-cesta>
 
 
-  <div class="d-flex">
-    <!-- CONTENIDO -->
-    <div class="content-collaborative" style="margin-bottom: '218.66px'">
-      <div class="content_basket">
-        <app-main-product></app-main-product>
+  <!-- CONTENIDO -->
+  <div class="container-main" style="margin-bottom: '218.66px'">
+    <div class="content_basket">
+      <app-main-product></app-main-product>
       </div>
       <app-product></app-product>
     </div>
@@ -40,9 +39,7 @@
         </div>
       </ion-toolbar>
     </ion-footer>
-  </div>
- 
+
 </ion-content>
-<app-footer-navigation></app-footer-navigation>
-<!--!  <app-modal-basket></app-modal-basket> -->
+<app-footer-navigation class="footer-navigation"></app-footer-navigation>
 <app-modal-basket *ngIf="statusModal"></app-modal-basket>

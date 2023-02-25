@@ -30,10 +30,7 @@ html {
 
 .container-app-settings {
   width: 100%;
-  min-height: 100%;
   background-color: var(--ion-background-color);
-
-  padding-top: var(--ion-safe-area-top);
   padding-bottom: var(--ion-safe-area-bottom);
 
   position: relative;
@@ -94,4 +91,8 @@ html {
       }
     }
   }
+}
+  
+ion-header {
+  padding-top: var(--ion-safe-area-top);
 }

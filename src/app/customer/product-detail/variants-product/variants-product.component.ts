@@ -49,5 +49,43 @@ export class VariantsProductComponent extends ViewComponent implements OnInit {
   goBack(){
     this.navigation.root('/customer/collaborative-basket','back');
   }
+/*
+  selector(){
+  const items = document.querySelectorAll('.label');
+console.log("aqui");
+  const addClassActive = (items) => {
+  items.forEach( (item, index) => {
+  item.addEventListener('click', () => {
+    items.forEach(item => item.classList.remove('active'));
+    item.classList.add('active')
+  })
+})
+}
+}
+
+ */
+
+  selectedLabel: number = null;
+
+  selectLabel(index: number) {
+    if (this.selectedLabel === index) {
+      this.selectedLabel = null;
+    } else {
+      this.selectedLabel = index;
+    }
+  }
+
+  selectedLabel2: number = null;
+
+  selectLabel2(index: number) {
+    if (this.selectedLabel2 === index) {
+      this.selectedLabel2 = null;
+    } else {
+      this.selectedLabel2 = index;
+    }
+  }
+  /* deselectLabel(){
+    this.selectLabel=null;
+  } */
 
 }

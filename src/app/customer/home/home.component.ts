@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { AppThemeService, ViewComponent } from '@geor360/ecore';
 import IBanner from 'src/app/interfaces/IBanner';
 import IProduct from 'src/app/interfaces/IProduct';
@@ -53,5 +53,31 @@ export class HomeComponent extends ViewComponent implements OnInit {
 
   goToProduct(){
     this.navigation.root("/customer/product","forward");
+  }
+
+  // Imagenes insertadas con JS - tiempo de carga
+  @ViewChildren('myProductsForYou') myProductsForYou: QueryList<ElementRef>
+
+  ngAfterContentInit() {
+    setTimeout(() => {
+      const DivProductsForYou = Array.from(this.myProductsForYou.toArray().map( item => item.nativeElement)) as HTMLDivElement[];
+
+      this.productsForYou.forEach( (item, index) => {
+        const image: HTMLDivElement = DivProductsForYou[index].querySelector('.image');
+        const urlImage = item.image || '';
+
+        const img = new Image();
+        img.src = urlImage;
+
+        img.onload = function() {
+          image.style.backgroundImage = `url(${urlImage})`;
+          DivProductsForYou[index].classList.remove('active');
+        }
+        img.onerror = function() {
+          console.log('La imagen no está disponible en la ruta: ' + urlImage);
+        }
+
+      })
+    }, 100);
   }
 }
