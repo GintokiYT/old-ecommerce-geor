@@ -47,6 +47,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       ionFooter.classList.remove('disabled');
       setTimeout(() => {
         contentInput.classList.add('active');
+        // Cuando se abre el teclado empuje el chat arriba
+        contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
       }, 100)
     });
 
@@ -241,6 +243,9 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       }
 
       this.messages.push(this.contentMessage);
+
+      // Ver el mensaje si tiene los saltos
+      console.log(messageActual);
 
       this.contentInput.nativeElement.classList.remove('active');
 
