@@ -74,6 +74,16 @@ console.log("aqui");
       this.selectedLabel = index;
     }
   }
+
+  selectedLabel2: number = null;
+
+  selectLabel2(index: number) {
+    if (this.selectedLabel2 === index) {
+      this.selectedLabel2 = null;
+    } else {
+      this.selectedLabel2 = index;
+    }
+  }
   /* deselectLabel(){
     this.selectLabel=null;
   } */
