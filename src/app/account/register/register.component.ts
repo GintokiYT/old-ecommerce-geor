@@ -30,7 +30,8 @@ export class RegisterComponent implements OnInit {
   focusPassword = false;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
+  //passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
+  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
 
   constructor(private router: Router) {
   }
