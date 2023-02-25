@@ -41,7 +41,10 @@
         <ion-slides [options]="productSlidesOptions">
           <ion-slide *ngFor="let product of productsForYou">
             <div class="text-start">
-              <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img>
+              <div class="productsForYou active" #myProductsForYou>
+                <div class="image"></div>
+              </div>
+              <!-- <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img> -->
               <ion-text class="d-block text-sm fw-bold text-price">{{ product.price }}</ion-text>
             </div>
           </ion-slide>

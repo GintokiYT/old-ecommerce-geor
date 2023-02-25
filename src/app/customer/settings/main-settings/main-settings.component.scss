@@ -145,10 +145,10 @@ ion-content {
 }
 
 .header-basic {
-  padding-bottom: 14px;
-  
+  padding-bottom: 14px !important;
+
   @media (min-width: 390px) {
-    padding-bottom: 30px;
+    padding-bottom: 30px !important;
   }
 }
 
