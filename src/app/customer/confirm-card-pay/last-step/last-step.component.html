@@ -68,7 +68,7 @@
               <ion-label class="fz-small conditions">Condiciones</ion-label>
               <ion-button (click)="goTo('/customer/internal-inbox/3')"
               (click)="setOpen2(false)"
-              color="primary" shape="round"
+              color="primary" shape="round" class="fz-small"
               >Usar cupón</ion-button>
             </div>
           </div>
@@ -83,9 +83,9 @@
             </div>
             <div id="info">
               <p class="fz-normal"><b>Ups, no se pudo realizar el pago</b></p>
-              <p class="fz-normal" color="medium">Te recomendamos intentar con otra tarjeta o elegir otra forma de pago</p>
+              <p class="fz-normal not" color="medium">Te recomendamos intentar con otra tarjeta o elegir otra forma de pago</p>
             </div>
-            <ion-button color="primary" shape="round"
+            <ion-button color="primary" shape="round" expand="block"
               >Intentar de nuevo</ion-button>
           </div>
         </ng-template>
