@@ -31,6 +31,7 @@ ion-content {
     position: sticky;
     top: calc(var(--ion-safe-area-top) + 72px);
     top: calc(var(--ion-safe-area-top) + 48px + var(--ion-padding-top));
+    top: 0;
     z-index: 1000;
     width: 100%;
     background-color: var(--ion-background-color);
@@ -64,7 +65,13 @@ ion-content {
 
 }
 
+/*
 .header-basic {
   padding-top: calc(var(--ion-safe-area-top) + 24px) !important;
   padding-top: calc(var(--ion-safe-area-top) + var(--ion-padding-top)) !important;
+}
+*/
+
+ion-header {
+  padding-top: calc(var(--ion-safe-area-top) + var(--ion-padding-top));
 }
