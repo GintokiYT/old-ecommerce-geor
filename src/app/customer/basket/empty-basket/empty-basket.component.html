@@ -1,6 +1,5 @@
 <ion-content >
   <app-header-my-basket class="header-mybasket" title="Mi cesta"></app-header-my-basket>
-  <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
   <div class="basket d-flex justify-content-center">
     <img src="/assets/collaborative-basquet/Carrito.png" alt="" />
   </div>
@@ -63,7 +62,9 @@
       </div>
     </div>
   </div>
-  <!-- <app-modal-invite *ngIf="modalInvite"></app-modal-invite> -->
-    <app-footer-navigation></app-footer-navigation>
+
 </ion-content>
+<!-- <app-modal-invite *ngIf="modalInvite"></app-modal-invite> -->
+<app-modal-invite *ngIf="modalInvite"></app-modal-invite>
+<app-footer-navigation></app-footer-navigation>
 
