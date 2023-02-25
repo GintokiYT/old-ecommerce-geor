@@ -15,6 +15,10 @@
         ion-button{
             font-size: 16px;
         }
+
+        .message-btn{
+            --background-activated: unset !important;
+        }
     }
 
     .resend{
