@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouteCollection } from 'src/shared/route-collection';
 import { LoginService } from '../services/login.service';
-import { IonContent } from '@ionic/angular';
+import { IonContent, IonInput } from '@ionic/angular';
 import { Keyboard } from '@geor360/capacitor-keyboard';
 
 
@@ -15,7 +15,9 @@ import { Keyboard } from '@geor360/capacitor-keyboard';
 export class LoginComponent implements OnInit {
 
   @ViewChild(IonContent) content: IonContent;
+  @ViewChild("inputPassword") inputPassword: IonInput;
   loginForm!: FormGroup;
+  inputPasswordType : string = "password";
 
   showTextHelperPhoneOrEmail = false;
   showTextHelperPassword = false;
@@ -44,24 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    //Este evento se llama antes de que se muestre el teclado.
-    Keyboard.addListener('keyboardWillShow', info => {
-      this.visibleFooterNavigation = true;
-    });
-
-
-    //Este evento se evoca antes de que se cierre el teclado.
-    Keyboard.addListener('keyboardWillHide', () => {
-      this.visibleFooterNavigation = false;
-    });
-
-    Keyboard.addListener('keyboardDidShow', info => {
-      this.visibleFooterNavigation = true;
-    });
-
-    Keyboard.addListener('keyboardDidHide', () => {
-      this.visibleFooterNavigation = false;
-    });
+    
   }
 
   onGoToRegister() {
@@ -76,6 +61,16 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.lgService.setUserLogged(true);
     this.navigator.forward("/customer/manage-user-information");
+  }
+
+  onChangeType(){
+    if(this.inputPassword.type === "password"){
+      this.inputPasswordType = "text";
+      this.inputPassword.type = "text";
+    }else{
+      this.inputPasswordType = "password";
+      this.inputPassword.type = "password";
+    }
   }
 
   checkFocus(input : string){

@@ -38,14 +38,34 @@
       <app-validation-messages *ngIf="showTextHelperEmail" slot="error"
         [control]="form.get('email')"></app-validation-messages>
     </ion-item>
-    <app-input-password>
+    <!-- <app-input-password>
       <ion-item class="form-group" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
         <ion-label position="floating" class="disabled">Contraseña</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
         <app-validation-messages *ngIf="showTextHelperPassword" slot="error"
           [control]="form.get('password')"></app-validation-messages>
       </ion-item>
-    </app-input-password>
+    </app-input-password> -->
+    <ion-item class="form-group position-relative" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
+      <ion-label position="floating" class="disabled">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password" #inputPassword></ion-input>
+      <ion-icon
+          *ngIf="inputPasswordType === 'password'"
+          class="eye"
+          name="eye-off-outline"
+          (click)="onChangeType()"
+        >
+        </ion-icon>
+        <ion-icon
+          *ngIf="inputPasswordType === 'text'"
+          class="eye"
+          name="eye-outline"
+          (click) = "onChangeType()"
+        >
+        </ion-icon>
+      <app-validation-messages *ngIf="showTextHelperPassword" slot="error"
+        [control]="form.get('password')"></app-validation-messages>
+    </ion-item>
     <ion-modal class="modal-validate" #modalValidate>
       <ng-template>
         <div class="ion-padding">
@@ -57,7 +77,11 @@
             Enviar código por SMS
           </ion-button>
 
-          <ion-button expand="block" shape="round" color="primary" (click)="onValidPhone('whatsapp')">
+          <!-- <ion-button class="fz-normal" expand="block" shape="round" color="primary" (click)="onValidPhone('whatsapp')">
+            Enviar código por WhatsApp
+          </ion-button> -->
+          
+          <ion-button class="fz-normal" expand="block" shape="round" fill="clear" (click)="onValidPhone('whatsapp')">
             Enviar código por WhatsApp
           </ion-button>
         </div>

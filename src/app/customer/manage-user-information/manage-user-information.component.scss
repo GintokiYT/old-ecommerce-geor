@@ -18,7 +18,7 @@
     .options-container {
         padding-top: 40px;
         padding-bottom: 52px;
-        gap: 24px;
+        gap: 4px;
 
         .option{
             position: relative;
@@ -60,5 +60,16 @@
 
 .no-is-header{
     padding-top: calc(var(--ion-safe-area-top,0) + 24px) 
+}
+
+
+.option{
+    border-radius: 10px;
+    padding-block: 10px;
+    cursor: pointer;
+}
+
+.option:active{
+    background-color: rgb(181, 181, 181);
 }
 

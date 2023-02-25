@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { IonModal, IonContent } from '@ionic/angular';
+import { IonModal, IonInput } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
-import { Keyboard, KeyboardResize } from '@geor360/capacitor-keyboard';
 
 @Component({
   selector: 'app-register',
@@ -12,14 +11,15 @@ import { Keyboard, KeyboardResize } from '@geor360/capacitor-keyboard';
 })
 export class RegisterComponent implements OnInit {
 
-  //@ViewChild(IonContent) content: IonContent;
   form!: FormGroup;
   isPreventClose: boolean = false;
   modalIsVisible : boolean = false;
   @ViewChild(IonModal) modalValidate!: IonModal;
   @ViewChild("inputPhone") inputPhone;
   @ViewChild("contentInputPhone") contentInputPhone;
+  @ViewChild("inputPassword") inputPassword: IonInput;
   inputPhoneValue: string;
+  inputPasswordType : string = "password";
 
   showTextHelperName = false;
   showTextHelperPhone = false;
@@ -30,34 +30,13 @@ export class RegisterComponent implements OnInit {
   focusPassword = false;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
+  //passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
+  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
 
   constructor(private router: Router) {
-
-    //Este evento se llama antes de que se muestre el teclado.
-    Keyboard.addListener('keyboardWillShow', info => {
-      console.log('keyboard will show with height:', info.keyboardHeight);
-    });
-
-    //Este evento se activa cuando el teclado está completamente abierto.
-    Keyboard.addListener('keyboardDidShow', info => {
-      console.log('keyboard did show with height:', info.keyboardHeight);
-    });
-
-    //Este evento se evoca antes de que se cierre el teclado.
-    Keyboard.addListener('keyboardWillHide', () => {
-      console.log('keyboard will hide');
-    });
-
-    //Este evento se dispara cuando el teclado está completamente cerrado.
-    Keyboard.addListener('keyboardDidHide', () => {
-    });
   }
 
-  
-
   ngOnInit() {
-
 
     this.form = new FormGroup({
 
@@ -106,6 +85,16 @@ export class RegisterComponent implements OnInit {
     };
 
     this.router.navigate([RouteCollection.auth.validPhone], params);
+  }
+
+  onChangeType(){
+    if(this.inputPassword.type === "password"){
+      this.inputPasswordType = "text";
+      this.inputPassword.type = "text";
+    }else{
+      this.inputPasswordType = "password";
+      this.inputPassword.type = "password";
+    }
   }
 
 
