@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector, Input } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
-import { CodePhoneService } from '../../services/code-phone.service';
+import { CountrySelectedService } from '../../services/country-selected.service';
 
 @Component({
   selector: 'app-country-select',
@@ -35,7 +35,7 @@ export class CountrySelectComponent  extends ViewComponent implements OnInit {
 
   public dataCountriesResults = [...this.dataCountries];
 
-  constructor(private _injector: Injector, private cpService: CodePhoneService) {
+  constructor(private _injector: Injector, private cpService: CountrySelectedService) {
       super(_injector);
    }
 
