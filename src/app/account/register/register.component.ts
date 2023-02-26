@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, Injector } from '@angular/core';
+import { Component, OnInit, ViewChild, Injector, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonModal, IonInput } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
+import { CodePhoneService } from '../services/code-phone.service';
 
 @Component({
   selector: 'app-register',
@@ -12,15 +13,17 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class RegisterComponent extends ViewComponent implements OnInit {
 
+  flag: string;
+  codePhone: string;
+
   form!: FormGroup;
   isPreventClose: boolean = false;
   modalIsVisible : boolean = false;
   @ViewChild(IonModal) modalValidate!: IonModal;
   @ViewChild("inputPhone") inputPhone: IonInput;
-  @ViewChild("contentInputPhone") contentInputPhone;
   @ViewChild("inputPassword") inputPassword: IonInput;
-  inputPhoneValue: string;
   inputPasswordType : string = "password";
+  countryBorderColorState : string = "default"
 
   showTextHelperName = false;
   showTextHelperPhone = false;
@@ -29,14 +32,21 @@ export class RegisterComponent extends ViewComponent implements OnInit {
 
   focusEmail = false;
   focusPassword = false;
+  focusInputPhone : boolean = false;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  //passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
   passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{8,}')
 
-  constructor(private router: Router, private _injector: Injector) {
+  constructor(private router: Router, private _injector: Injector,
+              private cpService: CodePhoneService) {
     super(_injector)
+    this.cpService.currentFlag$.subscribe( (flag) => {
+      this.flag = flag;
+    })
 
+    this.cpService.currentCodePhone$.subscribe( (code) => {
+      this.codePhone = code;
+    }) 
   } 
 
   ngOnInit() {
@@ -48,7 +58,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
       ]),
       movil: new FormControl('', [
         Validators.required,
-        Validators.minLength(9),
+        Validators.minLength(11),
       ]),
       email: new FormControl('', [
         Validators.required,
@@ -60,6 +70,9 @@ export class RegisterComponent extends ViewComponent implements OnInit {
         Validators.pattern(this.passwordPattern),
       ]),
     });
+  }
+
+  ngAfterViewInit(): void {
   }
 
   async openModalValidate(value){
@@ -110,22 +123,28 @@ export class RegisterComponent extends ViewComponent implements OnInit {
       case "name": this.showTextHelperName = true;
                     this.focusEmail = false;
                     this.focusPassword = false;
-                    //this.content.scrollToTop();
                    break;
-      case "phone": this.showTextHelperPhone = true;
-                    this.focusEmail = false;
-                    this.focusPassword = false;
+      case "phone": 
+                    this.focusInputPhone = true;
+                    if(this.inputPhone?.value.toString().length>0){
+                      if(this.inputPhone?.value.toString().length===11){
+                        this.countryBorderColorState = "correct";
+                      }else{
+                        this.countryBorderColorState = "error"
+                      }
+                    }else{
+                      this.countryBorderColorState = "correct";
+                    }
+
                     break;
 
       case "email": this.showTextHelperEmail = true;
                     this.focusEmail = true;
                     this.focusPassword = false;
-                    //this.content.scrollByPoint(0,50,500)
                     break;
       case "password": this.showTextHelperPassword = true;
                     this.focusEmail = false;
                     this.focusPassword = true;
-                    //this.content.scrollByPoint(0,150,500)
                     break;
     }
   }
@@ -135,24 +154,26 @@ export class RegisterComponent extends ViewComponent implements OnInit {
 
     switch (input) {
       case "name": this.showTextHelperName = false; break;
-      case "phone": this.showTextHelperPhone = false; break;
+      case "phone": this.showTextHelperPhone = false
+                    this.countryBorderColorState = "default";
+                    this.focusInputPhone = false;
+                    ; break;
       case "email": this.showTextHelperEmail = false; break;
       case "password": this.showTextHelperPassword = false; break;
     }
 
-    if(phone){
-      if (this.inputPhoneValue) {
-        const inputValue = this.inputPhoneValue?.trim();
-        if (inputValue.length > 0) {
-          this.contentInputPhone.nativeElement.classList.add("have-elements")
-        } else {
-          this.contentInputPhone.nativeElement.classList.remove("have-elements")
-        }
-      } else {
-        this.contentInputPhone.nativeElement.classList.remove("have-elements")
-      }
-    }
+  }
 
+  changeValueInputPhone(){
+    if(this.inputPhone?.value.toString().length>0){
+      if(this.inputPhone?.value.toString().length===11){
+        this.countryBorderColorState = "correct";
+      }else{
+        this.countryBorderColorState = "error"
+      }
+    }else{
+      this.countryBorderColorState = "correct";
+    }
   }
 
 }
