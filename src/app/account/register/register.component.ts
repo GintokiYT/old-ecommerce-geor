@@ -4,7 +4,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { IonModal, IonInput } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
-import { CodePhoneService } from '../services/code-phone.service';
+import { CountrySelectedService } from '../services/country-selected.service';
 
 @Component({
   selector: 'app-register',
@@ -38,7 +38,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
   passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{8,}')
 
   constructor(private router: Router, private _injector: Injector,
-              private cpService: CodePhoneService) {
+              private cpService: CountrySelectedService) {
     super(_injector)
     this.cpService.currentFlag$.subscribe( (flag) => {
       this.flag = flag;
