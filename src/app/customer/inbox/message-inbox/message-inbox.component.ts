@@ -20,6 +20,9 @@ interface Message {
 })
 export class MessageInboxComponent implements OnInit {
 
+  // Espacios para el texto
+  separator:string = ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+
   @Input() message: Message;
 
   constructor() { }

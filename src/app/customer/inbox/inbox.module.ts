@@ -9,7 +9,7 @@ import { InternalInboxComponent } from './internal-inbox/internal-inbox.componen
 
 // Componentes
 import { HeaderMainComponent } from './components/header-main/header-main.component';
-import { FooterMainComponent } from './components/footer-main/footer-main.component';
+//import { FooterMainComponent } from './components/footer-main/footer-main.component';
 import { HeaderInboxComponent } from './components/header-inbox/header-inbox.component';
 import { ShareModule } from 'src/app/shared/shared.module';
 import { MessageInboxComponent } from './message-inbox/message-inbox.component';
@@ -25,7 +25,7 @@ import { MessageInboxComponent } from './message-inbox/message-inbox.component';
     MainInboxComponent,
     InternalInboxComponent,
     HeaderMainComponent,
-    FooterMainComponent,
+    // FooterMainComponent,
     HeaderInboxComponent,
     MessageInboxComponent
   ],
@@ -33,7 +33,7 @@ import { MessageInboxComponent } from './message-inbox/message-inbox.component';
     MainInboxComponent,
     InternalInboxComponent,
     HeaderMainComponent,
-    FooterMainComponent,
+    // FooterMainComponent,
     HeaderInboxComponent,
     MessageInboxComponent
   ]
