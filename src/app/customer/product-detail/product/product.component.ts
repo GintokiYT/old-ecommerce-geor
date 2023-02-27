@@ -29,4 +29,5 @@ export class ProductComponent extends ViewComponent implements OnInit {
     this.navigation.forward('/customer/settings/about-us/returns-exchanges');
   }
 
+
 }

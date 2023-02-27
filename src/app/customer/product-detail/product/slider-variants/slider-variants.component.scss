@@ -5,14 +5,19 @@
 }
 
 .a-right{
+  cursor: pointer;
   filter: var(--ion-color-light-filter);
   width: 8.17px;
   height: 14px;
 }
 
 .swiper-slide {
+  width: fit-content;
+  height: fit-content;
+  ion-img{
   width: 48px;
   height: 63px;
+  }
 }
 
 @media(max-width:320px){
