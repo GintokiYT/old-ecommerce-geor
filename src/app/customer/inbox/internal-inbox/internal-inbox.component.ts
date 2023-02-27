@@ -46,15 +46,15 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
     }, 100);
 
-    // this.messageInput.nativeElement.addEventListener('focus', () => {
-    //   ionFooter.classList.add('active');
-    //   ionFooter.classList.remove('disabled');
-    //   setTimeout(() => {
-    //     contentInput.classList.add('active');
-    //     // Cuando se abre el teclado empuje el chat arriba
-    //     contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
-    //   }, 100)
-    // });
+    this.messageInput.nativeElement.addEventListener('focus', () => {
+      // ionFooter.classList.add('active');
+      // ionFooter.classList.remove('disabled');
+      setTimeout(() => {
+        contentInput.classList.add('active');
+        // Cuando se abre el teclado empuje el chat arriba
+        contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
+      }, 100)
+    });
 
     // this.messageInput.nativeElement.addEventListener('blur', () => {
     //   ionFooter.classList.remove('active');
