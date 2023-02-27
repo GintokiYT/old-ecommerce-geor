@@ -19,6 +19,7 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { LoadingAppComponent } from './welcome/loading-app/loading-app.component';
 import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
 import { ModalTermsComponent } from './register/modal-terms/modal-terms.component';
+import { CountrySelectComponent } from './register/country-select/country-select.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ModalTermsComponent } from './register/modal-terms/modal-terms.componen
     RecoverPasswordCodeComponent,
     RestorePasswordComponent,
     LoadingAppComponent,
-    ModalTermsComponent
+    ModalTermsComponent,
+    CountrySelectComponent
   ],
   providers:[
   ]

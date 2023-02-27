@@ -1,8 +1,42 @@
 form {
+
+    margin-bottom: 60px;
+
     ion-input {
         --padding-bottom: 5px !important;
         --padding-top: 5px !important;
     }
+
+    .label-input-container{
+        margin-inline: 16px;
+
+        ion-label{
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .country-select-container{
+        margin-inline: 16px;
+
+        .country{
+            cursor: pointer;
+
+            img{
+                margin-inline: 3px;
+            }
+        }
+
+        .item-country{
+            width: 100%;
+            &::part(native){
+                padding-inline-end : 0px !important;
+                padding-inline-start: 0px !important;
+            }
+        }
+    }
+
+
 }
 
 ion-modal {
@@ -41,6 +75,10 @@ ion-modal {
             }
         }
     }
+
+    .country-select-container,.label-input-container{
+        margin-inline: 24px !important;
+    }
 }
 
 .have-elements {
@@ -68,4 +106,35 @@ ion-modal {
     top: 40px;
     font-size: 20px;
     cursor: pointer;
+}
+
+
+
+.country-default{
+    border-bottom: 1px solid var(--ion-color-border-input) !important;
+}
+
+.country-correct{
+    border-bottom: 1px solid var(--ion-color-primary) !important;
+}
+
+.country-error{
+    border-bottom: 1px solid #F44336 !important;
+}
+
+.input-phone-select{
+    color: var(--ion-color-primary) !important;
+}
+
+.input-phone-unselect{
+    color: #6c757d !important;
+}
+
+
+.width-two-digits{
+    width: 30% !important;
+}
+
+.width-three-digits{
+    width: 50% !important;
 }
