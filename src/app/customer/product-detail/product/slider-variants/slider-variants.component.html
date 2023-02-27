@@ -1,6 +1,6 @@
-<div (click)="goVariants()" class="carousel__wrapper mt-4 d-flex flex-column">
+<div (click)="goVariants()" class="carousel__wrapper mt-4">
   <div class="d-flex justify-content-between align-items-center">
-    <ion-label class="fw-normal">Variaciones</ion-label>
+    <ion-label class="fw-normal" style="margin-bottom: 12px;">Variaciones</ion-label>
   </div>
   <ion-slides [options]="productSlidesOptions">
     <ion-slide *ngFor="let product of productsForYou">
@@ -10,3 +10,17 @@
     </ion-slide>
   </ion-slides>
 </div>
+<!--
+<div class="carousel__wrapper mt-4">
+  <div class="d-flex justify-content-between align-items-center">
+      <ion-label><b>Variaciones</b></ion-label>
+  </div>
+  <ion-slides [options]="productSlidesOptions">
+      <ion-slide *ngFor="let product of productsForYou">
+          <div class="text-start">
+              <ion-img [src]="product.image" [alt]="product.image"></ion-img>
+          </div>
+      </ion-slide>
+  </ion-slides>
+</div>
+ -->
