@@ -103,6 +103,7 @@ img {
 
 .content-footer__items {
   display: none;
+  // display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 16px 24px 16px;
@@ -149,4 +150,33 @@ img {
 .last-message {
   width: 100%;
   height: 1px;
+}
+
+// Modificando el chat
+.container-chat {
+  width: 100%;
+  padding: 16px;
+  position: relative;
+}
+
+.container-chat #myDiv {
+  width: 100%;
+  min-height: 24px;
+  max-height: 72px;
+  overflow: hidden;
+  overflow-y: scroll;
+  outline: none;
+}
+
+.placeholder {
+  cursor: auto;
+	position: absolute;
+  z-index: 500;
+	top: 16px;
+  left: 20px;
+	color: rgba(255,255,255,.5);
+  font-weight: 400;
+  font-size: 16px;
+  background-color: unset;
+  user-select: none;
 }
