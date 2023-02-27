@@ -24,7 +24,7 @@
         <app-validation-messages *ngIf="showTextHelperPhoneOrEmail" slot="error"
           [control]="loginForm.get('username')"></app-validation-messages>
       </ion-item>
-      <ion-item class="form-group position-relative" (ionBlur)="checkBlur('password')" (ionFocus)="checkFocus('password')">
+      <ion-item lines="none" class="form-group position-relative" (ionBlur)="checkBlur('password')" (ionFocus)="checkFocus('password')">
         <ion-label position="floating" class="disabled">Contraseña</ion-label>
         <ion-input type="password" formControlName="password" #inputPassword></ion-input>
         <ion-icon
