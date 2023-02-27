@@ -10,11 +10,11 @@
   margin-bottom: 32px;
 }
 
-.extent-cm {
+/* .extent-cm {
   padding: 8px;
   background-color: var(--ion-color-separator);
   border-radius: 4px;
-}
+} */
 
 /* Espesor (mm) */
 .size-thicknes {
@@ -22,20 +22,20 @@
   margin-bottom: 32px;
 }
 
-.extent-mm {
+/* .extent-mm {
   padding: 8px;
   background-color: var(--ion-color-separator);
   border-radius: 4px;
-}
+} */
 
 /* Footer */
 .footer {
   margin-top: 12px;
 }
 
-.dato {
+/* .dato {
   color: var(--ion-color-text-secundary);
-}
+} */
 
 /* Button */
 ion-button {
@@ -46,7 +46,7 @@ ion-button {
   width: 100%;
 }
 
-.amount {
+/* .amount {
   padding: 2px 4px;
   background-color: var(--ion-color-primary);
   color: white;
@@ -56,7 +56,7 @@ ion-button {
 sup {
   top: -1.5em !important;
   margin-left: 4px;
-}
+} */
 
 .header-variants {
   background-color: var(--ion-background-color);
@@ -68,19 +68,42 @@ sup {
 
 //Js
 
-
 .container {
- display: flex;
- gap: 28px;
+  display: flex;
+  gap: 28px;
 }
 
-.label{
- display: inline-block;
- position: relative;
- background-color:var(--ion-color-separator);;
- color:var(--ion-color-text-secundary);
- padding: 8px;
- border-radius: 4px;
+.label {
+  display: inline-block;
+  position: relative;
+  background-color: var(--ion-color-separator);
+  color: var(--ion-color-text-secundary);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.label2 {
+  display: inline-block;
+  position: relative;
+  background-color: var(--ion-color-separator);
+  color: var(--ion-color-text-secundary);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.label2 .top {
+  position: absolute;
+  top: -6px;
+  right: -20px;
+  z-index: 1000px;
+  background-color: var(--ion-color-primary);
+  padding: 2px 4px 2px 4px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
 }
 
 .label .top {
@@ -88,9 +111,24 @@ sup {
   top: -6px;
   right: -20px;
   z-index: 1000px;
-  background-color: red;
+  background-color: var(--ion-color-primary);
   padding: 2px 4px 2px 4px;
   border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+}
+.label .top-2 {
+  position: absolute;
+  top: -6px;
+  right: -16px;
+  z-index: 1000px;
+  background-color: var(--ion-color-primary);
+  padding: 2px 4px 2px 4px;
+  border-radius: 50%;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +136,15 @@ sup {
 }
 
 .label.selected {
-  background-color: red;
+  border: 1px solid #023aff;
+  background-color: var(--ion-button-select);
+  color: #023aff;
+}
+
+.label2.selected2 {
+  border: 1px solid #023aff;
+  background-color: var(--ion-button-select);
+  color: #023aff;
 }
 
 ion-button {

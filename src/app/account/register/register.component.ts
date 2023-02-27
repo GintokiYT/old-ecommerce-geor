@@ -1,25 +1,30 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild, Injector, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { IonModal, IonInput } from '@ionic/angular';
+import { IonModal, IonInput, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
+import { ViewComponent } from '@geor360/ecore';
+import { CountrySelectedService } from '../services/country-selected.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
   styleUrls: ['register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent extends ViewComponent implements OnInit {
+
+  flag: string;
+  codePhone: string;
 
   form!: FormGroup;
   isPreventClose: boolean = false;
   modalIsVisible : boolean = false;
   @ViewChild(IonModal) modalValidate!: IonModal;
-  @ViewChild("inputPhone") inputPhone;
-  @ViewChild("contentInputPhone") contentInputPhone;
+  @ViewChild("inputPhone") inputPhone: IonInput;
   @ViewChild("inputPassword") inputPassword: IonInput;
-  inputPhoneValue: string;
+  @ViewChild(IonContent) content: IonContent;
   inputPasswordType : string = "password";
+  countryBorderColorState : string = "default"
 
   showTextHelperName = false;
   showTextHelperPhone = false;
@@ -28,13 +33,22 @@ export class RegisterComponent implements OnInit {
 
   focusEmail = false;
   focusPassword = false;
+  focusInputPhone : boolean = false;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  //passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
-  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{8,}')
+  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{7,}')
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router, private _injector: Injector,
+              private cpService: CountrySelectedService) {
+    super(_injector)
+    this.cpService.currentFlag$.subscribe( (flag) => {
+      this.flag = flag;
+    })
+
+    this.cpService.currentCodePhone$.subscribe( (code) => {
+      this.codePhone = code;
+    }) 
+  } 
 
   ngOnInit() {
 
@@ -45,7 +59,7 @@ export class RegisterComponent implements OnInit {
       ]),
       movil: new FormControl('', [
         Validators.required,
-        Validators.minLength(9),
+        Validators.minLength(11),
       ]),
       email: new FormControl('', [
         Validators.required,
@@ -57,6 +71,9 @@ export class RegisterComponent implements OnInit {
         Validators.pattern(this.passwordPattern),
       ]),
     });
+  }
+
+  ngAfterViewInit(): void {
   }
 
   async openModalValidate(value){
@@ -87,6 +104,10 @@ export class RegisterComponent implements OnInit {
     this.router.navigate([RouteCollection.auth.validPhone], params);
   }
 
+  onGoToCountrySelect(){
+    this.navigation.forward("/register/country-select")
+  }
+
   onChangeType(){
     if(this.inputPassword.type === "password"){
       this.inputPasswordType = "text";
@@ -103,22 +124,29 @@ export class RegisterComponent implements OnInit {
       case "name": this.showTextHelperName = true;
                     this.focusEmail = false;
                     this.focusPassword = false;
-                    //this.content.scrollToTop();
                    break;
-      case "phone": this.showTextHelperPhone = true;
-                    this.focusEmail = false;
-                    this.focusPassword = false;
+      case "phone": 
+                    this.focusInputPhone = true;
+                    if(this.inputPhone?.value.toString().length>0){
+                      if(this.inputPhone?.value.toString().length===11){
+                        this.countryBorderColorState = "correct";
+                      }else{
+                        this.countryBorderColorState = "error"
+                      }
+                    }else{
+                      this.countryBorderColorState = "correct";
+                    }
+
                     break;
 
       case "email": this.showTextHelperEmail = true;
                     this.focusEmail = true;
                     this.focusPassword = false;
-                    //this.content.scrollByPoint(0,50,500)
                     break;
       case "password": this.showTextHelperPassword = true;
                     this.focusEmail = false;
                     this.focusPassword = true;
-                    //this.content.scrollByPoint(0,150,500)
+                    this.content.scrollToBottom();
                     break;
     }
   }
@@ -128,24 +156,26 @@ export class RegisterComponent implements OnInit {
 
     switch (input) {
       case "name": this.showTextHelperName = false; break;
-      case "phone": this.showTextHelperPhone = false; break;
+      case "phone": this.showTextHelperPhone = false
+                    this.countryBorderColorState = "default";
+                    this.focusInputPhone = false;
+                    ; break;
       case "email": this.showTextHelperEmail = false; break;
       case "password": this.showTextHelperPassword = false; break;
     }
 
-    if(phone){
-      if (this.inputPhoneValue) {
-        const inputValue = this.inputPhoneValue?.trim();
-        if (inputValue.length > 0) {
-          this.contentInputPhone.nativeElement.classList.add("have-elements")
-        } else {
-          this.contentInputPhone.nativeElement.classList.remove("have-elements")
-        }
-      } else {
-        this.contentInputPhone.nativeElement.classList.remove("have-elements")
-      }
-    }
+  }
 
+  changeValueInputPhone(){
+    if(this.inputPhone?.value.toString().length>0){
+      if(this.inputPhone?.value.toString().length===11){
+        this.countryBorderColorState = "correct";
+      }else{
+        this.countryBorderColorState = "error"
+      }
+    }else{
+      this.countryBorderColorState = "correct";
+    }
   }
 
 }

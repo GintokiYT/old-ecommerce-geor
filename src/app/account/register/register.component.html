@@ -14,39 +14,50 @@
     [formGroup]="form" 
     (ngSubmit)="onSubmit()"
   >
-    <ion-item class="form-group" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
+    <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
       <ion-label position="floating" class="disabled">Nombre</ion-label>
       <ion-input formControlName="name"></ion-input>
       <app-validation-messages *ngIf="showTextHelperName" slot="error"
         [control]="form.get('name')"></app-validation-messages>
     </ion-item>
-    <ion-item class="form-group" (ionBlur)="checkBlur('phone',true)" (ionFocus)="checkFocus('phone')">
-      <ion-label position="floating" class="disabled">Celular</ion-label>
-      <ion-input #inputPhone class="ion-text-left input-phone" formControlName="movil" inputmode="numeric" type="tel"
-        maxlength="12" mask=" *** *** ***" [(ngModel)]="inputPhoneValue">
-        <div #contentInputPhone class="container-flag-digits">
-          <img src="/assets/icons/icon-PE.svg" />
-          <p style="margin: 0;">+51</p>
+    <!-- input phone -->
+    <div class="d-flex flex-column" style="margin-top: 15px;">
+      <div class="label-input-container">
+        <ion-label
+          [ngClass]="{'input-phone-unselect': focusInputPhone===false,
+                      'input-phone-select': focusInputPhone===true}"
+          >Celular
+        </ion-label>
+      </div>
+      <div class="country-select-container d-flex">
+        <div 
+          class="country d-flex justify-content-start align-items-center"
+          [ngClass]="{'country-default': countryBorderColorState==='default',
+                      'country-correct' : countryBorderColorState==='correct',
+                      'country-error' : countryBorderColorState==='error',
+                      'width-two-digits': codePhone.length===2,
+                      'width-three-digits': codePhone.length>2}"
+          (click)="onGoToCountrySelect()"                      
+          >
+          <img [src]="flag" width="24px"/>
+          <ion-label>+{{codePhone}}</ion-label>
         </div>
-      </ion-input>
-      <app-validation-messages *ngIf="showTextHelperPhone" slot="error"
-        [control]="form.get('movil')"></app-validation-messages>
-    </ion-item>
-    <ion-item class="form-group" (ionFocus)="checkFocus('email')" (ionBlur)="checkBlur('email',false)">
+        <ion-item lines="none" class="form-group item-country" (ionBlur)="checkBlur('phone',true)" (ionFocus)="checkFocus('phone')">
+          <ion-input #inputPhone class="ion-text-left input-phone" formControlName="movil" inputmode="numeric" type="tel"
+            maxlength="11" mask="*** *** ***" placeholder="999 999 999" (ionChange) = "changeValueInputPhone()">
+          </ion-input>
+          <app-validation-messages *ngIf="showTextHelperPhone" slot="error"
+            [control]="form.get('movil')"></app-validation-messages>
+        </ion-item>
+      </div>
+    </div><!--End input phone-->
+    <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('email')" (ionBlur)="checkBlur('email',false)">
       <ion-label position="floating" class="disabled">Correo electrónico</ion-label>
       <ion-input formControlName="email" inputmode="email" type="email"></ion-input>
       <app-validation-messages *ngIf="showTextHelperEmail" slot="error"
         [control]="form.get('email')"></app-validation-messages>
     </ion-item>
-    <!-- <app-input-password>
-      <ion-item class="form-group" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
-        <ion-label position="floating" class="disabled">Contraseña</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
-        <app-validation-messages *ngIf="showTextHelperPassword" slot="error"
-          [control]="form.get('password')"></app-validation-messages>
-      </ion-item>
-    </app-input-password> -->
-    <ion-item class="form-group position-relative" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
+    <ion-item lines="none" class="form-group position-relative ci" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
       <ion-label position="floating" class="disabled">Contraseña</ion-label>
       <ion-input type="password" formControlName="password" #inputPassword></ion-input>
       <ion-icon
@@ -77,10 +88,6 @@
             Enviar código por SMS
           </ion-button>
 
-          <!-- <ion-button class="fz-normal" expand="block" shape="round" color="primary" (click)="onValidPhone('whatsapp')">
-            Enviar código por WhatsApp
-          </ion-button> -->
-          
           <ion-button class="fz-normal" expand="block" shape="round" fill="clear" (click)="onValidPhone('whatsapp')">
             Enviar código por WhatsApp
           </ion-button>
@@ -98,10 +105,6 @@
 
   <ion-toolbar class="ion-no-padding">
     <div class="text-center">
-      <!-- <span class="d-block text disabled fz-small mb-3">Al hacer clic en "Siguiente" aceptas los
-        <span class="terms">Términos y condiciones</span> y
-        <span class="politics">Politica de privacidad</span>
-      </span> -->
       <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
         type="submit" style="margin: 0px;">Siguiente</ion-button>
     </div>
@@ -115,15 +118,3 @@
   </app-modal-terms>
   
 </ion-footer>
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,29 @@
+<ion-content>
+
+  <ion-header class="ion-no-padding ion-no-border">
+    <ion-toolbar class="ion-no-padding">
+      <div class="d-flex flex-column justify-content-between align-items-center search-container">
+        <ion-searchbar [debounce]="1000" (ionChange)="handleChange($event)" placeholder="Buscar" search-icon="search-circle">
+          <img src="/assets/icons/icon-arrow-left.svg" (click)="onGoToRegister()"/>
+        </ion-searchbar>
+        <div class="border-bottom">
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-list lines="none">
+    <ion-item 
+      *ngFor="let result of dataCountriesResults" 
+      button 
+      detail="false" 
+      (click)="onSelectCountry(result)"
+    >
+      <img [src]="result.flag" width="24px" slot="start">
+      <ion-label>{{ result.country }}</ion-label>
+      <ion-icon name="checkmark-outline" color="primary" slot="end" *ngIf="result.selected"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

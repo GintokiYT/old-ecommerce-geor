@@ -6,7 +6,7 @@
     <form class="w-100" [formGroup]="form">
       <ion-text class="text fz-normal text-muted d-block text-center mb-3">Hemos enviado un código de validación <br />
         al celular
-        <span class="color-body">+51 {{movil}}</span></ion-text>
+        <span class="color-body">+{{codePhone}} {{movil}}</span></ion-text>
       <div class="text-center mb-3">
         <ion-button class="message-btn" fill="clear" shape="round" color="primary" (click)="onGoTo('/register')"
         >Cambiar número</ion-button>

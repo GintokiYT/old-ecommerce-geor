@@ -14,6 +14,7 @@ import { MyLocationComponent } from './welcome/my-location/my-location.component
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
 import { LoadingAppComponent } from './welcome/loading-app/loading-app.component';
+import { CountrySelectComponent } from './register/country-select/country-select.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
       {
         path: RouteCollection.auth.restorePassword,
         component: RestorePasswordComponent,
+      },
+      {
+        path: "register/country-select",
+        component: CountrySelectComponent
       },
       {
         path: '',

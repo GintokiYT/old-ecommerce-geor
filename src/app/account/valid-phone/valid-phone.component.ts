@@ -11,6 +11,7 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
 import { Injector } from '@angular/core';
+import { CountrySelectedService } from '../services/country-selected.service';
 
 @Component({
   selector: 'app-valid-phone',
@@ -24,12 +25,18 @@ export class ValidPhoneComponent extends ViewComponent implements OnInit, OnDest
   timer: any;
   isCounterInZero: boolean = false;
   form!: FormGroup;
+  codePhone: string = "";
   @ViewChild('inputCode') inputCode!: IonInput;
   isPreventClose: boolean = false;
   @ViewChild(IonModal) modal!: IonModal;
 
-  constructor(private route: ActivatedRoute, private router: Router, _injector:Injector) {
-    super(_injector)
+  constructor(private route: ActivatedRoute, 
+              private router: Router, _injector:Injector,
+              private csService: CountrySelectedService) {
+    super(_injector);
+    this.csService.currentCodePhone$.subscribe( (code) => {
+      this.codePhone = code;
+    } )          
   }
 
   ngOnDestroy(): void {
