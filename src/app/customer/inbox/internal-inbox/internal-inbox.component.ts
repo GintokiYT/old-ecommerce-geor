@@ -22,7 +22,7 @@ interface Message {
 })
 export class InternalInboxComponent extends ViewComponent implements OnInit {
 
-  @ViewChild('messageInput') messageInput: ElementRef;
+  // @ViewChild('messageInput') messageInput: ElementRef;
   @ViewChild('contentInput') contentInput: ElementRef;
 
   @ViewChild('lastMessage') lastMessage: ElementRef;
@@ -31,20 +31,24 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
   @ViewChild('contenedorDeChats') contenedorDeChats: ElementRef;
 
+  @ViewChild('ContentmessageInput') ContentmessageInput: ElementRef;
+  @ViewChild('messageInput') messageInput: ElementRef;
+  @ViewChild('placeholder') placeholder: ElementRef;
+  @ViewChild('buttonSend') buttonSend: ElementRef;
 
   ngAfterViewInit() {
     const contenedorDeChats = this.contenedorDeChats.nativeElement as HTMLDivElement;
     const contentInput: HTMLDivElement = this.contentInput.nativeElement;
 
-    const ionFooter: HTMLDivElement = document.querySelector('.ion-footer');
+    // const ionFooter: HTMLDivElement = document.querySelector('.ion-footer');
 
     setTimeout(() => {
       contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
     }, 100);
 
     this.messageInput.nativeElement.addEventListener('focus', () => {
-      ionFooter.classList.add('active');
-      ionFooter.classList.remove('disabled');
+      // ionFooter.classList.add('active');
+      // ionFooter.classList.remove('disabled');
       setTimeout(() => {
         contentInput.classList.add('active');
         // Cuando se abre el teclado empuje el chat arriba
@@ -52,19 +56,88 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       }, 100)
     });
 
-    this.messageInput.nativeElement.addEventListener('blur', () => {
-      ionFooter.classList.remove('active');
-      ionFooter.classList.add('disabled');
-      if(this.contentMessage.message.content.length === 0) {
-        contentInput.classList.remove('active');
-      }
-    });
+    // this.messageInput.nativeElement.addEventListener('blur', () => {
+    //   ionFooter.classList.remove('active');
+    //   ionFooter.classList.add('disabled');
+    //   if(this.contentMessage.message.content.length === 0) {
+    //     contentInput.classList.remove('active');
+    //   }
+    // });
 
     this.messageRef.changes.subscribe(() => {
       setTimeout(() => {
         const lastMessage: HTMLDivElement = this.lastMessage.nativeElement;
         lastMessage.scrollIntoView({ behavior: 'smooth' })
       }, 250);
+    })
+
+    // Nuevo chat
+    const messageInput:HTMLDivElement = this.messageInput.nativeElement;
+
+    const placeholder: HTMLDivElement = this.placeholder.nativeElement;
+
+    const buttonSend: HTMLDivElement = this.buttonSend.nativeElement;
+
+    messageInput.addEventListener('focus', () => {
+      console.log('En el foco')
+      contentInput.classList.add('active');
+      placeholder.style.visibility = 'hidden'
+    })
+
+    messageInput.addEventListener('blur', () => {
+      console.log('Fuera del foco')
+      if(messageInput.innerText === '') {
+        contentInput.classList.remove('active');
+        placeholder.style.visibility = 'unset'
+      } else {
+        placeholder.style.visibility = 'hidden'
+      }
+    })
+
+    placeholder.addEventListener('click', () => {
+      messageInput.focus();
+      placeholder.style.visibility = 'hidden'
+    })
+
+    messageInput.addEventListener('keyup', () => {
+      this.contentMessage.message.content = messageInput.innerHTML;
+
+      console.log(this.contentMessage.message.content)
+    })
+
+    buttonSend.addEventListener('click', () => {
+
+      let tiempoActual = this.getCurrentTime();
+
+      // let uuid = self.crypto.randomUUID();
+      let uuid = 1;
+
+      let messageActual = this.contentMessage.message.content;
+
+      if(this.contentMessage.message.content.length > 0){
+
+        this.contentMessage = {
+          id: String(uuid),
+          time: tiempoActual,
+          author: 'user',
+          image: '',
+          message: {
+            type: 'text',
+            content: messageActual
+          }
+        }
+
+        this.messages.push(this.contentMessage);
+
+        // Ver el mensaje si tiene los saltos
+        console.log(messageActual);
+
+        this.contentInput.nativeElement.classList.remove('active');
+
+        this.clearMessageObject(messageInput, placeholder);
+
+        messageInput.focus();
+      }
     })
   }
 
@@ -221,37 +294,39 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     selectedDiv.querySelector('span').classList.toggle('invisible');
   }
 
-  sendMessage() {
-    let tiempoActual = this.getCurrentTime();
+  // sendMessage() {
+  //   let tiempoActual = this.getCurrentTime();
 
-    // let uuid = self.crypto.randomUUID();
-    let uuid = 1;
+  //   // let uuid = self.crypto.randomUUID();
+  //   let uuid = 1;
 
-    let messageActual = this.contentMessage.message.content;
+  //   let messageActual = this.contentMessage.message.content;
 
-    if(this.contentMessage.message.content.length > 0){
+  //   if(this.contentMessage.message.content.length > 0){
 
-      this.contentMessage = {
-        id: String(uuid),
-        time: tiempoActual,
-        author: 'user',
-        image: '',
-        message: {
-          type: 'text',
-          content: messageActual
-        }
-      }
+  //     this.contentMessage = {
+  //       id: String(uuid),
+  //       time: tiempoActual,
+  //       author: 'user',
+  //       image: '',
+  //       message: {
+  //         type: 'text',
+  //         content: messageActual
+  //       }
+  //     }
 
-      this.messages.push(this.contentMessage);
+  //     this.messages.push(this.contentMessage);
 
-      // Ver el mensaje si tiene los saltos
-      console.log(messageActual);
+  //     // Ver el mensaje si tiene los saltos
+  //     console.log(messageActual);
 
-      this.contentInput.nativeElement.classList.remove('active');
+  //     this.contentInput.nativeElement.classList.remove('active');
 
-      this.clearMessageObject();
-    }
-  }
+  //     this.clearMessageObject();
+
+
+  //   }
+  // }
 
   getCurrentTime() {
     let tiempoActual = '';
@@ -273,7 +348,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     return tiempoActual;
   }
 
-  clearMessageObject() {
+  clearMessageObject(messageInput : HTMLDivElement, placeholder: HTMLDivElement) {
     this.contentMessage = {
       id: '',
       time: '',
@@ -284,5 +359,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
         content: ''
       }
     }
+    messageInput.innerHTML = '';
+    placeholder.style.visibility = 'unset'
   }
 }
