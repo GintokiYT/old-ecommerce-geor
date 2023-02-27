@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, Injector, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { IonModal, IonInput } from '@ionic/angular';
+import { IonModal, IonInput, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
 import { CountrySelectedService } from '../services/country-selected.service';
@@ -22,6 +22,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
   @ViewChild(IonModal) modalValidate!: IonModal;
   @ViewChild("inputPhone") inputPhone: IonInput;
   @ViewChild("inputPassword") inputPassword: IonInput;
+  @ViewChild(IonContent) content: IonContent;
   inputPasswordType : string = "password";
   countryBorderColorState : string = "default"
 
@@ -35,7 +36,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
   focusInputPhone : boolean = false;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{8,}')
+  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{7,}')
 
   constructor(private router: Router, private _injector: Injector,
               private cpService: CountrySelectedService) {
@@ -145,6 +146,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
       case "password": this.showTextHelperPassword = true;
                     this.focusEmail = false;
                     this.focusPassword = true;
+                    this.content.scrollToBottom();
                     break;
     }
   }
