@@ -24,6 +24,21 @@ ion-header {
 
     form {
 
+        ion-item{
+            --inner-padding-end: 0px !important;
+            --padding-start: 0px !important;
+            --border-width: 0px 0px 1px 0px !important;
+            margin-inline: 16px;
+
+            &::part(native) {
+                padding-inline: 0px !important;
+            }
+
+            ion-icon{
+                cursor: pointer;
+            }
+        }
+
         ion-button {
             margin-top: 5px;
             margin-right: 16px;
@@ -92,6 +107,10 @@ ion-footer {
             ion-button {
                 margin-right: 24px;
             }
+
+            ion-item{
+                margin-inline: 24px !important;
+            }
         }
     }
 
@@ -114,6 +133,7 @@ ion-footer {
 
 .eye{
     position: absolute;
+    z-index: 1000;
     right: 0;
     top: 40px;
     font-size: 20px;
