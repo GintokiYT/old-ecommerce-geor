@@ -23,10 +23,10 @@ export class LoginComponent implements OnInit {
   showTextHelperPassword = false;
   visibleFooterNavigation = true;
 
-  //minimo 8 caracteres sean letras, numeros o caracteres especiales         
+  //minimo 8 caracteres sean letras, numeros o caracteres especiales
   passwordPattern =  /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
-  
-  
+
+
 
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    
+
   }
 
   onGoToRegister() {

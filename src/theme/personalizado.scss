@@ -1,6 +1,7 @@
 body.md {
   .ion-content-var {
-    --ion-padding-top: 24px;
+    // --ion-padding-top: 24px;
+    --ion-padding-top: 16px;
     --ion-padding-bottom: 24px;
   }
 }
@@ -86,4 +87,9 @@ body.ios {
     padding-right: 24px;
     padding-bottom: 40px;
   }
+}
+
+.separator-chat {
+  display: inline-block;
+  min-width: 60px;
 }

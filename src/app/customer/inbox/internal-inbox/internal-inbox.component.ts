@@ -42,6 +42,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
     // const ionFooter: HTMLDivElement = document.querySelector('.ion-footer');
 
+    console.log(contenedorDeChats)
+
     setTimeout(() => {
       contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
     }, 100);
@@ -73,19 +75,15 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
     // Nuevo chat
     const messageInput:HTMLDivElement = this.messageInput.nativeElement;
-
     const placeholder: HTMLDivElement = this.placeholder.nativeElement;
-
     const buttonSend: HTMLDivElement = this.buttonSend.nativeElement;
 
     messageInput.addEventListener('focus', () => {
-      console.log('En el foco')
       contentInput.classList.add('active');
       placeholder.style.visibility = 'hidden'
     })
 
     messageInput.addEventListener('blur', () => {
-      console.log('Fuera del foco')
       if(messageInput.innerText === '') {
         contentInput.classList.remove('active');
         placeholder.style.visibility = 'unset'

@@ -21,7 +21,9 @@ interface Message {
 export class MessageInboxComponent implements OnInit {
 
   // Espacios para el texto
-  separator:string = ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+  // separator:string = ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+
+  separator:string = '<span class="separator-chat"></span>';
 
   @Input() message: Message;
 
