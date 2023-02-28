@@ -41,7 +41,7 @@
         <ion-slides [options]="productSlidesOptions">
           <ion-slide *ngFor="let product of productsForYou">
             <div class="text-start">
-              <div class="productsForYou active" #myProductsForYou>
+              <div class="productsForYou active" (click)="goToProduct()" #myProductsForYou>
                 <div class="image"></div>
               </div>
               <!-- <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img> -->
@@ -62,7 +62,7 @@
       <div class="products__column">
         <div class="products__product" *ngFor="let product of productsFeatured">
           <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
-          <div class="productsFeatured active" #myProductsFeatured>
+          <div class="productsFeatured active" (click)="goToProduct()" #myProductsFeatured>
             <div class="image"></div>
           </div>
           <!-- <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img> -->
