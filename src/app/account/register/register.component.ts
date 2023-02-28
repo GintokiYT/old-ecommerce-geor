@@ -36,7 +36,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
   focusInputPhone : boolean = false;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{7,}')
+  passwordPattern =  /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
 
   constructor(private router: Router, private _injector: Injector,
               private cpService: CountrySelectedService) {

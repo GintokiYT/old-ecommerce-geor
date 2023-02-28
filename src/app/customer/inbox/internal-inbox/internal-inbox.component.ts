@@ -22,50 +22,111 @@ interface Message {
 })
 export class InternalInboxComponent extends ViewComponent implements OnInit {
 
-  @ViewChild('messageInput') messageInput: ElementRef;
   @ViewChild('contentInput') contentInput: ElementRef;
-
-  @ViewChild('lastMessage') lastMessage: ElementRef;
 
   @ViewChildren('messageRef') messageRef: QueryList<ElementRef>;
 
   @ViewChild('contenedorDeChats') contenedorDeChats: ElementRef;
 
+  @ViewChild('ContentmessageInput') ContentmessageInput: ElementRef;
+  @ViewChild('messageInput') messageInput: ElementRef;
+  @ViewChild('placeholder') placeholder: ElementRef;
+  @ViewChild('buttonSend') buttonSend: ElementRef;
 
   ngAfterViewInit() {
-    const contenedorDeChats = this.contenedorDeChats.nativeElement as HTMLDivElement;
+    const contenedorDeChats: HTMLDivElement = this.contenedorDeChats.nativeElement;
     const contentInput: HTMLDivElement = this.contentInput.nativeElement;
 
-    const ionFooter: HTMLDivElement = document.querySelector('.ion-footer');
-
+    //* Al cargar la página los chats se muestran primeros
     setTimeout(() => {
-      contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
-    }, 100);
+      this.showLastChat(contenedorDeChats)
+    }, 200);
 
-    this.messageInput.nativeElement.addEventListener('focus', () => {
-      ionFooter.classList.add('active');
-      ionFooter.classList.remove('disabled');
+    // Nuevo chat
+    const messageInput:HTMLDivElement = this.messageInput.nativeElement;
+    const placeholder: HTMLDivElement = this.placeholder.nativeElement;
+    const buttonSend: HTMLDivElement = this.buttonSend.nativeElement;
+
+    messageInput.addEventListener('focus', () => {
+      // El teclado es muy lento consultar con Antonio
       setTimeout(() => {
-        contentInput.classList.add('active');
-        // Cuando se abre el teclado empuje el chat arriba
-        contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
-      }, 100)
-    });
+        this.showLastChat(contenedorDeChats)
+      }, 500);
 
-    this.messageInput.nativeElement.addEventListener('blur', () => {
-      ionFooter.classList.remove('active');
-      ionFooter.classList.add('disabled');
-      if(this.contentMessage.message.content.length === 0) {
-        contentInput.classList.remove('active');
-      }
-    });
-
-    this.messageRef.changes.subscribe(() => {
-      setTimeout(() => {
-        const lastMessage: HTMLDivElement = this.lastMessage.nativeElement;
-        lastMessage.scrollIntoView({ behavior: 'smooth' })
-      }, 250);
+      contentInput.classList.add('active');
+      placeholder.style.visibility = 'hidden'
     })
+
+    messageInput.addEventListener('blur', () => {
+      if(messageInput.innerText === '') {
+        contentInput.classList.remove('active');
+        placeholder.style.visibility = 'unset'
+      } else {
+        placeholder.style.visibility = 'hidden'
+      }
+    })
+
+    placeholder.addEventListener('click', () => {
+      messageInput.focus();
+      placeholder.style.visibility = 'hidden'
+    })
+
+    messageInput.addEventListener('keydown', (event: KeyboardEvent) => {
+      // Verificar si la tecla presionada es Enter
+    	if (event.key === 'Enter') {
+    		// Verificar si la tecla Shift no está presionada
+    		if (!event.shiftKey) {
+    			// Enviar el mensaje
+    			this.enviarMensaje();
+    		}
+    	}
+    })
+
+    buttonSend.addEventListener('click', () => {
+
+      const message:string = this.enviarMensaje();
+
+      let tiempoActual = this.getCurrentTime();
+
+      let uuid = self.crypto.randomUUID();
+
+      let messageActual = message;
+
+      if(messageActual.length > 0){
+
+        this.contentMessage = {
+          id: String(uuid),
+          time: tiempoActual,
+          author: 'user',
+          image: '',
+          message: {
+            type: 'text',
+            content: messageActual
+          }
+        }
+
+        this.messages.push(this.contentMessage);
+
+        // Ver el mensaje si tiene los saltos
+        console.log(messageActual);
+
+        this.contentInput.nativeElement.classList.remove('active');
+
+        this.clearMessageObject(messageInput, placeholder);
+
+        messageInput.focus();
+      }
+    })
+  }
+
+  enviarMensaje() {
+    const ContentmessageInput: HTMLDivElement = this.ContentmessageInput.nativeElement;
+    let texto: string = ContentmessageInput.innerText;
+    return texto.replace(/\n/g, "<br>");
+  }
+
+  showLastChat(contenedorDeChats: HTMLDivElement) {
+    contenedorDeChats.scrollTo(0, contenedorDeChats.scrollHeight);
   }
 
   messages: Message [] = [
@@ -221,38 +282,6 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     selectedDiv.querySelector('span').classList.toggle('invisible');
   }
 
-  sendMessage() {
-    let tiempoActual = this.getCurrentTime();
-
-    // let uuid = self.crypto.randomUUID();
-    let uuid = 1;
-
-    let messageActual = this.contentMessage.message.content;
-
-    if(this.contentMessage.message.content.length > 0){
-
-      this.contentMessage = {
-        id: String(uuid),
-        time: tiempoActual,
-        author: 'user',
-        image: '',
-        message: {
-          type: 'text',
-          content: messageActual
-        }
-      }
-
-      this.messages.push(this.contentMessage);
-
-      // Ver el mensaje si tiene los saltos
-      console.log(messageActual);
-
-      this.contentInput.nativeElement.classList.remove('active');
-
-      this.clearMessageObject();
-    }
-  }
-
   getCurrentTime() {
     let tiempoActual = '';
 
@@ -260,20 +289,15 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     let hours: any = currentTime.getHours();
     let minutes: any = currentTime.getMinutes();
 
-    if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
+    if (minutes < 10) minutes = "0" + minutes;
 
-    if(hours > 12) {
-      tiempoActual = `${hours - 12}:${minutes} pm`;
-    } else {
-      tiempoActual = `${hours}:${minutes} am`;
-    }
+    if(hours > 12) tiempoActual = `${hours - 12}:${minutes} pm`;
+    else tiempoActual = `${hours}:${minutes} am`;
 
     return tiempoActual;
   }
 
-  clearMessageObject() {
+  clearMessageObject(messageInput : HTMLDivElement, placeholder: HTMLDivElement) {
     this.contentMessage = {
       id: '',
       time: '',
@@ -284,5 +308,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
         content: ''
       }
     }
+    messageInput.innerHTML = '';
+    placeholder.style.visibility = 'unset'
   }
 }
+

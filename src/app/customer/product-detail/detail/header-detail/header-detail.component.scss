@@ -10,6 +10,12 @@ ion-toolbar{
   --padding-end: 24px;
   --padding-bottom: 24px;
 }
+.header-detail{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
 
 @media(max-width:320px){    
   ion-toolbar{

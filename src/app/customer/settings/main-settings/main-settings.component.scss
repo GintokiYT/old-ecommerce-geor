@@ -76,9 +76,9 @@ ion-content {
       content: "";
       position: absolute;
       top: -10px;
-      left: -10px;
+      left: -5px;
       z-index: 1000;
-      width: calc(100% + 20px);
+      width: calc(100% + 10px);
       height: 24px;
       padding: 20px;
       background-color: var(--ion-background-hover-selected);

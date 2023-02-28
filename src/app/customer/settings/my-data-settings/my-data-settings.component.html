@@ -34,7 +34,7 @@
   </div>
 </ion-content>
 
-<ion-footer class="ion-content-var">
+<!-- <ion-footer class="ion-content-var">
   <div class="form-control-button disabled">
     <ion-button
       class="btn-submit"
@@ -44,6 +44,17 @@
       type="submit"
       [disabled]="statusButton"
     >Guardar</ion-button>
+  </div>
+</ion-footer> -->
+
+<ion-footer class="ion-content-var">
+  <div class="container-footer-bottom">
+    <button
+      [ngClass]="statusButton? 'ion-button disabled': 'ion-button'"
+      type="button"
+      [disabled]="statusButton"
+      (click)="saveData()"
+    >Confirmar</button>
   </div>
 </ion-footer>
 

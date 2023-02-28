@@ -1,9 +1,6 @@
 import { AppNavigationService, ViewComponent } from '@geor360/ecore';
-import { FormGroup, FormControl, Validators, ValidatorFn, ValidationErrors, AbstractControl, AsyncValidatorFn } from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
-import { LoginService } from '../services/login.service';
-import { RestoreService } from './restore.service';
-import { PasswordValidator } from './passwordValidator';
 import { IonInput } from '@ionic/angular';
 
 
@@ -14,33 +11,27 @@ import { IonInput } from '@ionic/angular';
 })
 export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
+  @ViewChild("inputPassword") inputPassword : IonInput;
+  @ViewChild("inputPasswordConfirm") inputPasswordConfirm : IonInput;
+  equalPassword : boolean = false;
+
   form!: FormGroup;
   showTextHelperPassword = false;
   showTextHelperPasswordConfirmation = false;
 
-  inputPasswordValue = ""
-  inputPasswordConfirmValue = "";
-
   inputPasswordType = "password";
   inputPasswordTypeConfirm = "password";
 
-  @ViewChild("inputPassword") inputPassword : IonInput;
-  @ViewChild("inputPasswordConfirm") inputPasswordConfirm : IonInput;
-
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  //passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
-  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{8,}')
+  passwordPattern =  /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
 
 
   constructor(
     private navigator: AppNavigationService,
     private _injector: Injector,
-    private lgService: LoginService,
-    private restoreService : RestoreService
   ) {
     super(_injector);
-    this.restoreService.currentInputPasswordValue$.subscribe( value => this.inputPasswordValue=value)
-    this.restoreService.currentInputPasswordConfirmValue$.subscribe ( value => this.inputPasswordConfirmValue = value)
+
   }
 
   ngOnInit() {
@@ -59,40 +50,31 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   }
 
   changeInputValue(){
-    this.restoreService.setInputPasswordValue(this.inputPasswordValue);
-    //to comunicate the other input the change of the current input
-    const auxInput = this.inputPasswordConfirmValue;
-    setTimeout(() => {
-      this.inputPasswordConfirmValue = "";
-    }, 0);
-    setTimeout(() => {
-      this.inputPasswordConfirmValue = auxInput;
-    }, 0);
+    if(this.inputPassword?.value === this.inputPasswordConfirm?.value){
+      this.equalPassword = true;
+    }else{
+      this.equalPassword = false
+    }
   }
 
   changeInputPasswordConfirmValue(){
-    this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
+    if(this.inputPassword?.value === this.inputPasswordConfirm?.value){
+      this.equalPassword = true;
+    }else{
+      this.equalPassword = false
+    }
   }
 
   onGoToLogin() {
-    // this.inputPasswordValue = "";
-    // this.inputPasswordConfirmValue = "";
-    // this.restoreService.setInputPasswordValue(this.inputPasswordValue);
-    // this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
-    this.navigation.back("/login")
-    this.inputPasswordValue = "";
-    this.inputPasswordConfirmValue = "";
+    this.navigation.back("/login");
+    this.inputPassword.value = "";
+    this.inputPasswordConfirm.value = ""
   }
 
   onSubmit() {
-    // this.inputPasswordValue = "";
-    // this.inputPasswordConfirmValue = "";
-    // this.restoreService.setInputPasswordValue(this.inputPasswordValue);
-    // this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
-    // this.lgService.setUserLogged(true);
     this.navigator.forward("/login");
-    this.inputPasswordValue = "";
-    this.inputPasswordConfirmValue = "";
+    this.inputPassword.value = "";
+    this.inputPasswordConfirm.value = ""
   }
 
   onChangeType(input:string){
@@ -116,7 +98,6 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   }
 
   checkFocus(input: string) {
-
     switch (input) {
       case "password": this.showTextHelperPassword = true; break;
       case "passwordConfirmation": this.showTextHelperPasswordConfirmation = true; break;
