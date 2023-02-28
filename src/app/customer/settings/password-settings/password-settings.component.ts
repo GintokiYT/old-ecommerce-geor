@@ -75,13 +75,22 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
     const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.form-control-settings input')
     // No perder el foco del input
     if(button === 'curretpassword') {
-      inputs[0].focus();
+      setTimeout(() => {
+        inputs[0].focus();
+        inputs[0].setSelectionRange(inputs[0].value.length, inputs[0].value.length)
+      }, 100);
     }
     if(button === 'newpassword') {
-      inputs[1].focus();
+      setTimeout(() => {
+        inputs[1].focus();
+        inputs[1].setSelectionRange(inputs[1].value.length, inputs[1].value.length)
+      }, 100);
     }
     if(button === 'confirmpassword') {
-      inputs[2].focus();
+      setTimeout(() => {
+        inputs[2].focus();
+        inputs[2].setSelectionRange(inputs[2].value.length, inputs[2].value.length)
+      }, 100);
     }
 
     this.statusButtons = {
