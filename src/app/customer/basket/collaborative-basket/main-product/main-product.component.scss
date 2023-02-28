@@ -152,3 +152,19 @@ ion-item-option{
   transform: rotate(45deg);
 }
 
+// Animation Delete
+.animation-delete {
+  //transition: all .3s ease;
+  &.active {
+    animation: animationDelete .5s ease;
+  }
+}
+
+@keyframes animationDelete {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
