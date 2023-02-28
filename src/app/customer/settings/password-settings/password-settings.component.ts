@@ -72,6 +72,18 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
   }
 
   toggleShow(button: string) {
+    const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.form-control-settings input')
+    // No perder el foco del input
+    if(button === 'curretpassword') {
+      inputs[0].focus();
+    }
+    if(button === 'newpassword') {
+      inputs[1].focus();
+    }
+    if(button === 'confirmpassword') {
+      inputs[2].focus();
+    }
+
     this.statusButtons = {
       ...this.statusButtons,
       [button]: !this.statusButtons[button]
@@ -80,5 +92,9 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
 
   onToBack(route: string) {
     this.navigation.back(route);
+  }
+
+  saveData() {
+    this.navigation.back('/customer/settings/main-settings')
   }
 }
