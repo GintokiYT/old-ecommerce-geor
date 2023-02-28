@@ -19,7 +19,6 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
     super(_injector);
    }
 
-
   ngOnInit() {}
 
   data: any[] = [
