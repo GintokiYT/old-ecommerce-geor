@@ -20,7 +20,7 @@
     <form class="w-100l" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <ion-item lines="none" class="form-group" (ionBlur)="checkBlur('phoneOrEmail')" (ionFocus)="checkFocus('phoneOrEmail')">
         <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
-        <ion-input formControlName="username"></ion-input>
+        <ion-input formControlName="username" type="email" inputmode="email"></ion-input>
         <app-validation-messages *ngIf="showTextHelperPhoneOrEmail" slot="error"
           [control]="loginForm.get('username')"></app-validation-messages>
       </ion-item>
