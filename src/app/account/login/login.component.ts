@@ -23,9 +23,10 @@ export class LoginComponent implements OnInit {
   showTextHelperPassword = false;
   visibleFooterNavigation = true;
 
-  //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  // passwordPattern = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]{8,}$/;
-  passwordPattern = ('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$._@$!%*?&])[A-Za-z\d$._@$!%*?&].{8,}')
+  //minimo 8 caracteres sean letras, numeros o caracteres especiales         
+  passwordPattern =  /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
+  
+  
 
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {
