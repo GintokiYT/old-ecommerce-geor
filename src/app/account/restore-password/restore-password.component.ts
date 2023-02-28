@@ -72,6 +72,12 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
   changeInputPasswordConfirmValue(){
     this.restoreService.setInputPasswordConfirmValue(this.inputPasswordConfirmValue);
+    
+    if(this.inputPassword?.value === this.inputPasswordConfirm?.value){
+      console.log(true)
+    }else{
+      console.log(false)
+    }
   }
 
   onGoToLogin() {
