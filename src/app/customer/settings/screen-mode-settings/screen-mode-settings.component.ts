@@ -22,19 +22,19 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
 
     if(localStorage.getItem('defaultTheme') !== null) {
       switch(localStorage.getItem('defaultTheme')) {
-        case 'auto':
+        case 'Automático':
           this.myItem.toArray()[0].nativeElement.classList.add('active')
         break;
-        case 'light':
+        case 'Claro':
           this.myItem.toArray()[1].nativeElement.classList.add('active')
         break;
-        case 'dark':
+        case 'Oscuro':
           this.myItem.toArray()[2].nativeElement.classList.add('active')
         break;
       }
     } else {
       this.myItem.toArray()[0].nativeElement.classList.add('active');
-      localStorage.setItem('defaultTheme', 'auto');
+      localStorage.setItem('defaultTheme', 'Automático');
     }
   }
 
@@ -61,7 +61,7 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
   }
 
   toggleTheme(theme: string) {
-    const position: number = theme === 'auto' ? 0 : theme === 'light' ? 1 : 2;
+    const position: number = theme === 'Automático' ? 0 : theme === 'Claro' ? 1 : 2;
     const items = document.querySelectorAll('.item-theme');
 
     items.forEach(item => item.classList.remove('active'));
@@ -71,7 +71,7 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     const body: HTMLBodyElement = document.querySelector('body');
 
     switch(theme) {
-      case 'auto':
+      case 'Automático':
         if(themeDefault === 'dark') {
           this.changeThemeDark(body);
           this.changeStatusBarWeb('dark');
@@ -81,13 +81,13 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
           this.changeStatusBarWeb('light');
           localStorage.setItem('mode', 'light');
         }
-        localStorage.setItem('defaultTheme', 'auto');
+        localStorage.setItem('defaultTheme', 'Automático');
       break;
-      case 'light':
+      case 'Claro':
         this.changeThemeLight(body);
         this.changeStatusBarWeb('light');
       break;
-      case 'dark':
+      case 'Oscuro':
         this.changeThemeDark(body);
         this.changeStatusBarWeb('dark');
       break;
@@ -106,14 +106,14 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     body.classList.remove('dark');
     body.classList.add('light');
     localStorage.setItem('mode', 'light');
-    localStorage.setItem('defaultTheme', 'light');
+    localStorage.setItem('defaultTheme', 'Claro');
   }
 
   changeThemeDark(body: HTMLBodyElement) {
     body.classList.remove('light');
     body.classList.add('dark');
     localStorage.setItem('mode', 'dark');
-    localStorage.setItem('defaultTheme', 'dark');
+    localStorage.setItem('defaultTheme', 'Oscuro');
   }
 
   changeStatusBarWeb(theme: string) {

@@ -57,8 +57,11 @@ export class HomeComponent extends ViewComponent implements OnInit {
 
   // Imagenes insertadas con JS - tiempo de carga
   @ViewChildren('myProductsForYou') myProductsForYou: QueryList<ElementRef>
+  @ViewChildren('myProductsFeatured') myProductsFeatured: QueryList<ElementRef>
 
   ngAfterContentInit() {
+
+    //* Productos Sliders
     setTimeout(() => {
       const DivProductsForYou = Array.from(this.myProductsForYou.toArray().map( item => item.nativeElement)) as HTMLDivElement[];
 
@@ -72,6 +75,29 @@ export class HomeComponent extends ViewComponent implements OnInit {
         img.onload = function() {
           image.style.backgroundImage = `url(${urlImage})`;
           DivProductsForYou[index].classList.remove('active');
+        }
+        img.onerror = function() {
+          console.log('La imagen no está disponible en la ruta: ' + urlImage);
+        }
+
+      })
+    }, 100);
+
+
+    //* Productos Destacados
+    setTimeout(() => {
+      const DivProductsFeatured = Array.from(this.myProductsFeatured.toArray().map( item => item.nativeElement)) as HTMLDivElement[];
+
+      this.productsFeatured.forEach( (item, index) => {
+        const image: HTMLDivElement = DivProductsFeatured[index].querySelector('.image');
+        const urlImage = item.image || '';
+
+        const img = new Image();
+        img.src = urlImage;
+
+        img.onload = function() {
+          image.style.backgroundImage = `url(${urlImage})`;
+          DivProductsFeatured[index].classList.remove('active');
         }
         img.onerror = function() {
           console.log('La imagen no está disponible en la ruta: ' + urlImage);

@@ -62,7 +62,10 @@
       <div class="products__column">
         <div class="products__product" *ngFor="let product of productsFeatured">
           <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
-          <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img>
+          <div class="productsFeatured active" #myProductsFeatured>
+            <div class="image"></div>
+          </div>
+          <!-- <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img> -->
           <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
           <ion-text class="d-block fw-semibold mt-2 mb-2 text-price"
             >{{ product.price }}</ion-text

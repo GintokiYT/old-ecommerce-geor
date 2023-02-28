@@ -15,7 +15,7 @@ export class SettingsService {
   // https://maps.googleapis.com/maps/api/geocode/json?latlng=-12.0450779,%20-76.9288012&key=API_KEY
 
   // Theme
-  private theme = new BehaviorSubject<string>(localStorage.getItem('defaultTheme') || 'auto');
+  private theme = new BehaviorSubject<string>(localStorage.getItem('defaultTheme') || 'Automático');
 
   setTheme(theme: string) {
     this.theme.next(theme);

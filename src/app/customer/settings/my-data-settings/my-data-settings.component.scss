@@ -125,27 +125,27 @@ form {
   box-sizing: border-box;
 }
 
-.form-control-button {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 24px 16px 24px 16px;
-  background-color: var(--ion-background-color);
+// .form-control-button {
+//   position: sticky;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 1000;
+//   padding: 24px 16px 24px 16px;
+//   background-color: var(--ion-background-color);
 
-  &.active {
-    padding-bottom: 24px;
-  }
+//   &.active {
+//     padding-bottom: 24px;
+//   }
 
-  &.disabled {
-    padding-bottom: calc(var(--ion-safe-area-bottom) + var(--ion-padding-bottom));
-  }
+//   &.disabled {
+//     padding-bottom: calc(var(--ion-safe-area-bottom) + var(--ion-padding-bottom));
+//   }
 
-  @media (min-width: 390px) {
-    padding: 24px 24px 24px 24px;
-  }
-}
+//   @media (min-width: 390px) {
+//     padding: 24px 24px 24px 24px;
+//   }
+// }
 
 ion-header {
   padding-top: var(--ion-safe-area-top);
