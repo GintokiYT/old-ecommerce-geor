@@ -25,7 +25,10 @@
       <div class="label-input-container">
         <ion-label
           [ngClass]="{'input-phone-unselect': focusInputPhone===false,
-                      'input-phone-select': focusInputPhone===true}"
+                      'input-phone-select': focusInputPhone===true,
+                      'label-default': countryBorderColorState==='default',
+                      'label-correct' : countryBorderColorState==='correct',
+                      'label-error' : countryBorderColorState==='error'}"
           >Celular
         </ion-label>
       </div>

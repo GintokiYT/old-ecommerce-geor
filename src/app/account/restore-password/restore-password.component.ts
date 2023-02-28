@@ -14,6 +14,7 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   @ViewChild("inputPassword") inputPassword : IonInput;
   @ViewChild("inputPasswordConfirm") inputPasswordConfirm : IonInput;
   equalPassword : boolean = false;
+  inputConfirmHaveValue: boolean = false;
 
   form!: FormGroup;
   showTextHelperPassword = false;
@@ -51,7 +52,10 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
   changeInputValue(){
     if(this.inputPassword?.value === this.inputPasswordConfirm?.value){
-      this.equalPassword = true;
+      if(this.inputPasswordConfirm?.value.toString().length>0){
+        console.log("hola1")
+        this.equalPassword = true;
+      }
     }else{
       this.equalPassword = false
     }
@@ -59,9 +63,18 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
   changeInputPasswordConfirmValue(){
     if(this.inputPassword?.value === this.inputPasswordConfirm?.value){
-      this.equalPassword = true;
+      if(this.inputPasswordConfirm?.value.toString().length>0){
+        console.log("hola2")
+        this.equalPassword = true;
+      }
     }else{
       this.equalPassword = false
+    }
+
+    if(this.inputPasswordConfirm?.value.toString().length>0){
+      this.inputConfirmHaveValue = true;
+    }else{
+      this.inputConfirmHaveValue = false;
     }
   }
 
