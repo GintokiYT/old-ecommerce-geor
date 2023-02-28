@@ -82,10 +82,7 @@ ion-item-option{
   }
 }
 
-
-
 /* CUSTOM CHECKBOX */
-/* Customize the label (the container) */
 .custom-checkbox {
   display: block;
   position: relative;
@@ -154,28 +151,4 @@ ion-item-option{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
-/* Modal-delete */
-ion-modal {
-  &.modal-alert {
-      --height: fit-content;
-      --border-radius: 10px;
-  }
-
-  &::part(content) {
-      margin-right: 24px;
-      margin-left: 24px;
-  }
-
-  --background: var(--ion-background-alert)
-}
-/* Dark */
-.cancel{
-  color: var(--ion-color-basic) !important;
-}
-.delete{
-  color: var(--ion-color-delete) !important;
-}
-
-
 

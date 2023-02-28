@@ -8,7 +8,6 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class MainProductComponent extends ViewComponent implements OnInit {
 
-
   modalIsVisible: boolean = false;
 
   constructor(_injector: Injector) {
@@ -17,30 +16,22 @@ export class MainProductComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
-
-  openModal1(){
-    this.modalIsVisible = true;
-  }
-
-  closeModal1(){
-    this.modalIsVisible = false;
-  }
-
-  openModal2(){
-    this.modalIsVisible = true;
-  }
-
-  closeModal2(){
-    this.modalIsVisible = false;
-  }
-
   deleteDescription(){
-    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
-    },'Eliminar','Cancelar');
+    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+      if (confirmation) {
+          const divEliminar = document.querySelector('#deleteDescription');
+            divEliminar.remove();
+      }
+  },'Eliminar','Cancelar');
   }
+
 
   deleteProduct(){
     this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+      if (confirmation) {
+        const divEliminarProducto = document.querySelector('#deleteProducto');
+          divEliminarProducto.innerHTML='';
+    }
     },'Eliminar','Cancelar');
   }
 
