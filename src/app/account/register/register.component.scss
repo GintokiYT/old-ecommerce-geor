@@ -142,3 +142,16 @@ ion-modal {
 .country-error {
     border-bottom: 1px solid #F44336 !important;
 }
+
+
+.label-default{
+    color: #6c757d !important;
+}
+
+.label-error{
+    color: #F44336 !important;
+}
+
+.label-correct{
+    color: var(--ion-color-primary);
+}

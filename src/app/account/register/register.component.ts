@@ -157,7 +157,10 @@ export class RegisterComponent extends ViewComponent implements OnInit {
     switch (input) {
       case "name": this.showTextHelperName = false; break;
       case "phone": this.showTextHelperPhone = false
-                    this.countryBorderColorState = "default";
+                    if(this.inputPhone.value.toString().length===0
+                       || this.inputPhone.value.toString().length===11){
+                      this.countryBorderColorState = "default";
+                    }
                     this.focusInputPhone = false;
                     ; break;
       case "email": this.showTextHelperEmail = false; break;
