@@ -1,45 +1,47 @@
 <ion-content>
   <app-header-cesta class="header-cesta"></app-header-cesta>
 
-
   <!-- CONTENIDO -->
   <div class="container-main" style="margin-bottom: '218.66px'">
-    <div class="content_basket">
+    <div class="d-flex flex-column" style="gap:40px">
       <app-main-product></app-main-product>
-      </div>
-      <app-product></app-product>
+    <app-product></app-product>
     </div>
+  </div>
 
-    <!-- FOOTER -->
-    <ion-footer class="ion-no-border container-footer">
-      <ion-toolbar
-        class="ion-no-padding"
-        style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px">
-        <div class="box-total d-flex flex-row justify-content-between mb-4 mt-3">
-          <div class="d-flex flex-row gap-2">
-            <label class="custom-checkbox">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <ion-label
-              class="d-flex justify-content-center align-items-center fz-small">Todo</ion-label>
-          </div>
-          <div class="fz-small">
-            <ion-label>S/ 45,789.00</ion-label>
-          </div>
+  <!-- FOOTER -->
+  <ion-footer class="ion-no-border container-footer">
+    <ion-toolbar
+      class="ion-no-padding"
+      style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px"
+    >
+      <div class="box-total d-flex flex-row justify-content-between mb-4 mt-3">
+        <div class="d-flex flex-row gap-2">
+          <label class="custom-checkbox">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+          <ion-label
+            class="d-flex justify-content-center align-items-center fz-small"
+            >Todo</ion-label
+          >
         </div>
-        <div>
-          <ion-button
-            class="ion-no-margin"
-            expand="block"
-            color="primary"
-            shape="round"
-            (click)="goToConfirmOrder()"
-            >Ir a pagar</ion-button>
+        <div class="fz-small">
+          <ion-label>S/ 45,789.00</ion-label>
         </div>
-      </ion-toolbar>
-    </ion-footer>
-
+      </div>
+      <div>
+        <ion-button
+          class="ion-no-margin"
+          expand="block"
+          color="primary"
+          shape="round"
+          (click)="goToConfirmOrder()"
+          >Ir a pagar</ion-button
+        >
+      </div>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
 <app-footer-navigation class="footer-navigation"></app-footer-navigation>
 <app-modal-basket *ngIf="statusModal"></app-modal-basket>
