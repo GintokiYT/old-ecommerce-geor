@@ -11,6 +11,8 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
 
   statusModal: boolean;
 
+  mainProduct: boolean = true;
+
   constructor(_injector: Injector, private inviteService: InviteService) {
     super(_injector);
     this.inviteService.getStatusModalBasketCollaborative.subscribe( status => this.statusModal = status );
@@ -20,6 +22,10 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
 
   goToConfirmOrder() {
     this.navigation.root('/customer/confirm-order', 'forward');
+  }
+
+  onMyEvent(status: boolean) {
+    this.mainProduct = status;
   }
 
 }

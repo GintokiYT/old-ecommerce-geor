@@ -3,6 +3,7 @@ import { ModalResendComponent } from './modal-resend/modal-resend.component';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
 interface Equipo{
+  id: string,
   image:string,
   nombre:string,
   estado:[{
@@ -35,10 +36,14 @@ export class TeamComponent extends ViewComponent implements OnInit {
     this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.equipos);
+    console.log(this.equipos.filter( equipo => equipo.id === 'cod002'))
+  }
 
   equipos:Equipo[]=[
     {
+      id: '1',
       image:'assets/collaborative-basquet/Avatar.svg',
       nombre: 'Juliano del Carmen Soriano',
       estado:[{
@@ -48,6 +53,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
     },
 
     {
+      id: '2',
       image:'assets/collaborative-basquet/Avatar3.svg',
       nombre: 'Rolando Paredes Alvarado',
       estado:[{
@@ -57,6 +63,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
 
     },
     {
+      id: '3',
       image:'assets/collaborative-basquet/Avatar3.svg',
       nombre: 'Nombre y apellidos',
       estado:[{
@@ -66,6 +73,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
 
     },
     {
+      id: '4',
       image:'assets/collaborative-basquet/Avatar2.svg',
       nombre: 'Nombre y apellidos',
       estado:[{
@@ -75,6 +83,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
 
     },
     {
+      id: '5',
       image:'assets/collaborative-basquet/Avatar.svg',
       nombre: 'Juliano del Carmen Soriano',
       estado:[{
