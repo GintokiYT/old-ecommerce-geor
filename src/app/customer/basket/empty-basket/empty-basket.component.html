@@ -26,19 +26,14 @@
         >
         <ion-text
           *ngIf="product.inOffert"
-          class="d-block fw-semibold mt-2 mb-3 text-sm text text-muted"
-        >
+          class="d-block fw-semibold mt-2 mb-3 text-sm text text-muted">
           <span class="d-inline-block mr-3 text-line-through text-price"
-            >{{ product.oldPrice }}</span
-          >
-          <span class="fw-semibold text-primary"
-            >-{{ product.discountPercentage }}%</span
-          >
+            >{{ product.oldPrice }}</span>
+          <span class="fw-semibold text-primary">-{{ product.discountPercentage }}%</span >
         </ion-text>
         <ion-text
           *ngIf="product.hasMinimumOrder"
-          class="d-block mt-2 mb-2 text-sm"
-        >
+          class="d-block mt-2 mb-2 text-sm">
           <span class="d-inline-block mr-2"
             >{{ product.minimumOrder }} unidades
           </span>
@@ -47,9 +42,7 @@
         <ion-text *ngIf="product.hasFreeDelivery" class="d-block mb-2">
           <div class="d-flex ion-align-items-center">
             <app-icon-truck></app-icon-truck>
-            <span class="d-inline-block text text-sm text-muted ms-2"
-              >Envío gratis</span
-            >
+            <span class="d-inline-block text text-sm text-muted ms-2">Envío gratis</span>
           </div>
         </ion-text>
         <div *ngIf="product.colors" class="product__colors">

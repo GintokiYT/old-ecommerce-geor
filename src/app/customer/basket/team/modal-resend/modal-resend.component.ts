@@ -37,7 +37,7 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
   deleteContact(){
     this.message.confirm('¿Eliminar de tu equipo?','',(confirmation)=>{
     },'Eliminar','Cancelar');
-    }
+  }
 
   openResendInvitation(){
     this.inviteService.setStatusModalResendInvitation(true);

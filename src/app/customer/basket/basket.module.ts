@@ -24,7 +24,6 @@ import { ModalResendInvitationComponent } from './team/modal-resend-invitation/m
 import { ContactTeamComponent } from './contact-basket/contact-team/contact-team.component';
 import { ModalInviteTeamComponent } from './team/collaborative-team/modal-invite-team/modal-invite-team.component';
 
-
 @NgModule({
   declarations: [
     CollaborativeBasketComponent,
