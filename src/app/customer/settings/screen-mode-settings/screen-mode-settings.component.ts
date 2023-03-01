@@ -48,12 +48,12 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     //   localStorage.setItem('themeDefault', 'dark');
     // }
 
-    const colorStatusBar = localStorage.getItem('mode') === 'dark'? '#05050F' : '#023AFF'
+    // const colorStatusBar = localStorage.getItem('mode') === 'dark'? '#05050F' : '#023AFF'
 
-    const metaTag = document.createElement("meta");
-    metaTag.name = "theme-color";
-    metaTag.content = colorStatusBar;
-    document.getElementsByTagName("head")[0].appendChild(metaTag);
+    // const metaTag = document.createElement("meta");
+    // metaTag.name = "theme-color";
+    // metaTag.content = colorStatusBar;
+    // document.getElementsByTagName("head")[0].appendChild(metaTag);
   }
 
   onBack() {
@@ -78,35 +78,32 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
           this.changeThemeDark(body);
           // this.changeStatusBarWeb('dark');
           localStorage.setItem('mode', 'dark');
-          this.changeStatusBarBackgroundAndColor();
         } else {
           this.changeThemeLight(body);
           // this.changeStatusBarWeb('light');
           localStorage.setItem('mode', 'light');
-          this.changeStatusBarBackgroundAndColor();
         }
         localStorage.setItem('defaultTheme', 'Automático');
       break;
       case 'Claro':
         this.changeThemeLight(body);
         // this.changeStatusBarWeb('light');
-        this.changeStatusBarBackgroundAndColor();
       break;
       case 'Oscuro':
         this.changeThemeDark(body);
         // this.changeStatusBarWeb('dark');
-        this.changeStatusBarBackgroundAndColor();
       break;
     }
 
     this.settingsService.setTheme(theme);
-    this.changeThemeStatusBar();
+    // this.changeThemeStatusBar();
+    this.changeStatusBarBackgroundAndColor();
   }
 
-  changeThemeStatusBar() {
-    const color: string = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
-    StatusBar.setBackgroundColor({ color });
-  }
+  // changeThemeStatusBar() {
+  //   const color: string = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+  //   StatusBar.setBackgroundColor({ color });
+  // }
 
   changeThemeLight(body: HTMLBodyElement) {
     body.classList.remove('dark');
@@ -137,13 +134,14 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
   // }
 
   changeStatusBarBackgroundAndColor() {
-    const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#FFFFFF';
-    StatusBar.setBackgroundColor({ color });
+    const themeColor: string = document.querySelector('body').classList.contains('dark')? 'dark' : 'light';
 
-    if( localStorage.getItem('mode') === 'dark' ) {
-      StatusBar.setStyle({ style: Style.Dark });
+    if(themeColor === 'dark') {
+      StatusBar.setBackgroundColor({ color: '#05050f' });
+      StatusBar.setStyle({ style: Style.Dark })
     } else {
-      StatusBar.setStyle({ style: Style.Light });
+      StatusBar.setBackgroundColor({ color: '#ffffff' });
+      StatusBar.setStyle({ style: Style.Light })
     }
   }
 

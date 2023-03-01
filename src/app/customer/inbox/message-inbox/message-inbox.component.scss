@@ -17,6 +17,7 @@ img {
   display: flex;
   justify-content: flex-start;
   margin-left: 16px;
+  background-color: var(--ion-background-color);
 
   @media (min-width: 390px) {
     margin-left: 24px;
@@ -84,6 +85,7 @@ img {
   display: flex;
   justify-content: flex-end;
   margin-right: 16px;
+  background-color: var(--ion-background-color);
 
   @media (min-width: 390px) {
     margin-right: 24px;
