@@ -47,7 +47,7 @@
         </div>
         <ion-item lines="none" class="form-group item-country" (ionBlur)="checkBlur('phone',true)" (ionFocus)="checkFocus('phone')">
           <ion-input #inputPhone class="ion-text-left input-phone" formControlName="movil" inputmode="numeric" type="tel"
-            maxlength="11" mask="*** *** ***" placeholder="999 999 999" (ionChange) = "changeValueInputPhone()">
+            maxlength="11" mask="*** *** ***" (ionChange) = "changeValueInputPhone()">
           </ion-input>
           <app-validation-messages *ngIf="showTextHelperPhone" slot="error"
             [control]="form.get('movil')"></app-validation-messages>
@@ -87,11 +87,11 @@
           <ion-text class="text text-muted text-center d-block mb-3">Elige cómo validar tu
             número</ion-text>
 
-          <ion-button class="fz-normal" expand="block" shape="round" fill="clear" class="mb-3" (click)="onValidPhone('sms')">
+          <ion-button expand="block" shape="round" fill="clear" class="mb-3" (click)="onValidPhone('sms')">
             Enviar código por SMS
           </ion-button>
 
-          <ion-button class="fz-normal" expand="block" shape="round" fill="clear" (click)="onValidPhone('whatsapp')">
+          <ion-button expand="block" shape="round" fill="clear" (click)="onValidPhone('whatsapp')">
             Enviar código por WhatsApp
           </ion-button>
         </div>
