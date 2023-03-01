@@ -29,6 +29,13 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+
+    // Focus al primer input
+    setTimeout(() => {
+      const firstInput: HTMLInputElement =  this.myInput.toArray()[0].nativeElement;
+      firstInput.focus();
+    }, 300);
+
     const footerButton: HTMLDivElement = document.querySelector('.form-control-button');
 
     this.myInput.forEach( input => {
@@ -50,17 +57,24 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
         footerButton.classList.add('disabled');
         footerButton.classList.remove('active');
       });
-      input.nativeElement.addEventListener('input', (event: Event) => {
+      input.nativeElement.addEventListener('input', (event: Event): boolean => {
         const target = event.target as HTMLInputElement;
         this.myData = {
           ...this.myData,
           [target.name]: target.value
         }
-        if(this.myData.curretpassword !== '' && this.myData.newpassword !== '' && this.myData.confirmpassword !== '') {
-          this.statusButton = false;
-        } else {
-          this.statusButton = true;
+
+        if(this.myData.curretpassword === '' ||
+           this.myData.newpassword === '' ||
+           this.myData.confirmpassword === '') {
+          return this.statusButton = true;
         }
+
+        if(this.myData.newpassword !== this.myData.confirmpassword) {
+          return this.statusButton = true;
+        }
+
+        return this.statusButton = false;
       })
     })
   }
