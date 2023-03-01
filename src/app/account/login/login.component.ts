@@ -64,7 +64,9 @@ export class LoginComponent implements OnInit {
     this.navigator.forward("/customer/manage-user-information");
   }
 
-  onChangeType(){
+  onChangeType(ev){
+    ev.preventDefault();
+    ev.stopPropagation();
     if(this.inputPassword.type === "password"){
       this.inputPasswordType = "text";
       this.inputPassword.type = "text";
@@ -72,9 +74,11 @@ export class LoginComponent implements OnInit {
       this.inputPasswordType = "password";
       this.inputPassword.type = "password";
     }
+    console.log("Hola2")
   }
 
-  checkFocus(input : string){
+  checkFocus(event,input : string){
+    console.log("Hola mundo")
     switch(input){
       case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = true;
@@ -95,4 +99,7 @@ export class LoginComponent implements OnInit {
         this.showTextHelperPassword = false; break;
     }
   }
+
+
+
 }
