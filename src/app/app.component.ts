@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { StatusBar } from '@capacitor/status-bar';
+import { StatusBar, Style } from '@capacitor/status-bar';
 import { SettingsService } from './services/settings.service';
 
 @Component({
@@ -16,8 +16,14 @@ export class AppComponent {
     if (typeof window !== 'undefined') {
       // estamos en una página web
     } else {
-      const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+      const color = localStorage.getItem('mode') === 'dark'? '#05050f' : '#FFFFFF';
       StatusBar.setBackgroundColor({ color });
+
+      if( localStorage.getItem('mode') === 'dark' ) {
+        StatusBar.setStyle({ style: Style.Dark });
+      } else {
+        StatusBar.setStyle({ style: Style.Light });
+      }
     }
   }
 
@@ -28,11 +34,12 @@ export class AppComponent {
     const mql: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
     const handleThemeChange = (event: any) => {
-      if(this.themeDefault === 'auto') {
+      if(this.themeDefault === 'Automático') {
         if(event.matches === true) {
           this.changeModeDark(body);
         } else {
           this.changeModeLight(body);
+
         }
       }
     };
