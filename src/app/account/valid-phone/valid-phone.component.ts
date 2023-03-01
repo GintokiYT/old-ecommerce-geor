@@ -20,8 +20,8 @@ import { CountrySelectedService } from '../services/country-selected.service';
 })
 export class ValidPhoneComponent extends ViewComponent implements OnInit, OnDestroy, AfterViewInit {
   movil: string | null = '';
-  counter: number = 60;
-  counterTime: string = '';
+  counter: number = 59;
+  counterTime: string = '01:00';
   timer: any;
   isCounterInZero: boolean = false;
   form!: FormGroup;
