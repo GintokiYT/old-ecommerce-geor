@@ -95,6 +95,9 @@ body.ios {
 
 // Cambiar el color del Status Bar en IOS (RCNA)
 //* IOS
+// ion-app {
+//   --ion-status-bar-background: var(--ion-color-icons-selected);
+// }
 ion-app {
-  --ion-status-bar-background: var(--ion-color-icons-selected);
+  --ion-status-bar-background: var(--ion-background-color);
 }
