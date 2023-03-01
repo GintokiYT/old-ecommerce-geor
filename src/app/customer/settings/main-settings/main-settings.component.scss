@@ -71,7 +71,7 @@ ion-content {
   height: 24px;
   position: relative;
 
-  &:hover {
+  &:active {
     &::before {
       content: "";
       position: absolute;

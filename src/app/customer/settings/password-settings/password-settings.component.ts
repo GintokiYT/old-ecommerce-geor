@@ -74,6 +74,8 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
           return this.statusButton = true;
         }
 
+
+
         return this.statusButton = false;
       })
     })
