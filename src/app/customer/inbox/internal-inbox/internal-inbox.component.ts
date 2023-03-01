@@ -40,7 +40,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     //* Al cargar la página los chats se muestran primeros
     setTimeout(() => {
       this.showLastChat(contenedorDeChats)
-    }, 200);
+    }, 100);
 
     // Nuevo chat
     const messageInput:HTMLDivElement = this.messageInput.nativeElement;
