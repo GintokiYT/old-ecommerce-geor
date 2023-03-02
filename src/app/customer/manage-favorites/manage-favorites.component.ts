@@ -43,4 +43,14 @@ export class ManageFavoritesComponent extends ViewComponent implements OnInit {
   onToBack(route: string) {
     this.navigation.back(route);
   }
+
+  goVariants() {
+    localStorage.setItem('back', '/customer/manage-favorites');
+    this.navigation.forward('/customer/variants');
+  }
+
+  goDetailProduct() {
+    localStorage.setItem('back', '/customer/manage-favorites');
+    this.navigation.forward('/customer/product');
+  }
 }

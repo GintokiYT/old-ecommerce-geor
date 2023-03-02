@@ -17,7 +17,8 @@ export class HeaderBasketComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goTeam() {
-    this.navigation.root('/customer/team', 'forward');
+    localStorage.setItem('back', '/customer/collaborative-basket');
+    this.navigation.forward('/customer/team');
   }
 
   showModal(){

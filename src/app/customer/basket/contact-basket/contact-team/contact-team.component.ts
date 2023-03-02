@@ -50,9 +50,10 @@ export class ContactTeamComponent extends ViewComponent implements OnInit {
   goBack(){
     this.location.back();
   }
-  goTeam(){
-    this.navigation.root('/customer/team','forward');
 
+  goTeam(){
+    localStorage.setItem('back', '/customer/manage-user-information');
+    this.navigation.root('/customer/team','forward');
   }
   goContactSeatch(){
     this.navigation.root('/customer/contact-search','forward');
