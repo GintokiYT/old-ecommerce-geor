@@ -15,8 +15,8 @@ import { Platform } from '@ionic/angular';
 })
 export class RecoverPasswordCodeComponent extends ViewComponent implements OnInit {
   email: string | null = '';
-  counter: number = 60;
-  counterTime: string = '';
+  counter: number = 59;
+  counterTime: string = '01:00';
   timer: any;
   isCounterInZero: boolean = false;
   form!: FormGroup;

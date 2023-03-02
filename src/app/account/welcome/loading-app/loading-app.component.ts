@@ -24,11 +24,11 @@ export class LoadingAppComponent extends ViewComponent implements OnInit {
     const body: HTMLBodyElement = document.querySelector('body');
     this.changeDataLoading(body);
 
-    const mediaQueryList: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    // const mediaQueryList: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
-    mediaQueryList.addEventListener('change', () => {
-      this.changeDataLoading(body);
-    })
+    // mediaQueryList.addEventListener('change', () => {
+    //   this.changeDataLoading(body);
+    // })
 
     setTimeout(() => {
       this.navigation.root('/account/welcome/select-country', 'forward');

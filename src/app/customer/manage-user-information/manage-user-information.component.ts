@@ -63,4 +63,9 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
   goPageTeam() {
     this.navigation.forward('customer/collaborative-team');
   }
+
+  // Ir a favoritos
+  goToFavorites() {
+    this.navigation.forward('customer/manage-favorites');
+  }
 }

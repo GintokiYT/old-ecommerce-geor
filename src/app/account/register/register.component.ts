@@ -24,7 +24,9 @@ export class RegisterComponent extends ViewComponent implements OnInit {
   @ViewChild("inputPassword") inputPassword: IonInput;
   @ViewChild(IonContent) content: IonContent;
   inputPasswordType : string = "password";
-  countryBorderColorState : string = "default"
+  countryBorderColorState : string = "default";
+  showFakeEye : boolean = false;
+  showTrueEye: boolean = true;
 
   showTextHelperName = false;
   showTextHelperPhone = false;
@@ -47,8 +49,8 @@ export class RegisterComponent extends ViewComponent implements OnInit {
 
     this.cpService.currentCodePhone$.subscribe( (code) => {
       this.codePhone = code;
-    }) 
-  } 
+    })
+  }
 
   ngOnInit() {
 
@@ -108,7 +110,12 @@ export class RegisterComponent extends ViewComponent implements OnInit {
     this.navigation.forward("/register/country-select")
   }
 
-  onChangeType(){
+  onChangeType(ev){
+    ev.preventDefault();
+    ev.stopPropagation();
+    console.log("Click eye")
+
+
     if(this.inputPassword.type === "password"){
       this.inputPasswordType = "text";
       this.inputPassword.type = "text";
@@ -125,7 +132,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
                     this.focusEmail = false;
                     this.focusPassword = false;
                    break;
-      case "phone": 
+      case "phone":
                     this.focusInputPhone = true;
                     if(this.inputPhone?.value.toString().length>0){
                       if(this.inputPhone?.value.toString().length===11){
@@ -146,6 +153,8 @@ export class RegisterComponent extends ViewComponent implements OnInit {
       case "password": this.showTextHelperPassword = true;
                     this.focusEmail = false;
                     this.focusPassword = true;
+                    this.showTrueEye = false;
+                    this.showFakeEye = true;
                     this.content.scrollToBottom();
                     break;
     }
@@ -157,11 +166,17 @@ export class RegisterComponent extends ViewComponent implements OnInit {
     switch (input) {
       case "name": this.showTextHelperName = false; break;
       case "phone": this.showTextHelperPhone = false
-                    this.countryBorderColorState = "default";
+                    if(this.inputPhone.value.toString().length===0
+                       || this.inputPhone.value.toString().length===11){
+                      this.countryBorderColorState = "default";
+                    }
                     this.focusInputPhone = false;
                     ; break;
       case "email": this.showTextHelperEmail = false; break;
-      case "password": this.showTextHelperPassword = false; break;
+      case "password": this.showTextHelperPassword = false; 
+                       this.showTrueEye = true;
+                       this.showFakeEye = false;
+                       break;
     }
 
   }

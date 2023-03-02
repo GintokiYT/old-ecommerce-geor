@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { StatusBar } from '@capacitor/status-bar';
+import { StatusBar, Style } from '@capacitor/status-bar';
 import { ViewComponent } from '@geor360/ecore';
 // import { LoginService } from 'src/app/account/services/login.service';
 import { SettingsService } from 'src/app/services/settings.service';
@@ -48,12 +48,12 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     //   localStorage.setItem('themeDefault', 'dark');
     // }
 
-    const colorStatusBar = localStorage.getItem('mode') === 'dark'? '#05050F' : '#023AFF'
+    // const colorStatusBar = localStorage.getItem('mode') === 'dark'? '#05050F' : '#023AFF'
 
-    const metaTag = document.createElement("meta");
-    metaTag.name = "theme-color";
-    metaTag.content = colorStatusBar;
-    document.getElementsByTagName("head")[0].appendChild(metaTag);
+    // const metaTag = document.createElement("meta");
+    // metaTag.name = "theme-color";
+    // metaTag.content = colorStatusBar;
+    // document.getElementsByTagName("head")[0].appendChild(metaTag);
   }
 
   onBack() {
@@ -72,35 +72,38 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
 
     switch(theme) {
       case 'Automático':
-        if(themeDefault === 'dark') {
+        const mql: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+
+        if(mql.matches) {
           this.changeThemeDark(body);
-          this.changeStatusBarWeb('dark');
+          // this.changeStatusBarWeb('dark');
           localStorage.setItem('mode', 'dark');
         } else {
           this.changeThemeLight(body);
-          this.changeStatusBarWeb('light');
+          // this.changeStatusBarWeb('light');
           localStorage.setItem('mode', 'light');
         }
         localStorage.setItem('defaultTheme', 'Automático');
       break;
       case 'Claro':
         this.changeThemeLight(body);
-        this.changeStatusBarWeb('light');
+        // this.changeStatusBarWeb('light');
       break;
       case 'Oscuro':
         this.changeThemeDark(body);
-        this.changeStatusBarWeb('dark');
+        // this.changeStatusBarWeb('dark');
       break;
     }
 
     this.settingsService.setTheme(theme);
-    this.changeThemeStatusBar();
+    // this.changeThemeStatusBar();
+    this.changeStatusBarBackgroundAndColor();
   }
 
-  changeThemeStatusBar() {
-    const color: string = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
-    StatusBar.setBackgroundColor({ color });
-  }
+  // changeThemeStatusBar() {
+  //   const color: string = localStorage.getItem('mode') === 'dark'? '#05050f' : '#023AFF';
+  //   StatusBar.setBackgroundColor({ color });
+  // }
 
   changeThemeLight(body: HTMLBodyElement) {
     body.classList.remove('dark');
@@ -116,18 +119,30 @@ export class ScreenModeSettingsComponent extends ViewComponent implements OnInit
     localStorage.setItem('defaultTheme', 'Oscuro');
   }
 
-  changeStatusBarWeb(theme: string) {
-    const colorStatusBar = theme === 'dark'? '#05050F' : '#023AFF'
+  // changeStatusBarWeb(theme: string) {
+  //   const colorStatusBar = theme === 'dark'? '#05050F' : '#023AFF'
 
-    const metaTags = document.getElementsByTagName("meta");
-    let metaTheme;
-    for (var i = 0; i < metaTags.length; i++) {
-      if (metaTags[i].name === "theme-color") {
-        metaTheme = metaTags[i];
-        break;
-      }
+  //   const metaTags = document.getElementsByTagName("meta");
+  //   let metaTheme;
+  //   for (var i = 0; i < metaTags.length; i++) {
+  //     if (metaTags[i].name === "theme-color") {
+  //       metaTheme = metaTags[i];
+  //       break;
+  //     }
+  //   }
+  //   metaTheme.content = colorStatusBar;
+  // }
+
+  changeStatusBarBackgroundAndColor() {
+    const themeColor: string = document.querySelector('body').classList.contains('dark')? 'dark' : 'light';
+
+    if(themeColor === 'dark') {
+      StatusBar.setBackgroundColor({ color: '#05050f' });
+      StatusBar.setStyle({ style: Style.Dark })
+    } else {
+      StatusBar.setBackgroundColor({ color: '#ffffff' });
+      StatusBar.setStyle({ style: Style.Light })
     }
-    metaTheme.content = colorStatusBar;
   }
 
   onToBack(route: string) {

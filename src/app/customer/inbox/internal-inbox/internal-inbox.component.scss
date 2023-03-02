@@ -30,8 +30,10 @@ img {
 
 // Container Page
 .container-internal-inbox {
+  margin-top: 61px;
   width: 100%;
-  height: 100%;
+  // height: 100%;
+  height: calc(100% - 60px);
   background-color: var(--ion-background-color);
   position: relative;
   display: flex;
@@ -42,7 +44,7 @@ img {
 //*** Header Page
 .app-header-inbox {
   background-color: var(--ion-background-color);
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -174,7 +176,8 @@ img {
   z-index: 500;
 	top: 16px;
   left: 20px;
-	color: rgba(255,255,255,.5);
+	// color: rgba(255,255,255,.5);
+  color: var(--ion-color-disabled);
   font-weight: 400;
   font-size: 16px;
   background-color: unset;

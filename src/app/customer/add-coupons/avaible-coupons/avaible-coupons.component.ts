@@ -54,4 +54,8 @@ export class AvaibleCouponsComponent extends ViewComponent implements OnInit {
     this.cpService.setCoupon(couponChoosed);
   }
 
+  goToConditions(){
+    this.navigation.forward("/customer/add-coupons/conditions")
+  }
+
 }

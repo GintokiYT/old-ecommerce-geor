@@ -37,7 +37,14 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
     telefonoInput.value = valorFormateado;
   }
 
+
   ngAfterViewInit() {
+
+    // Focus al primer input
+    setTimeout(() => {
+      const firstInput: HTMLInputElement =  this.myInput.toArray()[0].nativeElement;
+      firstInput.focus();
+    }, 300);
 
     this.myInput.forEach( (input, index) => {
 
@@ -51,7 +58,6 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
 
       input.nativeElement.addEventListener('focus', () => {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
-        console.log(formControlSettings)
         formControlSettings.classList.add('active')
         formControlSettings.classList.remove('data');
       });
@@ -63,34 +69,26 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
         }
       });
 
-      input.nativeElement.addEventListener('input', (event: Event) => {
-        console.log(this.myData)
+      input.nativeElement.addEventListener('input', (event: Event): boolean => {
+
         const target = event.target as HTMLInputElement;
         this.myData = {
           ...this.myData,
           [target.name]: target.value
         }
-        if(this.myData.name !== '' && this.myData.email !== '' && this.myData.cellphone !== '') {
-          this.statusButton = false;
-        } else {
-          this.statusButton = true;
+
+        if (this.myData.name === '' ||
+            this.myData.email === '' ||
+            this.myData.cellphone === '') {
+          return this.statusButton = true;
         }
 
-        // if(this.myData.cellphone.length < 12) {
-        //   this.statusButton = true
-        // } else {
-        //   this.statusButton = false
-        // }
+        if(this.myData.cellphone.length < 11) {
+          return this.statusButton = true;
+        }
+
+        return this.statusButton = false;
       })
-
-      // input.nativeElement.addEventListener('click', (event: Event) => {
-      //   const selectedInput: any = event.target;
-
-      //   setTimeout(() => {
-      //     selectedInput.scrollIntoView({ behavior: 'smooth' });
-      //   }, 200);
-      // })
-
     })
   }
 
