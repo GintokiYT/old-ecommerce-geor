@@ -47,8 +47,8 @@ export class RegisterComponent extends ViewComponent implements OnInit {
 
     this.cpService.currentCodePhone$.subscribe( (code) => {
       this.codePhone = code;
-    }) 
-  } 
+    })
+  }
 
   ngOnInit() {
 
@@ -125,7 +125,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
                     this.focusEmail = false;
                     this.focusPassword = false;
                    break;
-      case "phone": 
+      case "phone":
                     this.focusInputPhone = true;
                     if(this.inputPhone?.value.toString().length>0){
                       if(this.inputPhone?.value.toString().length===11){

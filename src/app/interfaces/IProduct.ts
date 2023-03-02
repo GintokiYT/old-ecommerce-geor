@@ -3,10 +3,10 @@ import IProductColor from './IProductColor';
 export default interface IProduct {
   image?: string;
   name?: string;
-  price?: number;
+  price?: number | string;
   currency?: string;
   isNew?: boolean;
-  oldPrice?: number;
+  oldPrice?: number | string;
   inOffert?: boolean;
   discountPercentage?: number;
   hasMinimumOrder?: boolean;

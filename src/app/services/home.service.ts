@@ -97,7 +97,7 @@ export class HomeService {
       },
       {
         image: '/assets/home/products/product5.jpg',
-        price: 7551,
+        price: '7,551',
         currency: 'S/',
         inOffert: false,
         isNew: false,
@@ -108,7 +108,7 @@ export class HomeService {
       },
       {
         image: '/assets/home/products/product6.jpg',
-        price: 7551,
+        price: '7,551',
         currency: 'S/',
         inOffert: false,
         isNew: false,
@@ -119,7 +119,7 @@ export class HomeService {
       },
       {
         image: '/assets/home/products/product7.jpg',
-        price: 7551,
+        price: '7,551',
         currency: 'S/',
         inOffert: false,
         isNew: false,
@@ -130,7 +130,7 @@ export class HomeService {
       },
       {
         image: '/assets/home/products/product8.jpg',
-        price: 7551,
+        price: '7,551',
         currency: 'S/',
         inOffert: false,
         isNew: false,
