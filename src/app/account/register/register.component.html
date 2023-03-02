@@ -14,12 +14,17 @@
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
   >
+
+
+    <!-- input name -->
     <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
       <ion-label position="floating" class="disabled">Nombre</ion-label>
       <ion-input formControlName="name"></ion-input>
       <app-validation-messages *ngIf="showTextHelperName" slot="error"
         [control]="form.get('name')"></app-validation-messages>
     </ion-item>
+
+
     <!-- input phone -->
     <div class="d-flex flex-column" style="margin-top: 15px;">
       <div class="label-input-container">
@@ -54,32 +59,50 @@
         </ion-item>
       </div>
     </div><!--End input phone-->
+
+
+
+    <!-- input email -->
     <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('email')" (ionBlur)="checkBlur('email',false)">
       <ion-label position="floating" class="disabled">Correo electrónico</ion-label>
       <ion-input formControlName="email" inputmode="email" type="email"></ion-input>
       <app-validation-messages *ngIf="showTextHelperEmail" slot="error"
         [control]="form.get('email')"></app-validation-messages>
     </ion-item>
-    <ion-item lines="none" class="form-group position-relative ci" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
-      <ion-label position="floating" class="disabled">Contraseña</ion-label>
-      <ion-input type="password" formControlName="password" #inputPassword></ion-input>
-      <ion-icon
-          *ngIf="inputPasswordType === 'password'"
-          class="eye"
-          name="eye-off-outline"
-          (click)="onChangeType()"
-        >
-        </ion-icon>
+
+
+    <!-- input password -->
+    <div class="position-relative">
+      <ion-item lines="none" class="form-group position-relative ci" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
+        <ion-label position="floating" class="disabled">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password" #inputPassword></ion-input>
         <ion-icon
-          *ngIf="inputPasswordType === 'text'"
-          class="eye"
-          name="eye-outline"
-          (click) = "onChangeType()"
+            *ngIf="showFakeEye"
+            class="feye"
+            [name]=" inputPasswordType === 'password' ? 'eye-off-outline' : 'eye-outline'"
+            (click)="onChangeType($event)"
+            type="button"
+            slot="end"
         >
         </ion-icon>
-      <app-validation-messages *ngIf="showTextHelperPassword" slot="error"
-        [control]="form.get('password')"></app-validation-messages>
-    </ion-item>
+        <app-validation-messages *ngIf="showTextHelperPassword" slot="error"
+          [control]="form.get('password')"></app-validation-messages>
+      </ion-item>
+
+      <ion-icon
+            *ngIf="showTrueEye"
+            class="eye"
+            [name]="inputPasswordType === 'password' ? 'eye-off-outline' : 'eye-outline'"
+            (click)="onChangeType($event)"
+            slot="end"
+            type="button"
+          > 
+      </ion-icon>
+    </div>
+
+
+
+
     <ion-modal class="modal-validate" #modalValidate>
       <ng-template>
         <div class="ion-padding">
@@ -97,6 +120,7 @@
         </div>
       </ng-template>
     </ion-modal>
+
   </form>  <!-- End Form -->
 
 </ion-content>
