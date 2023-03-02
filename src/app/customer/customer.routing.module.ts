@@ -58,6 +58,7 @@ import { LanguageSettingsComponent } from './settings/language-settings/language
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
 import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
+import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
 
 const routes: Routes = [
   {
@@ -121,6 +122,7 @@ const routes: Routes = [
       {path: 'products', component: ProductsComponent},
 
       {path: 'add-coupons', component: AddCouponsComponent},
+      {path: 'add-coupons/conditions', component: ConditionsComponent},
       {path: 'billing-data', component: BillingDataComponent},
       {path: 'manage-user-information', component: ManageUserInformationComponent},
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
