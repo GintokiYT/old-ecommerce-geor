@@ -4,7 +4,7 @@ import { Component, Injector, OnInit, OnDestroy } from '@angular/core';
 // import { SettingsService } from 'src/app/services/settings.service';
 import { LanguageService } from '../../../services/language.service';
 // import { GoogleMapService } from 'src/app/services/google-map.service';
-  import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
+import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 
 interface Contenido {
   button: string;
@@ -35,6 +35,14 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
 
     this.geolocation.init();
     this.googleMap.init('AIzaSyB3iDWSD87oIotNQNnfDT1kram3J_4epOA', <any>this.language);
+
+    const mql: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    mql.addEventListener('change', () => {
+      location.reload();
+    });
+
+    // this.geolocation.init();
+    // this.googleMap.init('AIzaSyB3iDWSD87oIotNQNnfDT1kram3J_4epOA', <any>this.language);
   }
 
   override ngOnDestroy(): void {
@@ -45,6 +53,8 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   override onMapLoaded(): void {
+
+    // this.googleMap.createMap(document.querySelector('#id'), 12000, 12000, 'dark');
 
     // this.positionMarker = this.googleMap.createMarker(this.map, {
     //   latitude: this.geolocation.position.coords.latitude,
