@@ -24,7 +24,9 @@ export class RegisterComponent extends ViewComponent implements OnInit {
   @ViewChild("inputPassword") inputPassword: IonInput;
   @ViewChild(IonContent) content: IonContent;
   inputPasswordType : string = "password";
-  countryBorderColorState : string = "default"
+  countryBorderColorState : string = "default";
+  showFakeEye : boolean = false;
+  showTrueEye: boolean = true;
 
   showTextHelperName = false;
   showTextHelperPhone = false;
@@ -108,7 +110,12 @@ export class RegisterComponent extends ViewComponent implements OnInit {
     this.navigation.forward("/register/country-select")
   }
 
-  onChangeType(){
+  onChangeType(ev){
+    ev.preventDefault();
+    ev.stopPropagation();
+    console.log("Click eye")
+
+
     if(this.inputPassword.type === "password"){
       this.inputPasswordType = "text";
       this.inputPassword.type = "text";
@@ -146,6 +153,8 @@ export class RegisterComponent extends ViewComponent implements OnInit {
       case "password": this.showTextHelperPassword = true;
                     this.focusEmail = false;
                     this.focusPassword = true;
+                    this.showTrueEye = false;
+                    this.showFakeEye = true;
                     this.content.scrollToBottom();
                     break;
     }
@@ -164,7 +173,10 @@ export class RegisterComponent extends ViewComponent implements OnInit {
                     this.focusInputPhone = false;
                     ; break;
       case "email": this.showTextHelperEmail = false; break;
-      case "password": this.showTextHelperPassword = false; break;
+      case "password": this.showTextHelperPassword = false; 
+                       this.showTrueEye = true;
+                       this.showFakeEye = false;
+                       break;
     }
 
   }

@@ -18,6 +18,10 @@ export class LoginComponent implements OnInit {
   @ViewChild("inputPassword") inputPassword: IonInput;
   loginForm!: FormGroup;
   inputPasswordType : string = "password";
+  heightStart : string = window.innerHeight.toString();
+  showFakeEye : boolean = false;
+  showTrueEye: boolean = true;
+
 
   showTextHelperPhoneOrEmail = false;
   showTextHelperPassword = false;
@@ -30,7 +34,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {
-                this.visibleFooterNavigation = true;
+    this.visibleFooterNavigation = true;
+
 
   }
 
@@ -47,7 +52,25 @@ export class LoginComponent implements OnInit {
   }
 
   ngAfterViewInit(){
+    // window.onresize = () => {
+    //   if(window.innerHeight.toString()<this.heightStart){
+    //     this.showTrueEye = false;
+    //     this.showFakeEye = true;
+    //   }
+    //   if(window.innerHeight.toString()===this.heightStart){
+    //     this.showTrueEye = true;
+    //     this.showFakeEye = false;
+    //   }
+    // }
+    // // Keyboard.addListener('keyboardWillHide', () => {
+    // //   this.showTrueEye = true;
+    // //   this.showFakeEye = false;
+    // // });
 
+    // // Keyboard.addListener('keyboardDidHide', () => {
+    // //   this.showTrueEye = true;
+    // //   this.showFakeEye = false;
+    // // });
   }
 
   onGoToRegister() {
@@ -64,7 +87,10 @@ export class LoginComponent implements OnInit {
     this.navigator.forward("/customer/manage-user-information");
   }
 
-  onChangeType(){
+  onChangeType(ev){
+    ev.preventDefault();
+    ev.stopPropagation();
+    
     if(this.inputPassword.type === "password"){
       this.inputPasswordType = "text";
       this.inputPassword.type = "text";
@@ -75,6 +101,7 @@ export class LoginComponent implements OnInit {
   }
 
   checkFocus(input : string){
+    console.log("Focus input")
     switch(input){
       case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = true;
@@ -82,6 +109,8 @@ export class LoginComponent implements OnInit {
         break;
       case "password":
         this.showTextHelperPassword = true;
+        this.showTrueEye = false;
+        this.showFakeEye = true;
         this.content.scrollByPoint(0,50,500)
         break;
     }
@@ -92,7 +121,13 @@ export class LoginComponent implements OnInit {
       case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = false; break;
       case "password":
+        console.log("Blur password")
+        this.showTrueEye = true;
+        this.showFakeEye = false;
         this.showTextHelperPassword = false; break;
     }
   }
+
+
+
 }

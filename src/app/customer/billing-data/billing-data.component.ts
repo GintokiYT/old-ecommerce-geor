@@ -67,6 +67,7 @@ export class BillingDataComponent extends ViewComponent implements OnInit {
       if(trues.length>0){
         this.bills = this.bills.filter( bill => bill.id!==trues[0].id );
       }
+      this.oneTrue = false;
     }
   }
 
