@@ -154,6 +154,7 @@ ion-modal {
 
   --background: var(--ion-background-alert)
 }
+
 /* Dark */
 .cancel{
   color: var(--ion-color-basic) !important;
@@ -162,3 +163,21 @@ ion-modal {
 .delete{
   color: var(--ion-color-delete) !important;
 }
+
+// Animation Delete
+.animation-deletes {
+  //transition: all .3s ease;
+  &.actives {
+    animation: animationDelete .5s ease;
+  }
+}
+
+@keyframes animationDelete {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
