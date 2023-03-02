@@ -57,7 +57,7 @@ p {
     .image {
       min-width: 64px;
       height: 100%;
-      background-image: url('/assets/favoriteproducts/product1.jpg');
+      // background-image: url('/assets/favoriteproducts/product1.jpg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -105,8 +105,18 @@ p {
 
         .content-buy {
           display: flex;
-          align-items: center;
           gap: 8px;
+
+          svg path{
+            stroke: var(--ion-color-basic);
+          }
+
+          span {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 400px;
+            color: var(--ion-color-basic);
+          }
         }
       }
     }

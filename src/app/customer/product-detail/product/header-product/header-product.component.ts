@@ -15,7 +15,15 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goToHome(){
-    this.navigation.root("/customer/home","back");
+    const back = localStorage.getItem('back') ?? '';
+
+    if(back) {
+      this.navigation.back(localStorage.getItem('back'));
+      localStorage.setItem('back', '');
+    } else {
+      this.navigation.root("/customer/home","back");
+    }
+
   }
   goMyBasket(){
     this.navigation.root("/customer/my-basket","forward");
