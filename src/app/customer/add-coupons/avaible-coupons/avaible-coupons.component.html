@@ -9,7 +9,7 @@
       <ion-label>Vence: <span>{{coupon.expiration}}</span></ion-label>
     </div>
     <div class="coupon_conditions d-flex justify-content-between align-items-center">
-      <ion-label>Condiciones</ion-label>
+      <ion-label (click)="goToConditions()">Condiciones</ion-label>
       <ion-button (click)="useCoupon(coupon.id)" color="primary" expand="full" shape="round">
         Usar cupón
       </ion-button>

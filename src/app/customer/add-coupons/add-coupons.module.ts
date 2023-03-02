@@ -6,11 +6,12 @@ import { AddCouponsComponent } from './add-coupons.component';
 import { FormsModule } from '@angular/forms';
 import { AvaibleCouponsComponent } from './avaible-coupons/avaible-coupons.component';
 import { ExpiredCouponsComponent } from './expired-coupons/expired-coupons.component';
+import { ConditionsComponent } from './conditions/conditions.component';
 
 
 
 @NgModule({
-  declarations: [AddCouponsComponent, AvaibleCouponsComponent,ExpiredCouponsComponent],
+  declarations: [AddCouponsComponent, AvaibleCouponsComponent,ExpiredCouponsComponent,ConditionsComponent],
   imports: [
     CommonModule,
     IonicModule,
