@@ -60,8 +60,6 @@ ion-header {
 
 ion-list{
 
-    margin-top: calc( var(--ion-safe-area-top) + 88px  );
-
     ion-item{
         &::part(native){
             padding-inline-end: 0px !important;
