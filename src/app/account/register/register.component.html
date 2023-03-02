@@ -1,17 +1,17 @@
 <ion-content [scrollEvents]="true">
 
   <!-- Header -->
-  <app-header 
-    title="Regístrate" 
-    iconLeft="icon-close" 
+  <app-header
+    title="Regístrate"
+    iconLeft="icon-close"
     backDirection="login"
   >
   </app-header>
 
   <!-- Form -->
-  <form 
-    class="w-100 container-main" 
-    [formGroup]="form" 
+  <form
+    class="w-100 container-main"
+    [formGroup]="form"
     (ngSubmit)="onSubmit()"
   >
     <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
@@ -33,14 +33,14 @@
         </ion-label>
       </div>
       <div class="country-select-container d-flex">
-        <div 
+        <div
           class="country d-flex justify-content-start align-items-center"
           [ngClass]="{'country-default': countryBorderColorState==='default',
                       'country-correct' : countryBorderColorState==='correct',
                       'country-error' : countryBorderColorState==='error',
                       'width-two-digits': codePhone.length===2,
                       'width-three-digits': codePhone.length>2}"
-          (click)="onGoToCountrySelect()"                      
+          (click)="onGoToCountrySelect()"
           >
           <img [src]="flag" width="24px"/>
           <ion-label>+{{codePhone}}</ion-label>
@@ -98,7 +98,7 @@
       </ng-template>
     </ion-modal>
   </form>  <!-- End Form -->
-  
+
 </ion-content>
 
 
@@ -119,5 +119,5 @@
     (onModalNotVisible)="openModalValidate($event)"
   >
   </app-modal-terms>
-  
+
 </ion-footer>
