@@ -20,6 +20,12 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   showTextHelperPassword = false;
   showTextHelperPasswordConfirmation = false;
 
+  showFakeEye : boolean = false;
+  showTrueEye: boolean = true;
+
+  showFakeEye2: boolean = false;
+  showTrueEye2: boolean = true;
+
   inputPasswordType = "password";
   inputPasswordTypeConfirm = "password";
 
@@ -112,15 +118,27 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
   checkFocus(input: string) {
     switch (input) {
-      case "password": this.showTextHelperPassword = true; break;
-      case "passwordConfirmation": this.showTextHelperPasswordConfirmation = true; break;
+      case "password": this.showTextHelperPassword = true; 
+                      this.showTrueEye = false;
+                      this.showFakeEye = true;
+                      break;
+      case "passwordConfirmation": this.showTextHelperPasswordConfirmation = true; 
+                                   this.showTrueEye2 = false;
+                                   this.showFakeEye2 = true;
+      break;
     }
   }
 
   checkBlur(input: string) {
     switch (input) {
-      case "password": this.showTextHelperPassword = false; break;
-      case "passwordConfirmation": this.showTextHelperPasswordConfirmation = false; break;
+      case "password": this.showTextHelperPassword = false; 
+                        this.showTrueEye = true;
+                        this.showFakeEye = false;
+                        break;
+      case "passwordConfirmation": this.showTextHelperPasswordConfirmation = false;
+                                    this.showTrueEye2 = true;
+                                    this.showFakeEye2 = false;
+                                    break;
     }
   }
 }
