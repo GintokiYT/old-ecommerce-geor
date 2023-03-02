@@ -83,11 +83,19 @@ export abstract class GeolocationComponent extends ViewComponent implements OnIn
   }
 
   private completeLoadMap(): void {
+    const theme = document.querySelector('body').classList.contains('dark')? 'dark' : 'light';
+
     if (this.mapIddle)
       return;
 
     this.mapLoaded?.unsubscribe();
-    this.map = this.googleMap.createMap(document.getElementById(this.mapId), this.geolocation.position.coords.latitude, this.geolocation.position.coords.longitude, this.theme.theme, () => {
+
+    // this.map = this.googleMap.createMap(document.getElementById(this.mapId), this.geolocation.position.coords.latitude, this.geolocation.position.coords.longitude, this.theme.theme, () => {
+    //   this.mapIddle = true;
+    //   this.onMapLoaded();
+    // });
+
+    this.map = this.googleMap.createMap(document.getElementById(this.mapId), this.geolocation.position.coords.latitude, this.geolocation.position.coords.longitude, theme, () => {
       this.mapIddle = true;
       this.onMapLoaded();
     });

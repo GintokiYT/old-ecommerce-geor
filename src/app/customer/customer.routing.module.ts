@@ -57,6 +57,7 @@ import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/scr
 import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
+import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,8 @@ const routes: Routes = [
       { path: 'picture-big',component:PictureBigComponent},
       { path: 'contact-team',component:ContactTeamComponent},
       { path: 'variants-product',component:VariantsProductComponent},
+
+      { path: 'manage-favorites', component: ManageFavoritesComponent},
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
@@ -127,8 +130,8 @@ const routes: Routes = [
       { path: 'productsbar',component:ProductsbarComponent},
       { path: 'start',component:StartComponent},
       { path: 'voucher',component:VoucherComponent},
-      { path: '', pathMatch: 'full', redirectTo: 'main-inbox' },
-      { path: '**', redirectTo: 'main-inbox' },
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+      { path: '**', redirectTo: 'home' },
 
     ]
   }
