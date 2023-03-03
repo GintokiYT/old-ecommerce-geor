@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { Location } from '@angular/common';
 
 interface Colours{
   images:string,
@@ -22,7 +23,7 @@ interface Thickness{
 })
 export class VariantsProductComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector:Injector) {
+  constructor(private _injector:Injector,private location: Location) {
     super(_injector)
   }
 
@@ -49,21 +50,6 @@ export class VariantsProductComponent extends ViewComponent implements OnInit {
   goBack(){
     this.navigation.root('/customer/collaborative-basket','back');
   }
-/*
-  selector(){
-  const items = document.querySelectorAll('.label');
-console.log("aqui");
-  const addClassActive = (items) => {
-  items.forEach( (item, index) => {
-  item.addEventListener('click', () => {
-    items.forEach(item => item.classList.remove('active'));
-    item.classList.add('active')
-  })
-})
-}
-}
-
- */
 
   selectedLabel: number = null;
 
@@ -83,6 +69,9 @@ console.log("aqui");
     } else {
       this.selectedLabel2 = index;
     }
+  }
+  goBackCollaborative(){
+    this.location.back();
   }
   /* deselectLabel(){
     this.selectLabel=null;

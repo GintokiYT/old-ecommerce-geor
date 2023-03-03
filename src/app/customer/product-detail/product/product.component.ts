@@ -26,6 +26,7 @@ export class ProductComponent extends ViewComponent implements OnInit {
   }
 
   goReturnsExchanges() {
+    localStorage.setItem('back', '/customer/product');
     this.navigation.forward('/customer/settings/about-us/returns-exchanges');
   }
 

@@ -1,10 +1,9 @@
-
- ion-modal::part(handle){
+ion-modal::part(handle) {
   display: none;
- }
+}
 
 ion-modal {
-  --ion-background-color:var(--ion-background-modal) !important;
+  --ion-background-color: var(--ion-background-modal) !important;
 }
 
 ion-item::part(native) {
@@ -12,38 +11,38 @@ ion-item::part(native) {
   padding: 0px !important;
 }
 
-
 /* Button */
-ion-button{
+ion-button {
   border: 0px;
-.btn{
-  --background:var(--ion-color-primary);
-}
+  .btn {
+    --background: var(--ion-color-primary);
+  }
 }
 ion-button:nth-child(1)::part(native) {
   border: 1px solid var(--ion-outline-color-button) !important;
   color: var(--ion-outline-color-button);
-  background-color:  var(---ion-background-modal) !important;
+  background-color: var(---ion-background-modal) !important;
 }
 
-.btn{
+.btn {
   width: 100%;
 }
 
 /* ---- */
-ion-radio{
-  margin:0px !important;
+ion-radio {
+  margin: 0px !important;
 }
 ion-radio::part(container) {
   border: 1px solid var(--ion-border-radio) !important;
 }
 
-ion-item{
+ion-item {
   --inner-padding-end: 0px !important;
+  --background-activated: unset !important;
 }
 
-.basket{
- gap: 10px;
+.basket {
+  gap: 10px;
 }
 
 // Estilos modal
@@ -54,7 +53,7 @@ ion-item{
   width: 100%;
   height: 100vh;
   z-index: 10000;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-variants {
@@ -65,7 +64,7 @@ ion-item{
   position: absolute;
   bottom: 0;
   left: 0;
-  animation: modalOpen .3s ease;
+  animation: modalOpen 0.3s ease;
 }
 
 @keyframes modalOpen {
@@ -78,7 +77,7 @@ ion-item{
 }
 
 .close-modal {
-  animation: modalClose .3s ease;
+  animation: modalClose 0.3s ease;
 }
 
 @keyframes modalClose {
