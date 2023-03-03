@@ -17,19 +17,18 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
    }
 
   ngOnInit() {}
+//Mostramos la lista de contacto
+  public contact=['Jualiano del carmen','Anibal Cortez','Roberto Carlos de maracaná','Anibal Cortez','Roberto Carlos de maracaná','Jorge Laguna','Anibal Cortez'];
+  public number=['+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234'];
+  public results = [...this.contact];
 
-  contact:Contacts[]=[
-    {
-      name: 'Jualiano del carmen',
-      number:'+51 971 945 234',
+//Busca el nombre del contacto
+  handleChange(event) {
+    const query = event.target.value.toLowerCase().trim();
+    this.results = this.contact.filter(d => d.toLowerCase().indexOf(query) > -1);
+  }
 
-    },
-    {
-      name: 'Roberto Carlos de maracaná',
-      number:'+51 971 945 234',
-
-    }];;
-
+//Selecciona los checkbox
   oneTrue = false;
   invitationsCount = 0;
 

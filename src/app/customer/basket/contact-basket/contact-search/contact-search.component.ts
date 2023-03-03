@@ -19,29 +19,14 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
   constructor( _injector: Injector, private location: Location ) {
     super(_injector);
    }
-   public contact=['Julian','marco','luis'];
+   public contact=['Jualiano del carmen','Anibal Cortez','Roberto Carlos de maracaná','Anibal Cortez','Roberto Carlos de maracaná','Jorge Laguna','Anibal Cortez'];
+   public number=['+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234'];
    public results = [...this.contact];
 
    handleChange(event) {
      const query = event.target.value.toLowerCase().trim();
-
      this.results = this.contact.filter(d => d.toLowerCase().indexOf(query) > -1);
    }
-
-
-  /*  contact:Contacts[]=[
-    {
-      name: 'Jualiano del carmen',
-      number:'+51 971 945 234',
-
-    },
-    {
-      name: 'Roberto Carlos de maracaná',
-      number:'+51 971 945 234',
-
-    }];; */
-
-
 
   oneTrue = false;
   invitationsCount = 0;
@@ -64,8 +49,10 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
     this.location.back();
   }
 
-  goCollaborativeBasket(){
+  goBasket(){
+    localStorage.setItem('back', '/customer/manage-user-information');
     this.navigation.root('/customer/collaborative-basket','forward');
+    //this.navigation.root('/customer/collaborative-basket','forward');
   }
 
 

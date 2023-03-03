@@ -40,6 +40,7 @@ ion-checkbox {
 }
 ion-item {
   margin: 0px 24px 0px 24px;
+  --background-activated: unset !important;
 }
 
 /* Dark */
@@ -50,5 +51,6 @@ ion-item {
     stroke: var(--ion-color-basic);
   }
 }
+
 
 

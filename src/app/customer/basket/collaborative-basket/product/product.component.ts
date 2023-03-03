@@ -49,8 +49,7 @@ interface Descripcions{
     this.message.confirm('¿Eliminar este producto?','',(confirmation) => {
       if (confirmation) {
         const productDiv = event.target.closest('.product-info');
-        console.log(productDiv);
-        const productId = productDiv.id;
+         const productId = productDiv.id;
         if (productDiv) {
           productDiv.remove();
         }

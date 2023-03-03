@@ -19,12 +19,11 @@ export class HeaderTeamComponent extends ViewComponent implements OnInit {
 
   goBack(){
     const back = localStorage.getItem('back') ?? '';
-
     if(back) {
       this.navigation.back(localStorage.getItem('back'));
       localStorage.setItem('back', '');
     } else {
-      this.location.back();
+      this.navigation.back('/customer/collaborative-basket');
     }
   }
 

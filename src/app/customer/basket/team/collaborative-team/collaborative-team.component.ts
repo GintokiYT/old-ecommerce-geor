@@ -17,6 +17,10 @@ export class CollaborativeTeamComponent extends ViewComponent implements OnInit 
 
   ngOnInit() {}
 
+  goBack(){
+    this.navigation.root('customer/manage-user-information','back')
+  }
+
   openInviteTeam(){
     this.inviteService.setStatusModalInviteTeam(true);
   }
