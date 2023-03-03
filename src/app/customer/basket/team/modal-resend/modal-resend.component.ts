@@ -1,6 +1,16 @@
-import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Injector, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
+
+interface Equipo {
+  id?: string,
+  image?:string,
+  nombre?:string,
+  estado?: {
+    estado?:string,
+    numero?:string,
+  }
+}
 
 @Component({
   selector: 'app-modal-resend',
@@ -8,6 +18,10 @@ import { InviteService } from 'src/app/services/Invite.service';
   styleUrls: ['./modal-resend.component.scss'],
 })
 export class ModalResendComponent extends ViewComponent implements OnInit {
+
+  @Input() selectedTeam: Equipo;
+
+  @Output() deleteTeam = new EventEmitter<string>();
 
   @ViewChild('ContainerModal') ContainerModal:ElementRef;
   @ViewChild('modal') modal:ElementRef;
@@ -28,14 +42,19 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
     super(_injector);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.selectedTeam)
+  }
 
   Close(){
     this.dialog.dismiss();
   }
 
-  deleteContact(){
-    this.message.confirm('¿Eliminar de tu equipo?','',(confirmation)=>{
+  deleteContact(id: string){
+    this.message.confirm('¿Eliminar de tu equipo?','',(confirmation) => {
+      if (confirmation) {
+        this.deleteTeam.emit(id);
+      }
     },'Eliminar','Cancelar');
   }
 

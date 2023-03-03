@@ -3,11 +3,11 @@
     <div class="box d-flex flex-column mx-4 mt-4">
       <div class="d-flex gap-2">
         <div class="ion-no-padding">
-          <img src="assets/icons/icon-avatar-gerardo.svg" />
+          <img [src]="selectedTeam.image" [alt]="selectedTeam.nombre"/>
         </div>
         <ion-text class="d-flex flex-column gap-2">
-          <ion-label>Juliano del Carmen Soriano</ion-label>
-          <div class="text-description d-flex flex-row gap-2">
+          <ion-label>{{ selectedTeam.nombre }}</ion-label>
+          <div class="text-description d-flex flex-row gap-2"  *ngIf="selectedTeam.estado.estado !== ''">
             <ion-text
               class="color d-flex flex-row justify-content-center align-items-center gap-1"
             >
@@ -22,10 +22,10 @@
               Reenviar invitación</ion-label>
           </div>
           <ion-label class="color">23 dic 2022</ion-label>
-          <ion-label class="color">+51 971 945 234</ion-label>
+          <ion-label class="color">{{ selectedTeam.estado.numero }}</ion-label>
         </ion-text>
       </div>
-      <div (click)="deleteContact()" class="d-flex flex-row gap-2">
+      <div (click)="deleteContact(selectedTeam.id)" class="d-flex flex-row gap-2">
         <svg
           class="delete"
           width="1em"

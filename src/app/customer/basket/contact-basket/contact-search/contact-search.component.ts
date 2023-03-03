@@ -50,9 +50,13 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
   }
 
   goBasket(){
-    localStorage.setItem('back', '/customer/manage-user-information');
-    this.navigation.root('/customer/collaborative-basket','forward');
-    //this.navigation.root('/customer/collaborative-basket','forward');
+
+    if(localStorage.getItem('back')) {
+      this.navigation.back(localStorage.getItem('back'));
+      localStorage.setItem('back', '/customer/manage-user-information');
+    } else {
+      this.navigation.root('/customer/collaborative-basket','forward');
+    }
   }
 
 
