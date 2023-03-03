@@ -18,8 +18,15 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   backMainInbox() {
+    const back = localStorage.getItem('back') ?? '';
+    if(back) {
+      this.navigation.back(localStorage.getItem('back'));
+      localStorage.setItem('back', '');
+    } else {
+      this.navigation.forward('/customer/main-inbox');
+    }
     // Las animaciones de root y back lagea el ion-footer
-    this.navigation.forward('/customer/main-inbox');
+   // this.navigation.forward('/customer/main-inbox');
     // this.navigation.root('/customer/main-inbox', 'forward')
     // this.location.back();
 

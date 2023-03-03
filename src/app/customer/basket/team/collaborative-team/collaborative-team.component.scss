@@ -1,18 +1,49 @@
-.colllaborative-team{
-margin-top: 235px;
-margin-bottom: 31px;
+button {
+  background-color: transparent;
+}
+
+ion-toolbar{
+  --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
+  --min-height: 0px;
+  --padding-top: 16px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --padding-bottom: 24px;
+}
+
+@media(max-width:320px){
+  ion-toolbar{
+      --padding-top: 32px;
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --padding-bottom: 24px
+  }
+}
+
+.colllaborative-team {
+  margin-top: 235px;
+  margin-bottom: 31px;
 }
 
 .icon-plus {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   position: absolute;
   right: 0px;
   bottom: 0px;
   margin-right: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 }
 
-.text{
+.text {
   color: var(--ion-color-text-secundary);
+}
+
+//dark
+.back{
+  width: 24px;
+  height: 24px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
 }

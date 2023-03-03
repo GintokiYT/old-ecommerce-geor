@@ -92,30 +92,6 @@ export class TeamComponent extends ViewComponent implements OnInit {
       }],
     } ]
 
-   /*  showModalInvite(){
-      this.dialog.show({
-        showBackdrop:true,
-        component: ModalResendComponent,
-        componentProps: {
-          title: "ModalResend"
-        }
-      }).then((response) => {
-        console.log(response);
-      });
-    }
- */
-    showModalAccepted(){
-      this.dialog.show({
-        showBackdrop:true,
-        component: ModalResendComponent,
-        componentProps: {
-          title: "ModalAccepted"
-        }
-      }).then((response) => {
-        console.log(response);
-      });
-    }
-
     openInvite(){
       this.inviteService.setStatusModalInvite(true);
     }

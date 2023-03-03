@@ -11,36 +11,56 @@
       </div>
     </ion-text>
     <ion-text class="size d-flex flex-column">
-      <ion-label  class="fw-normal">Tamaño (cm)  </ion-label>
-   <!--   <div class="d-flex ">
-      <div class="fz-note dato" style="margin-right: 7px;"> <ion-label class="label" (click)="selectLabel(1)" [ngClass]="{'selected': selectedLabel === 1}"class="extent-cm">150x120</ion-label> <sup class="amount">10</sup> </div>
-      <div class="fz-note dato" style="margin-right: 11px;"> <ion-label class="label" (click)="selectLabel(2)" [ngClass]="{'selected': selectedLabel === 2}" class="extent-cm">100x110</ion-label> <sup class="amount">2</sup> </div>
-      <div class="fz-note dato" style="margin-right: 16px;"> <ion-label class="label" (click)="selectLabel(3)" [ngClass]="{'selected': selectedLabel === 3}"class="extent-cm">150x110</ion-label></div>
-      <div class="fz-note dato"> <ion-label class="label" (click)="selectLabel(4)" [ngClass]="{'selected': selectedLabel === 4}" class="extent-cm">200x240</ion-label> </div>
-    </div>
-      -->
+      <ion-label class="fw-normal">Tamaño (cm) </ion-label>
       <div class="container fz-note" style="padding-left: 0px">
-        <label class="label" (click)="selectLabel(1)" [ngClass]="{'selected': selectedLabel === 1}">150x120<span class="top">10</span></label>
-        <label class="label" (click)="selectLabel(2)" [ngClass]="{'selected': selectedLabel === 2}">100x110<span class="top-2">2</span></label>
-        <label class="label" (click)="selectLabel(3)" [ngClass]="{'selected': selectedLabel === 3}">150x110</label>
-        <label class="label" (click)="selectLabel(4)" [ngClass]="{'selected': selectedLabel === 4}">200x240</label>
+        <label
+          class="label"
+          (click)="selectLabel(1)"
+          [ngClass]="{ selected: selectedLabel === 1 }"
+          >150x120<span class="top">10</span></label
+        >
+        <label
+          class="label"
+          (click)="selectLabel(2)"
+          [ngClass]="{ selected: selectedLabel === 2 }"
+          >100x110<span class="top-2">2</span></label
+        >
+        <label
+          class="label"
+          (click)="selectLabel(3)"
+          [ngClass]="{ selected: selectedLabel === 3 }"
+          >150x110</label
+        >
+        <label
+          class="label"
+          (click)="selectLabel(4)"
+          [ngClass]="{ selected: selectedLabel === 4 }"
+          >200x240</label
+        >
       </div>
-
     </ion-text>
-     <ion-text class="size-thicknes d-flex flex-column">
-      <ion-label class="fw-normal ">Espesor (mm)</ion-label>
-      <!-- <div class="d-flex g-4">
-        <div class="fz-note dato "> <ion-label class="extent-mm px-3">2</ion-label> <sup class="amount">10</sup> </div>
-        <div class="fz-note dato me-4 "> <ion-label class="extent-mm px-3">4</ion-label></div>
-        <div class="fz-note dato"> <ion-label class="extent-mm px-3">8</ion-label></div>
-      </div> -->
+    <ion-text class="size-thicknes d-flex flex-column">
+      <ion-label class="fw-normal">Espesor (mm)</ion-label>
       <div class="container fz-note" style="padding-left: 0px">
-        <label class="label2" (click)="selectLabel2(5)" [ngClass]="{'selected2': selectedLabel2 === 5}">2<span class="top">12</span></label>
-        <label class="label2" (click)="selectLabel2(6)" [ngClass]="{'selected2': selectedLabel2 === 6}">4</label>
-        <label class="label2" (click)="selectLabel2(7)" [ngClass]="{'selected2': selectedLabel2 === 7}">8</label>
-
+        <label
+          class="label2"
+          (click)="selectLabel2(5)"
+          [ngClass]="{ selected2: selectedLabel2 === 5 }"
+          >2<span class="top">12</span>
+        </label>
+        <label
+          class="label2"
+          (click)="selectLabel2(6)"
+          [ngClass]="{ selected2: selectedLabel2 === 6 }"
+          >4</label
+        >
+        <label
+          class="label2"
+          (click)="selectLabel2(7)"
+          [ngClass]="{ selected2: selectedLabel2 === 7 }"
+          >8</label
+        >
       </div>
-
     </ion-text>
   </div>
 
@@ -53,10 +73,10 @@
       <ion-label>{{ item.name }}</ion-label>
     </div>
     <div>
-      <ion-text >
-        <img src="assets/icons/icon-line.svg">
+      <ion-text>
+        <img src="assets/icons/icon-line.svg" />
         <ion-label class="mx-4">{{ item.quantify }}</ion-label>
-        <img src="assets/icons/icon-plus-main.svg">
+        <img src="assets/icons/icon-plus-main.svg" />
       </ion-text>
     </div>
   </ion-text>
@@ -64,14 +84,14 @@
 
 <ion-footer class="ion-no-padding ion-no-border footer-ionic">
   <ion-toolbar class="ion-no-padding">
-    <div class="footer ">
+    <div class="footer">
       <ion-text class="d-flex flex-row justify-content-between mb-3">
         <ion-label>Total</ion-label>
-        <ion-label>S/9,999.00</ion-label>
+        <ion-label>S/ 9,999.00</ion-label>
       </ion-text>
       <div class="d-flex mt-2 gap-3">
-
         <ion-button
+          (click)="goBackCollaborative()"
           class="btn ion-no-padding ion-no-margin"
           expand="block"
           shape="round"
@@ -80,6 +100,5 @@
         </ion-button>
       </div>
     </div>
-
   </ion-toolbar>
 </ion-footer>

@@ -1,4 +1,5 @@
-<ion-list>
+<div class="animation-deletes">
+  <ion-list>
   <ion-item-sliding>
     <ion-item class="ion-no-padding" lines="none">
       <ion-label
@@ -19,7 +20,7 @@
             </div>
             <div class="d-flex flex-column">
               <ion-text>
-                <ion-label class="fz-small mb-1">S/48.90</ion-label>
+                <ion-label class="fz-small mb-1">S/ 48.90</ion-label>
                 <ion-label class="text"> Acrílico liso bajo </ion-label>
               </ion-text>
               <ion-label class="text fz-note mt-4">Lo agregó <span class="name">Gerardo Ortiz, Wilfredo, Luis</span>
@@ -28,11 +29,11 @@
           </div>
           <div
             *ngFor="let item of descripcion"
-            class="description fz-note d-flex flex-column">
+            class="description fz-note d-flex flex-column product-info">
             <ion-label class="fz-note measurement">{{item.detalle}}</ion-label>
             <div class="d-flex flex-row justify-content-between">
               <img
-              (click)="deleteDescription()"
+              (click)="deleteDescription($event)"
                 src="/assets/collaborative-basquet/Delete 02.svg"
                 alt="icono"
               />
@@ -58,4 +59,4 @@
     </ion-item-options>
   </ion-item-sliding>
 </ion-list>
-
+</div>

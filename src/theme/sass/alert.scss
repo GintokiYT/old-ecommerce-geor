@@ -32,13 +32,6 @@
 
 // }
 
-
-
-
-
-
-
-
 .sc-ion-alert-ios-s .alert-wrapper{
   width: 342px;
   max-width: 500px;
@@ -62,6 +55,7 @@ color: var(--ion-color-basic);
  font-size: 16px;
  color: var(--ion-color-basic);
  font-weight: normal;
+ background: unset !important;
 }
 .alert-button.sc-ion-alert-ios:last-child{
   font-weight: normal;
