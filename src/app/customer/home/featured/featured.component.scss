@@ -1,0 +1,65 @@
+
+// Productos destacados
+.container-productos-destacados {
+  padding: 0 16px;
+
+  @media (min-width: 390px) {
+    padding: 0 24px;
+  }
+
+  .products__product {
+    margin-bottom: 16px;
+
+    .productsFeatured {
+      //width: 159px;
+      height: 210px;
+      border-radius: 10px;
+      overflow: hidden;
+
+      &.active {
+        background-color: #111;
+        animation: fadeIn 1s ease-in-out infinite;
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: 390px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .icon-truck path {
+    stroke: red !important;
+  }
+}
+// End Productos destacados
+
+.text-price {
+  &::before {
+    content: "S/";
+  }
+  &::after {
+    content: ".00";
+  }
+}
+
+
+// Animaciones
+@keyframes fadeIn {
+  0% {
+    opacity: 50%;
+  }
+  50% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 50%;
+  }
+}

@@ -27,7 +27,7 @@ export class WayPayComponent extends ViewComponent implements OnInit {
       number: "*** 4115"
     },
   ]
-  
+
   constructor(private _injector: Injector, private cpService: ConfirmOrderService) {
     super(_injector)
    }

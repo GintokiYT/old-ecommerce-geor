@@ -12,9 +12,11 @@ import { ShareModule } from '../../shared/shared.module';
 import { AddCardComponent } from './add-card/add-card.component';
 
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
+import { PaymentMethodConfigurationComponent } from './payment-method-configuration/payment-method-configuration.component';
+import { CardPaymentMethodsComponent } from './card-payment-methods/card-payment-methods.component';
 
 @NgModule({
-  declarations: [ WayPayComponent,PaymentMethodsComponent, AddCardComponent],
+  declarations: [ WayPayComponent,PaymentMethodsComponent, AddCardComponent,PaymentMethodConfigurationComponent,CardPaymentMethodsComponent],
   imports: [
     IonicModule,
     CommonModule,
@@ -24,7 +26,7 @@ import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
     IonicInputMaskModule,
   ],
   exports:[
-   
+
   ]
 })
 export class PayCardModule { }

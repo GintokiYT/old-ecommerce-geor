@@ -1,0 +1,48 @@
+<ion-content>
+  <app-header
+  title="Métodos de pago"
+  (click)="goback()"
+  iconLeft="icon-arrow-left"
+  >
+ </app-header>
+
+  <div class="container-main">
+    <div class="d-flex flex-column gap-4 mx-4">
+    <div class="target" id="tarjeta1">
+      <ion-text class="d-flex justify-content-between ">
+        <div class="d-flex justify-content-center align-items-center" style="gap:12px">
+          <img src="/assets/icons/card-visa.svg" alt="card-visa" class="img">
+          <ion-label>Visa Débito *** 4115</ion-label>
+        </div>
+        <img (click)="delete('tarjeta1')" src="/assets/icons/icon-delete.svg" alt="delete">
+       <!--  <img (click)="openModal()" id="delete" src="/assets/icons/icon-delete.svg" alt="delete"> -->
+      </ion-text>
+    </div>
+    <div class="target" id="tarjeta2">
+      <ion-text class="d-flex justify-content-between ">
+        <div class="d-flex justify-content-center align-items-center" style="gap:12px">
+          <img src="/assets/icons/card-visa.svg" alt="card-visa" class="img">
+          <ion-label>Visa Crédito *** 4598</ion-label>
+        </div>
+        <img (click)="delete('tarjeta2')"  src="/assets/icons/icon-delete.svg" alt="delete">
+      <!--   <img (click)="openModal()" id="delete" src="/assets/icons/icon-delete.svg" alt="delete"> -->
+      </ion-text>
+    </div>
+  </div>
+  </div>
+
+
+  <ion-footer class="footer-ionic">
+    <ion-toolbar>
+      <ion-button
+        (click)="goAddCard()"
+        color="primary" fill="outline" shape="round" expand="block">
+        <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
+      </ion-button>
+
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+
+
+

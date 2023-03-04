@@ -1,8 +1,8 @@
 <ion-content class="content-add">
-
+<!-- backDirectin="way-pay" -->
   <app-header
   title="Agregar tarjeta"
-  backDirection="way-pay"
+  (click)="back()"
   iconLeft="icon-close"
   >
   </app-header>
@@ -30,7 +30,7 @@
         <ion-input
           name="cardholder"
           [(ngModel)]="data.cardholder"
-          required  
+          required
         ></ion-input>
       </ion-item>
       <ion-item class="form-group">
@@ -43,22 +43,22 @@
           maxlength="5"
           name="expiration"
           [(ngModel)]="data.expiration"
-          required  
+          required
         ></ion-input>
       </ion-item>
       <ion-item class="form-group">
         <img id="info" slot="end" (click)="setOpen(true)" src="/assets/icons/icon-help.svg" alt="help">
         <ion-label position="floating" class="fz-normal" color="medium"
         >Código de seguridad</ion-label>
-        <ion-input 
+        <ion-input
           inputmode="numeric"
           type="tel"
           name="code"
           maxlength="3"
           [(ngModel)]="data.code"
-          required 
+          required
         ></ion-input>
-      </ion-item>  
+      </ion-item>
     </form>
   </div>
 
@@ -94,9 +94,9 @@
       </ion-item>
     </div>
     <ion-button [disabled]="formulario.invalid"
-                (click)="goTo('/customer/way-pay')"
+                (click)="goWayPay()"
                 type="submit" color="primary" shape="round" expand="block">
       <ion-label class="fz-normal">Guardar</ion-label>
-    </ion-button>  
+    </ion-button>
   </ion-toolbar>
 </ion-footer>

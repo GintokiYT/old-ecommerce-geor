@@ -59,6 +59,8 @@ import { VariantsProductComponent } from './product-detail/variants-product/vari
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
 import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
 import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
+import { PaymentMethodConfigurationComponent } from './pay-card/payment-method-configuration/payment-method-configuration.component';
+import { CardPaymentMethodsComponent } from './pay-card/card-payment-methods/card-payment-methods.component';
 import { UserHelpComponent } from './userHelp/user-help/user-help.component';
 import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-book.component';
 
@@ -124,6 +126,8 @@ const routes: Routes = [
       {path: 'searchbar', component: SearchbarComponent},
       {path: 'filtro', component: FiltroComponent},
       {path: 'products', component: ProductsComponent},
+      {path: 'payment-method-configuration', component: PaymentMethodConfigurationComponent},
+      {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
 
       {path: 'add-coupons', component: AddCouponsComponent},
       {path: 'add-coupons/conditions', component: ConditionsComponent},

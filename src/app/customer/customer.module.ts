@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CustomerRoutingModule } from './customer.routing.module';
 import { CoreModule } from '@geor360/ecore';
 import { CestaModule } from './basket/basket.module';
-import { HomeComponent } from './home/home.component';
+/* import { HomeComponent } from './home/home.component'; */
 import { StorePickupModule } from './store-pickup/store-pickup.module';
 import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
@@ -24,6 +24,9 @@ import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 import { CouponsModule } from './coupons/coupons.module';
 import { ManageFavoritesModule } from './manage-favorites/manage-favorites.module';
+import { HomeModule } from './home/home.module';
+/* import { FeaturedComponent } from './home/featured/featured.component'; */
+
 import { UserHelpModule } from './userHelp/user-help.module';
 
 
@@ -33,7 +36,6 @@ import { UserHelpModule } from './userHelp/user-help.module';
     IonicModule,
     CoreModule,
     CustomerRoutingModule,
-    CestaModule,
     FormsModule,
     ConfirmOrderModule,
     StorePickupModule,
@@ -52,12 +54,13 @@ import { UserHelpModule } from './userHelp/user-help.module';
     ConfirmCardPayModule,
     CouponsModule,
     CestaModule,
-    CestaModule,
     ManageFavoritesModule,
+    HomeModule,
     UserHelpModule
   ],
   declarations: [
-    HomeComponent
+    /* HomeComponent,
+    FeaturedComponent */
   ],
 
 })

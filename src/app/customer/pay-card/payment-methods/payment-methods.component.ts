@@ -12,7 +12,17 @@ export class PaymentMethodsComponent extends ViewComponent implements OnInit {
    }
 
   ngOnInit() {}
-  goTo(path:string){
+ /*  goTo(path:string){
     this.navigation.forward(path)
+  } */
+   goTo(path:string){
+    const back = localStorage.getItem('back') ?? '';
+    if(back) {
+      this.navigation.back(localStorage.getItem('back'));
+      localStorage.setItem('back', '');
+    } else {
+    this.navigation.forward(path)
+    }
   }
+
 }
