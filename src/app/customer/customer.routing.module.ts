@@ -59,6 +59,8 @@ import { VariantsProductComponent } from './product-detail/variants-product/vari
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
 import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
 import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
+import { UserHelpComponent } from './userHelp/user-help/user-help.component';
+import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-book.component';
 
 const routes: Routes = [
   {
@@ -80,6 +82,8 @@ const routes: Routes = [
       { path: 'variants-product',component:VariantsProductComponent},
 
       { path: 'manage-favorites', component: ManageFavoritesComponent},
+      { path: 'user-help', component: UserHelpComponent },
+      { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
