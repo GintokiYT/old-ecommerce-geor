@@ -24,6 +24,9 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
     this.navigation.forward('customer/settings/main-settings');
   }
 
+  goPaymentMehod(){
+    this.navigation.root('/customer/payment-method-configuration','forward');
+  }
   async getOrTakePicture(){
     this.modalIsVisible = true;
     // const image = await Camera.getPhoto({

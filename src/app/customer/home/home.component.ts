@@ -42,7 +42,7 @@ export class HomeComponent extends ViewComponent implements OnInit {
     this.themeService = _injector.get(AppThemeService);
     this.homeService.getSlides.subscribe( slides => this.slides = slides);
     this.homeService.getProductsForYou.subscribe( product => this.productsForYou = product);
-    this.homeService.getProductsFeatured.subscribe( product => this.productsFeatured = product);
+/*     this.homeService.getProductsFeatured.subscribe( product => this.productsFeatured = product); */
   }
 
   ngOnInit() {
@@ -85,7 +85,7 @@ export class HomeComponent extends ViewComponent implements OnInit {
 
 
     //* Productos Destacados
-    setTimeout(() => {
+  /*   setTimeout(() => {
       const DivProductsFeatured = Array.from(this.myProductsFeatured.toArray().map( item => item.nativeElement)) as HTMLDivElement[];
 
       this.productsFeatured.forEach( (item, index) => {
@@ -104,6 +104,6 @@ export class HomeComponent extends ViewComponent implements OnInit {
         }
 
       })
-    }, 100);
+    }, 100); */
   }
 }

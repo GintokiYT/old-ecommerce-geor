@@ -103,10 +103,10 @@ export class TeamComponent extends ViewComponent implements OnInit {
     this.inviteService.setStatusModalResend(true);
   }
 
-  openAccepted(id: string){
+ /*  openAccepted(id: string){
     console.log(id)
     this.inviteService.setStatusModalAccepted(true);
-  }
+  } */
 
   openModal(team: any) {
     this.selectedTeam = team;
