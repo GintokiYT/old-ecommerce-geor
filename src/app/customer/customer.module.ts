@@ -24,6 +24,7 @@ import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 import { CouponsModule } from './coupons/coupons.module';
 import { ManageFavoritesModule } from './manage-favorites/manage-favorites.module';
+import { UserHelpModule } from './userHelp/user-help.module';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ManageFavoritesModule } from './manage-favorites/manage-favorites.modul
     CouponsModule,
     CestaModule,
     CestaModule,
-    ManageFavoritesModule
+    ManageFavoritesModule,
+    UserHelpModule
   ],
   declarations: [
     HomeComponent
