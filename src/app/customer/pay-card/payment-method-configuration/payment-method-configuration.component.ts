@@ -15,7 +15,14 @@ export class PaymentMethodConfigurationComponent extends ViewComponent implement
   ngOnInit() {}
 
   goAddCard(){
-    localStorage.setItem('back', '/customer/card-payment-methods');
+    const routes = {
+      main: '/customer/payment-method-configuration',
+      next: '/customer/card-payment-methods',
+      back: ''
+    }
+
+    localStorage.setItem('back', JSON.stringify(routes));
+
     this.navigation.root('/customer/add-card','forward');
   }
 }

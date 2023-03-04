@@ -17,13 +17,16 @@ export class CardPaymentMethodsComponent extends ViewComponent implements OnInit
   ngOnInit() {}
 
   goAddCard(){
-    const back = localStorage.getItem('back') ?? '';
-    if(back) {
-      this.navigation.back(localStorage.getItem('back'));
-      localStorage.setItem('back', '/customer/card-payment-methods');
+
+    const localData = JSON.parse(localStorage.getItem('back')) ?? '';
+
+    if(localData) {
+      this.navigation.root(localData['back'], 'forward');
     } else {
       this.navigation.root('/customer/add-card','forward')
     }
+
+
 /*
     localStorage.setItem('back', '/customer/card-payment-methods');
     this.navigation.root('/customer/add-card','forward') */
@@ -38,8 +41,15 @@ export class CardPaymentMethodsComponent extends ViewComponent implements OnInit
   }
 
   goback(){
-  localStorage.setItem('back', '/customer/card-payment-methods');
-  this.navigation.root('/customer/add-card','back');
+
+    const localData = JSON.parse(localStorage.getItem('back')) ?? '';
+
+    if(localData) {
+      this.navigation.back(localData['back']);
+    } else {
+      this.navigation.root('/customer/add-card','back');
+    }
+
   }
 
 }

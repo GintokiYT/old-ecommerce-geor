@@ -31,9 +31,22 @@ export class AddCardComponent extends ViewComponent implements OnInit {
     this.navigation.forward(path)
   } */
   goWayPay(){
+
     if(localStorage.getItem('back')) {
-      this.navigation.back(localStorage.getItem('back'));
-      localStorage.setItem('back', '/customer/add-card');
+      const localData = JSON.parse(localStorage.getItem('back'));
+      this.navigation.forward(localData['next']);
+
+      const routes = {
+        main: '/customer/payment-method-configuration',
+        next: '/customer/card-payment-methods',
+        back: '/customer/add-card'
+      }
+
+      localStorage.setItem('back', JSON.stringify(routes));
+
+      const inputs = document.querySelectorAll('ion-input');
+      inputs.forEach( input => input.value = '');
+
     } else {
       this.navigation.root('/customer/way-pay','forward')
     }
@@ -42,7 +55,15 @@ export class AddCardComponent extends ViewComponent implements OnInit {
 
 
    back(){
-    this.navigation.root('/customer/way-pay','back');
+    const localData = JSON.parse(localStorage.getItem('back')) ?? '';
+
+    if(localData) {
+      this.navigation.back(localData['main']);
+      localStorage.setItem('back', '');
+    } else {
+      this.navigation.root('/customer/way-pay','back');
+    }
+
    }
 
   onSubmit(formulario:NgForm){ }

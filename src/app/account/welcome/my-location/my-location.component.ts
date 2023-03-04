@@ -6,6 +6,9 @@ import { LanguageService } from '../../../services/language.service';
 // import { GoogleMapService } from 'src/app/services/google-map.service';
 import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 
+
+import { Geolocation } from '@capacitor/geolocation';
+
 interface Contenido {
   button: string;
 }
@@ -43,6 +46,21 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
 
     // this.geolocation.init();
     // this.googleMap.init('AIzaSyB3iDWSD87oIotNQNnfDT1kram3J_4epOA', <any>this.language);
+
+    this.encenderGPS();
+  }
+
+  async encenderGPS() {
+    const { location } = await Geolocation.checkPermissions();
+    if (location === 'denied') {
+      await Geolocation.requestPermissions();
+    }
+    try {
+      const position = await Geolocation.getCurrentPosition();
+      console.log('Posición actual:', position);
+    } catch (error) {
+      console.error('Error al obtener la posición actual:', error);
+    }
   }
 
   override ngOnDestroy(): void {
