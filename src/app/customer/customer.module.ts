@@ -27,6 +27,7 @@ import { ManageFavoritesModule } from './manage-favorites/manage-favorites.modul
 import { HomeModule } from './home/home.module';
 /* import { FeaturedComponent } from './home/featured/featured.component'; */
 
+import { UserHelpModule } from './userHelp/user-help.module';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { HomeModule } from './home/home.module';
     CouponsModule,
     CestaModule,
     ManageFavoritesModule,
-    HomeModule
+    HomeModule,
+    UserHelpModule
   ],
   declarations: [
     /* HomeComponent,
