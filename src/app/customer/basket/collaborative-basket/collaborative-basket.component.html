@@ -5,7 +5,7 @@
   <div class="container-main" style="margin-bottom: '218.66px'">
     <div class="d-flex flex-column" style="gap:40px">
       <app-main-product *ngIf="mainProduct" (myEvent)="onMyEvent($event)"></app-main-product>
-      <app-product></app-product>
+      <app-product *ngIf="Product" (myEvent)="onProductEvent($event)"></app-product>
     </div>
   </div>
 

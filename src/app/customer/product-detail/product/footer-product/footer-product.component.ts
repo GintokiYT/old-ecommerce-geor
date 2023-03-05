@@ -14,6 +14,7 @@ export class FooterProductComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
   goChat(){
+    localStorage.setItem('back', '/customer/product');
     this.navigation.root('/customer/internal-inbox/1','forward');
   }
   goVariants(){

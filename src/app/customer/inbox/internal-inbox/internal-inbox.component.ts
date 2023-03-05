@@ -121,7 +121,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
   enviarMensaje() {
     const ContentmessageInput: HTMLDivElement = this.ContentmessageInput.nativeElement;
-    let texto: string = ContentmessageInput.innerText;
+    let texto: string = ContentmessageInput.innerText.trim();
     return texto.replace(/\n/g, "<br>");
   }
 

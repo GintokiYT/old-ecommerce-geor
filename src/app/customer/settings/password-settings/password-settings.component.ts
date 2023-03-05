@@ -170,7 +170,7 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
         footerButton.classList.add('disabled');
         footerButton.classList.remove('active');
       });
-      
+
     })
 
 

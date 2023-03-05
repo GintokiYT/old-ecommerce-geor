@@ -1,0 +1,33 @@
+.img{
+  width:22.45px ;
+  height:14.16px ;
+}
+
+.target{
+  padding: 16px 10px;
+  background: var(--ion-color-secondary-shade);
+}
+
+ion-footer{
+  position: fixed;
+  bottom: 0;
+  ion-toolbar{
+    --border-width: 0px;
+    --padding-top: 0px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-bottom: 0px
+  }
+  ion-button{
+      height: 40px !important;
+      margin: 24px 0px 0px 0px;
+  }
+}
+
+@media(min-width:390px){
+  ion-footer{
+      ion-button{
+          height: 48px !important;
+      }
+  }
+}

@@ -24,6 +24,9 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
     this.navigation.forward('customer/settings/main-settings');
   }
 
+  goPaymentMehod(){
+    this.navigation.root('/customer/payment-method-configuration','forward');
+  }
   async getOrTakePicture(){
     this.modalIsVisible = true;
     // const image = await Camera.getPhoto({
@@ -61,12 +64,17 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
   }
 
   goPageTeam() {
-    this.navigation.forward('customer/collaborative-team');
+    this.navigation.forward('/customer/collaborative-team');
   }
 
   // Ir a favoritos
   goToFavorites() {
-    this.navigation.forward('customer/manage-favorites');
+    this.navigation.forward('/customer/manage-favorites');
+  }
+
+  // Ir a User Help
+  goUserHelp() {
+    this.navigation.forward('/customer/user-help');
   }
 
   goToManageBillingData(){

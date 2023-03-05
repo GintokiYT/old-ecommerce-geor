@@ -53,7 +53,8 @@
     </div>
     <!-- Fin Slider Items -->
     <!-- Productos Destacados -->
-    <div class="container-productos-destacados">
+    <app-featured></app-featured>
+   <!--  <div class="container-productos-destacados">
       <div class="mt-4">
         <ion-text>
           <div class="d-flex ion-align-items-center mb-3 fw-bold">Destacados</div>
@@ -65,7 +66,6 @@
           <div class="productsFeatured active" (click)="goToProduct()" #myProductsFeatured>
             <div class="image"></div>
           </div>
-          <!-- <ion-img (click)="goToProduct()" [src]="product.image" [alt]="product.image" preload></ion-img> -->
           <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
           <ion-text class="d-block fw-semibold mt-2 mb-2 text-price"
             > {{ product.price }}</ion-text
@@ -107,7 +107,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Fin de productos destacados -->
   </div>
 </ion-content>

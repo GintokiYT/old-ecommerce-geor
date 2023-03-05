@@ -2,27 +2,27 @@
   <app-header-team class="header-team" title="Equipo"> </app-header-team>
   <div class="container-main">
     <div *ngFor="let item of equipos" class="content-team">
-      <div class="contacts d-flex flex-row">
+      <div class="contacts d-flex flex-row" (click)="openModal(item)">
         <ion-img [src]="item.image"></ion-img>
         <div class="information fz-small d-flex flex-column">
           <ion-label class="name">{{ item.nombre }}</ion-label>
           <div
-            *ngFor="let estados of item.estado"
             class="text-description d-flex flex-row">
             <ion-label
-              (click)="openResend()"
-              *ngIf="estados.estado === 'Pendiente'"
+              *ngIf="item.estado.estado === 'Pendiente'"
               class="pendiente d-flex flex-row justify-content-center align-items-center">
               <ion-img
                 colass="imagen-pendiente"
                 src="assets/collaborative-basquet/Pendiente.svg"></ion-img>
-              {{ estados.estado }}</ion-label>
-            <ion-label (click)="openAccepted()">{{ estados.numero }}</ion-label>
+              {{ item.estado.estado }}</ion-label>
+            <ion-label>{{ item.estado.numero }}</ion-label>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
   <ion-img
     (click)="openInvite()"
     class="icon-plus"
@@ -32,9 +32,13 @@
   <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
 
   <!-- Elimina de la lista -->
-  <app-modal-resend *ngIf="modalResend"></app-modal-resend>
+  <app-modal-resend *ngIf="modalResend"
+  [selectedTeam]="selectedTeam"
+  (deleteTeam)="deleteTeam($event)"
+  ></app-modal-resend>
 
   <app-modal-resend-invitation *ngIf="modalResendInvitation"></app-modal-resend-invitation>
-  <app-modal-accepted *ngIf="modalAccepted"></app-modal-accepted>
+
+  <!-- <app-modal-accepted *ngIf="modalAccepted"></app-modal-accepted> -->
 
 </ion-content>

@@ -11,18 +11,28 @@
 
 <ion-content class="ion-content-var">
 
-  <div class="container-manage-favorites">
+  <div class="content-message-no-products" *ngIf="favoriteProducts.length === 0">
+    <div class="container-message">
+      <svg xmlns="http://www.w3.org/2000/svg" width="148" height="124" viewBox="0 0 148 124" fill="none">
+        <path d="M0.5 0.5L147 123.5M140.5 0.5L8 123.5" stroke="black"/>
+      </svg>
+      <span>Aún no tienes productos agregados a favoritos</span>
+    </div>
+  </div>
 
+  <div class="container-manage-favorites" *ngIf="favoriteProducts.length !== 0">
     <div class="products">
-      <div class="product">
-        <div class="image"></div>
+      <div class="product" *ngFor="let producto of favoriteProducts">
+        <div class="image" (click)="goDetailProduct()"
+        [style.background-image]="'url(' + producto.image + ')'"
+        ></div>
         <div class="description">
-          <div class="titulo">
-            <p>Acrílico liso bajo rugoso de policarbonato</p>
+          <div class="titulo" (click)="goDetailProduct()">
+            <p>{{ producto.name }}</p>
           </div>
-          <p class="price">48.90</p>
+          <p class="price">{{ producto.price }}</p>
           <div class="buy">
-            <div class="content-buy">
+            <div class="content-buy" (click)="goVariants()">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M2.29175 2.70898L4.02508 3.00898L4.82758 12.5698C4.89175 13.3507 5.54425 13.9498 6.32758 13.9473H15.4184C16.1659 13.949 16.8001 13.399 16.9059 12.659L17.6967 7.19398C17.7851 6.58315 17.3609 6.01648 16.7509 5.92815C16.6976 5.92065 4.30341 5.91648 4.30341 5.91648" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.962 16.8359C6.21283 16.8359 6.41533 17.0393 6.41533 17.2893C6.41533 17.5401 6.21283 17.7434 5.962 17.7434C5.71117 17.7434 5.50867 17.5401 5.50867 17.2893C5.50867 17.0393 5.71117 16.8359 5.962 16.8359Z" fill="#130F26" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,14 +43,25 @@
           </div>
         </div>
         <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <svg (click)="openModal(producto.id)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15.7114 3.00067C14.4091 2.98182 13.0512 3.35931 11.9988 4.41918C10.9382 3.36137 9.5673 3.00059 8.3003 3.00059C5.15199 3.00059 2.00012 5.60904 2.00012 9.30057C2.00012 12.8599 4.27667 15.8231 6.5283 17.8376C7.66758 18.8569 8.83606 19.6661 9.78501 20.2234C10.2592 20.5019 10.6866 20.7222 11.0353 20.8756C11.2091 20.9521 11.3721 21.0158 11.5174 21.0619C11.6437 21.102 11.8218 21.1505 12.0004 21.1505C12.179 21.1505 12.3571 21.102 12.4835 21.0619C12.6287 21.0158 12.7918 20.9521 12.9655 20.8756C13.3143 20.7222 13.7417 20.5019 14.2158 20.2234C15.1648 19.6661 16.3333 18.8569 17.4725 17.8376C19.7242 15.8231 22.0007 12.8599 22.0007 9.30056C22.0007 5.60029 18.8415 3.04596 15.7114 3.00067Z" fill="#023AFF"/>
             </svg>
         </div>
       </div>
     </div>
-
-
   </div>
-
 </ion-content>
+
+<!-- MODAL -->
+<div class="container-popup-delete-product"
+*ngIf="statusModal" (click)="closeModalFromOutside($event)">
+  <div class="popup-delete-product animation-open">
+    <div class="container-popup">
+      <span>¿Quitar producto de favoritos?</span>
+      <div class="buttons-popup">
+        <button (click)="closeModalButton()">Cancelar</button>
+        <button (click)="deleteProduct()">Quitar</button>
+      </div>
+    </div>
+  </div>
+</div>

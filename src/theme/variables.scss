@@ -101,7 +101,6 @@ $btn-default: #5b6793;
   --ion-color-disabled: #00000061;
   --ion-background-tertiary: #023AFF;
   --ion-background-icons-delete:#E3EAFD;
-  --ion-background-modal:#FFFFFF;
   --ion-background-alert: #FFFFFF;
   --ion-background-alert-border:#BDBDBD;
   --ion-color-group:#F44336;
@@ -139,7 +138,8 @@ $btn-default: #5b6793;
   --ion-button-background-disabled: #E3EAFD;
   --ion-button-color-disabled: #00000061;
 
-  --ion-background-hover-selected: rgb(10, 10, 10, .5);
+  // --ion-background-hover-selected: rgb(10, 10, 10, .5);
+  --ion-background-hover-selected: rgb(74 71 71 / 25%);
 }
 
 
@@ -241,7 +241,6 @@ body.dark {
   --ion-background-alert: #191932;
   --ion-background-alert-border: #5B6793;
   --ion-background-icons-delete:#5B6793;
-  --ion-background-modal: #151724;
   --ion-color-group:#023AFF;
   --ion-color-delete:#F44336;
   --ion-color-arrow:#5B6793;
@@ -277,7 +276,8 @@ body.dark {
   --ion-button-background-disabled: #1B1F3C;
   --ion-button-color-disabled: #5B6793;
 
-  --ion-background-hover-selected: rgb(146, 145, 151, .5);
+  // --ion-background-hover-selected: rgb(146, 145, 151, .5);
+  --ion-background-hover-selected: rgb(104 103 103 / 50%);
 }
 
 /*

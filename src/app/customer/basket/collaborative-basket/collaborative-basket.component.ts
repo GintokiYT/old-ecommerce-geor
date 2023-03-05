@@ -10,9 +10,8 @@ import { InviteService } from 'src/app/services/Invite.service';
 export class CollaborativeBasketComponent extends ViewComponent implements OnInit {
 
   statusModal: boolean;
-
   mainProduct: boolean = true;
-
+  Product: boolean = true;
   constructor(_injector: Injector, private inviteService: InviteService) {
     super(_injector);
     this.inviteService.getStatusModalBasketCollaborative.subscribe( status => this.statusModal = status );
@@ -26,6 +25,9 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
 
   onMyEvent(status: boolean) {
     this.mainProduct = status;
+  }
+  onProductEvent(status:boolean){
+    this.Product = status;
   }
 
 }

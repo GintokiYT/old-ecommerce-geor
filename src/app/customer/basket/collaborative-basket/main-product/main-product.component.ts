@@ -19,7 +19,7 @@ export class MainProductComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   deleteDescription(){
-    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
       if (confirmation) {
           const divEliminar = document.querySelector('#deleteDescription');
             divEliminar.remove();
@@ -27,21 +27,14 @@ export class MainProductComponent extends ViewComponent implements OnInit {
   },'Eliminar','Cancelar');
   }
 
-
   deleteProduct(){
     this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
       if (confirmation) {
-        // const divEliminarProducto = document.querySelector('#deleteProducto');
-        //   divEliminarProducto.innerHTML='';
-        //* Cambiar el estado del componente a falso
         const animationdelete: HTMLDivElement = document.querySelector('.animation-delete');
-
         animationdelete.classList.add('active');
-
         setTimeout(() => {
           this.myEvent.emit(false);
         }, 450);
-
     }
     },'Eliminar','Cancelar');
 

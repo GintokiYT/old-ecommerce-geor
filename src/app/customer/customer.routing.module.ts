@@ -62,6 +62,10 @@ import { ConditionsComponent } from './add-coupons/conditions/conditions.compone
 import { ManageBillingDataComponent } from './manage-billing-data/manage-billing-data.component';
 import { BillsDeleteComponent } from './manage-billing-data/bills-delete/bills-delete.component';
 import { AddCompanyComponent } from './manage-billing-data/add-company/add-company.component';
+import { PaymentMethodConfigurationComponent } from './pay-card/payment-method-configuration/payment-method-configuration.component';
+import { CardPaymentMethodsComponent } from './pay-card/card-payment-methods/card-payment-methods.component';
+import { UserHelpComponent } from './userHelp/user-help/user-help.component';
+import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-book.component';
 
 const routes: Routes = [
   {
@@ -83,6 +87,8 @@ const routes: Routes = [
       { path: 'variants-product',component:VariantsProductComponent},
 
       { path: 'manage-favorites', component: ManageFavoritesComponent},
+      { path: 'user-help', component: UserHelpComponent },
+      { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
@@ -123,6 +129,8 @@ const routes: Routes = [
       {path: 'searchbar', component: SearchbarComponent},
       {path: 'filtro', component: FiltroComponent},
       {path: 'products', component: ProductsComponent},
+      {path: 'payment-method-configuration', component: PaymentMethodConfigurationComponent},
+      {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
 
       {path: 'add-coupons', component: AddCouponsComponent},
       {path: 'add-coupons/conditions', component: ConditionsComponent},

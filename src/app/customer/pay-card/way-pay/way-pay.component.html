@@ -17,10 +17,10 @@
         >Otras formas</ion-label>
       </div>
     </div>
-  
+
     <div class="cards">
       <ion-item lines="none" detail="false">
-        <ion-checkbox 
+        <ion-checkbox
           mode="ios" slot="start"
           [(ngModel)]="data[0].selected"
           (ngModelChange)="checkBoxSelect(data[0].id)"
@@ -37,7 +37,7 @@
       </ion-item>
 
       <ion-item lines="none" detail="false">
-        <ion-checkbox 
+        <ion-checkbox
         mode="ios" slot="start"
         [(ngModel)]="data[1].selected"
         (ngModelChange)="checkBoxSelect(data[1].id)"
@@ -57,16 +57,16 @@
 
   <ion-footer class="footer-ionic">
     <ion-toolbar>
-      <ion-button 
+      <ion-button
         (click)="goTo('/customer/add-card')"
         color="primary" fill="outline" shape="round" expand="block">
         <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
-      </ion-button> 
-      <ion-button 
+      </ion-button>
+      <ion-button
         color="primary" shape="round" expand="block" [disabled]=oneTrue
         (click)="establecerMetodoDePago()">
         <ion-label  class="fz-normal"> Confirmar</ion-label>
-      </ion-button> 
+      </ion-button>
     </ion-toolbar>
   </ion-footer>
 </ion-content>

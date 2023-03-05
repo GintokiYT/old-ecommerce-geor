@@ -2,16 +2,17 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { ModalResendComponent } from './modal-resend/modal-resend.component';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
-interface Equipo{
-  id: string,
-  image:string,
-  nombre:string,
-  estado:[{
-    estado:string,
-    numero:string,
-  }],
 
- }
+interface Equipo{
+  id?: string,
+  image?: string,
+  nombre?: string,
+  estado?: {
+    estado?: string,
+    numero?: string
+  }
+}
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -41,95 +42,82 @@ export class TeamComponent extends ViewComponent implements OnInit {
     console.log(this.equipos.filter( equipo => equipo.id === 'cod002'))
   }
 
-  equipos:Equipo[]=[
+  equipos: Equipo[] = [
     {
       id: '1',
       image:'assets/collaborative-basquet/Avatar.svg',
       nombre: 'Juliano del Carmen Soriano',
-      estado:[{
+      estado: {
         estado:"Pendiente",
         numero:"+51 971 945 234"
-      }]
+      }
     },
-
     {
       id: '2',
       image:'assets/collaborative-basquet/Avatar3.svg',
       nombre: 'Rolando Paredes Alvarado',
-      estado:[{
+      estado: {
         estado:"",
         numero:"+51 971 945 234"
-      }],
-
+      }
     },
     {
       id: '3',
       image:'assets/collaborative-basquet/Avatar3.svg',
       nombre: 'Nombre y apellidos',
-      estado:[{
+      estado:{
         estado:"Pendiente",
         numero:"+51 971 945 234"
-      }],
-
+      }
     },
     {
       id: '4',
       image:'assets/collaborative-basquet/Avatar2.svg',
       nombre: 'Nombre y apellidos',
-      estado:[{
+      estado: {
         estado:"",
         numero:"+51 971 945 234"
-      }],
-
+      }
     },
     {
       id: '5',
       image:'assets/collaborative-basquet/Avatar.svg',
       nombre: 'Juliano del Carmen Soriano',
-      estado:[{
+      estado: {
         estado:"Pendiente",
         numero:"+51 971 945 234"
-      }],
-    } ]
-
-   /*  showModalInvite(){
-      this.dialog.show({
-        showBackdrop:true,
-        component: ModalResendComponent,
-        componentProps: {
-          title: "ModalResend"
-        }
-      }).then((response) => {
-        console.log(response);
-      });
+      }
     }
- */
-    showModalAccepted(){
-      this.dialog.show({
-        showBackdrop:true,
-        component: ModalResendComponent,
-        componentProps: {
-          title: "ModalAccepted"
-        }
-      }).then((response) => {
-        console.log(response);
-      });
-    }
+  ]
 
-    openInvite(){
-      this.inviteService.setStatusModalInvite(true);
-    }
+  selectedId: string | undefined;
 
-    openResend(){
-      this.inviteService.setStatusModalResend(true);
-    }
+  selectedTeam: any;
 
-    openAccepted(){
-      this.inviteService.setStatusModalAccepted(true);
-    }
-
-
+  openInvite(){
+    this.inviteService.setStatusModalInvite(true);
   }
+
+  openResend(id: string){
+    console.log(id)
+    this.inviteService.setStatusModalResend(true);
+  }
+
+ /*  openAccepted(id: string){
+    console.log(id)
+    this.inviteService.setStatusModalAccepted(true);
+  } */
+
+  openModal(team: any) {
+    this.selectedTeam = team;
+    this.inviteService.setStatusModalResend(true);
+  }
+
+  deleteTeam(index: string) {
+    this.equipos = this.equipos.filter( equipo => equipo.id !== index);
+    this.inviteService.setStatusModalResend(false);
+  }
+}
 
 
 

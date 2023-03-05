@@ -1,9 +1,10 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, Output, EventEmitter  } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 interface Descripcions{
   detalle:string,
   icono:string,
-  unidad:string
+  unidad:string,
+
 }
 @Component({
   selector: 'app-product',
@@ -38,15 +39,33 @@ interface Descripcions{
      },
 
     ]
+
+//eliminacion
+    @Output() myEvent = new EventEmitter();
+
   ngOnInit() {}
 
-  deleteDescription(){
-    this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
+  deleteDescription(event: any): void {
+    this.message.confirm('¿Eliminar este producto?','',(confirmation) => {
+      if (confirmation) {
+        const productDiv = event.target.closest('.product-info');
+         const productId = productDiv.id;
+        if (productDiv) {
+          productDiv.remove();
+        }
+      }
     },'Eliminar','Cancelar');
   }
 
   deleteProduct(){
     this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+      if (confirmation) {
+       const animationdelete: HTMLDivElement = document.querySelector('.animation-deletes');
+        animationdelete.classList.add('actives');
+        setTimeout(() => {
+          this.myEvent.emit(false);
+        }, 450);
+    }
     },'Eliminar','Cancelar');
   }
   goProductDetail(){

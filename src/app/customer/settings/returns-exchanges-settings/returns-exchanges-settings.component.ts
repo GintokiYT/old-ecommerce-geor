@@ -19,7 +19,14 @@ export class ReturnsExchangesSettingsComponent extends ViewComponent implements 
     this.navigation.back(route);
   } */
   onToBack(){
-    this.navigation.back('/customer/settings/about-us')
+    const back = localStorage.getItem('back') ?? '';
+    if(back) {
+      this.navigation.back(localStorage.getItem('back'));
+      localStorage.setItem('back', '');
+    } else {
+      this.navigation.back('/customer/settings/about-us')
+    }
+
     // this.location.back();
   }
 

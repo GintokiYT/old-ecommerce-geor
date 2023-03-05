@@ -54,6 +54,10 @@ export class AppComponent {
       mql.addEventListener('change', handleThemeChange);
       handleThemeChange(mql);
     }
+
+    // Limpiar rutas Backs
+    //TODO: Mantener comentado en desarrollo y descomentar al generar al APK
+    // localStorage.setItem('back', '');
   }
 
   changeModeLight(body: HTMLBodyElement) {

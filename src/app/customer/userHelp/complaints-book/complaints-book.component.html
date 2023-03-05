@@ -1,0 +1,218 @@
+<ion-header class="ion-content-var">
+  <header class="header-basic">
+    <div class="content-header">
+      <h2>Libro de reclamaciones</h2>
+      <div class="icon-back" (click)="onToBack()">
+        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-arrow-left"><path _ngcontent-byu-c175="" d="M2 12.2744L17 12.2744" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path _ngcontent-byu-c175="" d="M8.0498 18.299L1.9998 12.275L8.0498 6.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+    </div>
+  </header>
+</ion-header>
+
+<ion-content class="content-padding-mobile">
+
+  <ion-list>
+    <form class="form-complaints-book" [formGroup]="FormControlFormulary" (ngSubmit)="submitFormulary()">
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark" >
+          Nombres
+        </ion-label>
+        <ion-input  formControlName="nombre" class="label-text-mobile"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="note-text-mobile" *ngIf="FormControlFormulary.controls.nombre.errors?.['required'] && (FormControlFormulary.controls.nombre.dirty)">
+            El nombre es obligatorio
+        </ion-label>
+        <ion-label class="note-text-mobile"  *ngIf="FormControlFormulary.controls.nombre.errors?.['minlength'] && (FormControlFormulary.controls.nombre.dirty)">
+            El nombre tiene que tener al menos 2 caracteres.
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Apellido Paterno
+        </ion-label>
+        <ion-input formControlName="lastName" class="label-text-mobile"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="note-text-mobile"  *ngIf="FormControlFormulary.controls.lastName.errors?.['required'] && (FormControlFormulary.controls.lastName.dirty)">
+          El apellido paterno es obligatorio </ion-label>
+        <ion-label class="note-text-mobile"  *ngIf="FormControlFormulary.controls.lastName.errors?.['minlength'] && (FormControlFormulary.controls.lastName.dirty)">
+          El apellido paterno tiene que tener al menos 2 caracteres.
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Apellido Materno
+        </ion-label>
+        <ion-input formControlName="lastNameMother" class="label-text-mobile" ></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="note-text-mobile" *ngIf="FormControlFormulary.controls.lastNameMother.errors?.['required'] && (FormControlFormulary.controls.lastNameMother.dirty)">
+          El apellido materno es obligatorio
+        </ion-label>
+        <ion-label class="note-text-mobile" *ngIf="FormControlFormulary.controls.lastNameMother.errors?.['minlength'] && (FormControlFormulary.controls.lastNameMother.dirty)">
+          El apellido materno tiene que tener al menos 2 caracteres.
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item" style="position: relative;">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Tipo de documento
+        </ion-label>
+        <ion-input
+          formControlName="document"
+          class="label-text-mobile"
+          readonly="true"
+        ></ion-input>
+        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" fill="none">
+          <path d="M9.66675 12.6654L14.3334 7.9987L9.66675 3.33203" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="note-text-mobile" *ngIf="FormControlFormulary.controls.document.errors?.['required'] && (FormControlFormulary.controls.document.dirty)">
+            Seleccione un tipo de documento
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Número de documento
+        </ion-label>
+        <ion-input formControlName="numberDocument" class="label-text-mobile" type="number"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.numberDocument.errors?.['required'] && (FormControlFormulary.controls.numberDocument.dirty)">
+          El número es obligatorio
+        </ion-label>
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.numberDocument.errors?.['minlength'] && (FormControlFormulary.controls.numberDocument.dirty)">
+          El formato es incorrecto
+        </ion-label>
+      </div>
+
+      <ion-item fill="solid" class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Correo electrónico
+        </ion-label>
+        <ion-input formControlName="email" class="label-text-mobile"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="note-text-mobile" *ngIf="FormControlFormulary.controls.email.errors?.['email'] && (FormControlFormulary.controls.email.dirty)">
+            Ingrese un email valido
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Número de teléfono
+        </ion-label>
+        <ion-input maxlength="6" placeholder=""  inputmode="tel" type="tel" formControlName="telefono" class="label-text-mobile"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.telefono.errors?.['required'] && (FormControlFormulary.controls.telefono.dirty)">
+          El número es obligatorio
+        </ion-label>
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.telefono.errors?.['pattern'] && (FormControlFormulary.controls.telefono.dirty)">
+          El formato es incorrecto
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Número de celular
+        </ion-label>
+        <ion-input formControlName="celular" inputmode="tel" type="tel" maxlength="9" class="label-text-mobile"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.celular.errors?.['required'] && (FormControlFormulary.controls.celular.dirty)">* El número es obligatorio </ion-label>
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.celular.errors?.['pattern'] && (FormControlFormulary.controls.celular.dirty)">* El formato es incorrecto</ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item" style="position: relative;">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Departamento
+        </ion-label>
+        <ion-input formControlName="departament" class="label-text-mobile" readonly="true"></ion-input>
+        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" fill="none">
+          <path d="M9.66675 12.6654L14.3334 7.9987L9.66675 3.33203" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.departament.errors?.['required'] && (FormControlFormulary.controls.departament.dirty)">
+          Seleccione un departamento
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Dirección
+        </ion-label>
+        <ion-input formControlName="direccion" class="label-text-mobile"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.direccion.errors?.['required'] && (FormControlFormulary.controls.direccion.dirty)">
+          La direccion es obligatorio
+        </ion-label>
+        <ion-label class="note-text-mobile" *ngIf="FormControlFormulary.controls.direccion.errors?.['minlength'] && (FormControlFormulary.controls.direccion.dirty)">
+          La direccion tiene que tener al menos 2 caracteres.
+        </ion-label>
+      </div>
+
+      <ion-item class="ion-no-padding form-item">
+        <ion-label position="floating" class="note-text-mobile dark">
+          Asunto
+        </ion-label>
+        <ion-input formControlName="asunto" class="label-text-mobile"></ion-input>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.asunto.errors?.['required'] && (FormControlFormulary.controls.asunto.dirty)">
+          El asunto es obligatorio
+        </ion-label>
+      </div>
+
+      <ion-item lines="none" class="ion-no-padding pt-4 inner-no-padding form-item">
+        <ion-label position="stacked" class="pb-2 note-text-mobile dark" >
+          Descripción de la incidencia
+        </ion-label>
+        <ion-textarea style="border-radius: 10px; padding: 16px;" rows="8" [clearOnEdit]="true" class="label-text-mobile"  formControlName="description"></ion-textarea>
+      </ion-item>
+
+      <div class="error">
+        <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.description.errors?.['required'] && (FormControlFormulary.controls.description.dirty)">
+          Ingrese una descripcion
+        </ion-label>
+      </div>
+
+      <div class= "my-4">
+        <ion-label position="stacked" class="label-text-mobile">
+          Al continuar acepto las
+          <span> Políticas de privacidad </span>
+          y los
+          <span>Términos y condiciones</span>
+        </ion-label>
+      </div>
+
+      <div class="contBut mb-4">
+        <ion-button type="submit" class="label-text-mobile"  [disabled]="!FormControlFormulary.valid">
+          Enviar
+        </ion-button>
+      </div>
+
+    </form>
+
+  </ion-list>
+
+</ion-content>
