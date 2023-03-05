@@ -59,6 +59,9 @@ import { VariantsProductComponent } from './product-detail/variants-product/vari
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
 import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
 import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
+import { ManageBillingDataComponent } from './manage-billing-data/manage-billing-data.component';
+import { BillsDeleteComponent } from './manage-billing-data/bills-delete/bills-delete.component';
+import { AddCompanyComponent } from './manage-billing-data/add-company/add-company.component';
 import { PaymentMethodConfigurationComponent } from './pay-card/payment-method-configuration/payment-method-configuration.component';
 import { CardPaymentMethodsComponent } from './pay-card/card-payment-methods/card-payment-methods.component';
 import { UserHelpComponent } from './userHelp/user-help/user-help.component';
@@ -133,6 +136,10 @@ const routes: Routes = [
       {path: 'add-coupons/conditions', component: ConditionsComponent},
       {path: 'billing-data', component: BillingDataComponent},
       {path: 'manage-user-information', component: ManageUserInformationComponent},
+      {path: 'manage-billing-data', component: ManageBillingDataComponent},
+      {path: 'manage-billing-data/bills-delete', component:BillsDeleteComponent},
+      {path: 'manage-billing-data/add-company', component:AddCompanyComponent},
+
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
       { path: 'add', component:AddComponent},
       { path: 'condition', component:ConditionComponent},
