@@ -1,0 +1,53 @@
+.billing-data_container {
+    padding-left:  16px !important;
+    padding-right:  16px !important;
+    gap: 24px;
+
+    .bill-container {
+        gap: 25px;
+
+        ion-checkbox {
+            margin: 0px;
+            --size: 16.67px;
+        }
+
+        .bill-information {
+            max-width: 224px;
+            gap: 4px;
+
+            .bill-information_code {
+                color: var(--ion-color-text-secundary);
+            }
+
+            .bill-information_type {
+                padding: 2px 4px;
+                background-color: var(--ion-color-secondary);
+                border-radius: 4px;
+            }
+
+            .bill-information_edit {
+                color: var(--ion-color-text-secundary);
+                margin-top: 8px;
+            }
+        }
+    }
+
+}
+
+ion-footer {
+    position: fixed;
+    bottom: 0;
+}
+
+
+@media(min-width:390px) {
+    .billing-data_container {
+        padding-left:  24px !important;
+        padding-right:  24px !important;
+    }
+
+    .bill-information{
+        max-width: 298px !important;
+    }
+
+}

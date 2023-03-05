@@ -68,4 +68,8 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
   goToFavorites() {
     this.navigation.forward('customer/manage-favorites');
   }
+
+  goToManageBillingData(){
+    this.navigation.forward("/customer/manage-billing-data")
+  }
 }
