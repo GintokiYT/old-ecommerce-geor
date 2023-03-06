@@ -19,6 +19,10 @@ ion-header {
                 &.button-left {
                     filter: var(--ion-color-dark-filter);
                 }
+
+                &.button-right{
+                    filter: var(--ion-color-dark-filter);
+                }
             }
 
             .title {

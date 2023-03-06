@@ -2,6 +2,24 @@ import { Component, OnInit, ViewChild, Injector } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ViewComponent } from '@geor360/ecore';
 import { IonContent, IonInput } from '@ionic/angular';
+import { Contacts } from "@capacitor-community/contacts"
+
+
+
+
+// import { Plugins, ContactPermissionResponse } from '@capacitor/core';
+
+// const { Contacts } = Plugins;
+
+// ...
+
+// // Función que se llama para solicitar permisos de acceso a los contactos
+// async requestContactPermissions() {
+//   const { results } = await Contacts.requestPermissions();
+//   console.log('Permission response: ', results);
+//   // Hacer algo con los resultados de la solicitud de permisos
+// }
+
 
 @Component({
   selector: 'app-add-company',
@@ -10,18 +28,24 @@ import { IonContent, IonInput } from '@ionic/angular';
 })
 export class AddCompanyComponent extends ViewComponent implements OnInit {
 
-  form!: FormGroup;
-  modalIsVisible : boolean = false;
 
-  @ViewChild("inputType") inputType : IonInput;
+
+  form!: FormGroup;
+  modalIsVisible: boolean = false;
+  permission: any = "granted";
+
+  @ViewChild("inputType") inputType: IonInput;
   @ViewChild(IonContent) content: IonContent;
   @ViewChild("ionId") inputId: IonInput;
 
   constructor(private _injector: Injector) {
     super(_injector)
-   }
+  }
 
   ngOnInit() {
+
+    this.CheckPermission();
+
     this.form = new FormGroup({
 
       type: new FormControl('', [
@@ -37,28 +61,66 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
 
   }
 
-
-  onSubmit(){
+  onSubmit() {
     this.navigation.back("/customer/manage-billing-data")
   }
 
-
-  focusType(){
-    console.log("Hola")
+  focusType() {
     this.modalIsVisible = true;
   }
-  
-  focusId(){
+
+  focusId() {
     this.content.scrollToBottom()
   }
 
-  closeModal(value){
+  closeModal(value) {
     this.modalIsVisible = false;
   }
 
-  setTypeBill(value){
-    console.log(value)
+  setTypeBill(value) {
     this.inputType.value = value;
     this.inputType.setFocus();
+  }
+
+  async CheckPermission() {
+    try {
+      const perm = await Contacts.checkPermissions();
+      this.permission = perm.contacts;
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  async requestPermissionContact() {
+    try {
+      let perm;
+      switch (this.permission) {
+        case "prompt": // inicial
+          perm = await Contacts.requestPermissions();
+          this.permission = perm.contacts;
+          if (this.permission !== "denied") {
+            this.requestPermissionContact();
+          }
+          break;
+
+        case "denied": // cuando se hace click en el background
+          perm = await Contacts.requestPermissions();
+          this.permission = perm.contacts;
+          if (this.permission !== "denied") {
+            this.requestPermissionContact();
+          }
+          break;
+
+        case "granted": // se da en permitir
+          this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts"); break;
+
+        case "prompt-with-rationale": // cuando se da en denegar
+          this.navigation.forward("/customer/manage-billing-data/add-company/set-contact"); break;
+
+      }
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
 }

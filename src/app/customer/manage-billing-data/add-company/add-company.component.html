@@ -1,5 +1,4 @@
 <ion-content>
-
   <app-header
     title="Datos de facturación"
     backDirection="manage-billing-data"
@@ -33,12 +32,11 @@
   </form>
 
   <div class="who-get d-flex align-items-center justify-content-start">
-    <ion-fab-button size="small">
+    <ion-fab-button size="small" (click)="requestPermissionContact()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-    <ion-label>¿Quién recibirá la factura?</ion-label>
+    <ion-label (click)="requestPermissionContact()" >¿Quién recibirá la factura?</ion-label>
   </div>
-
 
 </ion-content>
 

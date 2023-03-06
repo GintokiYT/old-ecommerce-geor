@@ -1,0 +1,57 @@
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.contacts-container{
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 16px;
+
+    .contact{
+        --inner-padding-start : 0px !important;
+        --inner-padding-end: 0px !important;
+
+        &::part(native){
+            padding-inline-end: 0px !important;
+            padding-inline-start: 0px !important;
+        }
+
+        .phone{
+            font-size: 14px;
+            color: var(--ion-color-disabled);
+        }
+
+        ion-checkbox{
+            margin-inline: 0px !important;
+        }
+    }
+    
+}
+
+
+.icon-plus {
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    z-index: 1000;
+}
+
+
+@media(min-width: 390px){
+    .contacts-container{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .icon-plus{
+        margin-right: 24px;
+    }
+}

@@ -4,6 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 import { IonModal } from '@ionic/angular';
 import { Keyboard } from '@geor360/capacitor-keyboard';
 import { Platform } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 
@@ -35,10 +36,14 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   @Output()
   onClickDelete: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  @Input()
+  multipleBack : boolean = false;
+
   @ViewChild(IonModal) modal!: IonModal;
 
   keyboardHeight : number;
   modalIsVisible : boolean = false;
+  previousRoute: string;
 
 
   icons = {
@@ -61,12 +66,21 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "main-settings": "/customer/settings/main-settings",
     "about-us": "/customer/settings/about-us",
     "add-coupons": "customer/add-coupons",
-    "manage-billing-data": "/customer/manage-billing-data"
+    "manage-billing-data": "/customer/manage-billing-data",
+    "add-company": "/customer/manage-billing-data/add-company"
+
   }
 
-  constructor(private location: Location, private _injector: Injector,public platform: Platform ) {
+  constructor(private location: Location,
+     private _injector: Injector,public platform: Platform,
+     private router: Router ) {
     super(_injector);
     this.keyboardHeight = window.innerHeight;
+
+    const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    this.previousRoute = prevUrl;
+    console.log(this.previousRoute)
+    console.log(prevUrl)
   }
 
   ngOnInit() {
@@ -94,12 +108,19 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     //     this.navigation.back(this.directions[this.backDirection]);
     //   }
     // })
-    this.navigation.back(this.directions[this.backDirection]);
+
+    if(this.multipleBack===true){
+      this.navigation.back(this.previousRoute);
+    }else{
+      this.navigation.back(this.directions[this.backDirection]);
+    }
 
   }
 
   openModal(){
-    this.modalIsVisible = true
+    if(this.iconRight==="icon-delete"){
+      this.modalIsVisible = true
+    }
   }
 
   closeModal(value : any){

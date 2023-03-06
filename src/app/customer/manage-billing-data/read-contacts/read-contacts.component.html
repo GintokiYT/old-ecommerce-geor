@@ -1,0 +1,57 @@
+<ion-content>
+  <app-header 
+    title="Contactos" 
+    iconLeft="icon-arrow-left" 
+    iconRight="icon-search" 
+    backDirection="add-company">
+
+  </app-header>
+
+  <div class="container-main">
+
+    <!-- Ejemplo sin usar ion-item -->
+    <!-- <div class="d-flex flex-column contact" *ngFor="let contact of contacts">
+      <p class="name">{{contact?.name?.display}}</p>
+      <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
+        <p class="phone">{{phone?.number}}</p>
+      </div>
+
+    </div> -->
+
+    <!-- Ejemplo de como se ve al traer los contactos -->
+    <!-- <div class="contacts-container">
+      <ion-item class="contact" lines="none" *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+        <div class="d-flex flex-column">
+          <p class="name">Pedro gutierrez</p>
+          <div class="d-flex flex-column" *ngFor="let phone of [1,1,1]">
+            <p class="phone">123123123</p>
+          </div>
+        </div>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+    </div> -->
+
+    <div class="contacts-container">
+      <ion-item class="contact" lines="none" *ngFor="let contact of contacts">
+        <div class="d-flex flex-column">
+          <p class="name">{{contact?.name?.display}}</p>
+          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
+            <p class="phone">{{phone?.number}}</p>
+          </div>
+        </div>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+    </div>
+
+    <img
+      *ngIf="showButtonPlus"
+      class="icon-plus" 
+      (click)="goToSetContact()"
+      src="assets/collaborative-basquet/Plus-circle.svg"
+    />
+   
+  </div>
+
+
+
+</ion-content>
