@@ -66,6 +66,7 @@ import { PaymentMethodConfigurationComponent } from './pay-card/payment-method-c
 import { CardPaymentMethodsComponent } from './pay-card/card-payment-methods/card-payment-methods.component';
 import { UserHelpComponent } from './userHelp/user-help/user-help.component';
 import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-book.component';
+import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
 
 const routes: Routes = [
   {
@@ -89,6 +90,7 @@ const routes: Routes = [
       { path: 'manage-favorites', component: ManageFavoritesComponent},
       { path: 'user-help', component: UserHelpComponent },
       { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
+      { path: 'user-help/complaints-book/thanks', component: ComplaintThanksComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
