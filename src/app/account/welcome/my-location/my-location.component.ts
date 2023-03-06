@@ -8,6 +8,7 @@ import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 
 
 import { Geolocation } from '@capacitor/geolocation';
+import { App } from '@capacitor/app';
 
 interface Contenido {
   button: string;
@@ -51,16 +52,11 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   async encenderGPS() {
-    const { location } = await Geolocation.checkPermissions();
-    if (location === 'denied') {
-      await Geolocation.requestPermissions();
-    }
-    try {
-      const position = await Geolocation.getCurrentPosition();
-      console.log('Posición actual:', position);
-    } catch (error) {
-      console.error('Error al obtener la posición actual:', error);
-    }
+    Geolocation.getCurrentPosition({ enableHighAccuracy: true }).then((position) => {
+      console.log('Latitud: ' + position.coords.latitude + ', Longitud: ' + position.coords.longitude);
+    }).catch((error) => {
+      console.log('Error al obtener la ubicación: ' + error);
+    });
   }
 
   override ngOnDestroy(): void {
