@@ -60,7 +60,8 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "manage-user-information": "/customer/manage-user-information",
     "main-settings": "/customer/settings/main-settings",
     "about-us": "/customer/settings/about-us",
-    "add-coupons": "customer/add-coupons"
+    "add-coupons": "customer/add-coupons",
+    "manage-billing-data": "/customer/manage-billing-data"
   }
 
   constructor(private location: Location, private _injector: Injector,public platform: Platform ) {

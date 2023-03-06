@@ -1,0 +1,68 @@
+<ion-content>
+
+  <app-header
+    title="Datos de facturación"
+    backDirection="manage-billing-data"
+    iconLeft="icon-arrow-left"
+  >
+  </app-header>
+
+  <form
+    class="container-main"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+
+    <ion-item class="form-group" (click)="focusType()">
+      <ion-label position="stacked">Tipo de comprobante</ion-label>
+      <ion-input readonly="true" type="text" inputmode="text" formControlName="type" #inputType></ion-input>
+    </ion-item>
+
+    
+    <ion-item class="form-group">
+      <ion-label position="floating">Nombre de la compañía</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+
+
+    <ion-item class="form-group" (ionFocus)="focusId()">
+      <ion-label position="floating">Identificador fiscal</ion-label>
+      <ion-input type="text" formControlName="id" #ionId></ion-input>
+    </ion-item>
+
+  </form>
+
+  <div class="who-get d-flex align-items-center justify-content-start">
+    <ion-fab-button size="small">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-label>¿Quién recibirá la factura?</ion-label>
+  </div>
+
+
+</ion-content>
+
+
+<!-- Footer -->
+<ion-footer class="ion-no-border footer-ionic">
+
+  <ion-toolbar class="ion-no-padding">
+    <div class="d-flex flex-column text-center" style="gap: 32px;">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-label>Establecer como predeterminado</ion-label>
+        <ion-toggle color="primary" slot="end"></ion-toggle>
+      </ion-item>
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+        type="submit" style="margin: 0px;">Guardar</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+
+<app-modal-type-bill
+  [modalIsVisible]="modalIsVisible"
+  (onModalNotVisible)="closeModal($event)"
+  (onSelectTypeBill)="setTypeBill($event)"
+>
+
+</app-modal-type-bill>
