@@ -14,18 +14,20 @@
 
     <ion-item class="form-group" (click)="focusType()">
       <ion-label position="stacked">Tipo de comprobante</ion-label>
-      <ion-input readonly="true" type="text" inputmode="text" formControlName="type" #inputType></ion-input>
+      <ion-input readonly="true" type="text" inputmode="text" formControlName="type" [(ngModel)]="inputValue" #inputType></ion-input>
     </ion-item>
 
     
     <ion-item class="form-group">
-      <ion-label position="floating">Nombre de la compañía</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Factura'">Nombre de la compañía</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Boleta'">Nombre de la Persona</ion-label>
       <ion-input type="text" formControlName="name"></ion-input>
     </ion-item>
 
 
     <ion-item class="form-group" (ionFocus)="focusId()">
-      <ion-label position="floating">Identificador fiscal</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Factura'">Identificador fiscal</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Boleta'">Número de documento de identidad</ion-label>
       <ion-input type="text" formControlName="id" #ionId></ion-input>
     </ion-item>
 
@@ -35,7 +37,8 @@
     <ion-fab-button size="small" (click)="requestPermissionContact()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-    <ion-label (click)="requestPermissionContact()" >¿Quién recibirá la factura?</ion-label>
+    <ion-label (click)="requestPermissionContact()" *ngIf="inputValue==='Factura'">¿Quién recibirá la factura?</ion-label>
+    <ion-label (click)="requestPermissionContact()" *ngIf="inputValue==='Boleta'">¿Quién recibirá la boleta?</ion-label>
   </div>
 
 </ion-content>

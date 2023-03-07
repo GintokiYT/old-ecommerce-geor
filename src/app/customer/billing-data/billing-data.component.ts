@@ -71,4 +71,9 @@ export class BillingDataComponent extends ViewComponent implements OnInit {
     }
   }
 
+  goToEdit(){
+    this.navigation.forward("/customer/manage-billing-data/add-company")
+  }
+
+
 }

@@ -51,16 +51,16 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   }
 
   onGoToPayMethods() {
-    this.navigation.root("customer/payment-methods", "forward")
+    this.navigation.forward("customer/payment-methods")
     //console.log(this.previousRoute)
   }
 
   onGoToCoupons() {
-    this.navigation.root("customer/add-coupons", "forward");
+    this.navigation.forward("customer/add-coupons");
   }
 
   onGoToBillingData() {
-    this.navigation.root("customer/billing-data", "forward");
+    this.navigation.forward("customer/billing-data");
   }
 
 

@@ -33,6 +33,8 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
   form!: FormGroup;
   modalIsVisible: boolean = false;
   permission: any = "granted";
+  inputValue: string = "Factura";
+
 
   @ViewChild("inputType") inputType: IonInput;
   @ViewChild(IonContent) content: IonContent;
@@ -58,6 +60,7 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
         Validators.required,
       ])
     });
+    
 
   }
 
@@ -79,6 +82,7 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
 
   setTypeBill(value) {
     this.inputType.value = value;
+    this.inputValue = value;
     this.inputType.setFocus();
   }
 
