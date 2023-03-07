@@ -3,6 +3,50 @@ p{
     padding: 0;
 }
 
+
+ion-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+
+    ion-toolbar {
+        --padding-top: 16px !important;
+        --padding-start: 16px !important;
+        --padding-end: 16px !important;
+        --padding-bottom: 24px !important;
+
+
+        .header-container {
+            button {
+                background-color: transparent;
+
+                &.button-left {
+                    filter: var(--ion-color-dark-filter);
+                }
+
+                &.button-right{
+                    filter: var(--ion-color-dark-filter);
+                }
+            }
+
+            .title {
+                font-weight: bold;
+            }
+
+            ion-searchbar{
+                padding-inline-start: 0px !important;
+                padding-inline-end: 0px !important;
+                padding-bottom: 0px;
+                --border-radius: 20px;
+                --background: var(--ion-background-search);
+            }
+        }
+    }
+}
+
+
 .contacts-container{
     padding-left: 16px;
     padding-right: 16px;
@@ -40,8 +84,16 @@ p{
     right: 0px;
     bottom: 0px;
     margin-right: 16px;
-    margin-bottom: 16px;
+    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
     z-index: 1000;
+}
+
+.header-normal{
+    gap: unset;
+}
+
+.header-search{
+    gap: 17px;
 }
 
 
@@ -53,5 +105,14 @@ p{
 
     .icon-plus{
         margin-right: 24px;
+    }
+
+    ion-header {
+        ion-toolbar {
+            --padding-top: 16px !important;
+            --padding-start: 24px !important;
+            --padding-end: 24px !important;
+            --padding-bottom: 40px !important;
+        }
     }
 }

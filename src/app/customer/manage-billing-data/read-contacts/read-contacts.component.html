@@ -1,11 +1,54 @@
 <ion-content>
-  <app-header 
-    title="Contactos" 
-    iconLeft="icon-arrow-left" 
-    iconRight="icon-search" 
-    backDirection="add-company">
 
-  </app-header>
+  <ion-header class="ion-no-border">
+
+    <ion-toolbar>
+        
+        <div 
+          class="header-container d-flex justify-content-between align-items-center"
+          [ngClass]="{'header-normal': headerContent==='normal',
+                      'header-search' : headerContent==='search'}"
+        >
+          <button
+            class="button-left"
+            (click)="goBack()"
+          >
+            <img 
+              src = "/assets/icons/icon-arrow-left.svg" 
+              style="width: 17px;" 
+              [ngStyle]="{'width': headerContent === 'normal' ? '17px' : '18.89px'}"
+            />
+          </button>
+    
+          <div class="title" *ngIf="headerContent==='normal'">
+            <ion-label>Contactos</ion-label>
+          </div>
+  
+          <button
+            class="button-right"
+            *ngIf="headerContent==='normal'"
+            (click)="showSearch()"
+            style="width: 17.68px;"
+
+          >
+            <img src = "/assets/icons/icon-search.svg"/>
+          </button>
+
+          <ion-searchbar
+            #searchBar
+            slot="end"
+            placeholder="Buscar"
+            show-clear-button="never"
+            *ngIf="headerContent==='search'"
+            [debounce]="500" 
+            (ionChange)="handleChange($event)"
+          >
+          </ion-searchbar>
+        </div>
+  
+    </ion-toolbar>
+  
+  </ion-header>
 
   <div class="container-main">
 
@@ -32,7 +75,7 @@
     </div> -->
 
     <div class="contacts-container">
-      <ion-item class="contact" lines="none" *ngFor="let contact of contacts">
+      <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults">
         <div class="d-flex flex-column">
           <p class="name">{{contact?.name?.display}}</p>
           <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
