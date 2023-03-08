@@ -10,6 +10,10 @@ export class RouteService {
 
   miPedidoLastBackDirection$ = new BehaviorSubject<string>(this.miPedidoLastBackDirection);
 
+
+  myLocationLastBackDirection : string = "";
+  myLocationLastBackDirection$ = new BehaviorSubject<string>(this.myLocationLastBackDirection);
+
   constructor() { }
 
   get currentMiPedidoLastBackDirection () : Observable<string> {
@@ -19,6 +23,15 @@ export class RouteService {
   setMiPedidoLastBackDirection( direction : string){
     this.miPedidoLastBackDirection = direction;
     this.miPedidoLastBackDirection$.next(this.miPedidoLastBackDirection);
+  }
+
+  get currentMyLocationLastBackDirection () : Observable<string>{
+    return this.myLocationLastBackDirection$;
+  }
+
+  setMyLocationLastBackDirection( direction : string){
+    this.myLocationLastBackDirection = direction;
+    this.myLocationLastBackDirection$.next(this.myLocationLastBackDirection);
   }
 
 
