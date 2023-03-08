@@ -9,6 +9,7 @@ import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 
 import { Geolocation } from '@capacitor/geolocation';
 import { App } from '@capacitor/app';
+import { Router } from '@angular/router';
 
 interface Contenido {
   button: string;
@@ -22,16 +23,21 @@ interface Contenido {
 export class MyLocationComponent extends GeolocationComponent implements OnInit, OnDestroy {
 
   contenido: Contenido;
+  previousRoute: string;
 
   // private mapCenterChangeListener: google.maps.MapsEventListener;
   // private mapCenterDragEndListener: google.maps.MapsEventListener;
 
   positionMarker: google.maps.Marker;
 
-  constructor(_injector: Injector, private languageService: LanguageService ) {
+  constructor(_injector: Injector, private languageService: LanguageService,
+    private router: Router) {
     super(_injector);
     this.mapId = 'map';
-    this.languageService.getLanguage.subscribe( language => this.contenido = language['myLocation'])
+    this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
+    const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    this.previousRoute = prevUrl;
+    console.log(this.previousRoute)
   }
 
   override ngOnInit(): void {
@@ -44,6 +50,8 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
     mql.addEventListener('change', () => {
       location.reload();
     });
+
+
 
     // this.geolocation.init();
     // this.googleMap.init('AIzaSyB3iDWSD87oIotNQNnfDT1kram3J_4epOA', <any>this.language);
@@ -91,13 +99,19 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   onBack() {
-    this.navigation.back(RouteCollection.account.welcome.wheAreYou);
+    this.navigation.back(this.previousRoute);
     // this.navigator.root(RouteCollection.account.welcome.wheAreYou, 'back');
   }
 
   nextProyect() {
-    this.navigation.forward('customer/home');
-    // this.navigator.forward('customer/home');
+
+
+    if (this.previousRoute.includes("manage-addresses")) {
+      this.navigation.back("customer/manage-addresses")
+    } else {
+      this.navigation.forward('customer/home');
+    }
+
   }
 
 }

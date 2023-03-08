@@ -69,6 +69,8 @@ import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-b
 import { ReadContactsComponent } from './manage-billing-data/read-contacts/read-contacts.component';
 import { SetContactComponent } from './manage-billing-data/set-contact/set-contact.component';
 import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
+import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
+import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 
 const routes: Routes = [
   {
@@ -145,6 +147,8 @@ const routes: Routes = [
       {path: 'manage-billing-data/add-company', component:AddCompanyComponent},
       {path: 'manage-billing-data/add-company/read-contacts', component:ReadContactsComponent},
       {path: 'manage-billing-data/add-company/set-contact', component:SetContactComponent},
+      {path: 'manage-addresses', component:ManageAddressesComponent},
+      {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
 
       { path: 'collaborative-team',component:CollaborativeTeamComponent},

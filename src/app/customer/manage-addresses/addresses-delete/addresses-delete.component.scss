@@ -1,0 +1,34 @@
+.addresses-data_container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    gap: 24px;
+
+    .address-container {
+        gap: 13.67px;
+
+        .edit-address {
+            color: var(--ion-color-disabled);
+            font-size: 14px;
+        }
+
+        ion-checkbox {
+            margin: 0px;
+            --size: 16.67px;
+            min-width: 16.67px;
+        }
+    }
+
+}
+
+ion-footer {
+    position: fixed;
+    bottom: 0;
+}
+
+@media(min-width:390px) {
+
+    .addresses-data_container {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+}
