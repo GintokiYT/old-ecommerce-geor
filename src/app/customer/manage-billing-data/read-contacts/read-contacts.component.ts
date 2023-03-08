@@ -1,8 +1,9 @@
 import { Component, OnInit, Injector, ChangeDetectorRef, ViewChild } from '@angular/core';
-import { Contacts } from '@capacitor-community/contacts';
 import { ViewComponent } from '@geor360/ecore';
 import { IonSearchbar } from '@ionic/angular';
 import { ContactsService } from '../../../services/contacts.service';
+import { BillingDataService } from '../../../services/billing-data.service';
+
 
 @Component({
   selector: 'app-read-contacts',
@@ -17,13 +18,14 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
   showButtonPlus: boolean = true;
   headerContent: string = "normal";
 
+
   @ViewChild("searchBar") searchBar: IonSearchbar;
 
 
   constructor(private _injector: Injector, private cdr: ChangeDetectorRef,
-    private cs: ContactsService) {
+    private cs: ContactsService, private bs: BillingDataService) {
     super(_injector);
-    this.cs.currentContacts$.subscribe( (data) => {
+    this.cs.currentContacts$.subscribe((data) => {
       this.contacts = data;
       this.contactsResults = [...this.contacts];
     });
@@ -95,6 +97,16 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
 
   goToSetContact() {
     this.navigation.forward("/customer/manage-billing-data/add-company/set-contact");
+  }
+
+  goToAddCompany(contact) {
+    const contactTemp = {
+      name: contact?.name?.display,
+      number: contact?.phones[0].number
+    }
+    this.bs.setContactTemp(contactTemp);
+    this.navigation.back("/customer/manage-billing-data/add-company");
+
   }
 
   goBack() {

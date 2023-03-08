@@ -29,6 +29,11 @@ export class ManageBillingDataComponent extends ViewComponent implements OnInit 
   }
 
   goToAddCompany(){
+    const contactTemp = {
+      name: null,
+      number: null
+    }
+    this.bds.setContactTemp(contactTemp);
     this.navigation.forward(("/customer/manage-billing-data/add-company"))
   }
 

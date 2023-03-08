@@ -1,13 +1,15 @@
-ion-content{
 
-    .who-get{
+
+ion-content {
+
+    .who-get {
         gap: 8px;
         margin-top: 26px;
         margin-bottom: 70px;
         padding-left: 16px;
         padding-right: 16px;
 
-        ion-fab-button{
+        ion-fab-button {
             margin: 0px !important;
             width: 28px;
             height: 28px;
@@ -17,35 +19,66 @@ ion-content{
             --box-shadow: unset;
             --color: var(--ion-color-primary);
 
-            ion-icon{
+            ion-icon {
                 font-size: 18px;
                 font-weight: bold;
             }
         }
 
-        ion-label{
+        ion-label {
             color: var(--ion-color-text-secundary);
+        }
+
+        .contact-container {
+            width: 100%;
+
+            ion-item {
+                margin-top: 14px;
+                --inner-padding-start: 0px !important;
+                --inner-padding-end: 0px !important;
+            
+                &::part(native) {
+                    padding-inline-end: 0px !important;
+                    padding-inline-start: 0px !important;
+                }
+            }
+
+            .message {
+                font-weight: bold !important;
+                color: unset !important;
+            }
+
+            .contact {
+                .name {
+                    font-weight: normal !important;
+                    color: unset !important;
+                }
+
+                .number {
+                    color: var(--ion-color-text-secundary) !important;
+                }
+            }
         }
     }
 }
 
 
-ion-footer{
+ion-footer {
 
-    ion-item{
+    ion-item {
         --inner-padding-end: 0px !important;
 
-        ion-label{
+        ion-label {
             margin: 0px !important;
             font-size: 14px;
         }
 
-        ion-toggle{
+        ion-toggle {
             height: 21px;
             padding: 0px !important;
         }
 
-        &::part(native){
+        &::part(native) {
             padding-inline-end: 0px !important;
             padding-inline-start: 0px !important;
         }
@@ -54,22 +87,32 @@ ion-footer{
 }
 
 
-@media(min-width:390px){
-    ion-content{
-        .who-get{
+@media(min-width:390px) {
+    ion-content {
+        .who-get {
             // margin-left: 6px !important;
             padding-left: 24px;
             padding-right: 24px;
+
+            .contact-container{
+                ion-item{
+                    margin-top: 28px;
+                }
+            }
         }
+
+
     }
 
 
-    ion-footer{
-        ion-item{
-            ion-label{
+
+    ion-footer {
+        ion-item {
+            ion-label {
                 font-size: 16px;
             }
-            ion-toggle{
+
+            ion-toggle {
                 height: 24px;
             }
         }
