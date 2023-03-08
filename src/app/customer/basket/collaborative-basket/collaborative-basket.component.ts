@@ -33,4 +33,6 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
     this.Product = status;
   }
 
+  //Seleccion todos los checkbox--- agregamos [isChecked]="allChecked" al componente app-main-product
+  allChecked = false;
 }
