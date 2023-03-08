@@ -113,7 +113,11 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     if(this.multipleBack===true){
       this.navigation.back(this.previousRoute);
     }else{
-      this.navigation.back(this.directions[this.backDirection]);
+      if(this.backDirection.includes("customer")){
+        this.navigation.back(this.backDirection);
+      }else{
+        this.navigation.back(this.directions[this.backDirection]);
+      }
     }
 
   }

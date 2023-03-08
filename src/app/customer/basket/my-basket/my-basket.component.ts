@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
+import { RouteService } from '../../../services/route.service';
 
 @Component({
   selector: 'app-my-basquet',
@@ -11,7 +12,9 @@ import { InviteService } from 'src/app/services/Invite.service';
 export class MyBasketComponent extends ViewComponent implements OnInit {
 
   modalInvite: boolean;
-  constructor(_injector: Injector, private inviteService:InviteService) {
+  constructor(_injector: Injector, private inviteService:InviteService,
+      private rs : RouteService
+    ) {
     super(_injector);
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
   }
@@ -30,5 +33,10 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
   openInvite(){
     this.inviteService.setStatusModalInvite(true);
 
+  }
+
+  goToConfirmOrder(){
+    this.rs.setMiPedidoLastBackDirection( "/customer/my-basket")
+    this.navigation.forward("/customer/confirm-order")
   }
 }

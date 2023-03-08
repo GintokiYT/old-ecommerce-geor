@@ -3,6 +3,7 @@ import { ModalVariantsComponent } from './modal-variants/modal-variants.componen
 import { ViewComponent } from '@geor360/ecore';
 import { ModalAddComponent } from './modal-add/modal-add.component';
 import { ProductDetailService } from '../../../services/productDetail.service';
+import { RouteService } from '../../../services/route.service';
 
 interface Colours {
   images: string,
@@ -29,11 +30,12 @@ export class VariantsComponent extends ViewComponent implements OnInit {
   modalAdd: boolean;
   modalBasket: boolean;
 
-  constructor(_injector: Injector, private productDetailService: ProductDetailService) {
+  constructor(_injector: Injector, private productDetailService: ProductDetailService,
+    private rs: RouteService) {
     super(_injector);
-    this.productDetailService.getStatusModalVariants.subscribe( status => this.modalVariants = status);
-    this.productDetailService.getStatusModalAdd.subscribe( status => this.modalAdd = status);
-    this.productDetailService.getStatusModalBasket.subscribe( status => this.modalBasket = status);
+    this.productDetailService.getStatusModalVariants.subscribe(status => this.modalVariants = status);
+    this.productDetailService.getStatusModalAdd.subscribe(status => this.modalAdd = status);
+    this.productDetailService.getStatusModalBasket.subscribe(status => this.modalBasket = status);
   }
 
   ngOnInit() { }
@@ -57,8 +59,9 @@ export class VariantsComponent extends ViewComponent implements OnInit {
     { number: 8 },
   ];
 
-  goToConfirmOrder(){
-    this.navigation.root("/customer/confirm-order","forward");
+  goToConfirmOrder() {
+    this.rs.setMiPedidoLastBackDirection("/customer/variants");
+    this.navigation.root("/customer/confirm-order", "forward");
   }
 
   //* Abre el primer modal
@@ -66,11 +69,11 @@ export class VariantsComponent extends ViewComponent implements OnInit {
     this.productDetailService.setStatusModalVariants(true);
   }
 
- /*  click(){
-    const click=document.querySelector('.extent-cm');
-    click.classList.toggle('active');
-    console.log();
-  } */
+  /*  click(){
+     const click=document.querySelector('.extent-cm');
+     click.classList.toggle('active');
+     console.log();
+   } */
 
   selectedLabel: number = null;
 

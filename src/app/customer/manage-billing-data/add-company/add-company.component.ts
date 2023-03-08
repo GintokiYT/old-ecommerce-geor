@@ -8,6 +8,7 @@ import { Contacts } from "@capacitor-community/contacts"
 
 
 // import { Plugins, ContactPermissionResponse } from '@capacitor/core';
+import { ContactsService } from '../../../services/contacts.service';
 
 // const { Contacts } = Plugins;
 
@@ -34,13 +35,14 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
   modalIsVisible: boolean = false;
   permission: any = "granted";
   inputValue: string = "Factura";
+  contacts : any[];
 
 
   @ViewChild("inputType") inputType: IonInput;
   @ViewChild(IonContent) content: IonContent;
   @ViewChild("ionId") inputId: IonInput;
 
-  constructor(private _injector: Injector) {
+  constructor(private _injector: Injector, private cs: ContactsService) {
     super(_injector)
   }
 
@@ -60,7 +62,7 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
         Validators.required,
       ])
     });
-    
+
 
   }
 
@@ -116,7 +118,20 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
           break;
 
         case "granted": // se da en permitir
-          this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts"); break;
+          try {
+            const result = await Contacts.getContacts({
+              projection: {
+                name: true,
+                phones: true
+              }
+            })
+            this.contacts = result.contacts;
+            this.cs.setContactsData(this.contacts);
+            this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts");
+          } catch (e) {
+            console.log(e)
+          }
+          break;
 
         case "prompt-with-rationale": // cuando se da en denegar
           this.navigation.forward("/customer/manage-billing-data/add-company/set-contact"); break;
