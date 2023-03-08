@@ -4,11 +4,13 @@
     <ion-row class="mx-4 mb-4">
 
       <ion-col size="12" class="mb-4">
-        <ion-text class="country d-flex flex-column">
+        <ion-text class="country d-flex flex-column" (click)="OpenModalCountry()">
           <ion-label class="fz-note color">País</ion-label>
           <div class="mb-2">
-            <img class="me-2" src="assets/icons/icon-PE.svg">
-            <ion-label clas="contry-name">Perú</ion-label>
+            <ng-container *ngIf="selectedCountry">
+              <img class="img-country" [src]="selectedCountry.flag">
+              <ion-label>{{ selectedCountry.country }}</ion-label>
+            </ng-container>
           </div>
         </ion-text>
       </ion-col>
@@ -52,3 +54,4 @@
 
   </ion-content>
 
+  <app-modal-country *ngIf="modalCountry"  (countrySelected)="onCountrySelected($event)"></app-modal-country>
