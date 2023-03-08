@@ -1,0 +1,21 @@
+<div class="overlay" [ngClass]="{'modal-visible': modalIsVisible===true,
+               'modal-not-visible' : modalIsVisible===false}" #modal>
+  <div class="modal-container d-flex flex-column justify-content-center" style="gap: 24px;">
+    <!-- <ion-label class="ion-text-center fz-small">
+      Al hacer click en "Continuar" acepto la
+      <span class="terms">Política de privacidad</span> y
+      <span class="politics">Términos y condiciones</span>
+    </ion-label>
+    <ion-button color="primary" expand="block" fill="solid" shape="round" (click)="onClickContinue()">
+      Continuar
+    </ion-button> -->
+    <ion-list lines="none">
+      <ion-item button detail="false" (click)="onClickFactura()">
+        <ion-label>Factura</ion-label>
+      </ion-item>
+      <ion-item button detail="false" (click)="onClickBoleta()">
+        <ion-label>Boleta</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>

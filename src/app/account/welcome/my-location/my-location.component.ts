@@ -8,6 +8,9 @@ import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 
 
 import { Geolocation } from '@capacitor/geolocation';
+import { App } from '@capacitor/app';
+import { Router } from '@angular/router';
+import { RouteService } from 'src/app/services/route.service';
 
 interface Contenido {
   button: string;
@@ -21,16 +24,18 @@ interface Contenido {
 export class MyLocationComponent extends GeolocationComponent implements OnInit, OnDestroy {
 
   contenido: Contenido;
+  previousRoute: string;
 
   // private mapCenterChangeListener: google.maps.MapsEventListener;
   // private mapCenterDragEndListener: google.maps.MapsEventListener;
 
   positionMarker: google.maps.Marker;
 
-  constructor(_injector: Injector, private languageService: LanguageService ) {
+  constructor(_injector: Injector, private languageService: LanguageService, private rs : RouteService) {
     super(_injector);
     this.mapId = 'map';
-    this.languageService.getLanguage.subscribe( language => this.contenido = language['myLocation'])
+    this.rs.currentMyLocationLastBackDirection.subscribe( d => this.previousRoute=d);
+    this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
   }
 
   override ngOnInit(): void {
@@ -44,6 +49,8 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
       location.reload();
     });
 
+
+
     // this.geolocation.init();
     // this.googleMap.init('AIzaSyB3iDWSD87oIotNQNnfDT1kram3J_4epOA', <any>this.language);
 
@@ -51,16 +58,11 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   async encenderGPS() {
-    const { location } = await Geolocation.checkPermissions();
-    if (location === 'denied') {
-      await Geolocation.requestPermissions();
-    }
-    try {
-      const position = await Geolocation.getCurrentPosition();
-      console.log('Posición actual:', position);
-    } catch (error) {
-      console.error('Error al obtener la posición actual:', error);
-    }
+    Geolocation.getCurrentPosition({ enableHighAccuracy: true }).then((position) => {
+      console.log('Latitud: ' + position.coords.latitude + ', Longitud: ' + position.coords.longitude);
+    }).catch((error) => {
+      console.log('Error al obtener la ubicación: ' + error);
+    });
   }
 
   override ngOnDestroy(): void {
@@ -95,13 +97,16 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   onBack() {
-    this.navigation.back(RouteCollection.account.welcome.wheAreYou);
-    // this.navigator.root(RouteCollection.account.welcome.wheAreYou, 'back');
+    this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {
-    this.navigation.forward('customer/home');
-    // this.navigator.forward('customer/home');
+    if (this.previousRoute.includes("manage-addresses")) {
+      this.navigation.back("customer/manage-addresses")
+    } else {
+      this.navigation.forward('customer/home');
+    }
+
   }
 
 }

@@ -24,10 +24,12 @@ import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 import { CouponsModule } from './coupons/coupons.module';
 import { ManageFavoritesModule } from './manage-favorites/manage-favorites.module';
+import { ManageBillingDataModule } from './manage-billing-data/manage-billing-data.module';
 import { HomeModule } from './home/home.module';
 /* import { FeaturedComponent } from './home/featured/featured.component'; */
 
 import { UserHelpModule } from './userHelp/user-help.module';
+import { ManageAddressesModule } from './manage-addresses/manage-addresses.module';
 
 
 @NgModule({
@@ -54,9 +56,12 @@ import { UserHelpModule } from './userHelp/user-help.module';
     ConfirmCardPayModule,
     CouponsModule,
     CestaModule,
+    CestaModule,
     ManageFavoritesModule,
+    ManageBillingDataModule,
     HomeModule,
-    UserHelpModule
+    UserHelpModule,
+    ManageAddressesModule
   ],
   declarations: [
     /* HomeComponent,

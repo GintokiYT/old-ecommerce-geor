@@ -59,10 +59,18 @@ import { VariantsProductComponent } from './product-detail/variants-product/vari
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
 import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
 import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
+import { ManageBillingDataComponent } from './manage-billing-data/manage-billing-data.component';
+import { BillsDeleteComponent } from './manage-billing-data/bills-delete/bills-delete.component';
+import { AddCompanyComponent } from './manage-billing-data/add-company/add-company.component';
 import { PaymentMethodConfigurationComponent } from './pay-card/payment-method-configuration/payment-method-configuration.component';
 import { CardPaymentMethodsComponent } from './pay-card/card-payment-methods/card-payment-methods.component';
 import { UserHelpComponent } from './userHelp/user-help/user-help.component';
 import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-book.component';
+import { ReadContactsComponent } from './manage-billing-data/read-contacts/read-contacts.component';
+import { SetContactComponent } from './manage-billing-data/set-contact/set-contact.component';
+import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
+import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
+import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 
 const routes: Routes = [
   {
@@ -86,6 +94,7 @@ const routes: Routes = [
       { path: 'manage-favorites', component: ManageFavoritesComponent},
       { path: 'user-help', component: UserHelpComponent },
       { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
+      { path: 'user-help/complaints-book/thanks', component: ComplaintThanksComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
@@ -133,6 +142,15 @@ const routes: Routes = [
       {path: 'add-coupons/conditions', component: ConditionsComponent},
       {path: 'billing-data', component: BillingDataComponent},
       {path: 'manage-user-information', component: ManageUserInformationComponent},
+      {path: 'manage-billing-data', component: ManageBillingDataComponent},
+      {path: 'manage-billing-data/bills-delete', component:BillsDeleteComponent},
+      {path: 'manage-billing-data/add-company', component:AddCompanyComponent},
+      {path: 'manage-billing-data/add-company/read-contacts', component:ReadContactsComponent},
+      {path: 'manage-billing-data/add-company/set-contact', component:SetContactComponent},
+      {path: 'manage-addresses', component:ManageAddressesComponent},
+      {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
+
+
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
       { path: 'add', component:AddComponent},
       { path: 'condition', component:ConditionComponent},

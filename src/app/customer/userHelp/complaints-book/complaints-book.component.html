@@ -61,7 +61,8 @@
         </ion-label>
       </div>
 
-      <ion-item class="ion-no-padding form-item" style="position: relative;">
+      <ion-item class="ion-no-padding form-item" style="position: relative;"
+        (click)="openPopupDocumentType()">
         <ion-label position="floating" class="note-text-mobile dark">
           Tipo de documento
         </ion-label>
@@ -114,7 +115,7 @@
         <ion-label position="floating" class="note-text-mobile dark">
           Número de teléfono
         </ion-label>
-        <ion-input maxlength="6" placeholder=""  inputmode="tel" type="tel" formControlName="telefono" class="label-text-mobile"></ion-input>
+        <ion-input maxlength="7" placeholder=""  inputmode="tel" type="tel" formControlName="telefono" class="label-text-mobile"></ion-input>
       </ion-item>
 
       <div class="error">
@@ -138,7 +139,8 @@
         <ion-label class="error note-text-mobile" *ngIf="FormControlFormulary.controls.celular.errors?.['pattern'] && (FormControlFormulary.controls.celular.dirty)">* El formato es incorrecto</ion-label>
       </div>
 
-      <ion-item class="ion-no-padding form-item" style="position: relative;">
+      <ion-item class="ion-no-padding form-item" style="position: relative;"
+        (click)="openPopupDepartments()">
         <ion-label position="floating" class="note-text-mobile dark">
           Departamento
         </ion-label>
@@ -196,19 +198,21 @@
         </ion-label>
       </div>
 
-      <div class= "my-4">
-        <ion-label position="stacked" class="label-text-mobile">
+      <!-- <div class="accept-policies my-4">
+        <ion-label position="stacked">
           Al continuar acepto las
           <span> Políticas de privacidad </span>
           y los
           <span>Términos y condiciones</span>
         </ion-label>
-      </div>
+      </div> -->
 
-      <div class="contBut mb-4">
-        <ion-button type="submit" class="label-text-mobile"  [disabled]="!FormControlFormulary.valid">
-          Enviar
-        </ion-button>
+      <div class="button-submit mb-4 mt-4">
+        <ion-button
+          color="primary"
+          type="submit"
+          [disabled]="!FormControlFormulary.valid"
+        >Enviar</ion-button>
       </div>
 
     </form>
@@ -216,3 +220,18 @@
   </ion-list>
 
 </ion-content>
+
+<!-- Popup Tipo de documento -->
+<app-popup-document-type
+  *ngIf="popupDocumentType"
+  [popupDocumentType]="popupDocumentType"
+  (changeStatusPopupDocumentType)="changeStatusPopupDocumentType($event)"
+  (changeDocumentForm)="changeDocumentForm($event)"
+></app-popup-document-type>
+
+<!-- Popup Departamento -->
+<app-popup-departments
+  *ngIf="popupDepartments"
+  (changeStatusPopupDepartments)="changeStatusPopupDepartments($event)"
+  (changeDepartmentsForm)="changeDepartmentsForm($event)"
+></app-popup-departments>

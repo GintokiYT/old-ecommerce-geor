@@ -76,4 +76,12 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
   goUserHelp() {
     this.navigation.forward('/customer/user-help');
   }
+
+  goToManageBillingData(){
+    this.navigation.forward("/customer/manage-billing-data")
+  }
+
+  goToManageAddresses(){
+    this.navigation.forward("/customer/manage-addresses")
+  }
 }

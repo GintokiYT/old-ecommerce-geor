@@ -29,7 +29,7 @@
                 <img src="/assets/icons/icon-3user.svg" alt="">
                 <ion-label>Equipo</ion-label>
             </div>
-            <div class="option d-flex align-items-center">
+            <div (click)="goToManageAddresses()" class="option d-flex align-items-center">
                 <img src="/assets/icons/icon-location.svg" alt="">
                 <ion-label>Direcciones</ion-label>
             </div>
@@ -37,7 +37,7 @@
                 <img src="/assets/icons/icon-pay.svg" alt="">
                 <ion-label>Métodos de pago</ion-label>
             </div>
-            <div class="option d-flex align-items-center">
+            <div class="option d-flex align-items-center" (click)="goToManageBillingData()">
                 <img src="/assets/icons/icon-paper.svg" alt="">
                 <ion-label>Datos de facturación</ion-label>
             </div>

@@ -1,0 +1,59 @@
+<ion-content>
+  
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <div class="header-container  d-flex justify-content-between align-items-center">
+
+        <button class="button-left" (click)="goToManageUserInformation()">
+          <img src="/assets/icons/icon-arrow-left.svg" width="17px">
+        </button>
+
+        <div class="title">
+          <ion-label>Datos de facturación</ion-label>
+        </div>
+
+        <button (click)="goToBillsDelete()">
+          <img src="/assets/icons/icon-delete.svg">
+        </button>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="billing-data_container d-flex flex-column container-main">
+
+    <div class="d-flex align-items-center bill-container" *ngFor="let bill of billingData">
+      <div class="d-flex flex-column bill-information">
+        <ion-label class="fz-normal ion-text-wrap">{{bill.name}}</ion-label>
+        <div class="d-flex" style="gap: 8px;">
+          <ion-label class="bill-information_code">{{bill.id}}</ion-label>
+          <ion-label class="bill-information_type fz-note" color="primary">{{bill.type}}</ion-label>
+        </div>
+        <ion-label type="button" class="bill-information_edit" (click)="goToEdit()">Editar</ion-label>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- Footer -->
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button
+        disabled="false"
+        (click)="goToAddCompany()" 
+        expand="full"  
+        shape="round" 
+        color="primary" 
+        style="margin: 0;"
+      >
+        Nueva compañía
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+
+
+</ion-content>
+
