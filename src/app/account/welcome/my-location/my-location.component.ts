@@ -10,6 +10,7 @@ import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 import { Geolocation } from '@capacitor/geolocation';
 import { App } from '@capacitor/app';
 import { Router } from '@angular/router';
+import { RouteService } from 'src/app/services/route.service';
 
 interface Contenido {
   button: string;
@@ -30,14 +31,11 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
 
   positionMarker: google.maps.Marker;
 
-  constructor(_injector: Injector, private languageService: LanguageService,
-    private router: Router) {
+  constructor(_injector: Injector, private languageService: LanguageService, private rs : RouteService) {
     super(_injector);
     this.mapId = 'map';
+    this.rs.currentMyLocationLastBackDirection.subscribe( d => this.previousRoute=d);
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
-    const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
-    this.previousRoute = prevUrl;
-    console.log(this.previousRoute)
   }
 
   override ngOnInit(): void {
@@ -100,12 +98,9 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
 
   onBack() {
     this.navigation.back(this.previousRoute);
-    // this.navigator.root(RouteCollection.account.welcome.wheAreYou, 'back');
   }
 
   nextProyect() {
-
-
     if (this.previousRoute.includes("manage-addresses")) {
       this.navigation.back("customer/manage-addresses")
     } else {
