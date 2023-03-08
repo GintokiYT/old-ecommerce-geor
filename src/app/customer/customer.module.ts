@@ -29,6 +29,7 @@ import { HomeModule } from './home/home.module';
 /* import { FeaturedComponent } from './home/featured/featured.component'; */
 
 import { UserHelpModule } from './userHelp/user-help.module';
+import { ManageAddressesModule } from './manage-addresses/manage-addresses.module';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { UserHelpModule } from './userHelp/user-help.module';
     ManageFavoritesModule,
     ManageBillingDataModule,
     HomeModule,
-    UserHelpModule
+    UserHelpModule,
+    ManageAddressesModule
   ],
   declarations: [
     /* HomeComponent,

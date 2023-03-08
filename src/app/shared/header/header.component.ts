@@ -67,7 +67,8 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     "about-us": "/customer/settings/about-us",
     "add-coupons": "customer/add-coupons",
     "manage-billing-data": "/customer/manage-billing-data",
-    "add-company": "/customer/manage-billing-data/add-company"
+    "add-company": "/customer/manage-billing-data/add-company",
+    "manage-addresses": "/customer/manage-addresses"
 
   }
 
@@ -112,7 +113,11 @@ export class HeaderComponent extends ViewComponent implements OnInit {
     if(this.multipleBack===true){
       this.navigation.back(this.previousRoute);
     }else{
-      this.navigation.back(this.directions[this.backDirection]);
+      if(this.backDirection.includes("customer")){
+        this.navigation.back(this.backDirection);
+      }else{
+        this.navigation.back(this.directions[this.backDirection]);
+      }
     }
 
   }

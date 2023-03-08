@@ -2,6 +2,7 @@ import { Component, OnInit, Injector, ChangeDetectorRef, ViewChild } from '@angu
 import { Contacts } from '@capacitor-community/contacts';
 import { ViewComponent } from '@geor360/ecore';
 import { IonSearchbar } from '@ionic/angular';
+import { ContactsService } from '../../../services/contacts.service';
 
 @Component({
   selector: 'app-read-contacts',
@@ -13,18 +14,23 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
 
   contacts: any[];
   contactsResults: any[];
-  showButtonPlus: boolean = false;
+  showButtonPlus: boolean = true;
   headerContent: string = "normal";
 
   @ViewChild("searchBar") searchBar: IonSearchbar;
 
 
-  constructor(private _injector: Injector, private cdr: ChangeDetectorRef) {
+  constructor(private _injector: Injector, private cdr: ChangeDetectorRef,
+    private cs: ContactsService) {
     super(_injector);
+    this.cs.currentContacts$.subscribe( (data) => {
+      this.contacts = data;
+      this.contactsResults = [...this.contacts];
+    });
   }
 
-  async ngOnInit() {
-    await this.getContacts();
+  ngOnInit() {
+    //await this.getContacts();
   }
 
   ngAfterViewInit(): void {
@@ -42,22 +48,22 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
     });
   }
 
-  async getContacts() {
+  // async getContacts() {
 
-    try {
-      const result = await Contacts.getContacts({
-        projection: {
-          name: true,
-          phones: true
-        }
-      })
-      this.contacts = result.contacts;
-      this.contactsResults = [...this.contacts];
-      this.showButtonPlus = true;
-    } catch (e) {
-      console.log(e)
-    }
-  }
+  //   try {
+  //     const result = await Contacts.getContacts({
+  //       projection: {
+  //         name: true,
+  //         phones: true
+  //       }
+  //     })
+  //     this.contacts = result.contacts;
+  //     this.contactsResults = [...this.contacts];
+  //     this.showButtonPlus = true;
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
 
   phoneFormated(phones: any[]) {
     var numberFormated = "";

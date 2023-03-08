@@ -6,6 +6,7 @@ import ICoupon from '../../interfaces/ICoupon';
 import IBill from '../../interfaces/IBill';
 import { Router, NavigationEnd, RoutesRecognized, Event } from '@angular/router';
 import { filter, pairwise } from 'rxjs/operators';
+import { RouteService } from '../../services/route.service';
 
 @Component({
   selector: 'app-confirm-order',
@@ -20,7 +21,7 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   previousRoute: string;
 
   constructor(private cpService: ConfirmOrderService,
-    private _injector: Injector, private router: Router) {
+    private _injector: Injector, private router: Router, private rs: RouteService) {
     super(_injector)
     // router.events
     // .pipe(filter((evt: any) => evt instanceof RoutesRecognized), pairwise())
@@ -36,10 +37,13 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
     //     this.previousRoute = events[0].urlAfterRedirects;
     //   });
 
-    const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
-    this.previousRoute = prevUrl;
-    console.log(this.previousRoute)
-    console.log(prevUrl)
+    // const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    // this.previousRoute = prevUrl;
+    // console.log(this.previousRoute)
+    // console.log(prevUrl)
+
+    this.rs.currentMiPedidoLastBackDirection.subscribe( route => this.previousRoute = route);
+    console.log(this.previousRoute);
   }
 
   ngOnInit() {
