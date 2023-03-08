@@ -1,0 +1,144 @@
+input{
+  padding-inline-end: 0px !important;
+  padding-inline-start: 0px !important;
+}
+
+ion-header {
+ /*  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; */
+  //padding-top: 16px !important;
+
+
+  ion-toolbar {
+      //--padding-top: 16px !important;
+      --padding-start: 16px !important;
+      --padding-end: 16px !important;
+      --padding-bottom: 24px !important;
+
+
+      .search-container{
+        //  position: relative;
+
+          ion-searchbar{
+              position: relative;
+              padding-inline-start: 0px !important;
+              padding-inline-end: 0px !important;
+              padding-top: 0px !important;
+              padding-left: 0px !important;
+              padding-bottom: 0px !important;
+              --background : var(--ion-color-variants);
+              --color: var(--ion-color-basic);
+
+              .searchbar-input{
+                  padding-inline-end: 0px !important;
+                  padding-inline-start: 0px !important;
+
+
+               }
+
+          }
+
+          .border-bottom{
+              width: calc(100% - 48px);
+              padding: 0.25px;
+              margin-left: 48px;
+              background-color: var(--ion-color-border-input);
+              position: absolute;
+              top: 45px;
+          }
+      }
+
+
+  }
+}
+
+
+
+ion-list{
+
+  ion-item{
+      &::part(native){
+          padding-inline-end: 0px !important;
+      }
+
+      ion-icon{
+          font-size: 20px;
+      }
+  }
+}
+
+input{
+  padding-inline-start: 0px !important;
+}
+input{
+  .searchbar-input{
+  padding-inline-start: 0px !important;
+}
+}
+
+@media(min-width:390px) {
+
+  ion-header {
+      ion-toolbar {
+          //--padding-top: 16px !important;
+          --padding-start: 24px !important;
+          --padding-end: 24px !important;
+          --padding-bottom: 40px !important;
+      }
+  }
+
+}
+
+//* Modal
+.container-modal-country {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100000000000000000000;
+  background-color: rgba(0,0,0,.5);
+}
+
+.modal-country {
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 738px;
+  height: 500px;
+  background-color: var(--ion-background-modal);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: modalOpen .3s ease;
+}
+
+@keyframes modalOpen {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+ion-item.selected ion-icon {
+  margin-right: 8px;
+}
+
+
+
+
+
+.close-modal {
+  animation: closeModal .3s ease;
+}
+
+@keyframes closeModal {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}

@@ -12,6 +12,7 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   statusModal: boolean;
   mainProduct: boolean = true;
   Product: boolean = true;
+
   constructor(_injector: Injector, private inviteService: InviteService) {
     super(_injector);
     this.inviteService.getStatusModalBasketCollaborative.subscribe( status => this.statusModal = status );
@@ -30,4 +31,6 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
     this.Product = status;
   }
 
+  //Seleccion todos los checkbox--- agregamos [isChecked]="allChecked" al componente app-main-product
+  allChecked = false;
 }

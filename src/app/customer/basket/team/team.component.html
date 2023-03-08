@@ -3,7 +3,10 @@
   <div class="container-main">
     <div *ngFor="let item of equipos" class="content-team">
       <div class="contacts d-flex flex-row" (click)="openModal(item)">
-        <ion-img [src]="item.image"></ion-img>
+       <!--  <div class="image-wrapper" [ngClass]="{'loaded': isImageLoaded}"> -->
+       <!--  <ion-img [src]="item.image" (load)="isImageLoaded = true"></ion-img> -->
+       <img [src]="item.image" alt="">
+        <!-- </div> -->
         <div class="information fz-small d-flex flex-column">
           <ion-label class="name">{{ item.nombre }}</ion-label>
           <div
