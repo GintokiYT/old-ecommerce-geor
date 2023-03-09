@@ -6,6 +6,7 @@
   >
   </app-header>
 
+
   <form
     class="container-main"
     [formGroup]="form"
@@ -21,14 +22,14 @@
     <ion-item class="form-group">
       <ion-label position="floating" *ngIf="inputValue==='Factura'">Nombre de la compañía</ion-label>
       <ion-label position="floating" *ngIf="inputValue==='Boleta'">Nombre de la Persona</ion-label>
-      <ion-input type="text" formControlName="name"></ion-input>
+      <ion-input type="text" formControlName="name"  [(ngModel)]="nameValue"></ion-input>
     </ion-item>
 
 
     <ion-item class="form-group">
       <ion-label position="floating" *ngIf="inputValue==='Factura'">Identificador fiscal</ion-label>
       <ion-label position="floating" *ngIf="inputValue==='Boleta'">Número de documento de identidad</ion-label>
-      <ion-input type="number" formControlName="id" #ionId></ion-input>
+      <ion-input type="number" formControlName="id" #ionId [(ngModel)]="idValue"></ion-input>
     </ion-item>
 
   </form>
@@ -60,7 +61,6 @@
 
 </ion-content>
 
-
 <!-- Footer -->
 <ion-footer class="ion-no-border footer-ionic">
 
@@ -84,3 +84,8 @@
 >
 
 </app-modal-type-bill>
+
+
+
+
+

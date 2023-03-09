@@ -71,6 +71,7 @@ import { SetContactComponent } from './manage-billing-data/set-contact/set-conta
 import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
 import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
+import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
 
 const routes: Routes = [
   {
@@ -144,6 +145,7 @@ const routes: Routes = [
       {path: 'manage-user-information', component: ManageUserInformationComponent},
       {path: 'manage-billing-data', component: ManageBillingDataComponent},
       {path: 'manage-billing-data/bills-delete', component:BillsDeleteComponent},
+      {path: 'manage-billing-data/edit-bill/:id', component:EditBillComponent},
       {path: 'manage-billing-data/add-company', component:AddCompanyComponent},
       {path: 'manage-billing-data/add-company/read-contacts', component:ReadContactsComponent},
       {path: 'manage-billing-data/add-company/set-contact', component:SetContactComponent},

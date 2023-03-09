@@ -3,6 +3,8 @@ import { ViewComponent } from '@geor360/ecore';
 import { IonSearchbar } from '@ionic/angular';
 import { ContactsService } from '../../../services/contacts.service';
 import { BillingDataService } from '../../../services/billing-data.service';
+import { Router } from '@angular/router';
+import { RouteService } from '../../../services/route.service';
 
 
 @Component({
@@ -17,30 +19,27 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
   contactsResults: any[];
   showButtonPlus: boolean = true;
   headerContent: string = "normal";
+  previousRoute: string;
 
 
   @ViewChild("searchBar") searchBar: IonSearchbar;
 
 
   constructor(private _injector: Injector, private cdr: ChangeDetectorRef,
-    private cs: ContactsService, private bs: BillingDataService) {
+    private cs: ContactsService, private bs: BillingDataService, private rs: RouteService,
+    private router: Router) {
     super(_injector);
     this.cs.currentContacts$.subscribe((data) => {
       this.contacts = data;
       this.contactsResults = [...this.contacts];
     });
+    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
   }
 
   ngOnInit() {
-    //await this.getContacts();
-  }
-
-  ngAfterViewInit(): void {
   }
 
   handleChange(event) {
-    // const query = event.detail.value.toLowerCase();
-    // this.contactsResults = this.contacts.filter(contact => contact.name.display.toLowerCase().indexOf(query) !== -1);
     const query = event.detail.value.toLowerCase();
     this.contactsResults = this.contacts.filter(contact => {
       if (contact.name && contact.name.display) {
@@ -50,22 +49,36 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
     });
   }
 
-  // async getContacts() {
+  goToSetContact() {
+    this.rs.setSetContactLastSubmitBackDirection(this.previousRoute);
+    this.navigation.forward("/customer/manage-billing-data/add-company/set-contact");
+  }
 
-  //   try {
-  //     const result = await Contacts.getContacts({
-  //       projection: {
-  //         name: true,
-  //         phones: true
-  //       }
-  //     })
-  //     this.contacts = result.contacts;
-  //     this.contactsResults = [...this.contacts];
-  //     this.showButtonPlus = true;
-  //   } catch (e) {
-  //     console.log(e)
-  //   }
-  // }
+  goToAddCompany(contact) {
+    const contactTemp = {
+      name: contact?.name?.display,
+      number: contact?.phones[0].number
+    }
+    this.bs.setContactTemp(contactTemp);
+    //this.navigation.back("/customer/manage-billing-data/add-company");
+    this.navigation.back(this.previousRoute);
+
+  }
+
+  goBack() {
+    if (this.headerContent === "search") {
+      this.contactsResults = [...this.contacts];
+      this.headerContent = "normal"
+    } else {
+      //this.navigation.back("/customer/manage-billing-data/add-company");
+      this.navigation.back(this.previousRoute)
+    }
+
+  }
+
+  showSearch() {
+    this.headerContent = "search";
+  }
 
   phoneFormated(phones: any[]) {
     var numberFormated = "";
@@ -92,35 +105,6 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
     //   }
     // }
 
-
-  }
-
-  goToSetContact() {
-    this.navigation.forward("/customer/manage-billing-data/add-company/set-contact");
-  }
-
-  goToAddCompany(contact) {
-    const contactTemp = {
-      name: contact?.name?.display,
-      number: contact?.phones[0].number
-    }
-    this.bs.setContactTemp(contactTemp);
-    this.navigation.back("/customer/manage-billing-data/add-company");
-
-  }
-
-  goBack() {
-    if (this.headerContent === "search") {
-      this.contactsResults = [...this.contacts];
-      this.headerContent = "normal"
-    } else {
-      this.navigation.back("/customer/manage-billing-data/add-company");
-    }
-
-  }
-
-  showSearch() {
-    this.headerContent = "search";
   }
 
 

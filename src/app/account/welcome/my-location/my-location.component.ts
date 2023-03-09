@@ -31,10 +31,10 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
 
   positionMarker: google.maps.Marker;
 
-  constructor(_injector: Injector, private languageService: LanguageService, private rs : RouteService) {
+  constructor(_injector: Injector, private languageService: LanguageService, private rs: RouteService) {
     super(_injector);
     this.mapId = 'map';
-    this.rs.currentMyLocationLastBackDirection.subscribe( d => this.previousRoute=d);
+    this.rs.currentMyLocationLastBackDirection.subscribe(d => this.previousRoute = d);
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
   }
 
@@ -104,7 +104,11 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
     if (this.previousRoute.includes("manage-addresses")) {
       this.navigation.back("customer/manage-addresses")
     } else {
-      this.navigation.forward('customer/home');
+      if (this.previousRoute.includes("addresses-delete")) {
+        this.navigation.back("customer/manage-addresses/addresses-delete")
+      }else{
+        this.navigation.forward('customer/home');
+      }
     }
 
   }
