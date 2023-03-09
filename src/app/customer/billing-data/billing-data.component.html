@@ -15,7 +15,7 @@
   <!-- Billing Data Container -->
   <div class="billing-data_container d-flex flex-column container-main">
 
-    <div class="d-flex align-items-center bill-container" *ngFor="let bill of bills">
+    <div class="d-flex align-items-center bill-container" *ngFor="let bill of billingData">
       <ion-checkbox
         [(ngModel)] = bill.selected
         (ngModelChange)="checkBoxChange(bill.id)"
@@ -24,14 +24,14 @@
       <div class="d-flex flex-column bill-information">
         <ion-label class="fz-normal ion-text-wrap">{{bill.name}}</ion-label>
         <div class="d-flex" style="gap: 8px;">
-          <ion-label class="bill-information_code">{{bill.code}}</ion-label>
+          <ion-label class="bill-information_code">{{bill.id}}</ion-label>
           <ion-label class="bill-information_type fz-note" color="primary">{{bill.type}}</ion-label>
         </div>
-        <ion-label class="bill-information_edit">Editar</ion-label>
+        <ion-label class="bill-information_edit" (click)="goToEdit(bill)">Editar</ion-label>
       </div>
     </div>
 
-    <div class="d-flex align-items-center" style="gap: 8px;">
+    <div class="d-flex align-items-center" style="gap: 8px;" (click)="goToAddCompany()">
       <img src="/assets/icons/icon-plus.svg" style="cursor: pointer;">
       <ion-label color="primary" style="cursor: pointer;">Nueva compañía</ion-label>
     </div>

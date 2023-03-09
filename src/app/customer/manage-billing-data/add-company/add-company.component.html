@@ -1,8 +1,7 @@
 <ion-content>
-
   <app-header
     title="Datos de facturación"
-    backDirection="manage-billing-data"
+    [backDirection]="previousRoute"
     iconLeft="icon-arrow-left"
   >
   </app-header>
@@ -15,30 +14,49 @@
 
     <ion-item class="form-group" (click)="focusType()">
       <ion-label position="stacked">Tipo de comprobante</ion-label>
-      <ion-input readonly="true" type="text" inputmode="text" formControlName="type" #inputType></ion-input>
+      <ion-input readonly="true" type="text" inputmode="text" formControlName="type" [(ngModel)]="inputValue" #inputType></ion-input>
     </ion-item>
 
     
     <ion-item class="form-group">
-      <ion-label position="floating">Nombre de la compañía</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Factura'">Nombre de la compañía</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Boleta'">Nombre de la Persona</ion-label>
       <ion-input type="text" formControlName="name"></ion-input>
     </ion-item>
 
 
-    <ion-item class="form-group" (ionFocus)="focusId()">
-      <ion-label position="floating">Identificador fiscal</ion-label>
-      <ion-input type="text" formControlName="id" #ionId></ion-input>
+    <ion-item class="form-group">
+      <ion-label position="floating" *ngIf="inputValue==='Factura'">Identificador fiscal</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Boleta'">Número de documento de identidad</ion-label>
+      <ion-input type="number" formControlName="id" #ionId></ion-input>
     </ion-item>
 
   </form>
 
   <div class="who-get d-flex align-items-center justify-content-start">
-    <ion-fab-button size="small">
+
+    <!-- No hay contacto seleccionado -->
+    <ion-fab-button *ngIf="name===null" size="small" (click)="requestPermissionContact()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-    <ion-label>¿Quién recibirá la factura?</ion-label>
-  </div>
+    <div *ngIf="name===null">
+      <ion-label (click)="requestPermissionContact()" *ngIf="inputValue==='Factura'">¿Quién recibirá la factura?</ion-label>
+      <ion-label (click)="requestPermissionContact()" *ngIf="inputValue==='Boleta'">¿Quién recibirá la boleta?</ion-label>
+    </div>
 
+    <!-- Si hay contacto seleccionado -->
+    <div *ngIf="name!==null" class="contact-container">
+      <ion-label class="message">Este contacto recibirá la {{inputValue}}</ion-label>
+      <ion-item lines="none" detail="true" (click)="requestPermissionContact()">
+        <div class="d-flex flex-column contact">
+          <ion-label class="name">{{name}}</ion-label>
+          <ion-label class="number">{{number}}</ion-label>
+        </div>
+      </ion-item>
+    </div>
+
+
+  </div>
 
 </ion-content>
 
@@ -52,7 +70,7 @@
         <ion-label>Establecer como predeterminado</ion-label>
         <ion-toggle color="primary" slot="end"></ion-toggle>
       </ion-item>
-      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid || name===null" (click)="onSubmit()"
         type="submit" style="margin: 0px;">Guardar</ion-button>
     </div>
   </ion-toolbar>

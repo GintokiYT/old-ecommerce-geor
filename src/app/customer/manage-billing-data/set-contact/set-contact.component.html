@@ -1,0 +1,57 @@
+<ion-content>
+
+  <app-header
+    title="¿Quién recibirá la factura?"
+    iconLeft="icon-arrow-left"
+    [multipleBack] = true
+  >
+  </app-header>
+
+  <form
+    class="container-main"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+
+    <ion-item class="form-group">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+
+    
+    <ion-item class="form-group">
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input type="text" formControlName="surnames"></ion-input>
+    </ion-item>
+
+
+    <ion-item class="form-group">
+      <ion-label position="floating">Celular</ion-label>
+      <ion-input type="tel" formControlName="phone" maxlength="11" mask="*** *** ***"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-group" (ionFocus)="checkFocusEmail()">
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+
+
+  </form>
+
+
+  
+</ion-content>
+
+
+<!-- Footer -->
+<ion-footer class="ion-no-border footer-ionic">
+
+  <ion-toolbar class="ion-no-padding">
+    <div class="text-center">
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+        type="submit" style="margin: 0px;">Confirmar</ion-button>
+    </div>
+  </ion-toolbar>
+
+
+</ion-footer>

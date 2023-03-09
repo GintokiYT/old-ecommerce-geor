@@ -3,6 +3,7 @@ import { ViewComponent } from '@geor360/ecore';
 
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-inbox',
@@ -11,20 +12,28 @@ import { Location } from '@angular/common';
 })
 export class HeaderInboxComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector: Injector, private callNumber: CallNumber,private location: Location) {
+
+  previousRoute: string;
+
+  constructor(_injector: Injector, private callNumber: CallNumber,private location: Location,
+                private router: Router) {
     super(_injector);
+    const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    this.previousRoute = prevUrl;
   }
 
   ngOnInit() {}
 
   backMainInbox() {
-    const back = localStorage.getItem('back') ?? '';
-    if(back) {
-      this.navigation.back(localStorage.getItem('back'));
-      localStorage.setItem('back', '');
-    } else {
-      this.navigation.forward('/customer/main-inbox');
-    }
+    // const back = localStorage.getItem('back') ?? '';
+    // if(back) {
+    //   this.navigation.back(localStorage.getItem('back'));
+    //   localStorage.setItem('back', '');
+    // } else {
+    //   this.navigation.forward('/customer/main-inbox');
+    // }
+
+    this.navigation.root(this.previousRoute,"back");
     // Las animaciones de root y back lagea el ion-footer
    // this.navigation.forward('/customer/main-inbox');
     // this.navigation.root('/customer/main-inbox', 'forward')

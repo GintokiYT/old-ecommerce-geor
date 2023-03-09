@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
+import { RouteService } from '../../../services/route.service';
 
 @Component({
   selector: 'app-collaborative-basket',
@@ -12,7 +13,8 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   statusModal: boolean;
   mainProduct: boolean = true;
   Product: boolean = true;
-  constructor(_injector: Injector, private inviteService: InviteService) {
+  constructor(_injector: Injector, private inviteService: InviteService,
+    private rs: RouteService) {
     super(_injector);
     this.inviteService.getStatusModalBasketCollaborative.subscribe( status => this.statusModal = status );
   }
@@ -20,6 +22,7 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   ngOnInit() {}
 
   goToConfirmOrder() {
+    this.rs.setMiPedidoLastBackDirection("/customer/collaborative-basket")
     this.navigation.root('/customer/confirm-order', 'forward');
   }
 
@@ -30,4 +33,6 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
     this.Product = status;
   }
 
+  //Seleccion todos los checkbox--- agregamos [isChecked]="allChecked" al componente app-main-product
+  allChecked = false;
 }

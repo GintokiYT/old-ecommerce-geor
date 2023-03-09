@@ -117,6 +117,11 @@ export class TeamComponent extends ViewComponent implements OnInit {
     this.equipos = this.equipos.filter( equipo => equipo.id !== index);
     this.inviteService.setStatusModalResend(false);
   }
+
+  //Demora de carga de imagen
+ /*   isImageLoaded = false; */
+
+
 }
 
 

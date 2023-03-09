@@ -1,0 +1,56 @@
+<ion-content>
+  <app-header
+    title="Direcciones"
+    iconLeft="icon-arrow-left"
+    backDirection="manage-addresses"
+  >
+  </app-header>
+
+  <!-- Billing Data Container -->
+  <div class="addresses-data_container d-flex flex-column container-main">
+
+    
+
+    <div class="d-flex align-items-center address-container" *ngFor="let address of directionsData">
+      <ion-checkbox
+        [(ngModel)] = address.selected
+        (ngModelChange)="checkBoxChange()"
+      >
+      </ion-checkbox>
+      <div class="d-flex flex-column">
+        <ion-label class="fz-normal ion-text-wrap">{{address.direction}}</ion-label>
+        <ion-label class="edit-address" (click)="goToMap()">Editar</ion-label>
+      </div>
+    </div>
+
+  </div> <!--End Billing Data Container-->
+
+
+
+  <!-- Footer -->
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button 
+        [disabled]="!oneTrue"
+        (click)="deleteBills()"
+        expand="full"  
+        shape="round" 
+        color="primary" 
+        style="margin: 0;"
+      >
+        Eliminar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+
+</ion-content>
+
+
+<app-modal-delete
+  titleModalDelete="¿Eliminar las direcciones seleccionadas??"
+  [modalIsVisible]="modalIsVisible"
+  (onModalNotVisible)="closeModal($event)"
+>
+
+</app-modal-delete>

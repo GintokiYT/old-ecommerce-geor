@@ -80,4 +80,8 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
   goToManageBillingData(){
     this.navigation.forward("/customer/manage-billing-data")
   }
+
+  goToManageAddresses(){
+    this.navigation.forward("/customer/manage-addresses")
+  }
 }

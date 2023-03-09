@@ -1,0 +1,52 @@
+<ion-content>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <div class="header-container  d-flex justify-content-between align-items-center">
+
+        <button class="button-left" (click)="goToManageUserInformation()">
+          <img src="/assets/icons/icon-arrow-left.svg" width="17px">
+        </button>
+
+        <div class="title">
+          <ion-label>Direcciones</ion-label>
+        </div>
+
+        <button (click)="goToAddressesDelete()">
+          <img src="/assets/icons/icon-delete.svg">
+        </button>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="addresses-data_container d-flex flex-column container-main">
+
+    <div class="d-flex flex-column address-container" *ngFor="let address of directionsData">
+      <ion-label class="fz-normal ion-text-wrap">{{address.direction}}</ion-label>
+      <ion-label class="edit-address" (click)="goToMap()">Editar</ion-label>
+    </div>
+
+  </div>
+
+
+
+  <!-- Footer -->
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button
+        disabled="false"
+        expand="full"  
+        shape="round" 
+        color="primary" 
+        style="margin: 0;"
+        (click)="goToMap()"
+      >
+        Nueva dirección
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+
+
+</ion-content>

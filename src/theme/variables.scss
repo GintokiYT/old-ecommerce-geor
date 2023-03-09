@@ -131,6 +131,8 @@ $btn-default: #5b6793;
   --ion-background-outline:#FFFFFF;
   --ion-border-color: #1B1F3C;
   --ion-outline-color-button: #023AFF;
+  --ion-background-search: #F5F5F5;
+
 
   --ion-background-button-disabled: #E3EAFD;
   --ion-color-text-button-disabled: #00000061;
@@ -140,6 +142,8 @@ $btn-default: #5b6793;
 
   // --ion-background-hover-selected: rgb(10, 10, 10, .5);
   --ion-background-hover-selected: rgb(74 71 71 / 25%);
+
+  
 }
 
 
@@ -269,6 +273,7 @@ body.dark {
   --ion-background-outline:#5B6793;
   --ion-border-color: #1B1F3C;
   --ion-outline-color-button: #5B6793;
+  --ion-background-search: #191932;
 
   --ion-background-button-disabled: #1B1F3C;
   --ion-color-text-button-disabled: #5B6793;

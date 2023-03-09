@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Injector, Output, EventEmitter, Input } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
@@ -44,4 +44,7 @@ export class MainProductComponent extends ViewComponent implements OnInit {
   goProductDetail(){
    this.navigation.root('/customer/variants-product', 'forward');
   }
+
+  // Agregamos [checked]="isChecked" al input para marcar o desmar el checkbox
+  @Input() isChecked = false;
 }

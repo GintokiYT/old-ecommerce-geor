@@ -60,7 +60,8 @@ export class CountrySelectComponent  extends ViewComponent implements OnInit {
 
   handleChange(event) {
     const query = event.target.value.toLowerCase();
-    this.dataCountriesResults = this.dataCountries.filter(d => d.country.toLowerCase().indexOf(query) > -1);
+    //this.dataCountriesResults = this.dataCountries.filter(d => d.country.toLowerCase().indexOf(query) > -1);
+    this.dataCountriesResults = this.dataCountries.filter(d => d.country.toLowerCase().includes(query));
   }
 
   onGoToRegister(){

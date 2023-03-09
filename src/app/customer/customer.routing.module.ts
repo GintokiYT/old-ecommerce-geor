@@ -61,8 +61,11 @@ import { PaymentMethodConfigurationComponent } from './pay-card/payment-method-c
 import { CardPaymentMethodsComponent } from './pay-card/card-payment-methods/card-payment-methods.component';
 import { UserHelpComponent } from './userHelp/user-help/user-help.component';
 import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-book.component';
+import { ReadContactsComponent } from './manage-billing-data/read-contacts/read-contacts.component';
+import { SetContactComponent } from './manage-billing-data/set-contact/set-contact.component';
 import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
 import { SearchGeneralComponent } from './search-general/search-general/search-general.component';
+import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
 
 const routes: Routes = [
   {
@@ -135,7 +138,13 @@ const routes: Routes = [
       {path: 'manage-user-information', component: ManageUserInformationComponent},
       {path: 'manage-billing-data', component: ManageBillingDataComponent},
       {path: 'manage-billing-data/bills-delete', component:BillsDeleteComponent},
+      {path: 'manage-billing-data/edit-bill/:id', component:EditBillComponent},
       {path: 'manage-billing-data/add-company', component:AddCompanyComponent},
+      {path: 'manage-billing-data/add-company/read-contacts', component:ReadContactsComponent},
+      {path: 'manage-billing-data/add-company/set-contact', component:SetContactComponent},
+      // {path: 'manage-addresses', component:ManageAddressesComponent},
+      // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
+
 
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
       { path: 'add', component:AddComponent},
