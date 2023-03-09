@@ -1,7 +1,8 @@
 import { AppNavigationService, ViewComponent } from '@geor360/ecore';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Injector, ViewChild } from '@angular/core';
 import { IonInput } from '@ionic/angular';
+import { Keyboard } from '@geor360/capacitor-keyboard';
 
 
 @Component({
@@ -11,16 +12,16 @@ import { IonInput } from '@ionic/angular';
 })
 export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
-  @ViewChild("inputPassword") inputPassword : IonInput;
-  @ViewChild("inputPasswordConfirm") inputPasswordConfirm : IonInput;
-  equalPassword : boolean = false;
+  @ViewChild("inputPassword") inputPassword: IonInput;
+  @ViewChild("inputPasswordConfirm") inputPasswordConfirm: IonInput;
+  equalPassword: boolean = false;
   inputConfirmHaveValue: boolean = false;
 
   form!: FormGroup;
   showTextHelperPassword = false;
   showTextHelperPasswordConfirmation = false;
 
-  showFakeEye : boolean = false;
+  showFakeEye: boolean = false;
   showTrueEye: boolean = true;
 
   showFakeEye2: boolean = false;
@@ -30,7 +31,7 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   inputPasswordTypeConfirm = "password";
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  passwordPattern =  /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
+  passwordPattern = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
 
 
   constructor(
@@ -38,7 +39,6 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
     private _injector: Injector,
   ) {
     super(_injector);
-
   }
 
   ngOnInit() {
@@ -56,30 +56,61 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
     );
   }
 
-  changeInputValue(){
-    if(this.inputPassword?.value === this.inputPasswordConfirm?.value){
-      if(this.inputPasswordConfirm?.value.toString().length>0){
+
+  ionViewDidEnter() {
+    // this.platform.backButton.subscribeWithPriority(10, () => {
+    //   if(this.showFakeEye===true || this.showFakeEye2===true){
+    //     if(this.showFakeEye===true){
+    //       this.showFakeEye = false;
+    //       this.showTrueEye = true;
+    //     }
+    //     if(this.showFakeEye2===true){
+    //       this.showFakeEye2 = false;
+    //       this.showTrueEye2 =
+    //     }
+    //   }
+    // });
+
+    Keyboard.addListener('keyboardWillHide', () => {
+      if (this.showFakeEye === true || this.showFakeEye2 === true) {
+        if (this.showFakeEye === true) {
+          this.showFakeEye = false;
+          this.showTrueEye = true;
+        }
+        if (this.showFakeEye2 === true) {
+          this.showFakeEye2 = false;
+          this.showTrueEye2 = true;
+        }
+      }
+    });
+
+  }
+
+
+  changeInputValue() {
+    if (this.inputPassword?.value === this.inputPasswordConfirm?.value) {
+      if (this.inputPasswordConfirm?.value.toString().length > 0) {
         console.log("hola1")
         this.equalPassword = true;
       }
-    }else{
+    } else {
       this.equalPassword = false
     }
   }
 
-  changeInputPasswordConfirmValue(){
-    if(this.inputPassword?.value === this.inputPasswordConfirm?.value){
-      if(this.inputPasswordConfirm?.value.toString().length>0){
+  changeInputPasswordConfirmValue() {
+    if (this.inputPassword?.value === this.inputPasswordConfirm?.value) {
+      if (this.inputPasswordConfirm?.value.toString().length > 0) {
         console.log("hola2")
         this.equalPassword = true;
       }
-    }else{
+    } else {
       this.equalPassword = false
     }
 
-    if(this.inputPasswordConfirm?.value.toString().length>0){
+    if (this.inputPasswordConfirm?.value.toString().length > 0) {
       this.inputConfirmHaveValue = true;
-    }else{
+    } else {
       this.inputConfirmHaveValue = false;
     }
   }
@@ -96,20 +127,20 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
     this.inputPasswordConfirm.value = ""
   }
 
-  onChangeType(input:string){
-    if(input==="default"){
-      if(this.inputPassword.type === "password"){
+  onChangeType(input: string) {
+    if (input === "default") {
+      if (this.inputPassword.type === "password") {
         this.inputPasswordType = "text";
         this.inputPassword.type = "text";
-      }else{
+      } else {
         this.inputPasswordType = "password";
         this.inputPassword.type = "password";
       }
-    }else{
-      if(this.inputPasswordConfirm.type === "password"){
+    } else {
+      if (this.inputPasswordConfirm.type === "password") {
         this.inputPasswordTypeConfirm = "text";
         this.inputPasswordConfirm.type = "text";
-      }else{
+      } else {
         this.inputPasswordTypeConfirm = "password";
         this.inputPasswordConfirm.type = "password";
       }
@@ -118,27 +149,27 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
 
   checkFocus(input: string) {
     switch (input) {
-      case "password": this.showTextHelperPassword = true; 
-                      this.showTrueEye = false;
-                      this.showFakeEye = true;
-                      break;
-      case "passwordConfirmation": this.showTextHelperPasswordConfirmation = true; 
-                                   this.showTrueEye2 = false;
-                                   this.showFakeEye2 = true;
-      break;
+      case "password": this.showTextHelperPassword = true;
+        this.showTrueEye = false;
+        this.showFakeEye = true;
+        break;
+      case "passwordConfirmation": this.showTextHelperPasswordConfirmation = true;
+        this.showTrueEye2 = false;
+        this.showFakeEye2 = true;
+        break;
     }
   }
 
   checkBlur(input: string) {
     switch (input) {
-      case "password": this.showTextHelperPassword = false; 
-                        this.showTrueEye = true;
-                        this.showFakeEye = false;
-                        break;
+      case "password": this.showTextHelperPassword = false;
+        this.showTrueEye = true;
+        this.showFakeEye = false;
+        break;
       case "passwordConfirmation": this.showTextHelperPasswordConfirmation = false;
-                                    this.showTrueEye2 = true;
-                                    this.showFakeEye2 = false;
-                                    break;
+        this.showTrueEye2 = true;
+        this.showFakeEye2 = false;
+        break;
     }
   }
 }
