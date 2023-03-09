@@ -20,6 +20,7 @@ import { LoadingAppComponent } from './welcome/loading-app/loading-app.component
 import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
 import { ModalTermsComponent } from './register/modal-terms/modal-terms.component';
 import { CountrySelectComponent } from './register/country-select/country-select.component';
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { CountrySelectComponent } from './register/country-select/country-select
     CountrySelectComponent
   ],
   providers:[
+    Diagnostic
   ]
 })
 export class AccountModule {}
