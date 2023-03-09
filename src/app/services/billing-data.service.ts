@@ -23,7 +23,7 @@ export class BillingDataService {
     },
     {
       name: "Negocios del Carmen Portocarreo - NCM Comercial",
-      id: "20713995789",
+      id: "20713695783",
       type: "Factura",
       contact: {
         name: "Antonio Perez",
@@ -32,7 +32,7 @@ export class BillingDataService {
     },
     {
       name: "Norman Osword Sánchez",
-      id: "27421234",
+      id: "23457418",
       type: "Boleta",
       contact: {
         name: "Felipe Gutierres",

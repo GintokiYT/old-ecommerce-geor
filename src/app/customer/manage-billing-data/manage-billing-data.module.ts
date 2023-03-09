@@ -10,6 +10,7 @@ import { ModalTypeBillComponent } from './modal-type-bill/modal-type-bill.compon
 import { ReadContactsComponent } from './read-contacts/read-contacts.component';
 import { SetContactComponent } from './set-contact/set-contact.component';
 import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
+import { EditBillComponent } from './edit-bill/edit-bill.component';
 
 
 
@@ -20,7 +21,8 @@ import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
     AddCompanyComponent, 
     ModalTypeBillComponent,
     ReadContactsComponent,
-    SetContactComponent
+    SetContactComponent,
+    EditBillComponent
   ],
   imports: [
     CommonModule,

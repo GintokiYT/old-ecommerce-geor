@@ -37,8 +37,8 @@ export class ManageBillingDataComponent extends ViewComponent implements OnInit 
     this.navigation.forward(("/customer/manage-billing-data/add-company"))
   }
 
-  goToEdit(){
-    this.navigation.forward("/customer/manage-billing-data/add-company")
+  goToEdit(bill : any){
+    this.navigation.forward(`/customer/manage-billing-data/edit-bill/${bill.id}`)
   }
 
 }

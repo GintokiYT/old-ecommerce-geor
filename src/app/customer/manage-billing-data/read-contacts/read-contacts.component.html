@@ -75,7 +75,7 @@
     </div> -->
 
     <div class="contacts-container">
-      <ion-item class="contact" lines="none" *ngFor="let contact of contacts" (click)="goToAddCompany(contact)">
+      <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults" (click)="goToAddCompany(contact)">
         <div class="d-flex flex-column" >
           <p class="name">{{contact?.name?.display}}</p>
           <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">

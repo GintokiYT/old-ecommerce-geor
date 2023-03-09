@@ -1,49 +1,47 @@
-import { Component, OnInit, ViewChild, Injector } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Injector, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BillingDataService } from '../../../services/billing-data.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ViewComponent } from '@geor360/ecore';
-import { IonContent, IonInput } from '@ionic/angular';
+import { IonInput } from '@ionic/angular';
 import { Contacts } from "@capacitor-community/contacts"
 import { ContactsService } from '../../../services/contacts.service';
-import { Router } from '@angular/router';
-import { BillingDataService } from '../../../services/billing-data.service';
-
-
-
 
 @Component({
-  selector: 'app-add-company',
-  templateUrl: './add-company.component.html',
-  styleUrls: ['./add-company.component.scss'],
+  selector: 'app-edit-bill',
+  templateUrl: './edit-bill.component.html',
+  styleUrls: ['./edit-bill.component.scss'],
 })
-export class AddCompanyComponent extends ViewComponent implements OnInit {
+export class EditBillComponent extends ViewComponent implements OnInit {
 
-
+  id: string;
+  bill: any;
 
   form!: FormGroup;
-  modalIsVisible: boolean = false;
-  permission: any = "granted";
-  inputValue: string = "Factura";
-  contacts : any[];
   number: string | null = null;
   name: string | null = null;
-  contactTemp : any;
-  data : any[];
-
+  contactTemp: any;
+  modalIsVisible: boolean = false;
+  inputValue: string;
+  nameValue: string;
+  idValue: string;
+  permission: any = "granted";
+  contacts: any[];
+  billingData : any[];
 
   @ViewChild("inputType") inputType: IonInput;
-  @ViewChild(IonContent) content: IonContent;
-  @ViewChild("ionId") inputId: IonInput;
 
-  constructor(private _injector: Injector, private cs: ContactsService,
-    private router: Router, private bs: BillingDataService) {
+  constructor(private _injector: Injector,
+    private activatedRoute: ActivatedRoute,
+    private bds: BillingDataService, private cs: ContactsService,
+    private bs: BillingDataService, private router: Router) {
     super(_injector);
-    this.bs.currentContactTemp$.subscribe( contact => {
-      this.name = contact.name;
-      this.number = contact.number;
+    this.bs.currentContactTemp$.subscribe(contact => {
       this.contactTemp = contact;
+      this.number = contact.number;
+      this.name = contact.name;
     })
 
-    this.bs.currentBillingData$.subscribe( dataArr => this.data = dataArr);
   }
 
   ngOnInit() {
@@ -63,25 +61,49 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
       ])
     });
 
+    //obtener el id de los parametros
+    this.activatedRoute.params
+      .subscribe(({ id }) => {
+        this.id = id;
+      })
+
+    //obtener el bill segun el id
+    this.bs.currentBillingData$.subscribe( dataArr => this.billingData = dataArr);
+    this.bill = this.billingData.filter( b => b.id === this.id)[0];
+
+
+
+    this.inputValue = this.bill.type;
+    this.nameValue = this.bill.name;
+    this.idValue = this.bill.id;
+    this.number = this.bill.contact.number;
+    this.name = this.bill.contact.name;
 
   }
 
+
   onSubmit() {
-    const bill = {
+
+    const newContact = (this.contactTemp.name===null) ? this.bill.contact : this.contactTemp;
+
+    const newBill = {
       type: this.form.get("type").value,
       name: this.form.get("name").value,
       id: this.form.get("id").value.toString(),
-      contact : this.contactTemp
+      contact: newContact
     }
-    
-    this.data = [...this.data,bill];
-    this.bs.setBillingData(this.data);
 
-    this.bs.setContactTemp( {
+    let auxData = this.billingData.filter( d => d.id!==this.id);
+    auxData = [...auxData,newBill];
+    this.bds.setBillingData(auxData);
+
+
+    this.bds.setContactTemp( {
       name : null,
       number: null
     } )
-  
+
+
     this.navigation.back("/customer/manage-billing-data")
   }
 
@@ -153,4 +175,8 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
       console.log(e)
     }
   }
+
+
+
+
 }
