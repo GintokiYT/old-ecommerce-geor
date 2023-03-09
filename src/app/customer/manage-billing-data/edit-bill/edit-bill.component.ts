@@ -28,6 +28,7 @@ export class EditBillComponent extends ViewComponent implements OnInit {
   permission: any = "granted";
   contacts: any[];
   billingData : any[];
+  previousRoute: string;
 
   @ViewChild("inputType") inputType: IonInput;
 
@@ -41,7 +42,7 @@ export class EditBillComponent extends ViewComponent implements OnInit {
       this.number = contact.number;
       this.name = contact.name;
     })
-
+    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
   }
 
   ngOnInit() {
@@ -103,8 +104,8 @@ export class EditBillComponent extends ViewComponent implements OnInit {
       number: null
     } )
 
-
-    this.navigation.back("/customer/manage-billing-data")
+    console.log(this.previousRoute);
+    this.navigation.back(this.previousRoute);
   }
 
   focusType() {

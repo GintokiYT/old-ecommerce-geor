@@ -28,6 +28,7 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
   name: string | null = null;
   contactTemp : any;
   data : any[];
+  previousRoute: string;
 
 
   @ViewChild("inputType") inputType: IonInput;
@@ -42,7 +43,7 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
       this.number = contact.number;
       this.contactTemp = contact;
     })
-
+    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.bs.currentBillingData$.subscribe( dataArr => this.data = dataArr);
   }
 
@@ -82,7 +83,7 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
       number: null
     } )
   
-    this.navigation.back("/customer/manage-billing-data")
+    this.navigation.back(this.previousRoute);
   }
 
   focusType() {

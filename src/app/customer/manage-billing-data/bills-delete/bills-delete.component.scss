@@ -9,10 +9,10 @@
         ion-checkbox {
             margin: 0px;
             --size: 16.67px;
+            min-width: 16.67px;
         }
 
         .bill-information {
-            max-width: 224px;
             gap: 4px;
 
             .bill-information_code {
@@ -46,8 +46,5 @@ ion-footer {
         padding-right:  24px !important;
     }
 
-    .bill-information{
-        max-width: 298px !important;
-    }
 
 }

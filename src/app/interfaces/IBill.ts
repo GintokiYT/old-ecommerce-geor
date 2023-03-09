@@ -1,5 +1,5 @@
 export default interface IBill{
     name: string,
-    code: string,
+    id: string,
     type: string
 }

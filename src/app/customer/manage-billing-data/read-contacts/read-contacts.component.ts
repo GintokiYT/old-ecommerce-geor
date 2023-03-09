@@ -4,6 +4,7 @@ import { IonSearchbar } from '@ionic/angular';
 import { ContactsService } from '../../../services/contacts.service';
 import { BillingDataService } from '../../../services/billing-data.service';
 import { Router } from '@angular/router';
+import { RouteService } from '../../../services/route.service';
 
 
 @Component({
@@ -18,14 +19,14 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
   contactsResults: any[];
   showButtonPlus: boolean = true;
   headerContent: string = "normal";
-  previousRoute : string;
+  previousRoute: string;
 
 
   @ViewChild("searchBar") searchBar: IonSearchbar;
 
 
   constructor(private _injector: Injector, private cdr: ChangeDetectorRef,
-    private cs: ContactsService, private bs: BillingDataService,
+    private cs: ContactsService, private bs: BillingDataService, private rs: RouteService,
     private router: Router) {
     super(_injector);
     this.cs.currentContacts$.subscribe((data) => {
@@ -37,7 +38,7 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   handleChange(event) {
     const query = event.detail.value.toLowerCase();
     this.contactsResults = this.contacts.filter(contact => {
@@ -49,6 +50,7 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
   }
 
   goToSetContact() {
+    this.rs.setSetContactLastSubmitBackDirection(this.previousRoute);
     this.navigation.forward("/customer/manage-billing-data/add-company/set-contact");
   }
 
