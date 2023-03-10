@@ -42,12 +42,6 @@ import { CollaborativeTeamComponent } from './basket/team/collaborative-team/col
 import { OtherFormsPayComponent } from './other-forms/other-forms-pay/other-forms-pay.component';
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
 import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
-import { AddComponent } from './coupons/add/add.component';
-import { ConditionComponent } from './coupons/condition/condition.component';
-import { ExpiredComponent } from './coupons/expired/expired.component';
-import { ProductsbarComponent } from './coupons/productsbar/productsbar.component';
-import { StartComponent } from './coupons/start/start.component';
-import { VoucherComponent } from './coupons/voucher/voucher.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
 import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
@@ -160,12 +154,6 @@ const routes: Routes = [
 
 
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
-      { path: 'add', component:AddComponent},
-      { path: 'condition', component:ConditionComponent},
-      { path: 'expired', component:ExpiredComponent},
-      { path: 'productsbar',component:ProductsbarComponent},
-      { path: 'start',component:StartComponent},
-      { path: 'voucher',component:VoucherComponent},
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' },
 
