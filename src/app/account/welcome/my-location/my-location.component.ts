@@ -6,6 +6,7 @@ import { Geolocation,  } from '@capacitor/geolocation';
 
 import { AlertController } from '@ionic/angular';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
+import { RouteService } from '../../../services/route.service';
 
 interface Contenido {
   button: string;
@@ -20,6 +21,7 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
 
   APIkey: string = 'AIzaSyB3iDWSD87oIotNQNnfDT1kram3J_4epOA';
   contenido: Contenido;
+  previousRoute: string;
 
   positionMarker: google.maps.Marker;
 
@@ -27,11 +29,13 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
     _injector: Injector,
     private languageService: LanguageService,
     private alertController: AlertController,
-    private diagnostic: Diagnostic
+    private diagnostic: Diagnostic,
+    private rs: RouteService
   ) {
     super(_injector);
     this.mapId = 'map';
     this.languageService.getLanguage.subscribe( language => this.contenido = language['myLocation'])
+    this.rs.currentMyLocationLastBackDirection.subscribe( d => this.previousRoute = d)
   }
 
 
@@ -104,7 +108,8 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   onBack() {
-    this.navigation.back(RouteCollection.account.welcome.wheAreYou);
+    //this.navigation.back(RouteCollection.account.welcome.wheAreYou);
+    this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {
