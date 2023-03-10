@@ -5,12 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { CustomerRoutingModule } from './customer.routing.module';
 import { CoreModule } from '@geor360/ecore';
 import { CestaModule } from './basket/basket.module';
-/* import { HomeComponent } from './home/home.component'; */
 import { StorePickupModule } from './store-pickup/store-pickup.module';
 import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
 import { ProductDetailModule } from './product-detail/product-detail.module';
-import { SearchGeneralModule } from '../search-general/search-general.module';
 import { PayCardModule } from './pay-card/pay-card.module';
 
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
@@ -26,11 +24,10 @@ import { CouponsModule } from './coupons/coupons.module';
 import { ManageFavoritesModule } from './manage-favorites/manage-favorites.module';
 import { ManageBillingDataModule } from './manage-billing-data/manage-billing-data.module';
 import { HomeModule } from './home/home.module';
-/* import { FeaturedComponent } from './home/featured/featured.component'; */
-
 import { UserHelpModule } from './userHelp/user-help.module';
 import { ManageAddressesModule } from './manage-addresses/manage-addresses.module';
 import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
+import { SearchGeneralModule } from './search-general/search-general.module';
 
 
 @NgModule({
@@ -45,11 +42,9 @@ import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
     DeliveryDetailModule,
     InboxModule,
     ProductDetailModule,
-    SearchGeneralModule,
     PayCardModule,
     IonicInputMaskModule,
     ShareModule,
-    SettingsModule,
     AddCouponsModule,
     BillingDataModule,
     ManageUserInformationModule,
@@ -63,11 +58,12 @@ import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
     HomeModule,
     UserHelpModule,
     ManageAddressesModule,
-    ManageCouponsModule
+    ManageCouponsModule,
+    SettingsModule,
+    SearchGeneralModule
   ],
   declarations: [
-    /* HomeComponent,
-    FeaturedComponent */
+
   ],
 
 })

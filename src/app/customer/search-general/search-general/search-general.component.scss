@@ -1,0 +1,26 @@
+.search-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 24px 16px;
+
+  @media (min-width: 390px) {
+    padding: 16px 16px 24px 16px;
+  }
+}
+
+.input-container {
+  background-color: red;
+  padding: 10px;
+  position: relative;
+
+  input {
+    width: 100%;
+  }
+
+  icon-input-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

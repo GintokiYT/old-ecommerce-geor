@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { Component, Injector, OnInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 import { Router } from '@angular/router';
@@ -56,14 +56,13 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   getRoutes() {
     return {
       0: ['/customer/home'],
-      1: ['/customer/catalogue'],
+      1: ['/customer/search-general'],
       2: ['/customer/main-inbox'],
       3: [
           '/customer/empty-basket',
           '/customer/my-basket',
           '/customer/collaborative-basket'
         ],
-      // 4: this.userLogged ? ['/customer/manage-user-information'] :  ['/login'],
       4: ['/login', '/customer/manage-user-information'],
     }
   }

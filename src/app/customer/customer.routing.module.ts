@@ -26,11 +26,6 @@ import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
 import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
 import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
-import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
-import { SearchComponent } from '../search-general/search/search.component';
-import { SearchbarComponent } from '../search-general/searchbar/searchbar.component';
-import { FiltroComponent } from '../search-general/filtro/filtro.component';
-import { ProductsComponent } from '../search-general/products/products.component';
 
 import { MainSettingsComponent } from './settings/main-settings/main-settings.component';
 import { MyDataSettingsComponent } from './settings/my-data-settings/my-data-settings.component';
@@ -68,13 +63,14 @@ import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-b
 import { ReadContactsComponent } from './manage-billing-data/read-contacts/read-contacts.component';
 import { SetContactComponent } from './manage-billing-data/set-contact/set-contact.component';
 import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
-import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
-import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
+import { SearchGeneralComponent } from './search-general/search-general/search-general.component';
 import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
 import { ManageCouponsComponent } from './manage-coupons/manage-coupons.component';
 import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.component';
 import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
 import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
+import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
+import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 
 
 const routes: Routes = [
@@ -114,6 +110,10 @@ const routes: Routes = [
       { path: 'settings/language', component: LanguageSettingsComponent },
       //* End routes settings
 
+      //* Search General
+      { path: 'search-general', component: SearchGeneralComponent },
+      //* End Search General
+
         /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' }, */
@@ -135,11 +135,6 @@ const routes: Routes = [
       { path: 'add-card', component:AddCardComponent },
       { path: 'last-step', component:LastStepComponent },
       { path: 'confirm-order', component: ConfirmOrderComponent},
-      { path: 'catalogue', component: CatalogueComponent },
-      { path: 'search', component: SearchComponent },
-      {path: 'searchbar', component: SearchbarComponent},
-      {path: 'filtro', component: FiltroComponent},
-      {path: 'products', component: ProductsComponent},
       {path: 'payment-method-configuration', component: PaymentMethodConfigurationComponent},
       {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
 
@@ -160,6 +155,8 @@ const routes: Routes = [
       {path: 'manage-coupons/conditions', component:ConditionsComponent},
       {path: 'manage-coupons/products-with-coupon', component:ProductsWithCouponComponent},
       
+      // {path: 'manage-addresses', component:ManageAddressesComponent},
+      // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
 
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
