@@ -53,7 +53,9 @@ export class AddCardComponent extends ViewComponent implements OnInit {
   }
    /*  this.navigation.root('/customer/way-pay','forward'); */
 
-
+   goBack(){
+    this.location.back();
+  }
    back(){
     const localData = JSON.parse(localStorage.getItem('back')) ?? '';
 

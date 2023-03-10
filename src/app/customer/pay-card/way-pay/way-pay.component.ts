@@ -65,14 +65,15 @@ export class WayPayComponent extends ViewComponent implements OnInit {
   }
 
 
-  delete(){
-    this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
+  delete(tarjetaId: string) {
+    this.message.confirm('¿Seguro que quieres eliminar la tarjeta?','',(confirmation)=>{
+      if (confirmation) {
+      const tarjetaAEliminar = document.getElementById(tarjetaId);
+      tarjetaAEliminar.remove();
+      }
     },'Eliminar','Cancelar')
-    document.getElementById('delete').innerHTML = '';
-
   }
-
-
+  
   openModal(){
     this.modalIsVisible = true;
   }
