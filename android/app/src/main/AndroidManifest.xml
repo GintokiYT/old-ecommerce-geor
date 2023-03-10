@@ -17,12 +17,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-feature android:name="android.hardware.location.gps" />
-<<<<<<< HEAD
-=======
 
 
     <!-- Contacts API -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
->>>>>>> a9a65489ac6e74ab01903070dfc7e3bda811379b
 </manifest>

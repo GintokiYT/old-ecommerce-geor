@@ -1,0 +1,9 @@
+.container-button{
+    padding-inline: 16px;
+}
+
+@media(min-width: 390px){
+    .container-button{
+        padding-inline: 24px;
+    }
+}
