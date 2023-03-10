@@ -58,7 +58,6 @@ import { LanguageSettingsComponent } from './settings/language-settings/language
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
 import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
-import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
 import { ManageBillingDataComponent } from './manage-billing-data/manage-billing-data.component';
 import { BillsDeleteComponent } from './manage-billing-data/bills-delete/bills-delete.component';
 import { AddCompanyComponent } from './manage-billing-data/add-company/add-company.component';
@@ -72,6 +71,11 @@ import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-
 import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
+import { ManageCouponsComponent } from './manage-coupons/manage-coupons.component';
+import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.component';
+import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
+import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
+
 
 const routes: Routes = [
   {
@@ -151,6 +155,11 @@ const routes: Routes = [
       {path: 'manage-billing-data/add-company/set-contact', component:SetContactComponent},
       {path: 'manage-addresses', component:ManageAddressesComponent},
       {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
+      {path: 'manage-coupons', component:ManageCouponsComponent},
+      {path: 'manage-coupons/add-coupon', component:AddCouponComponent},
+      {path: 'manage-coupons/conditions', component:ConditionsComponent},
+      {path: 'manage-coupons/products-with-coupon', component:ProductsWithCouponComponent},
+      
 
 
       { path: 'collaborative-team',component:CollaborativeTeamComponent},

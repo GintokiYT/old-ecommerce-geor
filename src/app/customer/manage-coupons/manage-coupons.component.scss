@@ -1,0 +1,102 @@
+ion-footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.container-coupon{
+
+    .container-image_coupon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            margin-bottom: 70px;
+        }
+
+        .message{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: center !important;
+
+            .insert-code{
+                color : var(--ion-color-text-secundary);
+            }
+        }
+    }
+
+    .coupon-input_container {
+        position: relative;
+
+        ion-item {
+            --padding-start: 0px !important;
+            --inner-padding-end: 0px !important;
+
+            &::part(native) {
+                padding-inline-end: 0px !important;
+                padding-inline-start: 0px !important;
+                border-radius: 8px;
+            }
+
+            .coupon-input {
+                --background: var(--ion-color-secondary-shade);
+                --padding-end: 12px;
+                --padding-start: 12px;
+                --placeholder-color: var(--ion-color-disabled);
+            }
+
+            .coupon-button {
+                --padding-end: 12px !important;
+                --padding-start: 0px !important;
+                font-size: 12px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 2;
+            }
+        }
+
+    }
+
+    .coupon-option_container {
+        margin-top: 20px;
+        gap: 24px;
+
+        ion-button {
+            color: var(--ion-color-disabled);
+            --background-activated: unset
+        }
+    }
+
+
+    
+
+    
+}
+
+
+
+.show-coupons{    
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+.dont-show-coupons{
+    height: calc(100% - 88px - 76px - var(--ion-safe-area-bottom,0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected{
+    color: var(--ion-color-basic) !important;
+}
+
+
+@media(min-width:390px){
+    .show-coupons{
+        padding-right: 24px !important;
+        padding-left: 24px !important;
+    }
+}   

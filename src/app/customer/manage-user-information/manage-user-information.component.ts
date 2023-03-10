@@ -55,7 +55,7 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
   }
 
   goToCoupons(){
-    this.navigation.root('/customer/start','forward');
+    this.navigation.root('/customer/manage-coupons','forward');
   }
 
   goTeamCollaborative(){

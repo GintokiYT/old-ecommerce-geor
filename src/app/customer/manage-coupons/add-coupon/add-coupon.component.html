@@ -1,0 +1,32 @@
+<ion-content>
+
+  <app-header
+    title="Agregar cupón"
+    iconLeft="icon-arrow-left"
+    backDirection="customer/manage-coupons"
+
+  >
+  </app-header>
+
+
+  <div class="container-main">
+
+    <ion-item class="form-group" style="margin-bottom: 37px;">
+      <ion-input [(ngModel)]="inputValue" type="text" placeholder="Ingresa el código"></ion-input>
+    </ion-item>
+
+    <div class="container-button">
+      <ion-button 
+        [disabled]="inputValue.length>0 === false"
+        color="primary" 
+        expand="full" 
+        shape="round"
+        (click)="goToCoupons()"
+      >
+        Validar
+      </ion-button>
+    </div>
+
+  </div>
+
+</ion-content>

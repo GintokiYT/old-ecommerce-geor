@@ -30,6 +30,7 @@ import { HomeModule } from './home/home.module';
 
 import { UserHelpModule } from './userHelp/user-help.module';
 import { ManageAddressesModule } from './manage-addresses/manage-addresses.module';
+import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { ManageAddressesModule } from './manage-addresses/manage-addresses.modul
     ManageBillingDataModule,
     HomeModule,
     UserHelpModule,
-    ManageAddressesModule
+    ManageAddressesModule,
+    ManageCouponsModule
   ],
   declarations: [
     /* HomeComponent,
