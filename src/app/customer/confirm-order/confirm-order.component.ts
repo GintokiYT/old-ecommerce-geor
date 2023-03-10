@@ -7,6 +7,7 @@ import IBill from '../../interfaces/IBill';
 import { Router, NavigationEnd, RoutesRecognized, Event } from '@angular/router';
 import { filter, pairwise } from 'rxjs/operators';
 import { RouteService } from '../../services/route.service';
+import IOrder from 'src/app/interfaces/IOrder';
 
 @Component({
   selector: 'app-confirm-order',
@@ -19,6 +20,7 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   coupon: ICoupon;
   bill: IBill;
   previousRoute: string;
+  myOrder: IOrder
 
   constructor(private cpService: ConfirmOrderService,
     private _injector: Injector, private router: Router, private rs: RouteService) {
@@ -42,6 +44,9 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
     // console.log(this.previousRoute)
     // console.log(prevUrl)
 
+    this.cpService.currentMyOrder$.subscribe( d => this.myOrder = d)
+    console.log(this.myOrder.typeOrder)
+
     this.rs.currentMiPedidoLastBackDirection.subscribe( route => this.previousRoute = route);
     console.log(this.previousRoute);
   }
@@ -60,11 +65,11 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   }
 
   onGoToCoupons() {
-    this.navigation.forward("customer/add-coupons");
+    this.navigation.root("customer/add-coupons","forward");
   }
 
   onGoToBillingData() {
-    this.navigation.forward("customer/billing-data");
+    this.navigation.root("customer/billing-data","forward");
   }
 
 
