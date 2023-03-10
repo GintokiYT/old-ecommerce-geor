@@ -1,24 +1,36 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <img src="/assets/images/cupon.png"  style="width: 100%;"/>
-  </ion-toolbar>
-</ion-header><br>
+
 
 <ion-content>
-  <ion-item lines="none">
+
+
+  <ion-header class="ion-no-border ion-no-padding">
+    <ion-toolbar class="ion-no-padding">
+      <div class="position-relative">
+        <img src="/assets/images/cupon.png"  style="width: 100%;"/>
+        <img (click)="goToCoupons()" class="arrow-left" src="/assets/icons/icon-arrow-left.svg"/>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item lines="none" class="message-top">
     <img src="/assets/icons/icon-danger-circle.svg" width="12" slot="start"/> <br>
-    <ion-label class="ion-text-wrap">
+    <ion-label class="ion-text-wrap" style="margin-left: 10px;">
       <p>Utiliza este cupón en cualquiera de estos productos </p>
     </ion-label>
   </ion-item>
-  <ion-searchbar placeholder="Buscar prodcutos" ></ion-searchbar><br>
+  <div class="container-searchbar">
+    <ion-searchbar placeholder="Buscar productos"></ion-searchbar><br>
+  </div>
+
+
+
     <!-- Productos Destacados -->
     <div class="container-productos-destacados">
       <div class="products__column">
-        <div class="products__product" *ngFor="let product of productsFeatured">
+        <div class="products__product" *ngFor="let product of productsFeatured" (click)="goToProduct()">
           <span *ngIf="product.isNew" class="products__is-new">NUEVO</span>
           <ion-img [src]="product.image" [alt]="product.image"></ion-img>
-          <ion-text class="products__name mt-2">{{ product.name }}</ion-text>
+          <ion-text class="products__name mt-2 namep">{{ product.name }}</ion-text>
           <ion-text class="d-block fw-semibold mt-2 mb-2 text-price"
             >{{ product.price }}</ion-text
           >
