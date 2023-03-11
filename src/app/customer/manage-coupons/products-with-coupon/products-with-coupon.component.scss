@@ -1,5 +1,5 @@
 img {
-  background-attachment: fixed;
+  //background-attachment: fixed;
   background-size: cover;
 }
 
@@ -139,10 +139,14 @@ ion-content {
 
 
 
-
+ion-header{
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
 
 .message-top{
-  margin-top: calc( var(--ion-safe-area-top,0) + 40px);
+  margin-top: calc(  var(--ion-safe-area-top,0) + 200px);
   margin-bottom: 28px;
 }
 
@@ -157,7 +161,7 @@ ion-content {
 
 .arrow-left{
   position: absolute;
-  top: calc( var(--ion-safe-area-top,0) + 50px) !important;
+  top: calc( var(--ion-safe-area-top,0)) !important;
   left: 16px;
 }
 
