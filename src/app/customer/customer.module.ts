@@ -20,11 +20,12 @@ import { BillingDataModule } from './billing-data/billing-data.module';
 import { ManageUserInformationModule } from './manage-user-information/manage-user-information.module';
 import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
-import { CouponsModule } from './coupons/coupons.module';
 import { ManageFavoritesModule } from './manage-favorites/manage-favorites.module';
 import { ManageBillingDataModule } from './manage-billing-data/manage-billing-data.module';
 import { HomeModule } from './home/home.module';
 import { UserHelpModule } from './userHelp/user-help.module';
+import { ManageAddressesModule } from './manage-addresses/manage-addresses.module';
+import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
 import { SearchGeneralModule } from './search-general/search-general.module';
 
 
@@ -48,13 +49,14 @@ import { SearchGeneralModule } from './search-general/search-general.module';
     ManageUserInformationModule,
     OtherFormsModule,
     ConfirmCardPayModule,
-    CouponsModule,
     CestaModule,
     CestaModule,
     ManageFavoritesModule,
     ManageBillingDataModule,
     HomeModule,
     UserHelpModule,
+    ManageAddressesModule,
+    ManageCouponsModule,
     SettingsModule,
     SearchGeneralModule
   ],

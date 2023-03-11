@@ -1,0 +1,136 @@
+<ion-content>
+
+  <app-header
+      title="Mis cupones"
+      iconLeft="icon-arrow-left"
+      backDirection="manage-user-information"
+  >
+  </app-header>
+
+
+
+  <div class="container-coupon container-main"
+    [ngClass]="{'show-coupons': showCoupons===true,
+                'dont-show-coupons': showCoupons===false}"
+  >
+
+    <!-- No hay cupones -->
+    <div class="container-image_coupon" *ngIf="!showCoupons">
+      <img src="/assets/icons/icon-cupon.svg"/>
+      <div class="message" (click)="onShowCoupons()">
+        <ion-label class="d-block" style="font-weight: bold;">¿Tienes un cupón?</ion-label>
+        <ion-label class="insert-code">Ingresa el código y úsalo cuando quieras</ion-label>
+      </div>
+    </div>
+
+    <!-- Si hay cupones -->
+    <div *ngIf="showCoupons">
+      <!-- Coupon input -->
+      <div class="coupon-input_container">
+        <ion-item lines="none">
+          <ion-input 
+            class="coupon-input" 
+            [(ngModel)]="inputPassword"
+            (ngModelChange)="inputChange($event)"
+            (keyup.enter) = "validarCupon()"
+            type="text" 
+            placeholder="Ingresa el código">
+          </ion-input>
+          <ion-button
+            class="coupon-button position-absolute"
+            [disabled]="haveCode===false || couponType!=='avaible'"  
+            tabindex="-1"
+            fill="clear"
+            size="small"    
+            color="primary"
+            shape="round"
+            (click)="validarCupon()"
+          >
+            Validar
+          </ion-button>
+        </ion-item>
+    </div>
+
+    <!-- Coupon options -->
+    <div class="coupon-option_container d-flex">
+      <ion-button 
+        fill="clear" 
+        class="ion-no-padding selected" 
+        id="avaible"
+        (click)="onSelect('avaible')"
+      >
+        Disponibles
+      </ion-button>
+      <ion-button 
+        fill="clear" 
+        class="ion-no-padding" 
+        id="expired"
+        (click)="onSelect('expired')"
+      >
+        Vencidos
+      </ion-button>
+    </div>
+
+    <!-- coupons list
+    <div class="coupon-list_container d-flex flex-column">
+      <div class="d-flex flex-column coupon" *ngFor="let coupon of coupons">
+        <ion-label class="d-block fz-normal fw-bold">{{coupon.discount}}</ion-label>
+        <ion-label [innerHTML]="coupon.ocassion" class="fz-subtitle fw-bold"></ion-label>
+        <ion-label class="fz-note coupon_code">CÓDIGO: {{coupon.code}}</ion-label>
+        <div class="d-flex align-items-center coupon_expiration" style="gap: 6px;">
+          <img src="/assets/icons/icon-danger.svg">
+          <ion-label>Vence: <span>{{coupon.expiration}}</span></ion-label>
+        </div>
+        <div class="coupon_conditions d-flex justify-content-between align-items-center">
+          <ion-label>Condiciones</ion-label>
+          <ion-button (click)="useCoupon(coupon.id)" color="primary" expand="full" shape="round">
+            Usar cupón
+          </ion-button>
+        </div>
+      </div>
+    </div> -->
+
+    
+    <span [ngSwitch]="couponType">
+    <div *ngSwitchCase="'avaible'">
+      <app-avaible-coupons [couponsC]="coupons"></app-avaible-coupons>
+    </div>
+    <div *ngSwitchCase="'expired'">
+      <app-expired-coupons></app-expired-coupons>
+    </div>
+    <div *ngSwitchDefault>
+    
+    </div>
+    </span>
+
+  </div><!--End si hay cupones-->
+
+
+
+
+
+  </div>
+
+  
+
+
+
+
+  <!-- Footer -->
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic" *ngIf="!showCoupons">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button
+        (click)="goToAddCoupon()"
+        disabled="false"
+        expand="full"  
+        shape="round" 
+        color="primary" 
+        style="margin: 0;"
+      >
+        Agregar cupón
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+
+</ion-content>

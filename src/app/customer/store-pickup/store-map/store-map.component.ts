@@ -14,6 +14,11 @@ export class StoreMapComponent extends GeolocationComponent implements OnInit {
   }
 
   override ngOnInit(): void {
+    const mql: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    mql.addEventListener('change', () => {
+      location.reload();
+    });
+    
     super.ngOnInit();
 
     this.geolocation.init();
