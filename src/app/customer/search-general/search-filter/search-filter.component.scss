@@ -28,7 +28,38 @@ ion-header {
         border-radius: 100px;
       }
     }
+
+    .input-clear {
+      position: absolute;
+      width: 16.4px;
+      height: 36px;
+      top: 0;
+      right: 12px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+
+      icon-input-close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input {
+        width: 100%;
+        padding: unset;
+        background-color: transparent;
+        color: transparent;
+        position: absolute;
+        z-index: 1000;
+        user-select: none;
+        cursor: default;
+      }
+    }
   }
+
+
 }
 
 ion-content {

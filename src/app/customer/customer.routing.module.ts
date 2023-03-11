@@ -106,6 +106,7 @@ const routes: Routes = [
 
       //* Search General
       { path: 'search-general', component: SearchGeneralComponent },
+      { path: 'search-general/filter', component: SearchFilterComponent },
       //* End Search General
 
         /*  { path: 'empty-bas'} */
