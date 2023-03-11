@@ -14,14 +14,14 @@
 <ion-content>
 
   <div class="container-products">
-    <div class="search-header">
+    <div class="search-header" *ngIf="inputSearch.value.length === 0">
       <p>Búsquedas recientes</p>
-      <p>Limpiar</p>
+      <p (click)="deleteAllHistory()">Limpiar</p>
     </div>
-    <div class="search-history" *ngFor="let history of [1,2,3]">
-      <p>a</p>
-      <icon-delete-trash></icon-delete-trash>
-      <icon-arrow></icon-arrow>
+    <div class="search-history" *ngFor="let history of searchHistoryFilter">
+      <p (click)="goProduct(history)">{{ history.search }}</p>
+      <icon-delete-trash (click)="deleteHistory(history.id)" *ngIf="inputSearch.value.length === 0"></icon-delete-trash>
+      <icon-arrow (click)="goProduct(history)" *ngIf="inputSearch.value.length > 0"></icon-arrow>
     </div>
   </div>
 

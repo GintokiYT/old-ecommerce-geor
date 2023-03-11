@@ -84,7 +84,7 @@ export class AppComponent {
 
     // Limpiar rutas Backs
     //TODO: Mantener comentado en desarrollo y descomentar al generar al APK
-   // localStorage.setItem('back', '');
+    localStorage.setItem('back', '');
   }
 
   changeModeLight(body: HTMLBodyElement) {

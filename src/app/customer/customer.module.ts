@@ -50,7 +50,6 @@ import { SearchGeneralModule } from './search-general/search-general.module';
     OtherFormsModule,
     ConfirmCardPayModule,
     CestaModule,
-    CestaModule,
     ManageFavoritesModule,
     ManageBillingDataModule,
     HomeModule,
