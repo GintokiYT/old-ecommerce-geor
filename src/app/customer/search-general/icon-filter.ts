@@ -11,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
   </svg>
   `,
   styles: [`
-
+    svg path {
+      stroke: var(--ion-color-basic);
+    }
   `]
 })
 export class iconFilter implements OnInit {
