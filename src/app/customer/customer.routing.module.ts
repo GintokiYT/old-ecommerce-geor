@@ -61,12 +61,14 @@ import { SearchGeneralComponent } from './search-general/search-general/search-g
 import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
 import { ManageCouponsComponent } from './manage-coupons/manage-coupons.component';
 import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.component';
-import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
 import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
 import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
 
+import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
+import { SearchProductComponent } from './search-general/search-product/search-product.component';
+import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
 
 const routes: Routes = [
   {
@@ -108,6 +110,7 @@ const routes: Routes = [
       //* Search General
       { path: 'search-general', component: SearchGeneralComponent },
       { path: 'search-general/filter', component: SearchFilterComponent },
+      { path: 'search-general/product', component: SearchProductComponent },
       //* End Search General
 
         /*  { path: 'empty-bas'} */
@@ -150,7 +153,7 @@ const routes: Routes = [
       {path: 'manage-coupons/add-coupon', component:AddCouponComponent},
       {path: 'manage-coupons/conditions', component:ConditionsComponent},
       {path: 'manage-coupons/products-with-coupon', component:ProductsWithCouponComponent},
-      
+
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 

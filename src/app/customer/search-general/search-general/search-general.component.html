@@ -10,7 +10,7 @@
 <ion-content>
 
   <div class="container-products">
-    <div class="products" *ngFor="let product of products">
+    <div class="products" *ngFor="let product of products" (click)="goProduct(product)">
       <div class="image" [style.background-image]="'url(\'' + product.image + '\')'" ></div>
       <div class="details">
         <p class="title">{{ product.title }}</p>

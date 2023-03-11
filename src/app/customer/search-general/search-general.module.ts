@@ -12,6 +12,10 @@ import { iconCloseSearch } from './icon-close-search';
 import { iconDeleteTrash } from './icon-delete-trash';
 import { iconArrow } from './icon-arrow';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { SearchProductComponent } from './search-product/search-product.component';
+import { iconArrowBack } from './icon-arrow-back';
+import { iconFilter } from './icon-filter';
+import { FeaturedComponent } from './featured/featured.component';
 
 
 @NgModule({
@@ -24,20 +28,28 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
   declarations: [
     SearchGeneralComponent,
     SearchFilterComponent,
+    SearchProductComponent,
+    FeaturedComponent,
     iconScanner,
     iconInputClose,
     iconCloseSearch,
     iconDeleteTrash,
-    iconArrow
+    iconArrowBack,
+    iconArrow,
+    iconFilter
   ],
   exports:[
     SearchGeneralComponent,
     SearchFilterComponent,
+    SearchProductComponent,
+    FeaturedComponent,
     iconScanner,
     iconInputClose,
     iconCloseSearch,
     iconDeleteTrash,
-    iconArrow
+    iconArrowBack,
+    iconArrow,
+    iconFilter
   ]
 })
 export class SearchGeneralModule {}
