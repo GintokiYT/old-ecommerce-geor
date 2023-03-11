@@ -11,6 +11,8 @@ export class SearchProductComponent extends ViewComponent implements OnInit {
 
   search: string;
 
+  routeproductback: string = '/customer/search-general/product';
+
   constructor(_injector: Injector, private searchService: SearchService) {
     super(_injector);
     this.searchService.getSearch.subscribe( search => this.search = search );
@@ -19,13 +21,16 @@ export class SearchProductComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goBack() {
-
-    if(localStorage.getItem('back')) {
-      this.navigation.back(localStorage.getItem('back'));
-      localStorage.setItem('back', '');
-    } else {
-      this.navigation.back('/customer/search-general/filter');
-    }
-    this.searchService.setSearch('');
+    this.navigation.back(localStorage.getItem('back'));
+    localStorage.setItem('back', '');
+    // const condictionBack = localStorage.getItem('back') ?? '';
+    // if(condictionBack) {
+    //   const routeBack = JSON.parse(localStorage.getItem('back'));
+    //   this.navigation.back(routeBack['back']);
+    //   localStorage.setItem('back', '');
+    // } else {
+    //   this.navigation.back('/customer/search-general/filter');
+    // }
+    // this.searchService.setSearch('');
   }
 }

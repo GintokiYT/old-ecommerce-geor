@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, Injector, OnInit, ViewChildren, QueryList, ElementRef, Input } from '@angular/core';
 import { AppThemeService, ViewComponent } from '@geor360/ecore';
 import IProduct from 'src/app/interfaces/IProduct';
 import { HomeService } from 'src/app/services/home.service';
@@ -9,6 +9,8 @@ import { HomeService } from 'src/app/services/home.service';
   styleUrls: ['./featured.component.scss'],
 })
 export class FeaturedComponent extends ViewComponent implements OnInit {
+
+  @Input('routeproductback') routeproductback: string;
 
   productsFeatured: IProduct[];
 
@@ -22,6 +24,14 @@ export class FeaturedComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    // const routeBack: string = localStorage.getItem('back') || '';
+
+    // const newRouteBack = {
+    //   back: routeBack,
+    //   backProduct: this.routeproductback
+    // }
+
+    // localStorage.setItem('back', JSON.stringify(newRouteBack));
   }
 
   goToProduct(){
