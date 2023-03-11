@@ -64,6 +64,7 @@ import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.compo
 import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
 import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
+import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
 
 import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
 import { SearchProductComponent } from './search-general/search-product/search-product.component';

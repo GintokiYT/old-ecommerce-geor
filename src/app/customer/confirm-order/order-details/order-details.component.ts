@@ -13,7 +13,7 @@ export class OrderDetailsComponent extends ViewComponent implements OnInit {
 
   modalIsVisible: boolean = false;
 
-  
+
   order: IOrder;
 
   constructor(_injector: Injector, public cpService: ConfirmOrderService) {

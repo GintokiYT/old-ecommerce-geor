@@ -25,9 +25,10 @@
   height: 64px;
   position: fixed;
   right: 0px;
-  bottom: 0px;
+  //bottom: 0px;
+  bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
   margin-right: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .imagen-pendiente {
   width: 8px;

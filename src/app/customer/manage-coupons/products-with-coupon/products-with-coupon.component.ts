@@ -170,6 +170,7 @@ export class ProductsWithCouponComponent extends ViewComponent implements OnInit
 
 
   goToProduct(){
+    localStorage.setItem('back', '/customer/manage-coupons/products-with-coupon');
     this.navigation.forward("/customer/product");
   }
 

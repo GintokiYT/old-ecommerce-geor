@@ -36,9 +36,20 @@
       <img src="/assets/icons/icon-PE.svg" />+551
     </ion-input>
   </ion-item>
+
+
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button
+      (click)="goTo('/customer/confirm-order')"
+        expand="full"
+        shape="round"
+        color="primary"
+        style="margin: 0;"
+      >
+        Guardar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-button (click)="goTo('/customer/confirm-order')" color="primary" expand="block" shape="round">Confirmar</ion-button>
-  </ion-toolbar>
-</ion-footer>

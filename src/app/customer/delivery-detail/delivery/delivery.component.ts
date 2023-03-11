@@ -12,15 +12,12 @@ export class DeliveryComponent extends ViewComponent implements OnInit {
   @Input()
   title: string = ""
 
-  constructor(private location: Location, _injector: Injector) { 
+  constructor(private location: Location, _injector: Injector) {
     super(_injector)
   }
 
   ngOnInit() { }
 
-  goBack() {
-    this.location.back();
-  }
 
   goTo(path:string){
     this.navigation.back(path);

@@ -17,6 +17,10 @@ export class RouteService {
   setContactLastSubmitBackDirection : string = "";
   setContactLastSubmitBackDirection$ = new BehaviorSubject<string>(this.setContactLastSubmitBackDirection);
 
+  setProductLastBackDirection : string = "";
+  setProductLastBackDirection$ = new BehaviorSubject<string>(this.setProductLastBackDirection);
+
+
   constructor() { }
 
   get currentMiPedidoLastBackDirection () : Observable<string> {
