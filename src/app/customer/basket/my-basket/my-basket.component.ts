@@ -12,6 +12,10 @@ import { RouteService } from '../../../services/route.service';
 export class MyBasketComponent extends ViewComponent implements OnInit {
 
   modalInvite: boolean;
+ //Eliminar producto
+ mainProduct: boolean = true;
+ Product: boolean = true;
+
   constructor(_injector: Injector, private inviteService:InviteService,
       private rs : RouteService
     ) {
@@ -39,4 +43,15 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
     this.rs.setMiPedidoLastBackDirection( "/customer/my-basket")
     this.navigation.forward("/customer/confirm-order")
   }
+
+  //Eliminar contenido
+  onMyEvent(status: boolean) {
+    this.mainProduct = status;
+  }
+  onProductEvent(status:boolean){
+    this.Product = status;
+  }
+
+  //Seleccion todos los checkbox--- agregamos [isChecked]="allChecked" al componente app-main-product
+  allChecked = false;
 }

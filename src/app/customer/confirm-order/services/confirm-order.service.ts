@@ -11,6 +11,9 @@ import IPayMethod from '../../../interfaces/IPayMethod';
 })
 export class ConfirmOrderService {
 
+  //Servicio para obtenr los datos de delivery
+  deliveryRequirements: string;
+
   private myOrder: IOrder = {
 
     typeOrder: "domicilio",
@@ -29,7 +32,7 @@ export class ConfirmOrderService {
       conditions: ""
     },
 
-    bill: 
+    bill:
       {
         name: "",
         code: "",
@@ -44,17 +47,18 @@ export class ConfirmOrderService {
       who: "Wilfredo",
       requirements: ""
     },
-  
-  
+
+
     detailsOrderToStore:{
       store: "",
       direction : "¿Donde recojeras tu pedido?",
       dClass: "lugar-pedido",
       who: "Wilfredo"
     }
-    
+
+
   }
-  
+
   private myOrder$ = new BehaviorSubject<IOrder>(this.myOrder);
 
   get currentMyOrder$():Observable<IOrder>{

@@ -43,17 +43,7 @@ ion-content {
   margin: 0px 24px 0px 24px;
 }
 
-ion-button {
-  // --ion-color-primary: #023AFF;
-  // &.ion-color-primary {
-  //   &.button-disabled {
-  //     &::part(native) {
-  //       background-color: #E3EAFD!important;
-  //       color: #95A8C5;
-  //     }
-  //   }
-  // }
-}
+
 
 
 ion-item::part(native) {
@@ -68,5 +58,10 @@ ion-footer {
     --padding-start: 24px !important;
     --padding-end: 24px !important;
     --padding-bottom: 24px !important;
+  }
+
+  ion-footer {
+    position: fixed;
+    bottom: 0;
   }
 }
