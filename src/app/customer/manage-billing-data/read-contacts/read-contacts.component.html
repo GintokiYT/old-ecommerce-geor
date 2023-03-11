@@ -63,7 +63,7 @@
 
     <!-- Ejemplo de como se ve al traer los contactos -->
     <!-- <div class="contacts-container">
-      <ion-item class="contact" lines="none" *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+      <ion-item class="contact" lines="none" *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]" (click)="goToAddCompany(contact)">
         <div class="d-flex flex-column">
           <p class="name">Pedro gutierrez</p>
           <div class="d-flex flex-column" *ngFor="let phone of [1,1,1]">
@@ -75,14 +75,13 @@
     </div> -->
 
     <div class="contacts-container">
-      <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults">
-        <div class="d-flex flex-column">
+      <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults" (click)="goToAddCompany(contact)">
+        <div class="d-flex flex-column" >
           <p class="name">{{contact?.name?.display}}</p>
           <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
             <p class="phone">{{phone?.number}}</p>
           </div>
         </div>
-        <ion-checkbox slot="end"></ion-checkbox>
       </ion-item>
     </div>
 

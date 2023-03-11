@@ -16,7 +16,7 @@ export class AddCouponsComponent extends ViewComponent implements OnInit {
   coupons = [
       {
         id:1,
-        discount: "S/200.00",
+        discount: "S/ 200.00",
         ocassion: `Feliz día de la madre,<br/>que lo pases super`,
         code: "CASFG123MAY2023",
         expiration: "15 may 2023",
@@ -24,7 +24,7 @@ export class AddCouponsComponent extends ViewComponent implements OnInit {
       },
       {
         id:2,
-        discount: "S/150.00",
+        discount: "S/ 150.00",
         ocassion: "Black Friday",
         code: "SAMNL123OCT2023",
         expiration: "20 oct 2023",
@@ -54,10 +54,10 @@ export class AddCouponsComponent extends ViewComponent implements OnInit {
   validarCupon(){
     const coupon  = {
       id: this.coupons.length+1,
-      discount: "S/150",
+      discount: "S/ 150.00",
       ocassion: "Black Friday",
-      code: "SODIM123NOV2022",
-      expiration: "30 nov 2022",
+      code: "SODIM123JUN2023",
+      expiration: "15 jun 2023",
       conditions: "condiciones"
     }
     this.coupons = [...this.coupons,coupon];

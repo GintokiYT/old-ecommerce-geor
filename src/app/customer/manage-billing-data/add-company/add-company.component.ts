@@ -3,23 +3,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ViewComponent } from '@geor360/ecore';
 import { IonContent, IonInput } from '@ionic/angular';
 import { Contacts } from "@capacitor-community/contacts"
-
-
-
-
-// import { Plugins, ContactPermissionResponse } from '@capacitor/core';
 import { ContactsService } from '../../../services/contacts.service';
+import { Router } from '@angular/router';
+import { BillingDataService } from '../../../services/billing-data.service';
 
-// const { Contacts } = Plugins;
 
-// ...
-
-// // Función que se llama para solicitar permisos de acceso a los contactos
-// async requestContactPermissions() {
-//   const { results } = await Contacts.requestPermissions();
-//   console.log('Permission response: ', results);
-//   // Hacer algo con los resultados de la solicitud de permisos
-// }
 
 
 @Component({
@@ -36,14 +24,27 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
   permission: any = "granted";
   inputValue: string = "Factura";
   contacts : any[];
+  number: string | null = null;
+  name: string | null = null;
+  contactTemp : any;
+  data : any[];
+  previousRoute: string;
 
 
   @ViewChild("inputType") inputType: IonInput;
   @ViewChild(IonContent) content: IonContent;
   @ViewChild("ionId") inputId: IonInput;
 
-  constructor(private _injector: Injector, private cs: ContactsService) {
-    super(_injector)
+  constructor(private _injector: Injector, private cs: ContactsService,
+    private router: Router, private bs: BillingDataService) {
+    super(_injector);
+    this.bs.currentContactTemp$.subscribe( contact => {
+      this.name = contact.name;
+      this.number = contact.number;
+      this.contactTemp = contact;
+    })
+    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    this.bs.currentBillingData$.subscribe( dataArr => this.data = dataArr);
   }
 
   ngOnInit() {
@@ -67,15 +68,26 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
   }
 
   onSubmit() {
-    this.navigation.back("/customer/manage-billing-data")
+    const bill = {
+      type: this.form.get("type").value,
+      name: this.form.get("name").value,
+      id: this.form.get("id").value.toString(),
+      contact : this.contactTemp
+    }
+    
+    this.data = [...this.data,bill];
+    this.bs.setBillingData(this.data);
+
+    this.bs.setContactTemp( {
+      name : null,
+      number: null
+    } )
+  
+    this.navigation.back(this.previousRoute);
   }
 
   focusType() {
     this.modalIsVisible = true;
-  }
-
-  focusId() {
-    this.content.scrollToBottom()
   }
 
   closeModal(value) {
@@ -127,7 +139,7 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
             })
             this.contacts = result.contacts;
             this.cs.setContactsData(this.contacts);
-            this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts");
+            this.router.navigate(["/customer/manage-billing-data/add-company/read-contacts"])
           } catch (e) {
             console.log(e)
           }

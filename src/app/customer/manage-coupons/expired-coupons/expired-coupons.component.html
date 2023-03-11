@@ -1,0 +1,16 @@
+<!-- coupons list -->
+<div class="coupon-list_container d-flex flex-column" *ngIf="showCoupons">
+  <div class="d-flex flex-column coupon" *ngFor="let coupon of coupons">
+    <ion-label class="d-block fz-normal fw-bold">{{coupon.discount}}</ion-label>
+    <ion-label [innerHTML]="coupon.ocassion" class="fz-subtitle fw-bold"></ion-label>
+    <ion-label class="fz-note coupon_code">CÓDIGO: {{coupon.code}}</ion-label>
+    <div class="d-flex align-items-center coupon_expiration" style="gap: 6px;">
+      <img src="/assets/icons/icon-danger.svg">
+      <ion-label>Vence: <span>{{coupon.expiration}}</span></ion-label>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!showCoupons" style="margin-top: 32px;" (click)="onShowCoupons()">
+  <ion-label class="ion-text-center empty-coupons">No tienes ningún cupón vencido</ion-label>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { AddressesService } from '../../../services/addresses.service';
 import { ViewComponent } from '@geor360/ecore';
+import { RouteService } from '../../../services/route.service';
 
 @Component({
   selector: 'app-addresses-delete',
@@ -13,7 +14,8 @@ export class AddressesDeleteComponent extends ViewComponent implements OnInit {
   oneTrue: boolean = false;
   modalIsVisible: boolean = false;
 
-  constructor(private _injector: Injector, private ads: AddressesService) {
+  constructor(private _injector: Injector, private ads: AddressesService,
+    private rs : RouteService) {
     super(_injector)
     this.ads.currentAddressesData.subscribe(data => this.directionsData = data);
     this.directionsData = this.directionsData.map( (bill,index) => {
@@ -29,8 +31,9 @@ export class AddressesDeleteComponent extends ViewComponent implements OnInit {
 
   ngOnInit() { }
 
-  goToManageUserInformation() {
-    this.navigation.back("/customer/manage-user-information");
+  goToMap(){
+    this.rs.setMyLocationLastBackDirection("/customer/manage-addresses/addresses-delete");
+    this.navigation.root("/account/welcome/my-location","forward");
   }
 
   goToAddressesDelete() {

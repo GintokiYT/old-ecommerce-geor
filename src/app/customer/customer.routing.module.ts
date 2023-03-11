@@ -26,11 +26,6 @@ import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
 import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
 import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
-import { CatalogueComponent } from '../search-general/catalogue/catalogue.component';
-import { SearchComponent } from '../search-general/search/search.component';
-import { SearchbarComponent } from '../search-general/searchbar/searchbar.component';
-import { FiltroComponent } from '../search-general/filtro/filtro.component';
-import { ProductsComponent } from '../search-general/products/products.component';
 
 import { MainSettingsComponent } from './settings/main-settings/main-settings.component';
 import { MyDataSettingsComponent } from './settings/my-data-settings/my-data-settings.component';
@@ -47,18 +42,11 @@ import { CollaborativeTeamComponent } from './basket/team/collaborative-team/col
 import { OtherFormsPayComponent } from './other-forms/other-forms-pay/other-forms-pay.component';
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
 import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
-import { AddComponent } from './coupons/add/add.component';
-import { ConditionComponent } from './coupons/condition/condition.component';
-import { ExpiredComponent } from './coupons/expired/expired.component';
-import { ProductsbarComponent } from './coupons/productsbar/productsbar.component';
-import { StartComponent } from './coupons/start/start.component';
-import { VoucherComponent } from './coupons/voucher/voucher.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
 import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
 import { ContactTeamComponent } from './basket/contact-basket/contact-team/contact-team.component';
 import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.component';
-import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
 import { ManageBillingDataComponent } from './manage-billing-data/manage-billing-data.component';
 import { BillsDeleteComponent } from './manage-billing-data/bills-delete/bills-delete.component';
 import { AddCompanyComponent } from './manage-billing-data/add-company/add-company.component';
@@ -69,8 +57,15 @@ import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-b
 import { ReadContactsComponent } from './manage-billing-data/read-contacts/read-contacts.component';
 import { SetContactComponent } from './manage-billing-data/set-contact/set-contact.component';
 import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
+import { SearchGeneralComponent } from './search-general/search-general/search-general.component';
+import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
+import { ManageCouponsComponent } from './manage-coupons/manage-coupons.component';
+import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.component';
+import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
+import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
 import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
+
 
 const routes: Routes = [
   {
@@ -109,6 +104,11 @@ const routes: Routes = [
       { path: 'settings/language', component: LanguageSettingsComponent },
       //* End routes settings
 
+      //* Search General
+      { path: 'search-general', component: SearchGeneralComponent },
+      { path: 'search-general/filter', component: SearchFilterComponent },
+      //* End Search General
+
         /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' }, */
@@ -130,11 +130,6 @@ const routes: Routes = [
       { path: 'add-card', component:AddCardComponent },
       { path: 'last-step', component:LastStepComponent },
       { path: 'confirm-order', component: ConfirmOrderComponent},
-      { path: 'catalogue', component: CatalogueComponent },
-      { path: 'search', component: SearchComponent },
-      {path: 'searchbar', component: SearchbarComponent},
-      {path: 'filtro', component: FiltroComponent},
-      {path: 'products', component: ProductsComponent},
       {path: 'payment-method-configuration', component: PaymentMethodConfigurationComponent},
       {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
 
@@ -144,20 +139,22 @@ const routes: Routes = [
       {path: 'manage-user-information', component: ManageUserInformationComponent},
       {path: 'manage-billing-data', component: ManageBillingDataComponent},
       {path: 'manage-billing-data/bills-delete', component:BillsDeleteComponent},
+      {path: 'manage-billing-data/edit-bill/:id', component:EditBillComponent},
       {path: 'manage-billing-data/add-company', component:AddCompanyComponent},
       {path: 'manage-billing-data/add-company/read-contacts', component:ReadContactsComponent},
       {path: 'manage-billing-data/add-company/set-contact', component:SetContactComponent},
       {path: 'manage-addresses', component:ManageAddressesComponent},
       {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
+      {path: 'manage-coupons', component:ManageCouponsComponent},
+      {path: 'manage-coupons/add-coupon', component:AddCouponComponent},
+      {path: 'manage-coupons/conditions', component:ConditionsComponent},
+      {path: 'manage-coupons/products-with-coupon', component:ProductsWithCouponComponent},
+      
+      // {path: 'manage-addresses', component:ManageAddressesComponent},
+      // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
 
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
-      { path: 'add', component:AddComponent},
-      { path: 'condition', component:ConditionComponent},
-      { path: 'expired', component:ExpiredComponent},
-      { path: 'productsbar',component:ProductsbarComponent},
-      { path: 'start',component:StartComponent},
-      { path: 'voucher',component:VoucherComponent},
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' },
 

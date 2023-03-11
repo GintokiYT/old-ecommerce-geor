@@ -35,7 +35,7 @@ export class ConfirmOrderService {
     bill:
       {
         name: "",
-        code: "",
+        id: "",
         type: "",
       }
     ,

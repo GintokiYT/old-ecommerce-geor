@@ -29,13 +29,12 @@
 //       border-right-color: var(--ion-background-alert-border);
 //     }
 //   }
-
 // }
 
 .sc-ion-alert-ios-s .alert-wrapper{
   width: 342px;
   max-width: 500px;
-  height: 130px;
+  min-height: 130px;
   background-color: var(--ion-background-alert);
 
 .alert-head{

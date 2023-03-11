@@ -7,6 +7,7 @@
     "dev": "ionic serve --external",
     "lab": "ionic serve --external --lab",
     "geor": "ionic cap run ios --external --livereload",
+    "android": "ionic cap run android --external --livereload",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -42,6 +43,8 @@
     "@geor360/core": "^0.1.9",
     "@geor360/ecore": "0.0.7",
     "@geor360/proxies": "0.0.11",
+    "@ionic-native/core": "^5.36.0",
+    "@ionic-native/diagnostic": "^5.36.0",
     "@ionic/angular": "^6.1.9",
     "@thiagoprz/ionic-input-mask": "^0.0.5",
     "bootstrap": "^5.2.3",
@@ -54,6 +57,7 @@
     "luxon": "^3.2.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "uuid": "^9.0.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -73,6 +77,7 @@
     "@types/jasmine": "~4.0.0",
     "@types/luxon": "^3.2.0",
     "@types/node": "^12.11.1",
+    "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
     "eslint": "^7.6.0",

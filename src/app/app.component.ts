@@ -20,15 +20,42 @@ export class AppComponent {
     }
   }
 
-  changeStatusBarBackgroundAndColor() {
-    const themeColor: string = document.querySelector('body').classList.contains('dark')? 'dark' : 'light';
+  verifyDevice() {
+    const device = navigator.userAgent;
 
-    if(themeColor === 'dark') {
-      StatusBar.setBackgroundColor({ color: '#05050f' });
-      StatusBar.setStyle({ style: Style.Dark })
+    if(device.match(/Android/i)) return true;
+    if(device.match(/webOS/i)) return true;
+    if(device.match(/iPhone/i)) return true;
+    if(device.match(/iPad/i)) return true;
+    if(device.match(/iPod/i)) return true;
+    if(device.match(/BlackBerry/i)) return true;
+    if(device.match(/Windows Phone/i)) return true;
+
+    return false;
+  }
+
+  changeStatusBarBackgroundAndColor() {
+
+    const validDevice = this.verifyDevice();
+
+    if(validDevice) {
+      const themeColor: string = document.querySelector('body').classList.contains('dark')? 'dark' : 'light';
+
+      if(themeColor === 'dark') {
+        StatusBar.setBackgroundColor({ color: '#05050f' });
+        StatusBar.setStyle({ style: Style.Dark })
+      } else {
+        StatusBar.setBackgroundColor({ color: '#ffffff' });
+        StatusBar.setStyle({ style: Style.Light })
+      }
     } else {
-      StatusBar.setBackgroundColor({ color: '#ffffff' });
-      StatusBar.setStyle({ style: Style.Light })
+      const consoleStyle = `
+        color: #ff0000;
+        font-size: 24px;
+        font-wight: bold;
+        text-transform: uppercase;
+      `;
+      console.log('%cYou are not on a mobile device.', consoleStyle);
     }
   }
 
