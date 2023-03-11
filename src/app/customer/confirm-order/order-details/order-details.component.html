@@ -2,8 +2,8 @@
 
   <!-- ENVIO A DOMICILIO -->
   <div *ngSwitchCase="'domicilio'">
-      <ion-label 
-          (click)="goTo('/customer/direction')" 
+      <ion-label
+          (click)="goTo('/customer/direction')"
           [class]= order.detailsOrderToHome.dClass
       >
           {{order.detailsOrderToHome.direction}}
@@ -37,11 +37,11 @@
 
   <!-- RECOJO EN TIENDA -->
   <div *ngSwitchCase="'tienda'">
-      <ion-label 
-          (click)="goTo('/customer/stores')" 
-          [class]= order.detailsOrderToStore.dClass 
+      <ion-label
+          (click)="goTo('/customer/stores')"
+          [class]= order.detailsOrderToStore.dClass
       >
-        <span 
+        <span
             *ngIf="order.detailsOrderToStore.store.length!==0"
             style="font-weight: bold;"
             >

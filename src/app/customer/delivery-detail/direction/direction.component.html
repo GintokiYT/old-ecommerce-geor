@@ -1,4 +1,4 @@
-<ion-content>
+<!-- <ion-content>
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <button (click)="goBack()" slot="start" class="arrow">
@@ -43,4 +43,62 @@
       Confirmar
     </ion-button>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->
+
+<ion-content>
+
+  <!-- Header -->
+  <app-header
+    title="Mis direcciones"
+    iconLeft="icon-close"
+    backDirection="confirm-order"
+    (onClickDelete)="deleteBill($event)"
+    titleModalDelete = "¿Seguro que quieres eliminar esta dirección?"
+    [haveSelected]="oneTrue"
+  >
+  </app-header>
+
+  <!-- Billing Data Container -->
+  <div class="billing-data_container d-flex flex-column container-main">
+
+    <div class="d-flex align-items-center bill-container" *ngFor="let bill of bills">
+      <ion-checkbox
+        [(ngModel)] = bill.selected
+        (ngModelChange)="checkBoxChange(bill.id)"
+      >
+      </ion-checkbox>
+      <div class="d-flex flex-column bill-information">
+        <ion-label class="fz-normal ion-text-wrap">{{bill.name}}</ion-label>
+
+        <ion-label class="bill-information_edit fz-small">Editar</ion-label>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center" style="gap: 8px;">
+      <img src="/assets/icons/icon-plus.svg" style="cursor: pointer;">
+      <ion-label color="primary" style="cursor: pointer;">Nueva dirección</ion-label>
+    </div>
+
+  </div> <!--End Billing Data Container-->
+
+
+  <!-- Footer -->
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <!-- (click)="setBill()" -->
+      <ion-button
+        [disabled]="!oneTrue"
+        (click)="establecerDirection()"
+        expand="full"
+        shape="round"
+        color="primary"
+        style="margin: 0;"
+      >
+        Confirmar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>
+
+

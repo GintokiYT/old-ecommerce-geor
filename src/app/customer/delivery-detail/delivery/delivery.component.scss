@@ -20,11 +20,6 @@ ion-toolbar{
       --padding-bottom: 24px
 }}
 
-ion-title{
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-}
 
 ion-content {
   // Eliminar scroll de la
@@ -37,14 +32,12 @@ ion-content {
 
 ion-item {
   --padding-start: 24px;
-  --padding-end: 24px
+ /*  --padding-end: 24px */
 }
 ion-textarea {
-  --padding-end: 24px;
+  /* --padding-end: 24px; */
   --padding-start: 24px;
-  border-color: #EEEEEE  ;
-  border-width: 1px;
-  border-style: solid;
+  border: 1px solid var(--ion-color-separator);
   border-radius: 5px;
   height: 8em;
   width: 344px;
@@ -66,4 +59,10 @@ ion-toolbar{
   --padding-end: 24px;
   --padding-bottom: 24px
 }
+}
+
+//
+ion-footer {
+  position: fixed;
+  bottom: 0;
 }

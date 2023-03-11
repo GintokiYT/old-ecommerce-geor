@@ -1,13 +1,20 @@
 <ion-content>
-  <ion-header class="ion-no-border">
+  <!--   <ion-header class="ion-no-border">
     <ion-toolbar>
       <button (click)="goBack()" slot="start" class="arrow">
         <img src="/assets/icons/icon-arrow-izquierda.svg" />
       </button>
       <ion-title>Requisitos para la entrega</ion-title>
     </ion-toolbar>
-  </ion-header>
-  <ion-item lines="none">
+  </ion-header> -->
+  <app-header
+    title="Requisitos para la entrega"
+    iconLeft="icon-arrow-left"
+    backDirection="confirm-order">
+  </app-header>
+
+<div class="container-main">
+  <ion-item lines="none" >
     <ion-textarea></ion-textarea>
   </ion-item>
   <ion-item lines="none">
@@ -15,11 +22,21 @@
       <p class="linea">Detalla los requisitos para la entrega (opcional)</p>
     </ion-label>
   </ion-item>
-</ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-button 
-      (click)="goTo('/customer/confirm-order')"
-      color="primary" expand="block" shape="round">Guardar</ion-button>  
+</div>
+
+<ion-footer class="ion-no-border ion-no-padding footer-ionic">
+  <ion-toolbar class="ion-no-padding">
+    <ion-button
+    (click)="goTo('/customer/confirm-order')"
+      expand="full"
+      shape="round"
+      color="primary"
+      style="margin: 0;"
+    >
+      Guardar
+    </ion-button>
   </ion-toolbar>
 </ion-footer>
+
+</ion-content>
+

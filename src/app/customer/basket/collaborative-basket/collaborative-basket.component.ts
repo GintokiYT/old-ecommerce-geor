@@ -13,6 +13,7 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   statusModal: boolean;
   mainProduct: boolean = true;
   Product: boolean = true;
+
   constructor(_injector: Injector, private inviteService: InviteService,
     private rs: RouteService) {
     super(_injector);
