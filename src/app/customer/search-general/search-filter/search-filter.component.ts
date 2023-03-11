@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { v4 as uudi } from 'uuid';
+import { SearchService } from '../../../services/search.service';
 
 interface SearchHistory {
   id: string;
@@ -20,7 +21,7 @@ export class SearchFilterComponent extends ViewComponent implements OnInit {
   searchHistory: SearchHistory[] = JSON.parse(localStorage.getItem('searchhistory')) || [];
   searchHistoryFilter: SearchHistory[] = this.searchHistory.slice(-10).reverse();
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, private searchService: SearchService) {
     super(_injector)
   }
 
@@ -48,18 +49,25 @@ export class SearchFilterComponent extends ViewComponent implements OnInit {
 
     inputSearch.addEventListener('search', () => {
 
-      const ifExists: boolean = this.searchHistory.find(({search}) => search === inputSearch.value)? true : false;
+      const isEmptySearch: boolean = inputSearch.value.trim() ? true : false;
 
-      if(ifExists !== true) {
+      const ifExists: boolean = this.searchHistory.find(({search}) => search === inputSearch.value.trim())? true : false;
+
+      if(ifExists !== true && isEmptySearch === true) {
         const newSearchHistory: SearchHistory = {
           id: uudi(),
-          search: inputSearch.value
+          search: inputSearch.value.trim()
         }
         this.searchHistory.push(newSearchHistory);
         localStorage.setItem('searchhistory', JSON.stringify(this.searchHistory));
       }
 
       this.searchHistoryFilter = this.searchHistory.slice(-10).reverse();
+
+      if(isEmptySearch === true) {
+        this.navigation.forward('/customer/search-general/product');
+        this.searchService.setSearch(inputSearch.value);
+      }
 
     })
 
@@ -89,6 +97,7 @@ export class SearchFilterComponent extends ViewComponent implements OnInit {
   }
 
   goProduct(search: SearchHistory) {
-    console.log(search);
+    this.navigation.forward('/customer/search-general/product');
+    this.searchService.setSearch(search.search);
   }
 }

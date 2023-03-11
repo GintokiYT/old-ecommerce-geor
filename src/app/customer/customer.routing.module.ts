@@ -66,6 +66,7 @@ import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/ad
 import { ManageCouponsComponent } from './manage-coupons/manage-coupons.component';
 import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.component';
 import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
+import { SearchProductComponent } from './search-general/search-product/search-product.component';
 
 const routes: Routes = [
   {
@@ -107,6 +108,7 @@ const routes: Routes = [
       //* Search General
       { path: 'search-general', component: SearchGeneralComponent },
       { path: 'search-general/filter', component: SearchFilterComponent },
+      { path: 'search-general/product', component: SearchProductComponent },
       //* End Search General
 
         /*  { path: 'empty-bas'} */
