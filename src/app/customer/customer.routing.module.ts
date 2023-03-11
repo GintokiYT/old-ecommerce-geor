@@ -65,6 +65,7 @@ import { ConditionsComponent } from './manage-coupons/conditions/conditions.comp
 import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
 import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
+import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
 
 
 const routes: Routes = [
@@ -149,7 +150,7 @@ const routes: Routes = [
       {path: 'manage-coupons/add-coupon', component:AddCouponComponent},
       {path: 'manage-coupons/conditions', component:ConditionsComponent},
       {path: 'manage-coupons/products-with-coupon', component:ProductsWithCouponComponent},
-      
+
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
