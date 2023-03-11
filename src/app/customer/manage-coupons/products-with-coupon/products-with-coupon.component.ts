@@ -1,14 +1,14 @@
-import { Component, Injector, OnInit } from '@angular/core';
-import { AppThemeService, ViewComponent } from '@geor360/ecore';
-import IBanner from 'src/app/interfaces/IBanner';
-import IProduct from 'src/app/interfaces/IProduct';
+import { Component, OnInit, Injector } from '@angular/core';
+import { ViewComponent, AppThemeService } from '@geor360/ecore';
+import IBanner from '../../../interfaces/IBanner';
+import IProduct from '../../../interfaces/IProduct';
 
 @Component({
-  selector: 'app-productsbar',
-  templateUrl: './productsbar.component.html',
-  styleUrls: ['./productsbar.component.scss'],
+  selector: 'app-products-with-coupon',
+  templateUrl: './products-with-coupon.component.html',
+  styleUrls: ['./products-with-coupon.component.scss'],
 })
-export class ProductsbarComponent extends ViewComponent implements OnInit {
+export class ProductsWithCouponComponent extends ViewComponent implements OnInit {
 
   contry: string = localStorage.getItem('country') || 'PE';
   image: string = this.contry === 'PE' ? './assets/flags/pe.svg' :
@@ -158,5 +158,19 @@ export class ProductsbarComponent extends ViewComponent implements OnInit {
       this.logoPath = '/assets/images/logo-dark.svg';
     }
   }
-}
 
+
+  goToCoupons(){
+    const params = {
+      showCoupons : "true"
+    }
+
+    this.navigation.back("/customer/manage-coupons",params);
+  }
+
+
+  goToProduct(){
+    this.navigation.forward("/customer/product");
+  }
+
+}

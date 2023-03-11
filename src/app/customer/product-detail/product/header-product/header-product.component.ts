@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-product',
@@ -8,8 +9,12 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class HeaderProductComponent extends ViewComponent implements OnInit {
 
-  constructor(private _injector: Injector) {
+  previousRoute: string;
+
+
+  constructor(private _injector: Injector, private router: Router) {
     super(_injector);
+    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
    }
 
   ngOnInit() {}
@@ -23,6 +28,7 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
     } else {
       this.navigation.root("/customer/home","back");
     }
+    //this.navigation.root(this.previousRoute,"back");
 
   }
   goMyBasket(){

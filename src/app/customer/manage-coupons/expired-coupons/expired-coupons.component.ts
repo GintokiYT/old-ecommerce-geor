@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpiredCouponsComponent implements OnInit {
 
+  showCoupons: boolean = false;
 
   coupons = [
     {
@@ -28,5 +29,9 @@ export class ExpiredCouponsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+
+  onShowCoupons(){
+    this.showCoupons = true;
+  }
 
 }
