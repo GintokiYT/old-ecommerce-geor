@@ -66,6 +66,7 @@ import { SetContactComponent } from './manage-billing-data/set-contact/set-conta
 import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
 import { SearchGeneralComponent } from './search-general/search-general/search-general.component';
 import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
+import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
 
 const routes: Routes = [
   {
@@ -106,6 +107,7 @@ const routes: Routes = [
 
       //* Search General
       { path: 'search-general', component: SearchGeneralComponent },
+      { path: 'search-general/filter', component: SearchFilterComponent },
       //* End Search General
 
         /*  { path: 'empty-bas'} */

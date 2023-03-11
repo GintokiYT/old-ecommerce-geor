@@ -1,0 +1,28 @@
+<ion-header>
+  <div class="search-input">
+    <div class="input-container">
+      <input type="search" tabindex="1" #inputSearch>
+      <div class="input-clear" #closeInput>
+        <input type="search" tabindex="-1">
+        <icon-input-close></icon-input-close>
+      </div>
+    </div>
+    <icon-close-search (click)="goSearchGeneral()"></icon-close-search>
+  </div>
+</ion-header>
+
+<ion-content>
+
+  <div class="container-products">
+    <div class="search-header">
+      <p>Búsquedas recientes</p>
+      <p>Limpiar</p>
+    </div>
+    <div class="search-history" *ngFor="let history of [1,2,3]">
+      <p>a</p>
+      <icon-delete-trash></icon-delete-trash>
+      <icon-arrow></icon-arrow>
+    </div>
+  </div>
+
+</ion-content>

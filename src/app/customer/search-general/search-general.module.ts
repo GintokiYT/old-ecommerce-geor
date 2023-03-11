@@ -8,6 +8,12 @@ import { SearchGeneralComponent } from './search-general/search-general.componen
 
 import { iconScanner } from './icon-scanner';
 import { iconInputClose } from './icon-input-close';
+import { iconCloseSearch } from './icon-close-search';
+import { iconDeleteTrash } from './icon-delete-trash';
+import { iconArrow } from './icon-arrow';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,13 +23,21 @@ import { iconInputClose } from './icon-input-close';
   ],
   declarations: [
     SearchGeneralComponent,
+    SearchFilterComponent,
     iconScanner,
-    iconInputClose
+    iconInputClose,
+    iconCloseSearch,
+    iconDeleteTrash,
+    iconArrow
   ],
   exports:[
     SearchGeneralComponent,
+    SearchFilterComponent,
     iconScanner,
-    iconInputClose
+    iconInputClose,
+    iconCloseSearch,
+    iconDeleteTrash,
+    iconArrow
   ]
 })
 export class SearchGeneralModule {}

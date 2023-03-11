@@ -63,7 +63,7 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   async CheckGpsStatus() {
     const alert = await this.alertController.create({
       header: 'Ubicación desactivada',
-      message: 'Para utilizar esta aplicación, debes habilitar la ubicación en tu dispositivo.',
+      message: 'Para utilizar esta aplicación, debes habilitar la ubicación en tu dispositivo. lol',
       buttons: [
         {
           text: 'Cancelar',
