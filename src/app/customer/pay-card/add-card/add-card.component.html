@@ -1,10 +1,27 @@
 <ion-content class="content-add">
+<!-- backDirectin="way-pay" -->
+ <!--  <app-header
+  title="Agregar tarjeta"
+  (click)="goback()"
   <app-header
   title="Agregar tarjeta"
   backDirectin="way-pay"
   iconLeft="icon-close"
   >
-  </app-header>
+  </app-header> -->
+  <ion-header class="ion-no-border header-add">
+    <ion-toolbar>
+        <button
+            (click)="goBack()"
+            slot="start">
+            <svg class="back" width="1em" height="1em" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L13 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M1 13L13 1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+              </svg>
+        </button>
+        <ion-title>Agregar tarjeta</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
   <div class="content-add container-main">
     <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">

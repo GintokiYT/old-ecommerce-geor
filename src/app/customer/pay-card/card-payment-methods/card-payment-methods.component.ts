@@ -34,22 +34,19 @@ export class CardPaymentMethodsComponent extends ViewComponent implements OnInit
 
   delete(tarjetaId: string) {
     this.message.confirm('¿Seguro que quieres eliminar la tarjeta?','',(confirmation)=>{
+      if (confirmation) {
       const tarjetaAEliminar = document.getElementById(tarjetaId);
       tarjetaAEliminar.remove();
-
+      }
     },'Eliminar','Cancelar')
   }
 
   goback(){
-
-    const localData = JSON.parse(localStorage.getItem('back')) ?? '';
-
-    if(localData) {
-      this.navigation.back(localData['back']);
-    } else {
-      this.navigation.root('/customer/add-card','back');
-    }
+    this.navigation.root('/customer/manage-user-information','back');
+    localStorage.setItem('back', '');
+  }
 
   }
 
-}
+
+
