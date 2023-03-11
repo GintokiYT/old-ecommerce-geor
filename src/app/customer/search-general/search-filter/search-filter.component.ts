@@ -67,6 +67,9 @@ export class SearchFilterComponent extends ViewComponent implements OnInit {
       if(isEmptySearch === true) {
         this.navigation.forward('/customer/search-general/product');
         this.searchService.setSearch(inputSearch.value);
+        localStorage.setItem('back', '/customer/search-general/filter');
+        inputSearch.value = '';
+        closeInput.style.display = 'none';
       }
 
     })
@@ -99,5 +102,6 @@ export class SearchFilterComponent extends ViewComponent implements OnInit {
   goProduct(search: SearchHistory) {
     this.navigation.forward('/customer/search-general/product');
     this.searchService.setSearch(search.search);
+    localStorage.setItem('back', '/customer/search-general/filter');
   }
 }
