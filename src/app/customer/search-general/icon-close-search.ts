@@ -16,7 +16,9 @@ import { Component, OnInit } from '@angular/core';
   </svg>
   `,
   styles: [`
-
+    svg g path {
+      stroke: var(--ion-color-basic);
+    }
   `]
 })
 export class iconCloseSearch implements OnInit {
