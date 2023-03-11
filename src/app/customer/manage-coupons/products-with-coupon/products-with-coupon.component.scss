@@ -1,8 +1,6 @@
-img {
-  //background-attachment: fixed;
-  background-size: cover;
+.banner{
+  min-height: 150px;
 }
-
 
 
 ion-search {
@@ -161,7 +159,7 @@ ion-header{
 
 .arrow-left{
   position: absolute;
-  top: calc( var(--ion-safe-area-top,0)) !important;
+  top: calc( var(--ion-safe-area-top,0) + 16px) !important;
   left: 16px;
 }
 
