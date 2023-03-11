@@ -1,3 +1,23 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  // --padding-top: var(--ion-safe-area-top);
+  // --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 ion-header {
   .search-input {
     display: flex;
@@ -60,4 +80,8 @@ app-featured {
   top: -24px;
   left: 0;
   width: 100%;
+}
+
+ion-header {
+  padding-top: var(--ion-safe-area-top);
 }

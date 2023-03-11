@@ -70,6 +70,7 @@ export class SearchFilterComponent extends ViewComponent implements OnInit {
         localStorage.setItem('back', '/customer/search-general/filter');
         inputSearch.value = '';
         closeInput.style.display = 'none';
+        inputSearch.blur();
       }
 
     })
