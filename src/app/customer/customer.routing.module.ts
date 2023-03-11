@@ -59,14 +59,15 @@ import { SetContactComponent } from './manage-billing-data/set-contact/set-conta
 import { ComplaintThanksComponent } from './userHelp/complaint-thanks/complaint-thanks.component';
 import { SearchGeneralComponent } from './search-general/search-general/search-general.component';
 import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
-import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
-import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
-import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
-import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 import { ManageCouponsComponent } from './manage-coupons/manage-coupons.component';
 import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.component';
 import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
+import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
+import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
+
+import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
 import { SearchProductComponent } from './search-general/search-product/search-product.component';
+import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
 
 const routes: Routes = [
   {
