@@ -16,6 +16,9 @@ import { SearchProductComponent } from './search-product/search-product.componen
 import { iconArrowBack } from './icon-arrow-back';
 import { iconFilter } from './icon-filter';
 import { FeaturedComponent } from './featured/featured.component';
+import { ModalFilterComponent } from './modal-filter/modal-filter.component';
+import { iconArrowBottom } from './icon-arrow-bottom';
+import { FilterSizeComponent } from './modal-filter/filter-size';
 
 
 @NgModule({
@@ -30,26 +33,32 @@ import { FeaturedComponent } from './featured/featured.component';
     SearchFilterComponent,
     SearchProductComponent,
     FeaturedComponent,
+    ModalFilterComponent,
+    FilterSizeComponent,
     iconScanner,
     iconInputClose,
     iconCloseSearch,
     iconDeleteTrash,
     iconArrowBack,
     iconArrow,
-    iconFilter
+    iconFilter,
+    iconArrowBottom
   ],
   exports:[
     SearchGeneralComponent,
     SearchFilterComponent,
     SearchProductComponent,
     FeaturedComponent,
+    ModalFilterComponent,
+    FilterSizeComponent,
     iconScanner,
     iconInputClose,
     iconCloseSearch,
     iconDeleteTrash,
     iconArrowBack,
     iconArrow,
-    iconFilter
+    iconFilter,
+    iconArrowBottom
   ]
 })
 export class SearchGeneralModule {}

@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit, ViewChildren, QueryList, ElementRef, Input } from '@angular/core';
 import { AppThemeService, ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 import IProduct from 'src/app/interfaces/IProduct';
 import { HomeService } from 'src/app/services/home.service';
 
@@ -10,31 +11,32 @@ import { HomeService } from 'src/app/services/home.service';
 })
 export class FeaturedComponent extends ViewComponent implements OnInit {
 
-  @Input('routeproductback') routeproductback: string;
+  @Input('routeSearchProduct') routeSearchProduct: string;
 
   productsFeatured: IProduct[];
 
   private themeService: AppThemeService;
   logoPath = '/assets/images/logo.svg';
 
-  constructor(_injector: Injector, private homeService: HomeService) {
+  constructor(
+    _injector: Injector,
+    private homeService: HomeService,
+    private router: Router
+  ) {
     super(_injector);
     this.themeService = _injector.get(AppThemeService);
     this.homeService.getProductsFeatured.subscribe( product => this.productsFeatured = product);
   }
 
-  ngOnInit() {
-    // const routeBack: string = localStorage.getItem('back') || '';
-
-    // const newRouteBack = {
-    //   back: routeBack,
-    //   backProduct: this.routeproductback
-    // }
-
-    // localStorage.setItem('back', JSON.stringify(newRouteBack));
-  }
+  ngOnInit() { }
 
   goToProduct(){
+    const currentRoute: string = this.router.url;
+
+    if(currentRoute === '/customer/search-general/product') {
+      return this.navigation.forward(this.routeSearchProduct);
+    }
+
     this.navigation.root("/customer/product","forward");
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -8,9 +9,9 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class ProductComponent extends ViewComponent implements OnInit {
 
-  constructor(_injector:Injector) {
+  constructor(_injector:Injector, private router: Router) {
     super(_injector)
-   }
+  }
 
   ngOnInit() {}
 
@@ -19,13 +20,19 @@ export class ProductComponent extends ViewComponent implements OnInit {
   }
   goDetails(){
     this.navigation.root('/customer/detail','forward')
-    console.log("detail");
   }
   goPicture(){
     this.navigation.root('/customer/picture-big','forward')
   }
 
   goReturnsExchanges() {
+
+    const currentRouter = this.router.url;
+
+    if(currentRouter === '/customer/search-general/product-detail') {
+      return this.navigation.forward('/customer/search-general/product-detail/returns-exchanges');
+    }
+
     localStorage.setItem('back', '/customer/product');
     this.navigation.forward('/customer/settings/about-us/returns-exchanges');
   }

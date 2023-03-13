@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Injector } from '@angular/core';
 import { ProductDetailService } from '../../../../services/productDetail.service';
 import { ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-basket',
@@ -25,13 +26,18 @@ export class ModalBasketComponent extends ViewComponent implements OnInit {
     })
   }
 
-  constructor(private productoDetailService: ProductDetailService,_injector:Injector) {
-      super(_injector);
+  constructor(
+    _injector:Injector,
+    private productoDetailService: ProductDetailService ) {
+    super(_injector);
   }
 
   ngOnInit() {}
 
   goMybasket(){
-   this.navigation.forward('customer/my-basket');
+
+    this.productoDetailService.setStatusModalBasket(false);
+
+    this.navigation.forward('customer/my-basket');
   }
 }

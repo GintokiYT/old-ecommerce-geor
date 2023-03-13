@@ -60,11 +60,19 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   }
 
   onGoToPayMethods() {
+
     this.navigation.forward("customer/payment-methods")
     //console.log(this.previousRoute)
   }
 
   onGoToCoupons() {
+
+    const currentRouter = this.router.url;
+
+    if(currentRouter === '/customer/search-general/product-detail/confirm-order') {
+      return this.navigation.forward('/customer/search-general/product-detail/add-coupons');
+    }
+
     this.navigation.root("customer/add-coupons","forward");
   }
 
