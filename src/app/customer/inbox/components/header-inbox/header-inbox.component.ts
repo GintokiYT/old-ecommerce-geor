@@ -24,21 +24,15 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
-  backMainInbox() {
-    // const back = localStorage.getItem('back') ?? '';
-    // if(back) {
-    //   this.navigation.back(localStorage.getItem('back'));
-    //   localStorage.setItem('back', '');
-    // } else {
-    //   this.navigation.forward('/customer/main-inbox');
-    // }
+  goBack() {
+
+    const currentRouter = this.router.url;
+
+    if(currentRouter.includes('/customer/search-general/product-detail/internal-inbox')) {
+      return this.navigation.back('/customer/search-general/product-detail');
+    }
 
     this.navigation.root(this.previousRoute,"back");
-    // Las animaciones de root y back lagea el ion-footer
-   // this.navigation.forward('/customer/main-inbox');
-    // this.navigation.root('/customer/main-inbox', 'forward')
-    // this.location.back();
-
   }
 
   openTelf() {

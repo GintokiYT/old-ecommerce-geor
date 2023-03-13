@@ -11,7 +11,9 @@ export class SearchProductComponent extends ViewComponent implements OnInit {
 
   search: string;
 
-  routeproductback: string = '/customer/search-general/product';
+  routeSearchProduct: string = '/customer/search-general/product-detail';
+
+  modalStatusFilterProduct: boolean = true;
 
   constructor(_injector: Injector, private searchService: SearchService) {
     super(_injector);
@@ -23,14 +25,9 @@ export class SearchProductComponent extends ViewComponent implements OnInit {
   goBack() {
     this.navigation.back(localStorage.getItem('back'));
     localStorage.setItem('back', '');
-    // const condictionBack = localStorage.getItem('back') ?? '';
-    // if(condictionBack) {
-    //   const routeBack = JSON.parse(localStorage.getItem('back'));
-    //   this.navigation.back(routeBack['back']);
-    //   localStorage.setItem('back', '');
-    // } else {
-    //   this.navigation.back('/customer/search-general/filter');
-    // }
-    // this.searchService.setSearch('');
+  }
+
+  openModalFilter() {
+    this.modalStatusFilterProduct = true;
   }
 }
