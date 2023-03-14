@@ -1,0 +1,222 @@
+<ion-content>
+
+  <app-header
+    iconLeft="icon-arrow-left"
+    backDirection="/customer/manage-order"
+    title="Detalle de pedido"
+  >
+
+  </app-header>
+
+  <div class="order-container container-main d-flex flex-column">
+
+    <!-- Order State -->
+
+    <!-- En proceso -->
+    <div class="order-state d-flex flex-column" style="gap: 4px;" *ngIf="order.state==='EN PROCESO' || order.state==='ANULADO'">
+      <ion-label style="font-size: 14px;">Pedido #{{order.id}} - de <ion-label color="primary">Gerardo Ortíz</ion-label></ion-label>
+      <ion-label style="font-weight: 500;">{{order.state}}</ion-label>
+      <div class="container-bars d-flex" style="gap: 6px;">
+        <div class="container-bar">
+          <div class="bar">
+
+          </div>
+        </div>
+        <div class="container-bar">
+
+        </div>
+        <div class="container-bar">
+
+        </div>
+      </div>
+      <div class="d-flex justify-content-between" >
+        <ion-label style="color: var(--ion-color-basic);">Estamos preparando tu pedido</ion-label>
+        <img 
+          [ngClass]="{'direction-up': directionArrow==='up',
+                      'direction-down': directionArrow==='down'}"
+          class="arrow-abajo" src="/assets/icons/icon-arrow-abajo.svg"
+          (click)="onShowTextHelper()"
+        />
+      </div>
+      <div  class="container-text-helper d-flex justify-content-between" *ngIf="directionArrow==='up'" style="margin-top: 16px;">
+        <ion-label>¿Necesitas ayuda?</ion-label>
+        <img src="/assets/icons/icon-chat.svg" style="width: 20px;" (click)="goToInbox()"/>
+      </div>
+    </div>
+
+
+    <!-- Entregado -->
+    <div class="d-flex flex-column" style="gap: 4px; font-size: 14px ; color: var(--ion-color-text-secundary);" *ngIf="order.state==='ENTREGADO'">
+      <ion-label>Pedido #{{order.id}}</ion-label>
+      <div class="d-flex" style="gap: 20px;">
+        <ion-label style="font-weight: 500;">{{order.state}}</ion-label>
+        <div class="d-flex align-items-center" style="gap: 10px;">
+          <ion-label><sup style="font-weight: bold;">.</sup></ion-label>
+          <ion-label>{{order.date}}</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pendiente de pago -->
+    <div class="order-state d-flex flex-column" style="gap: 4px;" *ngIf="order.state==='PENDIENTE DE PAGO'">
+      <ion-label style="font-size: 14px;">Pedido #{{order.id}} - de <ion-label color="primary">Gerardo Ortíz</ion-label></ion-label>
+      <ion-label style="font-weight: 500; color: #F44336;">{{order.state}}</ion-label>
+      <div class="container-bars d-flex" style="gap: 6px;">
+        <div class="container-bar">
+          <div class="bar">
+
+          </div>
+        </div>
+        <div class="container-bar">
+
+        </div>
+        <div class="container-bar">
+
+        </div>
+      </div>
+      <div class="d-flex justify-content-between" >
+        <ion-label style="color: var(--ion-color-basic);">Estamos preparando tu pedido</ion-label>
+        <img 
+          [ngClass]="{'direction-up': directionArrow==='up',
+                      'direction-down': directionArrow==='down'}"
+          class="arrow-abajo" src="/assets/icons/icon-arrow-abajo.svg"
+          (click)="onShowTextHelper()"
+        />
+      </div>
+      <div  class="container-text-helper d-flex justify-content-between" *ngIf="directionArrow==='up'" style="margin-top: 16px;">
+        <ion-label>¿Necesitas ayuda?</ion-label>
+        <img src="/assets/icons/icon-chat.svg" style="width: 20px;" (click)="goToInbox()"/>
+      </div>
+    </div>
+
+    <!-- Load baucher -->
+    <div class="load-baucher d-flex justify-content-center" *ngIf="order.state==='PENDIENTE DE PAGO'">
+      <ion-label>Cargar Baucher de pago</ion-label>
+    </div>
+
+    <!-- Instructions -->
+    <div class="d-flex justify-content-between" *ngIf="order.state==='PENDIENTE DE PAGO'">
+      <ion-label color="primary">Instrucciones</ion-label>
+      <ion-label color="primary" style="font-size: 14px;" (click)="goToInstruccions()">Cambiar</ion-label>
+    </div>
+
+
+
+    <!-- Order direction -->
+    <div class="order-direction d-flex flex-column" style="gap: 8px;">
+      <div class="d-flex justify-content-between">
+        <ion-label style="font-weight: 500;">Detalles de entrega</ion-label>
+        <ion-label color="primary" style="font-size: 14px;" (click)="goToSend()">Cambiar</ion-label>
+      </div>
+      <ion-label>Jr. Samaritanos 879  Miraflores, Lima, Lima, Perú</ion-label>
+    </div>
+
+
+    <!-- Order bill -->
+    <div class="order-bill d-flex flex-column" style="gap: 8px;" *ngIf="order.state==='ENTREGADO'">
+      <ion-label style="font-weight: 500;">Factura</ion-label>
+      <div class="d-flex" style="gap: 16px;">
+        <img src="/assets/images/bill.png"/>
+        <div class="d-flex flex-column" style="gap: 4px;" >
+          <ion-label>Negocios del Carmen Portocarreo - NCM Comercial</ion-label>
+          <ion-label style="color: var(--ion-color-text-secundary);">01713995789</ion-label>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <!-- Order pay -->
+    <div class="order-pay d-flex flex-column" style="gap: 8px;">
+      <ion-label style="font-weight: 500;">Detalles de pago</ion-label>
+      <div class="d-flex" style="gap: 8px;" *ngIf="order.state!=='PENDIENTE DE PAGO'">
+        <img src="/assets/icons/icon-visa-small.svg"/>
+        <ion-label>**** 1441</ion-label>
+      </div>
+      <ion-label *ngIf="order.state==='PENDIENTE DE PAGO'" style="color: var(--ion-color-text-secundary)">
+        Depósito/transferencia
+      </ion-label>
+    </div>
+
+
+    <!-- Order products -->
+    <div class="order-products d-flex flex-column" style="gap: 12px;">
+      <div class="d-flex justify-content-between">
+        <ion-label style="font-weight: 500;">Productos (2)</ion-label>
+        <ion-label style="font-size: 14px;" color="primary" (click)="goToMyBasket()">Editar</ion-label>
+      </div>
+      <div class="products-container d-flex flex-column" style="gap: 24px;">
+        <div class="product d-flex flex-column" style="gap: 12px;">
+          <div class="d-flex justify-content-between" style="gap: 8px;">
+            <img src="assets/images/producto-big-4.png" width="83px">
+            <div class="d-flex flex-column justify-content-between" style="gap: 4px; color: var(--ion-color-text-secundary);">
+              <ion-label>S/ 9,780.00</ion-label>
+              <ion-label>Plancha de bicarbonato pulverizad zado lorem ipsum lorem iprsum ...</ion-label>
+              <ion-label>Lo agregó <ion-label color="primary">Gerardo Ortíz</ion-label></ion-label>
+            </div>
+          </div>
+          <div class="container-variants d-flex flex-column">
+            <div class="variant d-flex justify-content-between">
+              <ion-label>Verde jade, 120x150 cm, 25 mm</ion-label>
+              <ion-label style="color: var(--ion-color-basic);">7,300</ion-label>
+            </div>
+          </div>
+        </div>
+        <div class="product d-flex flex-column" style="gap: 12px;">
+          <div class="d-flex justify-content-between" style="gap: 8px;">
+            <img src="assets/images/producto-big-4.png" width="83px">
+            <div class="d-flex flex-column justify-content-between" style="gap: 4px; color: var(--ion-color-text-secundary);">
+              <ion-label>S/ 9,780.00</ion-label>
+              <ion-label>Plancha de bicarbonato pulverizad zado lorem ipsum lorem iprsum ...</ion-label>
+              <ion-label>Lo agregó <ion-label color="primary">Gerardo Ortíz</ion-label></ion-label>
+            </div>
+          </div>
+          <div class="container-variants d-flex flex-column" style="gap: 12px;">
+            <div class="variant d-flex justify-content-between">
+              <ion-label>Verde jade, 120x150 cm, 25 mm</ion-label>
+              <ion-label style="color: var(--ion-color-basic);">7,300</ion-label>
+            </div>
+            <div class="variant d-flex justify-content-between">
+              <ion-label>Verde jade, 120x150 cm, 25 mm</ion-label>
+              <ion-label style="color: var(--ion-color-basic);">4</ion-label>
+            </div>
+            <div class="variant d-flex justify-content-between">
+              <ion-label>Verde jade, 120x150 cm, 25 mm</ion-label>
+              <ion-label style="color: var(--ion-color-basic);">2</ion-label>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+
+
+    <!-- Order summary -->
+    <div class="order-summary d-flex flex-column" style="gap: 16px;">
+      <ion-label style="font-weight: 500;">Resumen de tu pedido</ion-label>
+      <div class="summary-container d-flex flex-column" style="gap: 10px;">
+        <div class="d-flex justify-content-between">
+          <ion-label>Sub total</ion-label>
+          <ion-label>S/ 9,999.00</ion-label>
+        </div>
+        <div class="d-flex justify-content-between">
+          <ion-label>Costo de envío</ion-label>
+          <ion-label>S/ 45.90</ion-label>
+        </div>
+        <div class="d-flex justify-content-between">
+          <ion-label>Cupón</ion-label>
+          <ion-label>-S/ 180.00</ion-label>
+        </div>
+        <div class="d-flex justify-content-between" style="font-weight: 500;">
+          <ion-label>Total</ion-label>
+          <ion-label>S/ 12,589.00</ion-label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</ion-content>

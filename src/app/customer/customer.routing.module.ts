@@ -66,7 +66,11 @@ import { ManageAddressesComponent } from './manage-addresses/manage-addresses.co
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
 import { SearchProductComponent } from './search-general/search-product/search-product.component';
-import { ConditionsComponent } from './add-coupons/conditions/conditions.component';
+import { ConditionssComponent } from './add-coupons/conditions/conditions.component';
+import { ManageOrderComponent } from './manage-order/manage-order.component';
+import { OrderDetailComponent } from './manage-order/order-detail/order-detail.component';
+import { InstructionsComponent } from './manage-order/instructions/instructions.component';
+import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
 
 //* Routes
 import { searchGeneralRoutes } from './router/searchGeneralRoutes';
@@ -145,7 +149,7 @@ const routes: Routes = [
       {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
 
       {path: 'add-coupons', component: AddCouponsComponent},
-      {path: 'add-coupons/conditions', component: ConditionsComponent},
+      {path: 'add-coupons/conditions', component: ConditionssComponent},
       {path: 'billing-data', component: BillingDataComponent},
       {path: 'manage-user-information', component: ManageUserInformationComponent},
       {path: 'manage-billing-data', component: ManageBillingDataComponent},
@@ -158,8 +162,11 @@ const routes: Routes = [
       {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
       {path: 'manage-coupons', component:ManageCouponsComponent},
       {path: 'manage-coupons/add-coupon', component:AddCouponComponent},
-      {path: 'manage-coupons/conditions', component:ConditionsComponent},
+      {path: 'manage-coupons/conditions', component: ConditionsComponent},
       {path: 'manage-coupons/products-with-coupon', component:ProductsWithCouponComponent},
+      {path: 'manage-order', component:ManageOrderComponent},
+      {path: 'manage-order/order-detail/:id', component:OrderDetailComponent},
+      {path: 'manage-order/instructions', component:InstructionsComponent},
 
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},

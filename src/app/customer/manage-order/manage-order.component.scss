@@ -32,27 +32,44 @@ ion-header {
     }
 }
 
-ion-modal {
-    --height: fit-content;
-    --border-radius: 10px;
 
-    .buttons {
-        cursor: pointer;
+.container-orders{
+    padding-inline: 16px;
+    gap: 32px;
+    margin-bottom: calc(var(--ion-safe-area-bottom,0) + 32px);
+
+
+    .order-container{
+        gap: 8px;
+        border: 1px solid var(--ion-color-border-input);
+        border-radius: 10px;
+        padding: 10px;
+
+        .order{
+            gap: 4px;
+            color: var(--ion-color-disabled);
+
+            .order-id{
+                font-weight: 500;
+                color: var(--ion-color-basic) !important;
+            }
+        }
+
+
+        .button-order{
+            
+
+            ion-label{
+                cursor: pointer;
+                padding: 8px 16px;
+                border-radius: 50px;
+                background-color: var(--ion-color-secondary-tint);
+            }
+        }
     }
 
-
-    &::part(content) {
-        margin-right: 16px !important;
-        margin-left: 16px !important;
-    }
-
-    --background: var(--ion-background-alert);
 }
 
-.not-visible {
-    visibility: hidden;
-    width: 17px;
-}
 
 @media(min-width:390px) {
 
@@ -65,10 +82,8 @@ ion-modal {
         }
     }
 
-    ion-modal {
-        &::part(content) {
-            margin-right: 24px !important;
-            margin-left: 24px !important;
-        }
+    .container-orders{
+        padding-inline: 24px;
     }
+
 }
