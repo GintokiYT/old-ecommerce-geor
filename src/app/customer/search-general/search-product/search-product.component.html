@@ -7,12 +7,14 @@
   </div>
   <div class="search-filter">
     <p class="m-0">48 productos</p>
-    <icon-filter></icon-filter>
+    <icon-filter (click)="openModalFilter()"></icon-filter>
   </div>
 </ion-header>
 
 <ion-content>
 
-  <app-featured [routeproductback]="routeproductback"></app-featured>
+  <app-featured [routeSearchProduct]="routeSearchProduct"></app-featured>
 
 </ion-content>
+
+<app-modal-filter *ngIf="modalStatusFilterProduct"></app-modal-filter>

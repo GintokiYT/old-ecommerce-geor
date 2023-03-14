@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 
 interface IProduct {
   image?: string;
@@ -22,7 +23,7 @@ export class SliderVariantsComponent extends ViewComponent implements OnInit {
     slidesPerView: 'auto',
   };
 
-  constructor(_injector:Injector) {
+  constructor(_injector:Injector, private router: Router) {
     super(_injector)
    }
 
@@ -39,6 +40,13 @@ export class SliderVariantsComponent extends ViewComponent implements OnInit {
   }
 
   goVariants(){
+    const currentRouter = this.router.url;
+
+    if(currentRouter === '/customer/search-general/product-detail') {
+      return this.navigation.forward('/customer/search-general/product-detail/variants');
+    }
+
+
     this.navigation.root('/customer/variants','forward');
   }
 }

@@ -4,6 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 import { ModalAddComponent } from './modal-add/modal-add.component';
 import { ProductDetailService } from '../../../services/productDetail.service';
 import { RouteService } from '../../../services/route.service';
+import { Router } from '@angular/router';
 
 interface Colours {
   images: string,
@@ -30,8 +31,12 @@ export class VariantsComponent extends ViewComponent implements OnInit {
   modalAdd: boolean;
   modalBasket: boolean;
 
-  constructor(_injector: Injector, private productDetailService: ProductDetailService,
-    private rs: RouteService) {
+  constructor(
+    _injector: Injector,
+    private productDetailService: ProductDetailService,
+    private rs: RouteService,
+    private router: Router
+  ) {
     super(_injector);
     this.productDetailService.getStatusModalVariants.subscribe(status => this.modalVariants = status);
     this.productDetailService.getStatusModalAdd.subscribe(status => this.modalAdd = status);
@@ -60,6 +65,13 @@ export class VariantsComponent extends ViewComponent implements OnInit {
   ];
 
   goToConfirmOrder() {
+
+    const currentRouter = this.router.url;
+
+    if(currentRouter === '/customer/search-general/product-detail/variants') {
+      return this.navigation.forward('/customer/search-general/product-detail/confirm-order');
+    }
+
     this.rs.setMiPedidoLastBackDirection("/customer/variants");
     this.navigation.root("/customer/confirm-order", "forward");
   }

@@ -20,6 +20,15 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goToHome(){
+    const currentRouter = this.router.url;
+
+    if(currentRouter === '/customer/search-general/product-detail') {
+      this.navigation.back('/customer/search-general/product');
+      return;
+    }
+
+
+
     const back = localStorage.getItem('back') ?? '';
 
     if(back) {

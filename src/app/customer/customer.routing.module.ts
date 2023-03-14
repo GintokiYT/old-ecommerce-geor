@@ -72,6 +72,9 @@ import { OrderDetailComponent } from './manage-order/order-detail/order-detail.c
 import { InstructionsComponent } from './manage-order/instructions/instructions.component';
 import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
 
+//* Routes
+import { searchGeneralRoutes } from './router/searchGeneralRoutes';
+
 const routes: Routes = [
   {
     path: '',
@@ -110,9 +113,15 @@ const routes: Routes = [
       //* End routes settings
 
       //* Search General
-      { path: 'search-general', component: SearchGeneralComponent },
-      { path: 'search-general/filter', component: SearchFilterComponent },
-      { path: 'search-general/product', component: SearchProductComponent },
+      // { path: 'search-general', component: SearchGeneralComponent },
+      // { path: 'search-general/filter', component: SearchFilterComponent },
+      // { path: 'search-general/product', component: SearchProductComponent },
+      // { path: 'search-general/product-detail', component: ProductComponent },
+      // { path: 'search-general/product-detail/variants',component:VariantsComponent},
+      // { path: 'search-general/product-detail/returns-exchanges', component: ReturnsExchangesSettingsComponent },
+      // { path: 'search-general/product-detail/confirm-order', component: ConfirmOrderComponent},
+      // { path: 'search-general/product-detail/internal-inbox/:id', component: InternalInboxComponent },
+      // {path: 'search-general/product-detail/add-coupons', component: AddCouponsComponent},
       //* End Search General
 
         /*  { path: 'empty-bas'} */
@@ -170,6 +179,9 @@ const routes: Routes = [
     ]
   }
 ];
+
+routes[0].children.unshift(...searchGeneralRoutes);
+console.log(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
