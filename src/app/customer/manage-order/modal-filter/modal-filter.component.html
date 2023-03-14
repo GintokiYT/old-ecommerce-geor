@@ -1,0 +1,25 @@
+<div class="overlay"
+   [ngClass]="{'modal-visible': modalIsVisible===true,
+               'modal-not-visible' : modalIsVisible===false}"
+   #modal 
+>
+  <div class="modal-container d-flex flex-column justify-content-center" style="gap: 24px;">
+    <ion-list lines="none">
+      <ion-item button detail="false" (click)="onSelectTypeFilter('pendiente de pago')">
+        <ion-label>Pendiente de pago</ion-label>
+      </ion-item>
+      <ion-item button detail="false" (click)="onSelectTypeFilter('anulado')">
+        <ion-label>Anulados</ion-label>
+      </ion-item>
+      <ion-item button detail="false" (click)="onSelectTypeFilter('en proceso')">
+        <ion-label>En proceso</ion-label>
+      </ion-item>
+      <ion-item button detail="false" (click)="onSelectTypeFilter('entregado')">
+        <ion-label>Entregado</ion-label>
+      </ion-item>
+      <ion-item button detail="false" (click)="onSelectTypeFilter('todo')">
+        <ion-label>Todo</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>
