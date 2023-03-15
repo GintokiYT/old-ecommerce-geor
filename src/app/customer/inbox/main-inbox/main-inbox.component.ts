@@ -51,7 +51,11 @@ export class MainInboxComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   openInternalBox(id: string) {
-    this.navigation.forward('/customer/internal-inbox/1');
+
+    const ionfooter: any = document.querySelector('.ion-footer');
+    ionfooter.style.display = 'none'
+
+    this.navigation.root('/customer/internal-inbox/1', 'forward');
   }
 
   changeMode() {

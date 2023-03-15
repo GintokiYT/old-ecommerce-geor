@@ -49,6 +49,7 @@ img {
   width: 100%;
   z-index: 1000;
   border-bottom: 1px solid var(--ion-color-separator);
+  padding-top: var(--ion-safe-area-top);
 }
 // End Page
 

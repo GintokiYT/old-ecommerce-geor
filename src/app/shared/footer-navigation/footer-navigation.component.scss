@@ -1,21 +1,17 @@
 .inbox-ion-footer {
+
+  ion-footer {
+    height: calc(env(safe-area-inset-bottom) + 45px);
+  }
+
   ion-toolbar{
-    //position: sticky;
-    //bottom: 0;
-    //left: 0;
-    //z-index: 10000;
-    //width: 100%;
     background-color: var(--ion-background-color);
     border-top: 1px solid var(--ion-color-separator);
-    //--min-height: unset;
 
     --padding-top: 10px;
     --padding-end: 16px;
     --padding-start: 16px;
     --padding-bottom: 16px;
-
-    //padding-bottom: calc(var(--ion-safe-area-bottom) + 16px);
-    //padding-bottom: calc(16px + 16px);
 
     @media (min-width: 390px) {
       --padding-start: 24px;
