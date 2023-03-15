@@ -13,7 +13,7 @@ export class SearchProductComponent extends ViewComponent implements OnInit {
 
   routeSearchProduct: string = '/customer/search-general/product-detail';
 
-  modalStatusFilterProduct: boolean = true;
+  modalStatusFilterProduct: boolean = false;
 
   constructor(_injector: Injector, private searchService: SearchService) {
     super(_injector);

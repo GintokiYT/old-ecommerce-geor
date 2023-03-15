@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-filter-size',
@@ -6,6 +7,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./filter-size.component.scss'],
 })
 export class FilterSizeComponent implements OnInit {
+
+  @Output() changeStatusFilterSize = new EventEmitter<boolean>;
 
   @ViewChild('mySize') mySize: ElementRef;
 
@@ -23,9 +26,27 @@ export class FilterSizeComponent implements OnInit {
 
     sizeItems.forEach( size => {
       size.addEventListener('click', () => {
-        size.classList.toggle('active')
+        size.classList.toggle('active');
+
+        if(validarFilterActive(sizeItems)) {
+          this.changeStatusFilterSize.emit(true);
+        } else {
+          this.changeStatusFilterSize.emit(false);
+        }
       })
     })
+
+    function validarFilterActive(items: NodeListOf<HTMLDivElement>) {
+      const status = [];
+      items.forEach(item => {
+        const classItem: boolean =  item.classList.contains('active')? true : false;
+        status.push(classItem)
+      })
+
+      const newStatus = status.filter( e => e === true ).length === 0 ? true : false;
+
+      return newStatus;
+    }
   }
 
   toggleInfo() {
