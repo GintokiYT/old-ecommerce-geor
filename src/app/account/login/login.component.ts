@@ -74,12 +74,13 @@ export class LoginComponent implements OnInit {
   }
 
   onGoToRegister() {
-    this.navigator.forward(RouteCollection.auth.register);
+    //this.navigator.forward(RouteCollection.auth.register);
     this.navigator.root("/register","forward")
   }
 
   onToForgotPassword() {
-    this.navigator.forward(RouteCollection.auth.recoverPassword);
+    //this.navigator.forward(RouteCollection.auth.recoverPassword);
+    this.navigator.root("/recover-password","forward")
   }
 
   onSubmit() {

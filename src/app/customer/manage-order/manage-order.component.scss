@@ -4,6 +4,7 @@ ion-header {
     width: 100%;
     z-index: 1000;
 
+
     ion-toolbar {
         --padding-top: 16px !important;
         --padding-start: 16px !important;
@@ -18,6 +19,10 @@ ion-header {
                 &.button-left {
                     filter: var(--ion-color-dark-filter);
                 }
+
+                &.button-right{
+                    filter: var(--ion-color-dark-filter);
+                }
             }
 
             .title {
@@ -25,30 +30,46 @@ ion-header {
             }
         }
     }
-
 }
 
 
-.addresses-data_container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    gap: 25px;
+.container-orders{
+    padding-inline: 16px;
+    gap: 32px;
+    margin-bottom: calc(var(--ion-safe-area-bottom,0) + 32px);
 
-    .address-container {
-        gap: 12px;
 
-        .edit-address{
+    .order-container{
+        gap: 8px;
+        border: 1px solid var(--ion-color-border-input);
+        border-radius: 10px;
+        padding: 10px;
+
+        .order{
+            gap: 4px;
             color: var(--ion-color-disabled);
-            font-size: 14px;
+
+            .order-id{
+                font-weight: 500;
+                color: var(--ion-color-basic) !important;
+            }
+        }
+
+
+        .button-order{
+            
+
+            ion-label{
+                cursor: pointer;
+                padding: 8px 16px;
+                border-radius: 50px;
+                background-color: var(--ion-color-secondary-tint);
+            }
         }
     }
 
 }
 
-ion-footer {
-    position: fixed;
-    bottom: 0;
-}
 
 @media(min-width:390px) {
 
@@ -61,8 +82,8 @@ ion-footer {
         }
     }
 
-    .addresses-data_container {
-        padding-left: 24px !important;
-        padding-right: 24px !important;
+    .container-orders{
+        padding-inline: 24px;
     }
+
 }

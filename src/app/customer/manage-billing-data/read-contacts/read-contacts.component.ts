@@ -30,7 +30,13 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
     private router: Router) {
     super(_injector);
     this.cs.currentContacts$.subscribe((data) => {
-      this.contacts = data;
+      this.contacts = data.map( contact => {
+        const nContact= {
+          ...contact,
+          selected: false
+        }
+        return nContact;
+      });
       this.contactsResults = [...this.contacts];
     });
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
@@ -55,13 +61,19 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
   }
 
   goToAddCompany(contact) {
+    
+    const contactSelected = this.contactsResults.filter( c => c.contactId === contact.contactId)[0];
+    contactSelected.selected = true;
+
     const contactTemp = {
       name: contact?.name?.display,
       number: contact?.phones[0].number
     }
-    this.bs.setContactTemp(contactTemp);
-    //this.navigation.back("/customer/manage-billing-data/add-company");
-    this.navigation.back(this.previousRoute);
+    this.bs.setContactTemp(contactTemp);    
+
+    setTimeout(() => {
+      this.navigation.back(this.previousRoute);
+    }, 200);
 
   }
 

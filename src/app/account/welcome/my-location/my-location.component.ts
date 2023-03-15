@@ -2,7 +2,7 @@ import { RouteCollection } from 'src/shared/route-collection';
 import { Component, Injector, OnInit, OnDestroy } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
-import { Geolocation,  } from '@capacitor/geolocation';
+import { Geolocation, } from '@capacitor/geolocation';
 
 import { AlertController } from '@ionic/angular';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
@@ -34,8 +34,8 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   ) {
     super(_injector);
     this.mapId = 'map';
-    this.languageService.getLanguage.subscribe( language => this.contenido = language['myLocation'])
-    this.rs.currentMyLocationLastBackDirection.subscribe( d => this.previousRoute = d)
+    this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
+    this.rs.currentMyLocationLastBackDirection.subscribe(d => this.previousRoute = d)
   }
 
 
@@ -90,7 +90,7 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
       const requestPermissions = await Geolocation.requestPermissions();
       console.log(requestPermissions);
       return true;
-    } catch(error) {
+    } catch (error) {
       console.log('No tienes permisos')
       return false;
     }
@@ -113,7 +113,12 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   nextProyect() {
-    this.navigation.forward('customer/home');
+    if (this.previousRoute.includes("manage")) {
+      this.navigation.back(this.previousRoute);
+    } else {
+      this.navigation.forward('customer/home');
+    }
+
   }
 
 }
