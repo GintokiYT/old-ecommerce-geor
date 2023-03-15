@@ -10,6 +10,12 @@ export class ModalFilterComponent implements OnInit {
   @Output() changeStatusFilter = new EventEmitter<boolean>();
   @ViewChild('mySize') mySize: ElementRef;
 
+  statusButtonClear: boolean = true;
+
+  statusFilterSize: boolean = true;
+  statusFilterThickness: boolean = true;
+  statusFilterColor: boolean = true;
+
   constructor() {}
 
   ngOnInit() {
@@ -17,17 +23,21 @@ export class ModalFilterComponent implements OnInit {
   }
 
   closeFilter() {
-    this.changeStatusFilter.emit(false);
+    const modalcontainer: HTMLDivElement = document.querySelector('.modal-container');
+    modalcontainer.classList.remove('open');
+    modalcontainer.classList.add('close');
+
+    setTimeout( () => this.changeStatusFilter.emit(false), 300);
   }
 
+  changeStatusFilterSize(status: boolean) {
+    this.statusFilterSize = status;
 
-  // toggleInfo(info: string) {
-  //   const mySize: HTMLDivElement = this.mySize.nativeElement;
+    if(this.statusFilterSize === false || this.statusFilterThickness === false || this.statusFilterColor === false) {
+      this.statusButtonClear = false;
+    } else {
+      this.statusButtonClear = true;
+    }
+  }
 
-  //   switch(info) {
-  //     case 'size':
-  //       mySize.classList.toggle('close');
-  //       break;
-  //   }
-  // }
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-filter-thickness',
@@ -6,6 +6,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./filter-thickness.component.scss'],
 })
 export class FilterThicknessComponent implements OnInit {
+
+  @Output() changeStatusButtonClear = new EventEmitter<boolean>;
 
   @ViewChild('myThickness') myThickness: ElementRef;
 
@@ -23,9 +25,28 @@ export class FilterThicknessComponent implements OnInit {
 
     thicknessItems.forEach( thickness => {
       thickness.addEventListener('click', () => {
-        thickness.classList.toggle('active')
+        thickness.classList.toggle('active');
+
+        if(validarFilterActive(thicknessItems)) {
+          this.changeStatusButtonClear.emit(true);
+        } else {
+          this.changeStatusButtonClear.emit(false);
+        }
+
       })
     })
+
+    function validarFilterActive(items: NodeListOf<HTMLDivElement>) {
+      const status = [];
+      items.forEach(item => {
+        const classItem: boolean =  item.classList.contains('active')? true : false;
+        status.push(classItem)
+      })
+
+      const newStatus = status.filter( e => e === true ).length === 0 ? true : false;
+
+      return newStatus;
+    }
   }
 
   toggleInfo() {
