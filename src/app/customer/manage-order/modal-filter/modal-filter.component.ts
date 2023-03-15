@@ -20,6 +20,34 @@ export class ModalFilterComponent implements OnInit {
   @ViewChild("modal")
   modal!: ElementRef<HTMLDivElement>;
 
+  options : any[] = [
+    {
+      id: 1,
+      option: "Pendiente de pago",
+      selected: false
+    },
+    {
+      id: 2,
+      option: "Anulado",
+      selected: false
+    },
+    {
+      id: 3,
+      option: "En proceso",
+      selected: false
+    },
+    {
+      id:4,
+      option: "Entregado",
+      selected: false
+    },
+    {
+      id:5,
+      option: "Todo",
+      selected: true
+    },
+  ]
+
   constructor() { }
 
   ngOnInit() {}
@@ -42,11 +70,16 @@ export class ModalFilterComponent implements OnInit {
 
 
   onSelectTypeFilter(type: string){
+    const test =  this.options.filter( o => o.option!==type).map( o => o.selected=false);
+    this.options.filter( o => o.option===type)[0].selected = true;
+    
     const typeFormated = type.toUpperCase();
 
-    this.onSelectFilter.emit(typeFormated);
-
-    this.onModalNotVisible.emit(false);
+    setTimeout(() => {
+      this.onModalNotVisible.emit(false);  
+      this.onSelectFilter.emit(typeFormated);
+    }, 200);
+    
   }
 
 }
