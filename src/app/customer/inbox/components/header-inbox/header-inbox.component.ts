@@ -26,13 +26,18 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
 
   goBack() {
 
-    const currentRouter = this.router.url;
+    const ionfooter: any = document.querySelector('.ion-footer');
+    ionfooter.style.display = 'none';
+
+    const currentRouter: string = this.router.url;
+
+    console.log(currentRouter);
 
     if(currentRouter.includes('/customer/search-general/product-detail/internal-inbox')) {
-      return this.navigation.back('/customer/search-general/product-detail');
+      this.navigation.back('/customer/search-general/product-detail');
     }
 
-    this.navigation.root(this.previousRoute,"back");
+    this.navigation.back('/customer/main-inbox');
   }
 
   openTelf() {

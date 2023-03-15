@@ -1,18 +1,10 @@
 .container-header-inbox {
   padding: 24px 16px 4px 16px;
   background: var(--ion-background-color);
-
-  // padding-top: calc(var(--ion-safe-area-top) + 24px);
-  // padding-top: calc(16px + 24px);
-  // padding-top: calc(var(--ion-safe-area-top) + var(--ion-padding-top));
   padding-top: var(--ion-padding-top);
 
   @media (min-width: 390px) {
     padding: 24px 24px 4px 24px;
-
-    // padding-top: calc(var(--ion-safe-area-top) + 24px);
-    // padding-top: calc(16px + 24px);
-    // padding-top: calc(var(--ion-safe-area-top) + var(--ion-padding-top));
     padding-top: var(--ion-padding-top);
   }
 }

@@ -98,6 +98,7 @@ export class FilterPriceComponent implements OnInit {
   toggleInfo() {
     const myPrice: HTMLDivElement = this.myPrice.nativeElement;
     myPrice.classList.toggle('close');
+
     this.statusArrow = myPrice.classList.contains('close')? true : false;
   }
 
