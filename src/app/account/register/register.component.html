@@ -50,7 +50,7 @@
           <img [src]="flag" width="24px"/>
           <ion-label>+{{codePhone}}</ion-label>
         </div>
-        <ion-item lines="none" class="form-group item-country" (ionBlur)="checkBlur('phone',true)" (ionFocus)="checkFocus('phone')">
+        <ion-item lines="none" class="item-country" (ionBlur)="checkBlur('phone',true)" (ionFocus)="checkFocus('phone')">
           <ion-input #inputPhone class="ion-text-left input-phone" formControlName="movil" inputmode="numeric" type="tel"
             maxlength="11" mask="*** *** ***" (ionChange) = "changeValueInputPhone()">
           </ion-input>

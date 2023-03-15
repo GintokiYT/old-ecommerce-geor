@@ -161,14 +161,15 @@ export class EditBillComponent extends ViewComponent implements OnInit {
             })
             this.contacts = result.contacts;
             this.cs.setContactsData(this.contacts);
-            this.router.navigate(["/customer/manage-billing-data/add-company/read-contacts"])
+            this.navigation.root("/customer/manage-billing-data/add-company/read-contacts","forward")
           } catch (e) {
             console.log(e)
           }
           break;
 
         case "prompt-with-rationale": // cuando se da en denegar
-          this.navigation.forward("/customer/manage-billing-data/add-company/set-contact"); break;
+          this.navigation.root("/customer/manage-billing-data/add-company/set-contact","forward"); break;
+          
 
       }
     }
