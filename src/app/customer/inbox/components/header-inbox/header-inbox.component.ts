@@ -29,12 +29,12 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
     const ionfooter: any = document.querySelector('.ion-footer');
     ionfooter.style.display = 'none';
 
-    const currentRouter: string = this.router.url;
+    const currentRouter = this.router.url;
 
     console.log(currentRouter);
 
     if(currentRouter.includes('/customer/search-general/product-detail/internal-inbox')) {
-      this.navigation.back('/customer/search-general/product-detail');
+      return this.navigation.back('/customer/search-general/product-detail');
     }
 
     this.navigation.back('/customer/main-inbox');
