@@ -30,4 +30,8 @@ export class SearchProductComponent extends ViewComponent implements OnInit {
   openModalFilter() {
     this.modalStatusFilterProduct = true;
   }
+
+  changeStatusFilter(status: boolean) {
+    this.modalStatusFilterProduct = status;
+  }
 }

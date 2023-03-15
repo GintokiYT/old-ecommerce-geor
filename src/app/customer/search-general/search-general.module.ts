@@ -6,28 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { ShareModule } from 'src/app/shared/shared.module';
 import { SearchGeneralComponent } from './search-general/search-general.component';
 
-import { iconScanner } from './icon-scanner';
 import { iconInputClose } from './icon-input-close';
-import { iconCloseSearch } from './icon-close-search';
-import { iconDeleteTrash } from './icon-delete-trash';
-import { iconArrow } from './icon-arrow';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { SearchProductComponent } from './search-product/search-product.component';
-import { iconArrowBack } from './icon-arrow-back';
-import { iconFilter } from './icon-filter';
 import { FeaturedComponent } from './featured/featured.component';
 import { ModalFilterComponent } from './modal-filter/modal-filter.component';
-import { iconArrowBottom } from './icon-arrow-bottom';
-import { FilterSizeComponent } from './modal-filter/filter-size';
+import { FilterSizeComponent } from './modal-filter/filter-size/filter-size.component';
+import { FilterThicknessComponent } from './modal-filter/filter-thickness/filter-thickness.component';
+import { FilterColorComponent } from './modal-filter/filter-color/filter-color.component';
+import { FilterPriceComponent } from './modal-filter/filter-price/filter-price.component';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ShareModule
-  ],
   declarations: [
     SearchGeneralComponent,
     SearchFilterComponent,
@@ -35,30 +25,28 @@ import { FilterSizeComponent } from './modal-filter/filter-size';
     FeaturedComponent,
     ModalFilterComponent,
     FilterSizeComponent,
-    iconScanner,
+    FilterThicknessComponent,
+    FilterColorComponent,
+    FilterPriceComponent,
     iconInputClose,
-    iconCloseSearch,
-    iconDeleteTrash,
-    iconArrowBack,
-    iconArrow,
-    iconFilter,
-    iconArrowBottom
   ],
-  exports:[
+  exports: [
     SearchGeneralComponent,
     SearchFilterComponent,
     SearchProductComponent,
     FeaturedComponent,
     ModalFilterComponent,
     FilterSizeComponent,
-    iconScanner,
+    FilterThicknessComponent,
+    FilterColorComponent,
+    FilterPriceComponent,
     iconInputClose,
-    iconCloseSearch,
-    iconDeleteTrash,
-    iconArrowBack,
-    iconArrow,
-    iconFilter,
-    iconArrowBottom
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ShareModule,
   ]
 })
 export class SearchGeneralModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modal-filter',
@@ -7,21 +7,27 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class ModalFilterComponent implements OnInit {
 
+  @Output() changeStatusFilter = new EventEmitter<boolean>();
   @ViewChild('mySize') mySize: ElementRef;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {}
-
-  toggleInfo(info: string) {
-    const mySize: HTMLDivElement = this.mySize.nativeElement;
-
-    switch(info) {
-      case 'size':
-        mySize.classList.toggle('close');
-        break;
-    }
-
-
+  ngOnInit() {
+    console.log();
   }
+
+  closeFilter() {
+    this.changeStatusFilter.emit(false);
+  }
+
+
+  // toggleInfo(info: string) {
+  //   const mySize: HTMLDivElement = this.mySize.nativeElement;
+
+  //   switch(info) {
+  //     case 'size':
+  //       mySize.classList.toggle('close');
+  //       break;
+  //   }
+  // }
 }

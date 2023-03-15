@@ -29,6 +29,7 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
   ngAfterViewInit() {
     const currentRoute: string = this.router.url;
     const itemsFooter = Array.from(this.myItemFooter.toArray().map( item => item.nativeElement)) as HTMLDivElement[]
+
     this.addActiveClass(itemsFooter, currentRoute);
 
     itemsFooter.forEach( (item, index) => {
@@ -36,9 +37,9 @@ export class FooterNavigationComponent extends ViewComponent implements OnInit {
         if(itemsFooter[index].classList.contains('active') !== true) {
 
           if(this.userLogged === true && index === 4) {
-            this.navigation.forward(this.getRoutes()[index][1])
+            this.navigation.root(this.getRoutes()[index][1], 'forward')
           } else {
-            this.navigation.forward(this.getRoutes()[index][0]);
+            this.navigation.root(this.getRoutes()[index][0], 'forward');
           }
 
           this.addActiveClass(itemsFooter, currentRoute);
