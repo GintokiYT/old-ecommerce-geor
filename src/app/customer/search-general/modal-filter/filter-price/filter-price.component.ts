@@ -22,7 +22,7 @@ export class FilterPriceComponent implements OnInit {
     const output: HTMLDivElement = document.querySelector('.output');
 
     let isDragging = false;
-    let sliderValue: any = 30;
+    let sliderValue: any = 85;
 
     updateSlider(sliderValue);
 
