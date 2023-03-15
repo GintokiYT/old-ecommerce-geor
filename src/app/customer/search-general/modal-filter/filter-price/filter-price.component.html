@@ -9,12 +9,15 @@
   </div>
   <div class="content" #myPrice>
     <div class="main">
-      <input class="slider" #slider type="range" min="0" max="100" value="85" step=".50">
-      <div class="selector" #selector>
-        <!-- <div class="selectorBtn"></div> -->
-        <p class="selectValue m-0" #selectValue>0</p>
+
+      <div class="slider">
+        <div class="slider-fill"></div>
+        <div class="slider-thumb-wrapper">
+          <div class="slider-thumb"></div>
+          <div class="output"></div>
+        </div>
       </div>
-      <div class="progressBar" #progressBar></div>
+
     </div>
   </div>
 </div>

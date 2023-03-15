@@ -38,63 +38,43 @@ svg {
 }
 
 .slider {
-  -webkit-appearance: none;
-  width: 100%;
+  width: calc(100% - 32px);
+  margin: 0 auto;
   height: 3px;
-  outline: none;
-  background-color: #819CFF;
-  position: absolute;
-}
-
-.slider::-webkit-slider-thumb {
-  // -webkit-appearance: none;
-  width: 10px;
-  height: 12px;
-  cursor: pointer;
-  z-index: 3;
+  background-color: #ccc;
   position: relative;
 }
 
-.selector {
+.slider-fill {
+  height: 100%;
+  background-color: #007bff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.slider-thumb-wrapper {
+  position: relative;
+}
+
+.slider-thumb {
   width: 12px;
   height: 12px;
-  position: absolute;
-  left: 0%;
-  transform: translateX(0%);
-  z-index: 2;
-  top: -5px;
-}
-
-.selectorBtn {
-  width: 15px;
-  height: 15px;
-  background-color: #023AFF;
-  background-size: cover;
-  background-position: center;
+  background-color: #007bff;
   border-radius: 50%;
   position: absolute;
-}
-
-.selectValue {
-  width: 13ch;
-  position: absolute;
-  top: -25px;
-  left: -5ch;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  user-select: none;
-}
-
-.selectValue::before {
-  content: "S/ ";
-}
-
-.progressBar {
-  width: 0%;
-  height: 3px;
-  background-color: #023AFF;
-  position: absolute;
-  top: 0;
+  top: -4px;
   left: 0;
+}
+
+.output {
+  width: 13ch;
+  font-size: 14px;
+  position: absolute;
+  top: -30px;
+  left: -20px;
+
+  &::before {
+    content: "S/ ";
+  }
 }
