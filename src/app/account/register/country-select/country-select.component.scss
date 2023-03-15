@@ -60,9 +60,14 @@ ion-header {
 
 ion-list{
 
+
     ion-item{
         &::part(native){
             padding-inline-end: 0px !important;
+        }
+
+        &:active{
+            --background: var(--ion-background-hover-selected);
         }
 
         ion-icon{

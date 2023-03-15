@@ -35,8 +35,6 @@ export class LoginComponent implements OnInit {
   constructor(private navigator: AppNavigationService,
               private lgService: LoginService) {
     this.visibleFooterNavigation = true;
-
-
   }
 
   ngOnInit() {
@@ -62,15 +60,21 @@ export class LoginComponent implements OnInit {
     //     this.showFakeEye = false;
     //   }
     // }
-    // // Keyboard.addListener('keyboardWillHide', () => {
-    // //   this.showTrueEye = true;
-    // //   this.showFakeEye = false;
-    // // });
+    // Keyboard.addListener('keyboardWillHide', () => {
+    //   this.visibleFooterNavigation = false;
+    // });
 
-    // // Keyboard.addListener('keyboardDidHide', () => {
-    // //   this.showTrueEye = true;
-    // //   this.showFakeEye = false;
-    // // });
+    // Keyboard.addListener('keyboardDidHide', () => {
+    //   this.visibleFooterNavigation = false;
+    // });
+
+    // Keyboard.addListener('keyboardWillShow',() => {
+    //   this.visibleFooterNavigation = true;
+    // })
+
+    // Keyboard.addListener('keyboardDidShow',() => {
+    //   this.visibleFooterNavigation = true;
+    // })
   }
 
   onGoToRegister() {
@@ -103,6 +107,7 @@ export class LoginComponent implements OnInit {
 
   checkFocus(input : string){
     console.log("Focus input")
+    this.visibleFooterNavigation = false;
     switch(input){
       case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = true;
@@ -118,6 +123,9 @@ export class LoginComponent implements OnInit {
   }
 
   checkBlur(input:string){
+
+    this.visibleFooterNavigation = true;
+
     switch(input){
       case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = false; break;
