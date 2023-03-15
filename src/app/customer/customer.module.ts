@@ -27,6 +27,7 @@ import { UserHelpModule } from './userHelp/user-help.module';
 import { ManageAddressesModule } from './manage-addresses/manage-addresses.module';
 import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
 import { SearchGeneralModule } from './search-general/search-general.module';
+import { ManageOrderModule } from './manage-order/manage-order.module';
 
 
 @NgModule({
@@ -50,7 +51,6 @@ import { SearchGeneralModule } from './search-general/search-general.module';
     OtherFormsModule,
     ConfirmCardPayModule,
     CestaModule,
-    CestaModule,
     ManageFavoritesModule,
     ManageBillingDataModule,
     HomeModule,
@@ -58,7 +58,8 @@ import { SearchGeneralModule } from './search-general/search-general.module';
     ManageAddressesModule,
     ManageCouponsModule,
     SettingsModule,
-    SearchGeneralModule
+    SearchGeneralModule,
+    ManageOrderModule
   ],
   declarations: [
 

@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-content-var">
   <div class="search-input">
     <div class="input-container" (click)="goSearchFilter()">
       <input type="search" tabindex="1" [placeholder]="placeholder" disabled>
@@ -10,7 +10,7 @@
 <ion-content>
 
   <div class="container-products">
-    <div class="products" *ngFor="let product of products">
+    <div class="products" *ngFor="let product of products" (click)="goProduct(product)">
       <div class="image" [style.background-image]="'url(\'' + product.image + '\')'" ></div>
       <div class="details">
         <p class="title">{{ product.title }}</p>
@@ -18,27 +18,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div class="container-products"
-  [ngStyle]="{display: statusFocus === true? 'flex':'none'}">
-    <div class="search-header" *ngIf="inputSearch.value.length === 0">
-      <p>Búsquedas recientes</p>
-      <p (click)="deleteAllSearch()">Limpiar</p>
-    </div>
-    <div class="search-history" *ngFor="let history of seachHistoryFilter">
-      <p (click)="searchProduct(history.search)">{{ history.search }}</p>
-      <icon-delete-trash
-        (click)="deleteSearch(history.id)"
-        *ngIf="inputSearch.value.length === 0"
-      ></icon-delete-trash>
-      <icon-arrow *ngIf="inputSearch.value.length > 0"></icon-arrow>
-    </div>
-  </div> -->
-
-  <!-- <div class="container-products"
-  [ngStyle]="{display: statusProductos === true? 'flex':'none'}">
-    <h1>Hello world!</h1>
-  </div> -->
 
 </ion-content>
 

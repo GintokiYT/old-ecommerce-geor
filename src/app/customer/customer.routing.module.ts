@@ -61,12 +61,19 @@ import { SearchGeneralComponent } from './search-general/search-general/search-g
 import { EditBillComponent } from './manage-billing-data/edit-bill/edit-bill.component';
 import { ManageCouponsComponent } from './manage-coupons/manage-coupons.component';
 import { AddCouponComponent } from './manage-coupons/add-coupon/add-coupon.component';
-import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
 import { ProductsWithCouponComponent } from './manage-coupons/products-with-coupon/products-with-coupon.component';
 import { ManageAddressesComponent } from './manage-addresses/manage-addresses.component';
 import { AddressesDeleteComponent } from './manage-addresses/addresses-delete/addresses-delete.component';
 import { SearchFilterComponent } from './search-general/search-filter/search-filter.component';
+import { SearchProductComponent } from './search-general/search-product/search-product.component';
+import { ConditionssComponent } from './add-coupons/conditions/conditions.component';
+import { ManageOrderComponent } from './manage-order/manage-order.component';
+import { OrderDetailComponent } from './manage-order/order-detail/order-detail.component';
+import { InstructionsComponent } from './manage-order/instructions/instructions.component';
+import { ConditionsComponent } from './manage-coupons/conditions/conditions.component';
 
+//* Routes
+import { searchGeneralRoutes } from './router/searchGeneralRoutes';
 
 const routes: Routes = [
   {
@@ -106,8 +113,15 @@ const routes: Routes = [
       //* End routes settings
 
       //* Search General
-      { path: 'search-general', component: SearchGeneralComponent },
-      { path: 'search-general/filter', component: SearchFilterComponent },
+      // { path: 'search-general', component: SearchGeneralComponent },
+      // { path: 'search-general/filter', component: SearchFilterComponent },
+      // { path: 'search-general/product', component: SearchProductComponent },
+      // { path: 'search-general/product-detail', component: ProductComponent },
+      // { path: 'search-general/product-detail/variants',component:VariantsComponent},
+      // { path: 'search-general/product-detail/returns-exchanges', component: ReturnsExchangesSettingsComponent },
+      // { path: 'search-general/product-detail/confirm-order', component: ConfirmOrderComponent},
+      // { path: 'search-general/product-detail/internal-inbox/:id', component: InternalInboxComponent },
+      // {path: 'search-general/product-detail/add-coupons', component: AddCouponsComponent},
       //* End Search General
 
         /*  { path: 'empty-bas'} */
@@ -135,7 +149,7 @@ const routes: Routes = [
       {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
 
       {path: 'add-coupons', component: AddCouponsComponent},
-      {path: 'add-coupons/conditions', component: ConditionsComponent},
+      {path: 'add-coupons/conditions', component: ConditionssComponent},
       {path: 'billing-data', component: BillingDataComponent},
       {path: 'manage-user-information', component: ManageUserInformationComponent},
       {path: 'manage-billing-data', component: ManageBillingDataComponent},
@@ -148,9 +162,12 @@ const routes: Routes = [
       {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
       {path: 'manage-coupons', component:ManageCouponsComponent},
       {path: 'manage-coupons/add-coupon', component:AddCouponComponent},
-      {path: 'manage-coupons/conditions', component:ConditionsComponent},
+      {path: 'manage-coupons/conditions', component: ConditionsComponent},
       {path: 'manage-coupons/products-with-coupon', component:ProductsWithCouponComponent},
-      
+      {path: 'manage-order', component:ManageOrderComponent},
+      {path: 'manage-order/order-detail/:id', component:OrderDetailComponent},
+      {path: 'manage-order/instructions', component:InstructionsComponent},
+
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
@@ -162,6 +179,9 @@ const routes: Routes = [
     ]
   }
 ];
+
+routes[0].children.unshift(...searchGeneralRoutes);
+console.log(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

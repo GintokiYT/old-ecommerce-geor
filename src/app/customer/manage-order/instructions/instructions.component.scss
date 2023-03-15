@@ -1,0 +1,19 @@
+.container-instructions{
+    padding-inline: 16px;
+    gap: 32px;
+    margin-bottom: calc(var(--ion-safe-area-bottom, 0) + 108px);
+}
+
+ion-footer{
+    position: fixed;
+    bottom: 0;
+}
+
+@media(min-width:390px){
+    .container-instructions{
+        padding-inline: 24px;
+        margin-bottom: calc(var(--ion-safe-area-bottom, 0) + 116px);
+    }
+
+    
+}

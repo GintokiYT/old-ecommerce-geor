@@ -45,7 +45,9 @@ export class AddCouponsComponent extends ViewComponent implements OnInit {
     super(_injector)
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    //comment
+  }
 
   inputChange(value){
     this.haveCode = (this.inputPassword.length>0) ? true : false;

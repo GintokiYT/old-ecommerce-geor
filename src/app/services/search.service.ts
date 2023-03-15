@@ -27,4 +27,13 @@ export class SearchService {
     return this.products;
   }
 
+
+  private search = new BehaviorSubject<string>('');
+
+  setSearch(search: string) {
+    this.search.next(search);
+  }
+  get getSearch():Observable<string>{
+    return this.search;
+  }
 }
