@@ -8,9 +8,6 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
 export class ModalTypeBillComponent implements OnInit {
 
   @Input()
-  titleModalDelete = ""
-
-  @Input()
   modalIsVisible = false;
 
   @Output()
@@ -19,9 +16,19 @@ export class ModalTypeBillComponent implements OnInit {
   @Output()
   onSelectTypeBill: EventEmitter<any> = new EventEmitter<any>();
 
-
   @ViewChild("modal")
   modal!: ElementRef<HTMLDivElement>;
+
+  types : any[] = [
+    {
+      type: "Factura",
+      selected: false
+    },
+    {
+      type: "Boleta",
+      selected: false
+    }
+  ]
 
   constructor() { }
 
@@ -50,6 +57,10 @@ export class ModalTypeBillComponent implements OnInit {
     this.onSelectTypeBill.emit("Boleta")
     this.modalIsVisible = false;
     this.onModalNotVisible.emit(this.modalIsVisible);
+  }
+
+  onSelectType(type: string){
+
   }
 
 

@@ -48,8 +48,6 @@ ion-header {
 
 
 .contacts-container{
-    padding-left: 16px;
-    padding-right: 16px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -60,13 +58,13 @@ ion-header {
             --background: var(--ion-background-hover-selected);
         }
         
-        --inner-padding-start : 0px !important;
+        // --inner-padding-start : 0px !important;
         --inner-padding-end: 0px !important;
 
-        &::part(native){
-            padding-inline-end: 0px !important;
-            padding-inline-start: 0px !important;
-        }
+        // &::part(native){
+        //     padding-inline-end: 0px !important;
+        //     padding-inline-start: 0px !important;
+        // }
 
         .phone{
             font-size: 14px;
