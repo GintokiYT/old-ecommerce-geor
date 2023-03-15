@@ -12,6 +12,49 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
 
   modalIsVisible : boolean = false;
 
+  options : any[] = [
+    {
+      option: "Pedidos",
+      src: "/assets/icons/icon-order.svg",
+      goTo: "/customer/manage-order"
+    },
+    {
+      option: "Cupones",
+      src: "/assets/icons/icon-ticket.svg",
+      goTo: "/customer/manage-coupons"
+    },
+    {
+      option: "Favoritos",
+      src: "/assets/icons/icon-heart.svg",
+      goTo: "/customer/manage-favorites"
+    },
+    {
+      option: "Equipo",
+      src: "/assets/icons/icon-3user.svg",
+      goTo: "/customer/collaborative-team"
+    },
+    {
+      option: "Direcciones",
+      src: "/assets/icons/icon-location.svg",
+      goTo: "/customer/manage-addresses"
+    },
+    {
+      option: "Métodos de pago",
+      src: "/assets/icons/icon-pay.svg",
+      goTo: "/customer/payment-method-configuration"
+    },
+    {
+      option: "Datos de facturación",
+      src: "/assets/icons/icon-paper.svg",
+      goTo: "/customer/manage-billing-data"
+    },
+    {
+      option: "Ayuda",
+      src: "/assets/icons/icon-helpDark.svg",
+      goTo: "/customer/user-help"
+    },
+  ]
+
 
   constructor(private _injector: Injector) {
       super(_injector);
@@ -87,5 +130,10 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
 
   goToManageAddresses(){
     this.navigation.forward("/customer/manage-addresses")
+  }
+
+
+  goTo(direction : string){
+    this.navigation.root(direction,"forward");
   }
 }
