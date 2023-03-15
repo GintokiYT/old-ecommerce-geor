@@ -1,6 +1,6 @@
 .options{
-    padding-right: 52px;
-    padding-left: 24px;
+    padding-right: 60px;
+    padding-left: 16px;
     display: flex;
     justify-content: space-between;
     .card{
@@ -27,7 +27,7 @@ ion-item::part(native){
     padding: 0px;
 }
 #items{
-    padding: 32px 24px 0px 24px;
+    padding: 24px 16px 0px 16px;
     ion-item{
         --inner-padding-end: 0px !important;
         margin-bottom: 24px;
@@ -87,21 +87,28 @@ ion-modal::part(content){
 
 #modal-cash{
     --width: 288px;
-    --height: 256px;
+    --height: auto; 
 }
 
 #modal-transfer{
     --width: 288px;
-    --height: 350px;
+    --height: auto;
 }
 
 #modal-credit{
     --width: 288px;
-    --height: 280px;
+    --height: auto;
 }
 
 
 @media(min-width:390px){
+    .options{
+        padding-right: 52px;
+        padding-left: 24px;
+    }
+    #items{
+        padding: 32px 24px 0px 24px;
+    }
     .content-modals{
         padding: 24px 24px 0px 24px !important;
         .title{
@@ -110,17 +117,14 @@ ion-modal::part(content){
     }
     #modal-cash{
         --width: 342px;
-        --height: 247px;
     }
     
     #modal-transfer{
         --width: 342px;
-        --height: 392px;
     }
     
     #modal-credit{
         --width: 342px;
-        --height: 295px;
     }
     ion-footer{
         ion-button{

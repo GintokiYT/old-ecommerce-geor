@@ -1,5 +1,5 @@
 .cards{
-    margin: 0px 24px 0px 24px;
+    margin: 0px 16px 0px 16px;
  
     #data-card{ 
         padding: 16px 0px 16px 10px;
@@ -183,6 +183,9 @@ ion-footer{
 }
 
 @media(min-width:390px){
+    .cards{
+        margin: 0px 24px 0px 24px;
+    }
     #coupon{
         --width: 343px;
         --height: 318px;

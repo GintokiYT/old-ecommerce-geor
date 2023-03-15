@@ -1,8 +1,8 @@
 .content-add {
-  margin: 0px 24px;
+  margin: 0px 16px;
 }
 form {
-  margin-bottom: 200px;
+  margin-bottom: 300px ;
 }
 ion-item::part(native) {
   padding: 0px;
@@ -100,24 +100,6 @@ ion-footer {
   }
 }
 
-@media (min-width: 390px) {
-  ion-modal {
-    --height: 279px;
-    --width: 342px;
-    #note-code {
-      margin-bottom: 48px;
-    }
-    p {
-      margin: 0px 24px 8px 24px;
-    }
-  }
-  ion-footer {
-    ion-button {
-      height: 48px !important;
-    }
-  }
-}
-
 //header
 button {
   background-color: transparent;
@@ -130,19 +112,12 @@ ion-toolbar {
   );
   --min-height: 0px;
   --padding-top: 16px;
-  --padding-start: 24px;
-  --padding-end: 24px;
+  --padding-start: 16px;
+  --padding-end: 16px;
   --padding-bottom: 24px;
+
 }
 
-@media (max-width: 320px) {
-  ion-toolbar {
-    --padding-top: 32px;
-    --padding-start: 16px;
-    --padding-end: 16px;
-    --padding-bottom: 24px;
-  }
-}
 
 ion-title {
   color: var(--ion-color-basic);
@@ -159,9 +134,39 @@ ion-title {
 
 /* MODIFICACION DE IMAGEN A DARK */
 .back{
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   path {
     stroke: var(--ion-color-basic);
+  }
+}
+
+@media (min-width: 390px) {
+  ion-toolbar {
+    --padding-top: 16px;
+    --padding-start: 24px !important;
+    --padding-end: 24px !important;
+    --padding-bottom: 24px;
+  }
+  .content-add {
+    margin: 0px 24px;
+  }
+  ion-modal {
+    --height: 279px;
+    --width: 342px;
+    #note-code {
+      margin-bottom: 48px;
+    }
+    p {
+      margin: 0px 24px 8px 24px;
+    }
+  }
+  ion-footer {
+    ion-button {
+      height: 48px !important;
+    }
+  }
+  form {
+    margin-bottom: 200px;
   }
 }

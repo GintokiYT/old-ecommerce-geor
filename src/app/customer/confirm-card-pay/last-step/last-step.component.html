@@ -1,5 +1,4 @@
 <ion-content>
-
     <app-header
       title="Último paso"
       backDirection="confirm-order"
@@ -25,7 +24,7 @@
               name="code"
               maxlength="3"
               [(ngModel)]="data.code"
-              required 
+              required
               ></ion-input>
               <img id="info" slot="end" (click)="setOpen(true)" src="/assets/icons/icon-help.svg" alt="help">
           </ion-item>
@@ -50,7 +49,7 @@
         </ng-template>
       </ion-modal>
 
-      <ion-modal id="coupon" [isOpen]="isCouponOpen" >
+      <!-- <ion-modal id="coupon" [isOpen]="isCouponOpen" >
         <ng-template>
           <img id="icon-close" width="15px" (click)="setOpen2(false)" src="/assets/icons/icon-close.svg">
           <div id="content-coupon">
@@ -73,7 +72,7 @@
             </div>
           </div>
         </ng-template>
-      </ion-modal>
+      </ion-modal> -->
 
       <!-- <ion-modal id="mistake" [isOpen]="isMistakeOpen" >
         <ng-template>
@@ -92,16 +91,18 @@
       </ion-modal> -->
 
     </div><!-- End container main-->
-    
+
 </ion-content>
 
 <ion-footer class="footer-ionic">
   <ion-toolbar>
-    <ion-button 
+    <ion-button
       [disabled]="formulario.invalid"
-      (click)="setOpen2(true)"
+      (click)="goTo('/customer/internal-inbox/3')"
       type="submit" color="primary" shape="round" expand="block">
       <ion-label class="fz-normal">Confirmar pago</ion-label>
-    </ion-button>  
+    </ion-button>
   </ion-toolbar>
 </ion-footer>
+
+      <!-- (click)="setOpen2(true)" -->
