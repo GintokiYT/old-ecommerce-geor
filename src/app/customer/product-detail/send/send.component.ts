@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { CountryService } from '../../../services/Country.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-send',
@@ -9,10 +10,22 @@ import { CountryService } from '../../../services/Country.service';
 })
 export class SendComponent extends ViewComponent implements OnInit {
   modalCountry: boolean;
-
-  constructor(_injector:Injector,private country:CountryService) {
+  countryName:string="Perú";
+  countryFlag:string="/assets/flags/pe.svg";
+  constructor(_injector:Injector,private country:CountryService,private route: ActivatedRoute) {
     super(_injector)
     this.country.getStatusModalCountry.subscribe(status=>this.modalCountry=status);
+    if(this.route.snapshot.queryParamMap.get('countryName')){
+      this.countryName= this.route.snapshot.queryParamMap.get('countryName');
+      this.countryFlag= this.route.snapshot.queryParamMap.get('countryFlag');
+    }else{
+      this.countryName="Perú";
+      this.countryFlag="/assets/flags/pe.svg";
+    }
+
+    console.log(this.countryName);
+    console.log(this.countryFlag);
+
    }
 
   ngOnInit() {}
@@ -21,8 +34,17 @@ export class SendComponent extends ViewComponent implements OnInit {
     this.navigation.root('/customer/direction','forward');
   }
 
-    OpenModalCountry() {
+   /*  OpenModalCountry() {
       this.country.setStatusModalCountry(true);
+    }
+     */
+
+    OpenCountryDirection(){
+      const params={
+        countryName:this.countryName,
+        countryFlag:this.countryFlag
+      }
+      this.navigation.root('/customer/country-direction','forward',params);
     }
 
     selectedCountry: any = {

@@ -40,4 +40,7 @@ export class ModalVariantsComponent extends ViewComponent implements OnInit {
     this.productDetailService.setStatusModalVariants(false);
     this.productDetailService.setStatusModalBasket(true);
   }
+  closeModal(){
+    this.productDetailService.setStatusModalVariants(false);
+  }
 }

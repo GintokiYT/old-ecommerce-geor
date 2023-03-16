@@ -8,8 +8,11 @@ import { DeliveryComponent } from './delivery/delivery.component';
 import { DirectionComponent } from './direction/direction.component';
 import { IonicModule } from '@ionic/angular';
 import { CustomerRoutingModule } from '../customer.routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShareModule } from '../../shared/shared.module';
+import { CoreModule } from '@geor360/ecore';
+import { AccountRoutingModule } from 'src/app/account/account.routing.module';
+import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 
 
 
@@ -21,9 +24,14 @@ import { ShareModule } from '../../shared/shared.module';
     IonicModule,
     CustomerRoutingModule,
     FormsModule,
-    ShareModule
+    ShareModule,
+    ReactiveFormsModule,
+    CoreModule,
+    AccountRoutingModule,
+    IonicInputMaskModule
 
   ],
+
   exports:[
     AlertComponent,BuyComponent,ContactComponent,DateComponent,
                 DeliveryComponent,DirectionComponent

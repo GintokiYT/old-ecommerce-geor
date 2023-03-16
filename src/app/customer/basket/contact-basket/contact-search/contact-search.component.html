@@ -44,6 +44,7 @@
     </ion-toolbar>
   </ion-header>
 
+  <div class="container-main container-contact-search">
   <ion-item lines="none" *ngFor="let result of results ;let i=index">
     <ion-checkbox
       slot="end"
@@ -58,10 +59,9 @@
       </div>
     </ion-label>
   </ion-item>
+</div>
 
-</ion-content>
-
-<ion-footer class="ion-no-border">
+<ion-footer class="ion-no-border footer-ionic">
   <ion-toolbar class="ion-no-padding">
     <ion-button
       (click)="goBasket()"
@@ -76,3 +76,7 @@
     </ion-button>
   </ion-toolbar>
 </ion-footer>
+
+</ion-content>
+
+

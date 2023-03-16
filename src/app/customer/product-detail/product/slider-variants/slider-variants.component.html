@@ -5,7 +5,8 @@
   <ion-slides [options]="productSlidesOptions">
     <ion-slide *ngFor="let product of productsForYou">
       <div class="text-start">
-        <ion-img [src]="product.image" [alt]="product.image"></ion-img>
+        <img [src]="product.image" [alt]="product.image">
+        <!-- <ion-img [src]="product.image" [alt]="product.image"></ion-img> -->
       </div>
     </ion-slide>
   </ion-slides>

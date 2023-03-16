@@ -79,17 +79,21 @@ export class LoginComponent implements OnInit {
 
   onGoToRegister() {
     //this.navigator.forward(RouteCollection.auth.register);
+    this.visibleFooterNavigation = false;
     this.navigator.root("/register","forward")
   }
 
   onToForgotPassword() {
+
     //this.navigator.forward(RouteCollection.auth.recoverPassword);
+    this.visibleFooterNavigation = false;
     this.navigator.root("/recover-password","forward")
   }
 
   onSubmit() {
+    this.visibleFooterNavigation = false;
     this.lgService.setUserLogged(true);
-    this.navigator.forward("/customer/manage-user-information");
+    this.navigator.root("/customer/manage-user-information","forward");
   }
 
   onChangeType(ev){

@@ -1,17 +1,15 @@
 <ion-content [fullscreen]="true">
   <app-header-detail title="Envío"></app-header-detail>
   <ion-grid class="ion-no-padding container-main">
-    <ion-row class="mx-4 mb-4">
+    <ion-row class=" content-send ">
 
       <ion-col size="12" class="mb-4">
-        <ion-text class="country d-flex flex-column" (click)="OpenModalCountry()">
+        <ion-text class="country d-flex flex-column" (click)="OpenCountryDirection()">
           <ion-label class="fz-note color">País</ion-label>
           <div class="mb-2">
-            <ng-container *ngIf="selectedCountry">
-              <img class="img-country" [src]="selectedCountry.flag">
-              <ion-label>{{ selectedCountry.country }}</ion-label>
-            </ng-container>
-          </div>
+              <img class="img-country" [src]="countryFlag">
+              <ion-label>{{countryName}}</ion-label>
+             </div>
         </ion-text>
       </ion-col>
 
@@ -41,7 +39,7 @@
         <ion-text class="fz-small">
           <span class="fw-normal">S/ 546.80</span> <br />
           <ion-label class="detail">
-            Precio de envío aproximado con servicio de caraga
+            Precio de envío aproximado con servicio de carga
             nacional
             </ion-label>
           <br />

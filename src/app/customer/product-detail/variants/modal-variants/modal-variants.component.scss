@@ -32,6 +32,7 @@ ion-button:nth-child(1)::part(native) {
 ion-radio {
   margin: 0px !important;
 }
+
 ion-radio::part(container) {
   border: 1px solid var(--ion-border-radio) !important;
 }

@@ -10,9 +10,9 @@
 
         <!-- Title -->
         <ion-label class="title d-block fz-normal fw-500">Miguel Jimenez</ion-label>
-
+    </div>
         <!-- Options container -->
-        <div class="options-container d-flex flex-column">
+        <!-- <div class="options-container d-flex flex-column">
             <div class="option d-flex align-items-center" (click)="goToManageOrder()">
                 <img src="/assets/icons/icon-order.svg" alt="">
                 <ion-label>Pedidos <sup class="amount">99</sup></ion-label>
@@ -45,8 +45,19 @@
                 <img src="/assets/icons/icon-helpDark.svg" alt="">
                 <ion-label>Ayuda</ion-label>
             </div>
-        </div>
-    </div>
+        </div> -->
+
+
+    <ion-list class="options-container" lines="none">
+        <ion-item *ngFor="let opt of options" (click)="goTo(opt.goTo)">
+            <div class="option d-flex align-items-center">
+                <img [src]="opt.src">
+                <ion-label *ngIf="opt.option!=='Pedidos'">{{opt.option}}</ion-label>
+                <ion-label *ngIf="opt.option==='Pedidos'">Pedidos <sup class="amount">99</sup></ion-label>
+            </div>
+        </ion-item>
+    </ion-list>
+
 </ion-content>
 <app-footer-navigation></app-footer-navigation>
 <app-modal-camera

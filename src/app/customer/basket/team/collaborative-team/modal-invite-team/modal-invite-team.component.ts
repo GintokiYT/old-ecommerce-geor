@@ -31,9 +31,10 @@ export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goContactTeam(){
-    localStorage.setItem('back', '/customer/team');
+    // localStorage.setItem('back', '/customer/team');
+    // this.navigation.forward('/customer/contact-team');
 
-    this.navigation.root('/customer/contact-team','forward');
+    this.navigation.forward('/customer/collaborative-team/contact-team');
     this.inviteService.setStatusModalInviteTeam(false);
   }
 }
