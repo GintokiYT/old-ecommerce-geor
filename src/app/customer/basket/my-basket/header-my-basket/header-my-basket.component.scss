@@ -9,9 +9,9 @@ ion-toolbar {
   );
   --min-height: 0px;
   --padding-top: 16px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --padding-bottom: 24px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-bottom: 14px;
 }
 
 .text {
@@ -42,4 +42,14 @@ ion-title {
   rect {
     fill: var(--ion-color-separator);
   }
+}
+
+@media (min-width: 390px) {
+  ion-toolbar {
+    --padding-top: 16px;
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-bottom: 40px;
+  }
+
 }

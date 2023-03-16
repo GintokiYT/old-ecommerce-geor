@@ -100,8 +100,10 @@ body.ios {
   padding-left: 16px;
   padding-right: 16px;
   background-color: var(--ion-background-color);
+  padding-bottom: calc(var(--ion-safe-area-bottom) + var(--ion-padding-bottom));
 
   @media(min-width: 390px) {
     padding-bottom: var(--ion-padding-bottom);
+    padding-bottom: calc(var(--ion-safe-area-bottom) + var(--ion-padding-bottom));
   }
 }

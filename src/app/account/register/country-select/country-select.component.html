@@ -16,8 +16,6 @@
   <ion-list lines="none" class="container-main">
     <ion-item 
       *ngFor="let result of dataCountriesResults" 
-      button 
-      detail="false" 
       (click)="onSelectCountry(result)"
     >
       <img [src]="result.flag" width="24px" slot="start">

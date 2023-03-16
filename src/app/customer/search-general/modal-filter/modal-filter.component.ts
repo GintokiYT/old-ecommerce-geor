@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modal-filter',
@@ -7,21 +7,37 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class ModalFilterComponent implements OnInit {
 
+  @Output() changeStatusFilter = new EventEmitter<boolean>();
   @ViewChild('mySize') mySize: ElementRef;
 
-  constructor() { }
+  statusButtonClear: boolean = true;
 
-  ngOnInit() {}
+  statusFilterSize: boolean = true;
+  statusFilterThickness: boolean = true;
+  statusFilterColor: boolean = true;
 
-  toggleInfo(info: string) {
-    const mySize: HTMLDivElement = this.mySize.nativeElement;
+  constructor() {}
 
-    switch(info) {
-      case 'size':
-        mySize.classList.toggle('close');
-        break;
-    }
-
-
+  ngOnInit() {
+    console.log();
   }
+
+  closeFilter() {
+    const modalcontainer: HTMLDivElement = document.querySelector('.modal-container');
+    modalcontainer.classList.remove('open');
+    modalcontainer.classList.add('close');
+
+    setTimeout( () => this.changeStatusFilter.emit(false), 300);
+  }
+
+  changeStatusFilterSize(status: boolean) {
+    this.statusFilterSize = status;
+
+    if(this.statusFilterSize === false || this.statusFilterThickness === false || this.statusFilterColor === false) {
+      this.statusButtonClear = false;
+    } else {
+      this.statusButtonClear = true;
+    }
+  }
+
 }

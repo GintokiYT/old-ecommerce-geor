@@ -1,21 +1,17 @@
+ion-footer {
+  --ion-safe-area-bottom: 10px;
+  height: calc(env(var(--ion-safe-area-bottom)) + 71px);
+}
+
 .inbox-ion-footer {
   ion-toolbar{
-    //position: sticky;
-    //bottom: 0;
-    //left: 0;
-    //z-index: 10000;
-    //width: 100%;
     background-color: var(--ion-background-color);
     border-top: 1px solid var(--ion-color-separator);
-    //--min-height: unset;
 
     --padding-top: 10px;
     --padding-end: 16px;
     --padding-start: 16px;
     --padding-bottom: 16px;
-
-    //padding-bottom: calc(var(--ion-safe-area-bottom) + 16px);
-    //padding-bottom: calc(16px + 16px);
 
     @media (min-width: 390px) {
       --padding-start: 24px;

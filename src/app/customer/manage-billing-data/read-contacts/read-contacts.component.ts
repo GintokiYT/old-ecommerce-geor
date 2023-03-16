@@ -73,7 +73,7 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
 
     setTimeout(() => {
       this.navigation.back(this.previousRoute);
-    }, 200);
+    }, 150);
 
   }
 

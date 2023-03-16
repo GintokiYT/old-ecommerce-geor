@@ -6,9 +6,9 @@ ion-toolbar{
   --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
   --min-height: 0px;
   --padding-top: 16px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --padding-bottom: 24px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-bottom: 14px;
 }
 
 @media(max-width:320px){
@@ -38,3 +38,13 @@ ion-item-options{
     stroke: var(--ion-color-basic);
   }
 }
+
+@media (min-width: 390px) {
+ion-toolbar{
+  --padding-top: 16px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --padding-bottom: 40px;
+}
+}
+

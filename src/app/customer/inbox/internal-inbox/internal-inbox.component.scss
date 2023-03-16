@@ -49,6 +49,7 @@ img {
   width: 100%;
   z-index: 1000;
   border-bottom: 1px solid var(--ion-color-separator);
+  padding-top: var(--ion-safe-area-top);
 }
 // End Page
 
@@ -93,7 +94,6 @@ img {
 
 .input-message {
   padding: 25px 16px 24px 16px;
-  /*padding-top: 16px;*/
   width: 100%;
   background: transparent;
   border: none;
@@ -109,6 +109,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   padding: 0 16px 24px 16px;
+  padding-bottom: calc(24px - var(--ion-safe-area-bottom));
 
   &.active {
     display: flex !important;
@@ -176,7 +177,6 @@ img {
   z-index: 500;
 	top: 16px;
   left: 20px;
-	// color: rgba(255,255,255,.5);
   color: var(--ion-color-disabled);
   font-weight: 400;
   font-size: 16px;

@@ -125,11 +125,18 @@ ion-title {
   font-size: 16px;
 }
 
-.header-add {
+ion-header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+
+  ion-toolbar{
+    --padding-top: 16px !important;
+    --padding-start: 16px !important;
+    --padding-end: 16px !important;
+    --padding-bottom:14px !important;
+  }
 }
 
 /* MODIFICACION DE IMAGEN A DARK */
