@@ -23,11 +23,22 @@ export class BillingDataComponent extends ViewComponent implements OnInit {
     this.cpService.currentMyOrder$.subscribe( data => this.cOrder = data)
     this.billingData = this.billingData.map((bill, index) => {
       const i = index + 1;
-      const nBill = {
-        indice: i,
-        selected: false,
-        ...bill
+      let nBill;
+      if(this.cOrder.bill.name === bill.name){
+        this.oneTrue = true
+        nBill = {
+          indice: i,
+          selected: true,
+          ...bill
+        }
+      }else{
+        nBill = {
+          indice: i,
+          selected: false,
+          ...bill
+        }
       }
+      
       return nBill;
     })
   }

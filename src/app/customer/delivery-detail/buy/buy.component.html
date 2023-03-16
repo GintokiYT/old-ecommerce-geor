@@ -1,13 +1,13 @@
 <ion-content>
-  <ion-header class="ion-no-border">
+  <!-- <ion-header class="ion-no-border">
     <ion-toolbar>
       <button (click)="goBack()" slot="start" class="arrow">
         <img src="/assets/icons/icon-arrow-izquierda.svg" />
       </button>
       <ion-title>¿Quien recibirá la compra?</ion-title>
     </ion-toolbar>
-  </ion-header>
-  <ion-item>
+  </ion-header> -->
+  <!--   <ion-item>
     <ion-input placeholder="Nombre"></ion-input>
   </ion-item>
   <br>
@@ -51,5 +51,124 @@
       </ion-button>
     </ion-toolbar>
   </ion-footer>
+ -->
+  <app-header
+  title="¿Quien recibirá la compra?"
+  iconLeft="icon-arrow-left">
+
+</app-header>
+<form
+class="w-100 container-main"
+[formGroup]="form"
+
+>
+
+ <!-- input Nombre -->
+<ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
+  <ion-label position="floating" class="disabled">Nombre</ion-label>
+  <ion-input formControlName="name"></ion-input>
+  <app-validation-messages *ngIf="showTextHelperName" slot="error"
+    [control]="form.get('name')"></app-validation-messages>
+</ion-item>
+
+ <!-- input Surnames-->
+<ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('surnames')" (ionBlur)="checkBlur('surnames',false)">
+  <ion-label position="floating" class="disabled">Apellidos</ion-label>
+  <ion-input formControlName="surnames"></ion-input>
+  <app-validation-messages *ngIf="showTextHelpersurNames" slot="error"
+    [control]="form.get('surnames')"></app-validation-messages>
+</ion-item>
+<!--End input surnames-->
+
+ <!-- input Roles -->
+<ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('post')" (ionBlur)="checkBlur('post',false)">
+  <ion-label position="floating" class="disabled">Roles</ion-label>
+  <ion-input formControlName="post"></ion-input>
+  <app-validation-messages *ngIf="showTextHelperPost" slot="error"
+    [control]="form.get('post')"></app-validation-messages>
+</ion-item>
+
+ <!-- input email -->
+ <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('email')" (ionBlur)="checkBlur('email',false)">
+  <ion-label position="floating" class="disabled">Correo electrónico</ion-label>
+  <ion-input formControlName="email" inputmode="email" type="email"></ion-input>
+  <app-validation-messages *ngIf="showTextHelperEmail" slot="error"
+    [control]="form.get('email')"></app-validation-messages>
+  </ion-item>
+
+   <!-- input phone -->
+ <div class="d-flex flex-column" style="margin-top: 15px;">
+  <div class="label-input-container">
+
+    <ion-label
+      [ngClass]="{'input-phone-unselect': focusInputPhone===false,
+                  'input-phone-select': focusInputPhone===true,
+                  'label-default': countryBorderColorState==='default',
+                  'label-correct' : countryBorderColorState==='correct',
+                  'label-error' : countryBorderColorState==='error'}"
+      >Documento de identificación
+    </ion-label>
+  </div>
+  <div class="country-select-container d-flex">
+   <div lines="none" class="form-group item-country">
+    <div class="d-flex justify-content-between">
+    <ion-label>DNI</ion-label>
+
+    <img src="" alt="aqui">
+        </div>
+      </div>
+  </div>
+</div><!--End input phone-->
+
+
+
+ <!-- input phone -->
+ <div class="d-flex flex-column" style="margin-top: 15px;">
+  <div class="label-input-container">
+    <ion-label
+      [ngClass]="{'input-phone-unselect': focusInputPhone===false,
+                  'input-phone-select': focusInputPhone===true,
+                  'label-default': countryBorderColorState==='default',
+                  'label-correct' : countryBorderColorState==='correct',
+                  'label-error' : countryBorderColorState==='error'}"
+      >Teléfono
+    </ion-label>
+  </div>
+  <div class="country-select-container d-flex">
+    <div
+      class="country d-flex justify-content-start align-items-center"
+      [ngClass]="{'country-default': countryBorderColorState==='default',
+                  'country-correct' : countryBorderColorState==='correct',
+                  'country-error' : countryBorderColorState==='error',
+                  'width-two-digits': codePhone.length===2,
+                  'width-three-digits': codePhone.length>2}"
+      (click)="onGoToCountrySelect()"
+      >
+      <img [src]="flag" width="24px"/>
+      <ion-label>+{{codePhone}}</ion-label>
+    </div>
+    <ion-item lines="none" class="form-group item-country" (ionBlur)="checkBlur('phone',true)" (ionFocus)="checkFocus('phone')">
+      <ion-input #inputPhone class="ion-text-left input-phone" formControlName="movil" inputmode="numeric" type="tel"
+        maxlength="11" mask="*** *** ***" (ionChange) = "changeValueInputPhone()">
+      </ion-input>
+      <app-validation-messages *ngIf="showTextHelperPhone" slot="error"
+        [control]="form.get('movil')"></app-validation-messages>
+    </ion-item>
+  </div>
+</div><!--End input phone-->
+
+</form>
 
 </ion-content>
+
+<ion-footer class="ion-no-border footer-ionic">
+
+  <ion-toolbar class="ion-no-padding">
+    <div class="text-center">
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+        type="submit" style="margin: 0px;">Confirmar</ion-button>
+    </div>
+  </ion-toolbar>
+
+
+</ion-footer>

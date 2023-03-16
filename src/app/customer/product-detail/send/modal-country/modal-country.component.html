@@ -1,8 +1,7 @@
 <div class="container-modal-country" #ContainerModal>
   <div class="modal-country" #modal>
     <ion-content>
-
-      <ion-header class="ion-no-padding ion-no-border">
+      <!--      <ion-header class="ion-no-padding ion-no-border header-country">
         <ion-toolbar class="ion-no-padding">
           <div class="d-flex flex-column  search-container">
             <ion-searchbar class="my-searchbar" [debounce]="1000" (ionChange)="handleChange($event)" placeholder="Buscar" search-icon="search-circle" >
@@ -10,10 +9,16 @@
 
           </div>
         </ion-toolbar>
-      </ion-header>
+      </ion-header>-->
+      <div class="d-flex flex-column  search-container">
+        <ion-searchbar class="my-searchbar" [debounce]="1000" (ionChange)="handleChange($event)" placeholder="Buscar" search-icon="search-circle" >
+        </ion-searchbar>
+
+      </div>
+   
 
 
-      <ion-list lines="none">
+      <ion-list lines="none" >
         <ion-item *ngFor="let result of  dataCountriesResults" detail="false" (click)="onCountrySelected(result)">
           <img [src]="result.flag" width="24px" slot="start">
           <ion-label>{{ result.country }} {{result.cod}}</ion-label>

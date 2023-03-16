@@ -6,8 +6,6 @@ import { Keyboard } from '@geor360/capacitor-keyboard';
 import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -88,6 +86,17 @@ export class HeaderComponent extends ViewComponent implements OnInit {
   }
 
   goBack() {
+
+    const currentRouter = this.router.url;
+
+    if(currentRouter === '/customer/search-general/product-detail/confirm-order') {
+      return this.navigation.back('/customer/search-general/product-detail/variants');
+    }
+
+    if(currentRouter === '/customer/search-general/product-detail/add-coupons') {
+      return this.navigation.back('/customer/search-general/product-detail/confirm-order');
+    }
+
     // if(window.innerHeight<this.keyboardHeight){
     //   setTimeout(() => {
     //     this.navigation.back(this.directions[this.backDirection]);

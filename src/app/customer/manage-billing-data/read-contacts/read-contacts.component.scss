@@ -15,7 +15,7 @@ ion-header {
         --padding-top: 16px !important;
         --padding-start: 16px !important;
         --padding-end: 16px !important;
-        --padding-bottom: 24px !important;
+        --padding-bottom: 14px !important;
 
 
         .header-container {
@@ -77,14 +77,15 @@ ion-header {
 }
 
 
-.icon-plus {
+.icon-plus-contact {
     width: 64px;
     height: 64px;
     position: fixed;
     right: 0px;
-    bottom: 0px;
+    bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
     margin-right: 16px;
-    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
+    //margin-bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
+    //margin-bottom: calc(16px);
     z-index: 1000;
 }
 

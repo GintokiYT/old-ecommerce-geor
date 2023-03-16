@@ -30,16 +30,8 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
   goContact(){
-  /*   this.inviteService.setStatusModalInvite(false);
+    this.inviteService.setStatusModalInvite(false);
     this.navigation.root('/customer/contact-basket','forward');
-
- */
-    if(localStorage.getItem('back')) {
-      this.navigation.back(localStorage.getItem('back'));
-      this.navigation.root('/customer/contact-team','forward');
-      this.inviteService.setStatusModalInvite(false);
-    } else {
-     this.navigation.root('/customer/contact-basket','forward');
-    }
+    /* this.dialog.dismiss(); */
   }
 }

@@ -1,7 +1,6 @@
 <ion-content >
-  <div class="container-contact ">
-    <div class="header-contact">
-  <ion-header class="header-basket ion-no-border px-4">
+
+  <ion-header class="ion-no-border">
     <ion-toolbar class="ion-no-padding">
       <button (click)="goBack()"
       slot="start" class="arrow">
@@ -21,9 +20,9 @@
 
     </ion-toolbar>
   </ion-header>
-</div >
 
-<div class="container-main px-4">
+
+<div class="container-main content-team">
   <ion-item lines="none" *ngFor="let result of results; let i = index">
     <ion-checkbox
       slot="end"
@@ -39,7 +38,8 @@
     </ion-label>
   </ion-item>
 </div>
-  <ion-footer class="ion-no-border ">
+
+ <!--  <ion-footer class="ion-no-border footer-ionic ">
     <ion-toolbar class="ion-no-padding ">
       <div style="height: 48px;">
       <ion-button
@@ -56,6 +56,21 @@
       </div>
 
   </ion-toolbar>
+  </ion-footer> -->
+  <ion-footer class="ion-no-border footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button
+        (click)="goTeam()"
+        [disabled]="!oneTrue"
+        expand="block"
+        color="primary"
+        shape="round"
+        type="submit"
+        style="margin-top: 0px; margin-bottom: 0px"
+      >
+        Invitar ({{ invitationsCount }})
+      </ion-button>
+    </ion-toolbar>
   </ion-footer>
-</div>
+
 </ion-content>

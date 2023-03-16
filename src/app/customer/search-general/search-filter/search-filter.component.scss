@@ -1,3 +1,23 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  // --padding-top: 16px;
+  // --padding-bottom: 16px;
+  // --padding-end: 16px;
+  // --padding-start: 16px;
+  // --background: red;
+
+  // --padding-top: var(--ion-safe-area-top);
+  // --padding-bottom: var(--ion-safe-area-bottom);
+  --padding-start: var(--ion-safe-area-right);
+  --padding-end: var(--ion-safe-area-left);
+  --background: var(--ion-background-color);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 ion-header {
   .search-input {
     display: flex;
@@ -17,8 +37,8 @@ ion-header {
       input {
         width: 100%;
         height: 36px;
-        background-color: #191932;
-        color: #FFFFFF66;
+        background-color: var(--card-background-secondary);
+        color: var(--ion-color-disabled);
         border: none;
         outline: none;
         font-size: 14px;
@@ -172,4 +192,9 @@ ion-content {
     }
   }
 
+}
+
+
+ion-header {
+  padding-top: var(--ion-safe-area-top);
 }
