@@ -18,7 +18,8 @@
                 class="imagen-pendiente"
                 src="assets/collaborative-basquet/Pendiente.svg"
               ></ion-img> -->
-              <img  class="imagen-pendiente" src="assets/collaborative-basquet/Pendiente.svg" alt="perfil">
+             <!--  <img  class="imagen-pendiente" src="assets/collaborative-basquet/Pendiente.svg" alt="perfil"> -->
+              <div class="point"></div>
               {{ item.estado.estado }}</ion-label
             >
             <ion-label>{{ item.estado.numero }}</ion-label>
@@ -38,7 +39,7 @@
     (click)="openInvite()"
     class="icon-plus"
     src="assets/collaborative-basquet/Plus-circle.svg"
-    alt=""
+    alt="plus"
   />
 
   <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
