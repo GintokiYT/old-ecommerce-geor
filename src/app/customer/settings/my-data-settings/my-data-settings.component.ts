@@ -40,6 +40,8 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
 
   ngAfterViewInit() {
 
+    const containerfooterbottom: HTMLDivElement = document.querySelector('.container-footer-bottom');
+    
     // Focus al primer input
     setTimeout(() => {
       const firstInput: HTMLInputElement =  this.myInput.toArray()[0].nativeElement;
@@ -60,6 +62,8 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
         formControlSettings.classList.add('active')
         formControlSettings.classList.remove('data');
+
+        containerfooterbottom.style.paddingBottom = 'var(--ion-padding-bottom)';
       });
       input.nativeElement.addEventListener('blur', () => {
         const formControlSettings: HTMLDivElement = input.nativeElement.parentNode;
@@ -67,6 +71,7 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
         if(input.nativeElement.value !== '') {
           formControlSettings.classList.add('data');
         }
+        containerfooterbottom.style.paddingBottom = 'calc(var(--ion-safe-area-bottom) + var(--ion-padding-bottom))';
       });
 
       input.nativeElement.addEventListener('input', (event: Event): boolean => {
