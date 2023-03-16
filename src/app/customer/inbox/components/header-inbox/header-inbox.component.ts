@@ -39,8 +39,8 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
       return this.navigation.back('/customer/product');
     }
 
-    this.navigation.back('/customer/main-inbox');
-    // this.navigation.back(this.previousRoute);
+    //this.navigation.back('/customer/main-inbox');
+    this.navigation.back(this.previousRoute);
   }
 
   openTelf() {

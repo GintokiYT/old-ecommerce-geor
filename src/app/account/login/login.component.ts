@@ -1,5 +1,5 @@
 import { AppNavigationService } from '@geor360/ecore';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouteCollection } from 'src/shared/route-collection';
 import { LoginService } from '../services/login.service';
@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private navigator: AppNavigationService,
-              private lgService: LoginService) {
+              private lgService: LoginService,
+              private ngZone: NgZone) {
     this.visibleFooterNavigation = true;
   }
 
@@ -77,23 +78,46 @@ export class LoginComponent implements OnInit {
     // })
   }
 
+  ionViewDidEnter(){
+    // Keyboard.addListener('keyboardWillHide', () => {
+    //   this.ngZone.run( () => {
+    //     this.visibleFooterNavigation = true;
+    //   })    
+    // });
+
+    // Keyboard.addListener('keyboardDidHide', () => {
+    //   this.ngZone.run( () => {
+    //     this.visibleFooterNavigation = true;
+    //   })
+    // });
+
+  }
+
   onGoToRegister() {
     //this.navigator.forward(RouteCollection.auth.register);
-    this.visibleFooterNavigation = false;
-    this.navigator.root("/register","forward")
+    //this.visibleFooterNavigation = false;
+    setTimeout(() => {
+      this.navigator.root("/register","forward")  
+    }, 250);
   }
 
   onToForgotPassword() {
 
     //this.navigator.forward(RouteCollection.auth.recoverPassword);
-    this.visibleFooterNavigation = false;
-    this.navigator.root("/recover-password","forward")
+    //this.visibleFooterNavigation = false;
+
+    setTimeout(() => {
+      this.navigator.root("/recover-password","forward")
+    }, 250);
+    
   }
 
   onSubmit() {
-    this.visibleFooterNavigation = false;
+    //this.visibleFooterNavigation = false;
     this.lgService.setUserLogged(true);
-    this.navigator.root("/customer/manage-user-information","forward");
+    setTimeout(() => {
+      this.navigator.root("/customer/manage-user-information","forward");
+    }, 250);
   }
 
   onChangeType(ev){
