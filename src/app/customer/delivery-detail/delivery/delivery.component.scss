@@ -33,14 +33,17 @@ ion-content {
 ion-item {
   --padding-start: 24px;
  /*  --padding-end: 24px */
+
+ &::part(native) {
+  --inner-padding-end: 0px;
+ }
 }
 ion-textarea {
-  /* --padding-end: 24px; */
-  --padding-start: 24px;
+  box-sizing: border-box;
+  padding: 8px;
+  min-height: 114px;
   border: 1px solid var(--ion-color-separator);
   border-radius: 5px;
-  height: 8em;
-  width: 344px;
 }
 
 ion-button {
