@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ViewComponent } from '@geor360/ecore';
+import { RouteService } from 'src/app/services/route.service';
 import { OrdersService } from '../../../services/orders.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class OrderDetailComponent extends ViewComponent implements OnInit {
 
   constructor(private _injector: Injector,
     private activatedRoute: ActivatedRoute,
-    private ods: OrdersService
+    private ods: OrdersService,
+    private rs: RouteService,
+    private router: Router
     ) {
     super(_injector)
    }
@@ -48,6 +51,7 @@ export class OrderDetailComponent extends ViewComponent implements OnInit {
   }
 
   goToSend(){
+    this.rs.setSetEnvioLastBackDirection(this.router.url);
     this.navigation.root("/customer/send","forward");
   }
 

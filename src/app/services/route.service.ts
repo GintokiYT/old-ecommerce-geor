@@ -20,6 +20,9 @@ export class RouteService {
   setProductLastBackDirection : string = "";
   setProductLastBackDirection$ = new BehaviorSubject<string>(this.setProductLastBackDirection);
 
+  setEnvioLastBackDirection : string = "";
+  setEnvioLastBackDirection$ = new BehaviorSubject<string>(this.setEnvioLastBackDirection);
+
 
   constructor() { }
 
@@ -33,6 +36,10 @@ export class RouteService {
 
   get currentSetContactLastSubmitBackDirection() : Observable<string>{
     return this.setContactLastSubmitBackDirection$;
+  }
+
+  get currentSetEnvioLastBackDirection() : Observable<string>{
+    return this.setEnvioLastBackDirection$;
   }
 
   setMiPedidoLastBackDirection( direction : string){
@@ -49,6 +56,13 @@ export class RouteService {
     this.setContactLastSubmitBackDirection = direction;
     this.setContactLastSubmitBackDirection$.next(this.setContactLastSubmitBackDirection);
   }
+
+  setSetEnvioLastBackDirection(direction: string){
+    this.setEnvioLastBackDirection = direction;
+    this.setEnvioLastBackDirection$.next(this.setEnvioLastBackDirection);
+  }
+
+  
 
 
 
