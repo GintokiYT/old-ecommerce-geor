@@ -7,7 +7,7 @@ import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '
 })
 export class FilterThicknessComponent implements OnInit {
 
-  @Output() changeStatusButtonClear = new EventEmitter<boolean>;
+  @Output() changeStatusFilterThickness = new EventEmitter<boolean>;
 
   @ViewChild('myThickness') myThickness: ElementRef;
 
@@ -28,11 +28,10 @@ export class FilterThicknessComponent implements OnInit {
         thickness.classList.toggle('active');
 
         if(validarFilterActive(thicknessItems)) {
-          this.changeStatusButtonClear.emit(true);
+          this.changeStatusFilterThickness.emit(true);
         } else {
-          this.changeStatusButtonClear.emit(false);
+          this.changeStatusFilterThickness.emit(false);
         }
-
       })
     })
 
@@ -42,7 +41,6 @@ export class FilterThicknessComponent implements OnInit {
         const classItem: boolean =  item.classList.contains('active')? true : false;
         status.push(classItem)
       })
-
       const newStatus = status.filter( e => e === true ).length === 0 ? true : false;
 
       return newStatus;
