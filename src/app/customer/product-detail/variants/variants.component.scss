@@ -1,3 +1,7 @@
+
+.content-variants{
+  margin: 0px 16px;
+}
 /* variant */
 .variant{
   gap:18px;
@@ -16,11 +20,6 @@
   border-radius: 4px;
 }
 
-/* .extent-cm.active {
-  background-color: red;
-}
- */
-/* Espesor (mm) */
 .size-thicknes{
   gap:10px;
   margin-bottom: 32px;
@@ -92,6 +91,7 @@ ion-button:nth-child(1)::part(native) {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 28px;
 }
 
@@ -169,6 +169,10 @@ ion-button:nth-child(1)::part(native) {
   color: #023aff;
 }
 
+/* .product-color{
+  margin: 0px 16px 24px 16px ;
+} */
+
 ion-button {
   height: 40px !important;
 }
@@ -177,4 +181,12 @@ ion-button {
   ion-button {
     height: 48px !important;
   }
+
+  .content-variants{
+    margin: 0px 24px;
+  }
+
+ /*  .product-color{
+    margin: 0px 16px 24px 16px ;
+  } */
 }

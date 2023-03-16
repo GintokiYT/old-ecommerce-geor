@@ -16,21 +16,33 @@ ion-toolbar {
 }
 
 .contenedor-footer{
+  gap: 24px;
+
   button{
-      width: 246px;
-      height: 40px;
-      background-color:#023AFF;
-      font-size: 16px;
-      padding: 12px 20px;
-      border-radius: 50px;
-      color: white;
+    flex: 1;
+    height: 40px;
+    background-color:#023AFF;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: white;
   }
 
+  .container-icons {
+    display: flex;
+    gap: 24px;
+  }
 
-  img{
-    width: 20px;
+  .chat-icon {
+    width: 24px;
+    height: 24px;
     filter: var(--ion-color-dark-filter);
   }
+
+  .heart-icon {
+    font-size: 24px;
+  }
+
 }
 
 @media(min-width:390px) {

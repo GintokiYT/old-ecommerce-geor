@@ -1,6 +1,6 @@
 <ion-content>
 
-    <ion-header class="header-basket ion-no-border px-4">
+    <ion-header class="ion-no-border">
       <ion-toolbar class="ion-no-padding">
         <button (click)="goBack()" slot="start" class="arrow">
           <svg
@@ -58,7 +58,7 @@
       </ion-toolbar>
     </ion-header>
 
-  <div class="container-main px-4">
+  <div class="container-main container-contact">
     <ion-item lines="none" *ngFor="let result of results; let i = index">
       <ion-checkbox
         slot="end"
@@ -74,6 +74,7 @@
       </ion-label>
     </ion-item>
   </div>
+
   <ion-footer class="ion-no-border footer-ionic">
     <ion-toolbar class="ion-no-padding">
       <ion-button

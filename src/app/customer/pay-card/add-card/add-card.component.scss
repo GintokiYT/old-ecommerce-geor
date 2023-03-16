@@ -150,18 +150,36 @@ ion-title {
   font-size: 16px;
 }
 
-.header-add {
+ion-header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+
+  ion-toolbar{
+    --padding-top: 16px !important;
+    --padding-start: 16px !important;
+    --padding-end: 16px !important;
+    --padding-bottom:14px !important;
+  }
 }
 
 /* MODIFICACION DE IMAGEN A DARK */
 .back{
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   path {
     stroke: var(--ion-color-basic);
   }
+}
+
+@media(min-width:390px) {
+  ion-header {
+    ion-toolbar{
+      --padding-start: 24px !important;
+      --padding-end: 24px !important;
+      --padding-bottom:40px !important;
+    }
+  }
+
 }

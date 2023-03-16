@@ -2,13 +2,29 @@ button {
   background-color: transparent;
 }
 
-ion-toolbar {
+ion-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  ion-toolbar{
   --background: var(--ion-toolbar-background, var(--ion-color-step-50));
   --min-height: 0px;
   --padding-top: 16px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --padding-bottom: 16px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-bottom: 14px;
+  }
+}
+
+ion-footer {
+  position:fixed;
+  bottom:0;
+  ion-toolbar{
+      --padding-start: 16px !important;
+      --padding-end: 16px !important;
+  }
 }
 
 @media (max-width: 320px) {
@@ -19,6 +35,7 @@ ion-toolbar {
     --padding-bottom: 24px;
   }
 }
+
 ion-radio {
   margin: 0px !important;
 }
@@ -32,14 +49,14 @@ ion-item::part(native) {
   color: var(--ion-color-disabled);
 }
 .contact {
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 ion-checkbox {
   --size: 20px;
 }
 ion-item {
-  margin: 0px 24px 0px 24px;
+  margin: 0px;
   --background-activated: unset !important;
 }
 
@@ -49,6 +66,38 @@ ion-item {
   height: 24px;
   path {
     stroke: var(--ion-color-basic);
+  }
+}
+.container-contact-search{
+  padding: 0 16px;
+}
+
+@media(min-width:390px) {
+  ion-button{
+    height: 48px !important;
+  }
+
+  ion-header {
+      ion-toolbar{
+      --padding-start: 24px !important;
+      --padding-end: 24px !important;
+      --padding-bottom:40px !important;
+    }
+  }
+
+  ion-footer {
+    ion-toolbar{
+        --padding-start: 24px !important;
+        --padding-end: 24px !important;
+    }
+  }
+
+  .container-contact-search{
+    padding: 0 24px;
+  }
+
+  .contact {
+    margin-bottom: 40px;
   }
 }
 

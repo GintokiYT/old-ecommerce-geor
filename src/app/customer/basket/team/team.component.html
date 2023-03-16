@@ -3,21 +3,25 @@
   <div class="container-main">
     <div *ngFor="let item of equipos" class="content-team">
       <div class="contacts d-flex flex-row" (click)="openModal(item)">
-       <!--  <div class="image-wrapper" [ngClass]="{'loaded': isImageLoaded}"> -->
-       <!--  <ion-img [src]="item.image" (load)="isImageLoaded = true"></ion-img> -->
-       <img [src]="item.image" alt="">
+        <!--  <div class="image-wrapper" [ngClass]="{'loaded': isImageLoaded}"> -->
+        <!--  <ion-img [src]="item.image" (load)="isImageLoaded = true"></ion-img> -->
+        <img [src]="item.image" alt="" />
         <!-- </div> -->
-        <div class="information fz-small d-flex flex-column">
+        <div class="information fz-normal d-flex flex-column">
           <ion-label class="name">{{ item.nombre }}</ion-label>
-          <div
-            class="text-description d-flex flex-row">
+          <div class="text-description d-flex flex-row fz-small">
             <ion-label
               *ngIf="item.estado.estado === 'Pendiente'"
-              class="pendiente d-flex flex-row justify-content-center align-items-center">
-              <ion-img
-                colass="imagen-pendiente"
-                src="assets/collaborative-basquet/Pendiente.svg"></ion-img>
-              {{ item.estado.estado }}</ion-label>
+              class="pendiente d-flex flex-row justify-content-center align-items-center"
+            >
+            <!--   <ion-img
+                class="imagen-pendiente"
+                src="assets/collaborative-basquet/Pendiente.svg"
+              ></ion-img> -->
+             <!--  <img  class="imagen-pendiente" src="assets/collaborative-basquet/Pendiente.svg" alt="perfil"> -->
+              <div class="point"></div>
+              {{ item.estado.estado }}</ion-label
+            >
             <ion-label>{{ item.estado.numero }}</ion-label>
           </div>
         </div>
@@ -25,23 +29,31 @@
     </div>
   </div>
 
-
-  <ion-img
+  <!-- <ion-img
     (click)="openInvite()"
     class="icon-plus"
     src="assets/collaborative-basquet/Plus-circle.svg"
-  ></ion-img>
+  ></ion-img> -->
+
+  <img
+    (click)="openInvite()"
+    class="icon-plus"
+    src="assets/collaborative-basquet/Plus-circle.svg"
+    alt="plus"
+  />
 
   <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
 
   <!-- Elimina de la lista -->
-  <app-modal-resend *ngIf="modalResend"
-  [selectedTeam]="selectedTeam"
-  (deleteTeam)="deleteTeam($event)"
+  <app-modal-resend
+    *ngIf="modalResend"
+    [selectedTeam]="selectedTeam"
+    (deleteTeam)="deleteTeam($event)"
   ></app-modal-resend>
 
-  <app-modal-resend-invitation *ngIf="modalResendInvitation"></app-modal-resend-invitation>
+  <app-modal-resend-invitation
+    *ngIf="modalResendInvitation"
+  ></app-modal-resend-invitation>
 
   <!-- <app-modal-accepted *ngIf="modalAccepted"></app-modal-accepted> -->
-
 </ion-content>

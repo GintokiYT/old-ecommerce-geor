@@ -28,7 +28,6 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
     }
 
 
-
     const back = localStorage.getItem('back') ?? '';
 
     if(back) {

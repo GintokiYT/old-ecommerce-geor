@@ -1,8 +1,14 @@
+.contend-collaborative-basket{
+  gap:40px;
+}
+
 .ion-toolbar {
   padding: 24px;
 }
 
 .box-total {
+  margin-top: 8px;
+  margin-bottom: 12px;
   color: var(--ion-color-basic);
 }
 
@@ -83,10 +89,11 @@
   margin-bottom: calc(var(--ion-safe-area-bottom) + 69px) !important;
 
   ion-toolbar {
-    --padding-start: 24px !important;
-    --padding-end: 24px !important;
-    --padding-bottom: 24px !important;
+    --padding-start: 16px !important;
+    --padding-end: 16px !important;
+    --padding-bottom: 8px !important;
   }
+
 }
 
 .header-cesta {
@@ -107,8 +114,22 @@ ion-button {
 }
 
 @media (min-width: 390px) {
+  ion-footer {
+     ion-toolbar {
+       --padding-start: 24px !important;
+       --padding-end: 24px !important;
+       --padding-bottom: 24px !important;
+     }
+    }
+
   ion-button {
     height: 48px !important;
+
+  }
+  .box-total {
+    margin-top: 16px;
+    margin-bottom: 24px;
+
   }
 }
 

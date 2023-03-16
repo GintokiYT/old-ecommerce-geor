@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Injector, OnInit } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-team',
@@ -10,7 +11,7 @@ import { ViewComponent } from '@geor360/ecore';
 export class ContactTeamComponent extends ViewComponent implements OnInit {
 
 
-  constructor( _injector: Injector, private location: Location ) {
+  constructor( _injector: Injector, private location: Location, private router: Router ) {
     super(_injector);
    }
 
@@ -42,12 +43,18 @@ checkBoxSelect(event: any) {
 }
 
 goBack(){
-  this.location.back();
+  this.navigation.back('/customer/collaborative-team');
 }
 
 goTeam(){
-  localStorage.setItem('back', '/customer/manage-user-information');
-  this.navigation.root('/customer/team','forward');
+
+  const currentRouter = this.router.url;
+
+  if(currentRouter === '/customer/collaborative-team/contact-team') {
+    return this.navigation.forward('/customer/collaborative-team/team')
+  }
+
+  this.navigation.forward('/customer/team');
 }
 goContactSeatch(){
   this.navigation.root('/customer/contact-search','forward');

@@ -24,6 +24,9 @@ ion-footer{
       margin: 24px 0px 0px 0px;
   }
 }
+.content-card{
+margin: 0px 16px;
+}
 
 @media(min-width:390px){
   ion-footer{
@@ -31,4 +34,7 @@ ion-footer{
           height: 48px !important;
       }
   }
+  .content-card{
+    margin: 0px 24px;
+    }
 }

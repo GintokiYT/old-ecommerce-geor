@@ -24,8 +24,7 @@ export class FooterProductComponent extends ViewComponent implements OnInit {
       return this.navigation.forward('/customer/search-general/product-detail/internal-inbox/'+ id);
     }
 
-    localStorage.setItem('back', '/customer/product');
-    this.navigation.root('/customer/internal-inbox/1','forward');
+    this.navigation.forward('/customer/product/internal-inbox/1');
   }
   goVariants(){
 
