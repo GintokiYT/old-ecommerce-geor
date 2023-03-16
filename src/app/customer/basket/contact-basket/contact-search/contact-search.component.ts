@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, Injector, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ViewComponent } from '@geor360/ecore';
 import { IonSearchbar } from '@ionic/angular';
 
@@ -16,7 +17,7 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
 
   @ViewChild('search', { static: false }) search: IonSearchbar;
 
-  constructor( _injector: Injector, private location: Location ) {
+  constructor( _injector: Injector, private location: Location,private router:Router ) {
     super(_injector);
    }
    public contact=['Jualiano del carmen','Anibal Cortez','Roberto Carlos de maracaná','Anibal Cortez','Roberto Carlos de maracaná','Jorge Laguna','Anibal Cortez'];
@@ -51,13 +52,22 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
 
   goBasket(){
 
-    if(localStorage.getItem('back')) {
+   /*  if(localStorage.getItem('back')) {
       this.navigation.back(localStorage.getItem('back'));
       localStorage.setItem('back', '/customer/manage-user-information');
     } else {
       this.navigation.root('/customer/collaborative-basket','forward');
     }
+  } */
+
+  const currentRouter = this.router.url;
+  if(currentRouter === '/customer/collaborative-team/contact-search') {
+    return this.navigation.forward('/customer/collaborative-team/team')
   }
+  this.navigation.forward('/customer/collaborative-basket');
+  /* this.navigation.forward('/customer/contact-search'); */
+  }
+
 
 
 

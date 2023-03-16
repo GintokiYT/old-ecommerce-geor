@@ -86,6 +86,8 @@ const routes: Routes = [
       { path: 'my-basket', component: MyBasketComponent },
       { path: 'empty-basket', component: EmptyBasketComponent},
       { path: 'contact-search', component: ContactSearchComponent},
+
+
       { path: 'contact-basket', component: ContactBasketComponent},
       { path: 'detail', component: DetailComponent },
       { path: 'send', component: SendComponent },
@@ -164,7 +166,7 @@ const routes: Routes = [
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
-
+      { path: 'collaborative-team/contact-search', component: ContactSearchComponent},
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
       { path: 'collaborative-team/team', component: TeamComponent },
       { path: 'collaborative-team/contact-team',component: ContactTeamComponent},
