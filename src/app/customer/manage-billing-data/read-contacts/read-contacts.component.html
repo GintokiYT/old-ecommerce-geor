@@ -74,26 +74,32 @@
       </ion-item>
     </div> -->
 
-    <div class="contacts-container">
+    <div class="contacts-container margin-foooter-ionic">
       <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults" (click)="goToAddCompany(contact)">
-        <div class="d-flex flex-column" >
+        <div class="d-flex flex-column" style="gap: 4px;">
           <p class="name">{{contact?.name?.display}}</p>
           <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
             <p class="phone">{{phone?.number}}</p>
           </div>
         </div>
+        <ion-icon name="checkmark-outline" color="primary" slot="end" *ngIf="contact.selected"></ion-icon>
       </ion-item>
     </div>
-
-    <img
-      *ngIf="showButtonPlus"
-      class="icon-plus-contact" 
-      (click)="goToSetContact()"
-      src="assets/collaborative-basquet/Plus-circle.svg"
-    />
    
   </div>
 
-
-
 </ion-content>
+
+<!-- Footer -->
+<ion-footer class="ion-no-border ion-no-padding footer-ionic">
+  <ion-toolbar class="ion-no-padding">
+    <div class="d-flex justify-content-end">
+      <img
+        *ngIf="showButtonPlus"
+        class="icon-plus-contact" 
+        (click)="goToSetContact()"
+        src="assets/collaborative-basquet/Plus-circle.svg"
+      />
+    </div>
+  </ion-toolbar>
+</ion-footer>

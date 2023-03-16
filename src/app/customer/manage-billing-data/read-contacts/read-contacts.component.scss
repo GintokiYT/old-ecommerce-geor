@@ -48,21 +48,23 @@ ion-header {
 
 
 .contacts-container{
-    padding-left: 16px;
-    padding-right: 16px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 16px );
 
     .contact{
-        --inner-padding-start : 0px !important;
+
+        &:active{
+            --background: var(--ion-background-hover-selected);
+        }
+        
+        // --inner-padding-start : 0px !important;
         --inner-padding-end: 0px !important;
 
-        &::part(native){
-            padding-inline-end: 0px !important;
-            padding-inline-start: 0px !important;
-        }
+        // &::part(native){
+        //     padding-inline-end: 0px !important;
+        //     padding-inline-start: 0px !important;
+        // }
 
         .phone{
             font-size: 14px;
@@ -76,19 +78,6 @@ ion-header {
     
 }
 
-
-.icon-plus-contact {
-    width: 64px;
-    height: 64px;
-    position: fixed;
-    right: 0px;
-    bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
-    margin-right: 16px;
-    //margin-bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
-    //margin-bottom: calc(16px);
-    z-index: 1000;
-}
-
 .header-normal{
     gap: unset;
 }
@@ -97,13 +86,20 @@ ion-header {
     gap: 17px;
 }
 
+ion-footer{
+    position: fixed;
+    bottom: 0;
+    width: 30%;
+    right: 0;
+
+    .icon-plus-contact {
+        width: 64px;
+        height: 64px;
+    }
+}
+
 
 @media(min-width: 390px){
-    .contacts-container{
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
     .icon-plus{
         margin-right: 24px;
     }

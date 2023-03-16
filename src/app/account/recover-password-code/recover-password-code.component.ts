@@ -49,23 +49,28 @@ export class RecoverPasswordCodeComponent extends ViewComponent implements OnIni
     if (code) {
       if (new String(code).length === 6) {
         this.inputCode.readonly = true;
-        const params: NavigationExtras = {
-          queryParams: {
-            email: this.route.snapshot.queryParamMap.get('email'),
-          },
-        };
+        // const params: NavigationExtras = {
+        //   queryParams: {
+        //     email: this.route.snapshot.queryParamMap.get('email'),
+        //   },
+        // };
+        const params = {
+          email: this.route.snapshot.queryParamMap.get('email'),
+        }
         
         this.platform.ready().then( () => {
           if(this.platform.is("ios")){
             setTimeout(() => {
-              this.router.navigate([RouteCollection.auth.
-                restorePassword], params);
+              // this.router.navigate([RouteCollection.auth.
+              //   restorePassword], params);
+              this.navigation.root("/restore-password","forward",params)  
             }, 250);
             Keyboard.hide();
           }
           else{
-            this.router.navigate([RouteCollection.auth.
-              restorePassword], params);
+            // this.router.navigate([RouteCollection.auth.
+            //   restorePassword], params);
+            this.navigation.root("/restore-password","forward",params)  
           }
       })
       

@@ -16,12 +16,11 @@
     cursor: pointer;
 
     .modal-container {
-        width: 288px;
+        min-width: calc(100% - 32px);
         background-color: var(--ion-background-alert);
         border-radius: 10px;
         padding: 16px;
         gap: 36px;
-        font-size: 14px;
         cursor: initial;
 
         .options-container{
@@ -31,6 +30,10 @@
 
             ion-label{
                 cursor: pointer;
+            }
+
+            .delete{
+                color: #E31B0C;
             }
         }
     }
@@ -49,9 +52,8 @@
 @media(min-width:390px){
     .overlay{
         .modal-container{
-            width: 342px;
+            min-width: calc(100% - 48px);
             padding: 24px;
-            font-size: 16px;
         }
     }
 }

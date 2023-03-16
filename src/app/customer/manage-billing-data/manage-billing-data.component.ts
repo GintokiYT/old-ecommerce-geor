@@ -34,11 +34,12 @@ export class ManageBillingDataComponent extends ViewComponent implements OnInit 
       number: null
     }
     this.bds.setContactTemp(contactTemp);
-    this.navigation.forward(("/customer/manage-billing-data/add-company"))
+    this.navigation.root("/customer/manage-billing-data/add-company","forward")
   }
 
   goToEdit(bill : any){
-    this.navigation.forward(`/customer/manage-billing-data/edit-bill/${bill.id}`)
+    this.navigation.root(`/customer/manage-billing-data/edit-bill/${bill.id}`,"forward")
+    
   }
 
 }
