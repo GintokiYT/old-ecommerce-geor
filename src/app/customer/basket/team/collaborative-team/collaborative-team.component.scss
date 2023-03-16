@@ -50,14 +50,13 @@ ion-toolbar{
 }
 
 .icon-plus {
-  width: 64px;
-  height: 64px;
-  position: fixed;
-  right: 0px;
-  //bottom: 0px;
-  bottom: calc( var(--ion-safe-area-bottom,0) + 16px);                 ;
-  margin-right: 24px;
-  margin-bottom: 16px;
+   width: 64px;
+    height: 64px;
+    position: fixed;
+    right: 0px;
+    bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
+    margin-right: 16px;
+    z-index: 1000;
 }
 
 
@@ -75,5 +74,8 @@ ion-toolbar{
     --padding-start: 24px;
     --padding-end: 24px;
     --padding-bottom: 40px;
+  }
+  .icon-plus {
+    margin-right: 24px;
   }
 }
