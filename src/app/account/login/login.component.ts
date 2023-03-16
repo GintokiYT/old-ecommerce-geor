@@ -1,5 +1,5 @@
 import { AppNavigationService } from '@geor360/ecore';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouteCollection } from 'src/shared/route-collection';
 import { LoginService } from '../services/login.service';
@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private navigator: AppNavigationService,
-              private lgService: LoginService) {
+              private lgService: LoginService,
+              private ngZone: NgZone) {
     this.visibleFooterNavigation = true;
   }
 
@@ -75,6 +76,21 @@ export class LoginComponent implements OnInit {
     // Keyboard.addListener('keyboardDidShow',() => {
     //   this.visibleFooterNavigation = true;
     // })
+  }
+
+  ionViewDidEnter(){
+    Keyboard.addListener('keyboardWillHide', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = true;
+      })    
+    });
+
+    Keyboard.addListener('keyboardDidHide', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = true;
+      })
+    });
+
   }
 
   onGoToRegister() {
