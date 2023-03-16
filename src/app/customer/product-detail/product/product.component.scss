@@ -20,8 +20,8 @@
 }
 
 .information-producto {
-  margin-bottom: 84px;
   gap: 24px;
+  margin: 24px 16px 84px 16px;
 }
 
 .send {
@@ -47,4 +47,11 @@
   bottom: 0;
   width: 100%;
   z-index: 1000;
+}
+@media (min-width: 390px) {
+
+.information-producto {
+  gap: 24px;
+  margin: 24px 24px 84px 24px;
+}
 }
