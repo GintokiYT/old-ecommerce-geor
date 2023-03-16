@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ionic serve --external",
     "lab": "ionic serve --external --lab",
-    "geor": "ionic cap run ios --external --livereload",
+    "ios": "ionic cap run ios --external --livereload",
     "android": "ionic cap run android --external --livereload",
     "ng": "ng",
     "start": "ng serve",
