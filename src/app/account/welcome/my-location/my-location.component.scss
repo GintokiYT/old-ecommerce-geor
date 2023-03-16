@@ -7,7 +7,7 @@ ion-content {
   // --padding-start: 16px;
   // --background: red;
 
-  --padding-top: var(--ion-safe-area-top);
+  // --padding-top: var(--ion-safe-area-top);
   --padding-bottom: var(--ion-safe-area-bottom);
   --padding-start: var(--ion-safe-area-right);
   --padding-end: var(--ion-safe-area-left);
@@ -45,7 +45,8 @@ ion-content {
     z-index: 1000;
     left: 16px;
     top: 24px;
-    top: var(--ion-padding-top);
+    top: calc(var(--ion-padding-top) + 24px);
+    top: calc(var(--ion-safe-area-top) + 24px);
     display: flex;
     justify-content: center;
     align-items: center;

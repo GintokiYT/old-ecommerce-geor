@@ -89,10 +89,13 @@ const routes: Routes = [
       { path: 'contact-basket', component: ContactBasketComponent},
       { path: 'detail', component: DetailComponent },
       { path: 'send', component: SendComponent },
+
       { path: 'product',component:ProductComponent},
+      { path: 'product/internal-inbox/:id', component: InternalInboxComponent },
+
+
       { path: 'variants',component:VariantsComponent},
       { path: 'picture-big',component:PictureBigComponent},
-      { path: 'contact-team',component:ContactTeamComponent},
       { path: 'variants-product',component:VariantsProductComponent},
       { path: 'country-direction',component:CountryDirectionComponent},
 
@@ -113,18 +116,6 @@ const routes: Routes = [
       { path: 'settings/screen-mode', component: ScreenModeSettingsComponent },
       { path: 'settings/language', component: LanguageSettingsComponent },
       //* End routes settings
-
-      //* Search General
-      // { path: 'search-general', component: SearchGeneralComponent },
-      // { path: 'search-general/filter', component: SearchFilterComponent },
-      // { path: 'search-general/product', component: SearchProductComponent },
-      // { path: 'search-general/product-detail', component: ProductComponent },
-      // { path: 'search-general/product-detail/variants',component:VariantsComponent},
-      // { path: 'search-general/product-detail/returns-exchanges', component: ReturnsExchangesSettingsComponent },
-      // { path: 'search-general/product-detail/confirm-order', component: ConfirmOrderComponent},
-      // { path: 'search-general/product-detail/internal-inbox/:id', component: InternalInboxComponent },
-      // {path: 'search-general/product-detail/add-coupons', component: AddCouponsComponent},
-      //* End Search General
 
         /*  { path: 'empty-bas'} */
      /*  { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -175,6 +166,9 @@ const routes: Routes = [
 
 
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
+      { path: 'collaborative-team/team', component: TeamComponent },
+      { path: 'collaborative-team/contact-team',component: ContactTeamComponent},
+
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: '**', redirectTo: 'home' },
 
