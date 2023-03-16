@@ -31,14 +31,16 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
 
     const currentRouter = this.router.url;
 
-    console.log(currentRouter);
-
     if(currentRouter.includes('/customer/search-general/product-detail/internal-inbox')) {
       return this.navigation.back('/customer/search-general/product-detail');
     }
 
-    //this.navigation.back('/customer/main-inbox');
-    this.navigation.back(this.previousRoute);
+    if(currentRouter.includes('/customer/product/internal-inbox')) {
+      return this.navigation.back('/customer/product');
+    }
+
+    this.navigation.back('/customer/main-inbox');
+    // this.navigation.back(this.previousRoute);
   }
 
   openTelf() {
