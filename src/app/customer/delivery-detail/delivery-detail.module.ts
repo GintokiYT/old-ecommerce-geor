@@ -13,12 +13,14 @@ import { ShareModule } from '../../shared/shared.module';
 import { CoreModule } from '@geor360/ecore';
 import { AccountRoutingModule } from 'src/app/account/account.routing.module';
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
+import { PopupDocumentComponent } from './buy/popup-document/popup-document.component';
+
 
 
 
 @NgModule({
   declarations: [AlertComponent,BuyComponent,ContactComponent,DateComponent,
-                DeliveryComponent,DirectionComponent],
+                DeliveryComponent,DirectionComponent,PopupDocumentComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -29,7 +31,6 @@ import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
     CoreModule,
     AccountRoutingModule,
     IonicInputMaskModule
-
   ],
 
   exports:[

@@ -26,10 +26,6 @@ ion-title{
   font-size: 16px;
 }
 
-ion-item-options{
-  border-bottom-width:0px !important;
-}
-
 /* DARK */
 .back{
   width: 24px;
@@ -41,7 +37,6 @@ ion-item-options{
 
 @media (min-width: 390px) {
 ion-toolbar{
-  --padding-top: 16px;
   --padding-start: 24px;
   --padding-end: 24px;
   --padding-bottom: 40px;

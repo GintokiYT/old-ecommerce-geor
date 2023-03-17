@@ -13,13 +13,17 @@ import { CountrySelectedService } from 'src/app/account/services/country-selecte
   styleUrls: ['./buy.component.scss'],
 })
 export class BuyComponent extends ViewComponent implements OnInit {
+
+  //Open Documente Type
+  popupDocument: boolean = false;
+
+  //end
+
   flag: string;
   codePhone: string;
 
   form!: FormGroup;
   isPreventClose: boolean = false;
-  modalIsVisible : boolean = false;
-  @ViewChild(IonModal) modalValidate!: IonModal;
   @ViewChild("inputPhone") inputPhone: IonInput;
 
   @ViewChild(IonContent) content: IonContent;
@@ -33,7 +37,7 @@ export class BuyComponent extends ViewComponent implements OnInit {
   showTextHelperPost= false;
   showTextHelperPhone = false;
   showTextHelperEmail = false;
-
+  showTextHelperDocument = false;
 
   focusEmail = false;
 
@@ -75,43 +79,19 @@ export class BuyComponent extends ViewComponent implements OnInit {
         Validators.email,
         Validators.maxLength(190),
       ]),
+      document: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2)]),
+
+      numberDocument: new FormControl('', [
+        Validators.required]),
 
     });
   }
 
+
+
   ngAfterViewInit(): void {
-  }
-
-  async openModalValidate(value){
-    this.modalIsVisible = false;
-    if(value==="validate"){
-      await this.modalValidate.present();
-    }
-  }
-
-  async onSubmit() {
-    setTimeout(() => {
-      this.modalIsVisible = true;
-    }, 300);
-  }
-
-
-  async onValidPhone(type: string) {
-    this.isPreventClose = true;
-    await this.modalValidate.dismiss(null, 'confirm');
-
-    const params: NavigationExtras = {
-      queryParams: {
-        email: this.form.get('email')?.value,
-        movil: this.form.get('movil')?.value,
-      },
-    };
-
-    this.router.navigate([RouteCollection.auth.validPhone], params);
-  }
-
-  onGoToCountrySelect(){
-    this.navigation.forward("/register/country-select")
   }
 
 
@@ -132,7 +112,13 @@ export class BuyComponent extends ViewComponent implements OnInit {
                       this.showTextHelperName=false;
                       this.showTextHelpersurNames=false;
                       this.focusEmail = false;
+                      break;
+      case'document':this.showTextHelperDocument=true;
+                      this.showTextHelperName=false;
+                      this.showTextHelpersurNames=false;
+                      this.focusEmail = false;
                       break
+
       case "phone":
                     this.focusInputPhone = true;
                     if(this.inputPhone?.value.toString().length>0){
@@ -170,6 +156,7 @@ export class BuyComponent extends ViewComponent implements OnInit {
                     this.focusInputPhone = false;
                     ; break;
       case "email": this.showTextHelperEmail = false; break;
+      case "document": this.showTextHelperDocument = false; break;
 
     }
 
@@ -185,6 +172,26 @@ export class BuyComponent extends ViewComponent implements OnInit {
     }else{
       this.countryBorderColorState = "correct";
     }
+  }
+ /* console.log("aqui")
+    setTimeout(() => { */
+
+    /*   }, 100); */
+
+  openDocument(){
+    this.popupDocument = true;
+  }
+
+   changeStatusPopupDocument(status: boolean) {
+    this.popupDocument = status;
+  }
+
+  changeDocumentForm(value: string) {
+    this.form.get('document').setValue(value);
+  }
+
+  goBack(){
+    this.navigation.back('/customer/contact')
   }
 
 

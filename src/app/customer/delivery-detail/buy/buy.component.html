@@ -1,67 +1,31 @@
 <ion-content>
-  <!-- <ion-header class="ion-no-border">
-    <ion-toolbar>
-      <button (click)="goBack()" slot="start" class="arrow">
-        <img src="/assets/icons/icon-arrow-izquierda.svg" />
-      </button>
-      <ion-title>¿Quien recibirá la compra?</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-  <!--   <ion-item>
-    <ion-input placeholder="Nombre"></ion-input>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-input placeholder="Apellidos"></ion-input>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-input placeholder="Cargo"></ion-input>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-select interface="action-sheet" placeholder="Documento de identificación">
-      <ion-select-option value="apples">DNI</ion-select-option>
-      <ion-select-option value="oranges">Pasaporte</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-input placeholder="Correo electronico"></ion-input>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-label position="stacked">Telefono</ion-label>
-    <ion-input placeholder="">
-      <img src="/assets/icons/icon-PE.svg" />+551
-    </ion-input>
-  </ion-item>
-
-
-  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
-    <ion-toolbar class="ion-no-padding">
-      <ion-button
-      (click)="goTo('/customer/confirm-order')"
-        expand="full"
-        shape="round"
-        color="primary"
-        style="margin: 0;"
-      >
-        Guardar
-      </ion-button>
-    </ion-toolbar>
-  </ion-footer>
- -->
-  <app-header
+  <!--  <app-header
   title="¿Quien recibirá la compra?"
-  iconLeft="icon-arrow-left">
+  iconLeft="icon-arrow-left"
+  backDirection="contact">
 
-</app-header>
+</app-header> -->
+ <ion-header class="ion-no-border">
+
+  <ion-toolbar>
+      <button
+          (click)="goBack()"
+          slot="start">
+            <svg class="back" width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 12.2744L17 12.2744" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.0498 18.299L1.9998 12.275L8.0498 6.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+      </button>
+
+      <ion-title>¿Quien recibirá la compra?</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
 <form
 class="w-100 container-main"
-[formGroup]="form"
-
->
+[formGroup]="form">
 
  <!-- input Nombre -->
 <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
@@ -96,29 +60,28 @@ class="w-100 container-main"
     [control]="form.get('email')"></app-validation-messages>
   </ion-item>
 
-   <!-- input phone -->
- <div class="d-flex flex-column" style="margin-top: 15px;">
-  <div class="label-input-container">
 
-    <ion-label
-      [ngClass]="{'input-phone-unselect': focusInputPhone===false,
-                  'input-phone-select': focusInputPhone===true,
-                  'label-default': countryBorderColorState==='default',
-                  'label-correct' : countryBorderColorState==='correct',
-                  'label-error' : countryBorderColorState==='error'}"
-      >Documento de identificación
-    </ion-label>
-  </div>
-  <div class="country-select-container d-flex">
-   <div lines="none" class="form-group item-country">
-    <div class="d-flex justify-content-between">
-    <ion-label>DNI</ion-label>
+ <!--End type doc-->
+<ion-item lines="none" class="form-group ci" style="position: relative;"
+ (mousedown)="openDocument(); $event.stopPropagation()">
+ <ion-label position="floating" >
+   Tipo de documento
+ </ion-label>
+ <ion-input
+   formControlName="document"
+   readonly="true"
+ ></ion-input>
+ <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" fill="none">
+   <path d="M9.66675 12.6654L14.3334 7.9987L9.66675 3.33203" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+ </svg>
+</ion-item>
 
-    <img src="" alt="aqui">
-        </div>
-      </div>
-  </div>
-</div><!--End input phone-->
+     <ion-item lines="none" class="form-group ci">
+        <ion-label position="floating" >
+          Número de documento
+        </ion-label>
+        <ion-input  type="number"></ion-input>
+      </ion-item>
 
 
 
@@ -142,7 +105,7 @@ class="w-100 container-main"
                   'country-error' : countryBorderColorState==='error',
                   'width-two-digits': codePhone.length===2,
                   'width-three-digits': codePhone.length>2}"
-      (click)="onGoToCountrySelect()"
+
       >
       <img [src]="flag" width="24px"/>
       <ion-label>+{{codePhone}}</ion-label>
@@ -165,10 +128,21 @@ class="w-100 container-main"
 
   <ion-toolbar class="ion-no-padding">
     <div class="text-center">
-      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid || form.pending"
         type="submit" style="margin: 0px;">Confirmar</ion-button>
     </div>
   </ion-toolbar>
 
 
 </ion-footer>
+
+<app-popup-document
+  *ngIf="popupDocument"
+  [popupDocument]="popupDocument"
+  (changeStatusPopupDocument)="changeStatusPopupDocument($event)"
+  (changeDocumentForm)="changeDocumentForm($event)"
+></app-popup-document>
+<!-- <app-popup-document
+  *ngIf="popupDocumentType"
+  ></app-popup-document>
+ -->

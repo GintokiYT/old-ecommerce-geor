@@ -29,6 +29,7 @@ export class ModalResendInvitationComponent extends ViewComponent implements OnI
   }
 
   ngOnInit() {}
+
   goContact(){
     this.navigation.root('/customer/contact-basket','forward');
     this.dialog.dismiss();
