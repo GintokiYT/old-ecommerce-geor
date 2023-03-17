@@ -6,74 +6,97 @@
   >
   </app-header>
 
-  <div class="mx-4 container-main">
-    <div class="d-flex justify-content-between mb-4">
-      <img
-        src="/assets/icons/icon-stoke-izquierda.svg"
-        slot="start"
-        class="arrow"/>
-      <ion-label> Nov 2022 </ion-label>
-      <img
-        src="/assets/icons/icon-stroke-derecha.svg"
-        slot="end"
-        class="arrow"/>
+  <div class="content-date container-main">
+    <div *ngIf="currentDate">
+      <div class="d-flex justify-content-between mb-4">
+        <button (click)="lastMonth()">
+          <svg  class ="icon-left" width="1em" height="1em" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.54163 9.08366L1.45829 5.00033L5.54163 0.916992" stroke="black" stroke-opacity="0.38" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+        </button>
+        <ion-label>{{ currentDate | date : "MMM y" }}</ion-label>
+        <button (click)="nextMonth()">
+          <svg
+          class ="icon-right"
+            width="1em"
+            height="1em"
+            viewBox="0 0 7 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.45837 0.916341L5.54171 4.99967L1.45837 9.08301"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- fecha -->
     <div class="carousel__wrapper mt-4">
       <ion-slides [options]="dateSlidesOptions">
-       <ion-slide *ngFor="let item of dates">
-         <div class="text-start">
-            <div class="cost" [class.selected]="item.date === selectedDate"
-            (click)="onDateSelected(item.date)">
+        <ion-slide *ngFor="let item of dates">
+          <div class="text-start">
+            <div
+              class="cost"
+              [class.selected]="item.date === selectedDate"
+              (click)="onDateSelected(item.date)"
+            >
               <ion-label class="fz-note fw-normal d-block">
-                {{item.date}}
+                {{ item.date }}
               </ion-label>
             </div>
-         </div>
-       </ion-slide>
-     </ion-slides>
+          </div>
+        </ion-slide>
+      </ion-slides>
     </div>
 
     <div class="d-flex justify-content-between align-items-center pb-3 time">
-      <div class="d-flex flex-column ">
+      <div class="d-flex flex-column">
         <ion-text>
           <ion-label>8:00am - 1:00pm</ion-label>
           <p class="style fz-small">Costo de envío</p>
           <ion-label>S/ 60.00</ion-label>
         </ion-text>
       </div>
-      <ion-checkbox [(ngModel)]="checkbox1Selected" (click)="checkbox2Selected = false"> </ion-checkbox>
+      <ion-checkbox
+        [(ngModel)]="checkbox1Selected"
+        (click)="checkbox2Selected = false"
+      >
+      </ion-checkbox>
     </div>
     <div class="line"></div>
-    <div class="d-flex justify-content-between align-items-center mt-3" >
-      <div class="d-flex flex-column ">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <div class="d-flex flex-column">
         <ion-text>
           <ion-label>2:00am - 6:00pm</ion-label>
           <p class="style fz-">Costo de envío</p>
           <ion-label>S/ 50.00</ion-label>
         </ion-text>
       </div>
-      <ion-checkbox [(ngModel)]="checkbox2Selected" (click)="checkbox1Selected = false"> </ion-checkbox>
+      <ion-checkbox
+        [(ngModel)]="checkbox2Selected"
+        (click)="checkbox1Selected = false"
+      >
+      </ion-checkbox>
     </div>
-
-
   </div>
 
   <ion-footer class="ion-no-border ion-no-padding footer-ionic">
     <ion-toolbar class="ion-no-padding">
       <ion-button
-      (click)="goTo('/customer/confirm-order')"
-      [disabled]="!(checkbox1Selected || checkbox2Selected)"
+        (click)="goTo('/customer/confirm-order')"
+        [disabled]="!(checkbox1Selected || checkbox2Selected)"
         expand="full"
         shape="round"
         color="primary"
-        style="margin: 0;"
+        style="margin: 0"
       >
         Guardar
       </ion-button>
     </ion-toolbar>
   </ion-footer>
-
 </ion-content>
-
