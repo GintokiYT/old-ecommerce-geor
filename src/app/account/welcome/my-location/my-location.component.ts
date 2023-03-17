@@ -7,6 +7,7 @@ import { Geolocation, } from '@capacitor/geolocation';
 import { AlertController } from '@ionic/angular';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 import { RouteService } from '../../../services/route.service';
+import { Router } from '@angular/router';
 
 interface Contenido {
   button: string;
@@ -30,7 +31,8 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
     private languageService: LanguageService,
     private alertController: AlertController,
     private diagnostic: Diagnostic,
-    private rs: RouteService
+    private rs: RouteService,
+    private router: Router
   ) {
     super(_injector);
     this.mapId = 'map';
@@ -116,7 +118,7 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
     if (this.previousRoute.includes("manage")) {
       this.navigation.back(this.previousRoute);
     } else {
-      this.navigation.forward('customer/home');
+      this.router.navigate(['/customer/home']);
     }
 
   }

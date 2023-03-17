@@ -242,3 +242,7 @@ p {
     }
   }
 }
+
+.header-basic {
+  padding-top: calc(var(--ion-safe-area-top) + 16px);
+}
