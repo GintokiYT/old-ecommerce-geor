@@ -36,59 +36,63 @@ export class TeamComponent extends ViewComponent implements OnInit {
     //Modal Accepted
     this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status);
   }
+  equipos: Equipo[] = [];
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(this.equipos);
-    console.log(this.equipos.filter( equipo => equipo.id === 'cod002'))
+    console.log(this.equipos.filter( equipo => equipo.id === 'cod002'));
+
+    this.equipos= [
+      {
+        id: '1',
+        image:'assets/collaborative-basquet/Avatar.svg',
+        nombre: 'Juliano del Carmen Soriano',
+        estado: {
+          estado:"Pendiente",
+          numero:"+51 971 945 234"
+        }
+      },
+      {
+        id: '2',
+        image:'assets/collaborative-basquet/Avatar3.svg',
+        nombre: 'Rolando Paredes Alvarado',
+        estado: {
+          estado:"",
+          numero:"+51 971 945 234"
+        }
+      },
+      {
+        id: '3',
+        image:'assets/collaborative-basquet/Avatar3.svg',
+        nombre: 'Nombre y apellidos',
+        estado:{
+          estado:"Pendiente",
+          numero:"+51 971 945 234"
+        }
+      },
+      {
+        id: '4',
+        image:'assets/collaborative-basquet/Avatar2.svg',
+        nombre: 'Nombre y apellidos',
+        estado: {
+          estado:"",
+          numero:"+51 971 945 234"
+        }
+      },
+      {
+        id: '5',
+        image:'assets/collaborative-basquet/Avatar.svg',
+        nombre: 'Juliano del Carmen Soriano',
+        estado: {
+          estado:"Pendiente",
+          numero:"+51 971 945 234"
+        }
+      }
+    ]
+
   }
 
-  equipos: Equipo[] = [
-    {
-      id: '1',
-      image:'assets/collaborative-basquet/Avatar.svg',
-      nombre: 'Juliano del Carmen Soriano',
-      estado: {
-        estado:"Pendiente",
-        numero:"+51 971 945 234"
-      }
-    },
-    {
-      id: '2',
-      image:'assets/collaborative-basquet/Avatar3.svg',
-      nombre: 'Rolando Paredes Alvarado',
-      estado: {
-        estado:"",
-        numero:"+51 971 945 234"
-      }
-    },
-    {
-      id: '3',
-      image:'assets/collaborative-basquet/Avatar3.svg',
-      nombre: 'Nombre y apellidos',
-      estado:{
-        estado:"Pendiente",
-        numero:"+51 971 945 234"
-      }
-    },
-    {
-      id: '4',
-      image:'assets/collaborative-basquet/Avatar2.svg',
-      nombre: 'Nombre y apellidos',
-      estado: {
-        estado:"",
-        numero:"+51 971 945 234"
-      }
-    },
-    {
-      id: '5',
-      image:'assets/collaborative-basquet/Avatar.svg',
-      nombre: 'Juliano del Carmen Soriano',
-      estado: {
-        estado:"Pendiente",
-        numero:"+51 971 945 234"
-      }
-    }
-  ]
+
 
   selectedId: string | undefined;
 

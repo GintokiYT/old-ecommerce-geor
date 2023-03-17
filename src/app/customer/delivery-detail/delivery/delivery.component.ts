@@ -9,8 +9,7 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class DeliveryComponent extends ViewComponent implements OnInit {
 
-  @Input()
-  title: string = ""
+ public isSaveButtonEnabled = false;
 
   constructor(private location: Location, _injector: Injector) {
     super(_injector)
@@ -22,4 +21,10 @@ export class DeliveryComponent extends ViewComponent implements OnInit {
   goTo(path:string){
     this.navigation.back(path);
   }
+
+  public onTextAreaInput(event: any): void {
+    const value = event.target.value;
+    this.isSaveButtonEnabled = value.length > 0;
+  }
+
 }

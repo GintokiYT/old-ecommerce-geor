@@ -15,7 +15,7 @@
 
 <div class="container-main">
   <ion-item lines="none" >
-    <ion-textarea></ion-textarea>
+    <ion-textarea (input)="onTextAreaInput($event)"></ion-textarea>
   </ion-item>
   <ion-item lines="none">
     <ion-label>
@@ -32,6 +32,7 @@
       shape="round"
       color="primary"
       style="margin: 0;"
+      [disabled]="!isSaveButtonEnabled"
     >
       Guardar
     </ion-button>
