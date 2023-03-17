@@ -2,9 +2,9 @@
 import { Component, Input, OnInit,Injector } from '@angular/core';
 import { Location } from '@angular/common';
 import { ViewComponent } from '@geor360/ecore';
+
 interface ICost {
   date: string,
-
 }
 
 @Component({
@@ -13,6 +13,16 @@ interface ICost {
   styleUrls: ['./date.component.scss'],
 })
 export class DateComponent extends ViewComponent implements OnInit {
+
+  diasDeLaSemana = {
+    0: 'Dom',
+    1: 'Lun',
+    2: 'Mar',
+    3: 'Mie',
+    4: 'Jue',
+    5: 'Vie',
+    6: 'Sab'
+  }
 
   //select
   selectedDate: string;
@@ -23,29 +33,45 @@ export class DateComponent extends ViewComponent implements OnInit {
       delay: 5000,
     },
   };
+
   dates: ICost[] = [];
+
   dateSlidesOptions: any = {
     spaceBetween: 8,
     slidesPerView: 'auto',
   };
 
-  @Input()
-  title: string = ""
+  @Input() title: string = ""
+  currentDate: Date = new Date(); // fecha actual
+
   constructor(private location: Location,_injector: Injector) {
     super(_injector)
   }
 
   ngOnInit() {
 
-    this.dates = [
-      { date:'Dom 27/11'},
-      { date:'Lun 28/11'},
-      { date:'Mar 26/11'},
-      { date:'Mie 25/11'},
-      { date:'Jue 24/11'},
-      { date:'Vie 23/11'},
-      { date:'Sab 22/11'},
-       ];
+    function obtenerDiasMes(anio, mes) {
+      var fecha = new Date(anio, mes - 1, 1); // mes comienza en 0 (enero)
+      var dias = [];
+      while (fecha.getMonth() === mes - 1) {
+        dias.push(new Date(fecha));
+        fecha.setDate(fecha.getDate() + 1);
+      }
+      return dias;
+    }
+    const diasdelmes = obtenerDiasMes(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1)
+
+
+    diasdelmes.forEach( dia => {
+      const currentDay = new Date(dia);
+
+      if( currentDay.getDate() >= new Date().getDate() ) {
+        const diaSemana = this.diasDeLaSemana[currentDay.getDay()];
+        this.dates.push({
+          date: `${diaSemana} ${currentDay.getDate()}/ ${currentDay.getMonth() + 1}`
+        })
+      }
+    })
   }
 
   goTo(path: string){
@@ -57,12 +83,21 @@ export class DateComponent extends ViewComponent implements OnInit {
   onDateSelected(date: string) {
     this.selectedDate = date;
   }
+// Primer checkbox seleccionado por defecto
+  checkbox1Selected = true;
 
-  //checkbox
-  checkbox1Selected = true; // Primer checkbox seleccionado por defecto
-  checkbox2Selected = false; // Segundo checkbox no seleccionado por defecto
+// Segundo checkbox no seleccionado por defecto
+  checkbox2Selected = false;
 
+  nextMonth() {
+    this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 1);
   }
+
+  lastMonth() {
+    this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() - 1, 1);
+  }
+
+}
 
 
 

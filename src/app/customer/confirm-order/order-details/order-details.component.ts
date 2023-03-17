@@ -10,14 +10,15 @@ import IOrder from '../../../interfaces/IOrder';
 })
 export class OrderDetailsComponent extends ViewComponent implements OnInit {
 
-
   modalIsVisible: boolean = false;
 
+  deliveryRequirements: string;
 
   order: IOrder;
 
   constructor(_injector: Injector, public cpService: ConfirmOrderService) {
-    super(_injector)
+    super(_injector);
+    this.cpService.getDeliveryRequirements.subscribe( value => this.deliveryRequirements = value );
   }
 
   ngOnInit() {

@@ -12,7 +12,19 @@ import IPayMethod from '../../../interfaces/IPayMethod';
 export class ConfirmOrderService {
 
   //Servicio para obtenr los datos de delivery
-  deliveryRequirements: string;
+  private deliveryRequirements = new BehaviorSubject<string>('Requisitos para la entrega');
+
+  get getDeliveryRequirements():Observable<string> {
+    return this.deliveryRequirements;
+  }
+
+  setDeliveryRequirements(value: string) {
+    this.deliveryRequirements.next(value);
+  }
+
+
+
+
 
   private myOrder: IOrder = {
 

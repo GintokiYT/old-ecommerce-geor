@@ -1,3 +1,7 @@
+button {
+  background-color: transparent;
+}
+
 ion-footer {
   position: fixed;
   bottom: 0;
@@ -60,4 +64,30 @@ ion-checkbox {
 .time {
   margin-top: 32px;
   border-bottom: 1px solid var(--ion-color-separator);
+}
+
+.content-date {
+  margin: 0px 16px;
+}
+
+.icon-left {
+ width: 7px;
+ height: 10px;
+  path {
+    stroke: var(--ion-color-label-disabled);
+  }
+}
+
+.icon-right {
+ width: 7px;
+ height: 10px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
+}
+
+@media (min-width: 390px) {
+  .content-date {
+    margin: 0px 24px;
+  }
 }
