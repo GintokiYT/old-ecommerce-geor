@@ -28,7 +28,7 @@
     <ion-item class="form-group">
       <ion-label position="floating" *ngIf="inputValue==='Factura'">Identificador fiscal</ion-label>
       <ion-label position="floating" *ngIf="inputValue==='Boleta'">Número de documento de identidad</ion-label>
-      <ion-input type="number" formControlName="id" #ionId></ion-input>
+      <ion-input type="tel" inputmode="numeric" formControlName="id" #ionId></ion-input>
     </ion-item>
 
   </form>
