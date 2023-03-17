@@ -15,7 +15,7 @@
 
 <div class="container-main">
   <ion-item lines="none" >
-    <ion-textarea (input)="onTextAreaInput($event)"></ion-textarea>
+    <ion-textarea #deliveryRequirements (input)="onTextAreaInput($event)"></ion-textarea>
   </ion-item>
   <ion-item lines="none">
     <ion-label>
@@ -27,7 +27,7 @@
 <ion-footer class="ion-no-border ion-no-padding footer-ionic">
   <ion-toolbar class="ion-no-padding">
     <ion-button
-    (click)="goTo('/customer/confirm-order')"
+    (click)="goSaveDeliveryRequirements()"
       expand="full"
       shape="round"
       color="primary"
