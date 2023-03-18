@@ -19,6 +19,7 @@ import { PictureBigComponent } from './picture-big/picture-big.component';
 import { VariantsProductComponent } from './variants-product/variants-product.component';
 import { ModalCountryComponent } from './send/modal-country/modal-country.component';
 import { CountryDirectionComponent } from './send/country-direction/country-direction.component';
+import { ChangeReturnComponent } from './change-return/change-return.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { CountryDirectionComponent } from './send/country-direction/country-dire
     PictureBigComponent,
     VariantsProductComponent,
     ModalCountryComponent,
-    CountryDirectionComponent
+    CountryDirectionComponent,
+    ChangeReturnComponent
   ],
   imports: [
     CommonModule,

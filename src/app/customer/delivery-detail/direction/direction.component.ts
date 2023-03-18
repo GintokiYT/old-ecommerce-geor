@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { AlertController } from '@ionic/angular';
 import { ViewComponent } from '@geor360/ecore';
 import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-direction',
@@ -90,7 +91,7 @@ export class DirectionComponent extends ViewComponent implements OnInit {
   ]
 
   constructor(private cpService: ConfirmOrderService,
-    private _injector: Injector) {
+    private _injector: Injector,private router:Router) {
       super(_injector)
      }
 
@@ -110,6 +111,16 @@ export class DirectionComponent extends ViewComponent implements OnInit {
     }
     this.navigation.back("/customer/confirm-order");
   }
+
+  goLocation(){
+    const currentRouter = this.router.url;
+  if(currentRouter === '/customer/collaborative-team/contact-search') {
+    return this.navigation.forward('/customer/collaborative-team/team')
+  }
+  this.navigation.forward('/account/welcome/my-location');
+  /* this.navigation.forward('/customer/contact-search'); */
+  }
+
 
   /* handlerMessage = '';
     roleMessage = ''; */

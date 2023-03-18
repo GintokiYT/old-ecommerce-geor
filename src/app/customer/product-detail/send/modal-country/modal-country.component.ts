@@ -38,20 +38,17 @@ export class ModalCountryComponent implements OnInit {
   public dataCountries: any[] = [
     {
       country: "Perú",
-      cod: "+51",
       flag: "/assets/flags/pe.svg",
 
       selected: true
     },
     {
       country: "Argentina",
-      cod:"+54 9 11",
       flag: "/assets/flags/ar.svg",
       selected: false
     },
     {
       country: "Chile",
-      cod:"+56",
       flag: "/assets/flags/cl.svg",
       selected: false
     },
