@@ -1,6 +1,6 @@
 .options{
-    padding-right: 52px;
-    padding-left: 24px;
+    padding-right: 60px;
+    padding-left: 16px;
     display: flex;
     justify-content: space-between;
     .card{
@@ -43,11 +43,15 @@ ion-footer{
     }
     ion-button{
         height: 40px;
-        margin: 0px ;
+        margin: 0px;
     }
 }
 
 @media(min-width:390px){
+    .options{
+        padding-right: 52px;
+        padding-left: 24px;
+    }
     ion-footer{
         ion-button{
             height: 48px !important;

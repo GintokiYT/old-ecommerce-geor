@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { ShareModule } from 'src/app/shared/shared.module';
 import { LastStepComponent } from './last-step/last-step.component';
 
-
 @NgModule({
   declarations: [LastStepComponent],
   imports: [
