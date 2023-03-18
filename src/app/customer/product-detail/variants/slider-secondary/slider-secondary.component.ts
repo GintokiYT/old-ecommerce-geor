@@ -22,6 +22,7 @@ export class SliderSecondaryComponent  implements OnInit {
   costSlidesOptions: any = {
     spaceBetween: 16,
     slidesPerView: 'auto',
+    width: 250, // ajusta el ancho del slide a 300px
   };
 
   constructor() { }

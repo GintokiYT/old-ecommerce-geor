@@ -86,7 +86,8 @@
  position: fixed;
   bottom: 0;
   z-index: 100000;
-  margin-bottom: calc(var(--ion-safe-area-bottom) + 45px) !important;
+  /* margin-bottom: calc(var(--ion-safe-area-bottom) + 45px) !important; */
+  margin-bottom: 71px;
 
   ion-toolbar {
    z-index: 100000;

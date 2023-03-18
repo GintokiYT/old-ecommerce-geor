@@ -40,4 +40,10 @@ export class ModalBasketComponent extends ViewComponent implements OnInit {
 
     this.navigation.forward('customer/my-basket');
   }
+
+  goVariants(){
+    this.productoDetailService.setStatusModalBasket(false);
+  }
+
+
 }

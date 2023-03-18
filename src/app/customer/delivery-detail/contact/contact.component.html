@@ -28,7 +28,7 @@
         </svg>
       </button>
       <ion-title>Lista de contactos</ion-title>
-      <button (click)="goContactSeatch()" slot="end" class="arrow">
+      <button  slot="end" class="arrow">
         <svg
           class="icons"
           width="1em"
@@ -59,7 +59,7 @@
   </ion-header>
 
 <div class="container-main container-contact">
-  <ion-item lines="none" *ngFor="let result of results; let i = index"  (click)="go()">
+  <ion-item lines="none" *ngFor="let result of results; let i = index"  (click)="goBuy()">
     <ion-checkbox
       slot="end"
       mode="ios"
@@ -76,6 +76,7 @@
 </div>
 
 <img
+    (click)="goBuy()"
     class="icon-plus"
     src="assets/collaborative-basquet/Plus-circle.svg"
     alt="plus"

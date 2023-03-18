@@ -75,6 +75,7 @@ import { ConditionsComponent } from './manage-coupons/conditions/conditions.comp
 //* Routes
 import { searchGeneralRoutes } from './router/searchGeneralRoutes';
 import { CountryDirectionComponent } from './product-detail/send/country-direction/country-direction.component';
+import { ChangeReturnComponent } from './product-detail/change-return/change-return.component';
 
 const routes: Routes = [
   {
@@ -100,7 +101,7 @@ const routes: Routes = [
       { path: 'picture-big',component:PictureBigComponent},
       { path: 'variants-product',component:VariantsProductComponent},
       { path: 'country-direction',component:CountryDirectionComponent},
-
+      { path: 'change-return',component:ChangeReturnComponent},
       { path: 'manage-favorites', component: ManageFavoritesComponent},
       { path: 'user-help', component: UserHelpComponent },
       { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
