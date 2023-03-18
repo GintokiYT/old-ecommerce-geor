@@ -1,5 +1,4 @@
 <ion-content>
-
     <app-header
       title="Último paso"
       backDirection="confirm-order"
@@ -20,12 +19,13 @@
               <ion-label position="floating" class="fz-normal" color="medium">
                   Ingresa el código de seguridad</ion-label>
               <ion-input
+              #securityCode
               inputmode="numeric"
               type="tel"
               name="code"
               maxlength="3"
               [(ngModel)]="data.code"
-              required 
+              required
               ></ion-input>
               <img id="info" slot="end" (click)="setOpen(true)" src="/assets/icons/icon-help.svg" alt="help">
           </ion-item>
@@ -50,7 +50,7 @@
         </ng-template>
       </ion-modal>
 
-      <ion-modal id="coupon" [isOpen]="isCouponOpen" >
+      <!-- <ion-modal id="coupon" [isOpen]="isCouponOpen" >
         <ng-template>
           <img id="icon-close" width="15px" (click)="setOpen2(false)" src="/assets/icons/icon-close.svg">
           <div id="content-coupon">
@@ -73,35 +73,53 @@
             </div>
           </div>
         </ng-template>
-      </ion-modal>
-
-      <!-- <ion-modal id="mistake" [isOpen]="isMistakeOpen" >
-        <ng-template>
-          <div id="content-mistake">
-            <div  id="mistake">
-              <img src="/assets/icons/icon-mistake.svg" id="mistake">
-            </div>
-            <div id="info">
-              <p class="fz-normal"><b>Ups, no se pudo realizar el pago</b></p>
-              <p class="fz-normal not" color="medium">Te recomendamos intentar con otra tarjeta o elegir otra forma de pago</p>
-            </div>
-            <ion-button color="primary" shape="round" expand="block"
-              >Intentar de nuevo</ion-button>
-          </div>
-        </ng-template>
       </ion-modal> -->
 
     </div><!-- End container main-->
-    
+
+<!-- <ion-modal id="load-modal" class="modals" #modal trigger="open-modal-load" >
+  <ng-template>
+    <div class="loader"></div>
+  </ng-template>
+</ion-modal> -->
+
 </ion-content>
 
 <ion-footer class="footer-ionic">
   <ion-toolbar>
-    <ion-button 
+    <ion-button
       [disabled]="formulario.invalid"
-      (click)="setOpen2(true)"
+      (click)="goTo('/customer/internal-inbox/3')"
       type="submit" color="primary" shape="round" expand="block">
       <ion-label class="fz-normal">Confirmar pago</ion-label>
-    </ion-button>  
+    </ion-button>
   </ion-toolbar>
 </ion-footer>
+
+<!-- Modal Spinner -->
+<div class="container-modal" *ngIf="statusModalSpinner">
+  <ion-item>
+    <ion-spinner color="primary" name="circular"></ion-spinner>
+  </ion-item>
+</div>
+
+<!-- Modal Alerta de tarjeta no valida -->
+<ion-modal id="mistake" [isOpen]="isMistakeOpen" >
+  <ng-template>
+    <div id="content-mistake">
+      <div  id="mistake">
+        <img src="/assets/icons/icon-mistake.svg" id="mistake">
+      </div>
+      <div id="info">
+        <p class="fz-normal"><b>Ups, no se pudo realizar el pago</b></p>
+        <p class="fz-normal not" color="medium">Te recomendamos intentar con otra tarjeta o elegir otra forma de pago</p>
+      </div>
+      <ion-button (click)="tryAgain()" color="primary" shape="round" expand="block"
+        >Intentar de nuevo</ion-button>
+    </div>
+  </ng-template>
+</ion-modal>
+
+      <!-- (click)="setOpen2(true)" -->
+
+      <!-- id="open-modal-load"  -->

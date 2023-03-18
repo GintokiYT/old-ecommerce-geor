@@ -5,7 +5,7 @@
     title="Mis direcciones"
     iconLeft="icon-close"
     iconRight="icon-delete"
-    backDirection="confirm-order"
+    backDirection="send"
     (onClickDelete)="deleteBill($event)"
     titleModalDelete = "¿Seguro que quieres eliminar esta dirección?"
     [haveSelected]="oneTrue"
@@ -17,7 +17,6 @@
 
     <div class="d-flex align-items-center bill-container" *ngFor="let bill of bills">
       <ion-checkbox
-        [(ngModel)] = bill.selected
         (ngModelChange)="checkBoxChange(bill.id)"
       >
       </ion-checkbox>
@@ -42,7 +41,7 @@
       <!-- (click)="setBill()" -->
       <ion-button
         [disabled]="!oneTrue"
-        (click)="establecerDirection()"
+        (click)="goSend()"
         expand="full"
         shape="round"
         color="primary"

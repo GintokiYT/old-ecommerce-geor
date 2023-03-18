@@ -1,7 +1,7 @@
 .cards{
-    margin: 0px 24px 0px 24px;
- 
-    #data-card{ 
+    margin: 0px 16px 0px 16px;
+
+    #data-card{
         padding: 16px 0px 16px 10px;
         margin-bottom: 32px;
         border-radius: 10px;
@@ -17,9 +17,9 @@
         margin:0px;
         padding: 0px;
     }
-    ion-item::part(native){ 
+    ion-item::part(native){
         padding: 0px;
-    } 
+    }
     ion-item{
         --inner-padding-end: 0px !important;
         #info{
@@ -49,19 +49,19 @@ ion-modal::part(content){
         svg rect:nth-child(1){
         fill: var(--card-background-primary);
         }
-          
+
         svg rect:nth-child(2){
           fill: var(--card-background-secondary);
         }
-          
+
         svg rect:nth-child(3){
             fill: var(--card-background-tertiary);
         }
-          
+
         svg path {
         fill: var(--card-color-text);
         }
-          
+
         svg rect:last-child {
             stroke: var(--card-selected-color);
         }
@@ -77,7 +77,7 @@ ion-modal::part(content){
     }
     .title-modal{
         font-weight: bold;
-    } 
+    }
 }
 
 #coupon{
@@ -100,7 +100,7 @@ ion-modal::part(content){
             margin-bottom: 4px;
         }
         p{
-            margin-bottom: 8px; 
+            margin-bottom: 8px;
         }
         #expires{
             display: flex;
@@ -131,39 +131,39 @@ ion-modal::part(content){
                 width: 131.5px;
                 margin: 0px;
                 border-radius: 50px;
-                font-family: 'Roboto'; 
+                font-family: 'Roboto';
                 font-size: 12px;
             }
         }
-    } 
+    }
 }
 
-// #mistake{
-//     --width: 288px;
-//     --height: 241px;
-//     --border-radius: 10px;
-//     #content-mistake{
-//         padding: 24px 16px 24px 16px;
-//         #mistake{
-//             text-align: center;
-//         }
-//         #info{
-//             margin: 24px 0px 14px 0px;
-//             p{
-//                 text-align: center;
-//                 margin-bottom: 8px;
-//             }
-//             .not{
-//                 font-size: 12px !important;
-//             }
-//         }
-//         ion-button{
-//             height: 40px;
-//             font-size: 14px !important;
-//             margin: 0px;
-//         }
-//     } 
-// }
+#mistake{
+    --width: 288px;
+    --height: 241px;
+    --border-radius: 10px;
+    #content-mistake{
+        padding: 24px 16px 24px 16px;
+        #mistake{
+            text-align: center;
+        }
+        #info{
+            margin: 24px 0px 14px 0px;
+            p{
+                text-align: center;
+                margin-bottom: 8px;
+            }
+            .not{
+                font-size: 12px !important;
+            }
+        }
+        ion-button{
+            height: 40px;
+            font-size: 14px !important;
+            margin: 0px;
+        }
+    }
+}
 
 
 ion-footer{
@@ -183,6 +183,9 @@ ion-footer{
 }
 
 @media(min-width:390px){
+    .cards{
+        margin: 0px 24px 0px 24px;
+    }
     #coupon{
         --width: 343px;
         --height: 318px;
@@ -234,3 +237,46 @@ ion-footer{
         }
     }
 }
+
+#load-modal{
+    --width: 64px;
+    --height: 67px;
+    --border-radius: 10px;
+    .loader {
+        width: 35px;
+        height: 35px;
+        border: solid #3C66FB 3.5px;
+        border-bottom: solid transparent 3.5px;
+        border-radius: 50%;
+        animation: loader 1s linear infinite;
+        margin: auto; /* centrar el círculo */
+
+    }
+
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.container-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  background-color: var(--ion-background-color-modal);
+
+  ion-item::part(native) {
+    --inner-padding-end: 0px;
+    --inner-border-width: 0px;
+  }
+}
+

@@ -55,3 +55,29 @@
   </div>
 </ion-footer>
 <!-- End Footer -->
+
+
+<!-- Modal yanci -->
+<ion-modal id="coupon" [isOpen]="isCouponOpen" >
+  <ng-template>
+    <img id="icon-close" width="15px" src="/assets/icons/icon-close.svg" (click)="closeModalCoupon()">
+    <div id="content-coupon">
+      <p class="fz-large title-modal">
+        ¡Conseguiste un cupón!</p>
+      <p class="fz-normal discount"><b>-15%</b></p>
+      <p class="fz-large"><b>Felíz día de la madre, <br> que los pases super</b> </p>
+      <p class="fz-note" color="medium">CÓDIGO: SODIM123NOV2022</p>
+      <div id="expires">
+        <img src="/assets/icons/icon-danger.svg" id="danger">
+        <p class="fz-small date" color="medium">Vence:</p>
+        <p class="fz-small date" color="medium"><b>30 nov 2022</b></p>
+      </div>
+      <div id="buttons">
+        <ion-label class="fz-small conditions">Condiciones</ion-label>
+        <ion-button
+        color="primary" shape="round" class="fz-small"
+        >Usar cupón</ion-button>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>

@@ -76,6 +76,7 @@ import { ConditionsComponent } from './manage-coupons/conditions/conditions.comp
 import { searchGeneralRoutes } from './router/searchGeneralRoutes';
 import { CountryDirectionComponent } from './product-detail/send/country-direction/country-direction.component';
 import { ChangeReturnComponent } from './product-detail/change-return/change-return.component';
+import { DirectionsComponent } from './product-detail/directions/directions.component';
 
 const routes: Routes = [
   {
@@ -106,6 +107,7 @@ const routes: Routes = [
       { path: 'user-help', component: UserHelpComponent },
       { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
       { path: 'user-help/complaints-book/thanks', component: ComplaintThanksComponent },
+      { path: 'user-help/complaints-book/internal-inbox/:id', component: InternalInboxComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
@@ -128,6 +130,7 @@ const routes: Routes = [
       { path: 'direction', component:DirectionComponent},
       { path: 'date', component:DateComponent},
       { path: 'contact', component:ContactComponent},
+      { path: 'contact/buy', component:BuyComponent},
       { path: 'buy', component:BuyComponent},
       { path: 'delivery', component:DeliveryComponent},
       { path: 'alert', component:AlertComponent},
@@ -139,7 +142,12 @@ const routes: Routes = [
       { path: 'payment-methods', component:PaymentMethodsComponent },
       { path: 'other-forms-pay', component:OtherFormsPayComponent },
       { path: 'add-card', component:AddCardComponent },
+      { path: 'send-directions', component:DirectionsComponent},
+
+
       { path: 'last-step', component:LastStepComponent },
+      { path: 'last-step/internal-inbox/:id', component: InternalInboxComponent },
+
       { path: 'confirm-order', component: ConfirmOrderComponent},
       {path: 'payment-method-configuration', component: PaymentMethodConfigurationComponent},
       {path: 'card-payment-methods', component: CardPaymentMethodsComponent},

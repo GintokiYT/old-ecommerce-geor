@@ -20,47 +20,49 @@ import { VariantsProductComponent } from './variants-product/variants-product.co
 import { ModalCountryComponent } from './send/modal-country/modal-country.component';
 import { CountryDirectionComponent } from './send/country-direction/country-direction.component';
 import { ChangeReturnComponent } from './change-return/change-return.component';
+import { DirectionsComponent } from './directions/directions.component';
+import { ShareModule } from "../../shared/shared.module";
 
 
 @NgModule({
-  declarations: [
-    DetailComponent,
-    HeaderDetailComponent,
-    SendComponent,
-    ProductComponent,
-    FooterProductComponent,
-    VariantsComponent,
-    HeaderVariantsComponent,
-    SliderVariantsComponent,
-    SliderCostsComponent,
-    SliderSecondaryComponent,
-    HeaderProductComponent,
-    ModalVariantsComponent,
-    ModalAddComponent,
-    ModalBasketComponent,
-    PictureBigComponent,
-    VariantsProductComponent,
-    ModalCountryComponent,
-    CountryDirectionComponent,
-    ChangeReturnComponent
-  ],
-  imports: [
-    CommonModule,
-    IonicModule
-
-  ],
-  exports:[
-     HeaderDetailComponent,
-     FooterProductComponent,
-     HeaderVariantsComponent,
-     SliderVariantsComponent,
-     SliderCostsComponent,
-     SliderSecondaryComponent,
-     HeaderProductComponent,
-     ModalVariantsComponent,
-     ModalAddComponent,
-     ModalBasketComponent
-
-  ]
+    declarations: [
+        DetailComponent,
+        HeaderDetailComponent,
+        SendComponent,
+        ProductComponent,
+        FooterProductComponent,
+        VariantsComponent,
+        HeaderVariantsComponent,
+        SliderVariantsComponent,
+        SliderCostsComponent,
+        SliderSecondaryComponent,
+        HeaderProductComponent,
+        ModalVariantsComponent,
+        ModalAddComponent,
+        ModalBasketComponent,
+        PictureBigComponent,
+        VariantsProductComponent,
+        ModalCountryComponent,
+        CountryDirectionComponent,
+        ChangeReturnComponent,
+        DirectionsComponent
+    ],
+    exports: [
+        HeaderDetailComponent,
+        FooterProductComponent,
+        HeaderVariantsComponent,
+        SliderVariantsComponent,
+        SliderCostsComponent,
+        SliderSecondaryComponent,
+        HeaderProductComponent,
+        ModalVariantsComponent,
+        ModalAddComponent,
+        ModalBasketComponent
+    ],
+    imports: [
+        CommonModule,
+        IonicModule,
+        ShareModule
+    ]
 })
 export class ProductDetailModule { }

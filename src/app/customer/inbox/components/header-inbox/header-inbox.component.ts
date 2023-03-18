@@ -39,8 +39,12 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
       return this.navigation.back('/customer/product');
     }
 
+    if(currentRouter.includes('/customer/last-step/internal-inbox')) {
+      return this.navigation.back('/customer/last-step');
+    }
+
     //this.navigation.back('/customer/main-inbox');
-    this.navigation.back(this.previousRoute);
+    this.navigation.back(this.previousRoute ?? '/customer/main-inbox');
   }
 
   openTelf() {

@@ -24,8 +24,10 @@
 </ion-header>
 
 <form
-class="w-100 container-main"
-[formGroup]="form">
+  class="w-100 container-main"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
 
  <!-- input Nombre -->
 <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
@@ -80,7 +82,7 @@ class="w-100 container-main"
         <ion-label position="floating" >
           Número de documento
         </ion-label>
-        <ion-input  type="number"></ion-input>
+        <ion-input  type="tel"></ion-input>
       </ion-item>
 
 
@@ -128,8 +130,10 @@ class="w-100 container-main"
 
   <ion-toolbar class="ion-no-padding">
     <div class="text-center">
-      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid || form.pending"
-        type="submit" style="margin: 0px;">Confirmar</ion-button>
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid"
+        type="submit" style="margin: 0px;"
+        (click)="onSubmit()"  
+      >Confirmar</ion-button>
     </div>
   </ion-toolbar>
 

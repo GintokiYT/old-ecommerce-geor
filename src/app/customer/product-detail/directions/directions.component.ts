@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 import { RouteService } from '../../../services/route.service';
 
 @Component({
-  selector: 'app-direction',
-  templateUrl: './direction.component.html',
-  styleUrls: ['./direction.component.scss'],
+  selector: 'app-directions',
+  templateUrl: './directions.component.html',
+  styleUrls: ['./directions.component.scss'],
 })
-export class DirectionComponent extends ViewComponent implements OnInit {
+export class DirectionsComponent extends ViewComponent implements OnInit {
 
   oneTrue: boolean = true;
 
@@ -45,12 +45,9 @@ export class DirectionComponent extends ViewComponent implements OnInit {
     this.oneTrue = (trues.length > 0) ? true : false;
   }
 
-  establecerDirection() {
-    const selected = this.bills.filter(element => element.selected === true);
-    if (selected[0]) {
-      this.cpService.setDirectionHome(selected[0].name)
-    }
-    this.navigation.back("/customer/confirm-order");
+  goSend() {
+
+    this.navigation.forward("/customer/send");
   }
 
   goLocation() {
