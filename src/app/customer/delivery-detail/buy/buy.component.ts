@@ -193,6 +193,4 @@ export class BuyComponent extends ViewComponent implements OnInit {
   goBack(){
     this.navigation.back('/customer/contact')
   }
-
-
 }

@@ -5,7 +5,7 @@
     title="Mis direcciones"
     iconLeft="icon-close"
     iconRight="icon-delete"
-    backDirection="confirm-order"
+    [multipleBack]="true"
     (onClickDelete)="deleteBill($event)"
     titleModalDelete = "¿Seguro que quieres eliminar esta dirección?"
     [haveSelected]="oneTrue"
@@ -24,7 +24,7 @@
       <div class="d-flex flex-column bill-information">
         <ion-label class="fz-normal ion-text-wrap">{{bill.name}}</ion-label>
 
-        <ion-label class="bill-information_edit fz-small">Editar</ion-label>
+        <ion-label (click)="goLocation()" class="bill-information_edit fz-small">Editar</ion-label>
       </div>
     </div>
 

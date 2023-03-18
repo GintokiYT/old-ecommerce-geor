@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Injector, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
 
@@ -59,6 +60,7 @@ export class ModalResendComponent extends ViewComponent implements OnInit {
   }
 
   openResendInvitation(){
+
     this.inviteService.setStatusModalResendInvitation(true);
     this.inviteService.setStatusModalResend(false);
   }

@@ -22,14 +22,17 @@ export class ProductComponent extends ViewComponent implements OnInit {
     this.navigation.root('/customer/send' ,'forward')
   }
   goDetails(){
-    this.navigation.root('/customer/detail','forward')
+    this.navigation.root('/customer/detail','forward');
   }
   goPicture(){
-    this.navigation.root('/customer/picture-big','forward')
+    this.navigation.root('/customer/picture-big','forward');
   }
 
   goReturnsExchanges() {
 
+    this.navigation.forward('/customer/change-return',)
+
+/*
     const currentRouter = this.router.url;
 
     if(currentRouter === '/customer/search-general/product-detail') {
@@ -37,7 +40,7 @@ export class ProductComponent extends ViewComponent implements OnInit {
     }
 
     localStorage.setItem('back', '/customer/product');
-    this.navigation.forward('/customer/settings/about-us/returns-exchanges');
+    this.navigation.forward('/customer/settings/about-us/returns-exchanges'); */
   }
 
 
