@@ -1,85 +1,105 @@
 <ion-content>
 
   <ion-header class="ion-no-border">
-    <ion-toolbar class="ion-no-padding">
-      <button (click)="goBack()" slot="start" class="arrow">
-        <svg
-          class="icons"
-          width="1em"
-          height="1em"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+
+    <ion-toolbar>
+        
+        <div 
+          class="header-container d-flex justify-content-between align-items-center"
+          [ngClass]="{'header-normal': headerContent==='normal',
+                      'header-search' : headerContent==='search'}"
         >
-          <path
-            d="M2 12.2744L17 12.2744"
-            stroke="black"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M8.0498 18.299L1.9998 12.275L8.0498 6.25"
-            stroke="black"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <ion-title>Lista de contactos</ion-title>
-      <button  slot="end" class="arrow">
-        <svg
-          class="icons"
-          width="1em"
-          height="1em"
-          viewBox="0 0 20 21"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="9.7893"
-            cy="9.80297"
-            r="8.46898"
-            stroke="black"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M15.6797 16.1328L19 19.4445"
-            stroke="black"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
+          <button
+            class="button-left"
+            (click)="goBack()"
+          >
+            <img 
+              src = "/assets/icons/icon-arrow-left.svg" 
+              style="width: 17px;" 
+              [ngStyle]="{'width': headerContent === 'normal' ? '17px' : '18.89px'}"
+            />
+          </button>
+    
+          <div class="title" *ngIf="headerContent==='normal'">
+            <ion-label>Contactos</ion-label>
+          </div>
+  
+          <button
+            class="button-right"
+            *ngIf="headerContent==='normal'"
+            (click)="showSearch()"
+            style="width: 17.68px;"
+
+          >
+            <img src = "/assets/icons/icon-search.svg"/>
+          </button>
+
+          <ion-searchbar
+            #searchBar
+            slot="end"
+            placeholder="Buscar"
+            show-clear-button="never"
+            *ngIf="headerContent==='search'"
+            [debounce]="500" 
+            (ionChange)="handleChange($event)"
+          >
+          </ion-searchbar>
+        </div>
+  
     </ion-toolbar>
+  
   </ion-header>
 
-<div class="container-main container-contact">
-  <ion-item lines="none" *ngFor="let result of results; let i = index"  (click)="goBuy()">
-    <ion-checkbox
-      slot="end"
-      mode="ios"
-      class="ion-no-margin"
-      (ionChange)="checkBoxSelect($event)"
-    ></ion-checkbox>
-    <ion-label>
-      <div class="d-flex flex-column gap-1">
-        <ion-label>{{ result }}</ion-label>
-        <ion-label class="phone fz-small">{{ number[i] }}</ion-label>
-      </div>
-    </ion-label>
-  </ion-item>
-</div>
+  <div class="container-main">
 
-<img
-    (click)="goBuy()"
-    class="icon-plus"
-    src="assets/collaborative-basquet/Plus-circle.svg"
-    alt="plus"
-  />
+    <!-- Ejemplo sin usar ion-item -->
+    <!-- <div class="d-flex flex-column contact" *ngFor="let contact of contacts">
+      <p class="name">{{contact?.name?.display}}</p>
+      <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
+        <p class="phone">{{phone?.number}}</p>
+      </div>
+
+    </div> -->
+
+    <!-- Ejemplo de como se ve al traer los contactos -->
+    <!-- <div class="contacts-container">
+      <ion-item class="contact" lines="none" *ngFor="let ontacct of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]" (click)="goToAddCompany(contact)">
+        <div class="d-flex flex-column">
+          <p class="name">Pedro gutierrez</p>
+          <div class="d-flex flex-column" *ngFor="let phone of [1,1,1]">
+            <p class="phone">123123123</p>
+          </div>
+        </div>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+    </div> -->
+
+    <div class="contacts-container margin-foooter-ionic">
+      <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults" (click)="goToConfirmOrder(contact)">
+        <div class="d-flex flex-column" style="gap: 4px;">
+          <p class="name">{{contact?.name?.display}}</p>
+          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
+            <p class="phone">{{phone?.number}}</p>
+          </div>
+        </div>
+        <ion-icon name="checkmark-outline" color="primary" slot="end" *ngIf="contact.selected"></ion-icon>
+      </ion-item>
+    </div>
+   
+  </div>
 
 </ion-content>
+
+<!-- Footer -->
+<ion-footer class="ion-no-border ion-no-padding footer-ionic">
+  <ion-toolbar class="ion-no-padding">
+    <div class="d-flex justify-content-end">
+      <img
+        *ngIf="showButtonPlus"
+        class="icon-plus-contact" 
+        (click)="goToBuy()"
+        src="assets/collaborative-basquet/Plus-circle.svg"
+      />
+    </div>
+  </ion-toolbar>
+</ion-footer>

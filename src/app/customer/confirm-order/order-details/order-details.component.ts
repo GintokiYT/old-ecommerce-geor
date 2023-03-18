@@ -2,6 +2,8 @@ import { Component, OnInit,Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { ConfirmOrderService } from '../services/confirm-order.service';
 import IOrder from '../../../interfaces/IOrder';
+import { Contacts } from "@capacitor-community/contacts"
+import { ContactsService } from '../../../services/contacts.service';
 
 @Component({
   selector: 'app-order-details',
@@ -11,44 +13,79 @@ import IOrder from '../../../interfaces/IOrder';
 export class OrderDetailsComponent extends ViewComponent implements OnInit {
 
   modalIsVisible: boolean = false;
-
+  permission : string;
+  contacts : any[];
   deliveryRequirements: string;
 
   order: IOrder;
 
-  constructor(_injector: Injector, public cpService: ConfirmOrderService) {
+  constructor(_injector: Injector, public cpService: ConfirmOrderService,
+    private cs: ContactsService) {
     super(_injector);
     this.cpService.getDeliveryRequirements.subscribe( value => this.deliveryRequirements = value );
   }
 
   ngOnInit() {
+    this.CheckPermission();
     this.cpService.currentMyOrder$.subscribe((myOrder) => this.order = myOrder)
   }
 
   goTo(p1?: string, p2?: string) {
+    this.navigation.forward(p1);
+  }
 
-    if (p2) {
-      this.message.confirm(`Al otorgar acceso, podrás ver tus <br/>contactos`
-        , "¿Induacril quiere acceder a tus contactos?"
-        , (confirmation) => {
-          if (confirmation) {
-            this.navigation.forward(p1)
-          } else {
-            this.navigation.forward(p2)
-          }
-        }, "Permitir", "No permitir"
-      )
-    } else {
-      this.navigation.forward(p1);
+  async CheckPermission() {
+    try {
+      const perm = await Contacts.checkPermissions();
+      this.permission = perm.contacts;
+    } catch (e) {
+      console.log(e)
     }
   }
 
+  async requestPermissionContact() {
+    try {
+      let perm;
+      switch (this.permission) {
+        case "prompt": // inicial
+          perm = await Contacts.requestPermissions();
+          this.permission = perm.contacts;
+          if (this.permission !== "denied") {
+            this.requestPermissionContact();
+          }
+          break;
 
-  openModal(){
-    this.modalIsVisible = true;
+        case "denied": // cuando se hace click en el background
+          perm = await Contacts.requestPermissions();
+          this.permission = perm.contacts;
+          if (this.permission !== "denied") {
+            this.requestPermissionContact();
+          }
+          break;
+
+        case "granted": // se da en permitir
+          try {
+            const result = await Contacts.getContacts({
+              projection: {
+                name: true,
+                phones: true
+              }
+            })
+            this.contacts = result.contacts;
+            this.cs.setContactsData(this.contacts);
+            this.navigation.forward("/customer/contact")
+          } catch (e) {
+            console.log(e)
+          }
+          break;
+
+        case "prompt-with-rationale": // cuando se da en denegar
+          this.navigation.forward("/customer/buy"); break;
+      }
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
 
-  closeModal(){
-    this.modalIsVisible = false;
-  }
 }
