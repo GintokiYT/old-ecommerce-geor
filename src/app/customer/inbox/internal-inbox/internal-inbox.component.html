@@ -73,9 +73,10 @@
         <p class="fz-small date" color="medium"><b>30 nov 2022</b></p>
       </div>
       <div id="buttons">
-        <ion-label class="fz-small conditions">Condiciones</ion-label>
+        <ion-label class="fz-small conditions" (click)="goToConditions()">Condiciones</ion-label>
         <ion-button
         color="primary" shape="round" class="fz-small"
+        (click)="goToProductCoupon()"
         >Usar cupón</ion-button>
       </div>
     </div>
