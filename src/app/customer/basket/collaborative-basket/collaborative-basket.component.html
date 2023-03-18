@@ -2,7 +2,7 @@
   <app-header-cesta class="header-cesta"></app-header-cesta>
 
   <!-- CONTENIDO -->
-  <div class="container-main " style="margin-bottom:237.66px">
+  <div class="container-main " style="margin-bottom: 237.66px">
     <div class="contend-collaborative-basket d-flex flex-column">
       <app-main-product *ngIf="mainProduct" (myEvent)="onMyEvent($event)" [isChecked]="allChecked" style="margin-top:10px"></app-main-product>
       <app-product *ngIf="Product" (myEvent)="onProductEvent($event)" [isChecked]="allChecked" ></app-product>
