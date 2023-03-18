@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-conditions',
@@ -8,19 +9,28 @@ import { ViewComponent } from '@geor360/ecore';
 })
 export class ConditionsComponent extends ViewComponent implements OnInit {
 
-  constructor(private _injector: Injector) {
+  prevUrl: string;
+
+  constructor(private _injector: Injector, private router: Router) {
     super(_injector);
+    this.prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    console.log(this.prevUrl)
    }
 
   ngOnInit() {}
 
 
-  goToCoupons(){
+  goBack(){
 
-    const params = {
-      showCoupons: "true"
+    
+    if(this.prevUrl.includes("internal-inbox")){
+      this.navigation.root(this.prevUrl,"back");
+    }else{
+      const params = {
+        showCoupons: "true"
+      }
+      this.navigation.root("/customer/manage-coupons","back",params)  
     }
-    this.navigation.root("/customer/manage-coupons","back",params)
   }
 
 }
