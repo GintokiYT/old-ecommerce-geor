@@ -102,6 +102,16 @@ export class ConfirmOrderService {
     this.myOrder$.next(this.myOrder);
   }
 
+  setContactDomicilio(contactName: string){
+    this.myOrder.detailsOrderToHome.who = contactName;
+    this.myOrder$.next(this.myOrder);
+  }
+
+  setContactTienda(contactName: string){
+    this.myOrder.detailsOrderToStore.who = contactName;
+    this.myOrder$.next(this.myOrder);
+  }
+
   setCoupon(coupon:ICoupon){
     this.myOrder.coupon = coupon;
     this.myOrder$.next(this.myOrder);

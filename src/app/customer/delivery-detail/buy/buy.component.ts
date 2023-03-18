@@ -28,31 +28,31 @@ export class BuyComponent extends ViewComponent implements OnInit {
 
   @ViewChild(IonContent) content: IonContent;
 
-  countryBorderColorState : string = "default";
-  showFakeEye : boolean = false;
+  countryBorderColorState: string = "default";
+  showFakeEye: boolean = false;
   showTrueEye: boolean = true;
 
   showTextHelperName = false;
-  showTextHelpersurNames= false;
-  showTextHelperPost= false;
+  showTextHelpersurNames = false;
+  showTextHelperPost = false;
   showTextHelperPhone = false;
   showTextHelperEmail = false;
   showTextHelperDocument = false;
 
   focusEmail = false;
 
-  focusInputPhone : boolean = false;
+  focusInputPhone: boolean = false;
 
 
 
   constructor(private router: Router, private _injector: Injector,
-              private cpService: CountrySelectedService) {
+    private cpService: CountrySelectedService) {
     super(_injector)
-    this.cpService.currentFlag$.subscribe( (flag) => {
+    this.cpService.currentFlag$.subscribe((flag) => {
       this.flag = flag;
     })
 
-    this.cpService.currentCodePhone$.subscribe( (code) => {
+    this.cpService.currentCodePhone$.subscribe((code) => {
       this.codePhone = code;
     })
   }
@@ -83,8 +83,8 @@ export class BuyComponent extends ViewComponent implements OnInit {
         Validators.required,
         Validators.minLength(2)]),
 
-      numberDocument: new FormControl('', [
-        Validators.required]),
+      // numberDocument: new FormControl('', [
+      //   Validators.required]),
 
     });
   }
@@ -101,42 +101,42 @@ export class BuyComponent extends ViewComponent implements OnInit {
   checkFocus(input: string) {
     switch (input) {
       case "name": this.showTextHelperName = true;
-                    this.focusEmail = false;
+        this.focusEmail = false;
 
-                   break;
-      case'surnames':this.showTextHelpersurNames=true;
-                      this.showTextHelperName=false;
-                      this.focusEmail = false;
-                      break
-      case'post':this.showTextHelperPost=true;
-                      this.showTextHelperName=false;
-                      this.showTextHelpersurNames=false;
-                      this.focusEmail = false;
-                      break;
-      case'document':this.showTextHelperDocument=true;
-                      this.showTextHelperName=false;
-                      this.showTextHelpersurNames=false;
-                      this.focusEmail = false;
-                      break
+        break;
+      case 'surnames': this.showTextHelpersurNames = true;
+        this.showTextHelperName = false;
+        this.focusEmail = false;
+        break
+      case 'post': this.showTextHelperPost = true;
+        this.showTextHelperName = false;
+        this.showTextHelpersurNames = false;
+        this.focusEmail = false;
+        break;
+      case 'document': this.showTextHelperDocument = true;
+        this.showTextHelperName = false;
+        this.showTextHelpersurNames = false;
+        this.focusEmail = false;
+        break
 
       case "phone":
-                    this.focusInputPhone = true;
-                    if(this.inputPhone?.value.toString().length>0){
-                      if(this.inputPhone?.value.toString().length===11){
-                        this.countryBorderColorState = "correct";
-                      }else{
-                        this.countryBorderColorState = "error"
-                      }
-                    }else{
-                      this.countryBorderColorState = "correct";
-                    }
+        this.focusInputPhone = true;
+        if (this.inputPhone?.value.toString().length > 0) {
+          if (this.inputPhone?.value.toString().length === 11) {
+            this.countryBorderColorState = "correct";
+          } else {
+            this.countryBorderColorState = "error"
+          }
+        } else {
+          this.countryBorderColorState = "correct";
+        }
 
-                    break;
+        break;
 
       case "email": this.showTextHelperEmail = true;
-                    this.focusEmail = true;
+        this.focusEmail = true;
 
-                    break;
+        break;
 
     }
   }
@@ -149,12 +149,12 @@ export class BuyComponent extends ViewComponent implements OnInit {
       case "surnames": this.showTextHelpersurNames = false; break;
       case "post": this.showTextHelperPost = false; break;
       case "phone": this.showTextHelperPhone = false
-                    if(this.inputPhone.value.toString().length===0
-                       || this.inputPhone.value.toString().length===11){
-                      this.countryBorderColorState = "default";
-                    }
-                    this.focusInputPhone = false;
-                    ; break;
+        if (this.inputPhone.value.toString().length === 0
+          || this.inputPhone.value.toString().length === 11) {
+          this.countryBorderColorState = "default";
+        }
+        this.focusInputPhone = false;
+        ; break;
       case "email": this.showTextHelperEmail = false; break;
       case "document": this.showTextHelperDocument = false; break;
 
@@ -162,27 +162,27 @@ export class BuyComponent extends ViewComponent implements OnInit {
 
   }
 
-  changeValueInputPhone(){
-    if(this.inputPhone?.value.toString().length>0){
-      if(this.inputPhone?.value.toString().length===11){
+  changeValueInputPhone() {
+    if (this.inputPhone?.value.toString().length > 0) {
+      if (this.inputPhone?.value.toString().length === 11) {
         this.countryBorderColorState = "correct";
-      }else{
+      } else {
         this.countryBorderColorState = "error"
       }
-    }else{
+    } else {
       this.countryBorderColorState = "correct";
     }
   }
- /* console.log("aqui")
-    setTimeout(() => { */
+  /* console.log("aqui")
+     setTimeout(() => { */
 
-    /*   }, 100); */
+  /*   }, 100); */
 
-  openDocument(){
+  openDocument() {
     this.popupDocument = true;
   }
 
-   changeStatusPopupDocument(status: boolean) {
+  changeStatusPopupDocument(status: boolean) {
     this.popupDocument = status;
   }
 
@@ -190,7 +190,12 @@ export class BuyComponent extends ViewComponent implements OnInit {
     this.form.get('document').setValue(value);
   }
 
-  goBack(){
+  goBack() {
     this.navigation.back('/customer/contact')
+  }
+
+  onSubmit(){
+    console.log("Asdfasf");
+    this.navigation.back("/customer/confirm-order");
   }
 }
