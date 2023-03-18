@@ -105,6 +105,7 @@ const routes: Routes = [
       { path: 'user-help', component: UserHelpComponent },
       { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
       { path: 'user-help/complaints-book/thanks', component: ComplaintThanksComponent },
+      { path: 'user-help/complaints-book/internal-inbox/:id', component: InternalInboxComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },

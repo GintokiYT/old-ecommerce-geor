@@ -1,12 +1,15 @@
 body.md {
+  --ion-footer-bottom: 0px;
   .ion-content-var {
     // --ion-padding-top: 24px;
     --ion-padding-top: 16px;
     --ion-padding-bottom: 24px;
+
   }
 }
 
 body.ios {
+  --ion-footer-bottom: 10px;
   .ion-content-var {
     --ion-padding-top: 16px;
     --ion-padding-bottom: 16px;
@@ -42,11 +45,17 @@ body.ios {
   width: 100%;
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 24px;
   padding-top: var(--ion-padding-top);
   padding-bottom: 24px;
   z-index: 1000;
   background-color: var(--ion-background-color);
+  padding-bottom: 14px !important;
+
+  @media (min-width: 390px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    // padding-bottom: 40px;
+  }
 
   .content-header {
     position: relative;
@@ -80,12 +89,6 @@ body.ios {
         stroke: var(--ion-color-basic);
       }
     }
-  }
-
-  @media (min-width: 390px) {
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 40px;
   }
 }
 
