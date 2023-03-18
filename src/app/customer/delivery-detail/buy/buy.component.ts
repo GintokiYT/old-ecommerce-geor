@@ -46,7 +46,7 @@ export class BuyComponent extends ViewComponent implements OnInit {
 
 
   constructor(private router: Router, private _injector: Injector,
-    private cpService: CountrySelectedService) {
+    private cpService: CountrySelectedService,private route:Router) {
     super(_injector)
     this.cpService.currentFlag$.subscribe((flag) => {
       this.flag = flag;
@@ -93,10 +93,6 @@ export class BuyComponent extends ViewComponent implements OnInit {
 
   ngAfterViewInit(): void {
   }
-
-
-
-
 
   checkFocus(input: string) {
     switch (input) {
@@ -191,6 +187,10 @@ export class BuyComponent extends ViewComponent implements OnInit {
   }
 
   goBack() {
+    const currentRouter= this.route.url
+    if(currentRouter==='/customer/contact/buy'){
+      return this.navigation.back('/customer/confirm-order')
+    }
     this.navigation.back('/customer/contact')
   }
 

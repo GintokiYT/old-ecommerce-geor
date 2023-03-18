@@ -51,9 +51,6 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
   }
 
   goBasket(){
-
-
-
   const currentRouter = this.router.url;
   if(currentRouter === '/customer/collaborative-team/contact-search') {
     return this.navigation.forward('/customer/collaborative-team/team')
