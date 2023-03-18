@@ -18,6 +18,10 @@ export class UserHelpComponent extends ViewComponent implements OnInit {
     this.navigation.back('/customer/manage-user-information');
   }
 
+  goToInbox() {
+    this.navigation.forward('/customer/user-help/complaints-book/internal-inbox/:id')
+  }
+
   goToClaimBook() {
     this.navigation.forward('/customer/user-help/complaints-book');
   }

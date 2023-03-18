@@ -118,7 +118,7 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
     if (this.previousRoute.includes("manage")) {
       this.navigation.back(this.previousRoute);
     } else {
-      this.router.navigate(['/customer/home']);
+      this.navigation.root('/customer/home', 'forward');
     }
 
   }
