@@ -41,18 +41,16 @@ export class ContactComponent extends ViewComponent implements OnInit {
   }
 
   goBack(){
-    this.location.back();
+    this.navigation.back('/customer/confirm-order');
   }
 
   goCollaborativeBasket(){
     this.navigation.root('/customer/collaborative-basket','forward');
   }
 
-  goContactSeatch(){
-    this.navigation.root('/customer/contact-search','forward');
-  }
 
-  go(){
+
+  goBuy(){
     this.navigation.forward('/customer/buy');
   }
 

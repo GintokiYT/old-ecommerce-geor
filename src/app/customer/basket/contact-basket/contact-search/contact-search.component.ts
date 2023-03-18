@@ -52,13 +52,7 @@ export class ContactSearchComponent extends ViewComponent implements OnInit {
 
   goBasket(){
 
-   /*  if(localStorage.getItem('back')) {
-      this.navigation.back(localStorage.getItem('back'));
-      localStorage.setItem('back', '/customer/manage-user-information');
-    } else {
-      this.navigation.root('/customer/collaborative-basket','forward');
-    }
-  } */
+
 
   const currentRouter = this.router.url;
   if(currentRouter === '/customer/collaborative-team/contact-search') {

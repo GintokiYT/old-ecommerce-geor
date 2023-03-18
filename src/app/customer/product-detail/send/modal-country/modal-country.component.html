@@ -15,13 +15,13 @@
         </ion-searchbar>
 
       </div>
-   
+
 
 
       <ion-list lines="none" >
         <ion-item *ngFor="let result of  dataCountriesResults" detail="false" (click)="onCountrySelected(result)">
           <img [src]="result.flag" width="24px" slot="start">
-          <ion-label>{{ result.country }} {{result.cod}}</ion-label>
+          <ion-label>{{ result.country }}</ion-label>
           <ion-icon name="checkmark-outline" color="primary" slot="end" *ngIf="result.selected"></ion-icon>
         </ion-item>
       </ion-list>
