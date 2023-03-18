@@ -63,9 +63,6 @@
     }
 }
 
-button {
-    height: 40px;
-}
 
 ion-footer{
     position: fixed;
@@ -76,6 +73,10 @@ ion-footer{
       --padding-start: 24px;
       --padding-end: 24px;
       --padding-bottom: 24px
+    }
+    ion-button{
+        margin: 0px;
+        height: 40px;
     }
 }
 
@@ -93,13 +94,7 @@ ion-footer{
             margin-top: 24px;
         }
     }
-    
-}
-
-@media(min-width:390px){
-    ion-footer{
-        ion-button{
-            height: 48px !important;
-        }
+    ion-button{
+        height: 48px;
     }
 }

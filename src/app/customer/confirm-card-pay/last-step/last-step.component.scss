@@ -1,5 +1,5 @@
 .cards{
-    margin: 0px 24px 0px 24px;
+    margin: 0px 16px 0px 16px;
  
     #data-card{ 
         padding: 16px 0px 16px 10px;
@@ -183,6 +183,9 @@ ion-footer{
 }
 
 @media(min-width:390px){
+    .cards{
+        margin: 0px 24px 0px 24px;
+    }
     #coupon{
         --width: 343px;
         --height: 318px;
@@ -234,3 +237,30 @@ ion-footer{
         }
     }
 }
+
+#load-modal{
+    --width: 64px;
+    --height: 67px;
+    --border-radius: 10px;
+    .loader {
+        width: 35px;
+        height: 35px;
+        border: solid #3C66FB 3.5px;
+        border-bottom: solid transparent 3.5px;
+        border-radius: 50%;
+        animation: loader 1s linear infinite;
+        margin: auto; /* centrar el círculo */
+        
+    }
+
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+  
