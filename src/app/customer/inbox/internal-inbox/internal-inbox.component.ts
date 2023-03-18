@@ -1,6 +1,7 @@
 import { Component, ElementRef, Injector, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Keyboard } from '@geor360/capacitor-keyboard';
 import { ViewComponent } from '@geor360/ecore';
+import { Router } from '@angular/router';
 
 interface Message {
   id: string;
@@ -21,6 +22,9 @@ interface Message {
   styleUrls: ['./internal-inbox.component.scss']
 })
 export class InternalInboxComponent extends ViewComponent implements OnInit {
+
+  // Yanci
+  isCouponOpen: boolean = false;
 
   @ViewChild('contentInput') contentInput: ElementRef;
 
@@ -271,11 +275,19 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     separacion: false
   }
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, private router: Router) {
     super(_injector);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const route = this.router.url;
+    if(route.includes('/customer/last-step/internal-inbox')) {
+      setTimeout(() => {
+        this.isCouponOpen = true;
+      }, 1500);
+    }
+
+  }
 
   showTime(index: number) {
     let selectedDiv = this.messageRef.toArray()[index].nativeElement;
@@ -310,6 +322,11 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     }
     messageInput.innerHTML = '';
     placeholder.style.visibility = 'unset'
+  }
+
+  // Funcion de Yanci Modal
+  closeModalCoupon() {
+    this.isCouponOpen = false;
   }
 }
 

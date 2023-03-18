@@ -140,7 +140,10 @@ const routes: Routes = [
       { path: 'payment-methods', component:PaymentMethodsComponent },
       { path: 'other-forms-pay', component:OtherFormsPayComponent },
       { path: 'add-card', component:AddCardComponent },
+
       { path: 'last-step', component:LastStepComponent },
+      { path: 'last-step/internal-inbox/:id', component: InternalInboxComponent },
+
       { path: 'confirm-order', component: ConfirmOrderComponent},
       {path: 'payment-method-configuration', component: PaymentMethodConfigurationComponent},
       {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
