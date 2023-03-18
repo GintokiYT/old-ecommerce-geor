@@ -189,18 +189,18 @@ img {
 
 // CSS de Yanci
 #coupon{
-  img {
-    width: 14px !important;
-  }
   --width: 288px;
   --height: 293px;
   --border-radius: 10px;
   #icon-close{
-      margin: 16px 16px 0px 0px;
-      margin-left: auto !important;
+      width: 14px;
+      height: 14px;
+      margin-top: 16px;
+      margin-left: 242px;
       filter:var(--ion-color-light-filter)
   }
   #content-coupon{
+    background-color: var(--ion-background-modal);
       padding: 0px 16px 32px 16px;
       .title-modal{
           font-weight: bold;
@@ -251,14 +251,12 @@ img {
 
 
 @media(min-width:390px){
-  .cards{
-      margin: 0px 24px 0px 24px;
-  }
   #coupon{
       --width: 343px;
       --height: 318px;
       #icon-close{
-          margin: 24px 24px 0px 0px;
+          margin-top: 16px;
+          margin-left: 281px;
       }
       #content-coupon{
           padding: 0px 24px 48px 24px;
@@ -270,38 +268,6 @@ img {
           ion-button{
               height: 39px !important;
           }
-      }
-  }
-  #mistake{
-      --height: 311px;
-      --width: 342px;
-      #content-mistake{
-          padding: 24px 24px 48px 24px;
-          #info{
-              margin: 38px 0px 14px 0px;
-              .not{
-                  font-size: 16px !important;
-              }
-          }
-          ion-button{
-              height: 48px;
-              font-size: 16px !important;
-          }
-      }
-  }
-  #alert{
-      --height: 279px;
-      --width: 342px;
-      #note-code{
-          margin-bottom: 48px;
-       }
-      p{
-          margin: 0px 24px 8px 24px;
-      }
-  }
-  ion-footer{
-      ion-button{
-          height: 48px !important;
       }
   }
 }
