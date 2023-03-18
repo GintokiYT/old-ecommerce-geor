@@ -120,13 +120,8 @@ export class DirectionComponent extends ViewComponent implements OnInit {
   this.navigation.forward('/account/welcome/my-location');
   /* this.navigation.forward('/customer/contact-search'); */
   }
-
-
   /* handlerMessage = '';
     roleMessage = ''; */
-
-
-
 
   deleteBill(eliminar:boolean):void{
     if(eliminar){
@@ -138,9 +133,6 @@ export class DirectionComponent extends ViewComponent implements OnInit {
       this.oneTrue = false;
     }
   }
-
-
-
 
 }
 
