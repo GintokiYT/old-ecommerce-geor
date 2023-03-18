@@ -237,3 +237,30 @@ ion-footer{
         }
     }
 }
+
+#load-modal{
+    --width: 64px;
+    --height: 67px;
+    --border-radius: 10px;
+    .loader {
+        width: 35px;
+        height: 35px;
+        border: solid #3C66FB 3.5px;
+        border-bottom: solid transparent 3.5px;
+        border-radius: 50%;
+        animation: loader 1s linear infinite;
+        margin: auto; /* centrar el círculo */
+        
+      }
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+}
+
+  

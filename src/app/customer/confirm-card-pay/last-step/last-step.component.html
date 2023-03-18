@@ -92,6 +92,13 @@
 
     </div><!-- End container main-->
 
+    <ion-modal id="load-modal" class="modals" #modal trigger="open-modal-load" >
+      <ng-template>
+        <div class="loader"></div>
+      </ng-template>
+    </ion-modal>
+
+
 </ion-content>
 
 <ion-footer class="footer-ionic">
@@ -106,3 +113,5 @@
 </ion-footer>
 
       <!-- (click)="setOpen2(true)" -->
+
+      <!-- id="open-modal-load"  -->
