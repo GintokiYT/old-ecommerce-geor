@@ -75,6 +75,7 @@ import { ConditionsComponent } from './manage-coupons/conditions/conditions.comp
 //* Routes
 import { searchGeneralRoutes } from './router/searchGeneralRoutes';
 import { CountryDirectionComponent } from './product-detail/send/country-direction/country-direction.component';
+import { ChangeReturnComponent } from './product-detail/change-return/change-return.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,8 @@ const routes: Routes = [
       { path: 'my-basket', component: MyBasketComponent },
       { path: 'empty-basket', component: EmptyBasketComponent},
       { path: 'contact-search', component: ContactSearchComponent},
+
+
       { path: 'contact-basket', component: ContactBasketComponent},
       { path: 'detail', component: DetailComponent },
       { path: 'send', component: SendComponent },
@@ -98,11 +101,12 @@ const routes: Routes = [
       { path: 'picture-big',component:PictureBigComponent},
       { path: 'variants-product',component:VariantsProductComponent},
       { path: 'country-direction',component:CountryDirectionComponent},
-
+      { path: 'change-return',component:ChangeReturnComponent},
       { path: 'manage-favorites', component: ManageFavoritesComponent},
       { path: 'user-help', component: UserHelpComponent },
       { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
       { path: 'user-help/complaints-book/thanks', component: ComplaintThanksComponent },
+      { path: 'user-help/complaints-book/internal-inbox/:id', component: InternalInboxComponent },
 
       //* routes settings
       { path: 'settings/main-settings', component: MainSettingsComponent },
@@ -164,7 +168,7 @@ const routes: Routes = [
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
-
+      { path: 'collaborative-team/contact-search', component: ContactSearchComponent},
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
       { path: 'collaborative-team/team', component: TeamComponent },
       { path: 'collaborative-team/contact-team',component: ContactTeamComponent},

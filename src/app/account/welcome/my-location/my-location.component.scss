@@ -44,9 +44,7 @@ ion-content {
     position: sticky;
     z-index: 1000;
     left: 16px;
-    top: 24px;
-    top: calc(var(--ion-padding-top) + 24px);
-    top: calc(var(--ion-safe-area-top) + 24px);
+    top: calc(var(--ion-safe-area-top) + 16px);
     display: flex;
     justify-content: center;
     align-items: center;

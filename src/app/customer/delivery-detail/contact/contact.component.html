@@ -1,61 +1,85 @@
 <ion-content>
+
   <ion-header class="ion-no-border">
-    <ion-toolbar>
+    <ion-toolbar class="ion-no-padding">
       <button (click)="goBack()" slot="start" class="arrow">
-        <img src="/assets/icons/icon-arrow-izquierda.svg" />
+        <svg
+          class="icons"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 12.2744L17 12.2744"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8.0498 18.299L1.9998 12.275L8.0498 6.25"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
       <ion-title>Lista de contactos</ion-title>
-      <button id="search" slot="end" class="arrow">
-        <img src="/assets/icons/icon-search.svg" />
-        <!-- <ion-searchbar placeholder="Search" (click)="search()"></ion-searchbar> -->
+      <button  slot="end" class="arrow">
+        <svg
+          class="icons"
+          width="1em"
+          height="1em"
+          viewBox="0 0 20 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="9.7893"
+            cy="9.80297"
+            r="8.46898"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M15.6797 16.1328L19 19.4445"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
     </ion-toolbar>
   </ion-header>
-  <ion-item lines="none">
+
+<div class="container-main container-contact">
+  <ion-item lines="none" *ngFor="let result of results; let i = index"  (click)="goBuy()">
+    <ion-checkbox
+      slot="end"
+      mode="ios"
+      class="ion-no-margin"
+      (ionChange)="checkBoxSelect($event)"
+    ></ion-checkbox>
     <ion-label>
-      <h3>Wilfredo (yo)</h3>
-      <p>+51 971 945 234</p>
+      <div class="d-flex flex-column gap-1">
+        <ion-label>{{ result }}</ion-label>
+        <ion-label class="phone fz-small">{{ number[i] }}</ion-label>
+      </div>
     </ion-label>
   </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Anibal Cortez</h3>
-      <p>+51 971 945 234</p>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Roberto Carlos de maracaná</h3>
-      <p>+51 971 945 234</p>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Anibal Cortez</h3>
-      <p>+51 971 945 234</p>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Roberto Carlos de maracaná</h3>
-      <p>+51 971 945 234</p>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Jorge Buen día</h3>
-      <p>+51 971 945 234</p>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Anibal Cortez</h3>
-      <p>+51 971 945 234</p>
-    </ion-label>
-  </ion-item>
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button >
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+</div>
+
+<img
+    (click)="goBuy()"
+    class="icon-plus"
+    src="assets/collaborative-basquet/Plus-circle.svg"
+    alt="plus"
+  />
+
 </ion-content>

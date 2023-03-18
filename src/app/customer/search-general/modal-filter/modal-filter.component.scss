@@ -95,16 +95,17 @@
     border-radius: 50px;
     height: 40px;
     margin-top: 4px;
-    margin-bottom: 24px;
+    margin-bottom: calc(var(--ion-safe-area-bottom) + 16px);
 
     @media (min-width: 390px) {
       font-size: 16px;
       height: 48px;
-      margin-bottom: 32px;
+      // margin-bottom: 32px;
     }
   }
 
   button:nth-child(1) {
+    color: var(--ion-color-basic);
     background-color: var(--ion-color-separator);
 
     &.disabled {
@@ -113,6 +114,7 @@
   }
 
   button:nth-child(2) {
+    color: #ffffff;
     background-color: #023AFF;
   }
 }

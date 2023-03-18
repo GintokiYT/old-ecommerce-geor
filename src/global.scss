@@ -50,6 +50,10 @@ body.md {
         --padding-bottom: 16px;
       }
     }
+
+    &.footer-navigation{
+      --ion-safe-area-bottom: unset !important;
+    }
   }
 }
 
@@ -63,6 +67,10 @@ body.ios {
         --padding-end: 16px;
         --padding-bottom: 16px;
       }
+    }
+
+    &.footer-navigation{
+      --ion-safe-area-bottom: 10px;
     }
   }
 }

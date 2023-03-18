@@ -1,4 +1,5 @@
 import { Component, OnInit, Injector, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from '../../../../services/Invite.service';
 
@@ -24,15 +25,20 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
     })
   }
 
-  constructor(_injector:Injector,private inviteService:InviteService) {
+  constructor(_injector:Injector,private inviteService:InviteService,private router:Router) {
     super(_injector)
   }
 
   ngOnInit() {}
 
   goContact(){
+  const currentRouter = this.router.url;
+  if(currentRouter === '/customer/collaborative-team/team') {
     this.inviteService.setStatusModalInvite(false);
-
-    this.navigation.forward('/customer/contact-basket');
+    return this.navigation.forward('/customer/collaborative-team/contact-team')
   }
+  this.inviteService.setStatusModalInvite(false);
+  this.navigation.forward('/customer/contact-basket');
+  }
+
 }

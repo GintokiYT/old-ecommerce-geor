@@ -85,13 +85,15 @@
  ion-footer {
  position: fixed;
   bottom: 0;
-  z-index: 1000;
-  margin-bottom: calc(var(--ion-safe-area-bottom) + 69px) !important;
+  z-index: 100000;
+  /* margin-bottom: calc(var(--ion-safe-area-bottom) + 45px) !important; */
+  margin-bottom: 71px;
 
   ion-toolbar {
+   z-index: 100000;
     --padding-start: 16px !important;
     --padding-end: 16px !important;
-    --padding-bottom: 8px !important;
+    --padding-bottom: 20px !important;
   }
 
 }

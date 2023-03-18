@@ -8,13 +8,13 @@
   </div>
   <div class="main-modal">
     <app-filter-size (changeStatusFilterSize)="changeStatusFilterSize($event)"></app-filter-size>
-    <app-filter-thickness></app-filter-thickness>
-    <app-filter-color></app-filter-color>
+    <app-filter-thickness (changeStatusFilterThickness)="changeStatusFilterThickness($event)"></app-filter-thickness>
+    <app-filter-color (changeStatusFilterColor)="changeStatusFilterColor($event)"></app-filter-color>
     <app-filter-price></app-filter-price>
   </div>
 
   <div class="footer-buttons">
-    <button [ngClass]="statusButtonClear? 'disabled': ''">Limpiar</button>
-    <button>Filtrar</button>
+    <button [ngClass]="statusButtonClear? 'disabled': ''" (click)="clearAllFilter($event)">Limpiar</button>
+    <button (click)="filterProducts()">Filtrar</button>
   </div>
 </div>

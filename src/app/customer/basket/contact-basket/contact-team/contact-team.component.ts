@@ -56,9 +56,16 @@ goTeam(){
 
   this.navigation.forward('/customer/team');
 }
+
 goContactSeatch(){
-  this.navigation.root('/customer/contact-search','forward');
-}
+
+  const currentRouter = this.router.url;
+  if(currentRouter === '/customer/collaborative-team/contact-team') {
+    return this.navigation.forward('/customer/collaborative-team/contact-search')
+  }
+
+  this.navigation.forward('/customer/contact-search');
+  }
 
 
 }

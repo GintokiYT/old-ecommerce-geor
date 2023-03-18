@@ -52,7 +52,7 @@ export class MainInboxComponent extends ViewComponent implements OnInit {
 
   openInternalBox(id: string) {
 
-    const ionfooter: any = document.querySelector('.ion-footer');
+    const ionfooter: any = document.querySelector('app-footer-navigation');
     ionfooter.style.display = 'none'
 
     this.navigation.root('/customer/internal-inbox/1', 'forward');

@@ -11,6 +11,17 @@ ion-toolbar{
   --padding-bottom: 14px;
 }
 
+.header-detail{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content-change-return{
+padding: 0 16px;
+}
+
 @media(max-width:320px){
   ion-toolbar{
       --padding-top: 32px;
@@ -23,10 +34,9 @@ ion-toolbar{
 ion-title{
   color:var(--ion-color-basic);
   font-weight: bold;
-  font-size: 16px;
 }
 
-/* DARK */
+/* MODIFICACION DE IMAGEN A DARK */
 .back{
   width: 24px;
   height: 24px;
@@ -36,10 +46,13 @@ ion-title{
 }
 
 @media (min-width: 390px) {
-ion-toolbar{
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --padding-bottom: 40px;
-}
-}
+  ion-toolbar{
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-bottom: 40px;
+  }
 
+  .content-change-return{
+    padding: 0 24px;
+    }
+  }
