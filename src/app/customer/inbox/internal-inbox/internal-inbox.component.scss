@@ -90,6 +90,7 @@ img {
 
   &.disabled {
     padding-bottom: var(--ion-safe-area-bottom);
+    padding-bottom: 16px;
   }
 }
 
@@ -101,7 +102,7 @@ img {
   outline: none;
   font-size: 14px;
   color: var(--ion-color-basic);
-  padding-bottom: 24px;
+  padding-bottom: 16px;
 }
 
 .content-footer__items {
@@ -110,10 +111,11 @@ img {
   flex-direction: row;
   justify-content: space-between;
   padding: 0 16px 24px 16px;
-  padding-bottom: calc(24px - var(--ion-safe-area-bottom));
+  //padding-bottom: calc(24px - var(--ion-safe-area-bottom));
+  padding-bottom: 16px; 
 
-  &.active {
-    display: flex !important;
+  &.active {  
+    display: flex !important;     
   }
 }
 
