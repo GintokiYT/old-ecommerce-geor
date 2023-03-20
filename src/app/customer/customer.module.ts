@@ -18,7 +18,6 @@ import { SettingsModule } from './settings/settings.module';
 import { AddCouponsModule } from './add-coupons/add-coupons.module';
 import { BillingDataModule } from './billing-data/billing-data.module';
 import { ManageUserInformationModule } from './manage-user-information/manage-user-information.module';
-import { OtherFormsModule } from './other-forms/other-forms.module';
 import { ConfirmCardPayModule } from './confirm-card-pay/confirm-card-pay.module';
 import { ManageFavoritesModule } from './manage-favorites/manage-favorites.module';
 import { ManageBillingDataModule } from './manage-billing-data/manage-billing-data.module';
@@ -48,7 +47,6 @@ import { ManageOrderModule } from './manage-order/manage-order.module';
     AddCouponsModule,
     BillingDataModule,
     ManageUserInformationModule,
-    OtherFormsModule,
     ConfirmCardPayModule,
     CestaModule,
     ManageFavoritesModule,

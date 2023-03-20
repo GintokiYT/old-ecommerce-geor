@@ -39,7 +39,6 @@ import { AddCouponsComponent } from './add-coupons/add-coupons.component';
 import { BillingDataComponent } from './billing-data/billing-data.component';
 import { ManageUserInformationComponent } from './manage-user-information/manage-user-information.component';
 import { CollaborativeTeamComponent } from './basket/team/collaborative-team/collaborative-team.component';
-import { OtherFormsPayComponent } from './other-forms/other-forms-pay/other-forms-pay.component';
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
 import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
@@ -140,7 +139,6 @@ const routes: Routes = [
 
       { path: 'way-pay', component:WayPayComponent },
       { path: 'payment-methods', component:PaymentMethodsComponent },
-      { path: 'other-forms-pay', component:OtherFormsPayComponent },
       { path: 'add-card', component:AddCardComponent },
       { path: 'send-directions', component:DirectionsComponent},
 
