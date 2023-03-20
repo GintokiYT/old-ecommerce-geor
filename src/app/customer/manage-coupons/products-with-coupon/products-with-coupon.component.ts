@@ -2,6 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent, AppThemeService } from '@geor360/ecore';
 import IBanner from '../../../interfaces/IBanner';
 import IProduct from '../../../interfaces/IProduct';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-with-coupon',
@@ -12,8 +13,8 @@ export class ProductsWithCouponComponent extends ViewComponent implements OnInit
 
   contry: string = localStorage.getItem('country') || 'PE';
   image: string = this.contry === 'PE' ? './assets/flags/pe.svg' :
-                  this.contry === 'AR' ? './assets/flags/ar.svg' :
-                  './assets/flags/cl.svg' ;
+    this.contry === 'AR' ? './assets/flags/ar.svg' :
+      './assets/flags/cl.svg';
 
   slides: IBanner[] = [
     { image: '/assets/home/slider-main/image1.jpg' },
@@ -146,9 +147,11 @@ export class ProductsWithCouponComponent extends ViewComponent implements OnInit
 
   private themeService: AppThemeService;
 
+  private prevUrl: string;
+
   logoPath = '/assets/images/logo.svg';
 
-  constructor(_injector: Injector) {
+  constructor(_injector: Injector, private router: Router) {
     super(_injector);
     this.themeService = _injector.get(AppThemeService);
   }
@@ -157,19 +160,28 @@ export class ProductsWithCouponComponent extends ViewComponent implements OnInit
     if (this.themeService.mode === 'dark') {
       this.logoPath = '/assets/images/logo-dark.svg';
     }
+    this.prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    console.log(this.prevUrl)
   }
 
 
-  goToCoupons(){
-    const params = {
-      showCoupons : "true"
+  goBack() {
+
+    if (this.prevUrl.includes("internal-inbox")) {
+      this.navigation.back(this.prevUrl)
+    } else {
+      const params = {
+        showCoupons: "true"
+      }
+
+      this.navigation.back("/customer/manage-coupons", params);
     }
 
-    this.navigation.back("/customer/manage-coupons",params);
+
   }
 
 
-  goToProduct(){
+  goToProduct() {
     localStorage.setItem('back', '/customer/manage-coupons/products-with-coupon');
     this.navigation.forward("/customer/product");
   }
