@@ -62,8 +62,5 @@ export class SliderProductsComponent extends ViewComponent implements OnInit {
 
   }
 
-  goToCollaborativeBasket(){
-    this.navigation.root("/customer/collaborative-basket","back");
-  }
 
 }
