@@ -59,9 +59,6 @@ export class OrderDetailComponent extends ViewComponent implements OnInit {
     this.navigation.root("customer/internal-inbox/1","forward");
   }
 
-  goToMyBasket(){
-    this.navigation.root("/customer/my-basket", "forward");
-  }
 
   goToInstruccions(){
     this.navigation.root("/customer/manage-order/instructions","forward");
