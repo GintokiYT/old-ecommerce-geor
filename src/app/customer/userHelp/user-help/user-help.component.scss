@@ -62,13 +62,17 @@ ion-content {
       content: "";
       position: absolute;
       top: -10px;
-      left: -5px;
+      left: -16px;
       z-index: 1000;
-      width: calc(100% + 10px);
+      width: calc(100% + 32px);
       height: 24px;
       padding: 20px;
       background-color: var(--ion-background-hover-selected);
-      border-radius: 5px;
+
+      @media (min-width: 390px) {
+        width: calc(100% + 48px);
+        left: -24px;
+      }
     }
   }
 }
@@ -83,9 +87,9 @@ ion-content {
 .header-basic {
   padding-bottom: 14px !important;
 
-  @media (min-width: 390px) {
-    padding-bottom: 30px !important;
-  }
+  // @media (min-width: 390px) {
+  //   padding-bottom: 30px !important;
+  // }
 }
 
 ion-header {
