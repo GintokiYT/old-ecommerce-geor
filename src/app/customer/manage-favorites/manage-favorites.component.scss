@@ -175,6 +175,7 @@ p {
     font-size: 16px;
     font-weight: 400;
     color: var(--ion-color-basic);
+    text-align: center;
   }
 
   .buttons-popup {
@@ -187,13 +188,16 @@ p {
       height: 24px;
       background-color: transparent;
       text-align: right;
+      text-align: center;
 
       &:nth-child(1) {
         color: var(--ion-color-text-button-modal);
+        color: var(--ion-color-basic);
       }
 
       &:nth-child(2) {
         color: var(--ion-color-text-error-button-modal);
+        color: #f44336;
       }
     }
   }
