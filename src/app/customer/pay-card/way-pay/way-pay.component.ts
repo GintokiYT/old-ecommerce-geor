@@ -69,11 +69,7 @@ export class WayPayComponent extends ViewComponent implements OnInit {
     this.message.confirm('¿Seguro que quieres eliminar la tarjeta?', '', (confirmation) => {
       if (confirmation) {
         this.paymentData = this.paymentData.filter( d => d.id!==id);
-        const dataFormated = this.paymentData.map ( d => {
-          const {id,selected,...cardFormated} = d;
-          return cardFormated;
-        })
-        this.pms.setPaymentData(dataFormated);
+        this.pms.setPaymentData(this.paymentData);
       }
     }, 'Eliminar', 'Cancelar')
   }
