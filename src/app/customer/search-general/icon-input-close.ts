@@ -17,7 +17,9 @@ import { Component, OnInit } from '@angular/core';
   </svg>
   `,
   styles: [`
-
+    svg rect {
+      fill: var(--ion-background-color-button-icon-filter);
+    }
   `]
 })
 export class iconInputClose implements OnInit {

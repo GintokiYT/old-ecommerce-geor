@@ -31,7 +31,7 @@ export class SendComponent extends ViewComponent implements OnInit {
   ngOnInit() {}
 
   goDirection(){
-    this.navigation.root('/customer/direction','forward');
+    this.navigation.forward('/customer/send-directions');
   }
 
    /*  OpenModalCountry() {

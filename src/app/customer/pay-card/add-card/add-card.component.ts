@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ViewComponent } from '@geor360/ecore';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { PaymentMethodsService } from '../../../services/payment-methods.service';
 
 @Component({
   selector: 'app-add-card',
@@ -12,31 +13,34 @@ import { Router } from '@angular/router';
 })
 export class AddCardComponent extends ViewComponent implements OnInit {
 
-  isModalOpen = false;
-
-
-  data={
-    cardnumber:'',
-    cardholder:'',
-    expiration:'',
-    code:'',
+  data = {
+    cardnumber: '',
+    cardholder: '',
+    expiration: '',
+    code: '',
   }
+
+  paymentData : any[];
+
+  isModalOpen = false;
   previousRoute: string;
-  constructor(private _injector: Injector,private location:Location, private router: Router) {
+  items = [];
+
+  constructor(private _injector: Injector,
+     private location: Location, 
+     private router: Router,
+     private pms: PaymentMethodsService) {
     super(_injector);
     const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.previousRoute = prevUrl;
-   }
-   items = [];
+    this.pms.currentPaymentData.subscribe( d => this.paymentData = d);
+  }
 
-   ngOnInit() { }
+  ngOnInit() { }
 
-/*   goTo(path:string){
-    this.navigation.forward(path)
-  } */
-  goWayPay(){
+  goToPaymentMethods() {
 
-    if(localStorage.getItem('back')) {
+    if (localStorage.getItem('back')) {
       const localData = JSON.parse(localStorage.getItem('back'));
       this.navigation.forward(localData['next']);
 
@@ -49,16 +53,17 @@ export class AddCardComponent extends ViewComponent implements OnInit {
       localStorage.setItem('back', JSON.stringify(routes));
 
       const inputs = document.querySelectorAll('ion-input');
-      inputs.forEach( input => input.value = '');
+      inputs.forEach(input => input.value = '');
 
     } else {
-      this.navigation.root('/customer/way-pay','forward')
+      this.paymentData.push({...this.data,id:this.paymentData.length+1,selected:false})
+      this.pms.setPaymentData(this.paymentData)
+      this.navigation.root('/customer/payment-methods', 'forward')
     }
   }
-   /*  this.navigation.root('/customer/way-pay','forward'); */
 
 
-   goBack(){
+  goBack() {
     /* const localData = JSON.parse(localStorage.getItem('back')) ?? '';
     if(localData) {
       this.navigation.back(localData['main']);
@@ -67,10 +72,10 @@ export class AddCardComponent extends ViewComponent implements OnInit {
       this.navigation.root('/customer/way-pay','back');
     }
  */
-    this.navigation.root(this.previousRoute,"back");
-   }
+    this.navigation.root(this.previousRoute, "back");
+  }
 
-  onSubmit(formulario:NgForm){ }
+  onSubmit(formulario: NgForm) { }
 
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen;

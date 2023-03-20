@@ -142,14 +142,15 @@ p {
 }
 
 .popup-delete-product {
-  width: 288px;
+  width: calc(100% - 32px);
+  max-width: 342px;
   height: 132px;
   background-color: var(--ion-background-modal);
   padding: 24px;
   border-radius: 10px;
 
   @media (min-width: 390px) {
-    width: 342px;
+    width: calc(100% - 48px);
   }
 
   &.animation-open {
@@ -174,6 +175,7 @@ p {
     font-size: 16px;
     font-weight: 400;
     color: var(--ion-color-basic);
+    text-align: center;
   }
 
   .buttons-popup {
@@ -186,13 +188,16 @@ p {
       height: 24px;
       background-color: transparent;
       text-align: right;
+      text-align: center;
 
       &:nth-child(1) {
         color: var(--ion-color-text-button-modal);
+        color: var(--ion-color-basic);
       }
 
       &:nth-child(2) {
         color: var(--ion-color-text-error-button-modal);
+        color: #f44336;
       }
     }
   }
