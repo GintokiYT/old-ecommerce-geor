@@ -80,7 +80,7 @@ export class OrderDetailsComponent extends ViewComponent implements OnInit {
           break;
 
         case "prompt-with-rationale": // cuando se da en denegar
-          this.navigation.forward("/customer/buy"); break;
+          this.navigation.forward("/customer/contact/buy"); break;
       }
     }
     catch (e) {

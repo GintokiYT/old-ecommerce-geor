@@ -41,12 +41,12 @@ export class MyDataSettingsComponent extends ViewComponent implements OnInit {
   ngAfterViewInit() {
 
     const containerfooterbottom: HTMLDivElement = document.querySelector('.container-footer-bottom');
-    
+
     // Focus al primer input
-    setTimeout(() => {
-      const firstInput: HTMLInputElement =  this.myInput.toArray()[0].nativeElement;
-      firstInput.focus();
-    }, 300);
+    // setTimeout(() => {
+    //   const firstInput: HTMLInputElement =  this.myInput.toArray()[0].nativeElement;
+    //   firstInput.focus();
+    // }, 300);
 
     this.myInput.forEach( (input, index) => {
 
