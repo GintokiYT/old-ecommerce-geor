@@ -79,17 +79,28 @@ export class LoginComponent implements OnInit {
   }
 
   ionViewDidEnter(){
-    // Keyboard.addListener('keyboardWillHide', () => {
-    //   this.ngZone.run( () => {
-    //     this.visibleFooterNavigation = true;
-    //   })    
-    // });
+    Keyboard.addListener('keyboardWillHide', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = true;
+      })    
+    });
 
-    // Keyboard.addListener('keyboardDidHide', () => {
-    //   this.ngZone.run( () => {
-    //     this.visibleFooterNavigation = true;
-    //   })
-    // });
+    Keyboard.addListener('keyboardDidHide', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = true;
+      })
+    });
+    Keyboard.addListener('keyboardWillShow', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = false;
+      })    
+    });
+
+    Keyboard.addListener('keyboardDidShow', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = false;
+      })
+    });
 
   }
 
@@ -137,8 +148,9 @@ export class LoginComponent implements OnInit {
   }
 
   checkFocus(input : string){
-    console.log("Focus input")
-    this.visibleFooterNavigation = false;
+
+    //this.visibleFooterNavigation = false;
+
     switch(input){
       case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = true;
@@ -154,10 +166,8 @@ export class LoginComponent implements OnInit {
   }
 
   checkBlur(input:string){
-
-    setTimeout(() => {
-      this.visibleFooterNavigation = true;  
-    }, 80);
+    
+    //this.visibleFooterNavigation = true;  
 
     switch(input){
       case "phoneOrEmail" :
@@ -169,7 +179,6 @@ export class LoginComponent implements OnInit {
         this.showTextHelperPassword = false; break;
     }
   }
-
 
 
 }
