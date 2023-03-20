@@ -1,0 +1,113 @@
+<div id="items">
+  <ion-item lines="none">
+    <ion-checkbox
+      [(ngModel)]="options[0].selected"
+      (ngModelChange)="checkbox(options[0].id)"
+    ></ion-checkbox>
+    <ion-label>Efectivo</ion-label>
+    <img class="info" slot="end" id="open-modal-cash" 
+    src="/assets/icons/icon-help.svg" alt="help">
+    <a></a>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox
+      [(ngModel)]="options[1].selected"
+      (ngModelChange)="checkbox(options[1].id)"
+    ></ion-checkbox>
+    <ion-label>Transferenecia/depósito</ion-label>
+    <img class="info" slot="end" id="open-modal-transfer" 
+    src="/assets/icons/icon-help.svg" alt="help">
+    <a></a>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox
+      [(ngModel)]="options[2].selected"
+      (ngModelChange)="checkbox(options[2].id)"
+    ></ion-checkbox>
+    <ion-label>Crédito (a 30 días)</ion-label>
+    <img class="info" slot="end" id="open-modal-credit" 
+    src="/assets/icons/icon-help.svg" alt="help">
+    <a></a>
+  </ion-item>
+
+  <ion-modal id="modal-cash" class="modals" #modal trigger="open-modal-cash" >
+    <ng-template>
+      <div class="content-modals">
+        <p class="font-size title"><b>Efectivo</b></p>
+        <ion-item lines="none">
+          <p class="fz-normal namber">1</p>
+          <ion-label class="fz-normal ion-text-wrap">
+            Despues de coordinar tu pedido un 
+            asesor de ventas se comunicara  
+            contigo para coordinar el pago</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <p class="fz-normal namber">2</p>
+          <ion-label class="fz-normal ion-text-wrap">
+            lorem ipsum ggdft reema ternu lor 
+            lramp ipsum lorem 
+          </ion-label>
+        </ion-item>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal id="modal-transfer" class="modals" #modal trigger="open-modal-transfer">
+    <ng-template>
+      <div class="content-modals">
+        <p class="font-size title"><b>Transferencia/depósito</b></p>
+        <ion-item lines="none">
+          <p class="fz-normal namber">1</p>
+          <ion-label class="fz-normal ion-text-wrap">
+            Transfiere o deposita el importe de 
+            tu pedido a una de nuestras 
+            cuentas bancarias, las que 
+            apareceran despues de confirmar 
+            tu pedido 
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <p class="fz-normal namber">2</p>
+          <ion-label class="fz-normal ion-text-wrap">
+            Carga el boucher de pago en 
+            la sección de mis pedidos 
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="fz-normal note ion-text-wrap" color="medium">
+            Tienes tiempo hasta el 05 de 
+            junio de 2022
+          </ion-label>
+        </ion-item>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal id="modal-credit" class="modals" #modal trigger="open-modal-credit">
+    <ng-template>
+      <div class="content-modals">
+        <p class="font-size title"><b>Crédito</b></p>
+        <ion-item lines="none">
+          <p class="fz-normal namber">1</p>
+          <ion-label class="fz-normal ion-text-wrap">
+            lorem ipsum ggdft reema 
+            ternu lor lramp ipsum lorem
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <p class="fz-normal namber">2</p>
+          <ion-label class="fz-normal ion-text-wrap">
+            Carga el boucher de pago en 
+            la sección de mis pedidos 
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="fz-normal note ion-text-wrap" color="medium">
+            Tienes tiempo hasta el 05 de 
+            junio de 2022
+          </ion-label>
+        </ion-item>
+      </div>
+    </ng-template>
+  </ion-modal>
+</div>

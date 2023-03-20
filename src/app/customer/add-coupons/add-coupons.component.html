@@ -75,15 +75,15 @@
       </div>
     </div> -->
     <span [ngSwitch]="couponType">
-    <div *ngSwitchCase="'avaible'">
-      <app-avaible-coupons [couponsC]="coupons"></app-avaible-coupons>
-    </div>
-    <div *ngSwitchCase="'expired'">
-      <app-expired-coupons></app-expired-coupons>
-    </div>
-    <div *ngSwitchDefault>
-    
-    </div>
+      <div *ngSwitchCase="'avaible'">
+        <app-avaible-coupons [couponsC]="coupons"></app-avaible-coupons>
+      </div>
+      <div *ngSwitchCase="'expired'">
+        <app-expired-coupons></app-expired-coupons>
+      </div>
+      <div *ngSwitchDefault>
+      
+      </div>
     </span>
     
 
