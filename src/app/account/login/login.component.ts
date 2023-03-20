@@ -96,6 +96,7 @@ export class LoginComponent implements OnInit {
   onGoToRegister() {
     //this.navigator.forward(RouteCollection.auth.register);
     //this.visibleFooterNavigation = false;
+    console.log("Hola para ir a register")
     setTimeout(() => {
       this.navigator.root("/register","forward")  
     }, 250);
@@ -106,6 +107,8 @@ export class LoginComponent implements OnInit {
     //this.navigator.forward(RouteCollection.auth.recoverPassword);
     //this.visibleFooterNavigation = false;
 
+  
+    console.log("Hola para ir a olvidaste")
     setTimeout(() => {
       this.navigator.root("/recover-password","forward")
     }, 250);
@@ -152,7 +155,9 @@ export class LoginComponent implements OnInit {
 
   checkBlur(input:string){
 
-    this.visibleFooterNavigation = true;
+    setTimeout(() => {
+      this.visibleFooterNavigation = true;  
+    }, 80);
 
     switch(input){
       case "phoneOrEmail" :
