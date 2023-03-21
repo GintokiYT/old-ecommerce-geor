@@ -77,6 +77,7 @@ import { searchGeneralRoutes } from './router/searchGeneralRoutes';
 import { CountryDirectionComponent } from './product-detail/send/country-direction/country-direction.component';
 import { ChangeReturnComponent } from './product-detail/change-return/change-return.component';
 import { DirectionsComponent } from './product-detail/directions/directions.component';
+import { CountryBuyComponent } from './delivery-detail/buy/country-buy/country-buy.component';
 
 const routes: Routes = [
   {
@@ -132,6 +133,7 @@ const routes: Routes = [
       { path: 'contact', component:ContactComponent},
       { path: 'contact/buy', component:BuyComponent},
       { path: 'buy', component:BuyComponent},
+      { path: 'country-buy', component:CountryBuyComponent},
       { path: 'delivery', component:DeliveryComponent},
       { path: 'alert', component:AlertComponent},
       { path: 'store-pickup', component:StorePickupComponent },

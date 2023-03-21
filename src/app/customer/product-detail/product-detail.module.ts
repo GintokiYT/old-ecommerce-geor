@@ -17,7 +17,7 @@ import { ModalAddComponent } from './variants/modal-add/modal-add.component';
 import { ModalBasketComponent } from './variants/modal-basket/modal-basket.component';
 import { PictureBigComponent } from './picture-big/picture-big.component';
 import { VariantsProductComponent } from './variants-product/variants-product.component';
-import { ModalCountryComponent } from './send/modal-country/modal-country.component';
+/* import { ModalCountryComponent } from './send/modal-country/modal-country.component'; */
 import { CountryDirectionComponent } from './send/country-direction/country-direction.component';
 import { ChangeReturnComponent } from './change-return/change-return.component';
 import { DirectionsComponent } from './directions/directions.component';
@@ -42,7 +42,7 @@ import { ShareModule } from "../../shared/shared.module";
         ModalBasketComponent,
         PictureBigComponent,
         VariantsProductComponent,
-        ModalCountryComponent,
+        /* ModalCountryComponent, */
         CountryDirectionComponent,
         ChangeReturnComponent,
         DirectionsComponent

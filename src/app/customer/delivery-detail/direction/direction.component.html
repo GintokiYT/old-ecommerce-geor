@@ -6,25 +6,25 @@
     iconLeft="icon-close"
     iconRight="icon-delete"
     backDirection="confirm-order"
-    (onClickDelete)="deleteBill($event)"
+    (onClickDelete)="deleteDirection($event)"
     titleModalDelete = "¿Seguro que quieres eliminar esta dirección?"
     [haveSelected]="oneTrue"
   >
   </app-header>
 
-  <!-- Billing Data Container -->
-  <div class="billing-data_container d-flex flex-column container-main">
+  <!-- Direction Data Container -->
+  <div class="direction-container d-flex flex-column container-main">
 
-    <div class="d-flex align-items-center bill-container" *ngFor="let bill of bills">
+    <div class="d-flex align-items-center direction-container" *ngFor="let direction of directions">
       <ion-checkbox
-        [(ngModel)] = bill.selected
-        (ngModelChange)="checkBoxChange(bill.id)"
+        [(ngModel)] = direction.selected
+        (ngModelChange)="checkBoxChange(direction.id)"
       >
       </ion-checkbox>
-      <div class="d-flex flex-column bill-information">
-        <ion-label class="fz-normal ion-text-wrap">{{bill.name}}</ion-label>
+      <div class="d-flex flex-column direction-information">
+        <ion-label class="fz-normal ion-text-wrap">{{direction.name}}</ion-label>
 
-        <ion-label (click)="goLocation()" class="bill-information_edit fz-small">Editar</ion-label>
+        <ion-label (click)="goLocation()" class="direction-information_edit fz-small">Editar</ion-label>
       </div>
     </div>
 
@@ -33,13 +33,13 @@
       <ion-label color="primary" style="cursor: pointer;" (click)="goLocation()">Nueva dirección</ion-label>
     </div>
 
-  </div> <!--End Billing Data Container-->
+  </div> <!--End Direction Data Container-->
 
 
   <!-- Footer -->
   <ion-footer class="ion-no-border ion-no-padding footer-ionic">
     <ion-toolbar class="ion-no-padding">
-      <!-- (click)="setBill()" -->
+      <!-- (click)="setDirection()" -->
       <ion-button
         [disabled]="!oneTrue"
         (click)="establecerDirection()"
