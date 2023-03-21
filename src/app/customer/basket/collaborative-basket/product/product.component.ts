@@ -1,9 +1,8 @@
 import { Component, OnInit, Injector, Output, EventEmitter, Input } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 interface Descripcions{
-  detalle:string,
-  icono:string,
-  unidad:string,
+  detail:string,
+  unit:string,
 
 }
 @Component({
@@ -21,21 +20,18 @@ interface Descripcions{
 
     descripcion:Descripcions[]=[
      {
-       detalle:'Verde jade, 120x150 cm, 25 mm',
-       icono:'assets/collaborative-basquet/Delete 02.svg',
-       unidad:'7,300'
+       detail:'Verde jade, 120x150 cm, 25 mm',
+       unit:'7,300'
      },
 
      {
-       detalle:'Naraja limon, 120x150 cm, 25 mm',
-       icono:'assets/collaborative-basquet/Delete 02.svg',
-       unidad:'2'
+       detail:'Naraja limon, 120x150 cm, 25 mm',
+       unit:'2'
      },
 
      {
-       detalle:'Gris claro, 120x150 cm, 25 mm',
-       icono:'assets/collaborative-basquet/Delete 02.svg',
-       unidad:'4'
+       detail:'Gris claro, 120x150 cm, 25 mm',
+       unit:'4'
      },
 
     ]

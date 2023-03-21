@@ -16,7 +16,7 @@ export class DirectionComponent extends ViewComponent implements OnInit {
   oneTrue: boolean = true;
 
 
-  bills: any[] = [
+  directions: any[] = [
     {
       id: 1,
       name: "Jr. Samaritanos 879 Miraflores, Lima, Perú",
@@ -39,14 +39,14 @@ export class DirectionComponent extends ViewComponent implements OnInit {
   ngOnInit() { }
 
   checkBoxChange(id: number) {
-    const falses = this.bills.filter(bill => bill.id !== id);
-    const trues = this.bills.filter(bill => bill.selected === true);
-    falses.forEach(bill => bill.selected = false);
+    const falses = this.directions.filter(direction => direction.id !== id);
+    const trues = this.directions.filter(direction => direction.selected === true);
+    falses.forEach(direction => direction.selected = false);
     this.oneTrue = (trues.length > 0) ? true : false;
   }
 
   establecerDirection() {
-    const selected = this.bills.filter(element => element.selected === true);
+    const selected = this.directions.filter(element => element.selected === true);
     if (selected[0]) {
       this.cpService.setDirectionHome(selected[0].name)
     }
@@ -65,12 +65,12 @@ export class DirectionComponent extends ViewComponent implements OnInit {
 
 
 
-  deleteBill(eliminar: boolean): void {
+  deleteDirection(eliminar: boolean): void {
     if (eliminar) {
       console.log(eliminar)
-      const trues = this.bills.filter(bill => bill.selected === true);
+      const trues = this.directions.filter(direction => direction.selected === true);
       if (trues.length > 0) {
-        this.bills = this.bills.filter(bill => bill.id !== trues[0].id);
+        this.directions = this.directions.filter(direction => direction.id !== trues[0].id);
       }
       this.oneTrue = false;
     }

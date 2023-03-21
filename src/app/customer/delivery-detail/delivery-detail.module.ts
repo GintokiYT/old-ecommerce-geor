@@ -14,13 +14,14 @@ import { CoreModule } from '@geor360/ecore';
 import { AccountRoutingModule } from 'src/app/account/account.routing.module';
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { PopupDocumentComponent } from './buy/popup-document/popup-document.component';
+import { CountryBuyComponent } from './buy/country-buy/country-buy.component';
 
 
 
 
 @NgModule({
   declarations: [AlertComponent,BuyComponent,ContactComponent,DateComponent,
-                DeliveryComponent,DirectionComponent,PopupDocumentComponent],
+                DeliveryComponent,DirectionComponent,PopupDocumentComponent,CountryBuyComponent],
   imports: [
     CommonModule,
     IonicModule,

@@ -2,16 +2,12 @@ input{
   padding-inline-end: 0px !important;
   padding-inline-start: 0px !important;
 }
-.header-country{
- /* position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1000; */
-  top: 0px;
-}
 
 ion-header {
- 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   //padding-top: 16px !important;
 
 
@@ -23,14 +19,13 @@ ion-header {
 
 
       .search-container{
-        //  position: relative;
+          position: relative;
 
           ion-searchbar{
               position: relative;
               padding-inline-start: 0px !important;
               padding-inline-end: 0px !important;
               padding-top: 0px !important;
-              padding-left: 0px !important;
               padding-bottom: 0px !important;
               --background : var(--ion-color-variants);
               --color: var(--ion-color-basic);
@@ -38,10 +33,14 @@ ion-header {
               .searchbar-input{
                   padding-inline-end: 0px !important;
                   padding-inline-start: 0px !important;
+              }
 
-
-               }
-
+              img{
+                  cursor: pointer;
+                  position: relative;
+                  top: 3px;
+                  filter: var(--ion-color-dark-filter);
+              }
           }
 
           .border-bottom{
@@ -59,7 +58,6 @@ ion-header {
 }
 
 
-
 ion-list{
 
   ion-item{
@@ -71,15 +69,6 @@ ion-list{
           font-size: 20px;
       }
   }
-}
-
-input{
-  padding-inline-start: 0px !important;
-}
-input{
-  .searchbar-input{
-  padding-inline-start: 0px !important;
-}
 }
 
 @media(min-width:390px) {
@@ -95,54 +84,4 @@ input{
 
 }
 
-//* Modal
-.container-modal-country {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 100000000000000000000;
-  background-color: rgba(0,0,0,.5);
-}
 
-.modal-country {
-  border-radius: 10px 10px 0px 0px;
-  width: 100%;
-  height: 738px;
-  height: 500px;
-  background-color: var(--ion-background-modal);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  animation: modalOpen .3s ease;
-}
-
-@keyframes modalOpen {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-ion-item.selected ion-icon {
-  margin-right: 8px;
-}
-
-
-
-
-
-.close-modal {
-  animation: closeModal .3s ease;
-}
-
-@keyframes closeModal {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(100%);
-  }
-}

@@ -107,7 +107,7 @@
                   'country-error' : countryBorderColorState==='error',
                   'width-two-digits': codePhone.length===2,
                   'width-three-digits': codePhone.length>2}"
-
+       (click)="onGoToCountrySelect()"
       >
       <img [src]="flag" width="24px"/>
       <ion-label>+{{codePhone}}</ion-label>
@@ -132,7 +132,7 @@
     <div class="text-center">
       <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid"
         type="submit" style="margin: 0px;"
-        (click)="onSubmit()"  
+        (click)="onSubmit()"
       >Confirmar</ion-button>
     </div>
   </ion-toolbar>
