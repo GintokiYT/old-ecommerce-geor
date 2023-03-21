@@ -4,7 +4,8 @@ import { NavigationExtras, Router } from '@angular/router';
 import { IonModal, IonInput, IonContent } from '@ionic/angular';
 import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
-import { CountrySelectedService } from 'src/app/account/services/country-selected.service';
+import { CountrySelectedService } from 'src/app/services/country-selected.service';
+// import { CountrySelectedService } from 'src/app/account/services/country-selected.service';
 
 
 @Component({
@@ -19,8 +20,10 @@ export class BuyComponent extends ViewComponent implements OnInit {
 
   //end
 
-  flag: string;
-  codePhone: string;
+  // flag: string;
+  // codePhone: string;
+
+  infoContry;
 
   form!: FormGroup;
   isPreventClose: boolean = false;
@@ -45,16 +48,14 @@ export class BuyComponent extends ViewComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private _injector: Injector,
-    private cpService: CountrySelectedService,private route:Router) {
-    super(_injector)
-    this.cpService.currentFlag$.subscribe((flag) => {
-      this.flag = flag;
-    })
-
-    this.cpService.currentCodePhone$.subscribe((code) => {
-      this.codePhone = code;
-    })
+  constructor(
+    private router: Router,
+    private _injector: Injector,
+    // private cpService: CountrySelectedService,
+    private countrySelectedService: CountrySelectedService,
+    private route:Router) {
+    super(_injector);
+    this.countrySelectedService.getCurrentCountry.subscribe(country => this.infoContry = country);
   }
 
   ngOnInit() {

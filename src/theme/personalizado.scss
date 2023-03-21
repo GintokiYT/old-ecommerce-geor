@@ -54,7 +54,7 @@ body.ios {
   @media (min-width: 390px) {
     padding-left: 24px;
     padding-right: 24px;
-    // padding-bottom: 40px;
+    padding-bottom: 40px !important;
   }
 
   .content-header {
