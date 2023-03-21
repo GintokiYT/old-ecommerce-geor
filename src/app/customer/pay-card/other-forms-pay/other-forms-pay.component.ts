@@ -1,4 +1,4 @@
-import { Component, OnInit,Injector } from '@angular/core';
+import { Component, OnInit, Injector, Input, Output, EventEmitter } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.service';
 
@@ -9,7 +9,14 @@ import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.
 })
 export class OtherFormsPayComponent extends ViewComponent implements OnInit {
 
-  oneTrue:boolean=true;
+  @Input()
+  oneTrue : boolean;
+
+  @Output()
+  onOneTrue: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Output()
+  onSelectMethod: EventEmitter<any> = new EventEmitter<any>();
 
   options: any[] = [
     {
@@ -36,19 +43,7 @@ export class OtherFormsPayComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
-  goTo(path:string){
-    const trues = this.options.filter(element => element.selected===true);
-    if(trues.length>0){
-      const {id,selected,type} = trues[0];
-      const method = {
-        number: "",
-        type
-      }
-      this.cpService.setPayMethod(method)
-    }
-    this.navigation.back(path)
-  }
-
+  
   checkbox(id: number) {
     const falses = this.options.filter( element => element.id!==id);
     const trues = this.options.filter(element => element.selected===true);
@@ -56,9 +51,12 @@ export class OtherFormsPayComponent extends ViewComponent implements OnInit {
       element.selected = false;
     })
     if(trues.length>0){
-      this.oneTrue = false;
-    }else{
       this.oneTrue = true;
+      this.onSelectMethod.emit(trues[0]);
+      this.onOneTrue.emit(this.oneTrue);
+    }else{
+      this.oneTrue = false;
+      this.onOneTrue.emit(this.oneTrue);
     }
   }
 

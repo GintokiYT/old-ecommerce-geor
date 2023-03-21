@@ -79,23 +79,35 @@ export class LoginComponent implements OnInit {
   }
 
   ionViewDidEnter(){
-    // Keyboard.addListener('keyboardWillHide', () => {
-    //   this.ngZone.run( () => {
-    //     this.visibleFooterNavigation = true;
-    //   })    
-    // });
+    Keyboard.addListener('keyboardWillHide', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = true;
+      })    
+    });
 
-    // Keyboard.addListener('keyboardDidHide', () => {
-    //   this.ngZone.run( () => {
-    //     this.visibleFooterNavigation = true;
-    //   })
-    // });
+    Keyboard.addListener('keyboardDidHide', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = true;
+      })
+    });
+    Keyboard.addListener('keyboardWillShow', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = false;
+      })    
+    });
+
+    Keyboard.addListener('keyboardDidShow', () => {
+      this.ngZone.run( () => {
+        this.visibleFooterNavigation = false;
+      })
+    });
 
   }
 
   onGoToRegister() {
     //this.navigator.forward(RouteCollection.auth.register);
     //this.visibleFooterNavigation = false;
+    console.log("Hola para ir a register")
     setTimeout(() => {
       this.navigator.root("/register","forward")  
     }, 250);
@@ -106,6 +118,8 @@ export class LoginComponent implements OnInit {
     //this.navigator.forward(RouteCollection.auth.recoverPassword);
     //this.visibleFooterNavigation = false;
 
+  
+    console.log("Hola para ir a olvidaste")
     setTimeout(() => {
       this.navigator.root("/recover-password","forward")
     }, 250);
@@ -134,8 +148,9 @@ export class LoginComponent implements OnInit {
   }
 
   checkFocus(input : string){
-    console.log("Focus input")
-    this.visibleFooterNavigation = false;
+
+    //this.visibleFooterNavigation = false;
+
     switch(input){
       case "phoneOrEmail" :
         this.showTextHelperPhoneOrEmail = true;
@@ -151,8 +166,8 @@ export class LoginComponent implements OnInit {
   }
 
   checkBlur(input:string){
-
-    this.visibleFooterNavigation = true;
+    
+    //this.visibleFooterNavigation = true;  
 
     switch(input){
       case "phoneOrEmail" :
@@ -164,7 +179,6 @@ export class LoginComponent implements OnInit {
         this.showTextHelperPassword = false; break;
     }
   }
-
 
 
 }

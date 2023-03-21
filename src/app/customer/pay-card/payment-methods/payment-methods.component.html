@@ -1,42 +1,105 @@
 <ion-content>
   <app-header
-  title="Métodos de pago"
-  backDirection="confirm-order"
-  iconLeft="icon-arrow-left"
-  ></app-header>
+    title="Métodos de pago"
+    backDirection="confirm-order"
+    iconLeft="icon-arrow-left"
+  >
+  </app-header>
 
   <div class="container-main">
+
+    <!-- Opciones -->
     <div class="options">
-      <div class="card">
-        <ion-label color="primary" class="fz-normal" 
-        (click)="goTo('/customer/way-pay')"
-        >Tarjeta</ion-label>
+      <div class="way-pay selected" id="way-pay">
+        <ion-label
+          class="fz-normal" 
+          (click)="onSelect('way-pay')"
+        >
+          Tarjeta
+        </ion-label>
       </div>
-      <div class="other">
-        <ion-label color="medium" class="fz-normal"
-        (click)="goTo('/customer/other-forms-pay')"
-        >Otras formas</ion-label>
+      <div class="other-forms" id="other-forms">
+        <ion-label 
+          class="fz-normal"
+          (click)="onSelect('other-forms')"
+        >
+          Otras formas
+        </ion-label>
       </div>
     </div>
 
-    <div id="no-cards-icon">
-      <img  src="/assets/icons/no-cards.svg" alt="no-cards">
-    </div>
+
+    <span [ngSwitch]="optionType">
+      <div *ngSwitchCase="'way-pay'">
+        <!-- No hay metodos de pago -->
+          <div class="empty-methods" *ngIf="paymentData.length===0">
+            <div id="no-cards-icon">
+              <img  src="/assets/icons/no-cards.svg" alt="no-cards">
+            </div>
+            <div id="no-cards-txt">
+              <ion-label color="medium" class="fz-normal">No tienes ninguna tarjeta agregada</ion-label>
+            </div>  
+          </div>
+
+        <!-- Hay al menos un metodo de pago -->
+        <div class="payment-methods" *ngIf="paymentData.length>0">
+          <app-way-pay [oneTrue]="oneTrueWayPay" (onOneTrue)="changeOneTrueWayPay($event)"></app-way-pay>
+        </div>
+      </div>
+      <div *ngSwitchCase="'other-forms'">
+        <app-other-forms-pay 
+          [oneTrue] = "oneTrueOtherForms" 
+          (onOneTrue)="changeOneOtherFormsPay($event)"
+          (onSelectMethod)="setMethod($event)"
+        >
+        </app-other-forms-pay>
+      </div>
+      <div *ngSwitchDefault>
       
-    <div id="no-cards-txt">
-      <ion-label color="medium" class="fz-normal">No tienes ninguna tarjeta agregada</ion-label>
-    </div>  
+      </div>
+    </span>
+
+    
+
   </div>
 
   <ion-footer class="footer-ionic">
     <ion-toolbar>
-      <ion-button 
-        (click)="goTo('/customer/add-card')"
-        color="primary" fill="outline" shape="round" expand="block">
-        <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
-      </ion-button>  
+      <div class="d-flex flex-column" style="gap: 24px;">
+        <ion-button
+          *ngIf="optionType==='way-pay'" 
+          (click)="goTo('/customer/add-card')"
+          color="primary" 
+          fill="outline" 
+          shape="round" 
+          expand="block"
+        >
+          <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
+        </ion-button>
+        <ion-button
+          *ngIf="paymentData.length!==0 && optionType==='way-pay'" 
+          color="primary" 
+          shape="round" 
+          expand="block"
+          [disabled]="!oneTrueWayPay"
+          (click)="addPayofWayPay()"
+        >
+          <ion-label class="fz-normal">Confirmar</ion-label>
+        </ion-button>
+        <ion-button
+          *ngIf="optionType==='other-forms'" 
+          color="primary" 
+          shape="round" 
+          expand="block"
+          [disabled]="!oneTrueOtherForms"
+          (click)="addPayOfOtherForms()"
+        >
+          <ion-label class="fz-normal">Confirmar</ion-label>
+        </ion-button>
+      </div>  
     </ion-toolbar>
   </ion-footer>
+
 </ion-content>
 
 

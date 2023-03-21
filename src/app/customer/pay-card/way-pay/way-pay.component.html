@@ -1,82 +1,28 @@
-<ion-content>
-  <app-header
-  title="Forma de pago"
-  backDirection="payment-methods"
-  iconLeft="icon-arrow-left"
-  >
- </app-header>
-
-  <div class="container-main">
-    <div class="options">
-      <div class="card">
-        <ion-label color="primary" class="fz-normal" >Tarjeta</ion-label>
-      </div>
-      <div class="other">
-        <ion-label color="medium" class="fz-normal"
-        (click)="goTo('/customer/other-forms-pay')"
-        >Otras formas</ion-label>
-      </div>
-    </div>
-
-    <div class="cards">
-      <ion-item lines="none" detail="false" id="card1">
-        <ion-checkbox
-          mode="ios" slot="start"
-          [(ngModel)]="data[0].selected"
-          (ngModelChange)="checkBoxSelect(data[0].id)"
-          ></ion-checkbox>
-        <ion-thumbnail slot="start">
-          <img src="/assets/icons/card-visa.svg" alt="card-visa">
-        </ion-thumbnail>
-        <ion-label>
-          Visa Débito *** 4115
-        </ion-label>
-        <img (click)="delete('card1')" id="delete" src="/assets/icons/icon-delete.svg" alt="delete">
-        <!-- <img (click)="openModal()" id="delete" src="/assets/icons/icon-delete.svg" alt="delete"> -->
-        <a></a>
-      </ion-item>
-
-      <ion-item lines="none" detail="false" id="card2">
-        <ion-checkbox
+<div class="cards">
+  <ion-list>
+    <ion-item lines="none" detail="false" *ngFor="let payment of paymentData">
+      <ion-checkbox
         mode="ios" slot="start"
-        [(ngModel)]="data[1].selected"
-        (ngModelChange)="checkBoxSelect(data[1].id)"
-        ></ion-checkbox>
-        <ion-thumbnail slot="start">
-          <img src="/assets/icons/card-visa.svg" alt="card-visa">
-        </ion-thumbnail>
-        <ion-label>
-          Visa Débito *** 4115
-        </ion-label>
-        <!-- <img (click)="openModal()" id="delete" src="/assets/icons/icon-delete.svg" alt="delete"> -->
-        <img (click)="delete('card2')" id="delete" src="/assets/icons/icon-delete.svg" alt="delete">
-        <a></a>
-      </ion-item>
-    </div>
-  </div>
-
-  <ion-footer class="footer-ionic">
-    <ion-toolbar>
-      <ion-button
-        (click)="goTo('/customer/add-card')"
-        color="primary" fill="outline" shape="round" expand="block">
-        <ion-label  class="fz-normal"> Agregar tarjeta</ion-label>
-      </ion-button>
-      <ion-button
-        color="primary" shape="round" expand="block" [disabled]=oneTrue
-        (click)="establecerMetodoDePago()">
-        <ion-label  class="fz-normal"> Confirmar</ion-label>
-      </ion-button>
-    </ion-toolbar>
-  </ion-footer>
-</ion-content>
-
-
+        [(ngModel)]="payment.selected"
+        (ngModelChange)="checkBoxSelect(payment.id)"
+      >
+      </ion-checkbox>
+      <ion-thumbnail slot="start">
+        <img src="/assets/icons/card-visa.svg" alt="card-visa">
+      </ion-thumbnail>
+      <ion-label>
+        Visa Débito *** 4115
+      </ion-label>
+      <img (click)="delete(payment.id)" id="delete" src="/assets/icons/icon-delete.svg" alt="delete">
+      <a></a>
+    </ion-item>
+  </ion-list>
+</div>
+  
 <app-modal-delete
   titleModalDelete="¿Seguro que quieres eliminar la tarjeta?"
   [modalIsVisible]="modalIsVisible"
   (onModalNotVisible)="closeModal()"
 >
-
 </app-modal-delete>
 

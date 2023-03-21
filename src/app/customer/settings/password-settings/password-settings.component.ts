@@ -130,10 +130,10 @@ export class PasswordSettingsComponent extends ViewComponent implements OnInit {
     })
 
     // Focus al primer input
-    setTimeout(() => {
-      const firstInput: HTMLInputElement =  this.myInput.toArray()[0].nativeElement;
-      firstInput.focus();
-    }, 300);
+    // setTimeout(() => {
+    //   const firstInput: HTMLInputElement =  this.myInput.toArray()[0].nativeElement;
+    //   firstInput.focus();
+    // }, 300);
 
     const footerButton: HTMLDivElement = document.querySelector('.form-control-button');
 
