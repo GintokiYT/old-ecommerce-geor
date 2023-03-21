@@ -82,10 +82,6 @@ export class BuyComponent extends ViewComponent implements OnInit {
       document: new FormControl('', [
         Validators.required,
         Validators.minLength(2)]),
-
-      // numberDocument: new FormControl('', [
-      //   Validators.required]),
-
     });
   }
 
@@ -133,7 +129,6 @@ export class BuyComponent extends ViewComponent implements OnInit {
         this.focusEmail = true;
 
         break;
-
     }
   }
 
@@ -155,7 +150,6 @@ export class BuyComponent extends ViewComponent implements OnInit {
       case "document": this.showTextHelperDocument = false; break;
 
     }
-
   }
 
   changeValueInputPhone() {
@@ -169,10 +163,6 @@ export class BuyComponent extends ViewComponent implements OnInit {
       this.countryBorderColorState = "correct";
     }
   }
-  /* console.log("aqui")
-     setTimeout(() => { */
-
-  /*   }, 100); */
 
   openDocument() {
     this.popupDocument = true;
@@ -197,5 +187,9 @@ export class BuyComponent extends ViewComponent implements OnInit {
   onSubmit(){
     console.log("Asdfasf");
     this.navigation.back("/customer/confirm-order");
+  }
+
+  onGoToCountrySelect(){
+    this.navigation.forward('/customer/country-buy');
   }
 }
