@@ -25,7 +25,8 @@ const routes: Routes = [
         component: LoadingAppComponent
       },
       {
-        path: RouteCollection.account.welcome.selectCountry,
+        path: 'account/welcome/select-country',
+        // path: RouteCollection.account.welcome.selectCountry,
         component: SelectCountryComponent,
       },
       {
