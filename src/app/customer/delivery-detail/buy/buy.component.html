@@ -105,12 +105,12 @@
       [ngClass]="{'country-default': countryBorderColorState==='default',
                   'country-correct' : countryBorderColorState==='correct',
                   'country-error' : countryBorderColorState==='error',
-                  'width-two-digits': codePhone.length===2,
-                  'width-three-digits': codePhone.length>2}"
-
+                  'width-two-digits': infoContry.codePhone.length===2,
+                  'width-three-digits': infoContry.codePhone.length>2}"
+       (click)="onGoToCountrySelect()"
       >
-      <img [src]="flag" width="24px"/>
-      <ion-label>+{{codePhone}}</ion-label>
+      <img [src]="infoContry.flag" width="24px"/>
+      <ion-label>+{{infoContry.codePhone}}</ion-label>
     </div>
     <ion-item lines="none" class="form-group item-country" (ionBlur)="checkBlur('phone',true)" (ionFocus)="checkFocus('phone')">
       <ion-input #inputPhone class="ion-text-left input-phone" formControlName="movil" inputmode="numeric" type="tel"
@@ -132,7 +132,7 @@
     <div class="text-center">
       <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid"
         type="submit" style="margin: 0px;"
-        (click)="onSubmit()"  
+        (click)="onSubmit()"
       >Confirmar</ion-button>
     </div>
   </ion-toolbar>

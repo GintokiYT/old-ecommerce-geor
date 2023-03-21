@@ -24,7 +24,7 @@
           <div class="info-pedido d-flex align-items-center contact">
               <img src="/assets/images/gerardo.png" height="32px" />
               <div class="info-pedido-destinatario d-flex flex-column" (click)="requestPermissionContact()">
-                  <ion-label>Wilfredo</ion-label>
+                  <ion-label>{{order.detailsOrderToHome.who}}</ion-label>
                   <ion-label  class="text-sm">Recibirá el pedido</ion-label>
               </div>
           </div>
@@ -63,7 +63,7 @@
           <div class="info-pedido d-flex align-items-center">
               <img src="/assets/images/gerardo.png" height="32px" />
               <div class="info-pedido-destinatario d-flex flex-column" (click)="requestPermissionContact()">
-                  <ion-label>Wilfredo</ion-label>
+                  <ion-label>{{order.detailsOrderToStore.who}}</ion-label>
                   <ion-label>Recibirá el pedido</ion-label>
               </div>
           </div>

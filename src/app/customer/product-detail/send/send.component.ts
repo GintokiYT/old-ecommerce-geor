@@ -34,18 +34,13 @@ export class SendComponent extends ViewComponent implements OnInit {
     this.navigation.forward('/customer/send-directions');
   }
 
-   /*  OpenModalCountry() {
-      this.country.setStatusModalCountry(true);
+  OpenCountryDirection(){
+    const params={
+      countryName:this.countryName,
+      countryFlag:this.countryFlag
     }
-     */
-
-    OpenCountryDirection(){
-      const params={
-        countryName:this.countryName,
-        countryFlag:this.countryFlag
-      }
-      this.navigation.root('/customer/country-direction','forward',params);
-    }
+    this.navigation.root('/customer/country-direction','forward',params);
+  }
 
     selectedCountry: any = {
       country: "Perú ",

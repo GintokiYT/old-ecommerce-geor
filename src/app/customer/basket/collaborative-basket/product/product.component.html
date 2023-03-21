@@ -30,16 +30,16 @@
           <div
             *ngFor="let item of descripcion"
             class="description fz-note d-flex flex-column product-info">
-            <ion-label class="fz-note measurement">{{item.detalle}}</ion-label>
+            <ion-label class="fz-note measurement">{{item.detail}}</ion-label>
             <div class="d-flex flex-row justify-content-between">
               <img
               (click)="deleteDescription($event)"
                 src="/assets/collaborative-basquet/Delete 02.svg"
-                alt="icono"
+                alt="icon"
               />
               <ion-text class="d-flex">
                 <img src="assets/icons/icon-line.svg" />
-                <ion-label class="mx-3">{{ item.unidad }}</ion-label>
+                <ion-label class="mx-3">{{ item.unit }}</ion-label>
                 <img src="assets/icons/icon-plus-main.svg" />
               </ion-text>
             </div>
@@ -53,7 +53,7 @@
           (click)="deleteProduct()"
           class="img-delete"
           src="/assets/collaborative-basquet/Delete 02-main.svg"
-          alt="icono"
+          alt="icon"
         />
       </ion-item-option>
     </ion-item-options>
