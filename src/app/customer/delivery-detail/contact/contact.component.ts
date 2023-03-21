@@ -63,7 +63,7 @@ export class ContactComponent extends ViewComponent implements OnInit {
     contactSelected.selected = true;
 
     if (this.orderType === "domicilio") {
-      this.cos.setContactTienda(contact?.name?.display);
+      this.cos.setContactDomicilio(contact?.name?.display);
     } else {
       this.cos.setContactTienda(contact?.name?.display)
     }
