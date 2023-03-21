@@ -3,8 +3,8 @@
   <ion-header class="ion-no-padding ion-no-border">
     <ion-toolbar class="ion-no-padding">
       <div class="d-flex flex-column justify-content-between align-items-center search-container">
-        <ion-searchbar [debounce]="1000" (ionChange)="handleChange($event)" placeholder="Buscar" search-icon="search-circle">
-          <img src="/assets/icons/icon-arrow-left.svg" (click)="onGoToBuy()"/>
+        <ion-searchbar placeholder="Buscar" search-icon="search-circle" (ionChange)="filterCountry($event)" >
+          <img src="/assets/icons/icon-arrow-left.svg" />
         </ion-searchbar>
         <div class="border-bottom">
         </div>
@@ -15,10 +15,10 @@
 
   <ion-list lines="none" class="container-main">
     <ion-item
-      *ngFor="let result of dataCountriesResults"
+      *ngFor="let result of filterDataCountries"
       button
       detail="false"
-      (click)="onSelectCountry(result)"
+      (click)="saveCountry(result.id)"
     >
       <img [src]="result.flag" width="24px" slot="start">
       <ion-label>{{ result.country }}</ion-label>
