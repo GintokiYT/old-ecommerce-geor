@@ -17,7 +17,7 @@ interface Contacts{
   styleUrls: ['./contact-basket.component.scss'],
 })
 export class ContactBasketComponent extends ViewComponent implements OnInit {
-
+/*
   constructor( _injector: Injector, private location: Location ) {
     super(_injector);
    }
@@ -60,8 +60,9 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
   goContactSeatch(){
     this.navigation.root('/customer/contact-search','forward');
   }
-}
-/*
+}*/
+
+//contactos
   contacts: any[];
   contactsResults: any[];
   showButtonPlus: boolean = true;
@@ -127,7 +128,7 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
       this.headerContent = "normal"
     } else {
       //this.navigation.back("/customer/manage-billing-data/add-company");
-      this.navigation.back("/customer/confirm-order");
+      this.navigation.back("/customer/empty-basket");
     }
 
   }
@@ -178,7 +179,7 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
     this.navigation.root('/customer/collaborative-basket','forward');
   }
 
-} */
+} 
 
 
 
