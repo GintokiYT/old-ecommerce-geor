@@ -82,7 +82,7 @@ ion-modal::part(content){
 
 #coupon{
     --width: 288px;
-    --height: 293px;
+    --height: auto;
     --border-radius: 10px;
     #icon-close{
         margin: 16px 16px 0px 0px;
@@ -140,7 +140,7 @@ ion-modal::part(content){
 
 #mistake{
     --width: 288px;
-    --height: 241px;
+    --height: auto;
     --border-radius: 10px;
     #content-mistake{
         padding: 24px 16px 24px 16px;
@@ -188,7 +188,7 @@ ion-footer{
     }
     #coupon{
         --width: 343px;
-        --height: 318px;
+        --height: auto;
         #icon-close{
             margin: 24px 24px 0px 0px;
         }
@@ -205,7 +205,7 @@ ion-footer{
         }
     }
     #mistake{
-        --height: 311px;
+        --height: auto;
         --width: 342px;
         #content-mistake{
             padding: 24px 24px 48px 24px;
@@ -238,30 +238,6 @@ ion-footer{
     }
 }
 
-#load-modal{
-    --width: 64px;
-    --height: 67px;
-    --border-radius: 10px;
-    .loader {
-        width: 35px;
-        height: 35px;
-        border: solid #3C66FB 3.5px;
-        border-bottom: solid transparent 3.5px;
-        border-radius: 50%;
-        animation: loader 1s linear infinite;
-        margin: auto; /* centrar el círculo */
-
-    }
-
-    @keyframes loader {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-}
 
 .container-modal {
   position: fixed;

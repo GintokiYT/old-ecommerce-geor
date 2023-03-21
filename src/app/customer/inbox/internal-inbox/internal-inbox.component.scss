@@ -190,7 +190,7 @@ img {
 // CSS de Yanci
 #coupon{
   --width: 288px;
-  --height: 293px;
+  --height: auto;
   --border-radius: 10px;
   --background: var(--ion-background-modal);
 
@@ -199,6 +199,7 @@ img {
     height: 14px;
     margin-top: 16px;
     margin-left: 242px;
+    margin-bottom: 0px ;
     filter:var(--ion-color-light-filter)
   }
   #content-coupon{
@@ -254,10 +255,11 @@ img {
 @media(min-width:390px){
   #coupon{
     --width: 343px;
-    --height: 318px;
+    --height: auto;
     #icon-close{
       margin-top: 16px;
       margin-left: 281px;
+      margin-bottom: 12px ;
     }
     #content-coupon{
       padding: 0px 24px 48px 24px;
