@@ -1,7 +1,17 @@
-import { Component, Injector, OnInit} from '@angular/core';
-import { CountrySelectedService } from 'src/app/account/services/country-selected.service';
+import { Component, Injector, OnInit } from '@angular/core';
+// import { CountrySelectedService } from 'src/app/account/services/country-selected.service';
 import { ViewComponent } from '@geor360/ecore';
 import { ActivatedRoute } from '@angular/router';
+import { CountrySelectedService } from 'src/app/services/country-selected.service';
+import { IonSearchbar } from '@ionic/angular';
+
+interface DataCountry {
+  id: string;
+  country: string;
+  flag: string;
+  codePhone: string;
+  selected: boolean;
+}
 
 @Component({
   selector: 'app-country-buy',
@@ -10,104 +20,61 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CountryBuyComponent extends ViewComponent implements OnInit {
 
-   countryName:string;
-   countryFlag:string;
+  currentCountry = '';
 
-  public data = [ 'Perú','Argentina','Chile'];
-  public results = [...this.data];
-
-  public dataCountries : any[] = [
+  public dataCountries : DataCountry[] = [
     {
+      id: 'PE',
       country: "Perú",
       flag: "/assets/flags/pe.svg",
+      codePhone: '51',
       selected: false
     },
     {
+      id: 'AR',
       country: "Argentina",
       flag: "/assets/flags/ar.svg",
+      codePhone: '54 9 11',
       selected: false
     },
     {
+      id: 'CL',
       country: "Chile",
       flag: "/assets/flags/cl.svg",
+      codePhone: '56',
       selected:false
     },
-
   ]
 
-  public dataCountriesResults = [...this.dataCountries];
+  public filterDataCountries = this.dataCountries;
 
-  constructor(private _injector: Injector, private cpService: CountrySelectedService,private route: ActivatedRoute) {
+  constructor(
+    private _injector: Injector,
+    private countrySelectedService: CountrySelectedService,
+    private route: ActivatedRoute) {
       super(_injector);
-      this.countryName=this.route.snapshot.queryParamMap.get('countryName');
-      this.countryFlag=this.route.snapshot.queryParamMap.get('countryFlag');
-
+      this.countrySelectedService.getCurrentCountry.subscribe( country => this.currentCountry = country['codePhone'] )
    }
 
   ngOnInit() {
-    const selected=this.dataCountriesResults.map(country =>{
-      if(country.country===this.countryName){
-        country.selected=true;
-      }else{
-        country.selected=false;
-      }
-      return country;
-    })
+    this.dataCountries = this.dataCountries.map( country => country.codePhone === this.currentCountry? {...country, selected: true} : {...country, selected: false})
+    this.filterDataCountries = this.dataCountries;
   }
 
-  ngAfterViewInit(): void {
-    let codePhone: string;
-    this.dataCountries = this.dataCountries.map( c => {
-      if(c.country.includes(codePhone)){
-        c.selected = true;
-      }
-      return c;
-    })
-  }
+  saveCountry(id: string) {
 
+    this.filterDataCountries = this.dataCountries.map( country => country.id === id ? {...country, selected: true} : {...country, selected: false})
 
-
-  handleChange(event) {
-    const query = event.target.value.toLowerCase();
-    //this.dataCountriesResults = this.dataCountries.filter(d => d.country.toLowerCase().indexOf(query) > -1);
-    this.dataCountriesResults = this.dataCountries.filter(d => d.country.toLowerCase().includes(query));
-  }
-
-  onGoToBuy(parans?:any){
-    if(parans){
-      this.navigation.back("/customer/buy",parans);
-    }else{
-      const p={
-      countryName:this.countryName,
-      countryFlag:this.countryFlag,
-      }
-      this.navigation.back("/customer/buy",p);
-    }
-
-
-  }
-
-  onSelectCountry(c){
-    const code = c.country;
-    const codeFormated = code.split("+")[1];
-    const flag = c.flag;
-
-    this.dataCountries = this.dataCountries.map( country => {
-      if(country.flag === c.flag){
-        country.selected = true;
-      }else{
-        country.selected = false;
-      }
-      return country;
-    })
-
-    const params={
-      countryName:c.country,
-      countryFlag:c.flag
-    };
+    this.countrySelectedService.setCountry(id);
 
     setTimeout(() => {
-      this.onGoToBuy(params);
-    }, 200);
+      this.navigation.back('/customer/buy');
+    }, 300);
+  }
+
+  filterCountry(event: Event) {
+    const value: string = event['detail'].value;
+
+    this.filterDataCountries = this.dataCountries.filter( ({country}) => country.toLowerCase().includes(value.trim().toLowerCase()))
   }
 }

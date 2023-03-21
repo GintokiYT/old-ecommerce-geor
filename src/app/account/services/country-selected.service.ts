@@ -30,7 +30,7 @@ export class CountrySelectedService {
     this.codePhone$.next(this.codePhone);
   }
 
-  constructor() { 
+  constructor() {
     const countrySelected = localStorage.getItem("country");
     switch(countrySelected){
       case "CL" : this.codePhone = "56"
