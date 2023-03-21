@@ -16,7 +16,7 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
   permission:string;
   contacts:any[];
   //
-
+/*   
   @ViewChild('ContainerModal') ContainerModal:ElementRef;
   @ViewChild('modal') modal:ElementRef;
   ngAfterViewInit(): void {
@@ -31,13 +31,14 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
       }
     })
   }
-
+*/
   constructor(_injector:Injector,private inviteService:InviteService,private router:Router,private cs:ContactsService) {
     super(_injector)
   }
 
   ngOnInit() {
-   /*  this.CheckPermission(); */
+    // Descomentar para contact comentar
+   this.CheckPermission(); 
   }
 
   goContact(){
@@ -51,7 +52,7 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
   }
 
   //Contactos
-/*   async CheckPermission() {
+async CheckPermission() {
     try {
       const perm = await Contacts.checkPermissions();
       this.permission = perm.contacts;
@@ -114,6 +115,6 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
       console.log(e)
     }
   }
- */
+ 
 
 }
