@@ -11,8 +11,6 @@ ion-fab-button::part(native) {
   position: sticky;
   z-index: 1000;
   left: 16px;
-  top: 6.5px;
-  top: calc(var(--ion-padding-top) + 6.5px);
   top: calc(var(--ion-safe-area-top) + 6.5px);
   display: flex;
   justify-content: center;
@@ -57,9 +55,6 @@ ion-footer{
 }
 
 @media(min-width:390px){
-  ion-fab-button::part(native) {
-    margin-left: 16px;
-  }
   #local-address{
     padding: 24px ;
   }
