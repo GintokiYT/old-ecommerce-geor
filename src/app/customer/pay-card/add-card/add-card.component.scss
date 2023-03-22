@@ -149,6 +149,14 @@ ion-header {
 }
 
 @media (min-width: 390px) {
+
+  ion-header {
+    ion-toolbar{
+      --padding-start: 24px !important;
+      --padding-end: 24px !important;
+
+    }
+  }
   ion-toolbar {
     --padding-top: 16px;
     --padding-start: 24px !important;

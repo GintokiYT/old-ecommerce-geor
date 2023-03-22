@@ -37,7 +37,7 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Descomentar para contact comentar
+    // Descomentar para contactos
    this.CheckPermission();
   }
 
@@ -116,5 +116,35 @@ async CheckPermission() {
     }
   }
 
+  /* case "prompt-with-rationale":
+  perm = await Contacts.requestPermissions();
+  this.permission = perm.contacts;
+  if (this.permission === "granted") {
+    try {
+      const result = await Contacts.getContacts({
+        projection: {
+          name: true,
+          phones: true
+        }
+      });
+      this.contacts = result.contacts;
+      this.cs.setContactsData(this.contacts);
+
+      const currentRouter = this.router.url;
+      if (currentRouter === '/customer/collaborative-team/team') {
+        this.inviteService.setStatusModalInvite(false);
+        return this.navigation.forward('/customer/collaborative-team/contact-team');
+      }
+      this.inviteService.setStatusModalInvite(false);
+      this.navigation.forward('/customer/contact-basket');
+    } catch (e) {
+      console.log(e);
+    }
+  } else {
+    this.inviteService.setStatusModalInvite(false);
+  }
+  break;
+
+ */
 
 }
