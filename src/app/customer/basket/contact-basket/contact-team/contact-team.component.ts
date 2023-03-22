@@ -149,10 +149,10 @@ goContactSeatch(){
     const currentRouter = this.router.url;
 
     if(currentRouter === '/customer/collaborative-team/contact-team') {
-      return this.navigation.forward('/customer/collaborative-team/team')
+      return this.navigation.root('/customer/collaborative-team/team','forward')
     }
 
-    this.navigation.forward('/customer/team');
+    this.navigation.root('/customer/team','forward');
   }
 
   goToBuy() {

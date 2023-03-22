@@ -1,6 +1,7 @@
 import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
 import { InviteService } from 'src/app/services/Invite.service';
 import { ViewComponent } from '@geor360/ecore';
+import { Contacts } from "@capacitor-community/contacts";
 import { Router } from '@angular/router';
 import { ContactsService } from '../../../../../services/contacts.service';
 
@@ -12,10 +13,10 @@ import { ContactsService } from '../../../../../services/contacts.service';
 export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
 
 
-  /* //Contact
+   //Contact
   permission:string;
   contacts:any[];
-  // */
+  
 
   @ViewChild('ContainerModal') ContainerModal:ElementRef;
   @ViewChild('modal') modal:ElementRef;
@@ -37,16 +38,16 @@ export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-   /*  this.CheckPermission(); */
+    this.CheckPermission(); 
   }
-
+/*
   goContactTeam(){
     this.navigation.forward('/customer/collaborative-team/contact-team');
     this.inviteService.setStatusModalInviteTeam(false);
-  }
+  }*/
 
    //Contactos
-/* async CheckPermission() {
+async CheckPermission() {
   try {
     const perm = await Contacts.checkPermissions();
     this.permission = perm.contacts;
@@ -87,13 +88,8 @@ async requestPermissionContact() {
           this.cs.setContactsData(this.contacts);
 
           //
-          const currentRouter = this.router.url;
-          if(currentRouter === '/customer/collaborative-team/team') {
-            this.inviteService.setStatusModalInvite(false);
-            return this.navigation.forward('/customer/collaborative-team/contact-team')
-          }
-          this.inviteService.setStatusModalInvite(false);
-          this.navigation.forward('/customer/contact-basket');
+          this.navigation.forward('/customer/collaborative-team/contact-team');
+          this.inviteService.setStatusModalInviteTeam(false);
 
         } catch (e) {
           console.log(e)
@@ -108,6 +104,6 @@ async requestPermissionContact() {
   catch (e) {
     console.log(e)
   }
-} */
+} 
 
 }

@@ -62,6 +62,7 @@ async CheckPermission() {
   }
 
   async requestPermissionContact() {
+    
     try {
       let perm;
       switch (this.permission) {
