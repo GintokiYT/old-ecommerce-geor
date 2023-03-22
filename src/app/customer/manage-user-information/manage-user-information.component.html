@@ -53,7 +53,11 @@
             <div class="option d-flex align-items-center">
                 <img [src]="opt.src">
                 <ion-label *ngIf="opt.option!=='Pedidos'">{{opt.option}}</ion-label>
-                <ion-label *ngIf="opt.option==='Pedidos'">Pedidos <sup class="amount">99</sup></ion-label>
+                <!-- <ion-label *ngIf="opt.option==='Pedidos'">Pedidos <sup class="amount">99</sup></ion-label> -->
+                <div class="order" *ngIf="opt.option==='Pedidos'">
+                    <p>Pedidos</p>
+                    <p class="amount">99</p>
+                </div>
             </div>
         </ion-item>
     </ion-list>
