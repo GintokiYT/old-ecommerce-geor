@@ -1,0 +1,30 @@
+<div class="container-modal-basketCollaborative" #ContainerModal>
+  <div class="modal-basketCollaborative" #modal>
+    <div class="mt-4 mx-4">
+      <div class="ion-no-padding d-flex flex-row justify-content-between"  lines="none">
+        <div class=" basket d-flex flex-row justify-content-center align-items-center" >
+          <img src="/assets/collaborative-basquet/Avatar1.svg" />
+          <ion-label class="fz-normal"> Mi cesta (0) </ion-label>
+        </div>
+        <div>
+          <img src="/assets/icons/icon-check.svg" />
+        </div>
+      </div>
+
+      <div class="ion-no-padding d-flex flex-row justify-content-between my-4" lines="none" (click)="goBasket()">
+        <div class="basket d-flex flex-row justify-content-center align-items-center" >
+          <img src="/assets/collaborative-basquet/Avatar1.svg" />
+          <ion-label class="fz-normal"> Cesta de Gerardo (9) </ion-label>
+        </div>
+
+      </div>
+      <div class="ion-no-padding d-flex flex-row justify-content-between"  lines="none" >
+        <div (click)="goBasket()" class=" basket d-flex flex-row justify-content-center align-items-center" >
+          <img src="/assets/collaborative-basquet/Avatar3.svg" />
+          <ion-label class="fz-normal"> Cesta de Juliano Alvares Carrió... </ion-label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

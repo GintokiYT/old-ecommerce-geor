@@ -21,19 +21,7 @@ export class HeaderBasketComponent extends ViewComponent implements OnInit {
     this.navigation.forward('/customer/team');
   }
 
-  showModal(){
-    this.dialog.show({
-      showBackdrop:true,
-      component: ModalBasketComponent,
-      componentProps: {
-        title: "Modal"
-      }
-    }).then((response) => {
-      console.log(response);
-    });
-  }
-
- /*  goBasketCollaborative(){
+  /*  goBasketCollaborative(){
     this.inviteService.setStatusModalBasketCollaborative(true);
     console.log("no salio");
   } */

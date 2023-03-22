@@ -29,4 +29,8 @@ export class HeaderMyBasketComponent extends ViewComponent implements OnInit {
     this.inviteService.setStatusModalInvite(true);
   }
 
+  openModalMyBasket(){
+    this.inviteService.setStatusModalBasketCollaborative(true);
+  }
+
 }

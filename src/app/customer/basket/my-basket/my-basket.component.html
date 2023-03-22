@@ -11,34 +11,6 @@
     </div>
   </div>
 
-
- <!--  <ion-checkbox slot="start"></ion-checkbox> -->
-
-  <!-- FOOTER -->
- <!--  <ion-footer class="ion-no-border container-footer px-4 pb-4">
-    <div>
-      <div class="contenedor-footer">
-        <div class="box-total d-flex flex-row justify-content-between">
-          <div class="total-checkbox d-flex flex-row align-items-center">
-            <ion-checkbox slot="start"></ion-checkbox>
-            <p class="fz-small">Todo</p>
-          </div>
-          <div class="cost-total fz-small">
-            <p>S/ 45,789.00</p>
-          </div>
-        </div>
-        <ion-button
-          class="ion-no-margin"
-          expand="block"
-          color="primary"
-          shape="round"
-          (click)="goToConfirmOrder()"
-        >
-          Ir a pagar</ion-button
-        >
-      </div>
-    </div>
-  </ion-footer> -->
   <ion-footer class="ion-no-border container-footer">
     <ion-toolbar
       class="ion-no-padding"
@@ -74,4 +46,5 @@
 </ion-content>
 
 <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
+<app-modal-Mybasket *ngIf="statusModal"></app-modal-Mybasket>
 <app-footer-navigation class="footer-navigation"></app-footer-navigation>

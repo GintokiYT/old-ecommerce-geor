@@ -57,7 +57,7 @@ ion-header {
       &:active{
           --background: var(--ion-background-hover-selected);
       }
-      
+
       // --inner-padding-start : 0px !important;
       --inner-padding-end: 0px !important;
 
@@ -75,7 +75,7 @@ ion-header {
           margin-inline: 0px !important;
       }
   }
-  
+
 }
 
 .header-normal{
@@ -109,7 +109,6 @@ ion-footer{
           --padding-top: 16px !important;
           --padding-start: 24px !important;
           --padding-end: 24px !important;
-          --padding-bottom: 40px !important;
       }
   }
 }
