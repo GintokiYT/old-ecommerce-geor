@@ -1,12 +1,20 @@
-<ion-header class="ion-content-var">
+<!-- <ion-header class="ion-content-var">
   <header class="header-basic">
     <div class="content-header">
       <h2>Bandeja</h2>
     </div>
   </header>
-</ion-header>
+</ion-header> -->
 
-<ion-content class="ion-content-var">
+<ion-content class="ion-no-padding ion-content-var" [scrollEvents]="true">
+
+  <header class="header-basic">
+    <div class="content-header">
+      <h2>Bandeja</h2>
+    </div>
+  </header>
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 54px);"></div>
+
   <div class="container-main-inbox">
     <div class="inbox-ion-list">
       <div
