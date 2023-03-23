@@ -8,6 +8,8 @@ ion-content {
   left: 0;
   width: 100%;
   z-index: 1000;
+  padding-top: var(--ion-safe-area-top);
+  background-color: var(--ion-background-color);
 }
 
 .search-input {
