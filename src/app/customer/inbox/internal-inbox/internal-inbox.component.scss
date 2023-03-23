@@ -1,21 +1,5 @@
 ion-content {
-  width: 100vw;
-  height: 100vh;
-  // --padding-top: 16px;
-  // --padding-bottom: 16px;
-  // --padding-end: 16px;
-  // --padding-start: 16px;
-  // --background: red;
-
-  // --padding-top: var(--ion-safe-area-top);
-  // --padding-bottom: var(--ion-safe-area-bottom);
-  --padding-start: var(--ion-safe-area-right);
-  --padding-end: var(--ion-safe-area-left);
   --background: var(--ion-background-color);
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 *,*::after, *::before {
@@ -79,11 +63,11 @@ img {
   z-index: 1000;
 
   &.active {
-    // --ion-safe-area-bottom: 0px;
+    --ion-safe-area-bottom: 0px;
   }
 
   &.disabled {
-    --ion-safe-area-bottom: var(--separacion-bottom);
+    padding-bottom: var(--ion-safe-area-bottom);
   }
 }
 
@@ -143,7 +127,6 @@ img {
   width: 100%;
   padding: 16px;
   position: relative;
-  padding-bottom: calc(var(--ion-safe-area-bottom) + 16px);
 }
 
 .container-chat #myDiv {
