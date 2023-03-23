@@ -29,11 +29,7 @@
         gap: 36px;
         font-size: 14px;
         cursor: initial;
-
-        ion-list{
-            --ion-item-background: var(--ion-background-alert);
-        }
-
+        
         .terms,
         .politics {
             color: var(--ion-color-primary);
@@ -50,9 +46,9 @@ ion-item{
     //     padding-inline-start: 0px !important;
     // }
 
-    &:active{
-        --background: var(--ion-background-hover-selected);
-    }
+    // &:active{
+    //     --background: var(--ion-background-hover-selected);
+    // }
 }
 
 .modal-visible {

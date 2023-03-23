@@ -294,18 +294,14 @@ ion-slides {
 }
 
 .container-main{
-  margin-top: calc( var(--ion-safe-area-top,0) + 62px) !important;
+  margin-top: calc( var(--ion-safe-area-top,0) + 64px) !important;
 }
 
 @media(min-width:390px){
   .container-main{
-    margin-top: calc( var(--ion-safe-area-top,0) + 88px) !important;
+    margin-top: calc( var(--ion-safe-area-top,0) + 80px) !important;
   }
 }
-
-
-
-
 
 
 //Para el contenido que tenga un footer el boton plus

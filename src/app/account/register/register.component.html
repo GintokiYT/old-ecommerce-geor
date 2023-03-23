@@ -10,7 +10,7 @@
 
   <!-- Form -->
   <form
-    class="w-100 container-main"
+    class="container-main"
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
   >
@@ -18,7 +18,7 @@
 
     <!-- input name -->
     <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('name')" (ionBlur)="checkBlur('name',false)">
-      <ion-label position="floating" class="disabled">Nombre</ion-label>
+      <ion-label position="floating">Nombre</ion-label>
       <ion-input formControlName="name"></ion-input>
       <app-validation-messages *ngIf="showTextHelperName" slot="error"
         [control]="form.get('name')"></app-validation-messages>
@@ -64,7 +64,7 @@
 
     <!-- input email -->
     <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('email')" (ionBlur)="checkBlur('email',false)">
-      <ion-label position="floating" class="disabled">Correo electrónico</ion-label>
+      <ion-label position="floating">Correo electrónico</ion-label>
       <ion-input formControlName="email" inputmode="email" type="email"></ion-input>
       <app-validation-messages *ngIf="showTextHelperEmail" slot="error"
         [control]="form.get('email')"></app-validation-messages>
@@ -74,7 +74,7 @@
     <!-- input password -->
     <div class="position-relative">
       <ion-item lines="none" class="form-group position-relative ci" (ionFocus)="checkFocus('password')" (ionBlur)="checkBlur('password',false)">
-        <ion-label position="floating" class="disabled">Contraseña</ion-label>
+        <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" formControlName="password" #inputPassword></ion-input>
         <ion-icon
             *ngIf="showFakeEye"

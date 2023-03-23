@@ -79,22 +79,23 @@ export class LoginComponent implements OnInit {
   }
 
   ionViewDidEnter(){
-    Keyboard.addListener('keyboardWillHide', () => {
-      this.ngZone.run( () => {
-        this.visibleFooterNavigation = true;
-      })    
-    });
+    // Keyboard.addListener('keyboardWillHide', () => {
+    //   this.ngZone.run( () => {
+    //     this.visibleFooterNavigation = true;
+    //   })    
+    // });
 
     Keyboard.addListener('keyboardDidHide', () => {
       this.ngZone.run( () => {
         this.visibleFooterNavigation = true;
       })
     });
-    Keyboard.addListener('keyboardWillShow', () => {
-      this.ngZone.run( () => {
-        this.visibleFooterNavigation = false;
-      })    
-    });
+
+    // Keyboard.addListener('keyboardWillShow', () => {
+    //   this.ngZone.run( () => {
+    //     this.visibleFooterNavigation = false;
+    //   })    
+    // });
 
     Keyboard.addListener('keyboardDidShow', () => {
       this.ngZone.run( () => {

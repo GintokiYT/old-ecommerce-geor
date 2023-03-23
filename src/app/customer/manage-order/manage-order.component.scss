@@ -57,9 +57,13 @@ ion-header {
 
 
         .button-order{
-            
+            .owner{
+                color: var(--ion-color-disabled);
+                font-size: 14px;
+            }
 
-            ion-label{
+
+            ion-label:nth-child(2){
                 cursor: pointer;
                 padding: 8px 16px;
                 border-radius: 50px;
@@ -75,10 +79,8 @@ ion-header {
 
     ion-header {
         ion-toolbar {
-            --padding-top: 16px !important;
             --padding-start: 24px !important;
             --padding-end: 24px !important;
-            --padding-bottom: 40px !important;
         }
     }
 
@@ -86,4 +88,14 @@ ion-header {
         padding-inline: 24px;
     }
 
+}
+
+
+
+.visible{
+    visibility: unset;
+}
+
+.not-visible{
+    visibility: hidden;
 }

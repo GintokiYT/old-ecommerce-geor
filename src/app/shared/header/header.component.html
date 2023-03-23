@@ -8,7 +8,12 @@
           [ngClass]="{'not-visible': iconLeft.length===0}"
           (click)="goBack()"
         >
-          <img [src] = "icons[iconLeft]" style="width: 14px;" *ngIf="iconLeft==='icon-close'"/>
+          <!-- <img [src] = "icons[iconLeft]" style="width: 14px;" *ngIf="iconLeft==='icon-close'"/> -->
+          <svg *ngIf="iconLeft==='icon-close'" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L13 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+            <path d="M1 13L13 1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+          </svg>
+            
           <img [src] = "icons[iconLeft]" style="width: 17px;" *ngIf="iconLeft==='icon-arrow-left'"/>
           <img [src] = "icons[iconLeft]" style="width: 17px;" *ngIf="iconLeft!=='icon-arrow-left' && iconLeft!=='icon-close'"/>
         </button>

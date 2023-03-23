@@ -6,6 +6,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ContactsService {
 
+
+  private permission : string = "";
+
+  private permission$ = new BehaviorSubject<string>(this.permission);
+
   private contactsData : any[] = [];
 
   private contactsData$ = new BehaviorSubject<any []>(this.contactsData);
@@ -20,6 +25,15 @@ export class ContactsService {
   setContactsData(cd : any[]){
     this.contactsData = cd;
     this.contactsData$.next(this.contactsData);
+  }
+
+  get currentPermission$() : Observable<string>{
+    return this.permission$;
+  }
+
+  setPersmission( perm : string){
+    this.permission = perm;
+    this.permission$.next(this.permission);
   }
 
   

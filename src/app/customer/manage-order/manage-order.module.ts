@@ -7,11 +7,12 @@ import { ShareModule } from 'src/app/shared/shared.module';
 import { ModalFilterComponent } from './modal-filter/modal-filter.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { InstructionsComponent } from './instructions/instructions.component';
+import { ModalCameraComponent } from './order-detail/modal-camera/modal-camera.component';
 
 
 
 @NgModule({
-  declarations: [ManageOrderComponent, ModalFilterComponent, OrderDetailComponent, InstructionsComponent],
+  declarations: [ManageOrderComponent, ModalFilterComponent, OrderDetailComponent, InstructionsComponent,ModalCameraComponent],
   imports: [
     FormsModule,
     CommonModule,
