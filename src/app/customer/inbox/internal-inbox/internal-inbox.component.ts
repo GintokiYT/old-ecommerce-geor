@@ -58,6 +58,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       }, 500);
 
       contentInput.classList.add('active');
+      document.querySelector('.ion-footer').classList.add('active');
       placeholder.style.visibility = 'hidden'
     })
 

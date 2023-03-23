@@ -1,4 +1,4 @@
-<ion-content >
+<!-- <ion-content >
 
   <ion-header class="ion-no-border">
     <ion-toolbar class="ion-no-padding">
@@ -39,24 +39,6 @@
   </ion-item>
 </div>
 
- <!--  <ion-footer class="ion-no-border footer-ionic ">
-    <ion-toolbar class="ion-no-padding ">
-      <div style="height: 48px;">
-      <ion-button
-        (click)="goTeam()"
-        [disabled]="!oneTrue"
-        expand="block"
-        color="primary"
-        shape="round"
-        type="submit"
-        style="margin-top: 0px; margin-bottom: 0px"
-      >
-        Invitar ({{ invitationsCount }})
-      </ion-button>
-      </div>
-
-  </ion-toolbar>
-  </ion-footer> -->
   <ion-footer class="ion-no-border footer-ionic">
     <ion-toolbar class="ion-no-padding">
       <ion-button
@@ -73,4 +55,95 @@
     </ion-toolbar>
   </ion-footer>
 
+</ion-content> -->
+
+<!-- contactos -->
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <div
+        class="header-container d-flex justify-content-between align-items-center"
+        [ngClass]="{
+          'header-normal': headerContent === 'normal',
+          'header-search': headerContent === 'search'
+        }"
+      >
+        <button class="button-left" (click)="goBack()">
+          <img
+            src="/assets/icons/icon-arrow-left.svg"
+            style="width: 17px"
+            [ngStyle]="{
+              width: headerContent === 'normal' ? '17px' : '18.89px'
+            }"
+          />
+        </button>
+
+        <div class="title" *ngIf="headerContent === 'normal'">
+          <ion-label>Contactos </ion-label>
+        </div>
+
+        <button
+          class="button-right"
+          *ngIf="headerContent === 'normal'"
+          (click)="showSearch()"
+          style="width: 17.68px"
+        >
+          <img src="/assets/icons/icon-search.svg" />
+        </button>
+
+        <ion-searchbar
+          #searchBar
+          slot="end"
+          placeholder="Buscar"
+          show-clear-button="never"
+          *ngIf="headerContent === 'search'"
+          [debounce]="500"
+          (ionChange)="handleChange($event)"
+        >
+        </ion-searchbar>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container-main">
+
+    <div class="contacts-container margin-foooter-ionic">
+      <ion-item
+        class="contact"
+        lines="none"
+        *ngFor="let contact of contactsResults"
+      >
+        <div class="d-flex flex-column" style="gap: 4px">
+          <p class="name">{{ contact?.name?.display }}</p>
+          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
+            <p class="phone">{{ phone?.number }}</p>
+          </div>
+        </div>
+         <ion-checkbox
+          slot="end"
+          mode="ios"
+          class="ion-no-margin"
+          (ionChange)="checkBoxSelect($event)"
+        ></ion-checkbox>
+      </ion-item>
+    </div>
+  </div>
+
+  <ion-footer class="ion-no-border footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button
+        (click)="goTeam()"
+        [disabled]="!oneTrue"
+        expand="block"
+        color="primary"
+        shape="round"
+        type="submit"
+        style="margin-top: 0px; margin-bottom: 0px"
+      >
+        Invitar ({{ invitationsCount }})
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
+
+

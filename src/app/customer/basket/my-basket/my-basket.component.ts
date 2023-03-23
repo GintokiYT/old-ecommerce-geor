@@ -16,11 +16,15 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
  mainProduct: boolean = true;
  Product: boolean = true;
 
+ //Modal Basket
+ statusModal: boolean;
+
   constructor(_injector: Injector, private inviteService:InviteService,
       private rs : RouteService
     ) {
     super(_injector);
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
+    this.inviteService.getStatusModalBasketCollaborative.subscribe( status => this.statusModal = status );
   }
 
   ngOnInit() {}
