@@ -5,14 +5,21 @@ ion-content {
 }
 
 .search-input {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 16px 16px 14px 16px;
+  padding-top: calc(var(--ion-safe-area-top) + 16px);
   background-color: var(--ion-background-color);
 
   @media (min-width: 390px) {
     padding: 16px 24px 14px 24px;
+    padding-top: calc(var(--ion-safe-area-top) + 16px);
   }
 
   .input-container {
