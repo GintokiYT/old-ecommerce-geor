@@ -39,6 +39,7 @@ export class OrderDetailsComponent extends ViewComponent implements OnInit {
 
   goToDirection(){
     this.rs.setSetDetailBackDirection(this.router.url);
+    console.log("esta es la ruta q le mandamos: "+this.router.url)
     this.navigation.forward("/customer/direction")
   }
 
