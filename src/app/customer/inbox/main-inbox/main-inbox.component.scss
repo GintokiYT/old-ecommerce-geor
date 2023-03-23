@@ -139,6 +139,6 @@ app-footer-navigation {
   left: 0;
   z-index: 1000;
   width: 100%;
-  padding-top: var(--ion-safe-area-top);
+  padding-top: calc(var(--ion-safe-area-top) + 16px);
   background-color: var(--ion-background-color);
 }
