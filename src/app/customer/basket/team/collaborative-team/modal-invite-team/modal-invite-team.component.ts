@@ -13,97 +13,114 @@ import { ContactsService } from '../../../../../services/contacts.service';
 export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
 
 
-   //Contact
-  permission:string;
-  contacts:any[];
-  
+  //Contact
+  permission: string;
+  contacts: any[];
+  statusModalSpinner: boolean = false;
 
-  @ViewChild('ContainerModal') ContainerModal:ElementRef;
-  @ViewChild('modal') modal:ElementRef;
+
+  @ViewChild('ContainerModal') ContainerModal: ElementRef;
+  @ViewChild('modal') modal: ElementRef;
   ngAfterViewInit(): void {
-    const ContainerModal:HTMLDivElement = this.ContainerModal.nativeElement;
-    ContainerModal.addEventListener('click',(event: Event)=>{
-      const modal:HTMLDivElement =this.modal.nativeElement;
-      if(event.target===ContainerModal){
+    const ContainerModal: HTMLDivElement = this.ContainerModal.nativeElement;
+    ContainerModal.addEventListener('click', (event: Event) => {
+      const modal: HTMLDivElement = this.modal.nativeElement;
+      if (event.target === ContainerModal) {
         modal.classList.add('close-modal');
-        setTimeout(()=>{
+        setTimeout(() => {
           this.inviteService.setStatusModalInviteTeam(false);
-        },250);
+        }, 250);
       }
     })
   }
 
-  constructor(_injector:Injector,private inviteService:InviteService,private router:Router,private cs:ContactsService) {
+  constructor(_injector: Injector, private inviteService: InviteService, private router: Router, private cs: ContactsService) {
     super(_injector)
+    this.cs.currentContacts$.subscribe(c => this.contacts = c);
+    this.cs.currentPermission$.subscribe(p => this.permission = p);
   }
 
   ngOnInit() {
-    this.CheckPermission(); 
-  }
-/*
-  goContactTeam(){
-    this.navigation.forward('/customer/collaborative-team/contact-team');
-    this.inviteService.setStatusModalInviteTeam(false);
-  }*/
-
-   //Contactos
-async CheckPermission() {
-  try {
-    const perm = await Contacts.checkPermissions();
-    this.permission = perm.contacts;
-  } catch (e) {
-    console.log(e)
-  }
-}
-
-async requestPermissionContact() {
-  try {
-    let perm;
-    switch (this.permission) {
-      case "prompt": // inicial
-        perm = await Contacts.requestPermissions();
-        this.permission = perm.contacts;
-        if (this.permission !== "denied") {
-          this.requestPermissionContact();
-        }
-        break;
-
-      case "denied": // cuando se hace click en el background
-        perm = await Contacts.requestPermissions();
-        this.permission = perm.contacts;
-        if (this.permission !== "denied") {
-          this.requestPermissionContact();
-        }
-        break;
-
-      case "granted": // se da en permitir
-        try {
-          const result = await Contacts.getContacts({
-            projection: {
-              name: true,
-              phones: true
-            }
-          })
-          this.contacts = result.contacts;
-          this.cs.setContactsData(this.contacts);
-
-          //
-          this.navigation.forward('/customer/collaborative-team/contact-team');
-          this.inviteService.setStatusModalInviteTeam(false);
-
-        } catch (e) {
-          console.log(e)
-        }
-        break;
-
-      case "prompt-with-rationale": // cuando se da en denegar
-
-      this.inviteService.setStatusModalInvite(false);break;
+    if (this.permission.length === 0) {
+      this.CheckPermission();
     }
   }
-  catch (e) {
-    console.log(e)
+  /*
+    goContactTeam(){
+      this.navigation.forward('/customer/collaborative-team/contact-team');
+      this.inviteService.setStatusModalInviteTeam(false);
+    }*/
+
+  //Contactos
+  async CheckPermission() {
+    try {
+      const perm = await Contacts.checkPermissions();
+      this.permission = perm.contacts;
+      this.cs.setPersmission(this.permission);
+    } catch (e) {
+      console.log(e)
+    }
   }
-} 
+
+  async requestPermissionContact() {
+    try {
+      let perm;
+      switch (this.permission) {
+        case "prompt": // inicial
+          perm = await Contacts.requestPermissions();
+          this.permission = perm.contacts;
+          this.cs.setPersmission(this.permission);
+          if (this.permission !== "denied") {
+            this.requestPermissionContact();
+          }
+          break;
+
+        case "denied": // cuando se hace click en el background
+          perm = await Contacts.requestPermissions();
+          this.permission = perm.contacts;
+          this.cs.setPersmission(this.permission);
+          if (this.permission !== "denied") {
+            this.requestPermissionContact();
+          }
+          break;
+
+        case "granted": // se da en permitir
+          // try {
+          //   const result = await Contacts.getContacts({
+          //     projection: {
+          //       name: true,
+          //       phones: true
+          //     }
+          //   })
+          //   this.contacts = result.contacts;
+          //   this.cs.setContactsData(this.contacts);
+
+          //   //
+          //   this.navigation.forward('/customer/collaborative-team/contact-team');
+          //   this.inviteService.setStatusModalInviteTeam(false);
+
+          // } catch (e) {
+          //   console.log(e)
+          // }
+          if (this.contacts.length === 0) {
+            this.statusModalSpinner = true;
+            setTimeout(() => {
+              this.navigation.forward('/customer/collaborative-team/contact-team');
+              this.statusModalSpinner = false;
+            }, 300);
+          }else{
+            this.navigation.forward('/customer/collaborative-team/contact-team');
+          }
+          break;
+
+        case "prompt-with-rationale": // cuando se da en denegar
+
+          this.inviteService.setStatusModalInvite(false); break;
+      }
+    }
+    catch (e) {
+      console.log(e)
+    }
+  }
 
 }

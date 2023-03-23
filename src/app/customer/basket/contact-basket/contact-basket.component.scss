@@ -168,9 +168,11 @@ ion-header {
 
   .contact{
 
-      &:active{
-          --background: var(--ion-background-hover-selected);
-      }
+      --background-activated: unset !important;
+
+      // &:active{
+      //     --background: var(--ion-background-hover-selected);
+      // }
 
       // --inner-padding-start : 0px !important;
       --inner-padding-end: 0px !important;
