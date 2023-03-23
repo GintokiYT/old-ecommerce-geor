@@ -72,12 +72,12 @@ img {
 
 // Footer
 .ion-footer {
-  --separacion: var(--ion-safe-area-bottom);
   margin-top: 4px;
   border-top: 1px solid var(--ion-color-separator);
   background-color: var(--ion-background-color);
   width: 100%;
   z-index: 1000;
+  padding-bottom: var(--ion-safe-area-bottom);
 
   &.active {
     //--ion-safe-area-bottom: var(--separacion);
@@ -95,9 +95,9 @@ img {
   justify-content: space-between;
   padding: 0 16px 24px 16px;
 
-  &.active {  
+  &.active {
     display: flex !important;
-    padding-bottom: 8px;     
+    padding-bottom: 8px;
   }
 }
 
