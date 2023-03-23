@@ -2,6 +2,15 @@ ion-content {
   --background: var(--ion-background-color);
 }
 
+.separator-safe-area {
+  width: 100%;
+  height: calc(var(--ion-safe-area-top) + 120px);
+
+  @media (min-width: 390px) {
+    height: calc(var(--ion-safe-area-top) + 130px);
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
