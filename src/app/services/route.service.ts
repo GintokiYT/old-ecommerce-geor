@@ -9,10 +9,8 @@ export class RouteService {
   miPedidoLastBackDirection : string = "";
   miPedidoLastBackDirection$ = new BehaviorSubject<string>(this.miPedidoLastBackDirection);
 
-
   myLocationLastBackDirection : string = "";
   myLocationLastBackDirection$ = new BehaviorSubject<string>(this.myLocationLastBackDirection);
-
 
   setContactLastSubmitBackDirection : string = "";
   setContactLastSubmitBackDirection$ = new BehaviorSubject<string>(this.setContactLastSubmitBackDirection);
@@ -22,6 +20,12 @@ export class RouteService {
 
   setEnvioLastBackDirection : string = "";
   setEnvioLastBackDirection$ = new BehaviorSubject<string>(this.setEnvioLastBackDirection);
+
+  setPaymentMethodsLastBackDirection : string = "";
+  setPaymentMethodsLastBackDirection$ = new BehaviorSubject<string>(this.setEnvioLastBackDirection);
+
+  setDetailBackDirection : string = "";
+  setDetailBackDirection$ = new BehaviorSubject<string>(this.setDetailBackDirection);
 
 
   constructor() { }
@@ -42,6 +46,14 @@ export class RouteService {
     return this.setEnvioLastBackDirection$;
   }
 
+  get currentSetPaymentMethodsLastBackDirection() : Observable<string>{
+    return this.setPaymentMethodsLastBackDirection$;
+  }
+
+  get currentsetDetailBackDirection(): Observable<string>{
+    return this.setDetailBackDirection$;
+  }
+
   setMiPedidoLastBackDirection( direction : string){
     this.miPedidoLastBackDirection = direction;
     this.miPedidoLastBackDirection$.next(this.miPedidoLastBackDirection);
@@ -60,6 +72,16 @@ export class RouteService {
   setSetEnvioLastBackDirection(direction: string){
     this.setEnvioLastBackDirection = direction;
     this.setEnvioLastBackDirection$.next(this.setEnvioLastBackDirection);
+  }
+
+  setSetPaymentMethodsLastBackDirection(direction : string){
+    this.setPaymentMethodsLastBackDirection = direction;
+    this.setPaymentMethodsLastBackDirection$.next(this.setPaymentMethodsLastBackDirection);
+  }
+
+  setSetDetailBackDirection(direction : string){
+    this.setDetailBackDirection = direction;
+    this.setDetailBackDirection$.next(this.setDetailBackDirection);
   }
 
   

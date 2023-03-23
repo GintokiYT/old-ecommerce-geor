@@ -25,8 +25,9 @@ export class EditBillComponent extends ViewComponent implements OnInit {
   inputValue: string;
   nameValue: string;
   idValue: string;
-  permission: any = "granted";
+  permission: string;
   contacts: any[];
+  statusModalSpinner: boolean = false;
   billingData : any[];
   previousRoute: string;
 
@@ -43,11 +44,15 @@ export class EditBillComponent extends ViewComponent implements OnInit {
       this.name = contact.name;
     })
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    this.cs.currentContacts$.subscribe( d => this.contacts = d);
+    this.cs.currentPermission$.subscribe(p => this.permission = p);
   }
 
   ngOnInit() {
 
-    this.CheckPermission();
+    if (this.permission.length === 0) {
+      this.CheckPermission();
+    }
 
     this.form = new FormGroup({
 
@@ -126,6 +131,7 @@ export class EditBillComponent extends ViewComponent implements OnInit {
     try {
       const perm = await Contacts.checkPermissions();
       this.permission = perm.contacts;
+      this.cs.setPersmission(this.permission);
     } catch (e) {
       console.log(e)
     }
@@ -138,6 +144,7 @@ export class EditBillComponent extends ViewComponent implements OnInit {
         case "prompt": // inicial
           perm = await Contacts.requestPermissions();
           this.permission = perm.contacts;
+          this.cs.setPersmission(this.permission);
           if (this.permission !== "denied") {
             this.requestPermissionContact();
           }
@@ -146,25 +153,39 @@ export class EditBillComponent extends ViewComponent implements OnInit {
         case "denied": // cuando se hace click en el background
           perm = await Contacts.requestPermissions();
           this.permission = perm.contacts;
+          this.cs.setPersmission(this.permission);
           if (this.permission !== "denied") {
             this.requestPermissionContact();
           }
           break;
 
         case "granted": // se da en permitir
-          try {
-            const result = await Contacts.getContacts({
-              projection: {
-                name: true,
-                phones: true
-              }
-            })
-            this.contacts = result.contacts;
-            this.cs.setContactsData(this.contacts);
+          // try {
+          //   if(this.contacts.length===0){
+          //     const result = await Contacts.getContacts({
+          //       projection: {
+          //         name: true,
+          //         phones: true
+          //       }
+          //     })
+          //     this.contacts = result.contacts;
+          //     this.cs.setContactsData(this.contacts);
+          //   }
+          //   this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts")
+          // } catch (e) {
+          //   console.log(e)
+          // }
+          if (this.contacts.length === 0) {
+            this.statusModalSpinner = true;
+            setTimeout(() => {
+              this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts")
+              this.statusModalSpinner = false;
+            }, 300);
+          }else{
             this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts")
-          } catch (e) {
-            console.log(e)
           }
+
+          break;
           break;
 
         case "prompt-with-rationale": // cuando se da en denegar

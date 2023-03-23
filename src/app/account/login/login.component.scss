@@ -20,7 +20,7 @@ ion-header {
 
 .login-container {
     width: 100%;
-    height: calc(100% - ( var(--ion-safe-area-top) + 72px ));
+    height: calc(100% - ( var(--ion-safe-area-top) + 64px ));
 
     form {
 
@@ -82,11 +82,9 @@ ion-footer {
     }
 }
 
-
 .disabled {
     color: var(--ion-color-disabled);
 }
-
 
 @media(min-width:390px) {
 
@@ -95,14 +93,12 @@ ion-footer {
             --padding-top: 16px !important;
             --padding-start: 24px !important;
             --padding-end: 24px !important;
-            --padding-bottom: 40px !important;
         }
     }
 
 
     .login-container {
-        height: calc(100% - ( var(--ion-safe-area-top) + 88px ));
-
+        height: calc(100% - ( var(--ion-safe-area-top) + 80px ));
         form {
             ion-button {
                 margin-right: 24px;

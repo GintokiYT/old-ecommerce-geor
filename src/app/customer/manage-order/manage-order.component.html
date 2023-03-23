@@ -44,8 +44,12 @@
         <ion-label>{{order.date}}</ion-label>
       </div>
 
-      <div class="button-order d-flex justify-content-end">
-        <ion-label color="primary">Volver a pedir</ion-label>
+      <div class="button-order d-flex justify-content-between align-items-center">
+        <ion-label [ngClass]="{'visible': order.owner,
+                              'not-visible': !order.owner}" class="owner">de 
+          <ion-text color="primary">{{order.owner}}</ion-text>
+        </ion-label>
+        <ion-label color="primary" (click)="goToConfirmOrder()">Volver a pedir</ion-label>
       </div>
 
     </div>

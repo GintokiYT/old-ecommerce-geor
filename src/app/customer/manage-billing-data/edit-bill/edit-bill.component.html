@@ -78,12 +78,21 @@
 
 
 <app-modal-type-bill
+  [billType]="inputValue"
   [modalIsVisible]="modalIsVisible"
   (onModalNotVisible)="closeModal($event)"
   (onSelectTypeBill)="setTypeBill($event)"
 >
 
 </app-modal-type-bill>
+
+
+<!-- Modal Spinner -->
+<div class="container-modal" *ngIf="statusModalSpinner">
+  <ion-item>
+    <ion-spinner color="primary" name="circular"></ion-spinner>
+  </ion-item>
+</div>
 
 
 

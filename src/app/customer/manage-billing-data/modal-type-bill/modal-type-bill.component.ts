@@ -10,6 +10,9 @@ export class ModalTypeBillComponent implements OnInit {
   @Input()
   modalIsVisible = false;
 
+  @Input()
+  billType = "";
+
   @Output()
   onModalNotVisible: EventEmitter<any> = new EventEmitter<any>();
 
@@ -47,6 +50,7 @@ export class ModalTypeBillComponent implements OnInit {
 
 
   onClickFactura(){
+    this.billType = "Factura"
     this.onSelectTypeBill.emit("Factura")
     this.modalIsVisible = false;
     this.onModalNotVisible.emit(this.modalIsVisible);
@@ -54,6 +58,7 @@ export class ModalTypeBillComponent implements OnInit {
 
 
   onClickBoleta(){
+    this.billType = "Boleta"
     this.onSelectTypeBill.emit("Boleta")
     this.modalIsVisible = false;
     this.onModalNotVisible.emit(this.modalIsVisible);

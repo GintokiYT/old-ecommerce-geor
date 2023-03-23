@@ -96,43 +96,7 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
       });
     }
   }
-
-  goToManageOrder(){
-    this.navigation.root("/customer/manage-order","forward")
-  }
-
-  goToCoupons(){
-    this.navigation.root('/customer/manage-coupons','forward');
-  }
-
-  goTeamCollaborative(){
-   this.navigation.root('/customer/collaborative-team','forward');
-
-  }
-
-  goPageTeam() {
-    this.navigation.forward('/customer/collaborative-team');
-  }
-
-  // Ir a favoritos
-  goToFavorites() {
-    this.navigation.forward('/customer/manage-favorites');
-  }
-
-  // Ir a User Help
-  goUserHelp() {
-    this.navigation.forward('/customer/user-help');
-  }
-
-  goToManageBillingData(){
-    this.navigation.forward("/customer/manage-billing-data")
-  }
-
-  goToManageAddresses(){
-    this.navigation.forward("/customer/manage-addresses")
-  }
-
-
+  
   goTo(direction : string){
     this.navigation.root(direction,"forward");
   }

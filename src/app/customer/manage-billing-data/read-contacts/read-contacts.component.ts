@@ -1,10 +1,12 @@
-import { Component, OnInit, Injector, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Injector, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { IonSearchbar } from '@ionic/angular';
 import { ContactsService } from '../../../services/contacts.service';
+import { Contacts } from "@capacitor-community/contacts"
 import { BillingDataService } from '../../../services/billing-data.service';
 import { Router } from '@angular/router';
 import { RouteService } from '../../../services/route.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -17,32 +19,55 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
 
   contacts: any[];
   contactsResults: any[];
-  showButtonPlus: boolean = true;
+  contactsLoaded: boolean = false;
   headerContent: string = "normal";
   previousRoute: string;
+  private currentContactSubscription: Subscription;
 
 
   @ViewChild("searchBar") searchBar: IonSearchbar;
 
 
-  constructor(private _injector: Injector, private cdr: ChangeDetectorRef,
-    private cs: ContactsService, private bs: BillingDataService, private rs: RouteService,
+  constructor(private _injector: Injector,
+    private cs: ContactsService,
+    private bs: BillingDataService,
+    private rs: RouteService,
     private router: Router) {
     super(_injector);
-    this.cs.currentContacts$.subscribe((data) => {
-      this.contacts = data.map( contact => {
-        const nContact= {
-          ...contact,
-          selected: false
-        }
-        return nContact;
-      });
-      this.contactsResults = [...this.contacts];
-    });
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+    this.currentContactSubscription = this.cs.currentContacts$.subscribe( c => this.contacts = c);
   }
 
   ngOnInit() {
+    if(this.contacts.length===0){
+      this.getContacts();
+    }else{
+      this.contactsResults = [...this.contacts];
+      setTimeout(() => {
+        this.contactsLoaded = true;
+      }, 200);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.currentContactSubscription.unsubscribe();
+  }
+
+  async getContacts() {
+    try {
+      const result = await Contacts.getContacts({
+        projection: {
+          name: true,
+          phones: true
+        }
+      })
+      this.contacts = result.contacts;
+      this.contactsResults = [...this.contacts];
+      this.cs.setContactsData(this.contacts);
+      this.contactsLoaded = true;
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   handleChange(event) {
@@ -61,20 +86,12 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
   }
 
   goToAddCompany(contact) {
-    
-    const contactSelected = this.contactsResults.filter( c => c.contactId === contact.contactId)[0];
-    contactSelected.selected = true;
-
     const contactTemp = {
       name: contact?.name?.display,
       number: contact?.phones[0].number
     }
-    this.bs.setContactTemp(contactTemp);    
-
-    setTimeout(() => {
-      this.navigation.back(this.previousRoute);
-    }, 150);
-
+    this.bs.setContactTemp(contactTemp);
+    this.navigation.back(this.previousRoute);
   }
 
   goBack() {
@@ -82,7 +99,6 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
       this.contactsResults = [...this.contacts];
       this.headerContent = "normal"
     } else {
-      //this.navigation.back("/customer/manage-billing-data/add-company");
       this.navigation.back(this.previousRoute)
     }
 
@@ -91,34 +107,5 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
   showSearch() {
     this.headerContent = "search";
   }
-
-  phoneFormated(phones: any[]) {
-    var numberFormated = "";
-    const formated = phones.filter((phone) => {
-      if (phone.number.includes("+51 ")) {
-        return phone;
-      }
-    })
-
-    if (formated.length > 0) {
-      numberFormated = formated[0].number;
-    } else {
-      const not51 = phones.filter((phone) => {
-        if (!phone.number.includes("+51 ")) {
-
-        }
-      })
-    }
-
-    // for(let i = 0;i<=phones.length-1;i++){
-    //   if(phones[i].number.includes("+51 ")){
-    //     numberFormated = phones[i].number;
-    //     break;
-    //   }
-    // }
-
-  }
-
-
 
 }

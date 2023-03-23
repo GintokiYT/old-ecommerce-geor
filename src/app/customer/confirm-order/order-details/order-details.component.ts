@@ -4,6 +4,8 @@ import { ConfirmOrderService } from '../services/confirm-order.service';
 import IOrder from '../../../interfaces/IOrder';
 import { Contacts } from "@capacitor-community/contacts"
 import { ContactsService } from '../../../services/contacts.service';
+import { RouteService } from '../../../services/route.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-details',
@@ -20,7 +22,8 @@ export class OrderDetailsComponent extends ViewComponent implements OnInit {
   order: IOrder;
 
   constructor(_injector: Injector, public cpService: ConfirmOrderService,
-    private cs: ContactsService) {
+    private cs: ContactsService,private rs : RouteService,
+    private router: Router) {
     super(_injector);
     this.cpService.getDeliveryRequirements.subscribe( value => this.deliveryRequirements = value );
   }
@@ -32,6 +35,11 @@ export class OrderDetailsComponent extends ViewComponent implements OnInit {
 
   goTo(p1?: string, p2?: string) {
     this.navigation.forward(p1);
+  }
+
+  goToDirection(){
+    this.rs.setSetDetailBackDirection(this.router.url);
+    this.navigation.forward("/customer/direction")
   }
 
   async CheckPermission() {
