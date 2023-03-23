@@ -72,7 +72,6 @@ img {
 
 // Footer
 .ion-footer {
-  --separacion: var(--ion-safe-area-bottom);
   margin-top: 4px;
   border-top: 1px solid var(--ion-color-separator);
   background-color: var(--ion-background-color);
@@ -80,12 +79,11 @@ img {
   z-index: 1000;
 
   &.active {
-    //--ion-safe-area-bottom: var(--separacion);
+    // --ion-safe-area-bottom: 0px;
   }
 
   &.disabled {
-    //--ion-safe-area-bottom: var(--separacion);
-    padding-bottom: var(--ion-safe-area-bottom);
+    --ion-safe-area-bottom: var(--separacion-bottom);
   }
 }
 
@@ -97,7 +95,7 @@ img {
 
   &.active {  
     display: flex !important;
-    padding-bottom: 8px;     
+    padding-bottom: 10px;     
   }
 }
 
@@ -145,6 +143,7 @@ img {
   width: 100%;
   padding: 16px;
   position: relative;
+  padding-bottom: calc(var(--ion-safe-area-bottom) + 16px);
 }
 
 .container-chat #myDiv {
