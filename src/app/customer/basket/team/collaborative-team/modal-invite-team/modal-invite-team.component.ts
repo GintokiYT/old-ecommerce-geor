@@ -105,10 +105,14 @@ export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
           if (this.contacts.length === 0) {
             this.statusModalSpinner = true;
             setTimeout(() => {
+              this.inviteService.setStatusModalInviteTeam(false);
               this.navigation.forward('/customer/collaborative-team/contact-team');
+              
+
               this.statusModalSpinner = false;
             }, 300);
           }else{
+            this.inviteService.setStatusModalInviteTeam(false);
             this.navigation.forward('/customer/collaborative-team/contact-team');
           }
           break;
