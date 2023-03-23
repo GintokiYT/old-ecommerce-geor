@@ -21,8 +21,8 @@
     <!-- Slider  Main-->
     <div class="container-slider-main">
       <div>
-        <ion-slides class="pager-static" [options]="slideOptions" [pager]="true">
-          <ion-slide *ngFor="let banner of slides">
+        <ion-slides class="pager-static big-slider" [options]="slideOptions" [pager]="true">
+          <ion-slide *ngFor="let banner of slides" style="padding-right: 10px;">
             <ion-img (click)="goToProduct()" [src]="banner.image" [alt]="banner.image"></ion-img>
           </ion-slide>
         </ion-slides>
@@ -33,9 +33,9 @@
     <div class="container-slider-items">
       <div class="carousel__wrapper">
         <ion-text>
-          <div class="d-flex ion-align-items-center mb-3">
+          <div class="d-flex ion-align-items-center mb-3 parati">
             <span class="me-2 fw-bold">Para ti</span>
-            <ion-icon name="arrow-forward-outline"></ion-icon>
+            <ion-icon name="arrow-forward-outline" style="width: 17px; height: 15px;"></ion-icon>
           </div>
         </ion-text>
         <ion-slides [options]="productSlidesOptions">

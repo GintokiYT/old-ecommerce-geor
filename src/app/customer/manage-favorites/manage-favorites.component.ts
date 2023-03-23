@@ -53,7 +53,7 @@ export class ManageFavoritesComponent extends ViewComponent implements OnInit {
 
   goVariants() {
     localStorage.setItem('back', '/customer/manage-favorites');
-    this.navigation.forward('/customer/variants');
+    this.navigation.forward('/customer/my-basket');
   }
 
   goDetailProduct() {

@@ -1,8 +1,6 @@
 body.md {
-  --separacion-bottom: var(--ion-safe-area-bottom);
   --ion-footer-bottom: 0px;
   .ion-content-var {
-    // --ion-padding-top: 24px;
     --ion-padding-top: 16px;
     --ion-padding-bottom: 24px;
 
@@ -40,6 +38,7 @@ body.ios {
 
 // Header
 .header-basic {
+  user-select: none;
   position: sticky;
   top: 0;
   left: 0;
