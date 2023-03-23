@@ -45,7 +45,7 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
       this.contactsResults = [...this.contacts];
       setTimeout(() => {
         this.contactsLoaded = true;
-      }, 200);
+      }, 150);
     }
   }
 
