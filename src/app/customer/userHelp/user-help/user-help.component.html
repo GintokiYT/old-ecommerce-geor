@@ -1,4 +1,5 @@
-<ion-header class="ion-content-var">
+<ion-content class="ion-no-padding" [scrollEvents]="true">
+
   <header class="header-basic">
     <div class="content-header">
       <h2>Ayuda</h2>
@@ -7,11 +8,11 @@
       </div>
     </div>
   </header>
-</ion-header>
 
-<ion-content class="ion-content-var">
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 54px);"></div>
+
   <div class="container-user-help">
-    <div class="container-body">
+    <div class="container-body user-select-none">
       <div class="items">
         <div class="item" (click)="goToInbox()">
           <span class="item-name">Hablar con ventas</span>

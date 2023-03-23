@@ -1,4 +1,5 @@
-<ion-header class="ion-content-var">
+<ion-content class="ion-no-padding ion-content-var" [scrollEvents]="true">
+
   <header class="header-basic">
     <div class="content-header">
       <h2>Libro de reclamaciones</h2>
@@ -7,11 +8,10 @@
       </div>
     </div>
   </header>
-</ion-header>
 
-<ion-content class="content-padding-mobile">
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 54px);"></div>
 
-  <ion-list>
+  <ion-list class="container-form">
     <form class="form-complaints-book" [formGroup]="FormControlFormulary" (ngSubmit)="submitFormulary()">
 
       <ion-item class="ion-no-padding form-item">
@@ -207,7 +207,7 @@
         </ion-label>
       </div> -->
 
-      <div class="button-submit mb-4 mt-4">
+      <div class="button-submit">
         <ion-button
           color="primary"
           type="submit"

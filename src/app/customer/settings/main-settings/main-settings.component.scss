@@ -1,6 +1,5 @@
 ion-content {
   --background: var(--ion-background-color);
-  position: relative;
 }
 
 html {
@@ -11,10 +10,6 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-ion-content {
-  position: relative;
 }
 
 .container-app-settings {
