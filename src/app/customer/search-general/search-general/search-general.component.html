@@ -1,6 +1,7 @@
-<ion-header class="ion-content-var">
+<ion-content class="ion-no-padding" [scrollEvents]="true">
+
   <div class="search-input">
-    <div class="input-container" (click)="goSearchFilter()">
+    <div class="input-container user-select-none" (click)="goSearchFilter()">
       <input type="search" tabindex="1" [placeholder]="placeholder" disabled>
     </div>
     <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none">
@@ -11,11 +12,9 @@
       <path d="M3.37012 12.8047V16.8787C3.37012 18.9407 5.04112 20.6117 7.10312 20.6117H8.33912" stroke="var(--ion-color-basic)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>
-</ion-header>
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 66px); background-color: var(--ion-background-color);"></div>
 
-<ion-content>
-
-  <div class="container-products">
+  <div class="container-products user-select-none">
     <div class="products" *ngFor="let product of products"
       (click)="goProduct(product)"
     >
