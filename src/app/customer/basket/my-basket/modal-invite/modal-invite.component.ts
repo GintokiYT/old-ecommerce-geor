@@ -13,62 +13,68 @@ import { ContactsService } from '../../../../services/contacts.service';
 export class ModalInviteComponent extends ViewComponent implements OnInit {
 
   //Contact
-  permission:string;
-  contacts:any[];
+  permission: string;
+  contacts: any[];
+  statusModalSpinner: boolean = false;
   //
 
-  @ViewChild('ContainerModal') ContainerModal:ElementRef;
-  @ViewChild('modal') modal:ElementRef;
+  @ViewChild('ContainerModal') ContainerModal: ElementRef;
+  @ViewChild('modal') modal: ElementRef;
   ngAfterViewInit(): void {
-    const ContainerModal:HTMLDivElement = this.ContainerModal.nativeElement;
-    ContainerModal.addEventListener('click',(event: Event)=>{
-      const modal:HTMLDivElement =this.modal.nativeElement;
-      if(event.target===ContainerModal){
+    const ContainerModal: HTMLDivElement = this.ContainerModal.nativeElement;
+    ContainerModal.addEventListener('click', (event: Event) => {
+      const modal: HTMLDivElement = this.modal.nativeElement;
+      if (event.target === ContainerModal) {
         modal.classList.add('close-modal');
-        setTimeout(()=>{
+        setTimeout(() => {
           this.inviteService.setStatusModalInvite(false);
-        },250);
+        }, 250);
       }
     })
   }
 
-  constructor(_injector:Injector,private inviteService:InviteService,private router:Router,private cs:ContactsService) {
-    super(_injector)
+  constructor(_injector: Injector, private inviteService: InviteService, private router: Router, private cs: ContactsService) {
+    super(_injector);
+    this.cs.currentContacts$.subscribe(c => this.contacts = c);
+    this.cs.currentPermission$.subscribe(p => this.permission = p);
   }
 
   ngOnInit() {
-    // Descomentar para contactos
-   this.CheckPermission();
+    if (this.permission.length === 0) {
+      this.CheckPermission();
+    }
   }
 
-  goContact(){
-  const currentRouter = this.router.url;
-  if(currentRouter === '/customer/collaborative-team/team') {
+  goContact() {
+    const currentRouter = this.router.url;
+    if (currentRouter === '/customer/collaborative-team/team') {
+      this.inviteService.setStatusModalInvite(false);
+      return this.navigation.forward('/customer/collaborative-team/contact-team')
+    }
     this.inviteService.setStatusModalInvite(false);
-    return this.navigation.forward('/customer/collaborative-team/contact-team')
-  }
-  this.inviteService.setStatusModalInvite(false);
-  this.navigation.forward('/customer/contact-basket');
+    this.navigation.forward('/customer/contact-basket');
   }
 
   //Contactos
-async CheckPermission() {
+  async CheckPermission() {
     try {
       const perm = await Contacts.checkPermissions();
       this.permission = perm.contacts;
+      this.cs.setPersmission(this.permission);
     } catch (e) {
       console.log(e)
     }
   }
 
   async requestPermissionContact() {
-    
+
     try {
       let perm;
       switch (this.permission) {
         case "prompt": // inicial
           perm = await Contacts.requestPermissions();
           this.permission = perm.contacts;
+          this.cs.setPersmission(this.permission);
           if (this.permission !== "denied") {
             this.requestPermissionContact();
           }
@@ -77,39 +83,61 @@ async CheckPermission() {
         case "denied": // cuando se hace click en el background
           perm = await Contacts.requestPermissions();
           this.permission = perm.contacts;
+          this.cs.setPersmission(this.permission);
           if (this.permission !== "denied") {
             this.requestPermissionContact();
           }
           break;
 
         case "granted": // se da en permitir
-          try {
-            const result = await Contacts.getContacts({
-              projection: {
-                name: true,
-                phones: true
-              }
-            })
-            this.contacts = result.contacts;
-            this.cs.setContactsData(this.contacts);
+          // try {
+          //   const result = await Contacts.getContacts({
+          //     projection: {
+          //       name: true,
+          //       phones: true
+          //     }
+          //   })
+          //   this.contacts = result.contacts;
+          //   this.cs.setContactsData(this.contacts);
 
-            //
+          //   //
+          //   const currentRouter = this.router.url;
+          //   if (currentRouter === '/customer/collaborative-team/team') {
+          //     this.inviteService.setStatusModalInvite(false);
+          //     return this.navigation.forward('/customer/collaborative-team/contact-team')
+          //   }
+          //   this.inviteService.setStatusModalInvite(false);
+          //   this.navigation.forward('/customer/contact-basket');
+
+          // } catch (e) {
+          //   console.log(e)
+          // }
+          if (this.contacts.length === 0) {
+            this.statusModalSpinner = true;
+            setTimeout(() => {
+              const currentRouter = this.router.url;
+              if (currentRouter === '/customer/collaborative-team/team') {
+                this.inviteService.setStatusModalInvite(false);
+                return this.navigation.forward('/customer/collaborative-team/contact-team')
+              }
+              this.inviteService.setStatusModalInvite(false);
+              this.navigation.forward('/customer/contact-basket');
+              this.statusModalSpinner = false;
+            }, 300);
+          } else {
             const currentRouter = this.router.url;
-            if(currentRouter === '/customer/collaborative-team/team') {
+            if (currentRouter === '/customer/collaborative-team/team') {
               this.inviteService.setStatusModalInvite(false);
               return this.navigation.forward('/customer/collaborative-team/contact-team')
             }
             this.inviteService.setStatusModalInvite(false);
             this.navigation.forward('/customer/contact-basket');
-
-          } catch (e) {
-            console.log(e)
           }
           break;
 
         case "prompt-with-rationale": // cuando se da en denegar
 
-        this.inviteService.setStatusModalInvite(false);break;
+          this.inviteService.setStatusModalInvite(false); break;
       }
     }
     catch (e) {
