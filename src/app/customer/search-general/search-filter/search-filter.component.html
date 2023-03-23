@@ -1,4 +1,5 @@
-<ion-header class="ion-content-var">
+<ion-content class="ion-no-padding" [scrollEvents]="true">
+
   <div class="search-input">
     <div class="input-container">
       <input type="search" tabindex="1" #inputSearch>
@@ -12,11 +13,8 @@
       <path d="M1 13L13 1" stroke="var(--ion-color-basic)" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
     </svg>
   </div>
-</ion-header>
 
-<ion-content>
-
-  <div class="container-products">
+  <div class="container-products user-select-none">
     <div class="search-header" *ngIf="inputSearch.value.length === 0">
       <p>Búsquedas recientes</p>
       <p (click)="deleteAllHistory()">Limpiar</p>
