@@ -21,6 +21,7 @@ ion-header {
 .login-container {
     width: 100%;
     height: calc(100% - ( var(--ion-safe-area-top) + 64px ));
+    transition: heigth 0.3s ease-out;
 
     form {
 

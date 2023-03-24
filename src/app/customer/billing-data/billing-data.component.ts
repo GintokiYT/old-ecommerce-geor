@@ -52,6 +52,14 @@ export class BillingDataComponent extends ViewComponent implements OnInit {
     this.oneTrue = (trues.length > 0) ? true : false;
   }
 
+  clickAroundTheCheckbox(id:number){
+    const selected = this.billingData.find( b => b.id===id);
+    const falses = this.billingData.filter(bill => bill.id !== id);
+    falses.forEach(bill => bill.selected = false);
+    selected.selected = !selected.selected;
+    this.oneTrue = (selected.selected) ? true : false;
+  }
+
   setBill() {
     const billingDataChoosed = this.billingData.filter(bill => bill.selected === true);
     if (billingDataChoosed.length > 0) {
