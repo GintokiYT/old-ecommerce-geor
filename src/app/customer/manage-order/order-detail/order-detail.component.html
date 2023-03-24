@@ -115,7 +115,8 @@
     <div class="order-bill d-flex flex-column" style="gap: 8px;" *ngIf="order.state==='ENTREGADO'">
       <ion-label style="font-weight: 500;">Factura</ion-label>
       <div class="d-flex" style="gap: 16px;">
-        <img src="/assets/images/bill.png"/>
+        <ion-img src="/assets/images/bill.png"></ion-img>
+        <!-- <img src="/assets/images/bill.png"/> -->
         <div class="d-flex flex-column" style="gap: 4px;" >
           <ion-label>Negocios del Carmen Portocarreo - NCM Comercial</ion-label>
           <ion-label style="color: var(--ion-color-text-secundary);">01713995789</ion-label>
@@ -129,7 +130,8 @@
     <div class="order-pay d-flex flex-column" style="gap: 8px;">
       <ion-label style="font-weight: 500;">Detalles de pago</ion-label>
       <div class="d-flex" style="gap: 8px;" *ngIf="order.state!=='PENDIENTE DE PAGO'">
-        <img src="/assets/icons/icon-visa-small.svg"/>
+        <!-- <img src="/assets/icons/icon-visa-small.svg"/> -->
+        <ion-img src="/assets/icons/icon-visa-small.svg"></ion-img>
         <ion-label>**** 1441</ion-label>
       </div>
       <ion-label *ngIf="order.state==='PENDIENTE DE PAGO'" style="color: var(--ion-color-text-secundary)">
@@ -146,7 +148,8 @@
       <div class="products-container d-flex flex-column" style="gap: 24px;">
         <div class="product d-flex flex-column" style="gap: 12px;" (click)="goToVariants()">
           <div class="d-flex justify-content-between" style="gap: 8px;">
-            <img src="assets/images/producto-big-4.png" width="83px">
+            <!-- <img src="assets/images/producto-big-4.png" width="83px"> -->
+            <ion-img src="assets/images/producto-big-4.png"></ion-img>
             <div class="d-flex flex-column justify-content-between" style="gap: 4px; color: var(--ion-color-text-secundary);">
               <ion-label>S/ 9,780.00</ion-label>
               <ion-label>Plancha de bicarbonato pulverizad zado lorem ipsum lorem iprsum ...</ion-label>
@@ -162,7 +165,8 @@
         </div>
         <div class="product d-flex flex-column" style="gap: 12px;" (click)="goToVariants()">
           <div class="d-flex justify-content-between" style="gap: 8px;">
-            <img src="assets/images/producto-big-4.png" width="83px">
+            <!-- <img src="assets/images/producto-big-4.png" width="83px"> -->
+            <ion-img src="assets/images/producto-big-4.png"></ion-img>
             <div class="d-flex flex-column justify-content-between" style="gap: 4px; color: var(--ion-color-text-secundary);">
               <ion-label>S/ 9,780.00</ion-label>
               <ion-label>Plancha de bicarbonato pulverizad zado lorem ipsum lorem iprsum ...</ion-label>
