@@ -1,6 +1,8 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 import { OrdersService } from 'src/app/services/orders.service';
+import { Router } from '@angular/router';
+import { RouteService } from '../../services/route.service';
 
 @Component({
   selector: 'app-manage-order',
@@ -18,7 +20,8 @@ export class ManageOrderComponent extends ViewComponent implements OnInit {
   ordersResults : any[];
 
 
-  constructor(private _injector: Injector, private os: OrdersService) {
+  constructor(private _injector: Injector, private os: OrdersService,
+    private router: Router, private rs: RouteService) {
     super(_injector)
     this.os.currentOrdersData$.subscribe( d => this.ordersData = d);
     this.ordersResults = [...this.ordersData];
@@ -33,6 +36,11 @@ export class ManageOrderComponent extends ViewComponent implements OnInit {
   goToOrderDetail(id:string){
 
     this.navigation.root(`/customer/manage-order/order-detail/${id}`,"forward")
+  }
+
+  goToConfirmOrder(){
+    this.rs.setMiPedidoLastBackDirection(this.router.url);
+    this.navigation.root("/customer/confirm-order","forward")
   }
 
   openModal(){

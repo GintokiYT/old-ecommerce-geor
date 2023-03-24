@@ -53,7 +53,7 @@ export class ConfirmOrderService {
     ,
 
     detailsOrderToHome: {
-      direction : "¿Donde dejaremos tu pedido?",
+      direction : "¿Dónde dejaremos tu pedido?",
       dClass: "lugar-pedido",
       time: "Llega el 26 dic, 8:00am - 9:00am",
       who: "Wilfredo",
@@ -63,7 +63,7 @@ export class ConfirmOrderService {
 
     detailsOrderToStore:{
       store: "",
-      direction : "¿Donde recojeras tu pedido?",
+      direction : "¿Dónde recogerás tu pedido?",
       dClass: "lugar-pedido",
       who: "Wilfredo"
     }

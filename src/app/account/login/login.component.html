@@ -17,11 +17,11 @@
   <div class="login-container container-main d-flex flex-column justify-content-between">
 
     <!-- Form -->
-    <form class="w-100l" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
 
       <ion-item lines="none" class="form-group" (ionBlur)="checkBlur('phoneOrEmail')" (ionFocus)="checkFocus('phoneOrEmail')">
-        <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
+        <ion-label position="floating">Celular o correo electrónico</ion-label>
         <ion-input formControlName="username" type="email" inputmode="email"></ion-input>
         <app-validation-messages *ngIf="showTextHelperPhoneOrEmail" slot="error"
           [control]="loginForm.get('username')"></app-validation-messages>
@@ -30,7 +30,7 @@
 
       <div class="position-relative">
         <ion-item id="item-password" lines="none" class="form-group item-password"  (ionBlur)="checkBlur('password')" (ionFocus)="checkFocus('password')">
-          <ion-label onclick="event.stopPropagation()" position="floating" class="disabled">Contraseña</ion-label>
+          <ion-label onclick="event.stopPropagation()" position="floating">Contraseña</ion-label>
           <ion-input  
             id="input-password" 
             type="password" 

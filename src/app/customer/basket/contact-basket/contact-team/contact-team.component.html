@@ -107,7 +107,7 @@
 
   <div class="container-main">
 
-    <div class="contacts-container margin-foooter-ionic">
+    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
       <ion-item
         class="contact"
         lines="none"
@@ -115,8 +115,8 @@
       >
         <div class="d-flex flex-column" style="gap: 4px">
           <p class="name">{{ contact?.name?.display }}</p>
-          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
-            <p class="phone">{{ phone?.number }}</p>
+          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones;let indexPhone=index">
+            <p class="phone" *ngIf="indexPhone===0">{{phone?.number}}</p>
           </div>
         </div>
          <ion-checkbox
@@ -127,6 +127,29 @@
         ></ion-checkbox>
       </ion-item>
     </div>
+
+    <!-- SKELETON -->
+    <div class="contacts-container margin-foooter-ionic" *ngIf="!contactsLoaded">
+      <ion-item
+        class="contact"
+        lines="none"
+        *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]"
+      >
+        <div class="d-flex flex-column" style="gap: 4px">
+          <ion-skeleton-text [animated]="true" style="width: 100px"></ion-skeleton-text>
+          <div class="d-flex flex-column" *ngFor="let phone of [1]">
+            <ion-skeleton-text [animated]="true" style="width: 60px"></ion-skeleton-text>
+          </div>
+        </div>
+         <ion-checkbox
+          slot="end"
+          mode="ios"
+          class="ion-no-margin"
+          (ionChange)="checkBoxSelect($event)"
+        ></ion-checkbox>
+      </ion-item>
+    </div>
+    
   </div>
 
   <ion-footer class="ion-no-border footer-ionic">

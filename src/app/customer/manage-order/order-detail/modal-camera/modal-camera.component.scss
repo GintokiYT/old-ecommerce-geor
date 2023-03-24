@@ -17,42 +17,26 @@
 
     .modal-container {
         position: absolute;
-        //bottom: calc(var(--ion-safe-area-bottom,0) + 10px);
+        //bottom: calc(var(--ion-safe-area-bottom,0) + 5px);
         bottom: 0px;
-        //width: calc(100% - 32px);
         width: 100%;
+        //width: calc(100% - 32px);
         background-color: var(--ion-background-alert);
         //border-radius: 10px;
+        //border-bottom-left-radius: 23px !important;
+        //border-bottom-right-radius: 23px !important;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
-        padding-block: 16px;
+        padding: 55px 16px;
         gap: 36px;
         font-size: 14px;
         cursor: initial;
-
-        ion-list{
-            --ion-item-background: var(--ion-background-alert);
-        }
 
         .terms,
         .politics {
             color: var(--ion-color-primary);
         }
     }
-}
-
-ion-item{
-    // --inner-padding-start : 0px !important;
-    --inner-padding-end: 0px !important;
-
-    // &::part(native){
-    //     padding-inline-end: 0px !important;
-    //     padding-inline-start: 0px !important;
-    // }
-
-    // &:active{
-    //     --background: var(--ion-background-hover-selected);
-    // }
 }
 
 .modal-visible {
@@ -70,7 +54,7 @@ ion-item{
         .modal-container{
             //width: calc(100% - 48px);
             width: 100%;
-            padding-block: 24px;
+            padding: 55px 24px;
             font-size: 16px;
         }
     }

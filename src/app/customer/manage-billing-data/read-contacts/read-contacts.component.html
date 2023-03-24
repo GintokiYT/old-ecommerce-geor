@@ -52,37 +52,25 @@
 
   <div class="container-main">
 
-    <!-- Ejemplo sin usar ion-item -->
-    <!-- <div class="d-flex flex-column contact" *ngFor="let contact of contacts">
-      <p class="name">{{contact?.name?.display}}</p>
-      <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
-        <p class="phone">{{phone?.number}}</p>
-      </div>
-
-    </div> -->
-
-    <!-- Ejemplo de como se ve al traer los contactos -->
-    <!-- <div class="contacts-container">
-      <ion-item class="contact" lines="none" *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]" (click)="goToAddCompany(contact)">
-        <div class="d-flex flex-column">
-          <p class="name">Pedro gutierrez</p>
-          <div class="d-flex flex-column" *ngFor="let phone of [1,1,1]">
-            <p class="phone">123123123</p>
-          </div>
-        </div>
-        <ion-checkbox slot="end"></ion-checkbox>
-      </ion-item>
-    </div> -->
-
-    <div class="contacts-container margin-foooter-ionic">
+    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
       <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults" (click)="goToAddCompany(contact)">
         <div class="d-flex flex-column" style="gap: 4px;">
           <p class="name">{{contact?.name?.display}}</p>
-          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones">
-            <p class="phone">{{phone?.number}}</p>
+          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones;let indexPhone=index">
+            <p class="phone" *ngIf="indexPhone===0">{{phone?.number}}</p>
           </div>
         </div>
-        <ion-icon name="checkmark-outline" color="primary" slot="end" *ngIf="contact.selected"></ion-icon>
+      </ion-item>
+    </div>
+    
+    <div class="contacts-container margin-foooter-ionic" *ngIf="!contactsLoaded">
+      <ion-item class="contact" lines="none" *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+        <div class="d-flex flex-column" style="gap: 4px;">
+          <ion-skeleton-text [animated]="true" style="width: 100px"></ion-skeleton-text>
+          <div class="d-flex flex-column" *ngFor="let phone of [1]">
+            <ion-skeleton-text [animated]="true" style="width: 60px"></ion-skeleton-text>
+          </div>
+        </div>
       </ion-item>
     </div>
    
@@ -95,7 +83,6 @@
   <ion-toolbar class="ion-no-padding">
     <div class="d-flex justify-content-end">
       <img
-        *ngIf="showButtonPlus"
         class="icon-plus-contact" 
         (click)="goToSetContact()"
         src="assets/collaborative-basquet/Plus-circle.svg"

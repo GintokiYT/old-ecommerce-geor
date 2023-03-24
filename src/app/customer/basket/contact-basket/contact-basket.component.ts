@@ -1,15 +1,16 @@
-import { Location } from '@angular/common';
 import { Component, OnInit, Injector, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ViewComponent } from '@geor360/ecore';
 import { IonSearchbar } from '@ionic/angular';
 import { BillingDataService } from 'src/app/services/billing-data.service';
 import { ContactsService } from 'src/app/services/contacts.service';
+import { Contacts } from "@capacitor-community/contacts"
 import { RouteService } from 'src/app/services/route.service';
 import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.service';
-interface Contacts{
-  name:string,
-  number:string;
+import { Subscription } from 'rxjs';
+interface Contacts {
+  name: string,
+  number: string;
 }
 @Component({
   selector: 'app-contact-basket',
@@ -17,57 +18,60 @@ interface Contacts{
   styleUrls: ['./contact-basket.component.scss'],
 })
 export class ContactBasketComponent extends ViewComponent implements OnInit {
-/*
-  constructor( _injector: Injector, private location: Location ) {
-    super(_injector);
-   }
-
-   ngOnInit() {}
-//Mostramos la lista de contacto
-  public contact=['Jualiano del carmen','Anibal Cortez','Roberto Carlos de maracaná','Anibal Cortez','Roberto Carlos de maracaná','Jorge Laguna','Anibal Cortez'];
-  public number=['+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234'];
-  public results = [...this.contact];
-
-//Busca el nombre del contacto
-  handleChange(event) {
-    const query = event.target.value.toLowerCase().trim();
-    this.results = this.contact.filter(d => d.toLowerCase().indexOf(query) > -1);
-  }
-
-//Selecciona los checkbox
-  oneTrue = false;
-  invitationsCount = 0;
-
-  checkBoxSelect(event: any) {
-    if (event.detail.checked) {
-     // console.log(event.detail.checked);
-      this.invitationsCount++;
-      this.oneTrue = true;
-    } else {
-      this.invitationsCount--;
-      this.oneTrue = this.invitationsCount > 0;
+  /*
+    constructor( _injector: Injector, private location: Location ) {
+      super(_injector);
+     }
+  
+     ngOnInit() {}
+  //Mostramos la lista de contacto
+    public contact=['Jualiano del carmen','Anibal Cortez','Roberto Carlos de maracaná','Anibal Cortez','Roberto Carlos de maracaná','Jorge Laguna','Anibal Cortez'];
+    public number=['+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234','+51 971 945 234'];
+    public results = [...this.contact];
+  
+  //Busca el nombre del contacto
+    handleChange(event) {
+      const query = event.target.value.toLowerCase().trim();
+      this.results = this.contact.filter(d => d.toLowerCase().indexOf(query) > -1);
     }
-  }
+  
+  //Selecciona los checkbox
+    oneTrue = false;
+    invitationsCount = 0;
+  
+    checkBoxSelect(event: any) {
+      if (event.detail.checked) {
+       // console.log(event.detail.checked);
+        this.invitationsCount++;
+        this.oneTrue = true;
+      } else {
+        this.invitationsCount--;
+        this.oneTrue = this.invitationsCount > 0;
+      }
+    }
+  
+    goBack(){
+      this.location.back();
+    }
+  
+    goCollaborativeBasket(){
+      this.navigation.root('/customer/collaborative-basket','forward');
+    }
+  
+    goContactSeatch(){
+      this.navigation.root('/customer/contact-search','forward');
+    }
+  }*/
 
-  goBack(){
-    this.location.back();
-  }
-
-  goCollaborativeBasket(){
-    this.navigation.root('/customer/collaborative-basket','forward');
-  }
-
-  goContactSeatch(){
-    this.navigation.root('/customer/contact-search','forward');
-  }
-}*/
-
-//contactos
+  //contactos
   contacts: any[];
   contactsResults: any[];
-  showButtonPlus: boolean = true;
+  contactsLoaded: boolean = false;
   headerContent: string = "normal";
   orderType: string;
+  private currentContactSubscription: Subscription;
+  oneTrue = false;
+  invitationsCount = 0;
 
   @ViewChild("searchBar") searchBar: IonSearchbar;
 
@@ -76,23 +80,36 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
     private cs: ContactsService, private bs: BillingDataService, private rs: RouteService,
     private router: Router, private cos: ConfirmOrderService) {
     super(_injector);
-    this.cs.currentContacts$.subscribe((data) => {
-      this.contacts = data.map(contact => {
-        const nContact = {
-          ...contact,
-          selected: false
-        }
-        return nContact;
-      });
-      this.contactsResults = [...this.contacts];
-    });
+    this.currentContactSubscription = this.cs.currentContacts$.subscribe( c => this.contacts = c);  
   }
 
   ngOnInit() {
 
-    this.cos.currentMyOrder$.subscribe(order => {
-      this.orderType = order.typeOrder;
-    })
+    if(this.contacts.length===0){
+      this.getContacts();
+    }else{
+      this.contactsResults = [...this.contacts];
+      setTimeout(() => {
+        this.contactsLoaded = true;
+      }, 150);
+    }
+  }
+
+  async getContacts() {
+    try {
+      const result = await Contacts.getContacts({
+        projection: {
+          name: true,
+          phones: true
+        }
+      })
+      this.contacts = result.contacts;
+      this.contactsResults = [...this.contacts];
+      this.cs.setContactsData(this.contacts);
+      this.contactsLoaded = true;
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   handleChange(event) {
@@ -105,22 +122,6 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
     });
   }
 
-  goToConfirmOrder(contact) {
-
-    const contactSelected = this.contactsResults.filter(c => c.contactId === contact.contactId)[0];
-    contactSelected.selected = true;
-
-    if (this.orderType === "domicilio") {
-      this.cos.setContactTienda(contact?.name?.display);
-    } else {
-      this.cos.setContactTienda(contact?.name?.display)
-    }
-
-    setTimeout(() => {
-      this.navigation.back("customer/confirm-order");
-    }, 150);
-
-  }
 
   goBack() {
     if (this.headerContent === "search") {
@@ -130,7 +131,6 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
       //this.navigation.back("/customer/manage-billing-data/add-company");
       this.navigation.back("/customer/empty-basket");
     }
-
   }
 
   goToBuy() {
@@ -141,32 +141,10 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
     this.headerContent = "search";
   }
 
-  phoneFormated(phones: any[]) {
-    var numberFormated = "";
-    const formated = phones.filter((phone) => {
-      if (phone.number.includes("+51 ")) {
-        return phone;
-      }
-    })
-
-    if (formated.length > 0) {
-      numberFormated = formated[0].number;
-    } else {
-      const not51 = phones.filter((phone) => {
-        if (!phone.number.includes("+51 ")) {
-
-        }
-      })
-    }
-
-   }
-
-   //Selection checkbox
-   oneTrue = false;
-  invitationsCount = 0;
-   checkBoxSelect(event: any) {
+  //Selection checkbox
+  checkBoxSelect(event: any) {
     if (event.detail.checked) {
-     // console.log(event.detail.checked);
+      // console.log(event.detail.checked);
       this.invitationsCount++;
       this.oneTrue = true;
     } else {
@@ -175,11 +153,11 @@ export class ContactBasketComponent extends ViewComponent implements OnInit {
     }
   }
 
-  goCollaborativeBasket(){
-    this.navigation.root('/customer/collaborative-basket','forward');
+  goCollaborativeBasket() {
+    this.navigation.root('/customer/collaborative-basket', 'forward');
   }
 
-} 
+}
 
 
 
