@@ -1,7 +1,6 @@
 import { AppNavigationService } from '@geor360/ecore';
 import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { RouteCollection } from 'src/shared/route-collection';
 import { LoginService } from '../services/login.service';
 import { IonContent, IonInput } from '@ionic/angular';
 import { Keyboard } from '@geor360/capacitor-keyboard';

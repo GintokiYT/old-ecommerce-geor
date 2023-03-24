@@ -102,6 +102,7 @@
     background-color: var(--ion-background-color-modal) !important;
   
     ion-item::part(native) {
+      --background: transparent;
       --inner-padding-end: 0px !important;
       --inner-border-width: 0px !important;
     }

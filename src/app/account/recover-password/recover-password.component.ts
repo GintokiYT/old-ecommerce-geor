@@ -12,7 +12,7 @@ import { ViewComponent } from '@geor360/ecore';
 export class RecoverPasswordComponent extends ViewComponent implements OnInit {
 
   form!: FormGroup;
-  urlBack: string = RouteCollection.auth.login;
+  //urlBack: string = RouteCollection.auth.login;
   showTextHelperEmail = false;
 
   constructor(private router: Router, private _injector: Injector) {

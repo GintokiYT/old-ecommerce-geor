@@ -66,4 +66,10 @@ export class AddressesDeleteComponent extends ViewComponent implements OnInit {
     this.oneTrue = trues.length > 0 ? true : false;
   }
 
+  clickAroundTheCheckbox(i:number){
+    const selected = this.directionsData.find( b => b.indice === i);
+    selected.selected = !selected.selected;
+    this.oneTrue = true;
+  }
+
 }

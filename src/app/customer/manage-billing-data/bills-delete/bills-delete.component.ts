@@ -46,6 +46,12 @@ export class BillsDeleteComponent extends ViewComponent implements OnInit {
     this.oneTrue = trues.length>0 ? true : false;
   }
 
+  clickAroundTheCheckbox(i:number){
+    const selected = this.billingData.find( b => b.indice === i);
+    selected.selected = !selected.selected;
+    this.oneTrue = true;
+  }
+
 
   deleteBills(){
     this.modalIsVisible = true;
@@ -82,8 +88,8 @@ export class BillsDeleteComponent extends ViewComponent implements OnInit {
     }
   }
 
-  goToEdit(){
-    this.navigation.forward("/customer/manage-billing-data/add-company")
+  goToEdit(bill : any){
+    this.navigation.root(`/customer/manage-billing-data/edit-bill/${bill.id}`,"forward")
   }
 
 
