@@ -15,7 +15,6 @@ export class DirectionComponent extends ViewComponent implements OnInit {
 
   oneTrue: boolean = true;
 
-
   directions: any[] = [
     {
       id: 1,
@@ -56,7 +55,7 @@ export class DirectionComponent extends ViewComponent implements OnInit {
   goLocation() {
     const currentRouter = this.router.url;
     this.rs.setMyLocationLastBackDirection(currentRouter);
-    this.navigation.forward('/account/welcome/my-location');
+    this.navigation.forward('direction/account/welcome/my-location');
     /* this.navigation.forward('/customer/contact-search'); */
   }
   /* handlerMessage = '';

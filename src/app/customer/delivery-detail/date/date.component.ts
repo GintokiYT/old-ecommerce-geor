@@ -68,7 +68,7 @@ export class DateComponent extends ViewComponent implements OnInit {
       if( currentDay.getDate() >= new Date().getDate() ) {
         const diaSemana = this.diasDeLaSemana[currentDay.getDay()];
         this.dates.push({
-          date: `${diaSemana} ${currentDay.getDate()}/ ${currentDay.getMonth() + 1}`
+          date: `${diaSemana} ${currentDay.getDate()}/${currentDay.getMonth() + 1}`
         })
       }
     })

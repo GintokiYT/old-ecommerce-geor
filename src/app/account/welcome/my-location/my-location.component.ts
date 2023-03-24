@@ -120,6 +120,13 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
     } else {
       this.navigation.root('/customer/home','forward');
     }
+    //send y Direction
+    const currentRouter=this.router.url;
+    if(currentRouter==='/send/account/welcome/my-location'){
+      return this.navigation.root('/customer/send-directions','forward')
+    }else if(currentRouter==='/direction/account/welcome/my-location'){
+      return this.navigation.root('/customer/direction','forward')
+    }
 
   }
 

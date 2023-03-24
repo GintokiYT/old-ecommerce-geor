@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, Input } from '@angular/core';
 import { ModalResendComponent } from './modal-resend/modal-resend.component';
 import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
@@ -122,8 +122,7 @@ export class TeamComponent extends ViewComponent implements OnInit {
     this.inviteService.setStatusModalResend(false);
   }
 
-  //Demora de carga de imagen
- /*   isImageLoaded = false; */
+
 
 
 }

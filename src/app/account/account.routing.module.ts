@@ -29,14 +29,30 @@ const routes: Routes = [
         // path: RouteCollection.account.welcome.selectCountry,
         component: SelectCountryComponent,
       },
+
+
       {
         path: RouteCollection.account.welcome.wheAreYou,
         component: WheAreYouComponent,
       },
       {
-        path: RouteCollection.account.welcome.myLocation,
+        path: 'account/welcome/my-location',
+        /* path: RouteCollection.account.welcome.myLocation, */
         component: MyLocationComponent,
       },
+       //Send
+      {
+        path: 'send/account/welcome/my-location',
+        component: MyLocationComponent,
+      },
+      //
+      //Direction
+      {
+        path: 'direction/account/welcome/my-location',
+        component: MyLocationComponent,
+      },
+       //
+
       {
         path: RouteCollection.account.welcome.changeAddress,
         component: ChangeAddressComponent,

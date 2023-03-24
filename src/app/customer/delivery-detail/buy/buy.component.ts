@@ -58,6 +58,7 @@ export class BuyComponent extends ViewComponent implements OnInit {
     this.countrySelectedService.getCurrentCountry.subscribe(country => this.infoContry = country);
   }
 
+
   ngOnInit() {
 
     this.form = new FormGroup({
@@ -176,21 +177,28 @@ export class BuyComponent extends ViewComponent implements OnInit {
   changeDocumentForm(value: string) {
     this.form.get('document').setValue(value);
   }
-
+  selectedOption: string = null;
   goBack() {
     const currentRouter= this.route.url
     if(currentRouter==='/customer/contact/buy'){
+      localStorage.removeItem('selectedOption');
+      this.selectedOption = null;
       return this.navigation.back('/customer/confirm-order')
+
     }
     this.navigation.back('/customer/contact')
+    localStorage.removeItem('selectedOption');
+  this.selectedOption = null;
   }
 
   onSubmit(){
-    console.log("Asdfasf");
     this.navigation.back("/customer/confirm-order");
+    localStorage.removeItem('selectedOption');
+    this.selectedOption = null;
   }
 
   onGoToCountrySelect(){
     this.navigation.forward('/customer/country-buy');
+
   }
 }

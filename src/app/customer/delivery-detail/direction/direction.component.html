@@ -14,19 +14,29 @@
 
   <!-- Direction Data Container -->
   <div class="directions-container d-flex flex-column container-main">
-
-    <div class="d-flex align-items-center direction-container" *ngFor="let direction of directions">
+    <div *ngFor="let direction of directions">
+    <ion-item lines="none" class="d-flex align-items-center direction-container" >
       <ion-checkbox
         [(ngModel)] = direction.selected
-        (ngModelChange)="checkBoxChange(direction.id)"
+        (ngModelChange)="checkBoxChange(direction.id)">
+      </ion-checkbox>
+      <div class="d-flex flex-column direction-information ion-text-wrp">
+        <ion-label class="fz-normal ion-text-wrap">{{direction.name}}</ion-label>
+      </div>
+    </ion-item>
+    <ion-label (click)="goLocation()" class="direction-information_edit fz-small">Editar</ion-label>
+  </div>
+   <!--  <ion-item lines="none">
+      <ion-checkbox
+          slot="start"
+          mode="ios"
       >
       </ion-checkbox>
-      <div class="d-flex flex-column direction-information">
-        <ion-label class="fz-normal ion-text-wrap">{{direction.name}}</ion-label>
-
-        <ion-label (click)="goLocation()" class="direction-information_edit fz-small">Editar</ion-label>
-      </div>
-    </div>
+      <ion-label class="ion-text-wrp d-flex flex-column" style="gap:12px">
+        <p class="fz-normal ion-text-wrap">Jr. Samaritanos 879 Miraflores, Lima, Perú</p>
+        <p class="fz-small ion-text-wrap">Editar</p>
+      </ion-label>
+    </ion-item> -->
 
     <div class="d-flex align-items-center" style="gap: 8px;">
       <img src="/assets/icons/icon-plus.svg" style="cursor: pointer;">
