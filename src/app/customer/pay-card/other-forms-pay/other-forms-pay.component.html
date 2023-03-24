@@ -1,33 +1,38 @@
 <div id="items">
   <ion-item lines="none">
-    <ion-checkbox
+    <div>
+      <ion-label class="txt fz-normal">
+        Efectivo
+      </ion-label>
+      <ion-checkbox
       [(ngModel)]="options[0].selected"
       (ngModelChange)="checkbox(options[0].id)"
-    ></ion-checkbox>
-    <ion-label>Efectivo</ion-label>
+      ></ion-checkbox>       
+    </div>
     <img class="info" slot="end" id="open-modal-cash" 
     src="/assets/icons/icon-help.svg" alt="help">
-    <a></a>
   </ion-item>
   <ion-item lines="none">
-    <ion-checkbox
+    <div>
+      <ion-label class="txt fz-normal">Transferenecia/depósito</ion-label>
+      <ion-checkbox
       [(ngModel)]="options[1].selected"
       (ngModelChange)="checkbox(options[1].id)"
     ></ion-checkbox>
-    <ion-label>Transferenecia/depósito</ion-label>
+    </div>
     <img class="info" slot="end" id="open-modal-transfer" 
     src="/assets/icons/icon-help.svg" alt="help">
-    <a></a>
   </ion-item>
   <ion-item lines="none">
-    <ion-checkbox
+    <div>
+      <ion-label class="txt fz-normal">Crédito (a 30 días)</ion-label>
+      <ion-checkbox
       [(ngModel)]="options[2].selected"
       (ngModelChange)="checkbox(options[2].id)"
     ></ion-checkbox>
-    <ion-label>Crédito (a 30 días)</ion-label>
+    </div>
     <img class="info" slot="end" id="open-modal-credit" 
     src="/assets/icons/icon-help.svg" alt="help">
-    <a></a>
   </ion-item>
 
   <ion-modal id="modal-cash" class="modals" #modal trigger="open-modal-cash" >

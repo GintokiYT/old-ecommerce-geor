@@ -100,7 +100,7 @@ export abstract class GeolocationComponent extends ViewComponent implements OnIn
       this.onMapLoaded();
     });
 
-    const marker = this.googleMap.createMarker(this.map, {
+    this.googleMap.createMarker(this.map, {
       latitude: this.geolocation.position.coords.latitude,
       longitude: this.geolocation.position.coords.longitude,
     });
