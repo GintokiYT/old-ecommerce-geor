@@ -29,23 +29,30 @@
     animation: closePopup .3s ease;
   }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    li {
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 400;
-      color: var(--ion-color-basic);
-      padding: 10px 0;
-    }
-  }
 }
+//CheckMarck-selector
+.hide-icon {
+  display: none;
+}
+
+ion-item {
+  --padding-start: 0px;
+  --inner-padding-end: 0px !important;
+   --background-activated: unset !important;
+}
+
+ion-checkbox {
+  --size: 20px;
+  margin: 38px 14px 0px 0px !important;
+   min-width: 20px;
+}
+
+ion-item::part(native) {
+  padding: 0px;
+}
+
+
+
 
 @keyframes openPopup {
   from {

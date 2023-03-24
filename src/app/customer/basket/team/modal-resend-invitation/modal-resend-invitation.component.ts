@@ -13,16 +13,16 @@ export class ModalResendInvitationComponent extends ViewComponent implements OnI
   @ViewChild('ContainerModal') ContainerModal:ElementRef;
   @ViewChild('modal') modal:ElementRef;
   ngAfterViewInit(): void {
-    const ContainerModal:HTMLDivElement = this.ContainerModal.nativeElement;
+    /* const ContainerModal:HTMLDivElement = this.ContainerModal.nativeElement;
     ContainerModal.addEventListener('click',(event: Event)=>{
       const modal:HTMLDivElement =this.modal.nativeElement;
       if(event.target===ContainerModal){
         modal.classList.add('close-modal');
-        setTimeout(()=>{
+        /* setTimeout(()=>{
           this.inviteService.setStatusModalResendInvitation(false);
         },250);
       }
-    })
+    }) */
   }
 
    constructor(_injector:Injector,private inviteService:InviteService,private router:Router) {

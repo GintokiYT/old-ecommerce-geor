@@ -5,14 +5,15 @@
 
   .chat-ion-toolbar {
     height: 32px;
-  }
+
     .content-title {
       flex: 1;
       gap: 8px;
 
-     .content-title__name {
-       h2 {
-        color: var(--ion-color-basic);
+      .content-title__name {
+        h2 {
+          color: var(--ion-color-basic);
+        }
       }
     }
   }

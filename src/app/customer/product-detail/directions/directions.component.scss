@@ -1,39 +1,48 @@
-
- .billing-data_container {
-  padding-left:  16px !important;
-  padding-right:  16px !important;
+.directions-container {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   gap: 24px;
+    .direction-container {
+      gap: 25px !important;
+      .direction-information {
+       /*  max-width: 224px; */
+        gap: 4px !important;
 
-  .bill-container {
-      gap: 25px;
+        .direction-information_code {
+          color: var(--ion-color-text-secundary);
+        }
 
-      ion-checkbox {
-          margin: 0px;
-          --size: 20px;
-          min-width: 20px;
+        .direction-information_type {
+          padding: 2px 4px;
+          background-color: var(--ion-color-secondary);
+          border-radius: 4px;
+        }
+
+
       }
+    }
+  }
+  .direction-information_edit {
+    color: var(--ion-color-text-secundary);
+    margin: 8px 0px 0px 34px;
 
-      .bill-information {
-          max-width: 224px;
-          gap: 4px;
-
-          .bill-information_code {
-              color: var(--ion-color-text-secundary);
-          }
-
-          .bill-information_type {
-              padding: 2px 4px;
-              background-color: var(--ion-color-secondary);
-              border-radius: 4px;
-          }
-
-          .bill-information_edit {
-              color: var(--ion-color-text-secundary);
-              margin-top: 8px;
-          }
-      }
   }
 
+//
+ion-item {
+  --padding-start: 0px;
+  --inner-padding-end: 0px !important;
+   --background-activated: unset !important;
+}
+
+ion-checkbox {
+  --size: 20px;
+  margin: 38px 14px 0px 0px !important;
+   min-width: 20px;
+}
+
+ion-item::part(native) {
+  padding: 0px;
 }
 
 ion-footer {
@@ -41,15 +50,13 @@ ion-footer {
   bottom: 0;
 }
 
-
-@media(min-width:390px) {
-  .billing-data_container {
-      padding-left:  24px !important;
-      padding-right:  24px !important;
+@media (min-width: 390px) {
+  .directions-container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
 
-  .bill-information{
-      max-width: 298px !important;
-  }
-
+  /* .direction-information {
+    max-width: 298px !important;
+  } */
 }
