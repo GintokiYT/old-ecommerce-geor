@@ -41,7 +41,7 @@ export class RecoverPasswordCodeComponent extends ViewComponent implements OnIni
   ngAfterViewInit() {
     setTimeout(() => {
       this.inputCode.setFocus();
-    }, 500);
+    }, 800);
   }
 
   async onChangeCode() {
