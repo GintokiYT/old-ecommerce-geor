@@ -50,6 +50,11 @@ ion-content {
       padding: 8px 12px 8px 12px;
       padding-right: 4ch;
       border-radius: 100px;
+
+      &:disabled {
+        color: var(--ion-background-color-input-filter-text1);
+        opacity: 1;
+      }
     }
   }
 }
