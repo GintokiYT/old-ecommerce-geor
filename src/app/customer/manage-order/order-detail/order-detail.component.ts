@@ -45,7 +45,7 @@ export class OrderDetailComponent extends ViewComponent implements OnInit {
 
     setTimeout(() => {
       this.contentLoaded = true;
-    }, 2000);
+    }, 1500);
 
   }
 
