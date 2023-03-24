@@ -5,7 +5,7 @@
     title="Mis direcciones"
     iconLeft="icon-close"
     iconRight="icon-delete"
-    backDirection="confirm-order"
+    [backDirection]="prevUrl"
     (onClickDelete)="deleteDirection($event)"
     titleModalDelete = "¿Seguro que quieres eliminar esta dirección?"
     [haveSelected]="oneTrue"

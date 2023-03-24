@@ -1,21 +1,5 @@
 ion-content {
-  width: 100vw;
-  height: 100vh;
-  // --padding-top: 16px;
-  // --padding-bottom: 16px;
-  // --padding-end: 16px;
-  // --padding-start: 16px;
-  // --background: red;
-
-  // --padding-top: var(--ion-safe-area-top);
-  // --padding-bottom: var(--ion-safe-area-bottom);
-  --padding-start: var(--ion-safe-area-right);
-  --padding-end: var(--ion-safe-area-left);
   --background: var(--ion-background-color);
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 *,*::after, *::before {
@@ -75,47 +59,28 @@ img {
   margin-top: 4px;
   border-top: 1px solid var(--ion-color-separator);
   background-color: var(--ion-background-color);
-  position: sticky;
-  bottom: 0;
-  left: 0;
   width: 100%;
   z-index: 1000;
-
-  padding-left: var(--ion-safe-area-left);
-  padding-right: var(--ion-safe-area-right);
+  padding-bottom: var(--ion-safe-area-bottom);
 
   &.active {
-    padding-bottom: 0;
+    --ion-safe-area-bottom: 0px;
   }
 
   &.disabled {
     padding-bottom: var(--ion-safe-area-bottom);
-    padding-bottom: 16px;
   }
-}
-
-.input-message {
-  padding: 25px 16px 24px 16px;
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  color: var(--ion-color-basic);
-  padding-bottom: 16px;
 }
 
 .content-footer__items {
   display: none;
-  // display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 16px 24px 16px;
-  //padding-bottom: calc(24px - var(--ion-safe-area-bottom));
-  padding-bottom: 16px; 
 
-  &.active {  
-    display: flex !important;     
+  &.active {
+    display: flex !important;
+    padding-bottom: 8px;
   }
 }
 

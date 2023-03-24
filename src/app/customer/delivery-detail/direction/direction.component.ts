@@ -14,6 +14,7 @@ import { RouteService } from '../../../services/route.service';
 export class DirectionComponent extends ViewComponent implements OnInit {
 
   oneTrue: boolean = true;
+  prevUrl: string = "";
 
   directions: any[] = [
     {
@@ -31,8 +32,9 @@ export class DirectionComponent extends ViewComponent implements OnInit {
 
   constructor(private cpService: ConfirmOrderService,
     private _injector: Injector, private router: Router,
-    private rs : RouteService) {
+    private rs: RouteService) {
     super(_injector)
+    this.rs.currentsetDetailBackDirection.subscribe(d => this.prevUrl = d);
   }
 
   ngOnInit() { }
@@ -45,11 +47,18 @@ export class DirectionComponent extends ViewComponent implements OnInit {
   }
 
   establecerDirection() {
-    const selected = this.directions.filter(element => element.selected === true);
-    if (selected[0]) {
-      this.cpService.setDirectionHome(selected[0].name)
+
+    if (this.prevUrl.includes("manage-order")) {
+      this.navigation.back(this.prevUrl);
+    } else {
+      const selected = this.directions.filter(element => element.selected === true);
+      if (selected[0]) {
+        this.cpService.setDirectionHome(selected[0].name)
+      }
+      this.navigation.back("/customer/confirm-order");
     }
-    this.navigation.back("/customer/confirm-order");
+
+
   }
 
   goLocation() {

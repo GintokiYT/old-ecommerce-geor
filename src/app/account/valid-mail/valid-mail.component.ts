@@ -48,7 +48,7 @@ export class ValidMailComponent extends ViewComponent implements OnInit {
   ngAfterViewInit() {
     setTimeout(() => {
       this.inputCode.setFocus();
-    }, 500);
+    }, 800);
   }
 
   async onChangeCode() {

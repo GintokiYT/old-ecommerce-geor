@@ -17,11 +17,11 @@
   <div class="login-container container-main d-flex flex-column justify-content-between">
 
     <!-- Form -->
-    <form class="w-100l" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
 
       <ion-item lines="none" class="form-group" (ionBlur)="checkBlur('phoneOrEmail')" (ionFocus)="checkFocus('phoneOrEmail')">
-        <ion-label position="floating" class="disabled">Celular o correo electrónico</ion-label>
+        <ion-label position="floating">Celular o correo electrónico</ion-label>
         <ion-input formControlName="username" type="email" inputmode="email"></ion-input>
         <app-validation-messages *ngIf="showTextHelperPhoneOrEmail" slot="error"
           [control]="loginForm.get('username')"></app-validation-messages>
@@ -30,7 +30,7 @@
 
       <div class="position-relative">
         <ion-item id="item-password" lines="none" class="form-group item-password"  (ionBlur)="checkBlur('password')" (ionFocus)="checkFocus('password')">
-          <ion-label onclick="event.stopPropagation()" position="floating" class="disabled">Contraseña</ion-label>
+          <ion-label onclick="event.stopPropagation()" position="floating">Contraseña</ion-label>
           <ion-input  
             id="input-password" 
             type="password" 
@@ -73,7 +73,7 @@
 
 
     <!-- Footer -->
-    <ion-footer class="ion-no-border" #loginFooter>
+    <!-- <ion-footer class="ion-no-border" #loginFooter>
 
       <div class="toolbar">
         <div class="form-group form-group__double">
@@ -89,6 +89,24 @@
         </div>
       </div>
 
+    </ion-footer> -->
+
+
+    <!-- Footer -->
+    <ion-footer class="ion-no-border ion-no-padding" #loginFooter>
+      <ion-toolbar>        
+        <div class="form-group form-group__double">
+          <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
+            [disabled]="loginForm.invalid" style="margin-bottom: 24px; margin-top: 0px !important;"
+          >
+            Iniciar sesión
+          </ion-button>
+        </div>
+        <div class="text-center d-flex align-items-center justify-content-center" style="gap: 5px;">
+          <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
+          <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
+        </div>
+      </ion-toolbar>
     </ion-footer>
 
   </div><!--End Login Container-->

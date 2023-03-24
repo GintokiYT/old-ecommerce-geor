@@ -21,7 +21,9 @@ export class LastStepComponent extends ViewComponent implements OnInit {
   data={
     code:'',
   }
-
+  data1={
+    code:'',
+  }
   constructor(private _injector: Injector) {
     super(_injector)
    }
@@ -31,30 +33,32 @@ export class LastStepComponent extends ViewComponent implements OnInit {
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
   }
-  setOpen2(isOpen: boolean) {
-    this.isCouponOpen = isOpen;
-  }
+
   setOpen3(isOpen: boolean) {
     this.isMistakeOpen = isOpen;
   }
-
-  goTo(path:string) {
-
-    if(this.securityCode.value !== '789') {
-
-      return this.isMistakeOpen = true;
-
-    } else {
-      this.statusModalSpinner = true;
-
-      setTimeout(() => {
-        this.statusModalSpinner = false;
-        this.navigation.forward('/customer/last-step/internal-inbox/1');
-      }, 1500);
-
-      return null;
-    }
+  
+  goTo(path:string){
+    this.navigation.forward(path)
   }
+
+  // goTo(path:string) {
+
+  //   if(this.securityCode.value !== '789') {
+
+  //     return this.isMistakeOpen = true;
+
+  //   } else {
+  //     this.statusModalSpinner = true;
+
+  //     setTimeout(() => {
+  //       this.statusModalSpinner = false;
+  //       this.navigation.forward('/customer/last-step/internal-inbox/1');
+  //     }, 1500);
+
+  //     return null;
+  //   }
+  // }
 
   tryAgain() {
     this.isMistakeOpen = false;

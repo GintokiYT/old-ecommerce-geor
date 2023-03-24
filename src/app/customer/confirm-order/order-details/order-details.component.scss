@@ -89,3 +89,21 @@
         }
     }
 }
+
+.container-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 10000 !important;
+    display: grid !important;
+    place-items: center !important;
+    background-color: var(--ion-background-color-modal) !important;
+  
+    ion-item::part(native) {
+      --background: transparent;
+      --inner-padding-end: 0px !important;
+      --inner-border-width: 0px !important;
+    }
+}

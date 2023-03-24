@@ -61,6 +61,7 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
 
   onGoToPayMethods() {
 
+    this.rs.setSetPaymentMethodsLastBackDirection(this.router.url);
     this.navigation.forward("customer/payment-methods")
     //console.log(this.previousRoute)
   }

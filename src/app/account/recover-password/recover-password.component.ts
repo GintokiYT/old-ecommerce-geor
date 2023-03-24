@@ -1,7 +1,6 @@
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Injector } from '@angular/core';
-import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
@@ -12,7 +11,6 @@ import { ViewComponent } from '@geor360/ecore';
 export class RecoverPasswordComponent extends ViewComponent implements OnInit {
 
   form!: FormGroup;
-  urlBack: string = RouteCollection.auth.login;
   showTextHelperEmail = false;
 
   constructor(private router: Router, private _injector: Injector) {

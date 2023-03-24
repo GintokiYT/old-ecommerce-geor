@@ -80,64 +80,6 @@ ion-modal::part(content){
     }
 }
 
-#coupon{
-    --width: 288px;
-    --height: auto;
-    --border-radius: 10px;
-    #icon-close{
-        margin: 16px 16px 0px 0px;
-        margin-left: auto !important;
-        filter:var(--ion-color-light-filter)
-    }
-    #content-coupon{
-        padding: 0px 16px 32px 16px;
-        .title-modal{
-            font-weight: bold;
-            margin-bottom: 24px;
-            color: var(--ion-color-primary);
-        }
-        .discount{
-            margin-bottom: 4px;
-        }
-        p{
-            margin-bottom: 8px;
-        }
-        #expires{
-            display: flex;
-            justify-content:flex-start;
-            margin-bottom: 8px;
-            gap: 4px;
-            #danger{
-                width: 14px;
-                height: 14px;
-                margin-top: 4px;
-                filter:var(--ion-color-light-filter)
-            }
-            .date{
-                margin-bottom: 0px;
-            }
-        }
-        #buttons{
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            .conditions{
-                width: 131.5px;
-                height: 22px;
-                margin:7.5px 0px;
-            }
-            ion-button{
-                height: 30px ;
-                width: 131.5px;
-                margin: 0px;
-                border-radius: 50px;
-                font-family: 'Roboto';
-                font-size: 12px;
-            }
-        }
-    }
-}
-
 #mistake{
     --width: 288px;
     --height: auto;
@@ -164,7 +106,6 @@ ion-modal::part(content){
         }
     }
 }
-
 
 ion-footer{
     position: fixed;
@@ -239,20 +180,19 @@ ion-footer{
 }
 
 
-.container-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10000;
-  display: grid;
-  place-items: center;
-  background-color: var(--ion-background-color-modal);
+// .container-modal {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   z-index: 10000;
+//   display: grid;
+//   place-items: center;
+//   background-color: var(--ion-background-color-modal);
 
-  ion-item::part(native) {
-    --inner-padding-end: 0px;
-    --inner-border-width: 0px;
-  }
-}
-
+//   ion-item::part(native) {
+//     --inner-padding-end: 0px;
+//     --inner-border-width: 0px;
+//   }
+// }

@@ -17,11 +17,12 @@
         (ngModelChange)="checkBoxChange()"
       >
       </ion-checkbox>
-      <div class="d-flex flex-column">
-        <ion-label class="fz-normal ion-text-wrap">{{address.direction}}</ion-label>
+      <div class="d-flex flex-column" style="gap: 12px;">
+        <ion-label class="fz-normal ion-text-wrap" (click)="clickAroundTheCheckbox(address.indice)">{{address.direction}}</ion-label>
         <ion-label class="edit-address" (click)="goToMap()">Editar</ion-label>
       </div>
     </div>
+
 
   </div> <!--End Billing Data Container-->
 

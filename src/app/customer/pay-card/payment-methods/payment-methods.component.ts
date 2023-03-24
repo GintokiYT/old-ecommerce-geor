@@ -3,6 +3,7 @@ import { ViewComponent } from '@geor360/ecore';
 import { PaymentMethodsService } from '../../../services/payment-methods.service';
 import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.service';
 import IPayMethod from '../../../interfaces/IPayMethod';
+import { RouteService } from '../../../services/route.service';
 @Component({
   selector: 'app-payment-methods',
   templateUrl: './payment-methods.component.html',
@@ -15,11 +16,14 @@ export class PaymentMethodsComponent extends ViewComponent implements OnInit {
   oneTrueWayPay: boolean;
   oneTrueOtherForms: boolean;
   method:any;
+  prevUrl: string;
 
 
   constructor(private _injector: Injector,
-    private pms: PaymentMethodsService, private cos: ConfirmOrderService) {
+    private pms: PaymentMethodsService, private cos: ConfirmOrderService,
+    private rs: RouteService) {
     super(_injector)
+    this.rs.currentSetPaymentMethodsLastBackDirection.subscribe( d => this.prevUrl = d);
     this.pms.currentPaymentData.subscribe(d => this.paymentData = d);
     const trues = this.paymentData.filter(d => d.selected === true);
     if (trues.length > 0) {
