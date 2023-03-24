@@ -1,20 +1,22 @@
 <div class="cards">
   <ion-list>
     <ion-item lines="none" detail="false" *ngFor="let payment of paymentData">
-      <ion-checkbox
+      <div>
+        <img src="/assets/icons/card-visa.svg" id="card-visa">
+        <ion-label class="txt ion-text-wrap fz-normal">
+          Visa Débito *** 4115
+        </ion-label>
+
+        <ion-checkbox
         mode="ios" slot="start"
         [(ngModel)]="payment.selected"
         (ngModelChange)="checkBoxSelect(payment.id)"
-      >
-      </ion-checkbox>
-      <ion-thumbnail slot="start">
-        <img src="/assets/icons/card-visa.svg" alt="card-visa">
-      </ion-thumbnail>
-      <ion-label>
-        Visa Débito *** 4115
-      </ion-label>
-      <img (click)="delete(payment.id)" id="delete" src="/assets/icons/icon-delete.svg" alt="delete">
-      <a></a>
+        >
+        </ion-checkbox>
+      </div>
+      <img (click)="delete(payment.id)"
+            id="delete" 
+            src="/assets/icons/icon-delete.svg" alt="delete">
     </ion-item>
   </ion-list>
 </div>

@@ -30,6 +30,7 @@
         ion-item {
             --padding-start: 0px;
             --inner-padding-end: 0px !important; 
+            --background-activated: unset ;
             ion-label{
                 margin:0px;
             }
@@ -40,7 +41,7 @@
                 margin-top: 4px !important;
                 margin-bottom: 0px !important;
                 color:var(--ion-color-medium)
-            }
+            }            
         }
 
         ion-checkbox{
@@ -98,3 +99,4 @@ ion-footer{
         height: 48px;
     }
 }
+
