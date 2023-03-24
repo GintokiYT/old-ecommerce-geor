@@ -81,6 +81,12 @@ ion-footer {
         padding-bottom: 16px !important;
         //  smargin-bottom: calc(var(--ion-safe-area-bottom,0) + 71.8px);
     }
+
+    ion-toolbar{
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 16px;
+    }
 }
 
 .disabled {
@@ -122,6 +128,11 @@ ion-footer {
         .toolbar{
             padding-left: 24px !important;
             padding-right: 24px !important;
+        }
+
+        ion-toolbar{
+            --padding-start: 24px;
+            --padding-end: 24px;
         }
     }
 

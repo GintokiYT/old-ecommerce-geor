@@ -73,7 +73,7 @@
 
 
     <!-- Footer -->
-    <ion-footer class="ion-no-border" #loginFooter>
+    <!-- <ion-footer class="ion-no-border" #loginFooter>
 
       <div class="toolbar">
         <div class="form-group form-group__double">
@@ -89,6 +89,24 @@
         </div>
       </div>
 
+    </ion-footer> -->
+
+
+    <!-- Footer -->
+    <ion-footer class="ion-no-border ion-no-padding" #loginFooter>
+      <ion-toolbar>        
+        <div class="form-group form-group__double">
+          <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
+            [disabled]="loginForm.invalid" style="margin-bottom: 24px; margin-top: 0px !important;"
+          >
+            Iniciar sesión
+          </ion-button>
+        </div>
+        <div class="text-center d-flex align-items-center justify-content-center" style="gap: 5px;">
+          <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
+          <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
+        </div>
+      </ion-toolbar>
     </ion-footer>
 
   </div><!--End Login Container-->
