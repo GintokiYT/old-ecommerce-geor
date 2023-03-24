@@ -3,7 +3,7 @@
   <!-- ENVIO A DOMICILIO -->
   <div *ngSwitchCase="'domicilio'">
       <ion-label
-          (click)="goTo('/customer/direction')"
+          (click)="goToDirection()"
           [class]= order.detailsOrderToHome.dClass
       >
           {{order.detailsOrderToHome.direction}}
@@ -70,5 +70,13 @@
       </div>
   </div>
 
+</div>
+
+
+<!-- Modal Spinner -->
+<div class="container-modal" *ngIf="statusModalSpinner">
+    <ion-item>
+      <ion-spinner color="primary" name="circular"></ion-spinner>
+    </ion-item>
 </div>
 

@@ -90,6 +90,7 @@ export class LoginComponent implements OnInit {
         this.visibleFooterNavigation = true;
       })
     });
+
     Keyboard.addListener('keyboardWillShow', () => {
       this.ngZone.run( () => {
         this.visibleFooterNavigation = false;

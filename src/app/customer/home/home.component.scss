@@ -60,9 +60,11 @@ ion-content {
 // Initial Slider Main
 .container-slider-main {
   margin: 0 16px;
+  margin-left: 0;
 
   @media (min-width: 390px) {
     margin: 0 24px;
+    margin-left: 0;
   }
 
   ion-img {
@@ -77,11 +79,11 @@ ion-content {
 // Initial Slider Items
 .container-slider-items {
   margin-top: 10px;
-  margin-left: 16px;
+  // margin-left: 16px;
 
-  @media (min-width: 390px) {
-    margin-left: 24px;
-  }
+  // @media (min-width: 390px) {
+  //   margin-left: 24px;
+  // }
 
   .text-start {
     width: 80px;
@@ -114,6 +116,14 @@ ion-content {
 
   ion-slide {
     width: 80px;
+
+    &:first-child {
+      margin-left: 16px;
+
+      @media (min-width: 390px) {
+        margin-left: 24px;
+      }
+    }
 
     &:last-child {
       margin-right: 16px;
@@ -210,5 +220,23 @@ ion-content {
   }
   100% {
     opacity: 50%;
+  }
+}
+
+.parati {
+  padding-left: 16px;
+
+  @media (min-width: 390px) {
+    padding-left: 24px;
+  }
+}
+
+.big-slider {
+  &:last-child {
+    padding-left: 16px;
+
+    @media (min-width: 390px) {
+      padding-left: 24px;
+    }
   }
 }

@@ -33,6 +33,14 @@ ion-title {
   font-size: 16px;
 }
 
+.icono{
+  width: 22px;
+  height: 19px;
+  circle {
+    fill: var(--ion-color-group);
+  }
+}
+
 .equipo {
   width: 32px;
   height: 32px;
@@ -49,7 +57,7 @@ ion-title {
     --padding-top: 16px;
     --padding-start: 24px;
     --padding-end: 24px;
-    --padding-bottom: 40px;
+
   }
 
 }

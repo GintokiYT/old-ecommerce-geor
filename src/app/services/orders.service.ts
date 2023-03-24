@@ -20,7 +20,8 @@ export class OrdersService {
       state: "ANULADO",
       amount: "2",
       price: "S/ 18,982.00",
-      date: "1 dic 2022"
+      date: "1 dic 2022",
+      owner: "Juliano del carmen"
     },
     {
       id: "812312312910",

@@ -15,32 +15,39 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
   constructor(private _injector: Injector, private router: Router) {
     super(_injector);
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
-   }
+    console.log(this.previousRoute)
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  goToHome(){
+  goToHome() {
     const currentRouter = this.router.url;
 
-    if(currentRouter === '/customer/search-general/product-detail') {
+    console.log(this.previousRoute)
+
+    if (this.previousRoute.includes("manage-order")) {
+      this.navigation.back(this.previousRoute);
+      return;
+    }
+
+    if (currentRouter === '/customer/search-general/product-detail') {
       this.navigation.back('/customer/search-general/product');
       return;
     }
 
-
     const back = localStorage.getItem('back') ?? '';
 
-    if(back) {
+    if (back) {
       this.navigation.back(localStorage.getItem('back'));
       localStorage.setItem('back', '');
     } else {
-      this.navigation.root("/customer/home","back");
+      this.navigation.root("/customer/home", "back");
     }
     //this.navigation.root(this.previousRoute,"back");
 
   }
-  goMyBasket(){
-    this.navigation.root("/customer/my-basket","forward");
+  goMyBasket() {
+    this.navigation.root("/customer/my-basket", "forward");
   }
 
 

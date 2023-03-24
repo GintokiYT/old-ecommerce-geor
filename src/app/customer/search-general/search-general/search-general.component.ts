@@ -32,7 +32,7 @@ export class SearchGeneralComponent extends ViewComponent implements OnInit {
   }
 
   goProduct(product: Products) {
-    this.navigation.forward('/customer/search-general/product');
+    this.navigation.root('/customer/search-general/product', 'forward');
     this.searchService.setSearch(product.title);
     localStorage.setItem('back', '/customer/search-general');
   }

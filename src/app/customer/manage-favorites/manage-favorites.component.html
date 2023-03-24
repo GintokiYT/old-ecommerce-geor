@@ -1,4 +1,5 @@
-<ion-header class="ion-content-var">
+<ion-content class="ion-no-padding" [scrollEvents]="true">
+
   <header class="header-basic">
     <div class="content-header">
       <h2>Favoritos</h2>
@@ -7,11 +8,10 @@
       </div>
     </div>
   </header>
-</ion-header>
 
-<ion-content class="ion-content-var">
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 54px);"></div>
 
-  <div class="content-message-no-products" *ngIf="favoriteProducts.length === 0">
+  <div class="content-message-no-products user-select-none" *ngIf="favoriteProducts.length === 0">
     <div class="container-message">
       <svg xmlns="http://www.w3.org/2000/svg" width="148" height="124" viewBox="0 0 148 124" fill="none">
         <path d="M0.5 0.5L147 123.5M140.5 0.5L8 123.5" stroke="black"/>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="container-manage-favorites" *ngIf="favoriteProducts.length !== 0">
+  <div class="container-manage-favorites user-select-none" *ngIf="favoriteProducts.length !== 0">
     <div class="products">
       <div class="product" *ngFor="let producto of favoriteProducts">
         <div class="image" (click)="goDetailProduct()"

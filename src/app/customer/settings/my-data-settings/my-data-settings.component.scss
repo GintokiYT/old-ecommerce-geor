@@ -53,10 +53,12 @@ ion-content {
   width: 100%;
   padding: 0 16px 24px 16px;
   padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  padding-top: 10px;
 
   @media (min-width: 390px) {
     padding: 0 24px 24px 24px;
     padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+    padding-top: 26px;
   }
 }
 
@@ -125,6 +127,11 @@ form {
   box-sizing: border-box;
 }
 
-ion-header {
-  padding-top: var(--ion-safe-area-top);
+.header-basic {
+  box-sizing: border-box;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: calc(var(--ion-safe-area-top) + 16px) !important;
 }

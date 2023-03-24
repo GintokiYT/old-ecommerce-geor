@@ -20,7 +20,7 @@
     
     <ion-item class="form-group">
       <ion-label position="floating" *ngIf="inputValue==='Factura'">Nombre de la compañía</ion-label>
-      <ion-label position="floating" *ngIf="inputValue==='Boleta'">Nombre de la Persona</ion-label>
+      <ion-label position="floating" *ngIf="inputValue==='Boleta'">Nombre de la persona</ion-label>
       <ion-input type="text" formControlName="name"></ion-input>
     </ion-item>
 
@@ -78,9 +78,17 @@
 
 
 <app-modal-type-bill
+  [billType]="inputValue"
   [modalIsVisible]="modalIsVisible"
   (onModalNotVisible)="closeModal($event)"
   (onSelectTypeBill)="setTypeBill($event)"
 >
 
 </app-modal-type-bill>
+
+<!-- Modal Spinner -->
+<div class="container-modal" *ngIf="statusModalSpinner">
+  <ion-item>
+    <ion-spinner color="primary" name="circular"></ion-spinner>
+  </ion-item>
+</div>

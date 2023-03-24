@@ -1,4 +1,5 @@
-<ion-header class="ion-content-var">
+<ion-content class="ion-no-padding" [scrollEvents]="true">
+
   <header class="header-basic">
     <div class="content-header">
       <h2>{{ contenido.title }}</h2>
@@ -7,9 +8,8 @@
       </div>
     </div>
   </header>
-</ion-header>
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 54px);"></div>
 
-<ion-content class="ion-content-var">
   <div class="container-app-settings">
     <div class="container-body">
       <div class="items">

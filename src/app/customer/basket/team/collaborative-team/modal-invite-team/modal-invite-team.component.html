@@ -43,12 +43,11 @@
           </div>
           <ion-label> Copiar Link </ion-label>
         </ion-text>
-
+        <!--   (click)="goContactTeam()"-->
         <ion-text
-          (click)="goContactTeam()"
-          class="box text-center d-flex flex-column"
-        >
-          <div class="d-flex justify-content-center">
+          (click)="requestPermissionContact()"
+          class="box text-center d-flex flex-column">
+             <div class="d-flex justify-content-center">
             <svg
               class="icono"
               width="1em"
@@ -78,9 +77,17 @@
               />
             </svg>
           </div>
-          <ion-label> Contactos </ion-label>
+          <ion-label> Contactos</ion-label>
         </ion-text>
       </div>
     </div>
   </div>
+</div>
+
+
+<!-- Modal Spinner -->
+<div class="container-modal" *ngIf="statusModalSpinner">
+  <ion-item>
+    <ion-spinner color="primary" name="circular"></ion-spinner>
+  </ion-item>
 </div>

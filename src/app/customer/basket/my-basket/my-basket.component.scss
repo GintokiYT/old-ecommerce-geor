@@ -157,3 +157,21 @@ ion-button{
   z-index: 1000;
   width: 100%;
   }
+
+
+  .container-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    background-color: var(--ion-background-color-modal);
+  
+    ion-item::part(native) {
+      --inner-padding-end: 0px;
+      --inner-border-width: 0px;
+    }
+  }

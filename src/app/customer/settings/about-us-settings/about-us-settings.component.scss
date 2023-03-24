@@ -1,21 +1,5 @@
 ion-content {
-  width: 100vw;
-  height: 100vh;
-  // --padding-top: 16px;
-  // --padding-bottom: 16px;
-  // --padding-end: 16px;
-  // --padding-start: 16px;
-  // --background: red;
-
-  // --padding-top: var(--ion-safe-area-top);
-  // --padding-bottom: var(--ion-safe-area-bottom);
-  --padding-start: var(--ion-safe-area-right);
-  --padding-end: var(--ion-safe-area-left);
   --background: var(--ion-background-color);
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 .container-app-settings {
@@ -40,10 +24,12 @@ ion-content {
   min-height: 100%;
   padding: 10px 16px 24px 16px;
   padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+  padding-top: 10px;
 
   @media (min-width: 390px) {
     padding: 10px 24px 24px 24px;
     padding-bottom: calc(var(--ion-safe-area-bottom) + 24px);
+    padding-top: 26px;
   }
 }
 
@@ -63,25 +49,26 @@ ion-content {
       content: "";
       position: absolute;
       top: -10px;
-      left: -5px;
+      left: -16px;
       z-index: 1000;
-      width: calc(100% + 10px);
+      width: calc(100% + 32px);
       height: 24px;
       padding: 20px;
       background-color: var(--ion-background-hover-selected);
-      border-radius: 5px;
+
+      @media (min-width: 390px) {
+        left: -24px;
+        width: calc(100% + 48px);
+      }
     }
   }
 }
 
 .header-basic {
-  padding-bottom: 14px !important;
-
-  @media (min-width: 390px) {
-    padding-bottom: 30px !important;
-  }
-}
-
-ion-header {
-  padding-top: var(--ion-safe-area-top);
+  box-sizing: border-box;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: calc(var(--ion-safe-area-top) + 16px) !important;
 }
