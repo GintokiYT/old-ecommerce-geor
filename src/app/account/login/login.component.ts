@@ -84,11 +84,11 @@ export class LoginComponent implements OnInit {
       })    
     });
 
-    Keyboard.addListener('keyboardDidHide', () => {
-      this.ngZone.run( () => {
-        this.visibleFooterNavigation = true;
-      })
-    });
+    // Keyboard.addListener('keyboardDidHide', () => {
+    //   this.ngZone.run( () => {
+    //     this.visibleFooterNavigation = true;
+    //   })
+    // });
 
     Keyboard.addListener('keyboardWillShow', () => {
       this.ngZone.run( () => {
@@ -96,11 +96,11 @@ export class LoginComponent implements OnInit {
       })    
     });
 
-    Keyboard.addListener('keyboardDidShow', () => {
-      this.ngZone.run( () => {
-        this.visibleFooterNavigation = false;
-      })
-    });
+    // Keyboard.addListener('keyboardDidShow', () => {
+    //   this.ngZone.run( () => {
+    //     this.visibleFooterNavigation = false;
+    //   })
+    // });
 
   }
 
