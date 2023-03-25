@@ -23,7 +23,6 @@ ion-header {
     height: calc(100% - (var(--ion-safe-area-top) + 64px));
 
     form {
-
         ion-item {
             --inner-padding-end: 0px !important;
             --padding-start: 0px !important;
@@ -55,17 +54,17 @@ ion-header {
             }
         }
     }
-
-    ion-footer {
-
-        ion-toolbar {
-            --padding-start: 16px;
-            --padding-end: 16px;
-            --padding-bottom: 16px;
-        }
-    }
-
 }
+
+ion-footer {
+
+    ion-toolbar {
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 16px;
+    }
+}
+
 
 .disabled {
     color: var(--ion-color-disabled);
@@ -94,18 +93,12 @@ ion-header {
                 margin-inline: 24px !important;
             }
         }
+    }
 
-
-        ion-footer {
-            .toolbar {
-                padding-left: 24px !important;
-                padding-right: 24px !important;
-            }
-
-            ion-toolbar {
-                --padding-start: 24px;
-                --padding-end: 24px;
-            }
+    ion-footer {
+        ion-toolbar {
+            --padding-start: 24px;
+            --padding-end: 24px;
         }
     }
 }
@@ -129,4 +122,17 @@ ion-header {
     top: 34px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.fakeFooter{
+    position: fixed;
+    bottom: 71px;
+}
+
+.show{
+    display: unset;
+}
+
+.hidden{
+    display: none;
 }
