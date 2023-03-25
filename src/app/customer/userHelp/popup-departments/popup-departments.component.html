@@ -1,4 +1,4 @@
-<div class="container-popup-departments active">
+<ion-content class="ion-no-padding container-popup-departments active" [scrollEvents]="true">
 
   <header class="header-basic">
     <div class="content-header">
@@ -9,10 +9,12 @@
     </div>
   </header>
 
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 54px);"></div>
+
   <ion-list>
     <ion-item *ngFor="let department of listDepartments" (click)="saveDepartment(department.id)">
       <ion-label>{{ department.name }}</ion-label>
     </ion-item>
   </ion-list>
 
-</div>
+</ion-content>
