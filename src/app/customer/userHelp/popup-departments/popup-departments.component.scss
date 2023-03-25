@@ -19,7 +19,7 @@
 
   ion-list {
     padding-top: 10px;
-    padding-bottom: 24px;
+    padding-bottom: calc(var(--ion-safe-area-bottom) + var(--ion-padding-bottom));
 
     @media (min-width: 390px) {
       padding-top: 26px;
