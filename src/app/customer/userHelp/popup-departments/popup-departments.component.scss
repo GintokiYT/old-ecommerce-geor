@@ -1,6 +1,6 @@
 .container-popup-departments {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,4 +60,8 @@
 
 .header-basic {
   position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: calc(var(--ion-safe-area-top) + 16px) !important;
 }
