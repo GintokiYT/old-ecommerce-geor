@@ -16,10 +16,12 @@ export class LoginComponent implements OnInit {
   @ViewChild(IonContent) content: IonContent;
   @ViewChild("inputPassword") inputPassword: IonInput;
   loginForm!: FormGroup;
-  inputPasswordType : string = "password";
-  heightStart : string = window.innerHeight.toString();
-  showFakeEye : boolean = false;
+  inputPasswordType: string = "password";
+  heightStart: string = window.innerHeight.toString();
+  showFakeEye: boolean = false;
   showTrueEye: boolean = true;
+  fakeFooter: boolean = true;
+  trueFooter: boolean = false;
 
 
   showTextHelperPhoneOrEmail = false;
@@ -27,13 +29,13 @@ export class LoginComponent implements OnInit {
   visibleFooterNavigation = true;
 
   //minimo 8 caracteres sean letras, numeros o caracteres especiales
-  passwordPattern =  /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
+  passwordPattern = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
 
 
 
   constructor(private navigator: AppNavigationService,
-              private lgService: LoginService,
-              private ngZone: NgZone) {
+    private lgService: LoginService,
+    private ngZone: NgZone) {
     this.visibleFooterNavigation = true;
   }
 
@@ -49,39 +51,21 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit(){
-    // window.onresize = () => {
-    //   if(window.innerHeight.toString()<this.heightStart){
-    //     this.showTrueEye = false;
-    //     this.showFakeEye = true;
-    //   }
-    //   if(window.innerHeight.toString()===this.heightStart){
-    //     this.showTrueEye = true;
-    //     this.showFakeEye = false;
-    //   }
-    // }
-    // Keyboard.addListener('keyboardWillHide', () => {
-    //   this.visibleFooterNavigation = false;
-    // });
-
-    // Keyboard.addListener('keyboardDidHide', () => {
-    //   this.visibleFooterNavigation = false;
-    // });
-
-    // Keyboard.addListener('keyboardWillShow',() => {
-    //   this.visibleFooterNavigation = true;
-    // })
-
-    // Keyboard.addListener('keyboardDidShow',() => {
-    //   this.visibleFooterNavigation = true;
-    // })
-  }
-
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     Keyboard.addListener('keyboardWillHide', () => {
-      this.ngZone.run( () => {
-        this.visibleFooterNavigation = true;
-      })    
+
+      this.ngZone.run(() => {
+        // setTimeout(() => {
+        //   this.fakeFooter = true;
+        //   this.trueFooter = false;
+        this.trueFooter = false;
+        setTimeout(() => {
+          this.fakeFooter = true;
+          this.visibleFooterNavigation = true;
+        }, 50);
+
+        // }, 50);
+      })
     });
 
     // Keyboard.addListener('keyboardDidHide', () => {
@@ -91,9 +75,12 @@ export class LoginComponent implements OnInit {
     // });
 
     Keyboard.addListener('keyboardWillShow', () => {
-      this.ngZone.run( () => {
+
+      this.ngZone.run(() => {
+        this.fakeFooter = false;
+        this.trueFooter = true;
         this.visibleFooterNavigation = false;
-      })    
+      })
     });
 
     // Keyboard.addListener('keyboardDidShow', () => {
@@ -105,54 +92,40 @@ export class LoginComponent implements OnInit {
   }
 
   onGoToRegister() {
-    //this.navigator.forward(RouteCollection.auth.register);
-    //this.visibleFooterNavigation = false;
-    console.log("Hola para ir a register")
     setTimeout(() => {
-      this.navigator.root("/register","forward")  
+      this.navigator.root("/register", "forward")
     }, 250);
   }
 
   onToForgotPassword() {
-
-    //this.navigator.forward(RouteCollection.auth.recoverPassword);
-    //this.visibleFooterNavigation = false;
-
-  
-    console.log("Hola para ir a olvidaste")
     setTimeout(() => {
-      this.navigator.root("/recover-password","forward")
+      this.navigator.root("/recover-password", "forward")
     }, 250);
-    
   }
 
   onSubmit() {
-    //this.visibleFooterNavigation = false;
     this.lgService.setUserLogged(true);
     setTimeout(() => {
-      this.navigator.root("/customer/manage-user-information","forward");
+      this.navigator.root("/customer/manage-user-information", "forward");
     }, 250);
   }
 
-  onChangeType(ev){
+  onChangeType(ev) {
     ev.preventDefault();
     ev.stopPropagation();
-    
-    if(this.inputPassword.type === "password"){
+
+    if (this.inputPassword.type === "password") {
       this.inputPasswordType = "text";
       this.inputPassword.type = "text";
-    }else{
+    } else {
       this.inputPasswordType = "password";
       this.inputPassword.type = "password";
     }
   }
 
-  checkFocus(input : string){
-
-    //this.visibleFooterNavigation = false;
-
-    switch(input){
-      case "phoneOrEmail" :
+  checkFocus(input: string) {
+    switch (input) {
+      case "phoneOrEmail":
         this.showTextHelperPhoneOrEmail = true;
         this.content.scrollToTop();
         break;
@@ -160,17 +133,14 @@ export class LoginComponent implements OnInit {
         this.showTextHelperPassword = true;
         this.showTrueEye = false;
         this.showFakeEye = true;
-        this.content.scrollByPoint(0,50,500)
+        this.content.scrollByPoint(0, 50, 500)
         break;
     }
   }
 
-  checkBlur(input:string){
-    
-    //this.visibleFooterNavigation = true;  
-
-    switch(input){
-      case "phoneOrEmail" :
+  checkBlur(input: string) {
+    switch (input) {
+      case "phoneOrEmail":
         this.showTextHelperPhoneOrEmail = false; break;
       case "password":
         console.log("Blur password")
