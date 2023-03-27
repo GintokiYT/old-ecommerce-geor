@@ -32,6 +32,28 @@ ion-header {
     }
 }
 
+.container-arrow-left{
+    position: absolute;
+    left: -8px;
+    top: -18px;
+    width: calc(24px + 16px);
+    height: calc(24px + 16px);
+    //background-color: red;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg{
+        font-size: 24px;
+    }
+
+    svg path{
+        stroke: var(--ion-color-basic);
+    }
+}
+
+
 ion-modal {
     --height: fit-content;
     --border-radius: 10px;

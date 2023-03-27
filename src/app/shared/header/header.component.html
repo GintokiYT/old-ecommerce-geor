@@ -1,49 +1,47 @@
 <ion-header class="ion-no-border">
 
   <ion-toolbar>
-      
-      <div class="header-container d-flex justify-content-between align-items-center">
-        <button
-          class="button-left"
-          [ngClass]="{'not-visible': iconLeft.length===0}"
-          (click)="goBack()"
-        >
-          <!-- <img [src] = "icons[iconLeft]" style="width: 14px;" *ngIf="iconLeft==='icon-close'"/> -->
-          <svg *ngIf="iconLeft==='icon-close'" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L13 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-            <path d="M1 13L13 1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+
+    <div class="header-container d-flex justify-content-between align-items-center">
+      <button class="button-left" [ngClass]="{'not-visible': iconLeft.length===0}" (click)="goBack()">
+        <!-- <img [src] = "icons[iconLeft]" style="width: 14px;" *ngIf="iconLeft==='icon-close'"/> -->
+        <svg *ngIf="iconLeft==='icon-close'" width="14" height="14" viewBox="0 0 14 14" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L13 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
+          <path d="M1 13L13 1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
+        </svg>
+
+        <!-- <img [src] = "icons[iconLeft]" style="width: 17px;" *ngIf="iconLeft==='icon-arrow-left'"/> -->
+        <div class="container-arrow-left">
+          <svg *ngIf="iconLeft==='icon-arrow-left'" _ngcontent-xsm-c81="" xmlns="http://www.w3.org/2000/svg" width="17"
+            height="15" viewBox="0 0 17 15" fill="none">
+            <path _ngcontent-xsm-c81="" d="M1 7.27441L16 7.27441" stroke="black" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"></path>
+            <path _ngcontent-xsm-c81="" d="M7.0498 13.2988L0.999804 7.27476L7.0498 1.24976" stroke="black"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
-            
-          <!-- <img [src] = "icons[iconLeft]" style="width: 17px;" *ngIf="iconLeft==='icon-arrow-left'"/> -->
-          <svg *ngIf="iconLeft==='icon-arrow-left'" _ngcontent-xsm-c81="" xmlns="http://www.w3.org/2000/svg" width="17" height="15" viewBox="0 0 17 15" fill="none"><path _ngcontent-xsm-c81="" d="M1 7.27441L16 7.27441" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path _ngcontent-xsm-c81="" d="M7.0498 13.2988L0.999804 7.27476L7.0498 1.24976" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-
-
-          <img [src] = "icons[iconLeft]" style="width: 17px;" *ngIf="iconLeft!=='icon-arrow-left' && iconLeft!=='icon-close'"/>
-        </button>
-  
-        <div class="title">
-          <ion-label>{{title}}</ion-label>
         </div>
 
-        <button
-          (click)="openModal()"
-          class="button-right"
-          [ngClass]="{'not-visible': iconRight.length===0}"
-          [disabled]="haveSelected===false"
-        >
-          <img [src] = "icons[iconRight]"/>
-        </button>
+
+        <img [src]="icons[iconLeft]" style="width: 17px;"
+          *ngIf="iconLeft!=='icon-arrow-left' && iconLeft!=='icon-close'" />
+      </button>
+
+      <div class="title">
+        <ion-label>{{title}}</ion-label>
       </div>
+
+      <button (click)="openModal()" class="button-right" [ngClass]="{'not-visible': iconRight.length===0}"
+        [disabled]="haveSelected===false">
+        <img [src]="icons[iconRight]" />
+      </button>
+    </div>
 
   </ion-toolbar>
 
 </ion-header>
 
 
-<app-modal-delete
-  [modalIsVisible] = "modalIsVisible"
-  [titleModalDelete] = "titleModalDelete"
-  (onModalNotVisible)="closeModal($event)"
->
+<app-modal-delete [modalIsVisible]="modalIsVisible" [titleModalDelete]="titleModalDelete"
+  (onModalNotVisible)="closeModal($event)">
 </app-modal-delete>
-

@@ -142,7 +142,7 @@
 
   <div class="container-main">
 
-    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
+    <!-- <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
       <ion-item
         class="contact"
         lines="none"
@@ -161,7 +161,7 @@
           (ionChange)="checkBoxSelect($event)"
         ></ion-checkbox>
       </ion-item>
-    </div>
+    </div> -->
 
     <!-- SKELETON -->
     <div class="contacts-container margin-foooter-ionic" *ngIf="!contactsLoaded">
@@ -184,10 +184,32 @@
         ></ion-checkbox>
       </ion-item>
     </div>
-
-
-
   </div>
+
+  <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
+    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
+        <ion-item
+          class="contact"
+          lines="none"
+          *cdkVirtualFor="let contact of contactsResults"
+        >
+          <div class="d-flex flex-column" style="gap: 4px">
+            <p class="name">{{ contact?.name?.display }}</p>
+            <div class="d-flex flex-column" *ngFor="let phone of contact?.phones;let indexPhone=index">
+              <p class="phone" *ngIf="indexPhone===0">{{phone?.number}}</p>
+            </div>
+          </div>
+          <ion-checkbox
+            slot="end"
+            mode="ios"
+            class="ion-no-margin"
+            (ionChange)="checkBoxSelect($event)"
+          ></ion-checkbox>
+        </ion-item>
+    </div>
+  </cdk-virtual-scroll-viewport>
+
+
 
   <ion-footer class="ion-no-border footer-ionic">
     <ion-toolbar class="ion-no-padding">

@@ -202,6 +202,11 @@ ion-header {
   gap: 17px;
 }
 
+cdk-virtual-scroll-viewport{
+  height: calc(100% - 68px);
+  width: 100%;
+}
+
 ion-footer {
   position:fixed;
   bottom:0;
