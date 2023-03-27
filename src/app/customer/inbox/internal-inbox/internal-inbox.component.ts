@@ -69,7 +69,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       } else {
         placeholder.style.visibility = 'hidden'
       }
-      
+
       document.querySelector('.ion-footer').classList.remove('active');
     })
 
@@ -335,18 +335,18 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
   goToConditions(){
     this.isCouponOpen = false;
     setTimeout(() => {
-      this.navigation.root("/customer/manage-coupons/conditions","forward");  
+      this.navigation.root("/customer/manage-coupons/conditions","forward");
     }, 500);
-    
+
 
   }
 
   goToProductCoupon(){
     this.isCouponOpen = false;
     setTimeout(() => {
-      this.navigation.root("/customer/manage-coupons/products-with-coupon","forward");  
+      this.navigation.root("/customer/manage-coupons/products-with-coupon","forward");
     }, 500);
-    
+
   }
 }
 

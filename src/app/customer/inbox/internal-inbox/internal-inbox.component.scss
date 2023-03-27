@@ -80,7 +80,7 @@ img {
 
   &.active {
     display: flex !important;
-    padding-bottom: 8px;
+    padding-bottom: var(--bottom-chat);
   }
 }
 
