@@ -1,14 +1,15 @@
 body.md {
   --ion-footer-bottom: 0px;
+  --bottom-chat: 16px;
   .ion-content-var {
     --ion-padding-top: 16px;
     --ion-padding-bottom: 24px;
-
   }
 }
 
 body.ios {
   --ion-footer-bottom: 10px;
+  --bottom-chat: 0px;
   .ion-content-var {
     --ion-padding-top: 16px;
     --ion-padding-bottom: 16px;
