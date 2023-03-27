@@ -53,14 +53,17 @@ export class LoginComponent implements OnInit {
 
   ionViewDidEnter() {
     Keyboard.addListener('keyboardWillHide', () => {
+
       this.ngZone.run(() => {
         // setTimeout(() => {
         //   this.fakeFooter = true;
         //   this.trueFooter = false;
+        this.trueFooter = false;
         setTimeout(() => {
-          this.visibleFooterNavigation = true;  
-        }, 25);
-        
+          this.fakeFooter = true;
+          this.visibleFooterNavigation = true;
+        }, 50);
+
         // }, 50);
       })
     });
@@ -72,9 +75,10 @@ export class LoginComponent implements OnInit {
     // });
 
     Keyboard.addListener('keyboardWillShow', () => {
+
       this.ngZone.run(() => {
-        // this.fakeFooter = false;
-        // this.trueFooter = true;
+        this.fakeFooter = false;
+        this.trueFooter = true;
         this.visibleFooterNavigation = false;
       })
     });

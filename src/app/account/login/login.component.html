@@ -73,8 +73,8 @@
 
     <!-- Footer -->
     <ion-footer 
-      [ngClass]="{'show': !visibleFooterNavigation,
-                  'hidden': visibleFooterNavigation}"
+      [ngClass]="{'show': trueFooter,
+                  'hidden': !trueFooter}"
       class="ion-no-border ion-no-padding" 
       #loginFooter 
     >
@@ -99,8 +99,8 @@
 
 <!-- Footer -->
 <ion-footer 
-  [ngClass]="{'show': visibleFooterNavigation,
-              'hidden': !visibleFooterNavigation}"
+  [ngClass]="{'show': fakeFooter,
+              'hidden': !fakeFooter}"
   class="fakeFooter ion-no-border ion-no-padding" 
 >
   <ion-toolbar>        
