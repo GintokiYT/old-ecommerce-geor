@@ -20,11 +20,31 @@ ion-toolbar{
   }
 }
 /* MODIFICACION DE IMAGEN A DARK */
-.back{
+/* .back{
   width: 14px;
   height: 14px;
   path {
     stroke: var(--ion-color-basic);
+  }
+} */
+.container-arrow-close{
+  position: absolute;
+  left: 4px;
+  top: -4px;
+  width: calc(24px + 16px);
+  height: calc(24px + 16px);
+  //background-color: red;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg{
+      font-size: 24px;
+  }
+
+  svg path{
+      stroke: var(--ion-color-basic);
   }
 }
 
@@ -32,5 +52,9 @@ ion-toolbar{
   ion-toolbar{
     --padding-start: 24px;
     --padding-end: 24px;
+  }
+
+  .container-arrow-close{
+    left: 11px;
   }
 }
