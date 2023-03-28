@@ -17,7 +17,6 @@ import { ModalResendComponent } from './team/modal-resend/modal-resend.component
 import { ModalAcceptedComponent } from './team/modal-accepted/modal-accepted.component';
 import { ContactBasketComponent } from './contact-basket/contact-basket.component';
 import { ShareModule } from '../../shared/shared.module';
-import { ContactSearchComponent } from './contact-basket/contact-search/contact-search.component';
 import { FormsModule } from '@angular/forms';
 import { CollaborativeTeamComponent } from './team/collaborative-team/collaborative-team.component';
 import { ModalResendInvitationComponent } from './team/modal-resend-invitation/modal-resend-invitation.component';
@@ -43,7 +42,6 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     ModalResendComponent,
     ModalAcceptedComponent,
     ContactBasketComponent,
-    ContactSearchComponent,
     CollaborativeTeamComponent,
     ModalResendInvitationComponent,
     ContactTeamComponent,

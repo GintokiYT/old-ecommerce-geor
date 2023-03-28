@@ -22,23 +22,10 @@ ion-title {
   font-size: 16px;
 }
 
-.container-arrow-left {
-  position: absolute;
-  left: 4px;
-  top: -4px;
-  width: calc(24px + 16px);
-  height: calc(24px + 16px);
-  //background-color: red;
-  z-index: 2000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    font-size: 24px;
-  }
-
-  svg path {
+.back{
+  width: 24px;
+  height: 24px;
+  path {
     stroke: var(--ion-color-basic);
   }
 }
@@ -79,10 +66,6 @@ ion-footer {
       --padding-start: 24px;
       --padding-end: 24px;
     }
-  }
-
-  .container-arrow-left {
-    left: 11px;
   }
 
   ion-footer {

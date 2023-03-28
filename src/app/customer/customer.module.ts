@@ -27,6 +27,7 @@ import { ManageAddressesModule } from './manage-addresses/manage-addresses.modul
 import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
 import { SearchGeneralModule } from './search-general/search-general.module';
 import { ManageOrderModule } from './manage-order/manage-order.module';
+import { ManagePaymentMethodModule } from './manage-payment-method/manage-payment-method.module';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { ManageOrderModule } from './manage-order/manage-order.module';
     ManageCouponsModule,
     SettingsModule,
     SearchGeneralModule,
-    ManageOrderModule
+    ManageOrderModule,
+    ManagePaymentMethodModule
   ],
   declarations: [
 

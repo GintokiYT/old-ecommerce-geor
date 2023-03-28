@@ -40,14 +40,14 @@ ion-title {
 }
 
 /* MODIFICACION DE IMAGEN A DARK */
-/* .back{
+.back{
   width: 24px;
   height: 24px;
   path {
     stroke: var(--ion-color-basic);
   }
-} */
-.container-arrow-left {
+}
+/* .container-arrow-left {
   position: absolute;
   left: 4px;
   top: -4px;
@@ -66,7 +66,7 @@ ion-title {
   svg path {
     stroke: var(--ion-color-basic);
   }
-}
+} */
 
 @media (min-width: 390px) {
   ion-toolbar {

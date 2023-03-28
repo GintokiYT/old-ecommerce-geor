@@ -27,7 +27,7 @@ export class AddCardComponent extends ViewComponent implements OnInit {
   items = [];
 
   constructor(private _injector: Injector,
-     private location: Location, 
+     private location: Location,
      private router: Router,
      private pms: PaymentMethodsService) {
     super(_injector);

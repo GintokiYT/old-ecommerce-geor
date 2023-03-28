@@ -2,11 +2,11 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
-  selector: 'app-payment-method-configuration',
-  templateUrl: './payment-method-configuration.component.html',
-  styleUrls: ['./payment-method-configuration.component.scss'],
+  selector: 'app-manage-payment-method',
+  templateUrl: './manage-payment-method.component.html',
+  styleUrls: ['./manage-payment-method.component.scss'],
 })
-export class PaymentMethodConfigurationComponent extends ViewComponent implements OnInit {
+export class ManagePaymentMethodComponent extends ViewComponent implements OnInit {
 
   constructor(_injector:Injector) {
     super(_injector);
@@ -25,4 +25,5 @@ export class PaymentMethodConfigurationComponent extends ViewComponent implement
 
     this.navigation.root('/customer/add-card','forward');
   }
+
 }

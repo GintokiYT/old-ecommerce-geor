@@ -40,7 +40,6 @@ import { BillingDataComponent } from './billing-data/billing-data.component';
 import { ManageUserInformationComponent } from './manage-user-information/manage-user-information.component';
 import { CollaborativeTeamComponent } from './basket/team/collaborative-team/collaborative-team.component';
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
-import { ContactSearchComponent } from './basket/contact-basket/contact-search/contact-search.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
 import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
 import { VariantsProductComponent } from './product-detail/variants-product/variants-product.component';
@@ -49,8 +48,7 @@ import { ManageFavoritesComponent } from './manage-favorites/manage-favorites.co
 import { ManageBillingDataComponent } from './manage-billing-data/manage-billing-data.component';
 import { BillsDeleteComponent } from './manage-billing-data/bills-delete/bills-delete.component';
 import { AddCompanyComponent } from './manage-billing-data/add-company/add-company.component';
-import { PaymentMethodConfigurationComponent } from './pay-card/payment-method-configuration/payment-method-configuration.component';
-import { CardPaymentMethodsComponent } from './pay-card/card-payment-methods/card-payment-methods.component';
+
 import { UserHelpComponent } from './userHelp/user-help/user-help.component';
 import { ComplaintsBookComponent } from './userHelp/complaints-book/complaints-book.component';
 import { ReadContactsComponent } from './manage-billing-data/read-contacts/read-contacts.component';
@@ -77,6 +75,8 @@ import { CountryDirectionComponent } from './product-detail/send/country-directi
 import { ChangeReturnComponent } from './product-detail/change-return/change-return.component';
 import { DirectionsComponent } from './product-detail/directions/directions.component';
 import { CountryBuyComponent } from './delivery-detail/buy/country-buy/country-buy.component';
+import { ManagePaymentMethodComponent } from './manage-payment-method/manage-payment-method.component';
+import { CardPaymentMethodsComponent } from './manage-payment-method/card-payment-methods/card-payment-methods.component';
 
 const routes: Routes = [
   {
@@ -87,7 +87,7 @@ const routes: Routes = [
       { path: 'team', component: TeamComponent },
       { path: 'my-basket', component: MyBasketComponent },
       { path: 'empty-basket', component: EmptyBasketComponent},
-      { path: 'contact-search', component: ContactSearchComponent},
+
 
 
       { path: 'contact-basket', component: ContactBasketComponent},
@@ -149,8 +149,7 @@ const routes: Routes = [
       { path: 'last-step/internal-inbox/:id', component: InternalInboxComponent },
 
       { path: 'confirm-order', component: ConfirmOrderComponent},
-      {path: 'payment-method-configuration', component: PaymentMethodConfigurationComponent},
-      {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
+
 
       {path: 'add-coupons', component: AddCouponsComponent},
       {path: 'add-coupons/conditions', component: ConditionssComponent},
@@ -171,11 +170,13 @@ const routes: Routes = [
       {path: 'manage-order', component:ManageOrderComponent},
       {path: 'manage-order/order-detail/:id', component:OrderDetailComponent},
       {path: 'manage-order/instructions', component:InstructionsComponent},
+      {path: 'manage-payment-method', component:ManagePaymentMethodComponent},
+      {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
 
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
-      { path: 'collaborative-team/contact-search', component: ContactSearchComponent},
+
       { path: 'collaborative-team',component:CollaborativeTeamComponent},
       { path: 'collaborative-team/team', component: TeamComponent },
       { path: 'collaborative-team/contact-team',component: ContactTeamComponent},
