@@ -15,7 +15,7 @@ import { AccountRoutingModule } from 'src/app/account/account.routing.module';
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { PopupDocumentComponent } from './buy/popup-document/popup-document.component';
 import { CountryBuyComponent } from './buy/country-buy/country-buy.component';
-
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 
 
@@ -31,7 +31,8 @@ import { CountryBuyComponent } from './buy/country-buy/country-buy.component';
     ReactiveFormsModule,
     CoreModule,
     AccountRoutingModule,
-    IonicInputMaskModule
+    IonicInputMaskModule,
+    ScrollingModule
   ],
 
   exports:[
