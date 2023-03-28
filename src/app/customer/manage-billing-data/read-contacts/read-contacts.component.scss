@@ -46,6 +46,11 @@ ion-header {
     }
 }
 
+cdk-virtual-scroll-viewport{
+    height: calc(100% - 68px);
+    width: 100%;
+}
+
 
 .contacts-container{
     display: flex;

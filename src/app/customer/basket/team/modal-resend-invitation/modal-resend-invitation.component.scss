@@ -51,7 +51,7 @@ ion-modal {
     width: calc(100% - 48px);
     height: 56px;
     padding: 16px;
-    margin: 0px 24px 15px 24px;
+    margin: 0px 24px calc( var(--ion-safe-area-bottom,0) + 16px ) 24px;
     background-color: var(--ion-background-modal);
     position: absolute;
     bottom: 0;
