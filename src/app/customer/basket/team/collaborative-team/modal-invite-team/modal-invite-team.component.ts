@@ -45,13 +45,8 @@ export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
       this.CheckPermission();
     }
   }
-  /*
-    goContactTeam(){
-      this.navigation.forward('/customer/collaborative-team/contact-team');
-      this.inviteService.setStatusModalInviteTeam(false);
-    }*/
 
-  //Contactos
+  //Contact
   async CheckPermission() {
     try {
       const perm = await Contacts.checkPermissions();
@@ -107,7 +102,7 @@ export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
             setTimeout(() => {
               this.inviteService.setStatusModalInviteTeam(false);
               this.navigation.forward('/customer/collaborative-team/contact-team');
-              
+
 
               this.statusModalSpinner = false;
             }, 300);
