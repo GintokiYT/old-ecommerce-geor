@@ -21,7 +21,7 @@ export class ContactTeamComponent extends ViewComponent implements OnInit {
   /*   constructor( _injector: Injector, private location: Location, private router: Router ) {
       super(_injector);
      }
-  
+
     ngOnInit() {}*/
   //Mostramos la lista de contacto
   /* public contact=['Jualiano del carmen','Anibal Cortez','Roberto Carlos de maracaná','Anibal Cortez','Roberto Carlos de maracaná','Jorge Laguna','Anibal Cortez'];
@@ -48,30 +48,30 @@ export class ContactTeamComponent extends ViewComponent implements OnInit {
       this.oneTrue = this.invitationsCount > 0;
     }
   }
-  
+
   goBack(){
     this.navigation.back('/customer/collaborative-team');
-  
+
   }
-  
+
   goContactSeatch(){
-  
+
     const currentRouter = this.router.url;
     if(currentRouter === '/customer/collaborative-team/contact-team') {
       return this.navigation.forward('/customer/collaborative-team/contact-search')
     }
-  
+
     this.navigation.forward('/customer/contact-search');
     }
-  
+
     goTeam(){
-  
+
     const currentRouter = this.router.url;
-  
+
     if(currentRouter === '/customer/collaborative-team/contact-team') {
       return this.navigation.forward('/customer/collaborative-team/team')
     }
-  
+
     this.navigation.forward('/customer/team');
   }
     */
@@ -165,8 +165,12 @@ export class ContactTeamComponent extends ViewComponent implements OnInit {
 
   showSearch() {
     this.headerContent = "search";
+    setTimeout(() => {
+      this.searchBar.setFocus();
+    }, 500);
   }
-  
+
+
   //Selection checkbox
   oneTrue = false;
   invitationsCount = 0;
@@ -180,5 +184,6 @@ export class ContactTeamComponent extends ViewComponent implements OnInit {
       this.oneTrue = this.invitationsCount > 0;
     }
   }
+
 
 }
