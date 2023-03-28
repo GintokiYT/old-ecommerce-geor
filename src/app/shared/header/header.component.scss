@@ -33,24 +33,26 @@ ion-header {
 }
 
 .container-arrow-left{
-    position: absolute;
-    left: -8px;
-    top: -18px;
-    width: calc(24px + 16px);
-    height: calc(24px + 16px);
-    //background-color: red;
-    z-index: 2000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // position: absolute;
+    // //left: -8px;
+    // //top: -18px;
+    // bottom: 5px;
+    // left: 13px;
+    // width: calc(24px + 16px);
+    // height: calc(24px + 16px);
+    // //background-color: red;
+    // z-index: 2000;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
 
-    svg{
-        font-size: 24px;
-    }
+    // svg{
+    //     font-size: 24px;
+    // }
 
-    svg path{
-        stroke: var(--ion-color-basic);
-    }
+    // svg path{
+    //     stroke: var(--ion-color-basic);
+    // }
 }
 
 
