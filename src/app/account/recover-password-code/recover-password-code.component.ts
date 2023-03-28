@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild, Injector } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { IonInput } from '@ionic/angular';
-import { RouteCollection } from 'src/shared/route-collection';
 import { ViewComponent } from '@geor360/ecore';
 import { Keyboard } from '@geor360/capacitor-keyboard';
 import { Platform } from '@ionic/angular';
@@ -41,7 +40,7 @@ export class RecoverPasswordCodeComponent extends ViewComponent implements OnIni
   ngAfterViewInit() {
     setTimeout(() => {
       this.inputCode.setFocus();
-    }, 500);
+    }, 800);
   }
 
   async onChangeCode() {

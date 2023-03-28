@@ -58,7 +58,7 @@ export class ValidPhoneComponent extends ViewComponent implements OnInit, OnDest
   ngAfterViewInit() {
     setTimeout(() => {
       this.inputCode.setFocus();
-    }, 500);
+    }, 800);
   }
 
   onChangeCode() {

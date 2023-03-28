@@ -17,7 +17,7 @@
             </svg>
       </button>
 
-      <ion-title>¿Quien recibirá la compra?</ion-title>
+      <ion-title>¿Quién recibirá la compra?</ion-title>
 
   </ion-toolbar>
 
@@ -48,7 +48,7 @@
 
  <!-- input Roles -->
 <ion-item lines="none" class="form-group ci" (ionFocus)="checkFocus('post')" (ionBlur)="checkBlur('post',false)">
-  <ion-label position="floating" class="disabled">Roles</ion-label>
+  <ion-label position="floating" class="disabled">Cargo</ion-label>
   <ion-input formControlName="post"></ion-input>
   <app-validation-messages *ngIf="showTextHelperPost" slot="error"
     [control]="form.get('post')"></app-validation-messages>
@@ -67,7 +67,7 @@
 <ion-item lines="none" class="form-group ci" style="position: relative;"
  (click)="openDocument(); $event.stopPropagation()">
  <ion-label position="floating" >
-   Tipo de documento
+  Documento de identificación
  </ion-label>
  <ion-input
    formControlName="document"

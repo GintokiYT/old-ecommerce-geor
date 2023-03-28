@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 })
 export class ReadContactsComponent extends ViewComponent implements OnInit {
 
-
+  items: any[];
   contacts: any[];
   contactsResults: any[];
   contactsLoaded: boolean = false;
@@ -36,6 +36,7 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
     super(_injector);
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.currentContactSubscription = this.cs.currentContacts$.subscribe( c => this.contacts = c);
+    this.items = Array.from({length:500}).map((_,i) => `item ${i}`);
   }
 
   ngOnInit() {
@@ -106,6 +107,13 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
 
   showSearch() {
     this.headerContent = "search";
+    setTimeout(() => {
+      this.searchBar.setFocus();
+    }, 500);
+  }
+
+  loadMoreContacts(){
+    
   }
 
 }

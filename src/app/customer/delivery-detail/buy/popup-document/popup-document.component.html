@@ -1,10 +1,21 @@
 <div class="container-popup" (click)="closePopupDocument($event)">
-  <div class="popup active">
-    <ul>
-      <li (click)="selectOption('DNI')">DNI</li>
-      <li (click)="selectOption('Carnet de extranjería')">Carnet de extranjería</li>
-      <li (click)="selectOption('RUC')">RUC</li>
-      <li (click)="selectOption('Pasaporte')">Pasaporte</li>
-    </ul>
+  <div class="popup active d-flex flex-column justify-content-between gap-4">
+    <ion-item lines="none">
+      <ion-label (click)="selectOption('DNI')">DNI</ion-label>
+      <ion-icon name="checkmark-outline" color="primary" slot="end" data-option="DNI" [class.hide-icon]="selectedOption !== 'DNI'"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label (click)="selectOption('Carnet de extranjería')">Carnet de extranjería</ion-label>
+      <ion-icon name="checkmark-outline" color="primary" slot="end" data-option="Carnet de extranjería" [class.hide-icon]="selectedOption !== 'Carnet de extranjería'"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label (click)="selectOption('RUC')">RUC</ion-label>
+      <ion-icon name="checkmark-outline" color="primary" slot="end" data-option="RUC" [class.hide-icon]="selectedOption !== 'RUC'"></ion-icon>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label (click)="selectOption('Pasaporte')">Pasaporte</ion-label>
+      <ion-icon name="checkmark-outline" color="primary" slot="end" data-option="Pasaporte" [class.hide-icon]="selectedOption !== 'Pasaporte'"></ion-icon>
+    </ion-item>
+
   </div>
 </div>

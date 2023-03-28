@@ -131,6 +131,7 @@ ion-footer {
     background-color: var(--ion-background-color-modal);
   
     ion-item::part(native) {
+      --background: transparent;
       --inner-padding-end: 0px;
       --inner-border-width: 0px;
     }

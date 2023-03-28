@@ -25,6 +25,7 @@ import { ContactTeamComponent } from './contact-basket/contact-team/contact-team
 import { ModalInviteTeamComponent } from './team/collaborative-team/modal-invite-team/modal-invite-team.component';
 import { HomeModule } from '../home/home.module';
 import { ModalMyBasketComponent } from './my-basket/modal-Mybasket/modal-Mybasket.component';
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ModalMyBasketComponent } from './my-basket/modal-Mybasket/modal-Mybaske
     InboxModule,
     ShareModule,
     FormsModule,
-    HomeModule
+    HomeModule,
+    ScrollingModule
 
   ],
   exports:[

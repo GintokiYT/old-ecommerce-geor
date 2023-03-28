@@ -20,11 +20,10 @@ ion-header {
 
 .login-container {
     width: 100%;
-    height: calc(100% - ( var(--ion-safe-area-top) + 64px ));
+    height: calc(100% - (var(--ion-safe-area-top) + 64px));
 
     form {
-
-        ion-item{
+        ion-item {
             --inner-padding-end: 0px !important;
             --padding-start: 0px !important;
             --border-width: 0px 0px 1px 0px !important;
@@ -34,7 +33,7 @@ ion-header {
                 padding-inline: 0px !important;
             }
 
-            ion-icon{
+            ion-icon {
                 cursor: pointer;
             }
         }
@@ -49,38 +48,23 @@ ion-header {
             --padding-top: 5px !important;
         }
 
-        .text-end{
-            ion-button{
+        .text-end {
+            ion-button {
                 --background-activated: unset !important;
             }
         }
-    }
-
-}
-
-.footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 9000;
-
-    .toolbar{
-        padding-right: 16px !important;
-        padding-left: 16px !important;
-        padding-bottom: 24px !important;
-
     }
 }
 
 ion-footer {
 
-    .toolbar{
-        padding-right: 16px !important;
-        padding-left: 16px !important;
-        padding-bottom: 16px !important;
-        //  smargin-bottom: calc(var(--ion-safe-area-bottom,0) + 71.8px);
+    ion-toolbar {
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 16px;
     }
 }
+
 
 .disabled {
     color: var(--ion-color-disabled);
@@ -98,36 +82,28 @@ ion-footer {
 
 
     .login-container {
-        height: calc(100% - ( var(--ion-safe-area-top) + 80px ));
+        height: calc(100% - (var(--ion-safe-area-top) + 80px));
+
         form {
             ion-button {
                 margin-right: 24px;
             }
 
-            ion-item{
+            ion-item {
                 margin-inline: 24px !important;
             }
         }
     }
 
-    .footer{
-        .toolbar{
-            padding-right: 24px !important;
-            padding-left: 24px !important;
-        }
-    }
-
     ion-footer {
-        .toolbar{
-            padding-left: 24px !important;
-            padding-right: 24px !important;
+        ion-toolbar {
+            --padding-start: 24px;
+            --padding-end: 24px;
         }
     }
-
 }
 
-
-.eye{
+.eye {
     z-index: 999999;
     // position: relative;
     // top: 35px;
@@ -139,8 +115,7 @@ ion-footer {
     padding: 20px;
 }
 
-
-.feye{
+.feye {
     position: absolute;
     z-index: 1000;
     right: -4px;
@@ -149,3 +124,15 @@ ion-footer {
     cursor: pointer;
 }
 
+.fakeFooter{
+    position: fixed;
+    bottom: 71px;
+}
+
+.show{
+    display: unset;
+}
+
+.hidden{
+    display: none;
+}

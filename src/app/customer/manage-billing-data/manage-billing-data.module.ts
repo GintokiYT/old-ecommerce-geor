@@ -11,6 +11,7 @@ import { ReadContactsComponent } from './read-contacts/read-contacts.component';
 import { SetContactComponent } from './set-contact/set-contact.component';
 import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
 import { EditBillComponent } from './edit-bill/edit-bill.component';
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 
 
@@ -30,7 +31,8 @@ import { EditBillComponent } from './edit-bill/edit-bill.component';
     ShareModule,
     FormsModule,
     ReactiveFormsModule,
-    IonicInputMaskModule
+    IonicInputMaskModule,
+    ScrollingModule
   ]
 })
 export class ManageBillingDataModule { }

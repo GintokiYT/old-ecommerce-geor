@@ -1,6 +1,6 @@
 .container-popup-departments {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,11 +18,11 @@
   }
 
   ion-list {
-    padding-top: 64px;
-    padding-bottom: 24px;
+    padding-top: 10px;
+    padding-bottom: calc(var(--ion-safe-area-bottom) + var(--ion-padding-bottom));
 
     @media (min-width: 390px) {
-      padding-top: 80px;
+      padding-top: 26px;
     }
   }
 
@@ -60,4 +60,8 @@
 
 .header-basic {
   position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: calc(var(--ion-safe-area-top) + 16px) !important;
 }

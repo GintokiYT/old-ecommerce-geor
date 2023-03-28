@@ -184,10 +184,7 @@ export class EditBillComponent extends ViewComponent implements OnInit {
           }else{
             this.navigation.forward("/customer/manage-billing-data/add-company/read-contacts")
           }
-
           break;
-          break;
-
         case "prompt-with-rationale": // cuando se da en denegar
           this.navigation.forward("/customer/manage-billing-data/add-company/set-contact"); break;
           

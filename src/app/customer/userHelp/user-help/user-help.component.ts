@@ -23,6 +23,6 @@ export class UserHelpComponent extends ViewComponent implements OnInit {
   }
 
   goToClaimBook() {
-    this.navigation.forward('/customer/user-help/complaints-book');
+    this.navigation.root('/customer/user-help/complaints-book', 'forward');
   }
 }
