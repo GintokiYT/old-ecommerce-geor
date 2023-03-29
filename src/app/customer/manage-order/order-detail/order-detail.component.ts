@@ -45,7 +45,7 @@ export class OrderDetailComponent extends ViewComponent implements OnInit {
 
     setTimeout(() => {
       this.contentLoaded = true;
-    }, 1500);
+    }, 1000);
 
   }
 
@@ -74,6 +74,7 @@ export class OrderDetailComponent extends ViewComponent implements OnInit {
 
   goToPaymentMethods() {
     this.rs.setSetPaymentMethodsLastBackDirection(this.router.url);
+    this.rs.setMiPedidoLastBackDirection(this.router.url);
     this.navigation.root("/customer/payment-methods", "forward");
   }
 

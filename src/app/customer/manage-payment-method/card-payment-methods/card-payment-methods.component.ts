@@ -41,7 +41,7 @@ export class CardPaymentMethodsComponent extends ViewComponent implements OnInit
     },'Eliminar','Cancelar')
   }
 
-  goback(){
+  goBack(){
     this.navigation.root('/customer/manage-user-information','back');
     localStorage.setItem('back', '');
   }

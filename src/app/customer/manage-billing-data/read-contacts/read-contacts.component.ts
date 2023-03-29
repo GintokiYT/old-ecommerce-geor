@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
-import { IonSearchbar } from '@ionic/angular';
+import { InfiniteScrollCustomEvent, IonSearchbar } from '@ionic/angular';
 import { ContactsService } from '../../../services/contacts.service';
 import { Contacts } from "@capacitor-community/contacts"
 import { BillingDataService } from '../../../services/billing-data.service';
@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 })
 export class ReadContactsComponent extends ViewComponent implements OnInit {
 
-
+  items: any[];
   contacts: any[];
   contactsResults: any[];
   contactsLoaded: boolean = false;
@@ -36,6 +36,7 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
     super(_injector);
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.currentContactSubscription = this.cs.currentContacts$.subscribe( c => this.contacts = c);
+    //this.items = Array.from({length:500}).map((_,i) => `item ${i}`);
   }
 
   ngOnInit() {
@@ -106,6 +107,10 @@ export class ReadContactsComponent extends ViewComponent implements OnInit {
 
   showSearch() {
     this.headerContent = "search";
+    setTimeout(() => {
+      this.searchBar.setFocus();
+    }, 500);
   }
+
 
 }

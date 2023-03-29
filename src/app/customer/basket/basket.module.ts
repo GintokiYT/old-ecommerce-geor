@@ -17,7 +17,6 @@ import { ModalResendComponent } from './team/modal-resend/modal-resend.component
 import { ModalAcceptedComponent } from './team/modal-accepted/modal-accepted.component';
 import { ContactBasketComponent } from './contact-basket/contact-basket.component';
 import { ShareModule } from '../../shared/shared.module';
-import { ContactSearchComponent } from './contact-basket/contact-search/contact-search.component';
 import { FormsModule } from '@angular/forms';
 import { CollaborativeTeamComponent } from './team/collaborative-team/collaborative-team.component';
 import { ModalResendInvitationComponent } from './team/modal-resend-invitation/modal-resend-invitation.component';
@@ -25,6 +24,7 @@ import { ContactTeamComponent } from './contact-basket/contact-team/contact-team
 import { ModalInviteTeamComponent } from './team/collaborative-team/modal-invite-team/modal-invite-team.component';
 import { HomeModule } from '../home/home.module';
 import { ModalMyBasketComponent } from './my-basket/modal-Mybasket/modal-Mybasket.component';
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { ModalMyBasketComponent } from './my-basket/modal-Mybasket/modal-Mybaske
     ModalResendComponent,
     ModalAcceptedComponent,
     ContactBasketComponent,
-    ContactSearchComponent,
     CollaborativeTeamComponent,
     ModalResendInvitationComponent,
     ContactTeamComponent,
@@ -56,7 +55,8 @@ import { ModalMyBasketComponent } from './my-basket/modal-Mybasket/modal-Mybaske
     InboxModule,
     ShareModule,
     FormsModule,
-    HomeModule
+    HomeModule,
+    ScrollingModule
 
   ],
   exports:[

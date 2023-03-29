@@ -1,8 +1,8 @@
 .content-add {
   margin: 0px 16px;
 }
-form {
-  margin-bottom: 300px ;
+form{
+  margin-bottom: 200px;
 }
 ion-item::part(native) {
   padding: 0px;
@@ -20,6 +20,23 @@ ion-item {
 
 ion-modal::part(content) {
   background: var(--ion-background-alert);
+}
+
+.alert {
+  padding: 0px;
+  margin-bottom: 84px;
+  ion-item {
+    --padding-start: 0px;
+    --inner-padding-end: 0px !important;
+    margin-bottom: 20px;
+    #icon-security {
+      margin-right: 8px;
+    }
+    ion-label {
+      margin: 0;
+      padding: 0px;
+    }
+  }
 }
 
 ion-modal {
@@ -77,23 +94,6 @@ ion-footer {
     --padding-end: 24px;
     --padding-bottom: 24px;
   }
-  .alert {
-    padding: 0px;
-    margin-bottom: 0px;
-    ion-item {
-      --padding-start: 0px;
-      --inner-padding-end: 0px !important;
-      padding-bottom: 20px;
-      margin: 0px;
-      #icon-security {
-        margin-right: 8px;
-      }
-      ion-label {
-        margin: 0;
-        padding: 0px;
-      }
-    }
-  }
   ion-button {
     height: 40px;
     margin: 0px;
@@ -118,7 +118,6 @@ ion-toolbar {
 
 }
 
-
 ion-title {
   color: var(--ion-color-basic);
   font-weight: bold;
@@ -139,7 +138,6 @@ ion-header {
   }
 }
 
-/* MODIFICACION DE IMAGEN A DARK */
 .back{
   width: 14px;
   height: 14px;
@@ -149,7 +147,6 @@ ion-header {
 }
 
 @media (min-width: 390px) {
-
   ion-header {
     ion-toolbar{
       --padding-start: 24px !important;
@@ -157,6 +154,7 @@ ion-header {
 
     }
   }
+
   ion-toolbar {
     --padding-top: 16px;
     --padding-start: 24px !important;
@@ -180,8 +178,5 @@ ion-header {
     ion-button {
       height: 48px !important;
     }
-  }
-  form {
-    margin-bottom: 200px;
   }
 }

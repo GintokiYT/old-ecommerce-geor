@@ -82,6 +82,14 @@
 }
 
 
+.show{
+    display: flex !important;
+}
+
+.hidden{
+    visibility: none !important;
+}
+
 
 
 @media(min-width: 390px){

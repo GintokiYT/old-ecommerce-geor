@@ -1,6 +1,5 @@
 .cards{
     margin: 0px 16px 0px 16px;
-
     #data-card{
         padding: 16px 0px 16px 10px;
         margin-bottom: 32px;
@@ -28,7 +27,6 @@
         }
     }
 }
-
 
 ion-modal::part(content){
     background: var(--ion-background-alert);
@@ -127,24 +125,6 @@ ion-footer{
     .cards{
         margin: 0px 24px 0px 24px;
     }
-    #coupon{
-        --width: 343px;
-        --height: auto;
-        #icon-close{
-            margin: 24px 24px 0px 0px;
-        }
-        #content-coupon{
-            padding: 0px 24px 48px 24px;
-        }
-        #buttons{
-            .conditions{
-                width: 12.5px;
-            }
-            ion-button{
-                height: 39px !important;
-            }
-        }
-    }
     #mistake{
         --height: auto;
         --width: 342px;
@@ -179,7 +159,7 @@ ion-footer{
     }
 }
 
-
+//Modal Spinner
 // .container-modal {
 //   position: fixed;
 //   top: 0;

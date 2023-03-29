@@ -41,7 +41,7 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
     {
       option: "Métodos de pago",
       src: "/assets/icons/icon-pay.svg",
-      goTo: "/customer/payment-method-configuration"
+      goTo: "/customer/manage-payment-method"
     },
     {
       option: "Datos de facturación",
@@ -96,7 +96,7 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
       });
     }
   }
-  
+
   goTo(direction : string){
     this.navigation.root(direction,"forward");
   }

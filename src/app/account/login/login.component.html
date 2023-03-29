@@ -71,29 +71,13 @@
 
     </form><!--End Form-->
 
-
     <!-- Footer -->
-    <!-- <ion-footer class="ion-no-border" #loginFooter>
-
-      <div class="toolbar">
-        <div class="form-group form-group__double">
-          <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
-            [disabled]="loginForm.invalid" style="margin-bottom: 24px; margin-top: 0px !important;"
-          >
-            Iniciar sesión
-          </ion-button>
-        </div>
-        <div class="text-center d-flex align-items-center justify-content-center" style="gap: 5px;">
-          <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
-          <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
-        </div>
-      </div>
-
-    </ion-footer> -->
-
-
-    <!-- Footer -->
-    <ion-footer class="ion-no-border ion-no-padding" #loginFooter>
+    <ion-footer 
+      [ngClass]="{'show': trueFooter,
+                  'hidden': !trueFooter}"
+      class="ion-no-border ion-no-padding" 
+      #loginFooter 
+    >
       <ion-toolbar>        
         <div class="form-group form-group__double">
           <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
@@ -113,17 +97,13 @@
 
 </ion-content>
 
-<app-footer-navigation *ngIf="visibleFooterNavigation">
-  
-</app-footer-navigation>
-
-
-
-
-<!--
-<div class="footer">
-
-  <div class="toolbar">
+<!-- Footer -->
+<ion-footer 
+  [ngClass]="{'show': fakeFooter,
+              'hidden': !fakeFooter}"
+  class="fakeFooter ion-no-border ion-no-padding" 
+>
+  <ion-toolbar>        
     <div class="form-group form-group__double">
       <ion-button expand="block" color="primary" type="submit" (click)="onSubmit()"
         [disabled]="loginForm.invalid" style="margin-bottom: 24px; margin-top: 0px !important;"
@@ -135,14 +115,10 @@
       <span class="disabled fz-small">¿Aún no tienes una cuenta? </span>
       <ion-label color="primary" class="d-block fz-small" style="cursor: pointer;" (click)="onGoToRegister()"> Regístrate</ion-label>
     </div>
-  </div>
+  </ion-toolbar>
+</ion-footer>
 
-  <app-footer-navigation>
-  </app-footer-navigation>
-
-</div> -->
-
-
-
-
+<app-footer-navigation *ngIf="visibleFooterNavigation">
+  
+</app-footer-navigation>
 

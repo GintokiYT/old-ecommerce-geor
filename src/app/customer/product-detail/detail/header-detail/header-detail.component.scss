@@ -18,15 +18,6 @@ ion-toolbar{
   z-index: 1000;
 }
 
-@media(max-width:320px){
-  ion-toolbar{
-      --padding-top: 32px;
-      --padding-start: 16px;
-      --padding-end: 16px;
-      --padding-bottom: 24px
-  }
-}
-
 ion-title{
   color:var(--ion-color-basic);
   font-weight: bold;
@@ -45,11 +36,16 @@ ion-item-options{
   }
 }
 
+
 @media (min-width: 390px) {
   ion-toolbar{
     --padding-start: 24px;
     --padding-end: 24px;
 
   }
+  .container-arrow-left{
+    left: 11px;
   }
+
+}
 
