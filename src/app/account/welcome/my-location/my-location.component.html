@@ -13,14 +13,17 @@
         </svg>
       </button>
 
-    <!--
-      <ion-fab vertical="bottom" horizontal="end" >
-        <ion-button>
-          <img src="/assets/icons/geo.png" />
-          <ion-label id="update">Actualizar</ion-label>
-        </ion-button>
-      </ion-fab>
-    -->
+      <button class="button-update" (click)="actualizar()">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 0L9 18" stroke="var(--ion-background-tertiary)"/>
+            <path d="M0 9L18 9" stroke="var(--ion-background-tertiary)"/>
+            <circle cx="9" cy="9" r="6.5" fill="var(--card-background-tertiary)" stroke="var(--ion-background-tertiary)"/>
+            <circle cx="9" cy="9" r="4" fill="var(--ion-background-tertiary)"/>
+          </svg>
+          <p>Actualizar</p>
+        </div>
+      </button>
 
     </div>
 
@@ -30,19 +33,14 @@
         class="ion-button"
         (click)="nextProyect()"
         type="button"
-      >{{ contenido.button }}</button>
+      >{{contenido.button}}</button>
     </div>
 
   </div>
 </ion-content>
 
-<!-- <ion-footer style="background-color: var(--ion-background-color); height: 159px;">
-  <div class="footer">
-    <span (click)="onToChangeAddress()">Pacto andino 8799</span>
-    <button
-      class="ion-button"
-      (click)="nextProyect()"
-      type="button"
-    >{{ contenido.button }}</button>
-  </div>
-</ion-footer> -->
+<!-- Spinner cuando aun no carga el mapa -->
+<div class="container-loader" #loading>
+  <div class="lds-facebook"><div></div><div></div><div></div></div>
+  <p>Cargando...</p>
+</div>

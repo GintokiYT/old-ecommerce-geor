@@ -188,7 +188,7 @@ const routes: Routes = [
 ];
 
 routes[0].children.unshift(...searchGeneralRoutes);
-console.log(routes);
+// console.log(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

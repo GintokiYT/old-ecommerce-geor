@@ -31,7 +31,7 @@ export class SearchFilterComponent extends ViewComponent implements OnInit {
     const inputSearch: HTMLInputElement = this.inputSearch.nativeElement;
     const closeInput: HTMLDivElement = this.closeInput.nativeElement;
 
-    setTimeout(() => inputSearch.focus(), 300);
+    setTimeout(() => inputSearch.focus(), 800);
 
     inputSearch.addEventListener('input', () => {
       if(inputSearch.value.length > 0) {
