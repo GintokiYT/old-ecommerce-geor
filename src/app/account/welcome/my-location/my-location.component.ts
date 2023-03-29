@@ -40,6 +40,7 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
+    // Codigo en progreso...
     // async function checkGPS() {
     //   const { location: state } = await Geolocation.requestPermissions();
     //   // alert(state)
