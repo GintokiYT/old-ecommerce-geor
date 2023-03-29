@@ -49,6 +49,14 @@ ion-toolbar{
   }
 }
 
+.back{
+  width: 24px;
+  height: 24px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
+}
+
 .icon-plus {
    width: 64px;
     height: 64px;
@@ -59,26 +67,7 @@ ion-toolbar{
     z-index: 1000;
 }
 
-.container-arrow-left {
-  position: absolute;
-  left: 4px;
-  top: -4px;
-  width: calc(24px + 16px);
-  height: calc(24px + 16px);
-  //background-color: red;
-  z-index: 2000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  svg {
-    font-size: 24px;
-  }
-
-  svg path {
-    stroke: var(--ion-color-basic);
-  }
-}
 
 @media(min-width:390px) {
   ion-toolbar{
@@ -86,9 +75,7 @@ ion-toolbar{
     --padding-end: 24px;
   }
 
-  .container-arrow-left{
-    left: 11px;
-  }
+
 
   .icon-plus {
     margin-right: 24px;
