@@ -108,6 +108,9 @@ export class ContactComponent extends ViewComponent implements OnInit {
 
   showSearch() {
     this.headerContent = "search";
+    setTimeout(() => {
+      this.searchBar.setFocus();
+    }, 500);
   }
 
 }

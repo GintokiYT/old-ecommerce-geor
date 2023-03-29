@@ -80,7 +80,8 @@
   </div>
 
   <!-- REAL CONTACTS -->
-  <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
+  <!-- Item size = height item + gap of list -->
+  <cdk-virtual-scroll-viewport class="container-main" itemSize="74" minBufferPx="900" maxBufferPx="900">
     <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
       <ion-item class="contact" lines="none" *cdkVirtualFor="let contact of contactsResults" (click)="goToAddCompany(contact)">
         <div class="d-flex flex-column" style="gap: 4px;">
@@ -93,11 +94,11 @@
     </div>
   </cdk-virtual-scroll-viewport>
 
-  <!-- <cdk-virtual-scroll-viewport itemSize="56" maxBufferPx="1350">
+  <!-- <cdk-virtual-scroll-viewport itemSize="74" minBufferPx="900" maxBufferPx="900">
     <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
       <ion-item class="contact" lines="none" *cdkVirtualFor="let contact of items" (click)="goToAddCompany(contact)">
         <div class="d-flex flex-column" style="gap: 4px;">
-          <p class="name">Pedrito fernandez</p>
+          <p class="name">{{contact}}</p>
           <div class="d-flex flex-column" *ngFor="let phone of [1]">
             <p class="phone" >151651651651</p>
           </div>
@@ -105,6 +106,7 @@
       </ion-item>
     </div>
   </cdk-virtual-scroll-viewport> -->
+
 
 </ion-content>
 

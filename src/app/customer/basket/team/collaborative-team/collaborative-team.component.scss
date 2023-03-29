@@ -49,6 +49,14 @@ ion-toolbar{
   }
 }
 
+.back{
+  width: 24px;
+  height: 24px;
+  path {
+    stroke: var(--ion-color-basic);
+  }
+}
+
 .icon-plus {
    width: 64px;
     height: 64px;
@@ -60,21 +68,15 @@ ion-toolbar{
 }
 
 
-//dark
-.back{
-  width: 24px;
-  height: 24px;
-  path {
-    stroke: var(--ion-color-basic);
-  }
-}
 
 @media(min-width:390px) {
   ion-toolbar{
     --padding-start: 24px;
     --padding-end: 24px;
-
   }
+
+
+
   .icon-plus {
     margin-right: 24px;
   }
