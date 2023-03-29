@@ -57,7 +57,7 @@ export class RegisterComponent extends ViewComponent implements OnInit {
     this.form = new FormGroup({
 
       name: new FormControl('', [
-        Validators.required,
+        //Validators.required,
       ]),
       movil: new FormControl('', [
         Validators.required,

@@ -132,7 +132,7 @@
 
   <ion-toolbar class="ion-no-padding">
     <div class="text-center">
-      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid" (click)="onSubmit()"
+      <ion-button expand="block" color="primary" shape="round" [disabled]="form.invalid || form.get('name').value.length<=0" (click)="onSubmit()"
         type="submit" style="margin: 0px;">Siguiente</ion-button>
     </div>
   </ion-toolbar>

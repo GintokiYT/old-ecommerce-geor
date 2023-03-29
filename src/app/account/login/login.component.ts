@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   @ViewChild("inputPassword") inputPassword: IonInput;
   loginForm!: FormGroup;
   inputPasswordType: string = "password";
-  heightStart: string = window.innerHeight.toString();
   showFakeEye: boolean = false;
   showTrueEye: boolean = true;
   fakeFooter: boolean = true;
@@ -42,7 +41,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = new FormGroup({
       username: new FormControl('', [
-        Validators.required,
+        // Validators.required
       ]),
       password: new FormControl('', [
         Validators.required,

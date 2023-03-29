@@ -1,5 +1,5 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector} from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
@@ -13,18 +13,17 @@ export class RecoverPasswordComponent extends ViewComponent implements OnInit {
   showTextHelperEmail = false;
 
   constructor(private _injector: Injector) {
-    super(_injector);
+    super(_injector)
+  }
+
+  ngOnInit() {
     this.form = new FormGroup({
       email: new FormControl('', [
         Validators.required,
         Validators.email,
-        Validators.maxLength(50),
+        Validators.maxLength(190),
       ]),
     });
-  }
-
-  ngOnInit() {
-
   }
 
   onSubmit() {
@@ -41,4 +40,7 @@ export class RecoverPasswordComponent extends ViewComponent implements OnInit {
   checkBlur() {
     this.showTextHelperEmail = false;
   }
+
+
+
 }
