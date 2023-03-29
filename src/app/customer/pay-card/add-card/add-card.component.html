@@ -93,6 +93,17 @@
           required
         ></ion-input>
       </ion-item>
+      <!-- message -->
+      <!-- <div class="alert">
+        <ion-item lines="none" *ngIf="formulario.invalid===false">
+          <img id="icon-security" src="/assets/icons/icon-security.svg">
+          <ion-label class="alert ion-text-wrap fz-small" color="medium">
+            Tu tarjeta está 100% segura, solo
+            guardaremos el número, volveremos a
+            pedirte el código para confirmar tu compra.
+          </ion-label>
+        </ion-item>
+      </div> -->
     </form>
   </div>
 
@@ -144,23 +155,9 @@
 
 <ion-footer class="footer-ionic">
   <ion-toolbar>
-    <div class="alert">
-      <ion-item lines="none" *ngIf="formulario.invalid === false">
-        <img id="icon-security" src="/assets/icons/icon-security.svg" />
-        <ion-label class="alert ion-text-wrap fz-small" color="medium">
-          Tu tarjeta está 100% segura, solo guardaremos el número, volveremos a
-          pedirte el código para confirmar tu compra.
-        </ion-label>
-      </ion-item>
-    </div>
-    <ion-button
-      [disabled]="formulario.invalid"
-      (click)="goToPaymentMethods()"
-      type="submit"
-      color="primary"
-      shape="round"
-      expand="block"
-    >
+    <ion-button [disabled]="formulario.invalid"
+                (click)="goToPaymentMethods()"
+                type="submit" color="primary" shape="round" expand="block">
       <ion-label class="fz-normal">Guardar</ion-label>
     </ion-button>
   </ion-toolbar>
