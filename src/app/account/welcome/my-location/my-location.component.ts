@@ -42,6 +42,7 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   ) {
     super(_injector)
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
+    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.diagnostic.registerLocationStateChangeHandler((state) => {
       if (state === this.diagnostic.locationMode.LOCATION_OFF) {
         // alert('La ubicación se ha desactivado');
@@ -477,8 +478,8 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   onBack() {
-    this.navigation.back('/account/welcome/whe-are-you');
-    // this.navigation.back(this.previousRoute);
+    //this.navigation.back('/account/welcome/whe-are-you');
+    this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {
@@ -495,13 +496,11 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       return this.navigation.root('/customer/direction','forward')
     }else if(this.previousRoute.includes("manage")){
       return this.navigation.back(this.previousRoute);
-    }else{
-      this.navigation.root('/customer/home','forward');
     }
 
 
 
-    //this.navigation.root('/customer/home', 'forward');
+    this.navigation.root('/customer/home', 'forward');
   }
 
   actualizar() {
