@@ -25,6 +25,9 @@ export class SetContactComponent extends ViewComponent implements OnInit {
     super(_injector);
     this.rs.currentSetContactLastSubmitBackDirection.subscribe(d => this.backSubmitDirection = d)
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
+  }
+
+  ngOnInit() {
     this.form = new FormGroup({
 
       name: new FormControl('', [
@@ -41,9 +44,6 @@ export class SetContactComponent extends ViewComponent implements OnInit {
         Validators.required,
       ])
     });
-  }
-
-  ngOnInit() {
   }
 
   onSubmit() {

@@ -17,17 +17,7 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   equalPassword: boolean = false;
   inputConfirmHaveValue: boolean = false;
 
-  form: FormGroup = new FormGroup(
-    {
-      password: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/)
-      ]),
-      password_confirmation: new FormControl('', [
-        Validators.required,
-      ]),
-    }
-  );;
+  form!: FormGroup;
   showTextHelperPassword = false;
   showTextHelperPasswordConfirmation = false;
 
@@ -49,20 +39,20 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
     private _injector: Injector,
   ) {
     super(_injector);
-    // this.form = new FormGroup(
-    //   {
-    //     password: new FormControl('', [
-    //       Validators.required,
-    //       Validators.pattern(this.passwordPattern)
-    //     ]),
-    //     password_confirmation: new FormControl('', [
-    //       Validators.required,
-    //     ]),
-    //   }
-    // );
   }
 
   ngOnInit() {
+    this.form = new FormGroup(
+      {
+        password: new FormControl('', [
+          Validators.required,
+          Validators.pattern(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/)
+        ]),
+        password_confirmation: new FormControl('', [
+          Validators.required,
+        ]),
+      }
+    );;
   }
 
 
