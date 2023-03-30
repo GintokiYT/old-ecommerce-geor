@@ -95,7 +95,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
 
       let tiempoActual = this.getCurrentTime();
 
-      let uuid = self.crypto.randomUUID();
+      // let uuid = self.crypto.randomUUID();
+      let uuid = 1;
 
       let messageActual = message;
 
