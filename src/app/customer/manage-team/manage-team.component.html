@@ -25,7 +25,6 @@
             stroke-linejoin="round"
           />
         </svg>
-
       </button>
 
       <ion-title>Equipo</ion-title>
@@ -39,18 +38,12 @@
     </div>
   </div>
 
-  <!-- <ion-img
-    (click)="openInviteTeam()"
-    class="icon-plus"
-    src="assets/collaborative-basquet/Plus-circle.svg">
-  </ion-img> -->
   <img
     (click)="openInviteTeam()"
     class="icon-plus"
     src="assets/collaborative-basquet/Plus-circle.svg"
     alt="plus"
   />
-
 
   <app-modal-invite-team *ngIf="modalInviteTeam"></app-modal-invite-team>
 </ion-content>

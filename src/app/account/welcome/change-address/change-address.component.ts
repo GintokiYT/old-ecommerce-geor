@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ActivatedRoute, NavigationExtras } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AppNavigationService } from '@geor360/ecore';
 import { IonInput, IonSearchbar } from '@ionic/angular';
 import { SettingsService } from 'src/app/services/settings.service';
@@ -31,6 +31,7 @@ export class ChangeAddressComponent {
     private route: ActivatedRoute,
     private navigator: AppNavigationService,
     private settingsService: SettingsService,
+    private router: Router,
     private languageService: LanguageService) {
     // this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
     this.languageService.getLanguage.subscribe( language =>  this.contenido = language['changeAddress'])
@@ -42,7 +43,15 @@ export class ChangeAddressComponent {
   // }
 
   onToBack() {
-    this.navigator.back('/account/welcome/my-location');
+
+    const currentRouter=this.router.url;
+    if(currentRouter==='/send/account/welcome/change-address'){
+      this.navigator.back('/send/account/welcome/my-location');
+    }else{
+      //R
+      this.navigator.back('/account/welcome/my-location');
+    }
+
   }
 
   onSelectAddress(address: string) {

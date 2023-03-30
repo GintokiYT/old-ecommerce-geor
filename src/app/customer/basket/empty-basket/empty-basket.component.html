@@ -1,7 +1,11 @@
-<ion-content >
-  <app-header-my-basket class="header-mybasket" title="Mi cesta"></app-header-my-basket>
-  <div class="basket d-flex justify-content-center">
-    <img src="/assets/collaborative-basquet/Carrito.png" alt="" />
+<ion-content>
+  <app-header-my-basket
+    class="header-mybasket"
+    title="Mi cesta"
+  ></app-header-my-basket>
+
+  <div class="basket d-flex justify-content-center container-main">
+    <img src="/assets/collaborative-basquet/Carrito.png" alt="img" />
   </div>
   <ion-label class="text fz-normal d-flex justify-content-center">
     Aún no has añadido ningún
@@ -9,13 +13,14 @@
   <ion-label class="text fz-normal d-flex justify-content-center">
     artículo a tu cesta
   </ion-label>
+
   <!-- CONTENIDO -->
-  <div class="container-productos-destacados">
-      <app-featured></app-featured>
-  </div>
+  <app-featured></app-featured>
 
 </ion-content>
-<!-- <app-modal-invite *ngIf="modalInvite"></app-modal-invite> -->
-<app-modal-invite *ngIf="modalInvite"></app-modal-invite>
-<app-footer-navigation></app-footer-navigation>
 
+<!-- Modal Invitar  -->
+<app-modal-invite *ngIf="modalInvite"></app-modal-invite>
+
+<!-- Footer  -->
+<app-footer-navigation></app-footer-navigation>

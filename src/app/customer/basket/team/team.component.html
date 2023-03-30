@@ -1,27 +1,19 @@
+ <!--Contenido-->
 <ion-content [fullscreen]="true">
   <app-header-team class="header-team" title="Equipo"> </app-header-team>
   <div class="container-main">
     <div *ngFor="let item of equipos" class="content-team">
-      <div class="contacts d-flex flex-row" (click)="openModal(item)">
-        <!--  <div class="image-wrapper" [ngClass]="{'loaded': isImageLoaded}"> -->
-        <!--  <ion-img [src]="item.image" (load)="isImageLoaded = true"></ion-img> -->
+      <div class="d-flex flex-row gap-3" (click)="openModal(item)">
         <img [src]="item.image" alt="img" />
-        <!-- </div> -->
         <div class="information fz-normal d-flex flex-column">
           <ion-label class="name">{{ item.nombre }}</ion-label>
           <div class="text-description d-flex flex-row fz-small">
             <ion-label
               *ngIf="item.estado.estado === 'Pendiente'"
-              class="pendiente d-flex flex-row justify-content-center align-items-center"
-            >
-            <!--   <ion-img
-                class="imagen-pendiente"
-                src="assets/collaborative-basquet/Pendiente.svg"
-              ></ion-img> -->
-             <!--  <img  class="imagen-pendiente" src="assets/collaborative-basquet/Pendiente.svg" alt="perfil"> -->
+              class="d-flex flex-row justify-content-center align-items-center gap-1">
               <div class="point"></div>
-              {{ item.estado.estado }}</ion-label
-            >
+              {{ item.estado.estado }}
+            </ion-label>
             <ion-label>{{ item.estado.numero }}</ion-label>
           </div>
         </div>
@@ -29,12 +21,7 @@
     </div>
   </div>
 
-  <!-- <ion-img
-    (click)="openInvite()"
-    class="icon-plus"
-    src="assets/collaborative-basquet/Plus-circle.svg"
-  ></ion-img> -->
-
+  <!--Boton-->
   <img
     (click)="openInvite()"
     class="icon-plus"
@@ -42,19 +29,13 @@
     alt="plus"
   />
 
+  <!--Modal-invitar-->
   <app-modal-invite *ngIf="modalInvite"></app-modal-invite>
-<!--   <app-modal-invite></app-modal-invite> -->
 
-  <!-- Elimina de la lista -->
-  <app-modal-resend
-    *ngIf="modalResend"
-    [selectedTeam]="selectedTeam"
-    (deleteTeam)="deleteTeam($event)"
-  ></app-modal-resend>
+  <!-- Modal-contactos-->
+  <app-modal-resend *ngIf="modalResend" [selectedTeam]="selectedTeam" (deleteTeam)="deleteTeam($event)"></app-modal-resend>
 
-  <app-modal-resend-invitation
-    *ngIf="modalResendInvitation"
-  ></app-modal-resend-invitation>
+   <!-- Modal-mensaje de exito-->
+  <app-modal-resend-invitation *ngIf="modalResendInvitation"></app-modal-resend-invitation>
 
-  <!-- <app-modal-accepted *ngIf="modalAccepted"></app-modal-accepted> -->
 </ion-content>

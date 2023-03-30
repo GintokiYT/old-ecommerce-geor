@@ -22,6 +22,7 @@ export class SliderCostsComponent implements OnInit {
   costSlidesOptions: any = {
     spaceBetween: 20,
     slidesPerView: 'auto',
+
   };
   constructor() { }
 

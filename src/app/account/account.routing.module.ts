@@ -51,18 +51,14 @@ const routes: Routes = [
        //
 
       {
-        path: "customer/manage-addresses/my-location",
-        component: MyLocationComponent
-      },
-      {
-        path: "customer/manage-addresses/addresses-delete/my-location",
-        component: MyLocationComponent
-      },
-
-      {
-        path: RouteCollection.account.welcome.changeAddress,
+       /*  path: RouteCollection.account.welcome.changeAddress, */
+        path:'account/welcome/change-address',
         component: ChangeAddressComponent,
       },
+      {
+         path:'send/account/welcome/change-address',
+         component: ChangeAddressComponent,
+       },
       {
         path: RouteCollection.auth.login,
         component: LoginComponent

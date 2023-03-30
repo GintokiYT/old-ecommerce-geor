@@ -1,9 +1,14 @@
 import { Component, ElementRef, Injector, OnInit, ViewChild } from '@angular/core';
-import { InviteService } from 'src/app/services/Invite.service';
+
 import { ViewComponent } from '@geor360/ecore';
 import { Contacts } from "@capacitor-community/contacts";
 import { Router } from '@angular/router';
-import { ContactsService } from '../../../../../services/contacts.service';
+import { ContactsService } from '../../../services/contacts.service';
+import { InviteService } from '../../../services/Invite.service';
+
+
+
+
 
 @Component({
   selector: 'app-modal-invite-team',

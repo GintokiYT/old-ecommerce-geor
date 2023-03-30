@@ -31,7 +31,7 @@ export class ManageUserInformationComponent extends ViewComponent implements OnI
     {
       option: "Equipo",
       src: "/assets/icons/icon-3user.svg",
-      goTo: "/customer/collaborative-team"
+      goTo: "/customer/manage-team"
     },
     {
       option: "Direcciones",

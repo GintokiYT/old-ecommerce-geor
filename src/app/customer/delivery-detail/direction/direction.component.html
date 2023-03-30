@@ -1,5 +1,4 @@
 <ion-content>
-
   <!-- Header -->
   <app-header
     title="Mis direcciones"
@@ -7,7 +6,7 @@
     iconRight="icon-delete"
     [backDirection]="prevUrl"
     (onClickDelete)="deleteDirection($event)"
-    titleModalDelete = "¿Seguro que quieres eliminar esta dirección?"
+    titleModalDelete="¿Seguro que quieres eliminar esta dirección?"
     [haveSelected]="oneTrue"
   >
   </app-header>
@@ -15,36 +14,36 @@
   <!-- Direction Data Container -->
   <div class="directions-container d-flex flex-column container-main">
     <div *ngFor="let direction of directions">
-    <ion-item lines="none" class="d-flex align-items-center direction-container" >
-      <ion-checkbox
-        [(ngModel)] = direction.selected
-        (ngModelChange)="checkBoxChange(direction.id)">
-      </ion-checkbox>
-      <div class="d-flex flex-column direction-information ion-text-wrp">
-        <ion-label class="fz-normal ion-text-wrap">{{direction.name}}</ion-label>
-      </div>
-    </ion-item>
-    <ion-label (click)="goLocation()" class="direction-information_edit fz-small">Editar</ion-label>
-  </div>
-   <!--  <ion-item lines="none">
-      <ion-checkbox
-          slot="start"
-          mode="ios"
+      <ion-item
+        lines="none"
+        class="d-flex align-items-center direction-container"
       >
-      </ion-checkbox>
-      <ion-label class="ion-text-wrp d-flex flex-column" style="gap:12px">
-        <p class="fz-normal ion-text-wrap">Jr. Samaritanos 879 Miraflores, Lima, Perú</p>
-        <p class="fz-small ion-text-wrap">Editar</p>
-      </ion-label>
-    </ion-item> -->
-
-    <div class="d-flex align-items-center" style="gap: 8px;">
-      <img src="/assets/icons/icon-plus.svg" style="cursor: pointer;">
-      <ion-label color="primary" style="cursor: pointer;" (click)="goLocation()">Nueva dirección</ion-label>
+        <ion-checkbox
+          [(ngModel)]="direction.selected"
+          (ngModelChange)="checkBoxChange(direction.id)"
+        >
+        </ion-checkbox>
+        <div class="d-flex flex-column direction-information ion-text-wrp">
+          <ion-label class="fz-normal ion-text-wrap">{{
+            direction.name
+          }}</ion-label>
+        </div>
+      </ion-item>
+      <ion-label
+        (click)="goLocation()"
+        class="direction-information_edit fz-small"
+        >Editar</ion-label
+      >
     </div>
 
-  </div> <!--End Direction Data Container-->
-
+    <div class="d-flex align-items-center" style="gap: 8px">
+      <img src="/assets/icons/icon-plus.svg" style="cursor: pointer" />
+      <ion-label color="primary" style="cursor: pointer" (click)="goLocation()"
+        >Nueva dirección</ion-label
+      >
+    </div>
+  </div>
+  <!--End Direction Data Container-->
 
   <!-- Footer -->
   <ion-footer class="ion-no-border ion-no-padding footer-ionic">
@@ -56,13 +55,10 @@
         expand="full"
         shape="round"
         color="primary"
-        style="margin: 0;"
+        style="margin: 0"
       >
         Confirmar
       </ion-button>
     </ion-toolbar>
   </ion-footer>
-
 </ion-content>
-
-

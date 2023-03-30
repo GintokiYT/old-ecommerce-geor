@@ -57,13 +57,8 @@ export class DirectionsComponent extends ViewComponent implements OnInit {
     const currentRouter = this.router.url;
     this.rs.setMyLocationLastBackDirection(currentRouter);
     this.navigation.forward('send/account/welcome/my-location');
-    /* this.navigation.forward('/customer/contact-search'); */
+
   }
-  /* handlerMessage = '';
-    roleMessage = ''; */
-
-
-
 
   deleteDirection(eliminar: boolean): void {
     if (eliminar) {
