@@ -31,7 +31,7 @@
      <!-- Order State -->
 
     <!-- En proceso -->
-    <div class="order-state d-flex flex-column" style="gap: 4px;" *ngIf="order.state==='EN PROCESO' || order.state==='ANULADO'">
+    <div class="order-state d-flex flex-column" style="gap: 4px;" *ngIf="order.state==='EN PROCESO'">
       <ion-skeleton-text [animated]="true" style="width: 200px"></ion-skeleton-text>
       <ion-skeleton-text [animated]="true" style="width: 150px"></ion-skeleton-text>
       <div class="container-bars d-flex" style="gap: 6px;">
@@ -226,7 +226,7 @@
     <!-- Order State -->
 
     <!-- En proceso -->
-    <div class="order-state d-flex flex-column" style="gap: 4px;" *ngIf="order.state==='EN PROCESO' || order.state==='ANULADO'">
+    <div class="order-state d-flex flex-column" style="gap: 4px;" *ngIf="order.state==='EN PROCESO'">
       <ion-label style="font-size: 14px;">Pedido #{{order.id}} - de <ion-label color="primary">Gerardo Ortíz</ion-label></ion-label>
       <ion-label style="font-weight: 500;">{{order.state}}</ion-label>
       <div class="container-bars d-flex" style="gap: 6px;">
@@ -258,7 +258,7 @@
 
 
     <!-- Entregado -->
-    <div class="d-flex flex-column" style="gap: 4px; font-size: 14px ; color: var(--ion-color-text-secundary);" *ngIf="order.state==='ENTREGADO'">
+    <div class="d-flex flex-column" style="gap: 4px; font-size: 14px ; color: var(--ion-color-text-secundary);" *ngIf="order.state==='ENTREGADO' || order.state==='ANULADO'">
       <ion-label>Pedido #{{order.id}}</ion-label>
       <div class="d-flex" style="gap: 20px;">
         <ion-label style="font-weight: 500;">{{order.state}}</ion-label>
@@ -314,7 +314,7 @@
 
 
     <!-- Order direction -->
-    <div class="order-direction d-flex flex-column" style="gap: 8px;">
+    <div class="order-direction d-flex flex-column" style="gap: 8px;" *ngIf="order.state!=='ANULADO'">
       <div class="d-flex justify-content-between">
         <ion-label style="font-weight: 500;">Detalles de entrega</ion-label>
         <ion-label color="primary" style="font-size: 14px;" (click)="goToDirections()">Cambiar</ion-label>
@@ -338,7 +338,7 @@
 
 
     <!-- Order pay -->
-    <div class="order-pay d-flex flex-column" style="gap: 8px;">
+    <div class="order-pay d-flex flex-column" style="gap: 8px;" *ngIf="order.state!=='ANULADO'">
       <ion-label style="font-weight: 500;">Detalles de pago</ion-label>
       <div class="d-flex" style="gap: 8px;" *ngIf="order.state!=='PENDIENTE DE PAGO'">
         <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -354,7 +354,7 @@
 
 
     <!-- Order products -->
-    <div class="order-products d-flex flex-column" style="gap: 12px;">
+    <div class="order-products d-flex flex-column" style="gap: 12px;" *ngIf="order.state!=='ANULADO'">
       <div class="d-flex justify-content-between">
         <ion-label style="font-weight: 500;">Productos (2)</ion-label>
       </div>
@@ -404,7 +404,7 @@
     </div>
 
     <!-- Order summary -->
-    <div class="order-summary d-flex flex-column" style="gap: 16px;">
+    <div class="order-summary d-flex flex-column" style="gap: 16px;" *ngIf="order.state!=='ANULADO'">
       <ion-label style="font-weight: 500;">Resumen de tu pedido</ion-label>
       <div class="summary-container d-flex flex-column" style="gap: 10px;">
         <div class="d-flex justify-content-between">
@@ -424,6 +424,11 @@
           <ion-label>S/ 12,589.00</ion-label>
         </div>
       </div>
+    </div>
+
+    <div class="d-flex flex-column" style="gap: 16px;" *ngIf="order.state==='ANULADO'">
+      <ion-label style="font-size: 20px;">Venció el plazo para pagar tu compra</ion-label>
+      <ion-label style="color: var(--ion-color-text-secundary);">Cancelamos la compra porque se terminó el tiempo que tenías para hacer el pago</ion-label>
     </div>
 
   </div>
