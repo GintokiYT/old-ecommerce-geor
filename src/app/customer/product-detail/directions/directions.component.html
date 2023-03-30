@@ -18,7 +18,7 @@
         class="d-flex align-items-center direction-container"
       >
         <ion-checkbox
-
+          [(ngModel)]="direction.selected"
           (ngModelChange)="checkBoxChange(direction.id)"
         >
         </ion-checkbox>
