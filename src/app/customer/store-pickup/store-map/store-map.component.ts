@@ -2,17 +2,32 @@ import { Component, OnInit, Injector } from '@angular/core';
 import {Location} from '@angular/common';
 import { GeolocationComponent } from 'src/shared/inherit/geolocation.component';
 import { Geolocation } from '@capacitor/geolocation';
+
+import { AlertController } from '@ionic/angular';
+import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
+import { ViewComponent } from '@geor360/ecore';
 @Component({
   selector: 'app-store-map',
   templateUrl: './store-map.component.html',
   styleUrls: ['./store-map.component.scss'],
 })
-export class StoreMapComponent extends GeolocationComponent implements OnInit {
-
-  constructor(private location: Location,_injector: Injector,) { 
+export class StoreMapComponent extends ViewComponent implements OnInit {
+  map:any;
+  constructor(_injector: Injector,private alertController: AlertController,
+    private diagnostic: Diagnostic) { 
     super(_injector);
-    this.mapId = 'map';
+    this.diagnostic.registerLocationStateChangeHandler((state) => {
+      if (state === this.diagnostic.locationMode.LOCATION_OFF) {
+        // alert('La ubicación se ha desactivado');
+      } else {
+        location.reload();
+        // alert('La ubicación se ha activado');
+      }
+    })
   }
+  ngOnInit(): void {
+  }
+
 
   // override ngOnInit(): void {
   //   const mql: MediaQueryList | undefined = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
@@ -33,7 +48,7 @@ export class StoreMapComponent extends GeolocationComponent implements OnInit {
   // override onMapLoaded(): void {
   // }
   goBack(){
-    this.location.back();
+    this.navigation.back("/customer/stores");
   }
 
   getCurrentPosition(latitude: any, longitude: any) {
@@ -420,8 +435,11 @@ export class StoreMapComponent extends GeolocationComponent implements OnInit {
     }
     return estiloMapa;
   }
-  ngAfterViewInit(): void {
-    // const loading: HTMLDivElement = this.loading.nativeElement;
+
+  async ngAfterViewInit(){
+    try {
+      const position = await Geolocation.getCurrentPosition();
+      // const loading: HTMLDivElement = this.loading.nativeElement;
 
     const printCurrentPosition = async () => {
       const coordinates = await Geolocation.getCurrentPosition();
@@ -438,6 +456,18 @@ export class StoreMapComponent extends GeolocationComponent implements OnInit {
     };
 
     printCurrentPosition();
+      
+    } catch (error) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'No se pudo obtener la ubicación. Por favor, asegúrese de que el GPS esté activado e inténtelo de nuevo.',
+        buttons: [{
+          text: 'Configuraciones',
+          handler: () => this.diagnostic.switchToLocationSettings()
+        }]
+      });
+      await alert.present();
+    }
   }
 
   actualizar() {
