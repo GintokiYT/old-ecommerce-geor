@@ -49,9 +49,16 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
 
     this.rs.currentMiPedidoLastBackDirection.subscribe( route => this.previousRoute = route);
     console.log(this.previousRoute);
+
+    console.log("Hola mundo")
   }
 
   ngOnInit() {
+
+    if(this.router.url === '/customer/manage-favorites/confirm-order') {
+      this.previousRoute = '/customer/manage-favorites/variants';
+    }
+
     this.cpService.currentMyOrder$.subscribe((myOrder) => {
       this.payMethod = myOrder.payMethod;
       this.coupon = myOrder.coupon;
@@ -62,7 +69,7 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   onGoToPayMethods() {
 
     this.rs.setSetPaymentMethodsLastBackDirection(this.router.url);
-    this.navigation.forward("customer/payment-methods")
+    this.navigation.root("customer/payment-methods","forward")
     //console.log(this.previousRoute)
   }
 

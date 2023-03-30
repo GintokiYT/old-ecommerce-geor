@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-set-contact',
   templateUrl: './set-contact.component.html',
-  styleUrls: ['./set-contact.component.scss'],
+  styleUrls: ['set-contact.component.scss'],
 })
 export class SetContactComponent extends ViewComponent implements OnInit {
 
   form!: FormGroup;
-  contact : any;
-  backSubmitDirection : string;
+  contact: any;
+  backSubmitDirection: string;
   previousRoute: string;
   @ViewChild(IonContent) content: IonContent;
 
@@ -23,12 +23,11 @@ export class SetContactComponent extends ViewComponent implements OnInit {
   constructor(private _injector: Injector, private bds: BillingDataService,
     private rs: RouteService, private router: Router) {
     super(_injector);
-    this.rs.currentSetContactLastSubmitBackDirection.subscribe( d => this.backSubmitDirection=d)
+    this.rs.currentSetContactLastSubmitBackDirection.subscribe(d => this.backSubmitDirection = d)
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
-   }
+  }
 
   ngOnInit() {
-
     this.form = new FormGroup({
 
       name: new FormControl('', [
@@ -39,12 +38,12 @@ export class SetContactComponent extends ViewComponent implements OnInit {
       ]),
       phone: new FormControl('', [
         Validators.required,
+        Validators.minLength(11)
       ]),
       email: new FormControl('', [
         Validators.required,
       ])
     });
-
   }
 
   onSubmit() {
@@ -54,18 +53,18 @@ export class SetContactComponent extends ViewComponent implements OnInit {
     }
     this.bds.setContactTemp(contact);
 
-    console.log("Previous route: "+ this.previousRoute)
-    console.log("BackSubmitDirection: "+ this.backSubmitDirection)
+    console.log("Previous route: " + this.previousRoute)
+    console.log("BackSubmitDirection: " + this.backSubmitDirection)
 
-    if(this.previousRoute.includes("read-contacts")){
+    if (this.previousRoute.includes("read-contacts")) {
       this.navigation.back(this.backSubmitDirection);
-    }else{
+    } else {
       this.navigation.back(this.previousRoute);
     }
 
   }
 
-  checkFocusEmail(){
+  checkFocusEmail() {
     this.content.scrollToBottom();
   }
 

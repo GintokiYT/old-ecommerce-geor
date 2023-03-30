@@ -89,13 +89,15 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     	}
     })
 
+    /*
     buttonSend.addEventListener('click', () => {
-
+      alert('xd')
       const message:string = this.enviarMensaje();
 
       let tiempoActual = this.getCurrentTime();
 
-      let uuid = self.crypto.randomUUID();
+      // let uuid = self.crypto.randomUUID();
+      let uuid = 1;
 
       let messageActual = message;
 
@@ -124,6 +126,45 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
         messageInput.focus();
       }
     })
+    */
+  }
+
+  sendMessage() {
+    //alert('enviando!!!')
+    const messageInput:HTMLDivElement = this.messageInput.nativeElement;
+    const placeholder: HTMLDivElement = this.placeholder.nativeElement;
+
+    const message:string = this.enviarMensaje();
+
+    let tiempoActual = this.getCurrentTime();
+
+    // let uuid = self.crypto.randomUUID();
+    //let uuid = 1;
+
+    let messageActual = message;
+
+    if(messageActual.length > 0){
+      this.contentMessage = {
+        id: '1',
+        time: tiempoActual,
+        author: 'user',
+        image: '',
+        message: {
+          type: 'text',
+          content: messageActual
+        }
+      }
+      this.messages.push(this.contentMessage);
+
+      // Ver el mensaje si tiene los saltos
+      // console.log(messageActual);
+
+      this.contentInput.nativeElement.classList.remove('active');
+
+      this.clearMessageObject(messageInput, placeholder);
+
+      messageInput.focus();
+    }
   }
 
   enviarMensaje() {
@@ -346,7 +387,10 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     setTimeout(() => {
       this.navigation.root("/customer/manage-coupons/products-with-coupon","forward");
     }, 500);
+  }
 
+  codigo() {
+    alert('xd')
   }
 }
 

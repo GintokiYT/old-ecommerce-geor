@@ -12,7 +12,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MyLocationComponent } from './welcome/my-location/my-location.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
-
 import { LoadingAppComponent } from './welcome/loading-app/loading-app.component';
 import { CountrySelectComponent } from './register/country-select/country-select.component';
 
@@ -29,8 +28,6 @@ const routes: Routes = [
         // path: RouteCollection.account.welcome.selectCountry,
         component: SelectCountryComponent,
       },
-
-
       {
         path: RouteCollection.account.welcome.wheAreYou,
         component: WheAreYouComponent,

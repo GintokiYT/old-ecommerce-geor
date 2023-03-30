@@ -3,6 +3,8 @@ import { RouteCollection } from 'src/shared/route-collection';
 import { Component } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { RouteService } from '../../../services/route.service';
+import { Geolocation, } from '@capacitor/geolocation';
+
 
 interface Contenido {
   subTitle: string;
@@ -23,21 +25,9 @@ export class WheAreYouComponent {
     this.languageService.getLanguage.subscribe(language => this.contenido = language['wheAreYou']);
   }
 
-  OnInit() { }
+  ngOnInit(): void {}
 
   onSubmit() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        // Aquí puedes utilizar las coordenadas para mostrar la ubicación del usuario en un mapa o realizar otras acciones.
-        console.log(lat, lng);
-      });
-    } else {
-      // Si el navegador del usuario no es compatible con la geolocalización, puedes mostrar un mensaje de error o realizar otra acción.
-    }
-
-    this.rs.setMyLocationLastBackDirection("/account/welcome/whe-are-you");
     this.navigator.root(RouteCollection.account.welcome.myLocation, 'forward');
   }
 

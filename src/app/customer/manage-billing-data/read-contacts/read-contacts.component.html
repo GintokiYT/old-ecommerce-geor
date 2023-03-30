@@ -50,39 +50,22 @@
   
   </ion-header>
 
-  <div class="container-main">
-
-    <!-- SKELETON -->
-    <div class="contacts-container margin-foooter-ionic" *ngIf="!contactsLoaded">
-      <ion-item class="contact" lines="none" *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
-        <div class="d-flex flex-column" style="gap: 4px;">
-          <ion-skeleton-text [animated]="true" style="width: 100px"></ion-skeleton-text>
-          <div class="d-flex flex-column" *ngFor="let phone of [1]">
-            <ion-skeleton-text [animated]="true" style="width: 60px"></ion-skeleton-text>
-          </div>
+  <!-- SKELETON -->
+  <div class="container-main contacts-container margin-foooter-ionic" *ngIf="!contactsLoaded">
+    <ion-item class="contact" lines="none" *ngFor="let contact of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
+      <div class="d-flex flex-column" style="gap: 4px;">
+        <ion-skeleton-text [animated]="true" style="width: 100px"></ion-skeleton-text>
+        <div class="d-flex flex-column" *ngFor="let phone of [1]">
+          <ion-skeleton-text [animated]="true" style="width: 60px"></ion-skeleton-text>
         </div>
-      </ion-item>
-    </div>
-
-
-    <!-- REAL CONTACTS -->
-    <!-- <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
-      <ion-item class="contact" lines="none" *ngFor="let contact of contactsResults" (click)="goToAddCompany(contact)">
-        <div class="d-flex flex-column" style="gap: 4px;">
-          <p class="name">{{contact?.name?.display}}</p>
-          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones;let indexPhone=index">
-            <p class="phone" *ngIf="indexPhone===0">{{phone?.number}}</p>
-          </div>
-        </div>
-      </ion-item>
-    </div> -->
-
+      </div>
+    </ion-item>
   </div>
 
   <!-- REAL CONTACTS -->
   <!-- Item size = height item + gap of list -->
-  <cdk-virtual-scroll-viewport class="container-main" itemSize="74" minBufferPx="900" maxBufferPx="900">
-    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
+  <cdk-virtual-scroll-viewport itemSize="74" minBufferPx="900" maxBufferPx="900">
+    <div class="contacts-container margin-foooter-ionic container-main" *ngIf="contactsLoaded">
       <ion-item class="contact" lines="none" *cdkVirtualFor="let contact of contactsResults" (click)="goToAddCompany(contact)">
         <div class="d-flex flex-column" style="gap: 4px;">
           <p class="name">{{contact?.name?.display}}</p>
@@ -95,7 +78,7 @@
   </cdk-virtual-scroll-viewport>
 
   <!-- <cdk-virtual-scroll-viewport itemSize="74" minBufferPx="900" maxBufferPx="900">
-    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
+    <div class="container-main contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
       <ion-item class="contact" lines="none" *cdkVirtualFor="let contact of items" (click)="goToAddCompany(contact)">
         <div class="d-flex flex-column" style="gap: 4px;">
           <p class="name">{{contact}}</p>

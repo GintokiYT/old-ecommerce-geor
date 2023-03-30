@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   @ViewChild("inputPassword") inputPassword: IonInput;
   loginForm!: FormGroup;
   inputPasswordType: string = "password";
-  heightStart: string = window.innerHeight.toString();
   showFakeEye: boolean = false;
   showTrueEye: boolean = true;
   fakeFooter: boolean = true;
@@ -42,7 +41,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = new FormGroup({
       username: new FormControl('', [
-        Validators.required,
+        // Validators.required
       ]),
       password: new FormControl('', [
         Validators.required,
@@ -53,26 +52,14 @@ export class LoginComponent implements OnInit {
 
   ionViewDidEnter() {
     Keyboard.addListener('keyboardWillHide', () => {
-
       this.ngZone.run(() => {
-        // setTimeout(() => {
-        //   this.fakeFooter = true;
-        //   this.trueFooter = false;
         this.trueFooter = false;
         setTimeout(() => {
           this.fakeFooter = true;
           this.visibleFooterNavigation = true;
         }, 50);
-
-        // }, 50);
       })
     });
-
-    // Keyboard.addListener('keyboardDidHide', () => {
-    //   this.ngZone.run( () => {
-    //     this.visibleFooterNavigation = true;
-    //   })
-    // });
 
     Keyboard.addListener('keyboardWillShow', () => {
 
@@ -82,12 +69,6 @@ export class LoginComponent implements OnInit {
         this.visibleFooterNavigation = false;
       })
     });
-
-    // Keyboard.addListener('keyboardDidShow', () => {
-    //   this.ngZone.run( () => {
-    //     this.visibleFooterNavigation = false;
-    //   })
-    // });
 
   }
 

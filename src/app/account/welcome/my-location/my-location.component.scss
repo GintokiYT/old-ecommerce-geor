@@ -64,7 +64,6 @@ ion-content {
   }
 }
 
-
 .container-my-location .footer {
   width: 100%;
   padding: 24px 16px 24px 16px;
@@ -72,9 +71,7 @@ ion-content {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  background-color: var(--ion-background-color);
-
-  padding-bottom: var(--ion-padding-bottom);
+  background-color: var(--ion-background-color); 
 
   @media (min-width: 390px) {
     padding: 24px;
@@ -87,36 +84,114 @@ ion-content {
   }
 }
 
-ion-button {
-  height: 36px;
+.button-update {
+  user-select: none;
+  outline: none;
+  border: none;
   position: absolute;
-  right: calc(16px - 10px);
-  bottom: calc(24px - 10px);
-  box-shadow: 0px 4px 6px -3px rgba(0, 0, 0, 0.25);
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
   border-radius: 32px;
-  padding: 8px, 12px, 8px, 12px;
-  margin: 0;
-  --background: var(--ion-background-secondary) !important;
-
-  &::part(native) {
-    padding: 12px;
-  }
+  width: 114px;
+  height: 36px;
+  box-shadow: 0px 4px 6px -3px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--card-background-tertiary);
 
   @media (min-width: 390px) {
     right: 24px;
-    right: calc(24px - 10px);
+    bottom: 24px;
   }
 
-  ion-label {
-    color: var(--ion-color-basic) !important;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    width: 90px;
+    height: 20px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ion-color-basic);
+    }
+  }
+}
+
+// Spinner hecho por mi no robado :v
+.container-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .buttons-maps {
+    display: none;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    gap: 10px;
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
     font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.15px;
-    padding-left: 10px;
   }
 
-  img {
-    min-width: 18px;
-    min-height: 18px;
+  .lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
   }
 }

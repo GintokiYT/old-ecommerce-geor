@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 })
 export class ReadContactsComponent extends ViewComponent implements OnInit {
 
-  items: any[];
+  //items: any[];
   contacts: any[];
   contactsResults: any[];
   contactsLoaded: boolean = false;

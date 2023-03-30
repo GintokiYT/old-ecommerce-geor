@@ -1,6 +1,5 @@
-import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector} from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
@@ -13,8 +12,8 @@ export class RecoverPasswordComponent extends ViewComponent implements OnInit {
   form!: FormGroup;
   showTextHelperEmail = false;
 
-  constructor(private router: Router, private _injector: Injector) {
-    super(_injector);
+  constructor(private _injector: Injector) {
+    super(_injector)
   }
 
   ngOnInit() {
@@ -27,30 +26,21 @@ export class RecoverPasswordComponent extends ViewComponent implements OnInit {
     });
   }
 
-
   onSubmit() {
-    // const params: NavigationExtras = {
-    //   queryParams: {
-    //     email: this.form.get('email')?.value,
-    //   },
-    // };
-    //this.router.navigate([RouteCollection.auth.recoverPasswordEmail], params);
-
-
     const params = {
       email: this.form.get('email')?.value
     }
-
-    this.navigation.root("recover-password-code","forward",params)
-    
+    this.navigation.root("recover-password-code", "forward", params)
   }
 
-
-  checkFocus(){
+  checkFocus() {
     this.showTextHelperEmail = true;
   }
 
-  checkBlur(){
+  checkBlur() {
     this.showTextHelperEmail = false;
   }
+
+
+
 }
