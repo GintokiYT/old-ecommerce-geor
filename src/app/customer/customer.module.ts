@@ -4,13 +4,12 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CustomerRoutingModule } from './customer.routing.module';
 import { CoreModule } from '@geor360/ecore';
-import { CestaModule } from './basket/basket.module';
+import { BasketModule } from './basket/basket.module';
 import { StorePickupModule } from './store-pickup/store-pickup.module';
 import { DeliveryDetailModule } from './delivery-detail/delivery-detail.module';
 import { InboxModule } from './inbox/inbox.module';
 import { ProductDetailModule } from './product-detail/product-detail.module';
 import { PayCardModule } from './pay-card/pay-card.module';
-
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 import { ShareModule } from '../shared/shared.module';
 import { ConfirmOrderModule } from './confirm-order/confirm-order.module';
@@ -28,6 +27,7 @@ import { ManageCouponsModule } from './manage-coupons/manage-coupons.module';
 import { SearchGeneralModule } from './search-general/search-general.module';
 import { ManageOrderModule } from './manage-order/manage-order.module';
 import { ManagePaymentMethodModule } from './manage-payment-method/manage-payment-method.module';
+import { ManageTeamModule } from './manage-team/manage-team.module';
 
 
 @NgModule({
@@ -49,7 +49,7 @@ import { ManagePaymentMethodModule } from './manage-payment-method/manage-paymen
     BillingDataModule,
     ManageUserInformationModule,
     ConfirmCardPayModule,
-    CestaModule,
+    BasketModule,
     ManageFavoritesModule,
     ManageBillingDataModule,
     HomeModule,
@@ -59,7 +59,8 @@ import { ManagePaymentMethodModule } from './manage-payment-method/manage-paymen
     SettingsModule,
     SearchGeneralModule,
     ManageOrderModule,
-    ManagePaymentMethodModule
+    ManagePaymentMethodModule,
+    ManageTeamModule
   ],
   declarations: [
 

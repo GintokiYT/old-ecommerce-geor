@@ -26,7 +26,6 @@ import { WayPayComponent } from './pay-card/way-pay/way-pay.component';
 import { PaymentMethodsComponent } from './pay-card/payment-methods/payment-methods.component';
 import { AddCardComponent } from './pay-card/add-card/add-card.component';
 import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
-
 import { MainSettingsComponent } from './settings/main-settings/main-settings.component';
 import { MyDataSettingsComponent } from './settings/my-data-settings/my-data-settings.component';
 import { PasswordSettingsComponent } from './settings/password-settings/password-settings.component';
@@ -38,7 +37,6 @@ import { ReturnsExchangesSettingsComponent } from './settings/returns-exchanges-
 import { AddCouponsComponent } from './add-coupons/add-coupons.component';
 import { BillingDataComponent } from './billing-data/billing-data.component';
 import { ManageUserInformationComponent } from './manage-user-information/manage-user-information.component';
-import { CollaborativeTeamComponent } from './basket/team/collaborative-team/collaborative-team.component';
 import { LastStepComponent } from './confirm-card-pay/last-step/last-step.component';
 import { ScreenModeSettingsComponent } from './settings/screen-mode-settings/screen-mode-settings.component';
 import { LanguageSettingsComponent } from './settings/language-settings/language-settings.component';
@@ -77,6 +75,7 @@ import { DirectionsComponent } from './product-detail/directions/directions.comp
 import { CountryBuyComponent } from './delivery-detail/buy/country-buy/country-buy.component';
 import { ManagePaymentMethodComponent } from './manage-payment-method/manage-payment-method.component';
 import { CardPaymentMethodsComponent } from './manage-payment-method/card-payment-methods/card-payment-methods.component';
+import { ManageTeamComponent } from './manage-team/manage-team.component';
 
 const routes: Routes = [
   {
@@ -172,12 +171,11 @@ const routes: Routes = [
       {path: 'manage-order/instructions', component:InstructionsComponent},
       {path: 'manage-payment-method', component:ManagePaymentMethodComponent},
       {path: 'card-payment-methods', component: CardPaymentMethodsComponent},
+      {path: 'manage-team', component:ManageTeamComponent},
 
       // {path: 'manage-addresses', component:ManageAddressesComponent},
       // {path: 'manage-addresses/addresses-delete', component:AddressesDeleteComponent},
 
-
-      { path: 'collaborative-team',component:CollaborativeTeamComponent},
       { path: 'collaborative-team/team', component: TeamComponent },
       { path: 'collaborative-team/contact-team',component: ContactTeamComponent},
 

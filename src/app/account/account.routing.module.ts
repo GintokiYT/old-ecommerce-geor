@@ -54,9 +54,14 @@ const routes: Routes = [
        //
 
       {
-        path: RouteCollection.account.welcome.changeAddress,
+       /*  path: RouteCollection.account.welcome.changeAddress, */
+        path:'account/welcome/change-address',
         component: ChangeAddressComponent,
       },
+      {
+         path:'send/account/welcome/change-address',
+         component: ChangeAddressComponent,
+       },
       {
         path: RouteCollection.auth.login,
         component: LoginComponent

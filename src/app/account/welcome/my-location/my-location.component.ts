@@ -106,7 +106,13 @@ export class MyLocationComponent extends GeolocationComponent implements OnInit,
   }
 
   onToChangeAddress() {
-    this.navigation.forward('/account/welcome/change-address');
+    const currentRouter=this.router.url;
+    if(currentRouter==='/send/account/welcome/my-location'){
+      this.navigation.back('send/account/welcome/change-address');
+    }else{
+      //R
+      this.navigation.forward('/account/welcome/change-address');
+    }
   }
 
   onBack() {
