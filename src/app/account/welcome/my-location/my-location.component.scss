@@ -64,7 +64,6 @@ ion-content {
   }
 }
 
-
 .container-my-location .footer {
   width: 100%;
   padding: 24px 16px 24px 16px;
@@ -72,9 +71,7 @@ ion-content {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  background-color: var(--ion-background-color);
-
-  padding-bottom: var(--ion-padding-bottom);
+  background-color: var(--ion-background-color); 
 
   @media (min-width: 390px) {
     padding: 24px;
