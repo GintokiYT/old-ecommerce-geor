@@ -4,6 +4,10 @@ import { LanguageService } from '../../../services/language.service';
 import { Router } from '@angular/router';
 import { ViewComponent } from '@geor360/ecore';
 
+import { AlertController } from '@ionic/angular';
+
+import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
+
 import { Geolocation } from '@capacitor/geolocation';
 import { Plugins } from '@capacitor/core';
 
@@ -32,19 +36,37 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   constructor(
     _injector: Injector,
     private router: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private alertController: AlertController,
+    private diagnostic: Diagnostic
   ) {
     super(_injector)
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
+    this.diagnostic.registerLocationStateChangeHandler((state) => {
+      if (state === this.diagnostic.locationMode.LOCATION_OFF) {
+        // alert('La ubicación se ha desactivado');
+      } else {
+        location.reload();
+        // alert('La ubicación se ha activado');
+      }
+    })
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
-  ngAfterViewInit(): void {
+  async ngAfterViewInit() {
 
-    const loading: HTMLDivElement = this.loading.nativeElement;
+    try {
+      const position = await Geolocation.getCurrentPosition();
 
-    const printCurrentPosition = async () => {
+      const loading: HTMLDivElement = this.loading.nativeElement;
+      const buttons: HTMLDivElement = document.querySelector('.buttons-maps')
+
+      // setTimeout(() => {
+      //   buttons.classList.remove('d-none')
+      // }, 4000);
+
+      const printCurrentPosition = async () => {
 
       const coordinates = await Geolocation.getCurrentPosition();
       localStorage.setItem('location', JSON.stringify(
@@ -57,9 +79,20 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       this.getCurrentPosition(coordinates.coords.latitude, coordinates.coords.longitude);
 
       setTimeout(() => loading.classList.add('d-none'), 1500);
-    };
 
-    printCurrentPosition();
+      }
+      printCurrentPosition();
+    } catch (error) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'No se pudo obtener la ubicación. Por favor, asegúrese de que el GPS esté activado e inténtelo de nuevo.',
+        buttons: [{
+          text: 'Configuraciones',
+          handler: () => this.diagnostic.switchToLocationSettings()
+        }]
+      });
+      await alert.present();
+    }
   }
 
   getCurrentPosition(latitude: any, longitude: any) {
@@ -470,6 +503,15 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       this.getCurrentPosition(currentPosition.lat, currentPosition.lng);
     }
   }
-}
 
+  closeLoading() {
+    const loading: HTMLDivElement = this.loading.nativeElement;
+
+    loading.classList.add('d-none');
+  }
+
+  activeGPS() {
+    this.diagnostic.switchToLocationSettings();
+  }
+}
 
