@@ -46,11 +46,16 @@ export class ChangeAddressComponent {
 
     const currentRouter=this.router.url;
     if(currentRouter==='/send/account/welcome/change-address'){
-      this.navigator.back('/send/account/welcome/my-location');
-    }else{
-      //R
-      this.navigator.back('/account/welcome/my-location');
+      return this.navigator.back('/send/account/welcome/my-location');
+    }else if(currentRouter==="/customer/manage-addresses/my-location/search"){
+      return this.navigator.root("/customer/manage-addresses/my-location","back")
+    }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location/search"){
+      return this.navigator.root("/customer/manage-addresses/addresses-delete/my-location","back");
+    }else if (currentRouter=='/direction/account/welcome/change-address'){
+      return this.navigator.root("/direction/account/welcome/my-location","back");
     }
+
+    this.navigator.back('/account/welcome/my-location');
 
   }
 
