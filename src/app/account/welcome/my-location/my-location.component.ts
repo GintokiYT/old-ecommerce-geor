@@ -36,6 +36,7 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   ) {
     super(_injector)
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
+    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
   }
 
   ngOnInit(): void {}
@@ -462,13 +463,11 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       return this.navigation.root('/customer/direction','forward')
     }else if(this.previousRoute.includes("manage")){
       return this.navigation.back(this.previousRoute);
-    }else{
-      this.navigation.root('/customer/home','forward');
     }
 
 
 
-    //this.navigation.root('/customer/home', 'forward');
+    this.navigation.root('/customer/home', 'forward');
   }
 
   actualizar() {
