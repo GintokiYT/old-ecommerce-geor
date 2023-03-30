@@ -483,23 +483,12 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   nextProyect() {
-    // if (this.previousRoute.includes("manage")) {
-    //   this.navigation.back(this.previousRoute);
-    // } else {
-    //   this.navigation.root('/customer/home','forward');
-    // }
-    //send y Direction
     const currentRouter = this.router.url;
     if(currentRouter==='/send/account/welcome/my-location'){
       return this.navigation.root('/customer/send-directions','forward')
     }else if(currentRouter==='/direction/account/welcome/my-location'){
       return this.navigation.root('/customer/direction','forward')
-    }else if(this.previousRoute.includes("manage")){
-      return this.navigation.back(this.previousRoute);
     }
-
-
-
     this.navigation.root('/customer/home', 'forward');
   }
 
