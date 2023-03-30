@@ -29,7 +29,6 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   currentPosition: any;
 
   contenido: Contenido;
-  previousRoute: string;
 
   @ViewChild('loading') loading: ElementRef;
 
@@ -42,7 +41,6 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   ) {
     super(_injector)
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
-    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.diagnostic.registerLocationStateChangeHandler((state) => {
       if (state === this.diagnostic.locationMode.LOCATION_OFF) {
         // alert('La ubicación se ha desactivado');
