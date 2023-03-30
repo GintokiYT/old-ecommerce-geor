@@ -478,19 +478,30 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   onBack() {
-    //this.navigation.back('/account/welcome/whe-are-you');
-    this.navigation.back(this.previousRoute);
+    const currentRouter = this.router.url;
+    if(currentRouter==='/direction/account/welcome/my-location'){
+      return this.navigation.root('/customer/direction','forward')
+    }else if(currentRouter==="/customer/manage-addresses/my-location"){
+      return this.navigation.root("/customer/manage-addresses","back")
+    }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location"){
+      return this.navigation.root("customer/manage-addresses/addresses-delete","back")
+    }
+
+    this.navigation.back('/account/welcome/whe-are-you');
   }
 
   nextProyect() {
+    //send y Direction
     const currentRouter = this.router.url;
     if(currentRouter==='/send/account/welcome/my-location'){
       return this.navigation.root('/customer/send-directions','forward')
     }else if(currentRouter==='/direction/account/welcome/my-location'){
       return this.navigation.root('/customer/direction','forward')
+    }else if(currentRouter==="/customer/manage-addresses/my-location"){
+      return this.navigation.root("/customer/manage-addresses","back")
+    }else if(currentRouter==="customer/manage-addresses/addresses-delete/my-location"){
+      return this.navigation.root("customer/manage-addresses/addresses-delete","back");
     }
-
-
 
     this.navigation.root('/customer/home', 'forward');
   }
