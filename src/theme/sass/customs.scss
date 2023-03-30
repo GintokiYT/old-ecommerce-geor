@@ -122,7 +122,7 @@
 //Default
 .form-group {
 
-  --border-color: var(--ion-color-border-input);
+  --border-color: var(--ion-color-border-input) !important;
 
   ion-label {
     color: #6c757d !important;
@@ -130,16 +130,14 @@
 }
 
 //Focus
-.form-group.item-has-focus{
+.form-group.item-has-focus {
 
   --border-color: var(--ion-color-primary) !important;
 
-  ion-label{
-      color:  var(--ion-color-primary) !important;
+  ion-label {
+    color: var(--ion-color-primary) !important;
   }
 }
-
-
 
 //Error
 // .form-group.item-has-focus{
@@ -151,11 +149,12 @@
 //   }
 // }
 
-.form-group.item-has-value{
-  &.ion-invalid{
-    ion-label{
+.form-group.item-has-value {
+  &.ion-invalid {
+    ion-label {
       color: #F44336 !important;
     }
+
     --border-color: #F44336 !important;
   }
 }
@@ -293,39 +292,34 @@ ion-slides {
   }
 }
 
-.container-main{
-  margin-top: calc( var(--ion-safe-area-top,0) + 64px) !important;
+.container-main {
+  margin-top: calc(var(--ion-safe-area-top, 0) + 64px) !important;
 }
 
-@media(min-width:390px){
-  .container-main{
-    margin-top: calc( var(--ion-safe-area-top,0) + 80px) !important;
+@media(min-width:390px) {
+  .container-main {
+    margin-top: calc(var(--ion-safe-area-top, 0) + 80px) !important;
   }
 }
 
 
 //Para el contenido que tenga un footer el boton plus
-body.md{
-  .margin-foooter-ionic{
-    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 16px );
+body.md {
+  .margin-foooter-ionic {
+    margin-bottom: calc(var(--ion-safe-area-bottom, 0) + 16px);
   }
 }
 
-body.ios{
-  .margin-foooter-ionic{
-    margin-bottom: calc( var(--ion-safe-area-bottom,0) + 16px );
+body.ios {
+  .margin-foooter-ionic {
+    margin-bottom: calc(var(--ion-safe-area-bottom, 0) + 16px);
   }
 }
 
-@media(min-width:390px){
-  body.md{
-    .margin-foooter-ionic{
-      margin-bottom: calc( var(--ion-safe-area-bottom,0) + 24px );
+@media(min-width:390px) {
+  body.md {
+    .margin-foooter-ionic {
+      margin-bottom: calc(var(--ion-safe-area-bottom, 0) + 24px);
     }
   }
 }
-
-
-
-
-

@@ -42,35 +42,21 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.form = new FormGroup(
       {
         password: new FormControl('', [
           Validators.required,
-          Validators.pattern(this.passwordPattern)
+          Validators.pattern(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040\.\;\,\_\[\]\{\}\/\\])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/)
         ]),
         password_confirmation: new FormControl('', [
           Validators.required,
         ]),
       }
-    );
+    );;
   }
 
 
   ionViewDidEnter() {
-    // this.platform.backButton.subscribeWithPriority(10, () => {
-    //   if(this.showFakeEye===true || this.showFakeEye2===true){
-    //     if(this.showFakeEye===true){
-    //       this.showFakeEye = false;
-    //       this.showTrueEye = true;
-    //     }
-    //     if(this.showFakeEye2===true){
-    //       this.showFakeEye2 = false;
-    //       this.showTrueEye2 =
-    //     }
-    //   }
-    // });
-
     Keyboard.addListener('keyboardWillHide', () => {
       if (this.showFakeEye === true || this.showFakeEye2 === true) {
         if (this.showFakeEye === true) {
@@ -83,14 +69,11 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
         }
       }
     });
-
   }
-
 
   changeInputValue() {
     if (this.inputPassword?.value === this.inputPasswordConfirm?.value) {
       if (this.inputPasswordConfirm?.value.toString().length > 0) {
-        console.log("hola1")
         this.equalPassword = true;
       }
     } else {
@@ -101,7 +84,6 @@ export class RestorePasswordComponent extends ViewComponent implements OnInit {
   changeInputPasswordConfirmValue() {
     if (this.inputPassword?.value === this.inputPasswordConfirm?.value) {
       if (this.inputPasswordConfirm?.value.toString().length > 0) {
-        console.log("hola2")
         this.equalPassword = true;
       }
     } else {

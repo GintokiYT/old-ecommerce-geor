@@ -49,6 +49,8 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
 
     this.rs.currentMiPedidoLastBackDirection.subscribe( route => this.previousRoute = route);
     console.log(this.previousRoute);
+
+    console.log("Hola mundo")
   }
 
   ngOnInit() {
@@ -67,7 +69,7 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   onGoToPayMethods() {
 
     this.rs.setSetPaymentMethodsLastBackDirection(this.router.url);
-    this.navigation.forward("customer/payment-methods")
+    this.navigation.root("customer/payment-methods","forward")
     //console.log(this.previousRoute)
   }
 
