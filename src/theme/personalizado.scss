@@ -74,11 +74,11 @@ body.ios {
 
     .icon-back {
       position: absolute;
-      left: 0;
-      top: 0;
-      width: 24px;
-      height: 24px;
-      z-index: 1000;
+      left: -8px;
+      top: -8px;
+      width: calc(24px + 16px);
+      height: calc(24px + 16px);
+      z-index: 2000;
       display: flex;
       justify-content: center;
       align-items: center;

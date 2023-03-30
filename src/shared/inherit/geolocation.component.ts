@@ -45,13 +45,8 @@ export abstract class GeolocationComponent extends ViewComponent implements OnIn
     this.mapLoaded?.unsubscribe();
   }
 
-  onPositionLoaded(): void {
-
-  }
-
-  onMapLoaded(): void {
-
-  }
+  onPositionLoaded(): void {}
+  onMapLoaded(): void {}
 
   loadCurrentPosition() {
     if (this.map.getZoom() != environment.maps.defaultZoom)
@@ -85,24 +80,44 @@ export abstract class GeolocationComponent extends ViewComponent implements OnIn
   private completeLoadMap(): void {
     const theme = document.querySelector('body').classList.contains('dark')? 'dark' : 'light';
 
-    if (this.mapIddle)
-      return;
+    if (this.mapIddle) return;
 
     this.mapLoaded?.unsubscribe();
+
+    // Create custom marker
+    const markerIcon = {
+      url: 'https://cdn-icons-png.flaticon.com/512/3082/3082383.png',
+      size: new google.maps.Size(50, 50),
+      scaledSize: new google.maps.Size(50, 50),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(25, 25),
+    };
 
     // this.map = this.googleMap.createMap(document.getElementById(this.mapId), this.geolocation.position.coords.latitude, this.geolocation.position.coords.longitude, this.theme.theme, () => {
     //   this.mapIddle = true;
     //   this.onMapLoaded();
     // });
 
-    this.map = this.googleMap.createMap(document.getElementById(this.mapId), this.geolocation.position.coords.latitude, this.geolocation.position.coords.longitude, theme, () => {
+    this.map = this.googleMap.createMap(
+      document.getElementById(this.mapId),
+      this.geolocation.position.coords.latitude,
+      this.geolocation.position.coords.longitude,
+      theme, () => {
       this.mapIddle = true;
       this.onMapLoaded();
     });
 
-    this.googleMap.createMarker(this.map, {
+    // Add custom marker
+    const markerSettings = {
       latitude: this.geolocation.position.coords.latitude,
       longitude: this.geolocation.position.coords.longitude,
-    });
+      icon: markerIcon
+    }
+
+    this.googleMap.createMarker(
+      this.map,
+      markerSettings
+      // { latitude: this.geolocation.position.coords.latitude, longitude: this.geolocation.position.coords.longitude }
+    );
   }
 }
