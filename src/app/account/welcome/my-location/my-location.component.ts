@@ -445,8 +445,8 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   onBack() {
-    this.navigation.back('/account/welcome/whe-are-you');
-    // this.navigation.back(this.previousRoute);
+    //this.navigation.back('/account/welcome/whe-are-you');
+    this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {
