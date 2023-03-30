@@ -103,7 +103,11 @@ const routes: Routes = [
       { path: 'variants-product',component:VariantsProductComponent},
       { path: 'country-direction',component:CountryDirectionComponent},
       { path: 'change-return',component:ChangeReturnComponent},
+
       { path: 'manage-favorites', component: ManageFavoritesComponent},
+      { path: 'manage-favorites/variants',component:VariantsComponent},
+      { path: 'manage-favorites/confirm-order', component: ConfirmOrderComponent},
+
       { path: 'user-help', component: UserHelpComponent },
       { path: 'user-help/complaints-book', component: ComplaintsBookComponent },
       { path: 'user-help/complaints-book/thanks', component: ComplaintThanksComponent },

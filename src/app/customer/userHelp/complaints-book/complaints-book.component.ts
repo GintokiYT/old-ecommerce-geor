@@ -10,7 +10,7 @@ import { ViewComponent } from '@geor360/ecore';
 export class ComplaintsBookComponent extends ViewComponent implements OnInit {
 
   popupDocumentType: boolean = false;
-  popupDepartments: boolean = true;
+  popupDepartments: boolean = false;
 
   constructor(_injector: Injector) {
     super(_injector);

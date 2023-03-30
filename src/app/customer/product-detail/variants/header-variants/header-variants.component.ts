@@ -24,6 +24,10 @@ export class HeaderVariantsComponent extends ViewComponent implements OnInit {
       return this.navigation.back('/customer/search-general/product-detail');
     }
 
+    if(currentRouter === '/customer/manage-favorites/variants') {
+      return this.navigation.back('/customer/manage-favorites');
+    }
+
     const back = localStorage.getItem('back') ?? '';
     if(back) {
       this.navigation.back(localStorage.getItem('back'));

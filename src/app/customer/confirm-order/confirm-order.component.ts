@@ -52,6 +52,11 @@ export class ConfirmOrderComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    if(this.router.url === '/customer/manage-favorites/confirm-order') {
+      this.previousRoute = '/customer/manage-favorites/variants';
+    }
+
     this.cpService.currentMyOrder$.subscribe((myOrder) => {
       this.payMethod = myOrder.payMethod;
       this.coupon = myOrder.coupon;

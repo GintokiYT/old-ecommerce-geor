@@ -25,24 +25,9 @@ export class WheAreYouComponent {
     this.languageService.getLanguage.subscribe(language => this.contenido = language['wheAreYou']);
   }
 
-  OnInit() { }
+  ngOnInit(): void {}
 
   onSubmit() {
-
-    const printCurrentPosition = async () => {
-      const coordinates = await Geolocation.getCurrentPosition();
-      localStorage.setItem('location', JSON.stringify(
-        {
-          lat: coordinates.coords.latitude,
-          lng: coordinates.coords.longitude
-        }
-      ));
-    };
-
-    printCurrentPosition()
-
-    // this.rs.setMyLocationLastBackDirection("/account/welcome/whe-are-you");
-
     this.navigator.root(RouteCollection.account.welcome.myLocation, 'forward');
   }
 

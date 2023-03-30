@@ -72,6 +72,10 @@ export class VariantsComponent extends ViewComponent implements OnInit {
       return this.navigation.forward('/customer/search-general/product-detail/confirm-order');
     }
 
+    if(currentRouter === '/customer/manage-favorites/variants') {
+      return this.navigation.forward('/customer/manage-favorites/confirm-order');
+    }
+
     this.rs.setMiPedidoLastBackDirection("/customer/variants");
     this.navigation.root("/customer/confirm-order", "forward");
   }

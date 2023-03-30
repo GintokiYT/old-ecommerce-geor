@@ -38,28 +38,14 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
   }
 
+  ngOnInit(): void {}
+
   ngAfterViewInit(): void {
-
-    // Codigo en progreso...
-    // Q pasa
-    // async function checkGPS() {
-    //   const { location: state } = await Geolocation.requestPermissions();
-    //   // alert(state)
-    //   if(state === 'denied') {
-    //     alert('denegado')
-    //     const confirm = await Geolocation.requestPermissions();
-    //     alert(JSON.stringify(confirm))
-    //   }
-    // }
-
-    // checkGPS();
-
-
-
 
     const loading: HTMLDivElement = this.loading.nativeElement;
 
     const printCurrentPosition = async () => {
+
       const coordinates = await Geolocation.getCurrentPosition();
       localStorage.setItem('location', JSON.stringify(
         {
@@ -74,10 +60,6 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
     };
 
     printCurrentPosition();
-  }
-
-  ngOnInit(): void {
-
   }
 
   getCurrentPosition(latitude: any, longitude: any) {
