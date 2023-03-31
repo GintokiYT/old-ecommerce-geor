@@ -1,10 +1,22 @@
 <div class="container-popup" (click)="closePopupDocumentType($event)">
   <div class="popup active">
     <ul>
-      <li (click)="selectOption('DNI')">DNI</li>
-      <li (click)="selectOption('Carnet de extranjería')">Carnet de extranjería</li>
-      <li (click)="selectOption('RUC')">RUC</li>
-      <li (click)="selectOption('Pasaporte')">Pasaporte</li>
+      <li (click)="selectOption('DNI')">
+        DNI
+        <ion-icon name="checkmark-outline" color="primary" *ngIf="document === 'DNI'" />
+      </li>
+      <li (click)="selectOption('Carnet de extranjería')">
+        Carnet de extranjería
+        <ion-icon name="checkmark-outline" color="primary" *ngIf="document === 'Carnet de extranjería'" />
+      </li>
+      <li (click)="selectOption('RUC')">
+        RUC
+        <ion-icon name="checkmark-outline" color="primary" *ngIf="document === 'RUC'" />
+      </li>
+      <li (click)="selectOption('Pasaporte')">
+        Pasaporte
+        <ion-icon name="checkmark-outline" color="primary" *ngIf="document === 'Pasaporte'" />
+      </li>
     </ul>
   </div>
 </div>

@@ -85,7 +85,7 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
 
       this.getCurrentPosition(coordinates.coords.latitude, coordinates.coords.longitude);
 
-      setTimeout(() => loading.classList.add('d-none'), 1500);
+      setTimeout(() => loading.classList.add('d-none'), 500);
 
       }
       printCurrentPosition();
@@ -119,7 +119,7 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       title: 'Pacto andino 8799',
       icon: {
         url: '/assets/icons/markers/location.png',
-        scaledSize: new google.maps.Size(35, 60) // tamaño de la imagen en píxeles
+        scaledSize: new google.maps.Size(21, 36.57) // tamaño de la imagen en píxeles
       }
     });
   }
@@ -511,9 +511,9 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       return this.navigation.root("customer/manage-addresses/addresses-delete","back");
     }
 
-
-
-    this.navigation.root('/customer/home', 'forward');
+    // this.navigation.root('/customer/home', 'forward');
+    // this.navigation.forward('/customer/home');
+    this.router.navigateByUrl('/customer/home', { skipLocationChange: true });
   }
 
   actualizar() {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-popup-departments',
@@ -9,6 +9,8 @@ export class PopupDepartmentsComponent implements OnInit {
 
   @Output() changeStatusPopupDepartments = new EventEmitter<boolean>();
   @Output() changeDepartmentsForm = new EventEmitter<string>();
+
+  @Input('departament') departament: string;
 
   listDepartments = [
     { id: '1', name: 'Amazonas' },
@@ -60,11 +62,13 @@ export class PopupDepartmentsComponent implements OnInit {
 
     const containerpopupdepartments: HTMLDivElement = document.querySelector('.container-popup-departments');
 
-    containerpopupdepartments.classList.remove('active');
-    containerpopupdepartments.classList.add('disabled');
+    setTimeout(() => {
+      containerpopupdepartments.classList.remove('active');
+      containerpopupdepartments.classList.add('disabled');
+    }, 200);
 
     setTimeout(() => {
       this.changeStatusPopupDepartments.emit(false);
-    }, 300);
+    }, 500);
   }
 }

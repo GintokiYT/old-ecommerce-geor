@@ -33,6 +33,7 @@
     color: var(--ion-color-basic);
 
     &::part(native) {
+      --inner-padding-end: 0px;
       --border-style: none !important;
     }
   }
