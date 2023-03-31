@@ -64,7 +64,7 @@
 
 
   <cdk-virtual-scroll-viewport itemSize="74" minBufferPx="900" maxBufferPx="900" class="container-main">
-    <div class="contacts-container margin-foooter-ionic container-main" *ngIf="contactsLoaded">
+    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
       <ion-item class="contact" lines="none" *cdkVirtualFor="let contact of contactsResults" (click)="goToConfirmOrder(contact)">
         <div class="d-flex flex-column" style="gap: 4px;">
           <p class="name">{{contact?.name?.display}}</p>

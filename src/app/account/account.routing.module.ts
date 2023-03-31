@@ -37,6 +37,23 @@ const routes: Routes = [
         /* path: RouteCollection.account.welcome.myLocation, */
         component: MyLocationComponent,
       },
+      {
+        path: "customer/manage-addresses/my-location",
+        component: MyLocationComponent
+      },
+      {
+        path: "customer/manage-addresses/addresses-delete/my-location",
+        component: MyLocationComponent
+      },
+      {
+        path: "customer/manage-addresses/my-location/search",
+        component: ChangeAddressComponent
+      },
+      {
+        path: "customer/manage-addresses/addresses-delete/my-location/search",
+        component: ChangeAddressComponent
+      },
+
        //Send
       {
         path: 'send/account/welcome/my-location',
@@ -55,6 +72,11 @@ const routes: Routes = [
         path:'account/welcome/change-address',
         component: ChangeAddressComponent,
       },
+      {
+        /*  path: RouteCollection.account.welcome.changeAddress, */
+         path:'direction/account/welcome/change-address',
+         component: ChangeAddressComponent,
+       },
       {
          path:'send/account/welcome/change-address',
          component: ChangeAddressComponent,

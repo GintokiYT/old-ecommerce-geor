@@ -474,21 +474,28 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   onToChangeAddress() {
     const currentRouter=this.router.url;
     if(currentRouter==='/send/account/welcome/my-location'){
-      this.navigation.back('send/account/welcome/change-address');
-    }else{
-      //R
-      this.navigation.forward('/account/welcome/change-address');
+      return this.navigation.forward('send/account/welcome/change-address');
+    }else if(currentRouter==="/customer/manage-addresses/my-location"){
+      return this.navigation.root("/customer/manage-addresses/my-location/search","forward")
+    }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location"){
+      return this.navigation.root("/customer/manage-addresses/addresses-delete/my-location/search","forward");
+    }else if(currentRouter==="/direction/account/welcome/my-location"){
+      return this.navigation.forward('/direction/account/welcome/change-address')
     }
+
+    this.navigation.forward('/account/welcome/change-address');
   }
 
   onBack() {
     const currentRouter = this.router.url;
     if(currentRouter==='/direction/account/welcome/my-location'){
-      return this.navigation.root('/customer/direction','forward')
+      return this.navigation.root('/customer/direction','back')
     }else if(currentRouter==="/customer/manage-addresses/my-location"){
       return this.navigation.root("/customer/manage-addresses","back")
     }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location"){
       return this.navigation.root("customer/manage-addresses/addresses-delete","back")
+    }else if(currentRouter==="/send/account/welcome/my-location"){
+      return this.navigation.root("/customer/send-directions","back");
     }
 
     this.navigation.back('/account/welcome/whe-are-you');
@@ -503,7 +510,7 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       return this.navigation.root('/customer/direction','forward')
     }else if(currentRouter==="/customer/manage-addresses/my-location"){
       return this.navigation.root("/customer/manage-addresses","back")
-    }else if(currentRouter==="customer/manage-addresses/addresses-delete/my-location"){
+    }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location"){
       return this.navigation.root("customer/manage-addresses/addresses-delete","back");
     }
 
