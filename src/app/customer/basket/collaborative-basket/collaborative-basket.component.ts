@@ -86,6 +86,10 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
     } else {
       this.allChecked = false;
     }
+
+    if(this.products.length === 0) {
+      this.allChecked = false;
+    }
   }
 
   deleteProductMain(id) {

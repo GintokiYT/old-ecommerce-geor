@@ -511,9 +511,9 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
       return this.navigation.root("customer/manage-addresses/addresses-delete","back");
     }
 
-
-
-    this.navigation.root('/customer/home', 'forward');
+    // this.navigation.root('/customer/home', 'forward');
+    // this.navigation.forward('/customer/home');
+    this.router.navigateByUrl('/customer/home', { skipLocationChange: true });
   }
 
   actualizar() {
