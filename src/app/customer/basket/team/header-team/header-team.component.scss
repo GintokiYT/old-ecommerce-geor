@@ -1,7 +1,3 @@
-button {
-  background-color: transparent;
-}
-
 ion-toolbar {
   --background: var(
     --ion-toolbar-background,
@@ -12,19 +8,23 @@ ion-toolbar {
   --padding-start: 16px;
   --padding-end: 16px;
   --padding-bottom: 14px;
-}
 
-ion-title {
-  color: var(--ion-color-basic);
-  font-weight: bold;
-  font-size: 16px;
-}
+  button {
+    background-color: transparent;
 
-.back{
-  width: 24px;
-  height: 24px;
-  path {
-    stroke: var(--ion-color-basic);
+    .back {
+      width: 24px;
+      height: 24px;
+
+      path {
+        stroke: var(--ion-color-basic);
+      }
+    }
+  }
+
+  ion-title {
+    color: var(--ion-color-basic);
+    font-weight: bold;
   }
 }
 
@@ -33,5 +33,4 @@ ion-title {
     --padding-start: 24px;
     --padding-end: 24px;
   }
-
 }

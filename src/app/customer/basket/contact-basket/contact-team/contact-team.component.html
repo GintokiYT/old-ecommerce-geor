@@ -46,31 +46,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="container-main">
 
-    <!-- <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
-      <ion-item
-        class="contact"
-        lines="none"
-        *ngFor="let contact of contactsResults"
-      >
-        <div class="d-flex flex-column" style="gap: 4px">
-          <p class="name">{{ contact?.name?.display }}</p>
-          <div class="d-flex flex-column" *ngFor="let phone of contact?.phones;let indexPhone=index">
-            <p class="phone" *ngIf="indexPhone===0">{{phone?.number}}</p>
-          </div>
-        </div>
-         <ion-checkbox
-          slot="end"
-          mode="ios"
-          class="ion-no-margin"
-          (ionChange)="checkBoxSelect($event)"
-        ></ion-checkbox>
-      </ion-item>
-    </div> -->
 
-    <!-- SKELETON -->
-    <div class="contacts-container margin-foooter-ionic" *ngIf="!contactsLoaded">
+   <!-- SKELETON -->
+    <div class="contacts-container margin-foooter-ionic container-main" *ngIf="!contactsLoaded">
       <ion-item
         class="contact"
         lines="none"
@@ -82,19 +61,16 @@
             <ion-skeleton-text [animated]="true" style="width: 60px"></ion-skeleton-text>
           </div>
         </div>
-         <ion-checkbox
-          slot="end"
-          mode="ios"
-          class="ion-no-margin"
-          (ionChange)="checkBoxSelect($event)"
-        ></ion-checkbox>
+        <ion-thumbnail slot="end" style="width:20px; height:20px; margin:0px">
+          <ion-skeleton-text [animated]="true" style=" --border-radius: 9999px;"></ion-skeleton-text>
+        </ion-thumbnail>
       </ion-item>
     </div>
 
-  </div>
+
 
   <cdk-virtual-scroll-viewport itemSize="74" minBufferPx="900" maxBufferPx="900" class="container-main">
-    <div class="contacts-container margin-foooter-ionic" *ngIf="contactsLoaded">
+    <div class="contacts-container margin-foooter-ionic " *ngIf="contactsLoaded">
       <ion-item
         class="contact"
         lines="none"

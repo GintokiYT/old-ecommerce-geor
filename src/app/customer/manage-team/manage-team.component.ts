@@ -1,13 +1,13 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { InviteService } from 'src/app/services/Invite.service';
+import { InviteService } from '../../services/Invite.service';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
-  selector: 'app-collaborative-team',
-  templateUrl: './collaborative-team.component.html',
-  styleUrls: ['./collaborative-team.component.scss'],
+  selector: 'app-manage-team',
+  templateUrl: './manage-team.component.html',
+  styleUrls: ['./manage-team.component.scss'],
 })
-export class CollaborativeTeamComponent extends ViewComponent implements OnInit {
+export class ManageTeamComponent extends ViewComponent implements OnInit {
 
   modalInviteTeam: boolean;
   constructor(_injector: Injector, private inviteService:InviteService) {

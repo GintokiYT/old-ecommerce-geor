@@ -12,6 +12,10 @@ interface Descripcions{
 })
 
   export class ProductComponent extends ViewComponent implements OnInit {
+//eliminacion
+@Output() myEvent = new EventEmitter();
+ //Agregamos [checked]="isChecked" al input para marcar o desmar el checkbox
+ @Input() isChecked = false;
 
     constructor(_injector: Injector) {
       super(_injector);
@@ -36,8 +40,7 @@ interface Descripcions{
 
     ]
 
-//eliminacion
-    @Output() myEvent = new EventEmitter();
+
 
   ngOnInit() {}
 
@@ -67,6 +70,5 @@ interface Descripcions{
   goProductDetail(){
    this.navigation.root('/customer/variants-product', 'forward');
   }
-  //Agregamos [checked]="isChecked" al input para marcar o desmar el checkbox
-  @Input() isChecked = false;
+
 }

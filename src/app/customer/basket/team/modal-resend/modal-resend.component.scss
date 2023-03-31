@@ -1,17 +1,42 @@
-ion-modal::part(handle) {
-  display: none;
-}
+/*Modal*/
+.container-modal-resend {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000000;
+  background-color: rgba(0, 0, 0, 0.5);
 
-ion-modal {
-  --ion-background-color: var(--ion-background-modal) !important;
-}
+  .modal-resend {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 244px;
+    background-color: var(--ion-background-modal);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: modalOpen 0.3s ease;
 
-.resend {
-  color: var(--ion-color-primary);
+    .box {
+      gap: 32px;
+    }
+  }
 }
 
 .color {
   color: var(--ion-color-disabled);
+}
+
+.point {
+  background-color: #ffb547;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.resend {
+  color: var(--ion-color-primary);
 }
 
 .delete {
@@ -22,62 +47,7 @@ ion-modal {
   }
 }
 
-.box {
-  gap: 32px;
-}
-
-.point{
-  background-color: #FFB547;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-/* Delete */
-ion-modal {
-  &.modal-alert {
-    --height: fit-content;
-    --border-radius: 10px;
-  }
-
-  &::part(content) {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-
-  --background: var(--ion-background-alert);
-}
-
-/* Dark */
-.cancel{
-  color: var(--ion-color-basic) !important;
-}
-.delete-text{
-  color: var(--ion-color-delete) !important;
-}
-
-/*Modal*/
-.container-modal-invite {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10000000;
-  background-color: rgba(0,0,0,.5);
-}
-
-.modal-invite {
-  border-radius: 10px 10px 0px 0px;
-  width: 100%;
-  height: 244px;
-  background-color: var(--ion-background-modal);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  animation: modalOpen .3s ease;
-}
-
+//Abrir Modal
 @keyframes modalOpen {
   from {
     transform: translateY(100%);
@@ -88,7 +58,7 @@ ion-modal {
 }
 
 .close-modal {
-  animation: closeModal .3s ease;
+  animation: closeModal 0.3s ease;
 }
 
 @keyframes closeModal {
@@ -99,6 +69,3 @@ ion-modal {
     transform: translateY(100%);
   }
 }
-
-
-

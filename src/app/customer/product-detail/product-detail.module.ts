@@ -22,6 +22,7 @@ import { CountryDirectionComponent } from './send/country-direction/country-dire
 import { ChangeReturnComponent } from './change-return/change-return.component';
 import { DirectionsComponent } from './directions/directions.component';
 import { ShareModule } from "../../shared/shared.module";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { ShareModule } from "../../shared/shared.module";
     imports: [
         CommonModule,
         IonicModule,
-        ShareModule
+        ShareModule,
+        FormsModule
     ]
 })
 export class ProductDetailModule { }

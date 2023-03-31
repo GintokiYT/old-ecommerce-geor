@@ -23,8 +23,8 @@ export class TeamComponent extends ViewComponent implements OnInit {
   modalInvite: boolean;
   modalResend: boolean;
   modalResendInvitation: boolean;
-  modalAccepted:boolean;
-
+  selectedId: string | undefined; //Seleccion del Id
+  selectedTeam: any;
   constructor(_injector: Injector, private inviteService:InviteService) {
     super(_injector);
     //Modal Invite
@@ -33,14 +33,10 @@ export class TeamComponent extends ViewComponent implements OnInit {
     this.inviteService.getStatusModalResend.subscribe(status=>this.modalResend =status);
     //Modal Resend Invitation
     this.inviteService.getStatusModalResendInvitation.subscribe(status=>this.modalResendInvitation =status);
-    //Modal Accepted
-    this.inviteService.getStatusModalAccepted.subscribe(status=>this.modalAccepted =status);
   }
   equipos: Equipo[] = [];
 
   ngOnInit(): void {
-    console.log(this.equipos);
-    console.log(this.equipos.filter( equipo => equipo.id === 'cod002'));
 
     this.equipos= [
       {
@@ -92,12 +88,6 @@ export class TeamComponent extends ViewComponent implements OnInit {
 
   }
 
-
-
-  selectedId: string | undefined;
-
-  selectedTeam: any;
-
   openInvite(){
     this.inviteService.setStatusModalInvite(true);
   }
@@ -106,11 +96,6 @@ export class TeamComponent extends ViewComponent implements OnInit {
     console.log(id)
     this.inviteService.setStatusModalResend(true);
   }
-
- /*  openAccepted(id: string){
-    console.log(id)
-    this.inviteService.setStatusModalAccepted(true);
-  } */
 
   openModal(team: any) {
     this.selectedTeam = team;
@@ -121,9 +106,6 @@ export class TeamComponent extends ViewComponent implements OnInit {
     this.equipos = this.equipos.filter( equipo => equipo.id !== index);
     this.inviteService.setStatusModalResend(false);
   }
-
-
-
 
 }
 

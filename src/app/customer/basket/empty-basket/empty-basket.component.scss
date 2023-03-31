@@ -1,12 +1,3 @@
-.basket {
-  margin-top: calc(var(--ion-safe-area-top, 0) + 88px) !important;
-  margin-bottom: 42px;
-}
-
-.text {
-  color: var(--ion-color-disabled);
-}
-
 .header-mybasket {
   background-color: var(--ion-background-color);
   position: fixed;
@@ -15,23 +6,12 @@
   z-index: 1000;
 }
 
-/* Producto Destacado */
-.container-productos-destacados {
-  padding: 0px;
-
-  @media (min-width: 390px) {
-    padding: 0px;
-  }
-
-  .products__product {
-    margin-bottom: 16px;
-
-    @media (min-width: 390px) {
-      margin-bottom: 24px;
-    }
-  }
-
-  .icon-truck path {
-    stroke: red !important;
-  }
+.basket {
+ /*  margin-top: calc(var(--ion-safe-area-top, 0) + 88px) !important; */
+  margin-bottom: 42px;
 }
+
+.text {
+  color: var(--ion-color-disabled);
+}
+

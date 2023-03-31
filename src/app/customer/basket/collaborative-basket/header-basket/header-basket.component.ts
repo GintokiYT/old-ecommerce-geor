@@ -21,14 +21,8 @@ export class HeaderBasketComponent extends ViewComponent implements OnInit {
     this.navigation.forward('/customer/team');
   }
 
-  /*  goBasketCollaborative(){
-    this.inviteService.setStatusModalBasketCollaborative(true);
-    console.log("no salio");
-  } */
-
   openModal() {
     this.inviteService.setStatusModalBasketCollaborative(true);
   }
-
 
 }

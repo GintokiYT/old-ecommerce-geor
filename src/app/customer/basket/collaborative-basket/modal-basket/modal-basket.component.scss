@@ -1,4 +1,4 @@
-
+/*
 ion-modal::part(handle){
   display: none;
  }
@@ -6,10 +6,7 @@ ion-modal::part(handle){
 ion-modal {
   --ion-background-color:var(--ion-background-modal) !important;
 }
-
-.basket{
- gap: 10px;
-}
+ */
 
 //* Modal
 .container-modal-basketCollaborative {
@@ -20,18 +17,25 @@ ion-modal {
   height: 100vh;
   z-index: 10000000;
   background-color: rgba(0,0,0,.5);
+
+  .modal-basketCollaborative{
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 256px;
+    background-color: var(--ion-background-modal);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: modalOpen .3s ease;
+
+    .basket{
+      gap: 10px;
+     }
+
+  }
+
 }
 
-.modal-basketCollaborative{
-  border-radius: 10px 10px 0px 0px;
-  width: 100%;
-  height: 256px;
-  background-color: var(--ion-background-modal);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  animation: modalOpen .3s ease;
-}
 
 @keyframes modalOpen {
   from {

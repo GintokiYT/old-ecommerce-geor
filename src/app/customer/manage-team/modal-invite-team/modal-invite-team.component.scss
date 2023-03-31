@@ -1,13 +1,26 @@
-ion-modal::part(handle) {
-  display: none;
-}
+//* Modal
+.container-modal-invite {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10000000;
+  background-color: rgba(0, 0, 0, 0.5);
 
-ion-modal {
-  --ion-background-color: var(--ion-background-modal) !important;
-}
+  .modal-invite {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 243px;
+    background-color: var(--ion-background-modal);
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
-.information-invite {
-  gap: 12px;
+    .information-invite {
+      gap: 12px;
+    }
+  }
 }
 
 .invite {
@@ -36,26 +49,6 @@ ion-modal {
   }
 }
 
-//* Modal
-.container-modal-invite {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10000000;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-invite {
-  border-radius: 10px 10px 0px 0px;
-  width: 100%;
-  height: 243px;
-  background-color: var(--ion-background-modal);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 
 .close-modal {
   animation: closeModal 0.3s ease;

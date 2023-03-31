@@ -77,4 +77,7 @@ export class CountryBuyComponent extends ViewComponent implements OnInit {
 
     this.filterDataCountries = this.dataCountries.filter( ({country}) => country.toLowerCase().includes(value.trim().toLowerCase()))
   }
+  goBack(){
+    this.navigation.back('/customer/buy');
+  }
 }

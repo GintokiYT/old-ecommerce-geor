@@ -14,8 +14,7 @@ export class AddressesDeleteComponent extends ViewComponent implements OnInit {
   oneTrue: boolean = false;
   modalIsVisible: boolean = false;
 
-  constructor(private _injector: Injector, private ads: AddressesService,
-    private rs : RouteService) {
+  constructor(private _injector: Injector, private ads: AddressesService) {
     super(_injector)
     this.ads.currentAddressesData.subscribe(data => this.directionsData = data);
     this.directionsData = this.directionsData.map( (bill,index) => {
@@ -32,12 +31,7 @@ export class AddressesDeleteComponent extends ViewComponent implements OnInit {
   ngOnInit() { }
 
   goToMap(){
-    this.rs.setMyLocationLastBackDirection("/customer/manage-addresses/addresses-delete");
-    this.navigation.root("/account/welcome/my-location","forward");
-  }
-
-  goToAddressesDelete() {
-    this.navigation.forward("customer/manage-addresses/addresses-delete");
+    this.navigation.root("customer/manage-addresses/addresses-delete/my-location","forward");
   }
 
   deleteBills() {

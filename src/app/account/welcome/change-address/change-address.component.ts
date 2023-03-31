@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ActivatedRoute, NavigationExtras } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AppNavigationService } from '@geor360/ecore';
 import { IonInput, IonSearchbar } from '@ionic/angular';
 import { SettingsService } from 'src/app/services/settings.service';
@@ -31,6 +31,7 @@ export class ChangeAddressComponent {
     private route: ActivatedRoute,
     private navigator: AppNavigationService,
     private settingsService: SettingsService,
+    private router: Router,
     private languageService: LanguageService) {
     // this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
     this.languageService.getLanguage.subscribe( language =>  this.contenido = language['changeAddress'])
@@ -42,7 +43,20 @@ export class ChangeAddressComponent {
   // }
 
   onToBack() {
+
+    const currentRouter=this.router.url;
+    if(currentRouter==='/send/account/welcome/change-address'){
+      return this.navigator.back('/send/account/welcome/my-location');
+    }else if(currentRouter==="/customer/manage-addresses/my-location/search"){
+      return this.navigator.root("/customer/manage-addresses/my-location","back")
+    }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location/search"){
+      return this.navigator.root("/customer/manage-addresses/addresses-delete/my-location","back");
+    }else if (currentRouter=='/direction/account/welcome/change-address'){
+      return this.navigator.root("/direction/account/welcome/my-location","back");
+    }
+
     this.navigator.back('/account/welcome/my-location');
+
   }
 
   onSelectAddress(address: string) {

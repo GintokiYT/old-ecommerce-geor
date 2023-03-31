@@ -97,7 +97,6 @@ export class ContactComponent extends ViewComponent implements OnInit {
       this.contactsResults = [...this.contacts];
       this.headerContent = "normal"
     } else {
-      //this.navigation.back("/customer/manage-billing-data/add-company");
       this.navigation.back("/customer/confirm-order");
     }
   }

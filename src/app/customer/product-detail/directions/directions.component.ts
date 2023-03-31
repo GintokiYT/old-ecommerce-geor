@@ -15,19 +15,7 @@ export class DirectionsComponent extends ViewComponent implements OnInit {
 
   oneTrue: boolean = true;
 
-  directions: any[] = [
-    {
-      id: 1,
-      name: "Jr. Samaritanos 879 Miraflores, Lima, Perú",
-      selected: true
-    },
-    {
-      id: 2,
-      name: "Jr. Enrique Segobiano 879 Miraflores, Lima, Perú",
-      selected: false
-    },
-
-  ]
+  directions: any[];
 
 
   constructor(private cpService: ConfirmOrderService,
@@ -36,7 +24,21 @@ export class DirectionsComponent extends ViewComponent implements OnInit {
     super(_injector)
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.directions = [
+      {
+        id: 1,
+        name: "Jr. Samaritanos 879 Miraflores, Lima, Perú",
+        selected: true
+      },
+      {
+        id: 2,
+        name: "Jr. Enrique Segobiano 879 Miraflores, Lima, Perú",
+        selected: false
+      },
+  
+    ]
+  }
 
   checkBoxChange(id: number) {
     const falses = this.directions.filter(direction => direction.id !== id);
@@ -57,13 +59,8 @@ export class DirectionsComponent extends ViewComponent implements OnInit {
     const currentRouter = this.router.url;
     this.rs.setMyLocationLastBackDirection(currentRouter);
     this.navigation.forward('send/account/welcome/my-location');
-    /* this.navigation.forward('/customer/contact-search'); */
+
   }
-  /* handlerMessage = '';
-    roleMessage = ''; */
-
-
-
 
   deleteDirection(eliminar: boolean): void {
     if (eliminar) {
