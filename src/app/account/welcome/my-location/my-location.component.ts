@@ -11,6 +11,8 @@ import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
 import { Geolocation } from '@capacitor/geolocation';
 import { Plugins } from '@capacitor/core';
 
+import { Platform } from '@ionic/angular'
+
 interface Contenido {
   button: string;
 }
@@ -38,11 +40,11 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
     private router: Router,
     private languageService: LanguageService,
     private alertController: AlertController,
-    private diagnostic: Diagnostic
+    private diagnostic: Diagnostic,
+    private platform: Platform
   ) {
     super(_injector)
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
-    this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.diagnostic.registerLocationStateChangeHandler((state) => {
       if (state === this.diagnostic.locationMode.LOCATION_OFF) {
         // alert('La ubicación se ha desactivado');
@@ -53,7 +55,13 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.platform.is('android')) {
+      this.platform.backButton.subscribe(() => {
+        this.navigation.back('/account/welcome/whe-are-you');
+      })
+    }
+  }
 
   async ngAfterViewInit() {
 
@@ -478,20 +486,23 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   onBack() {
-    //this.navigation.back('/account/welcome/whe-are-you');
-    this.navigation.back(this.previousRoute);
+    this.navigation.back('/account/welcome/whe-are-you');
+    // this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {
+    // if (this.previousRoute.includes("manage")) {
+    //   this.navigation.back(this.previousRoute);
+    // } else {
+    //   this.navigation.root('/customer/home','forward');
+    // }
+    //send y Direction
     const currentRouter = this.router.url;
     if(currentRouter==='/send/account/welcome/my-location'){
       return this.navigation.root('/customer/send-directions','forward')
     }else if(currentRouter==='/direction/account/welcome/my-location'){
       return this.navigation.root('/customer/direction','forward')
     }
-
-
-
     this.navigation.root('/customer/home', 'forward');
   }
 

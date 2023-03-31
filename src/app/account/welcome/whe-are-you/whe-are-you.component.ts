@@ -5,6 +5,7 @@ import { LanguageService } from '../../../services/language.service';
 import { RouteService } from '../../../services/route.service';
 import { Geolocation, } from '@capacitor/geolocation';
 
+import { Platform } from '@ionic/angular';
 
 interface Contenido {
   subTitle: string;
@@ -21,14 +22,25 @@ export class WheAreYouComponent {
 
   contenido: Contenido;
 
-  constructor(private navigator: AppNavigationService, private languageService: LanguageService, private rs : RouteService) {
+  constructor(
+    private navigator: AppNavigationService,
+    private languageService: LanguageService,
+    private rs : RouteService,
+    private platform: Platform
+    ) {
     this.languageService.getLanguage.subscribe(language => this.contenido = language['wheAreYou']);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.platform.is('android')) {
+      this.platform.backButton.subscribe(() => {
+        this.navigator.back('/account/welcome/select-country')
+      });
+    }
+  }
 
   onSubmit() {
-    this.navigator.root(RouteCollection.account.welcome.myLocation, 'forward');
+    this.navigator.forward(RouteCollection.account.welcome.myLocation);
   }
 
 }
