@@ -39,67 +39,7 @@
 
 @import "./theme/personalizado.scss";
 
-body.md {
 
-  ion-footer {
-    &.footer-ionic {
-      ion-toolbar {
-        --padding-top: 12px;
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 16px;
-      }
-    }
-
-    &.footer-navigation{
-      --ion-safe-area-bottom: unset !important;
-    }
-  }
-}
-
-body.ios {
-
-  ion-footer {
-    &.footer-ionic {
-      ion-toolbar {
-        --padding-top: 12px;
-        --padding-start: 16px;
-        --padding-end: 16px;
-        --padding-bottom: 16px;
-      }
-    }
-
-    &.footer-navigation{
-      --ion-safe-area-bottom: 10px;
-    }
-  }
-}
-
-@media(min-width:390px) {
-  body.md {
-    ion-footer {
-      &.footer-ionic {
-        ion-toolbar {
-          --padding-start: 24px;
-          --padding-end: 24px;
-          --padding-bottom: 24px;
-        }
-      }
-    }
-  }
-
-  body.ios {
-    ion-footer {
-      &.footer-ionic {
-        ion-toolbar {
-          --padding-start: 24px;
-          --padding-end: 24px;
-          --padding-bottom: 16px;
-        }
-      }
-    }
-  }
-}
 
 // Cambiar el color del Status Bar en IOS (RCNA)
 //* IOS
