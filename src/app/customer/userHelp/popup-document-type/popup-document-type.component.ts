@@ -11,6 +11,8 @@ export class PopupDocumentTypeComponent implements OnInit {
   @Output() changeStatusPopupDocumentType = new EventEmitter<boolean>();
   @Output() changeDocumentForm = new EventEmitter<string>();
 
+  @Input('document') document: string;
+
   constructor() { }
 
   ngOnInit() {}
@@ -30,11 +32,13 @@ export class PopupDocumentTypeComponent implements OnInit {
 
   selectOption(option: string) {
     const popup = document.querySelector('.popup');
-    popup.classList.remove('active');
-    popup.classList.add('disabled');
+    setTimeout(() => {
+      popup.classList.remove('active');
+      popup.classList.add('disabled');
+    }, 200);
     this.changeDocumentForm.emit(option);
     setTimeout(() => {
       this.changeStatusPopupDocumentType.emit(false);
-    }, 300);
+    }, 500);
   }
 }

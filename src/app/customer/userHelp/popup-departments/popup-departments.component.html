@@ -14,6 +14,7 @@
   <ion-list>
     <ion-item *ngFor="let department of listDepartments" (click)="saveDepartment(department.id)">
       <ion-label>{{ department.name }}</ion-label>
+      <ion-icon name="checkmark-outline" color="primary" *ngIf="departament === department.name"/>
     </ion-item>
   </ion-list>
 
