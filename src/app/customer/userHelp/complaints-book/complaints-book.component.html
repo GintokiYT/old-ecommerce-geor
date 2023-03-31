@@ -227,6 +227,7 @@
   [popupDocumentType]="popupDocumentType"
   (changeStatusPopupDocumentType)="changeStatusPopupDocumentType($event)"
   (changeDocumentForm)="changeDocumentForm($event)"
+  [document]="FormControlFormulary.controls.document.value"
 ></app-popup-document-type>
 
 <!-- Popup Departamento -->
@@ -234,4 +235,5 @@
   *ngIf="popupDepartments"
   (changeStatusPopupDepartments)="changeStatusPopupDepartments($event)"
   (changeDepartmentsForm)="changeDepartmentsForm($event)"
+  [departament]="FormControlFormulary.controls.departament.value"
 ></app-popup-departments>

@@ -39,12 +39,6 @@
   </div>
 </ion-content>
 
-<!-- Spinner cuando aun no carga el mapa -->
 <div class="container-loader" #loading>
-  <div class="lds-facebook"><div></div><div></div><div></div></div>
-  <p>Cargando...</p>
-  <!-- <div class="buttons-maps d-none">
-    <button (click)="closeLoading()">Omitir el mapa</button>
-    <button (click)="activeGPS()">Activa el GPS</button>
-  </div> -->
+  <ion-spinner name="circular" style="color: #023AFF;"></ion-spinner>
 </div>
