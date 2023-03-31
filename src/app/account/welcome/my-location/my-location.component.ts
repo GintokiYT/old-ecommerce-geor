@@ -11,6 +11,8 @@ import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx';
 import { Geolocation } from '@capacitor/geolocation';
 import { Plugins } from '@capacitor/core';
 
+import { Platform } from '@ionic/angular'
+
 interface Contenido {
   button: string;
 }
@@ -27,7 +29,6 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
 
   map: any;
   currentPosition: any;
-
   contenido: Contenido;
 
   @ViewChild('loading') loading: ElementRef;
@@ -37,7 +38,8 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
     private router: Router,
     private languageService: LanguageService,
     private alertController: AlertController,
-    private diagnostic: Diagnostic
+    private diagnostic: Diagnostic,
+    private platform: Platform
   ) {
     super(_injector)
     this.languageService.getLanguage.subscribe(language => this.contenido = language['myLocation'])
@@ -51,7 +53,13 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.platform.is('android')) {
+      this.platform.backButton.subscribe(() => {
+        this.navigation.back('/account/welcome/whe-are-you');
+      })
+    }
+  }
 
   async ngAfterViewInit() {
 
@@ -487,22 +495,11 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   onBack() {
-    const currentRouter = this.router.url;
-    if(currentRouter==='/direction/account/welcome/my-location'){
-      return this.navigation.root('/customer/direction','back')
-    }else if(currentRouter==="/customer/manage-addresses/my-location"){
-      return this.navigation.root("/customer/manage-addresses","back")
-    }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location"){
-      return this.navigation.root("customer/manage-addresses/addresses-delete","back")
-    }else if(currentRouter==="/send/account/welcome/my-location"){
-      return this.navigation.root("/customer/send-directions","back");
-    }
-
     this.navigation.back('/account/welcome/whe-are-you');
+    // this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {
-    //send y Direction
     const currentRouter = this.router.url;
     if(currentRouter==='/send/account/welcome/my-location'){
       return this.navigation.root('/customer/send-directions','forward')
@@ -513,6 +510,8 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
     }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location"){
       return this.navigation.root("customer/manage-addresses/addresses-delete","back");
     }
+
+
 
     this.navigation.root('/customer/home', 'forward');
   }

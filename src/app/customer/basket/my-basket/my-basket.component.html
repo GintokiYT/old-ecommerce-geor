@@ -6,8 +6,15 @@
   <!-- CONTENIDO -->
   <div class="container-main" style="margin-bottom: '237.66px'">
     <div class="d-flex flex-column" style="gap:40px">
-      <app-main-product *ngIf="mainProduct" (myEvent)="onMyEvent($event)" [isChecked]="allChecked" style="margin-top:10px"></app-main-product>
-      <app-product *ngIf="Product" (myEvent)="onProductEvent($event)" [isChecked]="allChecked" ></app-product>
+      <!-- Crea una servicio y mueve lo que esta en basket colaborative -->
+      <!-- <app-main-product
+        [products]="products"
+        (modifyProducts)="modifyProducts($event)"
+      ></app-main-product> -->
+      <app-main-product
+        [products]="products"
+        (modifyProducts)="modifyProducts($event)"
+      ></app-main-product>
     </div>
   </div>
 
@@ -19,7 +26,7 @@
       <div class="box-total d-flex flex-row justify-content-between">
         <div class="d-flex flex-row gap-2">
           <label class="custom-checkbox">
-            <input type="checkbox" [(ngModel)]="allChecked"/>
+            <input type="checkbox" [(ngModel)]="allChecked" (change)="modifyCheckProduct()"/>
             <span class="checkmark"></span>
           </label>
           <ion-label

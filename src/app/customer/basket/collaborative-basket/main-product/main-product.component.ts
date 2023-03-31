@@ -12,39 +12,86 @@ export class MainProductComponent extends ViewComponent implements OnInit {
 
   @Output() myEvent = new EventEmitter();
 
+  @Input() products: Array<any>;
+  @Input() allChecked: any;
+
+  @Output() modifyProducts = new EventEmitter<any>();
+
   constructor(_injector: Injector) {
     super(_injector);
    }
 
   ngOnInit() {}
 
-  deleteDescription(){
+  updateChangeCheckBox(idProduct) {
+    const productElement: HTMLDivElement = document.querySelector(`.product${idProduct}`)
+    const inputCheck: HTMLInputElement = productElement.querySelector('input[type=checkbox]')
+    const newProducts = this.products.map( product => {
+      const newProduct = product;
+      if(product.id === idProduct){
+        newProduct.isChecked = inputCheck.checked;
+        return newProduct
+      }
+      return newProduct
+    });
+    this.modifyProducts.emit(newProducts);
+  }
+
+  convertCurrency(price: number) {
+    return price.toLocaleString('es-PE', { style: 'currency', currency: 'PEN' });
+  }
+
+  returnNombres(nombres: any) {
+    let salida = '';
+
+    nombres.forEach((nombre, index) => {
+      if(index + 1 >= nombres.length) {
+        salida += `${nombre}.`;
+      } else {
+        salida += `${nombre}, `
+      }
+    })
+
+    return salida;
+  }
+
+  convertQuantity(quantity: number) {
+    return quantity.toLocaleString('es-PE', {useGrouping: true, maximumFractionDigits: 0});
+  }
+
+  deleteDescription(idProduct, idDescription){
     this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
       if (confirmation) {
-          const divEliminar = document.querySelector('#deleteDescription');
-            divEliminar.remove();
+        const newProducts = this.products.map( product => {
+          if(product.id === idProduct) {
+            const newDescription = product.descriptions.filter( description => description.id !== idDescription);
+            product.descriptions = newDescription;
+            return product;
+          } else {
+            return product;
+          }
+        })
+        this.modifyProducts.emit(newProducts)
       }
   },'Eliminar','Cancelar');
   }
 
-  deleteProduct(){
+  deleteProduct(idProduct) {
     this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
       if (confirmation) {
-        const animationdelete: HTMLDivElement = document.querySelector('.animation-delete');
+        const product: HTMLDivElement = document.querySelector(`.product${idProduct}`)
+        const animationdelete: HTMLDivElement = product.querySelector('.animation-delete');
         animationdelete.classList.add('active');
         setTimeout(() => {
-          this.myEvent.emit(false);
-        }, 450);
+          const newProducts = this.products.filter( product => product.id !== idProduct)
+          this.modifyProducts.emit(newProducts)
+        }, 450)
     }
     },'Eliminar','Cancelar');
-
 
   }
 
   goProductDetail(){
-   this.navigation.root('/customer/variants-product', 'forward');
+    this.navigation.root('/customer/variants-product', 'forward');
   }
-
-  // Agregamos [checked]="isChecked" al input para marcar o desmar el checkbox
-  @Input() isChecked = false;
 }

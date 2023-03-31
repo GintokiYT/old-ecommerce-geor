@@ -27,21 +27,21 @@ export class CountryBuyComponent extends ViewComponent implements OnInit {
       id: 'PE',
       country: "Perú",
       flag: "/assets/flags/pe.svg",
-      codePhone: '51',
+      codePhone: '+51',
       selected: false
     },
     {
       id: 'AR',
       country: "Argentina",
       flag: "/assets/flags/ar.svg",
-      codePhone: '54 9 11',
+      codePhone: '+54 9 11',
       selected: false
     },
     {
       id: 'CL',
       country: "Chile",
       flag: "/assets/flags/cl.svg",
-      codePhone: '56',
+      codePhone: '+56',
       selected:false
     },
   ]

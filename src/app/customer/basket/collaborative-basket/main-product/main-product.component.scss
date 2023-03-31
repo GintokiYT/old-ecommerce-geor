@@ -1,3 +1,9 @@
+.container-products {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 /*  CONTENIDO */
 .box-select {
   gap: 14px;

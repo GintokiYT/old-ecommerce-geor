@@ -64,8 +64,4 @@ export class SetContactComponent extends ViewComponent implements OnInit {
 
   }
 
-  checkFocusEmail() {
-    this.content.scrollToBottom();
-  }
-
 }

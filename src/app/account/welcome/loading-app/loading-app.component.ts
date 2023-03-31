@@ -1,4 +1,4 @@
-import { Component, Injector, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
@@ -21,6 +21,8 @@ export class LoadingAppComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    // localStorage.setItem('country', '');
+
     const body: HTMLBodyElement = document.querySelector('body');
     this.changeDataLoading(body);
 
