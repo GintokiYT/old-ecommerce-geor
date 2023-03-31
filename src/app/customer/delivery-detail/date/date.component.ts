@@ -2,6 +2,10 @@
 import { Component, Input, OnInit,Injector } from '@angular/core';
 import { Location } from '@angular/common';
 import { ViewComponent } from '@geor360/ecore';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+registerLocaleData(localeEs);
 
 interface ICost {
   date: string,
@@ -78,10 +82,13 @@ export class DateComponent extends ViewComponent implements OnInit {
     this.navigation.back(path);
   }
 
-  //fecha slideOptions: any = {
-
+  //Pintar lo seleccionado
   onDateSelected(date: string) {
-    this.selectedDate = date;
+    if (this.selectedDate === date) {
+      this.selectedDate = null; // deseleccionar fecha previamente seleccionada
+    } else {
+      this.selectedDate = date; // seleccionar nueva fecha
+    }
   }
 // Primer checkbox seleccionado por defecto
   checkbox1Selected = true;

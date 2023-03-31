@@ -1,19 +1,54 @@
-button {
-  background-color: transparent;
+.content-date {
+  margin: 0px 16px;
+
+  button {
+    background-color: transparent;
+
+    .icon-left {
+      width: 7px;
+      height: 10px;
+      transform: rotate(180deg);
+      path {
+        stroke: var(--ion-color-basic);
+      }
+    }
+
+    .icon-right {
+      width: 7px;
+      height: 10px;
+      path {
+        stroke: var(--ion-color-basic);
+      }
+    }
+  }
+
+
+  .carousel__wrapper{
+    margin-top: 0px !important;
+    margin-bottom: 0px;
+    gap: 16px;
+
+    .cost {
+      width: 79.5px;
+      border: 1px solid #f5f5f5;
+      border-radius: 4px;
+      padding: 12px 6px;
+    }
+  }
+
+  .time {
+    margin-top: 32px;
+    border-bottom: 1px solid var(--ion-color-separator);
+  }
+
 }
 
 ion-footer {
   position: fixed;
   bottom: 0;
 }
-//
-//slides fecha
-.mt-4 {
-  margin-top: 0px !important;
-  margin-bottom: 0px;
-  gap: 16px;
-}
 
+//slides fecha
 .a-right {
   cursor: pointer;
   filter: var(--ion-color-light-filter);
@@ -29,19 +64,12 @@ ion-footer {
     height: 60px;
   }
 }
-.cost {
-  width: 79.5px;
-  border: 1px solid #f5f5f5;
-  border-radius: 4px;
-  padding: 12px 6px;
-}
 
 .color {
   color: var(--ion-color-disabled);
 }
 
-
-//fin slider
+//
 
 //select
 .selected {
@@ -49,42 +77,16 @@ ion-footer {
   color: #023aff;
 }
 
-.time {
-  margin-top: 32px;
-  border-bottom: 1px solid var(--ion-color-separator);
-}
-
-.content-date {
-  margin: 0px 16px;
-}
-
-.icon-left {
- width: 7px;
- height: 10px;
- transform: rotate(180deg);
-  path {
-    stroke: var(--ion-color-basic);
-  }
-}
-
-.icon-right {
- width: 7px;
- height: 10px;
-  path {
-    stroke: var(--ion-color-basic);
-  }
-}
-
 ion-item {
   --padding-start: 0px;
   --inner-padding-end: 0px !important;
-   --background-activated: unset !important;
-}
+  --background-activated: unset !important;
 
-ion-checkbox {
-  --size: 20px;
-  margin: 0px !important;
-   min-width: 20px;
+  ion-checkbox {
+    --size: 20px;
+    margin: 0px !important;
+    min-width: 20px;
+  }
 }
 
 ion-item::part(native) {
