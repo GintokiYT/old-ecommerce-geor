@@ -18,6 +18,16 @@ export class MainProductComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
+  products:any[]= [
+    {
+      price: 'S/ 9,780.00',
+      description: 'Plancha de bicarbonato pulverizado lorem ipsum',
+      user: 'Gerardo Ortíz',
+      measurement: 'Mostaza, 120x150 cm, 25 mm',
+      quantity: 10,
+      imageUrl: '/assets/collaborative-basquet/Rectangle 1600.png'
+    },];
+
   deleteDescription(){
     this.message.confirm('¿Eliminar este producto?','',(confirmation)=>{
       if (confirmation) {
