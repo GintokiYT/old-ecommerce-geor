@@ -29,7 +29,6 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
 
   map: any;
   currentPosition: any;
-
   contenido: Contenido;
 
   @ViewChild('loading') loading: ElementRef;
@@ -496,8 +495,8 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   onBack() {
-    //this.navigation.back('/account/welcome/whe-are-you');
-    this.navigation.back(this.previousRoute);
+    this.navigation.back('/account/welcome/whe-are-you');
+    // this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {
