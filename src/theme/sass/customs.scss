@@ -119,45 +119,8 @@
   }
 }
 
-//Default
-.form-group {
 
-  --border-color: var(--ion-color-border-input) !important;
 
-  ion-label {
-    color: #6c757d !important;
-  }
-}
-
-//Focus
-.form-group.item-has-focus {
-
-  --border-color: var(--ion-color-primary) !important;
-
-  ion-label {
-    color: var(--ion-color-primary) !important;
-  }
-}
-
-//Error
-// .form-group.item-has-focus{
-//   &.ion-invalid{
-//     ion-label{
-//       color: #F44336 !important;
-//     }
-//     --border-color: #F44336 !important;
-//   }
-// }
-
-.form-group.item-has-value {
-  &.ion-invalid {
-    ion-label {
-      color: #F44336 !important;
-    }
-
-    --border-color: #F44336 !important;
-  }
-}
 
 
 
@@ -292,6 +255,40 @@ ion-slides {
   }
 }
 
+
+//COLOR FOR FORMS
+//Default
+.form-group {
+
+  --border-color: var(--ion-color-border-input) !important;
+
+  ion-label {
+    color: #6c757d !important;
+  }
+}
+
+//Focus
+.form-group.item-has-focus {
+
+  --border-color: var(--ion-color-primary) !important;
+
+  ion-label {
+    color: var(--ion-color-primary) !important;
+  }
+}
+
+//ERROR
+.form-group.item-has-value {
+  &.ion-invalid {
+    ion-label {
+      color: #F44336 !important;
+    }
+
+    --border-color: #F44336 !important;
+  }
+}
+
+
 .container-main {
   margin-top: calc(var(--ion-safe-area-top, 0) + 64px) !important;
 }
@@ -320,6 +317,70 @@ body.ios {
   body.md {
     .margin-foooter-ionic {
       margin-bottom: calc(var(--ion-safe-area-bottom, 0) + 24px);
+    }
+  }
+}
+
+
+//ESTILOS A LOS FOOTERS Y PARA EL FOOTER NAVIGATION
+body.md {
+
+  ion-footer {
+    &.footer-ionic {
+      ion-toolbar {
+        --padding-top: 12px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 16px;
+      }
+    }
+
+    &.footer-navigation{
+      --ion-safe-area-bottom: unset !important;
+    }
+  }
+}
+
+body.ios {
+
+  ion-footer {
+    &.footer-ionic {
+      ion-toolbar {
+        --padding-top: 12px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --padding-bottom: 16px;
+      }
+    }
+
+    &.footer-navigation{
+      --ion-safe-area-bottom: 10px;
+    }
+  }
+}
+
+@media(min-width:390px) {
+  body.md {
+    ion-footer {
+      &.footer-ionic {
+        ion-toolbar {
+          --padding-start: 24px;
+          --padding-end: 24px;
+          --padding-bottom: 24px;
+        }
+      }
+    }
+  }
+
+  body.ios {
+    ion-footer {
+      &.footer-ionic {
+        ion-toolbar {
+          --padding-start: 24px;
+          --padding-end: 24px;
+          --padding-bottom: 16px;
+        }
+      }
     }
   }
 }
