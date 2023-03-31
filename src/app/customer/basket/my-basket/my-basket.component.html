@@ -6,8 +6,11 @@
   <!-- CONTENIDO -->
   <div class="container-main" style="margin-bottom: '237.66px'">
     <div class="d-flex flex-column" style="gap:40px">
-      <app-main-product *ngIf="mainProduct" (myEvent)="onMyEvent($event)" [isChecked]="allChecked" style="margin-top:10px"></app-main-product>
-      <app-product *ngIf="Product" (myEvent)="onProductEvent($event)" [isChecked]="allChecked" ></app-product>
+      <!-- Crea una servicio y mueve lo que esta en basket colaborative -->
+      <!-- <app-main-product
+        [products]="products"
+        (modifyProducts)="modifyProducts($event)"
+      ></app-main-product> -->
     </div>
   </div>
 
