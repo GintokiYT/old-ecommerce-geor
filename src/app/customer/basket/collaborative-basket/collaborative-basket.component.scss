@@ -1,15 +1,34 @@
-.contend-collaborative-basket{
-  gap:40px;
+.header-cesta {
+  background-color: var(--ion-background-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-top: var(--ion-safe-area-top);
 }
 
-.ion-toolbar {
-  padding: 24px;
+.contend-collaborative-basket {
+  gap: 40px;
 }
 
-.box-total {
-  margin-top: 8px;
-  margin-bottom: 12px;
-  color: var(--ion-color-basic);
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 100000;
+  margin-bottom: 71px;
+
+  ion-toolbar {
+    z-index: 100000;
+    --padding-start: 16px !important;
+    --padding-end: 16px !important;
+    --padding-bottom: 20px !important;
+
+    .box-total {
+      margin-top: 8px;
+      margin-bottom: 12px;
+      color: var(--ion-color-basic);
+    }
+  }
 }
 
 /* Customize the label (the container) */
@@ -82,63 +101,38 @@
   transform: rotate(45deg);
 }
 
- ion-footer {
- position: fixed;
-  bottom: 0;
-  z-index: 100000;
-  /* margin-bottom: calc(var(--ion-safe-area-bottom) + 45px) !important; */
-  margin-bottom: 71px;
-
-  ion-toolbar {
-   z-index: 100000;
-    --padding-start: 16px !important;
-    --padding-end: 16px !important;
-    --padding-bottom: 20px !important;
-  }
-
-}
-
-.header-cesta {
-  background-color: var(--ion-background-color);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding-top: var(--ion-safe-area-top);
-}
-
-/* .content-collaborative {
-  margin-top: calc(var(--ion-safe-area-top, 0) + 88px) !important;
-} */
-
 ion-button {
   height: 40px !important;
 }
 
+.footer-navigation {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
 @media (min-width: 390px) {
   ion-footer {
-     ion-toolbar {
-       --padding-start: 24px !important;
-       --padding-end: 24px !important;
-       --padding-bottom: 24px !important;
-     }
+    ion-toolbar {
+      --padding-start: 24px !important;
+      --padding-end: 24px !important;
+      --padding-bottom: 24px !important;
+
+      .box-total {
+        margin-top: 16px;
+        margin-bottom: 24px;
+      }
     }
+  }
 
   ion-button {
     height: 48px !important;
-
   }
-  .box-total {
-    margin-top: 16px;
-    margin-bottom: 24px;
 
-  }
 }
 
-.footer-navigation{
-position: fixed;
-bottom: 0;
-z-index: 1000;
-width: 100%;
+/* .ion-toolbar {
+  padding: 24px;
 }
-
+ */

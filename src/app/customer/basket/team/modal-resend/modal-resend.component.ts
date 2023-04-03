@@ -4,6 +4,7 @@ import { ViewComponent } from '@geor360/ecore';
 import { InviteService } from 'src/app/services/Invite.service';
 
 interface Equipo {
+
   id?: string,
   image?:string,
   nombre?:string,

@@ -2,11 +2,11 @@ import { Component, OnInit, Injector, Output, EventEmitter, Input } from '@angul
 import { ViewComponent } from '@geor360/ecore';
 
 @Component({
-  selector: 'app-main-product',
-  templateUrl: './main-product.component.html',
-  styleUrls: ['./main-product.component.scss'],
+  selector: 'app-main-products',
+  templateUrl: './main-products.component.html',
+  styleUrls: ['./main-products.component.scss'],
 })
-export class MainProductComponent extends ViewComponent implements OnInit {
+export class MainProductsComponent extends ViewComponent implements OnInit {
 
   modalIsVisible: boolean = false;
 
@@ -94,5 +94,4 @@ export class MainProductComponent extends ViewComponent implements OnInit {
   goProductDetail(){
     this.navigation.root('/customer/variants-product', 'forward');
   }
-
 }

@@ -1,13 +1,3 @@
-/*
-ion-modal::part(handle){
-  display: none;
- }
-
-ion-modal {
-  --ion-background-color:var(--ion-background-modal) !important;
-}
- */
-
 //* Modal
 .container-modal-basketCollaborative {
   position: fixed;
@@ -36,7 +26,7 @@ ion-modal {
 
 }
 
-
+//ANIMACION DEL MODAL
 @keyframes modalOpen {
   from {
     transform: translateY(100%);

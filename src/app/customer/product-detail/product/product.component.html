@@ -1,17 +1,12 @@
 
 <ion-content [fullscreen]="true">
   <app-header-product class="header"></app-header-product>
-  <ion-slides (click)="goPicture()" class="carousel" pager="true">
-    <ion-slide>
-      <img class="img-fluid img" src="assets/images/img_productos.png" alt="product" />
-    </ion-slide>
-    <ion-slide>
-      <img class="img-fluid img"  src="assets/images/img_productos.png" alt="product" />
-    </ion-slide>
-    <ion-slide>
-      <img class="img-fluid img"  src="assets/images/img_productos.png" alt="product" />
+  <ion-slides class="carousel" pager="true" (click)="goPicture()">
+    <ion-slide *ngFor="let slide of slides">
+      <img class="img-fluid img" [src]="slide.imgSrc" [alt]="slide.description" />
     </ion-slide>
   </ion-slides>
+
 
   <div class="information-producto d-flex flex-column">
     <ion-text>

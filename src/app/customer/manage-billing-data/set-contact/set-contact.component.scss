@@ -1,4 +1,4 @@
-form{
+form {
     margin-bottom: 60px;
 }
 
@@ -8,12 +8,29 @@ form{
     ion-label {
         color: #6c757d !important;
     }
+
+    &.item-has-focus {
+        --border-color: var(--ion-color-primary) !important;
+
+        ion-label {
+            color: var(--ion-color-primary) !important;
+        }
+    }
 }
 
-.item-color.item-has-focus {
-    --border-color: var(--ion-color-primary) !important;
+ion-item{
+    --inner-padding-end: 0px !important;
+        --padding-start: 0px !important;
+        --border-width: 0px 0px 1px 0px;
+        margin-inline: 16px;
 
-    ion-label {
-        color: var(--ion-color-primary) !important;
+        &::part(native) {
+            padding-inline: 0px !important;
+        }
+}
+
+@media(min-width:390px){
+    ion-item{
+        margin-inline: 24px !important;
     }
 }

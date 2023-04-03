@@ -1,0 +1,72 @@
+<div class="container-products">
+  <div class="products" [ngClass]="'product' + product.id" *ngFor="let product of products">
+    <div class="animation-delete">
+      <ion-list>
+      <ion-item-sliding>
+        <ion-item class="ion-no-padding" lines="none">
+          <ion-label
+            class="box-select d-flex flex-row"
+            style="margin-top: 0px; margin-bottom: 0px; margin-right: 0px">
+            <label class="custom-checkbox">
+              <input type="checkbox" [checked]="product.isChecked" #myCheck (change)="updateChangeCheckBox(product.id)"/>
+              <span class="checkmark"></span>
+            </label>
+            <div class="d-flex flex-column gap-3">
+              <div (click)="goProductDetail()" class="box-name d-flex flex-row">
+                <div>
+                  <img
+                    [src]="product.image"
+                    [alt]="product.name"
+                  />
+                </div>
+                <div class="d-flex flex-column justify-content-between">
+                  <ion-text>
+                    <ion-label class="fz-small mb-1">
+                      {{ convertCurrency(product.price) }}
+                    </ion-label>
+                    <ion-label class="text" [innerHTML]="product.name"></ion-label>
+                  </ion-text>
+                  <ion-label class="fz-note text"
+                    >Lo agregó <span style="color:#023aff">{{ returnNombres(product.buyer)}}</span>
+                  </ion-label>
+                </div>
+              </div>
+
+              <div id="deleteDescription" class="description fz-note d-flex flex-column" *ngFor="let description of product.descriptions">
+                <ion-label class="fz-note measurement">
+                  <!-- Mostaza, 120x150 cm, 25 mm -->
+                  {{ description.description }}
+                </ion-label >
+                <div class="d-flex flex-row justify-content-between">
+                  <img
+                    (click)="deleteDescription(product.id, description.id)"
+                    src="/assets/collaborative-basquet/Delete 02.svg"
+                    alt="icono"
+                  />
+                  <ion-text class="d-flex">
+                    <img src="assets/icons/icon-line.svg" />
+                    <ion-label class="mx-3">{{ convertQuantity(description.quantity) }}</ion-label>
+                    <img src="assets/icons/icon-plus-main.svg" />
+                  </ion-text>
+                </div>
+              </div>
+
+            </div>
+          </ion-label>
+        </ion-item>
+        <ion-item-options lines="none" style="align-items: start">
+          <ion-item-option class="option-background">
+            <img
+              (click)="deleteProduct(product.id)"
+              class="img-delete"
+              src="/assets/collaborative-basquet/Delete 02-main.svg"
+              alt="icono"
+            />
+
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    </div>
+  </div>
+</div>

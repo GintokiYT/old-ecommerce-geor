@@ -25,8 +25,6 @@ export class HeaderTeamComponent extends ViewComponent implements OnInit {
     if(currentRouter === '/customer/collaborative-team/team') {
       return this.navigation.back('/customer/manage-user-information');
     }
-
-
     this.navigation.back('/customer/collaborative-basket');
 
   }

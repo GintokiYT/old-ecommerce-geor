@@ -34,8 +34,7 @@ export class ModalBasketComponent extends ViewComponent implements OnInit {
 
   goBasket(){
     this.inviteService.setStatusModalBasketCollaborative(false);
-    console.log(this.inviteService.getStatusModalBasketCollaborative);
-    this.navigation.root('/customer/my-basket', 'forward');
+    this.navigation.root('/customer/my-basket','forward');
   }
 
 }

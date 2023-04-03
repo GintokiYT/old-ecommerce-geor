@@ -12,6 +12,7 @@ export class SendComponent extends ViewComponent implements OnInit {
   modalCountry: boolean;
   countryName:string="Perú";
   countryFlag:string="/assets/flags/pe.svg";
+
   constructor(_injector:Injector,private country:CountryService,private route: ActivatedRoute) {
     super(_injector)
     this.country.getStatusModalCountry.subscribe(status=>this.modalCountry=status);
@@ -22,9 +23,8 @@ export class SendComponent extends ViewComponent implements OnInit {
       this.countryName="Perú";
       this.countryFlag="/assets/flags/pe.svg";
     }
-
-    console.log(this.countryName);
-    console.log(this.countryFlag);
+   /*  console.log(this.countryName);
+    console.log(this.countryFlag); */
 
    }
 
@@ -42,17 +42,16 @@ export class SendComponent extends ViewComponent implements OnInit {
     this.navigation.root('/customer/country-direction','forward',params);
   }
 
-    selectedCountry: any = {
-      country: "Perú ",
-      flag: "/assets/flags/pe.svg",
-      //selected: false
-    };
+  selectedCountry: any = {
+    country: "Perú ",
+    flag: "/assets/flags/pe.svg",
+    //selected: false
+  };
 
-    onCountrySelected(country: any) {
-      this.selectedCountry = country;
-      this.country.setStatusModalCountry(false);
-    }
-
+  onCountrySelected(country: any) {
+    this.selectedCountry = country;
+    this.country.setStatusModalCountry(false);
+  }
 
   }
 

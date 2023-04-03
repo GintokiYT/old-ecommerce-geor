@@ -16,7 +16,7 @@ export class EmptyBasketComponent extends ViewComponent implements OnInit {
   constructor(_injector: Injector, private inviteService:InviteService,) {
     super(_injector);
 
-    //Modal Invite
+    //Service de Modal Invite
     this.inviteService.getStatusModalInvite.subscribe(status=>this.modalInvite =status);
   }
 

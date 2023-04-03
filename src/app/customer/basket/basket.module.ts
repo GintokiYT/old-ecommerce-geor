@@ -5,7 +5,6 @@ import { TeamComponent } from './team/team.component';
 import { HeaderTeamComponent } from './team/header-team/header-team.component';
 import { HeaderMyBasketComponent } from './my-basket/header-my-basket/header-my-basket.component';
 import { IonicModule } from '@ionic/angular';
-import { ProductComponent } from './collaborative-basket/product/product.component';
 import { MyBasketComponent } from './my-basket/my-basket.component';
 import { ModalBasketComponent } from './collaborative-basket/modal-basket/modal-basket.component';
 import { InboxModule } from '../inbox/inbox.module';
@@ -22,6 +21,7 @@ import { HomeModule } from '../home/home.module';
 import { ModalMyBasketComponent } from './my-basket/modal-Mybasket/modal-Mybasket.component';
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { CollaborativeBasketComponent } from './collaborative-basket/collaborative-basket.component';
+import { MainProductsComponent } from './my-basket/main-products/main-products.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import { CollaborativeBasketComponent } from './collaborative-basket/collaborati
     ModalBasketComponent,
     MyBasketComponent,
     HeaderMyBasketComponent,
-    ProductComponent,
     MainProductComponent,
     EmptyBasketComponent,
     ModalInviteComponent,
@@ -40,7 +39,8 @@ import { CollaborativeBasketComponent } from './collaborative-basket/collaborati
     ModalResendInvitationComponent,
     ContactTeamComponent,
     ModalMyBasketComponent,
-    CollaborativeBasketComponent
+    CollaborativeBasketComponent,
+    MainProductsComponent
 
   ],
   imports: [
@@ -58,7 +58,6 @@ import { CollaborativeBasketComponent } from './collaborative-basket/collaborati
     HeaderTeamComponent,
     ModalBasketComponent,
     HeaderMyBasketComponent,
-    ProductComponent,
     MainProductComponent
   ]
 })

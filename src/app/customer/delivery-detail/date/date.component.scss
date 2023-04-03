@@ -69,11 +69,9 @@ ion-footer {
   color: var(--ion-color-disabled);
 }
 
-//
-
 //select
 .selected {
-  border: 1px solid #023aff;
+  border: 1px solid #023aff !important;
   color: #023aff;
 }
 

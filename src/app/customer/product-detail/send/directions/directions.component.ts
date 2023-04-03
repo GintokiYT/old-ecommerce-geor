@@ -2,9 +2,9 @@ import { Component, Input, OnInit, Injector } from '@angular/core';
 import { Location } from '@angular/common';
 import { AlertController } from '@ionic/angular';
 import { ViewComponent } from '@geor360/ecore';
-import { ConfirmOrderService } from '../../confirm-order/services/confirm-order.service';
+import { ConfirmOrderService } from '../../../confirm-order/services/confirm-order.service';
 import { Router } from '@angular/router';
-import { RouteService } from '../../../services/route.service';
+import { RouteService } from '../../../../services/route.service';
 
 @Component({
   selector: 'app-directions',
@@ -24,7 +24,7 @@ export class DirectionsComponent extends ViewComponent implements OnInit {
     super(_injector)
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.directions = [
       {
         id: 1,
@@ -36,7 +36,7 @@ export class DirectionsComponent extends ViewComponent implements OnInit {
         name: "Jr. Enrique Segobiano 879 Miraflores, Lima, Perú",
         selected: false
       },
-  
+
     ]
   }
 
