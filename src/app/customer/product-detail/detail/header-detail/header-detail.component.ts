@@ -18,7 +18,7 @@ export class HeaderDetailComponent extends ViewComponent implements OnInit {
   prevUrlSend : string;
 
   constructor(private location: Location, private router: Router,
-    private _injector: Injector, private rs : RouteService) { 
+    private _injector: Injector, private rs : RouteService) {
     super(_injector);
     const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.previousRoute = prevUrl;
@@ -27,13 +27,11 @@ export class HeaderDetailComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {}
 
-
   goBack(){
     if(this.router.url.includes("detail")){
       this.navigation.back(this.previousRoute);
     }else{
       this.navigation.back(this.prevUrlSend);
     }
-    
   }
 }

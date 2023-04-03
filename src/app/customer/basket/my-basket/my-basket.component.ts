@@ -16,6 +16,7 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
  //Eliminar producto
  /* mainProduct: boolean = true;
  Product: boolean = true; */
+ allChecked = false;
  products: any[];
 
  //Modal Basket
@@ -30,7 +31,12 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.products = this.productService.getProducts()
+
+    this.products = this.productService.getProducts();
+  this.products.forEach(product => {
+    product.isChecked = false;
+  });
+
   }
   eliminarProducto(){
     this.message.confirm('¿Eliminar los productos seleccionados?','',(confirmation)=>{
@@ -52,16 +58,6 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
     this.navigation.forward("/customer/confirm-order")
   }
 
-  //Eliminar contenido
- /*  onMyEvent(status: boolean) {
-    this.mainProduct = status;
-  }
-  onProductEvent(status:boolean){
-    this.Product = status;
-  } */
-
-  //Seleccion todos los checkbox--- agregamos [isChecked]="allChecked" al componente app-main-product
-  allChecked = false;
 
   modifyProducts(producto) {
 
@@ -78,6 +74,10 @@ export class MyBasketComponent extends ViewComponent implements OnInit {
     if(contador === this.products.length) {
       this.allChecked = true;
     } else {
+      this.allChecked = false;
+    }
+
+    if(this.products.length === 0) {
       this.allChecked = false;
     }
   }

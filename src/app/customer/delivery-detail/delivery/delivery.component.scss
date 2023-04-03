@@ -1,26 +1,3 @@
-
-button{
-  background-color: transparent;
-}
-
-ion-toolbar{
-  --background: var(--ion-toolbar-background, var(--ion-color-step-50));
-  --min-height: 0px;
-  --padding-top: 24px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --padding-bottom: 40px
-}
-
-@media(max-width:320px){
-  ion-toolbar{
-      --padding-top: 32px;
-      --padding-start: 16px;
-      --padding-end: 16px;
-      --padding-bottom: 24px
-}}
-
-
 ion-content {
   // Eliminar scroll de la
   --overflow: hidden;
@@ -44,24 +21,6 @@ ion-textarea {
   min-height: 114px;
   border: 1px solid var(--ion-color-separator);
   border-radius: 5px;
-}
-
-ion-button {
-  --ion-color-primary: #023AFF;
-}
-
-
-
-
-ion-footer{
-
-ion-toolbar{
-  --border-width: 0px;
-  --padding-top: 0px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --padding-bottom: 24px
-}
 }
 
 //

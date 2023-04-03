@@ -9,14 +9,6 @@ interface Colours{
   quantify:number
 }
 
-interface Measurements{
-  sizes:string
-}
-
-interface Thickness{
-  number:number
-}
-
 @Component({
   selector: 'app-variants-product',
   templateUrl: './variants-product.component.html',
@@ -38,23 +30,13 @@ export class VariantsProductComponent extends ViewComponent implements OnInit {
     {  images:'/assets/images/azul.png',  name:'Azul',quantify: 0},
     {  images:'/assets/images/azul.png',  name:'Azul', quantify: 0 }];
 
-  measurement:Measurements[]=[
-    { sizes:'150x120'},
-    { sizes:'100x110'},
-    { sizes:'150x110'},
-    { sizes:'200x240'}];
-
-    thicknes:Thickness[]=[
-    { number:2 },
-    { number:4 },
-    { number:8 },
-  ];
 
   goBack(){
     this.navigation.root(this.previousRoute,"back");
     /* this.navigation.root('/customer/collaborative-basket','back'); */
   }
 
+  //SELECCIONAR
   selectedLabel: number = null;
 
   selectLabel(index: number) {
@@ -74,11 +56,9 @@ export class VariantsProductComponent extends ViewComponent implements OnInit {
       this.selectedLabel2 = index;
     }
   }
+  //
+
   goBackCollaborative(){
     this.location.back();
   }
-  /* deselectLabel(){
-    this.selectLabel=null;
-  } */
-
 }

@@ -14,57 +14,25 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
   statusModal: boolean;
   allChecked = false;
 
- /*  products:any[] = [
-    {
-      id: 1,
-      image: '/assets/collaborative-basquet/Rectangle 1600.png',
-      price: 9780,
-      name: 'Plancha de bicarbonato <br/> pulveriza zado lorem ipsum',
-      buyer: ['Gerardo Ortíz'],
-      descriptions: [
-        {
-          id: 1,
-          description: 'Mostaza, 120x150 cm, 25 mm',
-          quantity: 10503
-        }
-      ],
-      isChecked: false
-    },
-    {
-      id: 2,
-      image: '/assets/collaborative-basquet/Producto2.png',
-      price: 48.90,
-      name: 'Acrílico liso bajo',
-      buyer: ['Gerardo Ortiz','Wilfredo','Luis'],
-      descriptions: [
-        {
-          id: 1,
-          description: 'Verde jade, 120x150 cm, 25 mm',
-          quantity: 7300
-        },
-        {
-          id: 2,
-          description: 'Naraja limon, 120x150 cm, 25 mm',
-          quantity: 2
-        },
-        {
-          id: 3,
-          description: 'Gris claro, 120x150 cm, 25 mm',
-          quantity: 4
-        }
-      ],
-      isChecked: false
-    }
-  ] */
+  //PRODUCTOS
   products: any[];
+
   constructor(_injector: Injector, private inviteService: InviteService,
     private rs: RouteService,private productService: ProductService) {
     super(_injector);
+    //SERVIVIO DE MODAL
     this.inviteService.getStatusModalBasketCollaborative.subscribe( status => this.statusModal = status );
   }
 
   ngOnInit() {
-    this.products = this.productService.getProducts()
+    //SERVICIO DE PRODUCTOS
+    this.products = this.productService.getProducts();
+
+    //TENER LOS CHECKBOX EN FALSO
+    this.products.forEach(product => {
+    product.isChecked = false;
+  });
+
   }
 
   goToConfirmOrder() {
@@ -95,15 +63,13 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
     }
   }
 
-  deleteProductMain(id) {
-    console.log(id)
-  }
+deleteProductMain(id) {
+  console.log(id)
+}
 
-  modifyCheckProduct() {
-    const inputCheckTotal: HTMLInputElement = document.querySelector('.container-footer input[type=checkbox]')
-
-    this.allChecked = inputCheckTotal.checked
-
+modifyCheckProduct() {
+  const inputCheckTotal: HTMLInputElement = document.querySelector('.container-footer input[type=checkbox]')
+  this.allChecked = inputCheckTotal.checked;
     if(this.allChecked) {
       this.products = this.products.map( product => {
         const newProduct = product;
@@ -117,6 +83,5 @@ export class CollaborativeBasketComponent extends ViewComponent implements OnIni
         return newProduct
       })
     }
-
   }
 }

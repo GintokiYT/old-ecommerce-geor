@@ -1,35 +1,37 @@
 <ion-content>
- <app-header
+  <app-header
     title="Requisitos para la entrega"
     iconLeft="icon-arrow-left"
-    backDirection="confirm-order">
+    backDirection="confirm-order"
+  >
   </app-header>
 
-<div class="container-main">
-  <ion-item lines="none" >
-    <ion-textarea #deliveryRequirements (input)="onTextAreaInput($event)"></ion-textarea>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label>
-      <p class="linea">Detalla los requisitos para la entrega (opcional)</p>
-    </ion-label>
-  </ion-item>
-</div>
+  <div class="container-main">
+    <ion-item lines="none">
+      <ion-textarea
+        #deliveryRequirements
+        (input)="onTextAreaInput($event)"
+      ></ion-textarea>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>
+        <p class="linea">Detalla los requisitos para la entrega (opcional)</p>
+      </ion-label>
+    </ion-item>
+  </div>
 
-<ion-footer class="ion-no-border ion-no-padding footer-ionic">
-  <ion-toolbar class="ion-no-padding">
-    <ion-button
-    (click)="goSaveDeliveryRequirements()"
-      expand="full"
-      shape="round"
-      color="primary"
-      style="margin: 0;"
-      [disabled]="!isSaveButtonEnabled"
-    >
-      Guardar
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>
-
+  <ion-footer class="ion-no-border ion-no-padding footer-ionic">
+    <ion-toolbar class="ion-no-padding">
+      <ion-button
+        (click)="goSaveDeliveryRequirements()"
+        expand="full"
+        shape="round"
+        color="primary"
+        style="margin: 0"
+        [disabled]="!isSaveButtonEnabled"
+      >
+        Guardar
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
-

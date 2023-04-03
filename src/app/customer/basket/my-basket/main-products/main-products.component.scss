@@ -1,39 +1,32 @@
+.container-products {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 /*  CONTENIDO */
 .box-select {
-  gap:14px;
-}
+  gap: 14px;
 
-.unit_cost{
-  line-height: 22px;
-  color:var(--ion-color-basic);
-}
+  .box-name {
+    gap: 10px;
 
-.product {
-  color: var(--ion-color-light) ;
-  line-height: 24px;
-}
-
-.box-name {
-  gap: 10px;
+    .text {
+      color: var(--ion-color-text-secundary);
+    }
+  }
 }
 
 .description {
   width: 306px;
-  border: 1px solid  var(--ion-color-separator);
+  border: 1px solid var(--ion-color-separator);
   border-radius: 8px;
   padding: 9px 9px 3px 9px;
   gap: 18px;
 
-}
-.measurement {
-  color: var(--ion-color-light) ;
-}
-
-.cost {
-  line-height: 22px;
-  color: var(--ion-color-basic);
-  margin-left: 8px;
-  margin-right: 8px;
+  .measurement {
+    color: var(--ion-color-light);
+  }
 }
 
 .img-delete {
@@ -44,33 +37,36 @@
 }
 
 .option-background {
-  background:var(--ion-background-color);
+  background: var(--ion-background-color);
 }
 
 .list {
   margin-bottom: 40px !important;
 }
 
-.text{
-  color:var(--ion-color-text-secundary);
-}
-
-.name{
-  color:#023aff;
-}
 .div.item-native {
   padding-left: 0px !important;
 }
+
 ion-item {
   --inner-padding-end: 0px !important;
 }
-ion-item-options{
-  border-bottom-width:0px !important;
+
+ion-item-options {
+  border-bottom-width: 0px !important;
+  .button-inner {
+    justify-content: start !important;
+  }
 }
 
+ion-item-option {
+  .button-inner {
+    display: flex;
+    justify-content: start !important;
+  }
+}
 
 /* CUSTOM CHECKBOX */
-/* Customize the label (the container) */
 .custom-checkbox {
   display: block;
   position: relative;
@@ -140,35 +136,11 @@ ion-item-options{
   transform: rotate(45deg);
 }
 
-/* Modal-delete */
-ion-modal {
-  &.modal-alert {
-      --height: fit-content;
-      --border-radius: 10px;
-  }
-
-  &::part(content) {
-      margin-right: 24px;
-      margin-left: 24px;
-  }
-
-  --background: var(--ion-background-alert)
-}
-
-/* Dark */
-.cancel{
-  color: var(--ion-color-basic) !important;
-}
-
-.delete{
-  color: var(--ion-color-delete) !important;
-}
-
 // Animation Delete
-.animation-deletes {
+.animation-delete {
   //transition: all .3s ease;
-  &.actives {
-    animation: animationDelete .5s ease;
+  &.active {
+    animation: animationDelete 0.5s ease;
   }
 }
 
@@ -180,4 +152,3 @@ ion-modal {
     transform: translateX(-100vw);
   }
 }
-

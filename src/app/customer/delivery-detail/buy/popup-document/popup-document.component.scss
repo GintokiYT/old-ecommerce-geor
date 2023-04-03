@@ -51,7 +51,11 @@ ion-item::part(native) {
   padding: 0px;
 }
 
-
+ion-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0px !important;
+}
 
 
 @keyframes openPopup {

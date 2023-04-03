@@ -1,33 +1,44 @@
-button {
-  background-color: transparent;
-}
-
-.header-collaborative-team{
+ion-header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-}
 
-ion-toolbar{
-  --background: var(--ion-toolbar-background, var(--ion-color-step-50, var(--ion-background-color)));
-  --min-height: 0px;
-  --padding-top: 16px;
-  --padding-start: 16px;
-  --padding-end: 16px;
-  --padding-bottom: 14px;
-}
+  ion-toolbar {
+    --background: var(
+      --ion-toolbar-background,
+      var(--ion-color-step-50, var(--ion-background-color))
+    );
+    --min-height: 0px;
+    --padding-top: 16px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-bottom: 14px;
 
-@media(max-width:320px){
-  ion-toolbar{
-      --padding-top: 32px;
-      --padding-start: 16px;
-      --padding-end: 16px;
-      --padding-bottom: 24px
+    button {
+      background-color: transparent;
+
+      .back {
+        width: 24px;
+        height: 24px;
+        path {
+          stroke: var(--ion-color-basic);
+        }
+      }
+    }
   }
 }
 
-.content-message-no-team{
+@media (max-width: 320px) {
+  ion-toolbar {
+    --padding-top: 32px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-bottom: 24px;
+  }
+}
+
+.content-message-no-team {
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,31 +60,23 @@ ion-toolbar{
   }
 }
 
-.back{
-  width: 24px;
-  height: 24px;
-  path {
-    stroke: var(--ion-color-basic);
-  }
-}
-
 .icon-plus {
-   width: 64px;
-    height: 64px;
-    position: fixed;
-    right: 0px;
-    bottom: calc( var(--ion-safe-area-bottom,0) + 16px);
-    margin-right: 16px;
-    z-index: 1000;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  right: 0px;
+  bottom: calc(var(--ion-safe-area-bottom, 0) + 16px);
+  margin-right: 16px;
+  z-index: 1000;
 }
 
-@media(min-width:390px) {
-  ion-toolbar{
-    --padding-start: 24px;
-    --padding-end: 24px;
+@media (min-width: 390px) {
+  ion-header {
+    ion-toolbar {
+      --padding-start: 24px;
+      --padding-end: 24px;
+    }
   }
-
-
 
   .icon-plus {
     margin-right: 24px;

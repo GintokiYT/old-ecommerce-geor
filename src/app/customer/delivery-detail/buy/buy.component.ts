@@ -17,7 +17,7 @@ export class BuyComponent extends ViewComponent implements OnInit {
 
   //Open Documente Type
   popupDocument: boolean = false;
-
+  selectedOption: string = null;
   //end
 
   // flag: string;
@@ -177,7 +177,8 @@ export class BuyComponent extends ViewComponent implements OnInit {
   changeDocumentForm(value: string) {
     this.form.get('document').setValue(value);
   }
-  selectedOption: string = null;
+
+
   goBack() {
     const currentRouter= this.route.url
     if(currentRouter==='/customer/contact/buy'){

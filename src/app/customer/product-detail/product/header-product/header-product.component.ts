@@ -11,7 +11,6 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
 
   previousRoute: string;
 
-
   constructor(private _injector: Injector, private router: Router) {
     super(_injector);
     this.previousRoute = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
@@ -34,6 +33,15 @@ export class HeaderProductComponent extends ViewComponent implements OnInit {
       this.navigation.back('/customer/search-general/product');
       return;
     }
+    if (currentRouter === '/customer/search-general/product-detail') {
+      this.navigation.back('/customer/search-general/product');
+      return;
+    }
+    if (currentRouter === '/customer/empty-basket/product') {
+      this.navigation.back('/customer/empty-basket');
+      return;
+    }
+
 
     const back = localStorage.getItem('back') ?? '';
 

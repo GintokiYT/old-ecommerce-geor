@@ -6,11 +6,11 @@ interface ICost {
 }
 
 @Component({
-  selector: 'app-slider-secondary',
-  templateUrl: './slider-secondary.component.html',
-  styleUrls: ['./slider-secondary.component.scss'],
+  selector: 'app-slider-cost',
+  templateUrl: './slider-cost.component.html',
+  styleUrls: ['./slider-cost.component.scss'],
 })
-export class SliderSecondaryComponent  implements OnInit {
+export class SliderCostComponent  implements OnInit {
 
   slideOptions: any = {
     autoplay: {

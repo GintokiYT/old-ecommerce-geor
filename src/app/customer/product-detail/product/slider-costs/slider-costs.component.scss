@@ -2,6 +2,14 @@
   margin-top: 0px !important;
   margin-bottom: 0px;
   gap: 16px;
+
+  .cost {
+    width: 120px;
+
+    .color {
+      color: var(--ion-color-disabled);
+    }
+  }
 }
 
 .a-right {
@@ -17,21 +25,5 @@
   ion-img {
     width: 120px;
     height: 60px;
-  }
-}
-.cost {
-  width: 120px;
-}
-
-.color {
-  color: var(--ion-color-disabled);
-}
-@media (max-width: 320px) {
-  ion-label {
-    font-size: 14px;
-  }
-
-  img {
-    display: inherit;
   }
 }

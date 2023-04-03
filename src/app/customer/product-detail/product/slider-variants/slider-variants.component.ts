@@ -17,8 +17,8 @@ export class SliderVariantsComponent extends ViewComponent implements OnInit {
       delay: 5000,
     },
   };
-  productsForYou: IProduct[] = [];
-  productSlidesOptions: any = {
+  variantsForYou: IProduct[] = [];
+  variantSlidesOptions: any = {
     spaceBetween: 12,
     slidesPerView: 'auto',
   };
@@ -29,7 +29,7 @@ export class SliderVariantsComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {
 
-    this.productsForYou = [
+    this.variantsForYou = [
       { image: '/assets/images/variants/variacion1.png' },
       { image: '/assets/images/variants/variacion2.png' },
       { image: '/assets/images/variants/variacion3.png' },

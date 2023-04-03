@@ -1,16 +1,3 @@
-ion-modal::part(handle){
-  display: none;
- }
-
-ion-modal {
-  --ion-background-color:var(--ion-background-modal) !important;
-}
-
-.basket{
-  color:#023AFF;
-}
-
-//* Modal
 .container-modal-basket {
   position: fixed;
   top: 0;
@@ -18,21 +5,26 @@ ion-modal {
   width: 100%;
   height: 100vh;
   z-index: 10000;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .modal-basket {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 232px;
+    background-color: var(--ion-background-modal);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    .basket {
+      color: #023aff;
+    }
+  }
 }
 
-.modal-basket {
-  border-radius: 10px 10px 0px 0px;
-  width: 100%;
-  height: 232px;
-  background-color: var(--ion-background-modal);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
+//* Cerrar modal
 .close-modal {
-  animation: closeModal .3s ease;
+  animation: closeModal 0.3s ease;
 }
 
 @keyframes closeModal {

@@ -6,11 +6,10 @@ import { IonicModule } from '@ionic/angular';
 import { SendComponent } from './send/send.component';
 import { ProductComponent } from './product/product.component';
 import { FooterProductComponent } from './product/footer-product/footer-product.component';
-import { VariantsComponent } from './variants/variants.component';
+
 import { HeaderVariantsComponent } from './variants/header-variants/header-variants.component';
 import { SliderVariantsComponent } from './product/slider-variants/slider-variants.component';
 import { SliderCostsComponent } from './product/slider-costs/slider-costs.component';
-import { SliderSecondaryComponent } from './variants/slider-secondary/slider-secondary.component';
 import { HeaderProductComponent } from './product/header-product/header-product.component';
 import { ModalVariantsComponent } from './variants/modal-variants/modal-variants.component';
 import { ModalAddComponent } from './variants/modal-add/modal-add.component';
@@ -20,9 +19,11 @@ import { VariantsProductComponent } from './variants-product/variants-product.co
 /* import { ModalCountryComponent } from './send/modal-country/modal-country.component'; */
 import { CountryDirectionComponent } from './send/country-direction/country-direction.component';
 import { ChangeReturnComponent } from './change-return/change-return.component';
-import { DirectionsComponent } from './directions/directions.component';
+import { DirectionsComponent } from './send/directions/directions.component';
 import { ShareModule } from "../../shared/shared.module";
 import { FormsModule } from '@angular/forms';
+import { SliderCostComponent } from './variants/slider-cost/slider-cost.component';
+import { VariantsComponent } from './variants/variants.component';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { FormsModule } from '@angular/forms';
         HeaderVariantsComponent,
         SliderVariantsComponent,
         SliderCostsComponent,
-        SliderSecondaryComponent,
+        SliderCostComponent,
         HeaderProductComponent,
         ModalVariantsComponent,
         ModalAddComponent,
@@ -54,7 +55,7 @@ import { FormsModule } from '@angular/forms';
         HeaderVariantsComponent,
         SliderVariantsComponent,
         SliderCostsComponent,
-        SliderSecondaryComponent,
+        SliderCostComponent,
         HeaderProductComponent,
         ModalVariantsComponent,
         ModalAddComponent,

@@ -17,16 +17,12 @@ export class CardPaymentMethodsComponent extends ViewComponent implements OnInit
   ngOnInit() {}
 
   goAddCard(){
-
     const localData = JSON.parse(localStorage.getItem('back')) ?? '';
-
     if(localData) {
       this.navigation.root(localData['back'], 'forward');
     } else {
       this.navigation.root('/customer/add-card','forward')
     }
-
-
 /*
     localStorage.setItem('back', '/customer/card-payment-methods');
     this.navigation.root('/customer/add-card','forward') */
