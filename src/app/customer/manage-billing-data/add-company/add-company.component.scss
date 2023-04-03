@@ -62,23 +62,18 @@ ion-content {
 
 
 ion-footer {
-    ion-item {
-        --inner-padding-end: 0px !important;
+    ion-label {
+        margin: 0px !important;
+        font-size: 14px;
+    }
 
-        ion-label {
-            margin: 0px !important;
-            font-size: 14px;
-        }
+    ion-input{
+        pointer-events: none;
+    }
 
-        ion-toggle {
-            height: 32px;
-            padding: 0px !important;
-        }
-
-        &::part(native) {
-            padding-inline-end: 0px !important;
-            padding-inline-start: 0px !important;
-        }
+    ion-toggle {
+        height: 32px;
+        padding: 0px !important;
     }
 }
 
@@ -99,12 +94,12 @@ ion-footer {
     }
 
     ion-footer {
-        ion-item {
-            ion-label {
-                font-size: 16px;
-            }
+        ion-label {
+            margin: 0px !important;
+            font-size: 16px;
         }
     }
+    
 }
 
 .container-modal {
