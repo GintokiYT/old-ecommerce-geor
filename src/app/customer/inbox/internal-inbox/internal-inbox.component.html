@@ -1,6 +1,7 @@
 <ion-content class="ion-no-padding ion-content-var" [scrollEvents]="true">
 
   <app-header-inbox class="app-header-inbox"></app-header-inbox>
+  <div style="width: 100%; height: calc(var(--ion-safe-area-top) + 60px);"></div>
 
   <div class="container-internal-inbox">
     <!-- Content Messages -->
@@ -43,6 +44,10 @@
           </svg>
       </div>
     </div>
+
+    <div contenteditable="true" tabindex="-1" (click)="prueba()" style="width: 24px; height: 24px; background-color: red;"></div>
+
+    <!-- <input type="text" tabindex="-1" (click)="prueba()"> -->
 
     <div class="content-footer__items-icon-send"
       [ngStyle]="{'display': messageInput.textContent.length > 0 ? 'block' : 'none'}" (click)="sendMessage()">

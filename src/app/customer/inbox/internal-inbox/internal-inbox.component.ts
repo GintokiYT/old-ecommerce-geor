@@ -389,8 +389,8 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     }, 500);
   }
 
-  codigo() {
-    alert('xd')
+  prueba() {
+    alert('XD')
   }
 }
 

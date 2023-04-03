@@ -27,6 +27,8 @@ declare var google: any;
 
 export class MyLocationComponent extends ViewComponent implements OnInit {
 
+  // Hola mundo :D
+
   map: any;
   currentPosition: any;
   contenido: Contenido;
@@ -495,8 +497,18 @@ export class MyLocationComponent extends ViewComponent implements OnInit {
   }
 
   onBack() {
+    const currentRouter = this.router.url;
+    if(currentRouter==='/direction/account/welcome/my-location'){
+      return this.navigation.root('/customer/direction','back')
+    }else if(currentRouter==="/customer/manage-addresses/my-location"){
+      return this.navigation.root("/customer/manage-addresses","back")
+    }else if(currentRouter==="/customer/manage-addresses/addresses-delete/my-location"){
+      return this.navigation.root("customer/manage-addresses/addresses-delete","back")
+    }else if(currentRouter==="/send/account/welcome/my-location"){
+      return this.navigation.root("/customer/send-directions","back");
+    }
+
     this.navigation.back('/account/welcome/whe-are-you');
-    // this.navigation.back(this.previousRoute);
   }
 
   nextProyect() {

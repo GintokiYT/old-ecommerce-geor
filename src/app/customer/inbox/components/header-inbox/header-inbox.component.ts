@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 })
 export class HeaderInboxComponent extends ViewComponent implements OnInit {
 
-
   previousRoute: string;
 
   constructor(_injector: Injector, private callNumber: CallNumber,private location: Location,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Injector } from '@angular/core';
+import { Component, OnInit, ViewChild, Injector, NgZone } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ViewComponent } from '@geor360/ecore';
 import { IonContent, IonInput } from '@ionic/angular';
@@ -6,6 +6,7 @@ import { Contacts } from "@capacitor-community/contacts"
 import { ContactsService } from '../../../services/contacts.service';
 import { Router } from '@angular/router';
 import { BillingDataService } from '../../../services/billing-data.service';
+import { Keyboard } from '@geor360/capacitor-keyboard';
 
 
 
@@ -30,15 +31,17 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
   data: any[];
   previousRoute: string;
   statusModalSpinner: boolean = false;
+  keyboardUp : boolean = false;
 
 
 
   @ViewChild("inputType") inputType: IonInput;
   @ViewChild(IonContent) content: IonContent;
   @ViewChild("ionId") inputId: IonInput;
+  @ViewChild("fakeInput") fInput: IonInput;
 
   constructor(private _injector: Injector, private cs: ContactsService,
-    private router: Router, private bs: BillingDataService) {
+    private router: Router, private bs: BillingDataService, private ngZone: NgZone) {
     super(_injector);
     this.bs.currentContactTemp$.subscribe(contact => {
       this.name = contact.name;
@@ -68,6 +71,17 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
       id: new FormControl('', [
         Validators.required,
       ])
+    });
+
+  }
+
+  ionViewDidEnter() {
+    Keyboard.addListener('keyboardWillHide', () => {
+      this.keyboardUp = false;
+    });
+
+    Keyboard.addListener('keyboardWillShow', () => {
+      this.keyboardUp = true;
     });
 
   }
@@ -158,4 +172,18 @@ export class AddCompanyComponent extends ViewComponent implements OnInit {
       console.log(e)
     }
   }
+
+  onToggle(ev){
+    ev.preventDefault();
+    ev.stopPropagation();
+    console.log("hola toggle")
+    if(this.keyboardUp){
+      this.fInput.setFocus();
+    }    
+  }
+
+  focusFake(){
+    console.log("Hola fake")
+  }
+
 }
