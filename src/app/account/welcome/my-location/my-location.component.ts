@@ -27,6 +27,8 @@ declare var google: any;
 
 export class MyLocationComponent extends ViewComponent implements OnInit {
 
+  // Hola mundo :D
+
   map: any;
   currentPosition: any;
   contenido: Contenido;
