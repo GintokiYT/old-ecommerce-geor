@@ -3,7 +3,7 @@ import CountryInterface from 'src/app/interfaces/CountryInterface';
 import { ViewComponent } from '@geor360/ecore';
 import { LanguageService } from '../../../services/language.service';
 
-import { ScreenOrientation } from '@capacitor/screen-orientation';
+// import { ScreenOrientation } from '@capacitor/screen-orientation';
 // import { ScreenOrientation, OrientationType } from '@capawesome/capacitor-screen-orientation';
 
 interface Contenido {
@@ -37,8 +37,9 @@ export class SelectCountryComponent extends ViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    // @capacitor/screen-orientation
 
-    ScreenOrientation.lock({ orientation: 'portrait' }).catch(err => console.log(err));
+    // ScreenOrientation.lock({ orientation: 'portrait' }).catch(err => console.log(err));
 
     // this.screenOrientation.lock()
 
@@ -46,7 +47,7 @@ export class SelectCountryComponent extends ViewComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    ScreenOrientation.unlock();
+    // ScreenOrientation.unlock();
   }
 
   // ngAfterViewInit(): void {
