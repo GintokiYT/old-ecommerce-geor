@@ -1,13 +1,13 @@
-.detail{
-  color:var(--ion-color-light);
-}
-
-.content-detail{
+.content-detail {
   margin: 0 16px 24px 16px;
+
+  .detail {
+    color: var(--ion-color-light);
+  }
 }
 
 @media (min-width: 390px) {
   .content-detail {
     margin: 0 24px 24px 24px;
   }
-  }
+}

@@ -58,7 +58,6 @@ export class DirectionComponent extends ViewComponent implements OnInit {
       this.navigation.back("/customer/confirm-order");
     }
 
-
   }
 
   goLocation() {

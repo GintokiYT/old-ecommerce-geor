@@ -90,28 +90,7 @@ export class ModalInviteComponent extends ViewComponent implements OnInit {
           break;
 
         case "granted": // se da en permitir
-          // try {
-          //   const result = await Contacts.getContacts({
-          //     projection: {
-          //       name: true,
-          //       phones: true
-          //     }
-          //   })
-          //   this.contacts = result.contacts;
-          //   this.cs.setContactsData(this.contacts);
 
-          //   //
-          //   const currentRouter = this.router.url;
-          //   if (currentRouter === '/customer/collaborative-team/team') {
-          //     this.inviteService.setStatusModalInvite(false);
-          //     return this.navigation.forward('/customer/collaborative-team/contact-team')
-          //   }
-          //   this.inviteService.setStatusModalInvite(false);
-          //   this.navigation.forward('/customer/contact-basket');
-
-          // } catch (e) {
-          //   console.log(e)
-          // }
           if (this.contacts.length === 0) {
             this.statusModalSpinner = true;
             setTimeout(() => {

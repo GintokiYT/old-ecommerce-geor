@@ -18,12 +18,12 @@ import { InviteService } from '../../../services/Invite.service';
 export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
 
 
-  //Contact
+  //Contactos
   permission: string;
   contacts: any[];
   statusModalSpinner: boolean = false;
 
-
+  //Abrir Modal
   @ViewChild('ContainerModal') ContainerModal: ElementRef;
   @ViewChild('modal') modal: ElementRef;
   ngAfterViewInit(): void {
@@ -51,7 +51,7 @@ export class ModalInviteTeamComponent extends ViewComponent implements OnInit {
     }
   }
 
-  //Contact
+  //Contactos
   async CheckPermission() {
     try {
       const perm = await Contacts.checkPermissions();

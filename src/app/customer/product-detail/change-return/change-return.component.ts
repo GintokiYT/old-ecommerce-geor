@@ -13,6 +13,7 @@ export class ChangeReturnComponent extends ViewComponent implements OnInit {
    }
 
   ngOnInit() {}
+
   goBack(){
     this.navigation.back('/customer/product');
   }

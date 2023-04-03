@@ -18,7 +18,7 @@ interface ICost {
 })
 export class DateComponent extends ViewComponent implements OnInit {
 
-  diasDeLaSemana = {
+  WEEKDAYS = {
     0: 'Dom',
     1: 'Lun',
     2: 'Mar',
@@ -54,25 +54,25 @@ export class DateComponent extends ViewComponent implements OnInit {
 
   ngOnInit() {
 
-    function obtenerDiasMes(anio, mes) {
-      var fecha = new Date(anio, mes - 1, 1); // mes comienza en 0 (enero)
-      var dias = [];
-      while (fecha.getMonth() === mes - 1) {
-        dias.push(new Date(fecha));
-        fecha.setDate(fecha.getDate() + 1);
+    function getDaysMonth(anio, mes) {
+      var newDate = new Date(anio, mes - 1, 1); // mes comienza en 0 (enero)
+      var days = [];
+      while (newDate.getMonth() === mes - 1) {
+        days.push(new Date(newDate));
+        newDate.setDate(newDate.getDate() + 1);
       }
-      return dias;
+      return days;
     }
-    const diasdelmes = obtenerDiasMes(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1)
+    const daysMonth = getDaysMonth(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1)
 
 
-    diasdelmes.forEach( dia => {
-      const currentDay = new Date(dia);
+    daysMonth.forEach( day => {
+      const currentDay = new Date(day);
 
       if( currentDay.getDate() >= new Date().getDate() ) {
-        const diaSemana = this.diasDeLaSemana[currentDay.getDay()];
+        const daysWeek = this.WEEKDAYS[currentDay.getDay()];
         this.dates.push({
-          date: `${diaSemana} ${currentDay.getDate()}/${currentDay.getMonth() + 1}`
+          date: `${daysWeek} ${currentDay.getDate()}/${currentDay.getMonth() + 1}`
         })
       }
     })
@@ -98,10 +98,56 @@ export class DateComponent extends ViewComponent implements OnInit {
 
   nextMonth() {
     this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1, 1);
+    this.updateCalendar();
   }
 
   lastMonth() {
     this.currentDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() - 1, 1);
+    this.updateCalendar();
+  }
+
+  updateCalendar() {
+   /*  this.dates = [];
+    function getDaysMonth(anio, mes) {
+      var newDate = new Date(anio, mes - 1, 1); // mes comienza en 0 (enero)
+      var days = [];
+      while (newDate.getMonth() === mes - 1) {
+        days.push(new Date(newDate));
+        newDate.setDate(newDate.getDate() + 1);
+      }
+      return days;
+    }
+    const daysMonth = getDaysMonth(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1)
+
+    daysMonth.forEach( day => {
+      const currentDay = new Date(day);
+
+      if( currentDay.getDate() >= new Date().getDate() ) {
+        const daysWeek = this.WEEKDAYS[currentDay.getDay()];
+        this.dates.push({
+          date: `${daysWeek} ${currentDay.getDate()}/${currentDay.getMonth() + 1}`
+        })
+      }
+    }) */
+    this.dates = [];
+  function getDaysMonth(anio, mes) {
+    var newDate = new Date(anio, mes - 1, 1); // mes comienza en 0 (enero)
+    var days = [];
+    while (newDate.getMonth() === mes - 1) {
+      days.push(new Date(newDate));
+      newDate.setDate(newDate.getDate() + 1);
+    }
+    return days;
+  }
+  const daysMonth = getDaysMonth(this.currentDate.getFullYear(), this.currentDate.getMonth() + 1)
+
+  daysMonth.forEach(day => {
+    const currentDay = new Date(day);
+    const daysWeek = this.WEEKDAYS[currentDay.getDay()];
+    this.dates.push({
+      date: `${daysWeek} ${currentDay.getDate()}/${currentDay.getMonth() + 1}`
+    });
+  })
   }
 
 }

@@ -71,7 +71,7 @@ import { ConditionsComponent } from './manage-coupons/conditions/conditions.comp
 import { searchGeneralRoutes } from './router/searchGeneralRoutes';
 import { CountryDirectionComponent } from './product-detail/send/country-direction/country-direction.component';
 import { ChangeReturnComponent } from './product-detail/change-return/change-return.component';
-import { DirectionsComponent } from './product-detail/directions/directions.component';
+import { DirectionsComponent } from './product-detail/send/directions/directions.component';
 import { CountryBuyComponent } from './delivery-detail/buy/country-buy/country-buy.component';
 import { ManagePaymentMethodComponent } from './manage-payment-method/manage-payment-method.component';
 import { CardPaymentMethodsComponent } from './manage-payment-method/card-payment-methods/card-payment-methods.component';
@@ -94,6 +94,7 @@ const routes: Routes = [
       { path: 'send', component: SendComponent },
 
       { path: 'product',component:ProductComponent},
+      { path: 'empty-basket/product',component:ProductComponent},
       { path: 'product/internal-inbox/:id', component: InternalInboxComponent },
 
 
