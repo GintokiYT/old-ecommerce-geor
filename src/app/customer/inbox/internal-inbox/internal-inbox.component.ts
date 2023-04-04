@@ -78,7 +78,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       placeholder.style.visibility = 'hidden'
     })
 
-    messageInput.addEventListener('keydown', (event: KeyboardEvent) => {
+    messageInput.addEventListener('input', (event: KeyboardEvent) => {
       // Verificar si la tecla presionada es Enter
     	if (event.key === 'Enter') {
     		// Verificar si la tecla Shift no está presionada

@@ -3,6 +3,7 @@ ion-toolbar {
     --ion-toolbar-background,
     var(--ion-color-step-50, var(--ion-background-color))
   );
+  --background: #000;
   --min-height: 0px;
   --padding-top: 16px;
   --padding-start: 16px;
@@ -11,17 +12,22 @@ ion-toolbar {
 
   button {
     background-color: transparent;
-
+  
     .back {
       width: 14px;
       height: 14px;
-      fill: #000000;
+     // fill: #000000;
       path {
         stroke: white;
       }
     }
+    
   }
+
 }
+
+
+
 
 .content-product {
   width: 100%;
@@ -29,6 +35,10 @@ ion-toolbar {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.image{
+  --background: #000;
 }
 
 @media (min-width: 390px) {
