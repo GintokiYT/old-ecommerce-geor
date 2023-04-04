@@ -43,6 +43,7 @@ ion-header {
       color: var(--ion-color-text-secundary);
       padding: 8px;
       border-radius: 4px;
+      border: 1px solid var(--ion-color-separator);
     }
   }
 
@@ -57,6 +58,7 @@ ion-header {
       color: var(--ion-color-text-secundary);
       padding: 8px 16px;
       border-radius: 4px;
+      border: 1px solid var(--ion-color-separator);
     }
   }
 }
@@ -113,13 +115,13 @@ ion-header {
 
 //Cambio al seleccionar
 .label.selected {
-  border: 1px solid #023aff;
+  border: 1px solid #023aff !important;
   background-color: var(--ion-button-select);
   color: #023aff !important;
 }
 
 .label2.selected2 {
-  border: 1px solid #023aff;
+  border: 1px solid #023aff !important;
   background-color: var(--ion-button-select);
   color: #023aff !important;
 }

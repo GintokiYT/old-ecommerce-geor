@@ -3,6 +3,8 @@ import { Keyboard } from '@geor360/capacitor-keyboard';
 import { ViewComponent } from '@geor360/ecore';
 import { Router } from '@angular/router';
 
+import { Platform } from '@ionic/angular';
+
 interface Message {
   id: string;
   time: string;
@@ -78,7 +80,7 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
       placeholder.style.visibility = 'hidden'
     })
 
-    messageInput.addEventListener('keydown', (event: KeyboardEvent) => {
+    messageInput.addEventListener('input', (event: KeyboardEvent) => {
       // Verificar si la tecla presionada es Enter
     	if (event.key === 'Enter') {
     		// Verificar si la tecla Shift no está presionada
@@ -319,11 +321,16 @@ export class InternalInboxComponent extends ViewComponent implements OnInit {
     separacion: false
   }
 
-  constructor(_injector: Injector, private router: Router) {
+  constructor(
+    _injector: Injector, 
+    private router: Router,
+    private platform: Platform
+    ) {
     super(_injector);
   }
 
   ngOnInit() {
+
     const route = this.router.url;
     if(route.includes('/customer/last-step/internal-inbox')) {
       setTimeout(() => {
