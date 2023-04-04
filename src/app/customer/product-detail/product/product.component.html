@@ -5,9 +5,9 @@
   <ion-slides class="carousel" pager="true" (click)="goPicture()">
     <ion-slide *ngFor="let slide of slides">
       <img class="img-fluid img" [src]="slide.imgSrc" [alt]="slide.description" />
+
     </ion-slide>
   </ion-slides>
-
 
   <div class="information-producto d-flex flex-column">
     <ion-text>
