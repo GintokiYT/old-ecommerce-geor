@@ -29,9 +29,11 @@
       <div class="position-relative">
         <ion-item id="item-password" lines="none" class="form-group item-password"  (ionBlur)="checkBlur('password')" (ionFocus)="checkFocus('password')">
           <ion-label onclick="event.stopPropagation()" position="floating">Contraseña</ion-label>
-          <ion-input  
+          <ion-input
+            [ngClass]="{'hideInput': !isVisible,
+                        'showInput': isVisible}"  
             id="input-password" 
-            type="password" 
+            type="text"
             formControlName="password" 
             #inputPassword 
           >

@@ -70,6 +70,13 @@ ion-footer {
     color: var(--ion-color-disabled);
 }
 
+.hideInput{
+    -webkit-text-security: disc !important;    
+}
+.showInput{
+    -webkit-text-security: none !important;
+}
+
 @media(min-width:390px) {
 
     ion-header {
@@ -124,15 +131,15 @@ ion-footer {
     cursor: pointer;
 }
 
-.fakeFooter{
+.fakeFooter {
     position: fixed;
     bottom: 71px;
 }
 
-.show{
+.show {
     display: unset;
 }
 
-.hidden{
+.hidden {
     display: none;
 }

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   @ViewChild(IonContent) content: IonContent;
   @ViewChild("inputPassword") inputPassword: IonInput;
+  isVisible = false;
   loginForm!: FormGroup;
   inputPasswordType: string = "password";
   showFakeEye: boolean = false;
@@ -94,13 +95,13 @@ export class LoginComponent implements OnInit {
   onChangeType(ev) {
     ev.preventDefault();
     ev.stopPropagation();
-
-    if (this.inputPassword.type === "password") {
+    this.isVisible = !this.isVisible;
+    if (this.inputPasswordType === "password") {
       this.inputPasswordType = "text";
-      this.inputPassword.type = "text";
+      //this.inputPassword.type = "text";
     } else {
       this.inputPasswordType = "password";
-      this.inputPassword.type = "password";
+      //this.inputPassword.type = "password";
     }
   }
 
