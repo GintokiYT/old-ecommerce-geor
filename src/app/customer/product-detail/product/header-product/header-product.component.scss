@@ -1,22 +1,3 @@
-
-  .button-back {
-  position: sticky;
-  z-index: 1000;
-  //top: calc(var(--ion-safe-area-top) + 6.5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--ion-background-secondary);
-}
-
-svg path{
-  stroke: var(--ion-color-arrow-map);
-}
-
-
 ion-toolbar{
   --background: none;
   --min-height: 0px;
@@ -24,47 +5,52 @@ ion-toolbar{
   --padding-start: 16px;
   --padding-end: 16px;
   --padding-bottom: 14px;
-}
 
-@media(max-width:320px){
-  ion-toolbar{
-      --padding-top: 32px;
-      --padding-start: 16px;
-      --padding-end: 16px;
-      --padding-bottom: 24px
+  .button-back {
+    position: sticky;
+    z-index: 1000;
+    //top: calc(var(--ion-safe-area-top) + 6.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--ion-background-secondary);
+
+    svg path{
+      stroke: var(--ion-color-arrow-map);
+    }
+  }
+
+  .back{
+    width:44px;
+    height: 44px;
+  .icon{
+    fill: var(--ion-background-secondary);
+   }
+    path {
+      stroke: var(--ion-color-arrow-map);
+    }
+
+  }
+
+  .amount{
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    padding: 1px 6px;
+    background-color: var(--ion-color-primary);
+    color: white;
+    border-radius: 12px;
+    position: relative;
+    bottom: 47px;
+    left: 23px;
+    width: 19px;
   }
 }
 
-ion-item-options{
-  border-bottom-width:0px !important;
-}
 
-/* MODIFICACION DE IMAGEN A DARK */
-.back{
-  width:44px;
-  height: 44px;
-.icon{
-  fill: var(--ion-background-secondary);
- }
-  path {
-    stroke: var(--ion-color-arrow-map);
-  }
-
-}
-
-.amount{
-  display: flex;
-  align-items: center;
-  font-size: 11px;
-  padding: 1px 6px;
-  background-color: var(--ion-color-primary);
-  color: white;
-  border-radius: 12px;
-  position: relative;
-  bottom: 47px;
-  left: 23px;
-  width: 19px;
-}
 
 @media (min-width: 390px) {
 
