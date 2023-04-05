@@ -22,6 +22,7 @@ import { ModalMyBasketComponent } from './my-basket/modal-Mybasket/modal-Mybaske
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { CollaborativeBasketComponent } from './collaborative-basket/collaborative-basket.component';
 import { MainProductsComponent } from './my-basket/main-products/main-products.component';
+import { MainProductMyBasketComponent } from './my-basket/main-product-my-basket/main-product-my-basket.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MainProductsComponent } from './my-basket/main-products/main-products.c
     ContactTeamComponent,
     ModalMyBasketComponent,
     CollaborativeBasketComponent,
-    MainProductsComponent
+    MainProductsComponent,
+    MainProductMyBasketComponent
 
   ],
   imports: [
