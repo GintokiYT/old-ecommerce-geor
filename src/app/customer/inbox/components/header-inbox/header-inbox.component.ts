@@ -14,8 +14,12 @@ export class HeaderInboxComponent extends ViewComponent implements OnInit {
 
   previousRoute: string;
 
-  constructor(_injector: Injector, private callNumber: CallNumber,private location: Location,
-                private router: Router) {
+  constructor(
+    _injector: Injector,
+    private callNumber: CallNumber,
+    private location: Location,
+    private router: Router
+  ) {
     super(_injector);
     const prevUrl = this.router.getCurrentNavigation().previousNavigation?.finalUrl.toString();
     this.previousRoute = prevUrl;

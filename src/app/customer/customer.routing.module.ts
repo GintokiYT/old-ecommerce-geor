@@ -87,8 +87,6 @@ const routes: Routes = [
       { path: 'my-basket', component: MyBasketComponent },
       { path: 'empty-basket', component: EmptyBasketComponent},
 
-
-
       { path: 'contact-basket', component: ContactBasketComponent},
       { path: 'detail', component: DetailComponent },
       { path: 'send', component: SendComponent },
